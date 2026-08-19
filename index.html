@@ -159,40 +159,266 @@
         .nav-actions {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
         }
 
-        .btn {
-            padding: 9px 18px;
+        /* Search Trigger Button */
+        .search-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .search-btn:hover {
+            color: #00E5FF;
+            border-color: #00E5FF;
+            background: rgba(0, 229, 255, 0.08);
+        }
+
+        /* Log In Button */
+        .btn-login {
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: transparent;
+            border: none;
+        }
+
+        .btn-login:hover {
+            color: #00E5FF;
+        }
+
+        .btn-join {
+            background: var(--primary);
+            color: #fff;
+            padding: 8px 18px;
             border-radius: 6px;
             font-weight: 600;
             font-size: 0.88rem;
             cursor: pointer;
             transition: all 0.2s;
+            border: none;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            border: none;
+            gap: 6px;
         }
 
-        .btn-primary {
-            background: var(--primary);
-            color: #fff;
-        }
-
-        .btn-primary:hover {
+        .btn-join:hover {
             background: var(--primary-hover);
         }
 
-        .btn-outline {
-            background: transparent;
-            color: var(--text-main);
-            border: 1px solid var(--border-color);
+        /* Search Modal Overlay */
+        .search-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(8, 10, 15, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: none;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 100px;
         }
 
-        .btn-outline:hover {
-            background: var(--bg-card-hover);
-            border-color: var(--text-muted);
+        .search-overlay.active {
+            display: flex;
+        }
+
+        .search-box-container {
+            width: 100%;
+            max-width: 680px;
+            background: #141822;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+            overflow: hidden;
+            margin: 0 20px;
+        }
+
+        .search-input-wrap {
+            display: flex;
+            align-items: center;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-color);
+            gap: 12px;
+        }
+
+        .search-input-wrap i {
+            color: #00E5FF;
+            font-size: 1.1rem;
+        }
+
+        .search-input-wrap input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-size: 1.1rem;
+            font-family: var(--font-sans);
+        }
+
+        .search-close-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .search-close-btn:hover {
+            color: #fff;
+        }
+
+        .search-suggestions {
+            padding: 16px 20px;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+
+        .search-tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .search-tag {
+            background: #0B0E14;
+            border: 1px solid var(--border-color);
+            padding: 6px 12px;
+            border-radius: 6px;
+            color: var(--text-light);
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .search-tag:hover {
+            border-color: #2962FF;
+            color: #00E5FF;
+        }
+
+        /* Login Modal */
+        .login-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(8, 10, 15, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-modal-overlay.active {
+            display: flex;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 420px;
+            background: #141822;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 32px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+            position: relative;
+            margin: 0 20px;
+        }
+
+        .login-card-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .login-card-header h2 {
+            font-family: var(--font-editorial);
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 6px;
+        }
+
+        .login-card-header p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .login-field {
+            margin-bottom: 16px;
+        }
+
+        .login-label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #cfd8ea;
+            margin-bottom: 6px;
+        }
+
+        .login-input {
+            width: 100%;
+            padding: 11px 14px;
+            background: #0B0E14;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: #fff;
+            outline: none;
+            font-size: 0.92rem;
+        }
+
+        .login-input:focus {
+            border-color: var(--primary);
+        }
+
+        .login-btn-submit {
+            width: 100%;
+            padding: 12px;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 0.95rem;
+        }
+
+        .login-btn-submit:hover {
+            background: var(--primary-hover);
+        }
+
+        .login-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 1.1rem;
         }
 
         /* --- Investopedia Editorial Hero Grid --- */
@@ -687,7 +913,7 @@
         </div>
     </div>
 
-    <!-- Header Navigation -->
+    <!-- Header Navigation with Search Icon & Log In Button -->
     <header>
         <div class="nav-container">
             <a href="index.html" class="logo">
@@ -708,18 +934,73 @@
             </ul>
 
             <div class="nav-actions">
-                <a href="https://t.me/" target="_blank" class="btn btn-outline">
-                    <i class="fa-brands fa-telegram"></i> Telegram Intelligence
-                </a>
-                <a href="#education" class="btn btn-primary">
-                    <i class="fa-solid fa-book-open"></i> Start Learning
-                </a>
+                <!-- Search Trigger Button -->
+                <button class="search-btn" onclick="toggleSearchModal()" title="Search Terms & Articles">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                
+                <!-- Log In Button -->
+                <button class="btn-login" onclick="toggleLoginModal()">
+                    <i class="fa-regular fa-user"></i> Log In
+                </button>
+
+                <!-- Join / Register Button -->
+                <button class="btn-join" onclick="toggleLoginModal()">
+                    Join Free
+                </button>
             </div>
         </div>
     </header>
 
+    <!-- Search Modal Overlay -->
+    <div class="search-overlay" id="searchOverlay" onclick="closeSearchOnBackdrop(event)">
+        <div class="search-box-container" onclick="event.stopPropagation()">
+            <div class="search-input-wrap">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="searchInput" placeholder="Search VSA terms, Wyckoff phases, articles (e.g. Upthrust, Gold, Spring)..." autofocus>
+                <button class="search-close-btn" onclick="toggleSearchModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="search-suggestions">
+                <span>Popular Technical Searches:</span>
+                <div class="search-tag-list">
+                    <span class="search-tag" onclick="selectSearchTag('Upthrust')">Upthrust (UTAD)</span>
+                    <span class="search-tag" onclick="selectSearchTag('Spring')">Phase C Spring</span>
+                    <span class="search-tag" onclick="selectSearchTag('Effort vs Result')">Effort vs. Result</span>
+                    <span class="search-tag" onclick="selectSearchTag('Gold XAUUSD')">Gold (XAU/USD)</span>
+                    <span class="search-tag" onclick="selectSearchTag('Stopping Volume')">Stopping Volume</span>
+                    <span class="search-tag" onclick="selectSearchTag('Wyckoff')">Wyckoff 5 Phases</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal Overlay -->
+    <div class="login-modal-overlay" id="loginOverlay" onclick="closeLoginOnBackdrop(event)">
+        <div class="login-card" onclick="event.stopPropagation()">
+            <button class="login-close" onclick="toggleLoginModal()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="login-card-header">
+                <h2>Account Sign In</h2>
+                <p>Access exclusive market briefings and community research</p>
+            </div>
+            <form onsubmit="handleLoginSubmit(event)">
+                <div class="login-field">
+                    <label class="login-label">Email Address</label>
+                    <input type="email" class="login-input" placeholder="trader@example.com" required>
+                </div>
+                <div class="login-field">
+                    <label class="login-label">Password</label>
+                    <input type="password" class="login-input" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="login-btn-submit">Sign In to PTvolume</button>
+            </form>
+            <p style="text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-top: 16px;">
+                Don't have an account? <a href="#" style="color: #00E5FF; font-weight: 600;" onclick="alert('Registration is free and open to all traders!');">Create an Account</a>
+            </p>
+        </div>
+    </div>
+
     <!-- Investopedia Editorial Lead Section -->
-    <section class="editorial-hero">
+    <section class="editorial-hero" id="market-analysis">
         <!-- Lead Feature Story -->
         <article class="lead-story">
             <div class="lead-image-box">
@@ -1010,10 +1291,10 @@
             </div>
 
             <div class="footer-col">
-                <h4>Connect & Intelligence</h4>
+                <h4>Editorial & Research</h4>
                 <ul>
-                    <li><a href="pages/contact.html">Contact Editorial Team</a></li>
-                    <li><a href="https://t.me/" target="_blank">Telegram Intelligence</a></li>
+                    <li><a href="pages/contact.html">Contact Editorial Desk</a></li>
+                    <li><a href="#market-analysis">Market Briefings</a></li>
                     <li><a href="#live-chart">Live Market Chart</a></li>
                 </ul>
             </div>
@@ -1024,6 +1305,46 @@
             <p style="color: #64748B;">Naked Chart • Volume Spread Analysis • Wyckoff Method</p>
         </div>
     </footer>
+
+    <!-- Search & Login Modal Script -->
+    <script>
+        function toggleSearchModal() {
+            const overlay = document.getElementById("searchOverlay");
+            overlay.classList.toggle("active");
+            if (overlay.classList.contains("active")) {
+                setTimeout(() => document.getElementById("searchInput").focus(), 100);
+            }
+        }
+
+        function closeSearchOnBackdrop(e) {
+            if (e.target.id === "searchOverlay") {
+                toggleSearchModal();
+            }
+        }
+
+        function selectSearchTag(tag) {
+            const input = document.getElementById("searchInput");
+            input.value = tag;
+            input.focus();
+        }
+
+        function toggleLoginModal() {
+            const overlay = document.getElementById("loginOverlay");
+            overlay.classList.toggle("active");
+        }
+
+        function closeLoginOnBackdrop(e) {
+            if (e.target.id === "loginOverlay") {
+                toggleLoginModal();
+            }
+        }
+
+        function handleLoginSubmit(e) {
+            e.preventDefault();
+            alert("Signed in successfully! Welcome to PTvolume Institutional Research.");
+            toggleLoginModal();
+        }
+    </script>
 
 </body>
 </html>
