@@ -6,3 +6,5 @@ __pycache__/
 # Dữ liệu nội bộ và cache index lớn
 .dulieu_index.json
 extracted_1970.txt
+DuLieu/
+kịch bản video/
