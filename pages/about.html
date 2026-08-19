@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -30,10 +30,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: var(--font-sans);
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
+            
         }
 
         body {
@@ -245,12 +242,9 @@
         }
     </style>
 </head>
-<body oncontextmenu="showCopyAlert(event); return false;">
+<body >
 
-    <div id="copyToast">
-        <i class="fa-solid fa-shield-halved" style="color: #FF6B78; font-size: 1.1rem;"></i>
-        <span>© Copyright Protected by PTvolume.com. Unauthorized copying is prohibited.</span>
-    </div>
+    
 
     <header>
         <div class="nav-container">
@@ -326,19 +320,8 @@
     </footer>
 
     <script>
-        document.addEventListener('keydown', function(e) {
-            if ((e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's' || e.key === 'a')) || e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
-                if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
-                    e.preventDefault();
-                    showCopyAlert();
-                    return false;
-                }
-            }
-        });
-        function showCopyAlert() {
-            const toast = document.getElementById("copyToast");
-            toast.className = "show";
-            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+        
+        , 3000);
         }
     </script>
 
