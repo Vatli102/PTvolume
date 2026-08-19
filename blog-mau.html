@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bóc Tách Kịch Bản XAU/USD: Nhận Diện Bẫy Giá Upthrust | PTvolume</title>
+    <meta name="description" content="Phân tích nến Upthrust và dấu hiệu bẫy giá Smart Money tại vùng Cung then chốt của Vàng XAU/USD.">
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-main: #0B0E14;
+            --bg-card: #141822;
+            --bg-card-hover: #1A2130;
+            --border-color: #222938;
+            --primary: #2962FF;
+            --primary-glow: rgba(41, 98, 255, 0.25);
+            --bullish: #089981;
+            --bearish: #F23645;
+            --text-main: #F0F3FA;
+            --text-muted: #8E9BAE;
+            --accent-gold: #F0B90B;
+        }
+
+        /* --- TÍNH NĂNG 1: CHỐNG SAO CHÉP (Anti-Copy Protection) --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none; /* Khóa bôi đen toàn bộ nội dung */
+        }
+
+        /* Cho phép nhập liệu trong ô bình luận */
+        input, textarea {
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            user-select: text !important;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.8;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 14, 20, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 24px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 1.35rem;
+            color: #fff;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 1px solid rgba(41, 98, 255, 0.4);
+        }
+
+        .logo-text .brand {
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .logo-text .brand span {
+            color: #00E5FF;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            background: #2962FF;
+            color: #fff;
+        }
+
+        /* Article Layout */
+        .article-container {
+            max-width: 860px;
+            margin: 50px auto 60px;
+            padding: 0 24px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .breadcrumb a:hover {
+            color: #00E5FF;
+        }
+
+        .article-badge {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 20px;
+            background: rgba(240, 185, 11, 0.15);
+            border: 1px solid rgba(240, 185, 11, 0.3);
+            color: var(--accent-gold);
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        h1.article-title {
+            font-size: 2.3rem;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 36px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .article-body {
+            font-size: 1.08rem;
+            color: #D1D5DB;
+        }
+
+        .article-body h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 40px 0 16px;
+            padding-left: 14px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .article-body p {
+            margin-bottom: 20px;
+        }
+
+        /* --- TÍNH NĂNG 2: WATERMARK BẢN QUYỀN HÌNH ẢNH --- */
+        .watermark-box {
+            position: relative;
+            margin: 32px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #080B10;
+        }
+
+        .watermark-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            pointer-events: none; /* Khóa kéo thả ảnh */
+        }
+
+        /* Watermark mờ đè lên góc dưới bên phải ảnh */
+        .watermark-stamp {
+            position: absolute;
+            bottom: 14px;
+            right: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(11, 14, 20, 0.75);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 6px 14px;
+            border-radius: 30px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            pointer-events: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+
+        .watermark-stamp i {
+            color: #00E5FF;
+        }
+
+        .highlight-box {
+            background: var(--bg-card);
+            border: 1px solid rgba(41, 98, 255, 0.3);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 30px 0;
+        }
+
+        .highlight-box h3 {
+            color: #82B1FF;
+            font-size: 1.15rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .highlight-box ul {
+            list-style: none;
+        }
+
+        .highlight-box li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .highlight-box li i {
+            color: var(--bullish);
+            margin-top: 5px;
+        }
+
+        /* --- TÍNH NĂNG 3: HỆ THỐNG BÌNH LUẬN (Comment Section) --- */
+        .comment-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .comment-header {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .comment-form {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 36px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #cfd8ea;
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            background: #0B0E14;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .comment-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .comment-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 18px 20px;
+        }
+
+        .comment-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .comment-author {
+            font-weight: 700;
+            color: #00E5FF;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .comment-date {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .comment-text {
+            font-size: 0.92rem;
+            color: #E2E8F0;
+            line-height: 1.6;
+        }
+
+        /* Toast thông báo chống copy */
+        #copyToast {
+            visibility: hidden;
+            min-width: 280px;
+            background-color: #1E2538;
+            color: #FF8E99;
+            text-align: center;
+            border-radius: 8px;
+            border: 1px solid rgba(242, 54, 69, 0.4);
+            padding: 14px 20px;
+            position: fixed;
+            z-index: 2000;
+            bottom: 30px;
+            right: 30px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        #copyToast.show {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(-5px);
+        }
+
+        footer {
+            border-top: 1px solid var(--border-color);
+            background: #080A0F;
+            padding: 30px 24px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+    </style>
+</head>
+<body oncontextmenu="showCopyAlert(event); return false;">
+
+    <!-- Toast thông báo bản quyền khi cố copy / click phải -->
+    <div id="copyToast">
+        <i class="fa-solid fa-shield-halved" style="color: #FF6B78; font-size: 1.1rem;"></i>
+        <span>© Bản quyền thuộc về PTvolume.com. Vui lòng không sao chép nội dung.</span>
+    </div>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.jpg" alt="PTvolume Logo">
+                <div class="logo-text">
+                    <span class="brand">PT<span>VOLUME</span></span>
+                </div>
+            </a>
+            <a href="index.html" class="btn">
+                <i class="fa-solid fa-arrow-left"></i> Về Trang Chủ
+            </a>
+        </div>
+    </header>
+
+    <main class="article-container">
+        <div class="breadcrumb">
+            <a href="index.html">Trang chủ</a>
+            <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+            <a href="index.html#blog-section">Góc Phân Tích</a>
+            <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+            <span>Nhận định Vàng XAU/USD</span>
+        </div>
+
+        <span class="article-badge"><i class="fa-solid fa-coins"></i> Phân Tích Vàng XAU/USD</span>
+        
+        <h1 class="article-title">Bóc Tách Kịch Bản XAU/USD: Nhận Diện Bẫy Giá Upthrust Tại Vùng Cung Then Chốt</h1>
+
+        <div class="article-meta">
+            <span><i class="fa-regular fa-user"></i> Tác giả: <strong>PTvolume Team</strong></span>
+            <span><i class="fa-regular fa-calendar"></i> 19/08/2026</span>
+            <span><i class="fa-regular fa-clock"></i> 5 phút đọc</span>
+        </div>
+
+        <div class="article-body">
+            <p>
+                Thị trường Vàng ($XAU/USD$) trong phiên giao dịch hôm nay tiếp tục cho thấy sự giằng co quyết liệt tại vùng kháng cự đỉnh cũ. Đối với trường phái <strong>Price Action kết hợp VSA (Volume Spread Analysis)</strong>, chúng ta không dự đoán cảm tính mà đọc trực tiếp hành vi gom - xả của dòng tiền lớn (Smart Money).
+            </p>
+
+            <!-- HÌNH ẢNH CÓ ĐÓNG DẤU WATERMARK PTVOLUME.COM -->
+            <div class="watermark-box">
+                <img src="logo.jpg" alt="Biểu đồ minh họa VSA XAUUSD" style="max-height: 380px; object-fit: cover;">
+                <div class="watermark-stamp">
+                    <i class="fa-solid fa-shield-halved"></i> PTvolume.com
+                </div>
+            </div>
+
+            <h2>1. Cấu Trúc Giá & Vùng Kháng Cự Trọng Yếu</h2>
+            <p>
+                Trên khung thời gian H4, giá đang tiến vào vùng Cung (Supply Zone). Tại đây, cây nến tăng có thân hẹp nhưng khối lượng giao dịch (Tick Volume) lại đột biến tăng vọt. Theo nguyên lý <em>Nỗ lực vs Kết quả (Effort vs Result)</em> của Wyckoff: Khối lượng rất lớn nhưng giá không thể bứt phá mạnh chứng tỏ lực bán ngầm (Hidden Selling) của Big Boys đang hấp thụ toàn bộ lệnh mua FOMO của retail traders.
+            </p>
+
+            <div class="highlight-box">
+                <h3><i class="fa-solid fa-crosshairs"></i> Kế Hoạch Giao Dịch Chi Tiết (Trading Plan)</h3>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> <strong>Vị thế (Position):</strong> Canh Bán (SELL / SHORT) theo tín hiệu Upthrust.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Điểm vào lệnh (Entry):</strong> Khi xuất hiện nến từ chối giá (Pinbar / Fakey) đóng cửa dưới vùng cản.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Dừng lỗ (Stop Loss):</strong> Đặt tuyệt đối phía trên râu nến Upthrust (cách đỉnh 15-20 pips).</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Chốt lời (Take Profit):</strong> Về vùng Cầu gần nhất (Demand Zone), đảm bảo <strong>R:R tối thiểu 1:2.5</strong>.</li>
+                </ul>
+            </div>
+
+            <h2>2. Bài Học Quản Trị Rủi Ro</h2>
+            <p>
+                Tuyệt đối không vào lệnh khi chưa có nến xác nhận (Confirmation Candle) và khối lượng ủng hộ. Luôn tuân thủ nguyên tắc chỉ mạo hiểm tối đa 1-2% tài khoản cho mỗi giao dịch.
+            </p>
+        </div>
+
+        <!-- PHẦN BÌNH LUẬN CHO ĐỘC GIẢ -->
+        <section class="comment-section">
+            <h3 class="comment-header">
+                <i class="fa-regular fa-comments" style="color: #00E5FF;"></i> Bình Luận & Thảo Luận (<span id="commentCount">2</span>)
+            </h3>
+
+            <!-- Form gửi bình luận -->
+            <form class="comment-form" id="commentForm" onsubmit="addComment(event)">
+                <div class="form-group">
+                    <label class="form-label">Tên của bạn hoặc Nickname Trader:</label>
+                    <input type="text" id="commentName" class="form-control" placeholder="Ví dụ: Hoàng Long - Price Action Trader" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Nội dung bình luận / Góc nhìn của bạn về thị trường:</label>
+                    <textarea id="commentContent" class="form-control" placeholder="Chia sẻ quan điểm hoặc đặt câu hỏi về cây nến Upthrust này..." required></textarea>
+                </div>
+                <button type="submit" class="btn">
+                    <i class="fa-regular fa-paper-plane"></i> Gửi Bình Luận
+                </button>
+            </form>
+
+            <!-- Danh sách bình luận -->
+            <div class="comment-list" id="commentList">
+                <div class="comment-item">
+                    <div class="comment-top">
+                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Minh Trí (Trader)</span>
+                        <span class="comment-date">19/08/2026 20:15</span>
+                    </div>
+                    <div class="comment-text">
+                        Phân tích nến Upthrust này rất sát thực tế. Mình cũng đang canh vùng Cung này để tìm điểm Sell Limit theo phương pháp VSA. Cảm ơn PTvolume!
+                    </div>
+                </div>
+
+                <div class="comment-item">
+                    <div class="comment-top">
+                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Thanh Hùng</span>
+                        <span class="comment-date">19/08/2026 21:02</span>
+                    </div>
+                    <div class="comment-text">
+                        Ad cho mình hỏi nếu cây nến sau đóng cửa vượt đỉnh cũ thì mô hình này có bị hủy không? Tỷ lệ R:R bài này tính rất hợp lý.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 PTvolume.com - Hệ thống phân tích kỹ thuật Price Action & VSA Wyckoff.</p>
+    </footer>
+
+    <!-- SCRIPT XỬ LÝ CHỐNG COPY & BÌNH LUẬN -->
+    <script>
+        // 1. Chống sao chép (Chặn phím tắt Ctrl+C, Ctrl+U, F12, Ctrl+S)
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's' || e.key === 'a')) || e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                // Ngoại trừ khi người dùng đang nhập trong ô input/textarea
+                if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+                    e.preventDefault();
+                    showCopyAlert();
+                    return false;
+                }
+            }
+        });
+
+        // 2. Hiển thị thông báo khi người dùng cố copy hoặc click chuột phải
+        function showCopyAlert(e) {
+            if (e && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) {
+                return true; // Cho phép chuột phải trong ô nhập liệu
+            }
+            const toast = document.getElementById("copyToast");
+            toast.className = "show";
+            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+        }
+
+        // 3. Xử lý thêm bình luận mới
+        function addComment(e) {
+            e.preventDefault();
+            const nameInput = document.getElementById("commentName");
+            const contentInput = document.getElementById("commentContent");
+
+            const name = nameInput.value.trim();
+            const content = contentInput.value.trim();
+
+            if (!name || !content) return;
+
+            const now = new Date();
+            const timeString = now.toLocaleDateString('vi-VN') + ' ' + now.toLocaleTimeString('vi-VN', {hour: '2-digit', minute:'2-digit'});
+
+            const commentList = document.getElementById("commentList");
+            const newComment = document.createElement("div");
+            newComment.className = "comment-item";
+            newComment.innerHTML = `
+                <div class="comment-top">
+                    <span class="comment-author"><i class="fa-solid fa-circle-user"></i> ${escapeHtml(name)}</span>
+                    <span class="comment-date">${timeString}</span>
+                </div>
+                <div class="comment-text">${escapeHtml(content)}</div>
+            `;
+
+            commentList.prepend(newComment);
+
+            // Cập nhật số lượng bình luận
+            const countElem = document.getElementById("commentCount");
+            countElem.innerText = parseInt(countElem.innerText) + 1;
+
+            // Xóa nội dung form
+            nameInput.value = "";
+            contentInput.value = "";
+
+            alert("Bình luận của bạn đã được đăng thành công!");
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+
+</body>
+</html>

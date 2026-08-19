@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu | PTvolume - Chia Sẻ Kiến Thức & Kinh Nghiệm Giao Dịch</title>
+    <meta name="description" content="Giới thiệu về PTvolume - Nền tảng phi lợi nhuận chia sẻ kiến thức, kinh nghiệm thực chiến và tủ sách giao dịch theo phương pháp Price Action & VSA Wyckoff.">
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-main: #0B0E14;
+            --bg-card: #141822;
+            --border-color: #222938;
+            --primary: #2962FF;
+            --primary-glow: rgba(41, 98, 255, 0.2);
+            --bullish: #089981;
+            --text-main: #F0F3FA;
+            --text-muted: #8E9BAE;
+            --accent-gold: #F0B90B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.8;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 14, 20, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 24px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #fff;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 1px solid rgba(41, 98, 255, 0.3);
+        }
+
+        .logo-text .brand {
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .logo-text .brand span {
+            color: #00E5FF;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            background: #2962FF;
+            color: #fff;
+        }
+
+        .btn:hover {
+            background: #1e4bd8;
+        }
+
+        /* Container */
+        .page-container {
+            max-width: 860px;
+            margin: 50px auto 80px;
+            padding: 0 24px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .breadcrumb a:hover {
+            color: #00E5FF;
+        }
+
+        h1.page-title {
+            font-size: 2.4rem;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 16px;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        .page-subtitle {
+            font-size: 1.1rem;
+            color: #A5B4CB;
+            margin-bottom: 40px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .content-section {
+            margin-bottom: 40px;
+        }
+
+        .content-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .content-section p {
+            color: #D1D5DB;
+            font-size: 1.05rem;
+            margin-bottom: 18px;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin: 28px 0;
+        }
+
+        .value-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 22px;
+        }
+
+        .value-card i {
+            font-size: 1.8rem;
+            color: #00E5FF;
+            margin-bottom: 12px;
+        }
+
+        .value-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .value-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .quote-box {
+            background: rgba(41, 98, 255, 0.08);
+            border-left: 4px solid var(--primary);
+            border-radius: 0 10px 10px 0;
+            padding: 20px 24px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #E2E8F0;
+            font-size: 1.05rem;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            background: #080A0F;
+            padding: 30px 24px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.jpg" alt="PTvolume Logo">
+                <div class="logo-text">
+                    <span class="brand">PT<span>VOLUME</span></span>
+                </div>
+            </a>
+            <a href="index.html" class="btn">
+                <i class="fa-solid fa-arrow-left"></i> Về Trang Chủ
+            </a>
+        </div>
+    </header>
+
+    <main class="page-container">
+        <div class="breadcrumb">
+            <a href="index.html">Trang chủ</a>
+            <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+            <span>Giới thiệu</span>
+        </div>
+
+        <h1 class="page-title">Về Chúng Tôi — PTvolume</h1>
+        <div class="page-subtitle">
+            Nơi chia sẻ kiến thức, kinh nghiệm thực chiến và tủ sách giao dịch chuẩn mực theo phương pháp Price Action & VSA Wyckoff.
+        </div>
+
+        <div class="content-section">
+            <h2><i class="fa-solid fa-bullseye" style="color: var(--accent-gold);"></i> Mục Đích & Sứ Mệnh</h2>
+            <p>
+                <strong>PTvolume</strong> được thành lập từ chính những trải nghiệm thực tế, những bài học thăng trầm sau nhiều năm lăn lộn trên thị trường tài chính (Forex, Vàng, Tiền mã hóa, Chứng khoán). 
+            </p>
+            <p>
+                Chúng tôi nhận thấy rằng phần lớn nhà giao dịch cá nhân (Retail Traders) thường bị dẫn dắt vào các chỉ báo trễ phức tạp, các hội nhóm hô lệnh không có căn cứ hoặc rơi vào bẫy tâm lý cờ bạc, dẫn đến thua lỗ nặng nề. 
+            </p>
+            <p>
+                Sứ mệnh của <strong>PTvolume</strong> là xây dựng một <strong>không gian học tập, chia sẻ kiến thức và kinh nghiệm hoàn toàn minh bạch, chuẩn mực</strong>, giúp trader hiểu rõ bản chất cốt lõi của thị trường: <em>Quy luật Cung - Cầu và Hành vi của Dòng tiền thông minh (Smart Money)</em>.
+            </p>
+        </div>
+
+        <div class="quote-box">
+            "Thị trường tài chính không vận hành theo cảm xúc hay các chỉ báo toán học phức tạp. Nó vận hành theo sự tương tác thực tế giữa Giá và Khối lượng giao dịch."
+        </div>
+
+        <div class="content-section">
+            <h2><i class="fa-solid fa-gem" style="color: #00E5FF;"></i> Giá Trị Cốt Lõi Tại PTvolume</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>Naked Chart & VSA</h3>
+                    <p>Nói không với chỉ báo trễ gây nhiễu. Tập trung đọc hành động giá thuần túy kết hợp phân tích khối lượng.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fa-solid fa-book-bookmark"></i>
+                    <h3>Tủ Sách Kinh Điển</h3>
+                    <p>Đúc kết tinh hoa từ các bậc thầy huyền thoại: Richard Wyckoff, Jesse Livermore, Tom Williams, David Weis.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fa-solid fa-shield-heart"></i>
+                    <h3>Kỷ Luật & Quản Trị Vốn</h3>
+                    <p>Bảo vệ vốn là điều kiện tiên quyết để sống sót. Luôn tuân thủ tỷ lệ R:R tối thiểu 1:2 và kỷ luật thép.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2><i class="fa-solid fa-handshake" style="color: var(--bullish);"></i> Tinh Thần Đồng Hành Cùng Cộng Đồng</h2>
+            <p>
+                Mọi bài viết nhận định, tài liệu sách và nội dung chia sẻ trên PTvolume đều hướng đến việc nâng cao tư duy, kỹ năng phân tích và tính độc lập trong giao dịch của mỗi cá nhân. 
+            </p>
+            <p>
+                Chúng tôi khuyến khích các bạn không ngừng học hỏi, rèn luyện tính kiên nhẫn và luôn giữ một cái đầu lạnh trước mọi con sóng thị trường.
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 PTvolume.com - Hệ thống phân tích kỹ thuật Price Action & VSA Wyckoff.</p>
+    </footer>
+
+</body>
+</html>

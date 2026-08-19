@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PTvolume | Nền Tảng Kiến Thức, Tủ Sách & Phân Tích VSA - Price Action</title>
+    <meta name="description" content="PTvolume - Chia sẻ kiến thức trading thực chiến, tủ sách giao dịch kinh điển và phân tích thị trường theo phương pháp Price Action & VSA Wyckoff.">
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-main: #0B0E14;
+            --bg-card: #141822;
+            --bg-card-hover: #1A2130;
+            --border-color: #222938;
+            --primary: #2962FF;
+            --primary-glow: rgba(41, 98, 255, 0.2);
+            --bullish: #089981;
+            --bullish-bg: rgba(8, 153, 129, 0.12);
+            --bearish: #F23645;
+            --text-main: #F0F3FA;
+            --text-muted: #8E9BAE;
+            --accent-gold: #F0B90B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        #copyToast {
+            visibility: hidden;
+            min-width: 280px;
+            background-color: #1E2538;
+            color: #FF8E99;
+            text-align: center;
+            border-radius: 8px;
+            border: 1px solid rgba(242, 54, 69, 0.4);
+            padding: 14px 20px;
+            position: fixed;
+            z-index: 2000;
+            bottom: 30px;
+            right: 30px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        #copyToast.show {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(-5px);
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- Header & Nav --- */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 14, 20, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1240px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 24px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #fff;
+        }
+
+        .logo img {
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 1px solid rgba(41, 98, 255, 0.3);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-text .brand {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text .brand span {
+            color: #00E5FF;
+        }
+
+        .logo-text .sub-brand {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            letter-spacing: 1.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+            font-size: 0.92rem;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .nav-links a:hover {
+            color: #00E5FF;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 9px 18px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+        }
+
+        .btn-primary {
+            background: #2962FF;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #1e4bd8;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--text-muted);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 70px 24px 50px;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            border-radius: 30px;
+            background: rgba(41, 98, 255, 0.1);
+            border: 1px solid rgba(41, 98, 255, 0.25);
+            color: #82B1FF;
+            font-size: 0.82rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.25;
+            letter-spacing: -0.8px;
+            margin-bottom: 18px;
+            color: #FFFFFF;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #00E5FF 0%, #2962FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            max-width: 740px;
+            margin: 0 auto 32px;
+            font-size: 1.08rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        /* --- Global Section Settings --- */
+        .section {
+            padding: 60px 24px;
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .section-title {
+            font-size: 1.85rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            margin-top: 6px;
+        }
+
+        /* --- 1. TỦ SÁCH GIAO DỊCH (Books Section) --- */
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 24px;
+        }
+
+        .book-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.25s ease;
+        }
+
+        .book-card:hover {
+            transform: translateY(-4px);
+            border-color: #3b82f6;
+            background: var(--bg-card-hover);
+        }
+
+        .book-cover {
+            height: 160px;
+            background: linear-gradient(135deg, #182236 0%, #0d1422 100%);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,0.06);
+            margin-bottom: 18px;
+            position: relative;
+            text-align: center;
+            padding: 12px;
+        }
+
+        .book-cover i {
+            font-size: 2.8rem;
+            color: var(--accent-gold);
+            margin-bottom: 8px;
+        }
+
+        .book-cover-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #cfd8ea;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .book-author {
+            font-size: 0.78rem;
+            color: #00E5FF;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .book-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .book-summary {
+            font-size: 0.86rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 18px;
+            flex-grow: 1;
+        }
+
+        .book-btn {
+            padding: 8px 14px;
+            background: rgba(41, 98, 255, 0.12);
+            border: 1px solid rgba(41, 98, 255, 0.3);
+            border-radius: 6px;
+            color: #82B1FF;
+            font-size: 0.82rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+
+        .book-btn:hover {
+            background: #2962FF;
+            color: #fff;
+        }
+
+        /* --- 2. HỌC PHẦN KIẾN THỨC (Knowledge Modules) --- */
+        .knowledge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .knowledge-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.2s;
+        }
+
+        .knowledge-card:hover {
+            border-color: #00E5FF;
+        }
+
+        .knowledge-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            background: rgba(41, 98, 255, 0.12);
+            color: #2962FF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-bottom: 16px;
+        }
+
+        .knowledge-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .knowledge-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* --- 3. BÀI VIẾT BLOG --- */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+        }
+
+        .blog-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.2s;
+        }
+
+        .blog-card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-3px);
+        }
+
+        .blog-meta {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .blog-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .blog-title:hover {
+            color: #00E5FF;
+        }
+
+        .blog-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+
+        .blog-link {
+            font-size: 0.84rem;
+            font-weight: 600;
+            color: #00E5FF;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* --- 4. BIỂU ĐỒ LIVE --- */
+        .chart-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 14px;
+            height: 580px;
+        }
+
+        /* --- Disclaimer Box --- */
+        .disclaimer-box {
+            background: rgba(242, 54, 69, 0.04);
+            border: 1px solid rgba(242, 54, 69, 0.2);
+            border-radius: 10px;
+            padding: 18px 22px;
+            margin: 50px 0 20px;
+        }
+
+        .disclaimer-box h4 {
+            color: #FF6B78;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .disclaimer-box p {
+            color: #929db0;
+            font-size: 0.82rem;
+            line-height: 1.6;
+        }
+
+        /* --- Footer --- */
+        footer {
+            border-top: 1px solid var(--border-color);
+            background: #080A0F;
+            padding: 48px 24px 30px;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+
+        .footer-container {
+            max-width: 1240px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 36px;
+            margin-bottom: 36px;
+        }
+
+        @media (max-width: 900px) {
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .footer-brand p {
+            font-size: 0.86rem;
+            color: var(--text-muted);
+            margin-top: 12px;
+            max-width: 320px;
+            line-height: 1.6;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: var(--text-muted);
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: #00E5FF;
+        }
+
+        .footer-bottom {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 0.82rem;
+        }
+
+        @media (max-width: 860px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.jpg" alt="PTvolume Logo">
+                <div class="logo-text">
+                    <span class="brand">PT<span>VOLUME</span></span>
+                    <span class="sub-brand">MARKET ANALYSIS</span>
+                </div>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="gioi-thieu.html"><i class="fa-solid fa-circle-info"></i> Giới Thiệu</a></li>
+                <li><a href="#books-section"><i class="fa-solid fa-book-bookmark"></i> Tủ Sách Hay</a></li>
+                <li><a href="#knowledge-section"><i class="fa-solid fa-graduation-cap"></i> Kiến Thức VSA</a></li>
+                <li><a href="#blog-section"><i class="fa-solid fa-newspaper"></i> Góc Phân Tích</a></li>
+                <li><a href="#chart-section"><i class="fa-solid fa-chart-line"></i> Biểu Đồ Live</a></li>
+                <li><a href="lien-he.html"><i class="fa-solid fa-envelope"></i> Liên Hệ</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="https://t.me/" target="_blank" class="btn btn-outline">
+                    <i class="fa-brands fa-telegram"></i> Telegram
+                </a>
+                <a href="#books-section" class="btn btn-primary">
+                    <i class="fa-solid fa-book-open"></i> Tải Tài Liệu
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-badge">
+            <i class="fa-solid fa-shield-halved"></i> Chia Sẻ Kiến Thức • Tủ Sách • Price Action & VSA
+        </div>
+        <h1>
+            Nền Tảng Kiến Thức & Kinh Nghiệm<br>
+            <span>Giao Dịch Theo Dòng Tiền Lớn (VSA)</span>
+        </h1>
+        <p>
+            Tổng hợp tinh hoa từ các bậc thầy tài chính: Richard Wyckoff, Jesse Livermore, Tom Williams. Loại bỏ chỉ báo trễ, đọc thị trường bằng hành động giá và khối lượng thực chiến.
+        </p>
+        <div class="hero-cta">
+            <a href="#books-section" class="btn btn-primary" style="padding: 11px 24px;">
+                <i class="fa-solid fa-book"></i> Khám Phá Tủ Sách Hay
+            </a>
+            <a href="gioi-thieu.html" class="btn btn-outline" style="padding: 11px 24px;">
+                <i class="fa-solid fa-circle-info"></i> Đọc Về Sứ Mệnh Của Chúng Tôi
+            </a>
+        </div>
+    </section>
+
+    <!-- 1. TỦ SÁCH GIAO DỊCH KINH ĐIỂN (Books Section) -->
+    <section id="books-section" class="section">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title"><i class="fa-solid fa-book-bookmark" style="color: var(--accent-gold);"></i> Tủ Sách Giao Dịch Kinh Điển</h2>
+                <p class="section-desc">Những cuốn sách gối đầu giường giúp bạn xây dựng tư duy đúng đắn về bản chất cung cầu thị trường.</p>
+            </div>
+        </div>
+
+        <div class="books-grid">
+            <!-- Cuốn 1 -->
+            <div class="book-card">
+                <div class="book-cover">
+                    <i class="fa-solid fa-book-open-reader"></i>
+                    <div class="book-cover-title">Phương Pháp Wyckoff - VSA</div>
+                </div>
+                <div class="book-author">Richard D. Wyckoff & David Weis</div>
+                <h3 class="book-title">Phương Pháp Wyckoff Hiện Đại & VPA Chuyên Sâu</h3>
+                <p class="book-summary">
+                    Bộ tài liệu cốt lõi phân tích 4 chu kỳ thị trường: Tích lũy (Accumulation), Đẩy giá (Markup), Phân phối (Distribution) và Đè giá (Markdown).
+                </p>
+                <a href="blog-mau.html" class="book-btn">
+                    <i class="fa-solid fa-file-pdf"></i> Xem Tóm Tắt & Ebook
+                </a>
+            </div>
+
+            <!-- Cuốn 2 -->
+            <div class="book-card">
+                <div class="book-cover">
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+                    <div class="book-cover-title">How To Trade In Stocks</div>
+                </div>
+                <div class="book-author">Jesse Livermore (1940)</div>
+                <h3 class="book-title">Cách Thức Kinh Doanh Cổ Phiếu & Hàng Hóa</h3>
+                <p class="book-summary">
+                    Tác phẩm kinh điển đúc kết bài học quản trị tâm lý, điểm đảo chiều then chốt (Pivot Point) và nguyên tắc quản trị tiền bạc của huyền thoại đầu cơ.
+                </p>
+                <a href="blog-mau.html" class="book-btn">
+                    <i class="fa-solid fa-file-pdf"></i> Xem Tóm Tắt & Ebook
+                </a>
+            </div>
+
+            <!-- Cuốn 3 -->
+            <div class="book-card">
+                <div class="book-cover">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <div class="book-cover-title">Master The Markets</div>
+                </div>
+                <div class="book-author">Tom Williams</div>
+                <h3 class="book-title">Làm Chủ Thị Trường Với Phân Tích VSA</h3>
+                <p class="book-summary">
+                    Giải mã nguyên lý Volume Spread Analysis: Nhận diện thanh Upthrust, No Demand, No Supply, Stopping Volume để đi theo bước chân Big Boys.
+                </p>
+                <a href="blog-mau.html" class="book-btn">
+                    <i class="fa-solid fa-file-pdf"></i> Xem Tóm Tắt & Ebook
+                </a>
+            </div>
+
+            <!-- Cuốn 4 -->
+            <div class="book-card">
+                <div class="book-cover">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <div class="book-cover-title">Naked Chart Trading</div>
+                </div>
+                <div class="book-author">Bob Volman & Al Brooks</div>
+                <h3 class="book-title">Giao Dịch Biểu Đồ Trần & Hành Động Giá</h3>
+                <p class="book-summary">
+                    Phương pháp đọc cấu trúc sóng, vùng Cung - Cầu (Supply/Demand) và điểm vào lệnh tinh gọn không dùng bất kỳ chỉ báo trễ nào.
+                </p>
+                <a href="blog-mau.html" class="book-btn">
+                    <i class="fa-solid fa-file-pdf"></i> Xem Tóm Tắt & Ebook
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. HỌC PHẦN KIẾN THỨC VSA & PRICE ACTION (Knowledge Base) -->
+    <section id="knowledge-section" class="section">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title"><i class="fa-solid fa-graduation-cap" style="color: #2962FF;"></i> Kiến Thức Giao Dịch Thực Chiến</h2>
+                <p class="section-desc">Hệ thống bài học được sắp xếp bài bản từ nền tảng đến nâng cao.</p>
+            </div>
+        </div>
+
+        <div class="knowledge-grid">
+            <div class="knowledge-card">
+                <div class="knowledge-icon"><i class="fa-solid fa-layer-group"></i></div>
+                <h3>1. Cấu Trúc Thị Trường (Market Structure)</h3>
+                <p>Cách xác định Swing High/Low, cấu trúc tiếp diễn xu hướng và nhận biết sớm dấu hiệu gãy cấu trúc (Break of Structure - BOS).</p>
+            </div>
+
+            <div class="knowledge-card">
+                <div class="knowledge-icon"><i class="fa-solid fa-signal"></i></div>
+                <h3>2. Bộ Tín Hiệu Nến VSA Then Chốt</h3>
+                <p>Bóc tách ý nghĩa của thanh nến Upthrust, Shakeout, Stopping Volume, Absorption và các thanh kiểm định No Demand / No Supply Bar.</p>
+            </div>
+
+            <div class="knowledge-card">
+                <div class="knowledge-icon"><i class="fa-solid fa-diagram-project"></i></div>
+                <h3>3. Chu Kỳ Tích Lũy & Phân Phối Wyckoff</h3>
+                <p>Nắm rõ 5 Pha (Phase A - E) trong mô hình Tích lũy, bắt trọn điểm mua an toàn tại Pha C (Spring & Test) với rủi ro thấp nhất.</p>
+            </div>
+
+            <div class="knowledge-card">
+                <div class="knowledge-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>4. Quản Trị Vốn & Kỷ Luật Thép</h3>
+                <p>Công thức tính khối lượng lệnh theo tỷ lệ Risk 1-2%, thiết lập Stop Loss khoa học và kỷ luật gồng lời tối thiểu tỷ lệ R:R 1:2.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. GÓC PHÂN TÍCH & BÀI VIẾT (Blog Section) -->
+    <section id="blog-section" class="section">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title"><i class="fa-solid fa-newspaper" style="color: #00E5FF;"></i> Góc Phân Tích Mới Nhất</h2>
+                <p class="section-desc">Nhận định thị trường hàng ngày và các bài học phân tích nến - khối lượng thực tế.</p>
+            </div>
+            <a href="blog-mau.html" class="btn btn-outline" style="font-size: 0.84rem;">
+                Xem tất cả bài viết <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="blog-grid">
+            <!-- Bài 1 -->
+            <article class="blog-card">
+                <div class="blog-meta">
+                    <span><i class="fa-regular fa-calendar"></i> 19/08/2026</span>
+                    <span style="color: var(--accent-gold);"><i class="fa-solid fa-tag"></i> Nhận định Vàng</span>
+                </div>
+                <a href="blog-mau.html" class="blog-title">
+                    Bóc Tách Kịch Bản XAU/USD: Nhận Diện Bẫy Giá Upthrust Tại Vùng Cung Then Chốt
+                </a>
+                <p class="blog-desc">
+                    Phân tích cấu trúc nến Pinbar khối lượng siêu cao (Ultra High Volume) xác nhận lực bán chủ động của Smart Money. Kế hoạch Sell Limit với R:R 1:3.
+                </p>
+                <a href="blog-mau.html" class="blog-link">
+                    Đọc chi tiết <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </article>
+
+            <!-- Bài 2 -->
+            <article class="blog-card">
+                <div class="blog-meta">
+                    <span><i class="fa-regular fa-calendar"></i> 18/08/2026</span>
+                    <span style="color: #82B1FF;"><i class="fa-solid fa-tag"></i> Wyckoff Method</span>
+                </div>
+                <a href="blog-mau.html" class="blog-title">
+                    Bí Quyết Bắt Đáy An Toàn Tại Pha C (Spring & Test Bar) Với Volume Cạn Kiệt
+                </a>
+                <p class="blog-desc">
+                    Làm thế nào để phân biệt một cú rũ bỏ (Shakeout / Spring) gom hàng thực sự của Big Boys với một cú gãy vỡ xu hướng (Breakdown) nguy hiểm?
+                </p>
+                <a href="blog-mau.html" class="blog-link">
+                    Đọc chi tiết <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </article>
+
+            <!-- Bài 3 -->
+            <article class="blog-card">
+                <div class="blog-meta">
+                    <span><i class="fa-regular fa-calendar"></i> 17/08/2026</span>
+                    <span style="color: var(--bullish);"><i class="fa-solid fa-tag"></i> Quản Trị Vốn</span>
+                </div>
+                <a href="blog-mau.html" class="blog-title">
+                    Toán Học Trong Trading: Vì Sao Tỷ Lệ R:R 1:2 Giúp Bạn Thắng Dù Xác Suất Chỉ 40%?
+                </a>
+                <p class="blog-desc">
+                    Bản chất trò chơi tài chính là bài toán kỳ vọng dương. Cách thiết lập kỷ luật cắt lỗ và gồng lãi theo phương pháp Naked Chart chuẩn mực.
+                </p>
+                <a href="blog-mau.html" class="blog-link">
+                    Đọc chi tiết <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </article>
+        </div>
+    </section>
+
+    <!-- 4. BIỂU ĐỒ TRADINGVIEW LIVE (Chart Section) -->
+    <section id="chart-section" class="section">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title"><i class="fa-solid fa-chart-candlestick" style="color: var(--bullish);"></i> Biểu Đồ Kỹ Thuật Trực Tiếp</h2>
+                <p class="section-desc">Theo dõi biểu đồ nến & khối lượng giao dịch thời gian thực.</p>
+            </div>
+        </div>
+
+        <div class="chart-box">
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container" style="height:100%;width:100%">
+                <div id="tradingview_chart" style="height:calc(100% - 32px);width:100%"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                <script type="text/javascript">
+                new TradingView.widget({
+                    "autosize": true,
+                    "symbol": "OANDA:XAUUSD",
+                    "interval": "60",
+                    "timezone": "Asia/Ho_Chi_Minh",
+                    "theme": "dark",
+                    "style": "1",
+                    "locale": "vi_VN",
+                    "toolbar_bg": "#141822",
+                    "enable_publishing": false,
+                    "withdateranges": true,
+                    "hide_side_toolbar": false,
+                    "allow_symbol_change": true,
+                    "details": false,
+                    "hotlist": false,
+                    "calendar": false,
+                    "studies": [
+                        "Volume@tv-basicstudies"
+                    ],
+                    "container_id": "tradingview_chart"
+                });
+                </script>
+            </div>
+            <!-- TradingView Widget END -->
+        </div>
+
+        <!-- Disclaimer -->
+        <div class="disclaimer-box">
+            <h4><i class="fa-solid fa-triangle-exclamation"></i> MIỄN TRỪ TRÁCH NHIỆM TÀI CHÍNH</h4>
+            <p>
+                Toàn bộ nội dung chia sẻ kiến thức, tài liệu sách và phân tích kỹ thuật trên <strong>PTvolume</strong> chỉ nhằm mục đích tham khảo và học tập, không cấu thành lời khuyên đầu tư tài chính. Bạn hãy luôn chủ động quản trị rủi ro trên tài khoản của mình. <a href="canh-bao-rui-ro.html" style="color: #FF6B78; text-decoration: underline;">Đọc toàn văn cảnh báo rủi ro &raquo;</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo" style="font-size: 1.1rem;">
+                    <img src="logo.jpg" alt="PTvolume Logo" style="width: 34px; height: 34px;">
+                    <div class="logo-text">
+                        <span class="brand">PT<span>VOLUME</span></span>
+                        <span class="sub-brand">MARKET ANALYSIS</span>
+                    </div>
+                </div>
+                <p>Nền tảng chia sẻ kiến thức, kinh nghiệm thực chiến và tủ sách giao dịch theo phương pháp Price Action & VSA Wyckoff.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Khám Phá</h4>
+                <ul>
+                    <li><a href="gioi-thieu.html">Giới thiệu</a></li>
+                    <li><a href="#books-section">Tủ sách kinh điển</a></li>
+                    <li><a href="#knowledge-section">Kiến thức VSA</a></li>
+                    <li><a href="#blog-section">Góc phân tích</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Pháp Lý</h4>
+                <ul>
+                    <li><a href="dieu-khoan.html">Điều khoản sử dụng</a></li>
+                    <li><a href="chinh-sach-bao-mat.html">Chính sách bảo mật</a></li>
+                    <li><a href="canh-bao-rui-ro.html">Cảnh báo rủi ro</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Kết Nối</h4>
+                <ul>
+                    <li><a href="lien-he.html">Liên hệ chúng tôi</a></li>
+                    <li><a href="https://t.me/" target="_blank">Kênh Telegram</a></li>
+                    <li><a href="#chart-section">Biểu đồ trực tiếp</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 PTvolume.com. Tất cả quyền được bảo lưu.</p>
+            <p style="color: #64748B;">Naked Chart • VSA • Wyckoff Method</p>
+        </div>
+    </footer>
+
+    <!-- Toast thông báo bản quyền khi cố copy / click phải -->
+    <div id="copyToast">
+        <i class="fa-solid fa-shield-halved" style="color: #FF6B78; font-size: 1.1rem;"></i>
+        <span>© Bản quyền thuộc về PTvolume.com. Vui lòng không sao chép nội dung.</span>
+    </div>
+
+    <!-- SCRIPT CHỐNG SAO CHÉP -->
+    <script>
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's' || e.key === 'a')) || e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+                    e.preventDefault();
+                    showCopyAlert();
+                    return false;
+                }
+            }
+        });
+
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+                e.preventDefault();
+                showCopyAlert();
+                return false;
+            }
+        });
+
+        function showCopyAlert() {
+            const toast = document.getElementById("copyToast");
+            toast.className = "show";
+            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+        }
+    </script>
+
+</body>
+</html>
