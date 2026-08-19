@@ -1,14 +1,14 @@
-﻿<!DOCTYPE html>
-<html lang="vi">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liên Hệ | PTvolume - Kết Nối & Hỗ Trợ Cộng Đồng</title>
-    <meta name="description" content="Liên hệ với ban quản trị PTvolume - Kết nối, góp ý nội dung hoặc tham gia cộng đồng phân tích giao dịch Price Action & VSA.">
+    <title>Contact Editorial Team | PTvolume</title>
+    <meta name="description" content="Contact the editorial and research team at PTvolume. Inquire about research publications, literature reviews, or join our community.">
     <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
@@ -18,18 +18,22 @@
             --bg-card-hover: #1A2130;
             --border-color: #222938;
             --primary: #2962FF;
-            --primary-glow: rgba(41, 98, 255, 0.2);
-            --bullish: #089981;
             --text-main: #F0F3FA;
             --text-muted: #8E9BAE;
-            --accent-gold: #F0B90B;
+            --text-light: #CAD4E0;
+            --font-editorial: 'Merriweather', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: var(--font-sans);
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         body {
@@ -47,8 +51,8 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(11, 14, 20, 0.92);
-            backdrop-filter: blur(12px);
+            background: rgba(11, 14, 20, 0.95);
+            backdrop-filter: blur(14px);
             border-bottom: 1px solid var(--border-color);
         }
 
@@ -58,7 +62,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 14px 24px;
+            padding: 12px 24px;
         }
 
         .logo {
@@ -73,7 +77,7 @@
             height: 40px;
             border-radius: 8px;
             object-fit: cover;
-            border: 1px solid rgba(41, 98, 255, 0.3);
+            border: 1px solid rgba(41, 98, 255, 0.35);
         }
 
         .logo-text .brand {
@@ -87,16 +91,15 @@
 
         .btn {
             padding: 8px 16px;
-            border-radius: 8px;
+            border-radius: 6px;
             font-weight: 600;
-            font-size: 0.88rem;
-            cursor: pointer;
+            font-size: 0.85rem;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            border: none;
-            background: #2962FF;
+            background: var(--primary);
             color: #fff;
+            border: none;
         }
 
         .page-container {
@@ -119,8 +122,9 @@
         }
 
         h1.page-title {
-            font-size: 2.4rem;
-            font-weight: 800;
+            font-family: var(--font-editorial);
+            font-size: 2.5rem;
+            font-weight: 700;
             line-height: 1.3;
             margin-bottom: 16px;
             color: #fff;
@@ -128,8 +132,8 @@
         }
 
         .page-subtitle {
-            font-size: 1.05rem;
-            color: #A5B4CB;
+            font-size: 1.1rem;
+            color: var(--text-muted);
             margin-bottom: 40px;
             padding-bottom: 24px;
             border-bottom: 1px solid var(--border-color);
@@ -178,11 +182,11 @@
         .contact-card p {
             font-size: 0.88rem;
             color: var(--text-muted);
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
 
         .contact-link {
-            font-size: 0.92rem;
+            font-size: 0.9rem;
             font-weight: 600;
             color: #00E5FF;
             display: inline-flex;
@@ -198,6 +202,7 @@
         }
 
         .info-box h2 {
+            font-family: var(--font-editorial);
             font-size: 1.35rem;
             font-weight: 700;
             color: #fff;
@@ -205,22 +210,56 @@
         }
 
         .info-box p {
-            color: #D1D5DB;
+            color: var(--text-light);
             font-size: 0.95rem;
             margin-bottom: 14px;
         }
 
+        #copyToast {
+            visibility: hidden;
+            min-width: 320px;
+            background-color: #161D2B;
+            color: #FF8E99;
+            text-align: center;
+            border-radius: 8px;
+            border: 1px solid rgba(242, 54, 69, 0.4);
+            padding: 14px 22px;
+            position: fixed;
+            z-index: 9999;
+            bottom: 30px;
+            right: 30px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        #copyToast.show {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(-5px);
+        }
+
         footer {
             border-top: 1px solid var(--border-color);
-            background: #080A0F;
-            padding: 30px 24px;
+            background: #07090E;
+            padding: 36px 24px;
             text-align: center;
             color: var(--text-muted);
             font-size: 0.88rem;
         }
     </style>
 </head>
-<body>
+<body oncontextmenu="showCopyAlert(event); return false;">
+
+    <div id="copyToast">
+        <i class="fa-solid fa-shield-halved" style="color: #FF6B78; font-size: 1.1rem;"></i>
+        <span>© Copyright Protected by PTvolume.com. Unauthorized copying is prohibited.</span>
+    </div>
 
     <header>
         <div class="nav-container">
@@ -231,21 +270,21 @@
                 </div>
             </a>
             <a href="../index.html" class="btn">
-                <i class="fa-solid fa-arrow-left"></i> Về Trang Chủ
+                <i class="fa-solid fa-arrow-left"></i> Return to Homepage
             </a>
         </div>
     </header>
 
     <main class="page-container">
         <div class="breadcrumb">
-            <a href="../index.html">Trang chủ</a>
+            <a href="../index.html">Home</a>
             <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
-            <span>Liên hệ</span>
+            <span>Contact</span>
         </div>
 
-        <h1 class="page-title">Liên Hệ & Kết Nối</h1>
+        <h1 class="page-title">Contact Our Editorial Team</h1>
         <div class="page-subtitle">
-            Nếu bạn có bất kỳ câu hỏi, đóng góp ý kiến về tài liệu sách hoặc muốn thảo luận về phương pháp giao dịch VSA, hãy kết nối với chúng tôi.
+            Connect with our research team, submit literature review requests, or collaborate on Wyckoff & VSA technical studies.
         </div>
 
         <div class="contact-grid">
@@ -253,44 +292,61 @@
                 <div class="contact-icon" style="background: rgba(0, 136, 204, 0.15); color: #0088cc;">
                     <i class="fa-brands fa-telegram"></i>
                 </div>
-                <h3>Kênh Telegram</h3>
-                <p>Nhận cập nhật bài viết mới, thảo luận kịch bản phân tích nến & volume hàng ngày.</p>
-                <a href="https://t.me/" target="_blank" class="contact-link">Tham gia ngay <i class="fa-solid fa-arrow-right"></i></a>
+                <h3>Telegram Intelligence</h3>
+                <p>Receive real-time market briefings, technical chart breakdowns, and educational updates.</p>
+                <a href="https://t.me/" target="_blank" class="contact-link">Join Intelligence Channel <i class="fa-solid fa-arrow-right"></i></a>
             </div>
 
             <div class="contact-card">
                 <div class="contact-icon" style="background: rgba(41, 98, 255, 0.12); color: #2962FF;">
                     <i class="fa-solid fa-envelope"></i>
                 </div>
-                <h3>Email Hỗ Trợ</h3>
-                <p>Gửi thư đóng góp ý kiến, phản hồi về bản quyền tài liệu hoặc yêu cầu hỗ trợ.</p>
-                <span class="contact-link" style="color: #cfd8ea;">contact@ptvolume.com</span>
+                <h3>Editorial Desk</h3>
+                <p>Send research inquiries, academic feedback, or intellectual property questions directly to our desk.</p>
+                <span class="contact-link" style="color: #CAD4E0;">contact@ptvolume.com</span>
             </div>
 
             <div class="contact-card">
-                <div class="contact-icon" style="background: rgba(8, 153, 129, 0.12); color: var(--bullish);">
+                <div class="contact-icon" style="background: rgba(8, 153, 129, 0.12); color: #089981;">
                     <i class="fa-solid fa-users"></i>
                 </div>
-                <h3>Cộng Đồng Trader</h3>
-                <p>Giao lưu, chia sẻ nhật ký giao dịch và cùng nhau rèn luyện kỷ luật thực chiến.</p>
-                <a href="https://t.me/" target="_blank" class="contact-link">Vào nhóm thảo luận <i class="fa-solid fa-arrow-right"></i></a>
+                <h3>Research Community</h3>
+                <p>Engage with serious price action practitioners committed to risk discipline and tape reading.</p>
+                <a href="https://t.me/" target="_blank" class="contact-link">Join Discussion Group <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
 
         <div class="info-box">
-            <h2><i class="fa-regular fa-clock" style="color: var(--accent-gold);"></i> Thời Gian Phản Hồi</h2>
+            <h2>Important Security Notice</h2>
             <p>
-                Chúng tôi sẽ cố gắng phản hồi các tin nhắn và email đóng góp của bạn trong vòng 24 - 48 giờ làm việc.
+                PTvolume does not manage funds, offer managed trading accounts, or solicit capital investments. We will never send unsolicited direct messages asking for payments, account credentials, or seed phrases.
             </p>
             <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 0;">
-                <em>Lưu ý: PTvolume không cung cấp dịch vụ ủy thác đầu tư, huy động vốn hay cam kết bao đậu lợi nhuận dưới bất kỳ hình thức nào. Vui lòng cảnh giác trước mọi đối tượng mạo danh.</em>
+                <em>Our editorial and research team typically responds within 24 to 48 business hours.</em>
             </p>
         </div>
     </main>
 
     <footer>
-        <p>© 2026 PTvolume.com - Hệ thống phân tích kỹ thuật Price Action & VSA Wyckoff.</p>
+        <p>© 2026 PTvolume.com. All rights reserved. Naked Chart • VSA • Wyckoff Methodology.</p>
     </footer>
+
+    <script>
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's' || e.key === 'a')) || e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+                    e.preventDefault();
+                    showCopyAlert();
+                    return false;
+                }
+            }
+        });
+        function showCopyAlert() {
+            const toast = document.getElementById("copyToast");
+            toast.className = "show";
+            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+        }
+    </script>
 
 </body>
 </html>

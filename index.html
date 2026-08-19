@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PTvolume | Nền Tảng Kiến Thức, Tủ Sách & Phân Tích VSA - Price Action</title>
-    <meta name="description" content="PTvolume - Chia sẻ kiến thức trading thực chiến, tủ sách giao dịch kinh điển và phân tích thị trường theo phương pháp Price Action & VSA Wyckoff.">
+    <title>PTvolume | The Premier Authority on Price Action & Volume Spread Analysis (VSA)</title>
+    <meta name="description" content="PTvolume is the premier financial education and technical market intelligence platform dedicated to Naked Chart Price Action, Wyckoff Methodologies, and Volume Spread Analysis (VSA).">
     <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
@@ -16,47 +16,70 @@
             --bg-main: #0B0E14;
             --bg-card: #141822;
             --bg-card-hover: #1A2130;
+            --bg-surface: #0F131C;
             --border-color: #222938;
+            --border-light: rgba(255, 255, 255, 0.08);
             --primary: #2962FF;
+            --primary-hover: #1e4bd8;
             --primary-glow: rgba(41, 98, 255, 0.2);
             --bullish: #089981;
             --bullish-bg: rgba(8, 153, 129, 0.12);
             --bearish: #F23645;
+            --bearish-bg: rgba(242, 54, 69, 0.12);
             --text-main: #F0F3FA;
             --text-muted: #8E9BAE;
+            --text-light: #CAD4E0;
             --accent-gold: #F0B90B;
+            --font-editorial: 'Merriweather', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
         }
 
+        /* --- 1. ANTI-COPY & INTELLECTUAL PROPERTY PROTECTION --- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: var(--font-sans);
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
         }
 
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.65;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Toast notification for anti-copy */
         #copyToast {
             visibility: hidden;
-            min-width: 280px;
-            background-color: #1E2538;
+            min-width: 320px;
+            background-color: #161D2B;
             color: #FF8E99;
             text-align: center;
             border-radius: 8px;
             border: 1px solid rgba(242, 54, 69, 0.4);
-            padding: 14px 20px;
+            padding: 14px 22px;
             position: fixed;
-            z-index: 2000;
+            z-index: 9999;
             bottom: 30px;
             right: 30px;
             font-size: 0.88rem;
             font-weight: 600;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.6);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             transition: all 0.3s ease;
             opacity: 0;
         }
@@ -67,35 +90,47 @@
             transform: translateY(-5px);
         }
 
-        body {
-            background-color: var(--bg-main);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
+        /* --- Top Authority Header & Navigation --- */
+        .top-editorial-bar {
+            background: #080A0F;
+            border-bottom: 1px solid var(--border-color);
+            padding: 6px 24px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
+        .top-bar-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        /* --- Header & Nav --- */
+        .editorial-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #00E5FF;
+            font-weight: 600;
+        }
+
         header {
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(11, 14, 20, 0.92);
-            backdrop-filter: blur(12px);
+            background: rgba(11, 14, 20, 0.95);
+            backdrop-filter: blur(14px);
             border-bottom: 1px solid var(--border-color);
         }
 
         .nav-container {
-            max-width: 1240px;
+            max-width: 1280px;
             margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 14px 24px;
+            padding: 12px 24px;
         }
 
         .logo {
@@ -106,11 +141,11 @@
         }
 
         .logo img {
-            width: 42px;
-            height: 42px;
+            width: 44px;
+            height: 44px;
             border-radius: 8px;
             object-fit: cover;
-            border: 1px solid rgba(41, 98, 255, 0.3);
+            border: 1px solid rgba(41, 98, 255, 0.35);
         }
 
         .logo-text {
@@ -120,7 +155,7 @@
         }
 
         .logo-text .brand {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             font-weight: 800;
             letter-spacing: -0.5px;
         }
@@ -131,17 +166,17 @@
 
         .logo-text .sub-brand {
             font-size: 0.65rem;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--text-muted);
-            letter-spacing: 1.5px;
+            letter-spacing: 1.8px;
         }
 
         .nav-links {
             display: flex;
-            gap: 24px;
+            gap: 26px;
             list-style: none;
-            font-size: 0.92rem;
-            font-weight: 500;
+            font-size: 0.9rem;
+            font-weight: 600;
         }
 
         .nav-links a {
@@ -164,7 +199,7 @@
 
         .btn {
             padding: 9px 18px;
-            border-radius: 8px;
+            border-radius: 6px;
             font-weight: 600;
             font-size: 0.88rem;
             cursor: pointer;
@@ -176,12 +211,12 @@
         }
 
         .btn-primary {
-            background: #2962FF;
+            background: var(--primary);
             color: #fff;
         }
 
         .btn-primary:hover {
-            background: #1e4bd8;
+            background: var(--primary-hover);
         }
 
         .btn-outline {
@@ -195,77 +230,201 @@
             border-color: var(--text-muted);
         }
 
-        /* --- Hero Section --- */
-        .hero {
-            padding: 70px 24px 50px;
-            max-width: 1100px;
-            margin: 0 auto;
-            text-align: center;
+        /* --- Investopedia Editorial Hero Grid --- */
+        .editorial-hero {
+            max-width: 1280px;
+            margin: 40px auto 30px;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 2fr 1.15fr;
+            gap: 32px;
         }
 
-        .hero-badge {
-            display: inline-flex;
+        @media (max-width: 960px) {
+            .editorial-hero {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .lead-story {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: border-color 0.2s;
+        }
+
+        .lead-story:hover {
+            border-color: rgba(41, 98, 255, 0.4);
+        }
+
+        .lead-image-box {
+            height: 320px;
+            background: linear-gradient(135deg, #182236 0%, #0d1422 100%);
+            display: flex;
             align-items: center;
-            gap: 8px;
-            padding: 6px 16px;
-            border-radius: 30px;
-            background: rgba(41, 98, 255, 0.1);
-            border: 1px solid rgba(41, 98, 255, 0.25);
-            color: #82B1FF;
-            font-size: 0.82rem;
-            font-weight: 600;
+            justify-content: center;
+            position: relative;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .lead-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+
+        /* Image Watermark Stamp */
+        .watermark-stamp {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(11, 14, 20, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 5px 12px;
+            border-radius: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .lead-content {
+            padding: 28px 32px;
+        }
+
+        .category-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .lead-title {
+            font-family: var(--font-editorial);
+            font-size: 1.95rem;
+            font-weight: 700;
+            line-height: 1.35;
+            color: #FFFFFF;
+            margin-bottom: 14px;
+            letter-spacing: -0.3px;
+        }
+
+        .lead-title a:hover {
+            color: #00E5FF;
+        }
+
+        .lead-excerpt {
+            color: var(--text-light);
+            font-size: 1rem;
+            line-height: 1.7;
             margin-bottom: 20px;
         }
 
-        .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            line-height: 1.25;
-            letter-spacing: -0.8px;
-            margin-bottom: 18px;
-            color: #FFFFFF;
-        }
-
-        .hero h1 span {
-            background: linear-gradient(135deg, #00E5FF 0%, #2962FF 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            max-width: 740px;
-            margin: 0 auto 32px;
-            font-size: 1.08rem;
-            color: var(--text-muted);
-            line-height: 1.7;
-        }
-
-        .hero-cta {
+        .byline {
             display: flex;
-            justify-content: center;
-            gap: 14px;
-            flex-wrap: wrap;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-light);
+            padding-top: 16px;
         }
 
-        /* --- Global Section Settings --- */
+        .byline-author {
+            color: #00E5FF;
+            font-weight: 600;
+        }
+
+        /* Side Briefings */
+        .side-briefings {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .section-header-compact {
+            font-size: 0.95rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #fff;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .briefing-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 18px 20px;
+            transition: all 0.2s;
+        }
+
+        .briefing-card:hover {
+            background: var(--bg-card-hover);
+            border-color: #3b82f6;
+            transform: translateX(3px);
+        }
+
+        .briefing-category {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 6px;
+        }
+
+        .briefing-title {
+            font-family: var(--font-editorial);
+            font-size: 1.05rem;
+            font-weight: 700;
+            line-height: 1.45;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .briefing-meta {
+            font-size: 0.76rem;
+            color: var(--text-muted);
+        }
+
+        /* --- Sections Layout --- */
         .section {
-            padding: 60px 24px;
-            max-width: 1240px;
+            padding: 50px 24px;
+            max-width: 1280px;
             margin: 0 auto;
         }
 
-        .section-header {
-            margin-bottom: 32px;
+        .section-title-wrap {
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 14px;
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
             flex-wrap: wrap;
-            gap: 16px;
+            gap: 12px;
         }
 
-        .section-title {
-            font-size: 1.85rem;
-            font-weight: 700;
+        .section-main-title {
+            font-size: 1.75rem;
+            font-weight: 800;
             color: #fff;
             letter-spacing: -0.5px;
             display: flex;
@@ -273,80 +432,108 @@
             gap: 10px;
         }
 
-        .section-desc {
+        .section-sub-text {
             color: var(--text-muted);
             font-size: 0.92rem;
-            margin-top: 6px;
+            margin-top: 4px;
         }
 
-        /* --- 1. TỦ SÁCH GIAO DỊCH (Books Section) --- */
-        .books-grid {
+        /* --- 1. Structured Curriculum / Learning Path --- */
+        .curriculum-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
-        .book-card {
+        .curriculum-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 14px;
+            border-radius: 12px;
             padding: 24px;
-            display: flex;
-            flex-direction: column;
+            position: relative;
             transition: all 0.25s ease;
         }
 
-        .book-card:hover {
-            transform: translateY(-4px);
-            border-color: #3b82f6;
-            background: var(--bg-card-hover);
+        .curriculum-card:hover {
+            border-color: #00E5FF;
+            transform: translateY(-3px);
         }
 
-        .book-cover {
-            height: 160px;
-            background: linear-gradient(135deg, #182236 0%, #0d1422 100%);
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(255,255,255,0.06);
-            margin-bottom: 18px;
-            position: relative;
-            text-align: center;
-            padding: 12px;
-        }
-
-        .book-cover i {
-            font-size: 2.8rem;
-            color: var(--accent-gold);
-            margin-bottom: 8px;
-        }
-
-        .book-cover-title {
-            font-size: 0.8rem;
+        .stage-number {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
             font-weight: 700;
-            color: #cfd8ea;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .book-author {
-            font-size: 0.78rem;
             color: #00E5FF;
-            font-weight: 600;
-            margin-bottom: 6px;
+            background: rgba(0, 229, 255, 0.1);
+            padding: 4px 10px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 14px;
         }
 
-        .book-title {
-            font-size: 1.1rem;
+        .curriculum-card h3 {
+            font-size: 1.15rem;
             font-weight: 700;
             color: #fff;
             margin-bottom: 10px;
             line-height: 1.4;
         }
 
-        .book-summary {
+        .curriculum-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        /* --- 2. Classic Trading Library (Books) --- */
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 22px;
+        }
+
+        .book-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.2s;
+        }
+
+        .book-card:hover {
+            background: var(--bg-card-hover);
+            border-color: #3b82f6;
+            transform: translateY(-3px);
+        }
+
+        .book-badge {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 8px;
+        }
+
+        .book-author {
+            font-size: 0.8rem;
+            color: #00E5FF;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .book-card h3 {
+            font-family: var(--font-editorial);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .book-desc {
             font-size: 0.86rem;
             color: var(--text-muted);
             line-height: 1.6;
@@ -354,131 +541,60 @@
             flex-grow: 1;
         }
 
-        .book-btn {
-            padding: 8px 14px;
-            background: rgba(41, 98, 255, 0.12);
-            border: 1px solid rgba(41, 98, 255, 0.3);
-            border-radius: 6px;
-            color: #82B1FF;
+        .book-link {
             font-size: 0.82rem;
             font-weight: 600;
-            display: flex;
+            color: #82B1FF;
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
             gap: 6px;
-            transition: all 0.2s;
         }
 
-        .book-btn:hover {
-            background: #2962FF;
+        .book-link:hover {
             color: #fff;
         }
 
-        /* --- 2. HỌC PHẦN KIẾN THỨC (Knowledge Modules) --- */
-        .knowledge-grid {
+        /* --- 3. VSA Terminology Dictionary Grid --- */
+        .dictionary-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            gap: 16px;
         }
 
-        .knowledge-card {
-            background: var(--bg-card);
+        .dict-item {
+            background: var(--bg-surface);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 24px;
-            transition: all 0.2s;
+            border-radius: 10px;
+            padding: 18px 20px;
+            border-left: 3px solid var(--primary);
         }
 
-        .knowledge-card:hover {
-            border-color: #00E5FF;
-        }
-
-        .knowledge-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 8px;
-            background: rgba(41, 98, 255, 0.12);
-            color: #2962FF;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            margin-bottom: 16px;
-        }
-
-        .knowledge-card h3 {
-            font-size: 1.15rem;
+        .dict-term {
+            font-size: 1rem;
             font-weight: 700;
-            color: #fff;
-            margin-bottom: 10px;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .knowledge-card p {
-            font-size: 0.88rem;
+        .dict-badge {
+            font-size: 0.68rem;
+            font-family: var(--font-mono);
+            color: var(--text-muted);
+            background: #141924;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .dict-definition {
+            font-size: 0.85rem;
             color: var(--text-muted);
             line-height: 1.6;
         }
 
-        /* --- 3. BÀI VIẾT BLOG --- */
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 24px;
-        }
-
-        .blog-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 22px;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.2s;
-        }
-
-        .blog-card:hover {
-            border-color: #3b82f6;
-            transform: translateY(-3px);
-        }
-
-        .blog-meta {
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            margin-bottom: 10px;
-            display: flex;
-            gap: 12px;
-        }
-
-        .blog-title {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 10px;
-            line-height: 1.4;
-        }
-
-        .blog-title:hover {
-            color: #00E5FF;
-        }
-
-        .blog-desc {
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 16px;
-            flex-grow: 1;
-        }
-
-        .blog-link {
-            font-size: 0.84rem;
-            font-weight: 600;
-            color: #00E5FF;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        /* --- 4. BIỂU ĐỒ LIVE --- */
+        /* --- 4. Live Charting Container --- */
         .chart-box {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -487,42 +603,44 @@
             height: 580px;
         }
 
-        /* --- Disclaimer Box --- */
+        /* --- Risk Disclaimer Banner --- */
         .disclaimer-box {
             background: rgba(242, 54, 69, 0.04);
             border: 1px solid rgba(242, 54, 69, 0.2);
             border-radius: 10px;
-            padding: 18px 22px;
-            margin: 50px 0 20px;
+            padding: 20px 24px;
+            margin: 40px 0 20px;
         }
 
         .disclaimer-box h4 {
             color: #FF6B78;
             font-size: 0.9rem;
             font-weight: 700;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
             gap: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .disclaimer-box p {
             color: #929db0;
             font-size: 0.82rem;
-            line-height: 1.6;
+            line-height: 1.65;
         }
 
-        /* --- Footer --- */
+        /* --- Institutional Footer --- */
         footer {
             border-top: 1px solid var(--border-color);
-            background: #080A0F;
-            padding: 48px 24px 30px;
+            background: #07090E;
+            padding: 50px 24px 30px;
             color: var(--text-muted);
             font-size: 0.88rem;
         }
 
         .footer-container {
-            max-width: 1240px;
+            max-width: 1280px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
@@ -534,6 +652,7 @@
             .footer-container {
                 grid-template-columns: 1fr 1fr;
             }
+            .nav-links { display: none; }
         }
 
         @media (max-width: 600px) {
@@ -543,7 +662,7 @@
         }
 
         .footer-brand p {
-            font-size: 0.86rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
             margin-top: 12px;
             max-width: 320px;
@@ -552,9 +671,11 @@
 
         .footer-col h4 {
             color: #fff;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             font-weight: 700;
             margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .footer-col ul {
@@ -575,7 +696,7 @@
         }
 
         .footer-bottom {
-            max-width: 1240px;
+            max-width: 1280px;
             margin: 0 auto;
             padding-top: 24px;
             border-top: 1px solid rgba(255,255,255,0.06);
@@ -584,22 +705,35 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 16px;
-            font-size: 0.82rem;
-        }
-
-        @media (max-width: 860px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 2.1rem; }
+            font-size: 0.8rem;
         }
     </style>
 </head>
-<body>
+<body oncontextmenu="showCopyAlert(event); return false;">
 
-    <!-- Header / Navigation -->
+    <!-- Anti-Copy Protection Notification -->
+    <div id="copyToast">
+        <i class="fa-solid fa-shield-halved" style="color: #FF6B78; font-size: 1.1rem;"></i>
+        <span>© Copyright Protected by PTvolume.com. Unauthorized copying is prohibited.</span>
+    </div>
+
+    <!-- Editorial Top Authority Bar -->
+    <div class="top-editorial-bar">
+        <div class="top-bar-inner">
+            <div class="editorial-badge">
+                <i class="fa-solid fa-shield-check"></i> PT VOLUME EDITORIAL STANDARDS • NAKED CHART & VSA METHODOLOGIES
+            </div>
+            <div>
+                <span>Institutional Knowledge for Independent Traders</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
     <header>
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <img src="assets/images/logo.jpg" alt="PTvolume Logo">
+                <img src="assets/images/logo.jpg" alt="PTvolume Institutional Logo">
                 <div class="logo-text">
                     <span class="brand">PT<span>VOLUME</span></span>
                     <span class="sub-brand">MARKET ANALYSIS</span>
@@ -607,231 +741,239 @@
             </a>
             
             <ul class="nav-links">
-                <li><a href="pages/gioi-thieu.html"><i class="fa-solid fa-circle-info"></i> Giới Thiệu</a></li>
-                <li><a href="#books-section"><i class="fa-solid fa-book-bookmark"></i> Tủ Sách Hay</a></li>
-                <li><a href="#knowledge-section"><i class="fa-solid fa-graduation-cap"></i> Kiến Thức VSA</a></li>
-                <li><a href="#blog-section"><i class="fa-solid fa-newspaper"></i> Góc Phân Tích</a></li>
-                <li><a href="#chart-section"><i class="fa-solid fa-chart-line"></i> Biểu Đồ Live</a></li>
-                <li><a href="pages/lien-he.html"><i class="fa-solid fa-envelope"></i> Liên Hệ</a></li>
+                <li><a href="#education"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
+                <li><a href="#market-analysis"><i class="fa-solid fa-newspaper"></i> Market Analysis</a></li>
+                <li><a href="#library"><i class="fa-solid fa-book-bookmark"></i> Classic Library</a></li>
+                <li><a href="#dictionary"><i class="fa-solid fa-spell-check"></i> VSA Dictionary</a></li>
+                <li><a href="#live-chart"><i class="fa-solid fa-chart-line"></i> Live Chart</a></li>
+                <li><a href="pages/about.html"><i class="fa-solid fa-circle-info"></i> About</a></li>
             </ul>
 
             <div class="nav-actions">
                 <a href="https://t.me/" target="_blank" class="btn btn-outline">
-                    <i class="fa-brands fa-telegram"></i> Telegram
+                    <i class="fa-brands fa-telegram"></i> Telegram Intelligence
                 </a>
-                <a href="#books-section" class="btn btn-primary">
-                    <i class="fa-solid fa-book-open"></i> Tải Tài Liệu
+                <a href="#education" class="btn btn-primary">
+                    <i class="fa-solid fa-book-open"></i> Start Learning
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-badge">
-            <i class="fa-solid fa-shield-halved"></i> Chia Sẻ Kiến Thức • Tủ Sách • Price Action & VSA
+    <!-- Investopedia Editorial Lead Section -->
+    <section class="editorial-hero">
+        <!-- Lead Feature Story -->
+        <article class="lead-story">
+            <div class="lead-image-box">
+                <img src="assets/images/logo.jpg" alt="Institutional Market Analysis">
+                <div class="watermark-stamp">
+                    <i class="fa-solid fa-shield-halved"></i> PTvolume.com
+                </div>
+            </div>
+            <div class="lead-content">
+                <span class="category-tag">Featured Market Strategy</span>
+                <h1 class="lead-title">
+                    <a href="posts/blog-mau.html">Deconstructing Institutional Supply: Identifying the Upthrust Action in Gold (XAU/USD)</a>
+                </h1>
+                <p class="lead-excerpt">
+                    An in-depth breakdown of Effort vs. Result at key distribution barriers. Discover how institutional Smart Money traps retail liquidity and establishes asymmetric short entries with a strict 1:2.5 minimum Risk-to-Reward profile.
+                </p>
+                <div class="byline">
+                    <span>Written by <strong class="byline-author">PTvolume Research Group</strong></span>
+                    <span>•</span>
+                    <span>Fact Checked & Chart Verified</span>
+                    <span>•</span>
+                    <span><i class="fa-regular fa-clock"></i> 6 min read</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- Side Briefings & Core Themes -->
+        <aside class="side-briefings">
+            <div class="section-header-compact">
+                <i class="fa-solid fa-bolt" style="color: var(--accent-gold);"></i> Essential Briefings
+            </div>
+
+            <div class="briefing-card">
+                <div class="briefing-category" style="color: #00E5FF;">Wyckoff Methodology</div>
+                <h3 class="briefing-title">
+                    <a href="posts/blog-mau.html">Mastering Phase C: Identifying Clean Springs & Low-Volume Test Bars</a>
+                </h3>
+                <div class="briefing-meta">Institutional Accumulation • 7 min read</div>
+            </div>
+
+            <div class="briefing-card">
+                <div class="briefing-category" style="color: var(--bullish);">Risk & Expected Value</div>
+                <h3 class="briefing-title">
+                    <a href="posts/blog-mau.html">The Mathematics of Trading: Why a 40% Win Rate Generates Multi-Fold Returns</a>
+                </h3>
+                <div class="briefing-meta">Capital Preservation • 5 min read</div>
+            </div>
+
+            <div class="briefing-card">
+                <div class="briefing-category" style="color: var(--accent-gold);">Naked Chart Principles</div>
+                <h3 class="briefing-title">
+                    <a href="posts/blog-mau.html">Eliminating Lagging Indicators: Reading Pure Market Order Flow</a>
+                </h3>
+                <div class="briefing-meta">Price Action Core • 4 min read</div>
+            </div>
+        </aside>
+    </section>
+
+    <!-- 1. STRUCTURED EDUCATION CURRICULUM -->
+    <section id="education" class="section">
+        <div class="section-title-wrap">
+            <div>
+                <h2 class="section-main-title"><i class="fa-solid fa-graduation-cap" style="color: var(--primary);"></i> The Institutional Trading Curriculum</h2>
+                <p class="section-sub-text">A rigorous step-by-step masterclass from structural foundation to professional execution.</p>
+            </div>
         </div>
-        <h1>
-            Nền Tảng Kiến Thức & Kinh Nghiệm<br>
-            <span>Giao Dịch Theo Dòng Tiền Lớn (VSA)</span>
-        </h1>
-        <p>
-            Tổng hợp tinh hoa từ các bậc thầy tài chính: Richard Wyckoff, Jesse Livermore, Tom Williams. Loại bỏ chỉ báo trễ, đọc thị trường bằng hành động giá và khối lượng thực chiến.
-        </p>
-        <div class="hero-cta">
-            <a href="#books-section" class="btn btn-primary" style="padding: 11px 24px;">
-                <i class="fa-solid fa-book"></i> Khám Phá Tủ Sách Hay
-            </a>
-            <a href="pages/gioi-thieu.html" class="btn btn-outline" style="padding: 11px 24px;">
-                <i class="fa-solid fa-circle-info"></i> Đọc Về Sứ Mệnh Của Chúng Tôi
-            </a>
+
+        <div class="curriculum-grid">
+            <div class="curriculum-card">
+                <span class="stage-number">MODULE 01</span>
+                <h3>Market Structure & Order Flow</h3>
+                <p>Learn to map swing highs and swing lows, identify genuine structural shifts (BOS / CHoCH), and pinpoint institutional Supply & Demand zones without indicator clutter.</p>
+            </div>
+
+            <div class="curriculum-card">
+                <span class="stage-number">MODULE 02</span>
+                <h3>Volume Spread Analysis (VSA)</h3>
+                <p>Deconstruct the 3 core Wyckoff laws: Supply vs. Demand, Cause vs. Effect, and Effort vs. Result. Decipher the definitive footprints of Smart Money on high-spread candles.</p>
+            </div>
+
+            <div class="curriculum-card">
+                <span class="stage-number">MODULE 03</span>
+                <h3>Accumulation & Distribution Cycles</h3>
+                <p>Master the 5 structural phases (A through E). Identify low-risk entry triggers during Phase C Springs and Upthrust After Distribution (UTAD) events.</p>
+            </div>
+
+            <div class="curriculum-card">
+                <span class="stage-number">MODULE 04</span>
+                <h3>Asymmetric Risk & Psychology</h3>
+                <p>Implement fractional position sizing, mathematical Stop Loss placement, and rigorous execution rules to maintain long-term positive expectancy (+EV).</p>
+            </div>
         </div>
     </section>
 
-    <!-- 1. TỦ SÁCH GIAO DỊCH KINH ĐIỂN (Books Section) -->
-    <section id="books-section" class="section">
-        <div class="section-header">
+    <!-- 2. CLASSIC TRADING LIBRARY -->
+    <section id="library" class="section">
+        <div class="section-title-wrap">
             <div>
-                <h2 class="section-title"><i class="fa-solid fa-book-bookmark" style="color: var(--accent-gold);"></i> Tủ Sách Giao Dịch Kinh Điển</h2>
-                <p class="section-desc">Những cuốn sách gối đầu giường giúp bạn xây dựng tư duy đúng đắn về bản chất cung cầu thị trường.</p>
+                <h2 class="section-main-title"><i class="fa-solid fa-book-bookmark" style="color: var(--accent-gold);"></i> Essential Trading Library</h2>
+                <p class="section-sub-text">Foundational literature from legendary market masters that define sound financial speculation.</p>
             </div>
         </div>
 
         <div class="books-grid">
-            <!-- Cuốn 1 -->
             <div class="book-card">
-                <div class="book-cover">
-                    <i class="fa-solid fa-book-open-reader"></i>
-                    <div class="book-cover-title">Phương Pháp Wyckoff - VSA</div>
-                </div>
+                <span class="book-badge">Foundational Masterwork</span>
                 <div class="book-author">Richard D. Wyckoff & David Weis</div>
-                <h3 class="book-title">Phương Pháp Wyckoff Hiện Đại & VPA Chuyên Sâu</h3>
-                <p class="book-summary">
-                    Bộ tài liệu cốt lõi phân tích 4 chu kỳ thị trường: Tích lũy (Accumulation), Đẩy giá (Markup), Phân phối (Distribution) và Đè giá (Markdown).
+                <h3>The Wyckoff Methodology in Depth</h3>
+                <p class="book-desc">
+                    The seminal framework for understanding market phases, composite operator campaigns, and high-probability volume confirmation.
                 </p>
-                <a href="posts/blog-mau.html" class="book-btn">
-                    <i class="fa-solid fa-file-pdf"></i> Xem Tóm Tắt & Ebook
+                <a href="posts/blog-mau.html" class="book-link">
+                    <i class="fa-solid fa-file-lines"></i> Read Key Takeaways & Summary
                 </a>
             </div>
 
-            <!-- Cuốn 2 -->
             <div class="book-card">
-                <div class="book-cover">
-                    <i class="fa-solid fa-arrow-trend-up"></i>
-                    <div class="book-cover-title">How To Trade In Stocks</div>
-                </div>
+                <span class="book-badge">Speculative Classic</span>
                 <div class="book-author">Jesse Livermore (1940)</div>
-                <h3 class="book-title">Cách Thức Kinh Doanh Cổ Phiếu & Hàng Hóa</h3>
-                <p class="book-summary">
-                    Tác phẩm kinh điển đúc kết bài học quản trị tâm lý, điểm đảo chiều then chốt (Pivot Point) và nguyên tắc quản trị tiền bạc của huyền thoại đầu cơ.
+                <h3>How To Trade In Stocks</h3>
+                <p class="book-desc">
+                    Timeless psychological discipline, emotional control, and pivotal point theory from Wall Street's most legendary market operator.
                 </p>
-                <a href="posts/blog-mau.html" class="book-btn">
-                    <i class="fa-solid fa-file-pdf"></i> Xem Tóm Tắt & Ebook
+                <a href="posts/blog-mau.html" class="book-link">
+                    <i class="fa-solid fa-file-lines"></i> Read Key Takeaways & Summary
                 </a>
             </div>
 
-            <!-- Cuốn 3 -->
             <div class="book-card">
-                <div class="book-cover">
-                    <i class="fa-solid fa-chart-simple"></i>
-                    <div class="book-cover-title">Master The Markets</div>
-                </div>
+                <span class="book-badge">VSA Foundation</span>
                 <div class="book-author">Tom Williams</div>
-                <h3 class="book-title">Làm Chủ Thị Trường Với Phân Tích VSA</h3>
-                <p class="book-summary">
-                    Giải mã nguyên lý Volume Spread Analysis: Nhận diện thanh Upthrust, No Demand, No Supply, Stopping Volume để đi theo bước chân Big Boys.
+                <h3>Master the Markets</h3>
+                <p class="book-desc">
+                    The definitive guide to Volume Spread Analysis: Uncovering hidden buying and selling through bar spread and relative volume dynamics.
                 </p>
-                <a href="posts/blog-mau.html" class="book-btn">
-                    <i class="fa-solid fa-file-pdf"></i> Xem Tóm Tắt & Ebook
+                <a href="posts/blog-mau.html" class="book-link">
+                    <i class="fa-solid fa-file-lines"></i> Read Key Takeaways & Summary
                 </a>
             </div>
 
-            <!-- Cuốn 4 -->
             <div class="book-card">
-                <div class="book-cover">
-                    <i class="fa-solid fa-scale-balanced"></i>
-                    <div class="book-cover-title">Naked Chart Trading</div>
-                </div>
+                <span class="book-badge">Price Action Manual</span>
                 <div class="book-author">Bob Volman & Al Brooks</div>
-                <h3 class="book-title">Giao Dịch Biểu Đồ Trần & Hành Động Giá</h3>
-                <p class="book-summary">
-                    Phương pháp đọc cấu trúc sóng, vùng Cung - Cầu (Supply/Demand) và điểm vào lệnh tinh gọn không dùng bất kỳ chỉ báo trễ nào.
+                <h3>Understanding Price Action</h3>
+                <p class="book-desc">
+                    Detailed micro-structure reading, consecutive candle pressure analysis, and pristine trade setups without secondary lagging indicators.
                 </p>
-                <a href="posts/blog-mau.html" class="book-btn">
-                    <i class="fa-solid fa-file-pdf"></i> Xem Tóm Tắt & Ebook
+                <a href="posts/blog-mau.html" class="book-link">
+                    <i class="fa-solid fa-file-lines"></i> Read Key Takeaways & Summary
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- 2. HỌC PHẦN KIẾN THỨC VSA & PRICE ACTION (Knowledge Base) -->
-    <section id="knowledge-section" class="section">
-        <div class="section-header">
+    <!-- 3. VSA TERMINOLOGY GLOSSARY (Investopedia Dictionary Style) -->
+    <section id="dictionary" class="section">
+        <div class="section-title-wrap">
             <div>
-                <h2 class="section-title"><i class="fa-solid fa-graduation-cap" style="color: #2962FF;"></i> Kiến Thức Giao Dịch Thực Chiến</h2>
-                <p class="section-desc">Hệ thống bài học được sắp xếp bài bản từ nền tảng đến nâng cao.</p>
+                <h2 class="section-main-title"><i class="fa-solid fa-spell-check" style="color: #00E5FF;"></i> Key VSA Terminology Dictionary</h2>
+                <p class="section-sub-text">Quick reference guide to critical Volume Spread Analysis and Wyckoff concepts.</p>
             </div>
         </div>
 
-        <div class="knowledge-grid">
-            <div class="knowledge-card">
-                <div class="knowledge-icon"><i class="fa-solid fa-layer-group"></i></div>
-                <h3>1. Cấu Trúc Thị Trường (Market Structure)</h3>
-                <p>Cách xác định Swing High/Low, cấu trúc tiếp diễn xu hướng và nhận biết sớm dấu hiệu gãy cấu trúc (Break of Structure - BOS).</p>
+        <div class="dictionary-grid">
+            <div class="dict-item">
+                <div class="dict-term">
+                    <span>Upthrust (UT / UTAD)</span>
+                    <span class="dict-badge">BEARISH TRAP</span>
+                </div>
+                <div class="dict-definition">
+                    A sharp price push above resistance on high volume that immediately closes back below the barrier, confirming institutional supply dumping.
+                </div>
             </div>
 
-            <div class="knowledge-card">
-                <div class="knowledge-icon"><i class="fa-solid fa-signal"></i></div>
-                <h3>2. Bộ Tín Hiệu Nến VSA Then Chốt</h3>
-                <p>Bóc tách ý nghĩa của thanh nến Upthrust, Shakeout, Stopping Volume, Absorption và các thanh kiểm định No Demand / No Supply Bar.</p>
+            <div class="dict-item">
+                <div class="dict-term">
+                    <span>Spring (Phase C)</span>
+                    <span class="dict-badge">BULLISH TEST</span>
+                </div>
+                <div class="dict-definition">
+                    A temporary breakdown below support designed to trigger stops and capture liquidity before an impulsive markup campaign begins.
+                </div>
             </div>
 
-            <div class="knowledge-card">
-                <div class="knowledge-icon"><i class="fa-solid fa-diagram-project"></i></div>
-                <h3>3. Chu Kỳ Tích Lũy & Phân Phối Wyckoff</h3>
-                <p>Nắm rõ 5 Pha (Phase A - E) trong mô hình Tích lũy, bắt trọn điểm mua an toàn tại Pha C (Spring & Test) với rủi ro thấp nhất.</p>
+            <div class="dict-item">
+                <div class="dict-term">
+                    <span>Stopping Volume</span>
+                    <span class="dict-badge">ACCUMULATION</span>
+                </div>
+                <div class="dict-definition">
+                    Ultra-high volume appearing during a downtrend where the bar fails to produce downside follow-through, indicating Smart Money absorption.
+                </div>
             </div>
 
-            <div class="knowledge-card">
-                <div class="knowledge-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                <h3>4. Quản Trị Vốn & Kỷ Luật Thép</h3>
-                <p>Công thức tính khối lượng lệnh theo tỷ lệ Risk 1-2%, thiết lập Stop Loss khoa học và kỷ luật gồng lời tối thiểu tỷ lệ R:R 1:2.</p>
+            <div class="dict-item">
+                <div class="dict-term">
+                    <span>No Demand / No Supply Bar</span>
+                    <span class="dict-badge">VALIDATION</span>
+                </div>
+                <div class="dict-definition">
+                    Narrow spread candles on noticeably low volume, confirming an absence of counter-trend interest and clearing the path for trend resumption.
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. GÓC PHÂN TÍCH & BÀI VIẾT (Blog Section) -->
-    <section id="blog-section" class="section">
-        <div class="section-header">
+    <!-- 4. LIVE TECHNICAL CHARTING -->
+    <section id="live-chart" class="section">
+        <div class="section-title-wrap">
             <div>
-                <h2 class="section-title"><i class="fa-solid fa-newspaper" style="color: #00E5FF;"></i> Góc Phân Tích Mới Nhất</h2>
-                <p class="section-desc">Nhận định thị trường hàng ngày và các bài học phân tích nến - khối lượng thực tế.</p>
-            </div>
-            <a href="posts/blog-mau.html" class="btn btn-outline" style="font-size: 0.84rem;">
-                Xem tất cả bài viết <i class="fa-solid fa-arrow-right"></i>
-            </a>
-        </div>
-
-        <div class="blog-grid">
-            <!-- Bài 1 -->
-            <article class="blog-card">
-                <div class="blog-meta">
-                    <span><i class="fa-regular fa-calendar"></i> 19/08/2026</span>
-                    <span style="color: var(--accent-gold);"><i class="fa-solid fa-tag"></i> Nhận định Vàng</span>
-                </div>
-                <a href="posts/blog-mau.html" class="blog-title">
-                    Bóc Tách Kịch Bản XAU/USD: Nhận Diện Bẫy Giá Upthrust Tại Vùng Cung Then Chốt
-                </a>
-                <p class="blog-desc">
-                    Phân tích cấu trúc nến Pinbar khối lượng siêu cao (Ultra High Volume) xác nhận lực bán chủ động của Smart Money. Kế hoạch Sell Limit với R:R 1:3.
-                </p>
-                <a href="posts/blog-mau.html" class="blog-link">
-                    Đọc chi tiết <i class="fa-solid fa-arrow-right"></i>
-                </a>
-            </article>
-
-            <!-- Bài 2 -->
-            <article class="blog-card">
-                <div class="blog-meta">
-                    <span><i class="fa-regular fa-calendar"></i> 18/08/2026</span>
-                    <span style="color: #82B1FF;"><i class="fa-solid fa-tag"></i> Wyckoff Method</span>
-                </div>
-                <a href="posts/blog-mau.html" class="blog-title">
-                    Bí Quyết Bắt Đáy An Toàn Tại Pha C (Spring & Test Bar) Với Volume Cạn Kiệt
-                </a>
-                <p class="blog-desc">
-                    Làm thế nào để phân biệt một cú rũ bỏ (Shakeout / Spring) gom hàng thực sự của Big Boys với một cú gãy vỡ xu hướng (Breakdown) nguy hiểm?
-                </p>
-                <a href="posts/blog-mau.html" class="blog-link">
-                    Đọc chi tiết <i class="fa-solid fa-arrow-right"></i>
-                </a>
-            </article>
-
-            <!-- Bài 3 -->
-            <article class="blog-card">
-                <div class="blog-meta">
-                    <span><i class="fa-regular fa-calendar"></i> 17/08/2026</span>
-                    <span style="color: var(--bullish);"><i class="fa-solid fa-tag"></i> Quản Trị Vốn</span>
-                </div>
-                <a href="posts/blog-mau.html" class="blog-title">
-                    Toán Học Trong Trading: Vì Sao Tỷ Lệ R:R 1:2 Giúp Bạn Thắng Dù Xác Suất Chỉ 40%?
-                </a>
-                <p class="blog-desc">
-                    Bản chất trò chơi tài chính là bài toán kỳ vọng dương. Cách thiết lập kỷ luật cắt lỗ và gồng lãi theo phương pháp Naked Chart chuẩn mực.
-                </p>
-                <a href="posts/blog-mau.html" class="blog-link">
-                    Đọc chi tiết <i class="fa-solid fa-arrow-right"></i>
-                </a>
-            </article>
-        </div>
-    </section>
-
-    <!-- 4. BIỂU ĐỒ TRADINGVIEW LIVE (Chart Section) -->
-    <section id="chart-section" class="section">
-        <div class="section-header">
-            <div>
-                <h2 class="section-title"><i class="fa-solid fa-chart-candlestick" style="color: var(--bullish);"></i> Biểu Đồ Kỹ Thuật Trực Tiếp</h2>
-                <p class="section-desc">Theo dõi biểu đồ nến & khối lượng giao dịch thời gian thực.</p>
+                <h2 class="section-main-title"><i class="fa-solid fa-chart-candlestick" style="color: var(--bullish);"></i> Real-Time Technical Charting</h2>
+                <p class="section-sub-text">Multi-timeframe charting environment configured for naked price action and volume analysis.</p>
             </div>
         </div>
 
@@ -845,10 +987,10 @@
                     "autosize": true,
                     "symbol": "OANDA:XAUUSD",
                     "interval": "60",
-                    "timezone": "Asia/Ho_Chi_Minh",
+                    "timezone": "Etc/UTC",
                     "theme": "dark",
                     "style": "1",
-                    "locale": "vi_VN",
+                    "locale": "en",
                     "toolbar_bg": "#141822",
                     "enable_publishing": false,
                     "withdateranges": true,
@@ -867,71 +1009,65 @@
             <!-- TradingView Widget END -->
         </div>
 
-        <!-- Disclaimer -->
+        <!-- Risk Disclaimer -->
         <div class="disclaimer-box">
-            <h4><i class="fa-solid fa-triangle-exclamation"></i> MIỄN TRỪ TRÁCH NHIỆM TÀI CHÍNH</h4>
+            <h4><i class="fa-solid fa-triangle-exclamation"></i> Financial & Risk Disclaimer</h4>
             <p>
-                Toàn bộ nội dung chia sẻ kiến thức, tài liệu sách và phân tích kỹ thuật trên <strong>PTvolume</strong> chỉ nhằm mục đích tham khảo và học tập, không cấu thành lời khuyên đầu tư tài chính. Bạn hãy luôn chủ động quản trị rủi ro trên tài khoản của mình. <a href="pages/canh-bao-rui-ro.html" style="color: #FF6B78; text-decoration: underline;">Đọc toàn văn cảnh báo rủi ro &raquo;</a>
+                All materials, market commentaries, educational tutorials, and classic book reviews provided on <strong>PTvolume.com</strong> are strictly for educational and informational purposes and do not constitute financial, investment, or trading advice. Financial speculation involves substantial risk of capital loss. <a href="pages/disclaimer.html" style="color: #FF6B78; text-decoration: underline;">Read our complete Risk Disclaimer &raquo;</a>
             </p>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Institutional Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-brand">
-                <div class="logo" style="font-size: 1.1rem;">
-                    <img src="assets/images/logo.jpg" alt="PTvolume Logo" style="width: 34px; height: 34px;">
+                <div class="logo" style="font-size: 1.15rem;">
+                    <img src="assets/images/logo.jpg" alt="PTvolume Logo" style="width: 36px; height: 36px;">
                     <div class="logo-text">
                         <span class="brand">PT<span>VOLUME</span></span>
                         <span class="sub-brand">MARKET ANALYSIS</span>
                     </div>
                 </div>
-                <p>Nền tảng chia sẻ kiến thức, kinh nghiệm thực chiến và tủ sách giao dịch theo phương pháp Price Action & VSA Wyckoff.</p>
+                <p>The premier educational authority on Naked Chart Price Action, Wyckoff accumulation/distribution cycles, and Volume Spread Analysis (VSA).</p>
             </div>
 
             <div class="footer-col">
-                <h4>Khám Phá</h4>
+                <h4>Knowledge Hub</h4>
                 <ul>
-                    <li><a href="pages/gioi-thieu.html">Giới thiệu</a></li>
-                    <li><a href="#books-section">Tủ sách kinh điển</a></li>
-                    <li><a href="#knowledge-section">Kiến thức VSA</a></li>
-                    <li><a href="#blog-section">Góc phân tích</a></li>
+                    <li><a href="pages/about.html">About PTvolume</a></li>
+                    <li><a href="#education">Trading Curriculum</a></li>
+                    <li><a href="#library">Classic Library</a></li>
+                    <li><a href="#dictionary">VSA Dictionary</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h4>Pháp Lý</h4>
+                <h4>Governance & Legal</h4>
                 <ul>
-                    <li><a href="pages/dieu-khoan.html">Điều khoản sử dụng</a></li>
-                    <li><a href="pages/chinh-sach-bao-mat.html">Chính sách bảo mật</a></li>
-                    <li><a href="pages/canh-bao-rui-ro.html">Cảnh báo rủi ro</a></li>
+                    <li><a href="pages/terms.html">Terms of Service</a></li>
+                    <li><a href="pages/privacy.html">Privacy Policy</a></li>
+                    <li><a href="pages/disclaimer.html">Risk Disclosure</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h4>Kết Nối</h4>
+                <h4>Connect & Intelligence</h4>
                 <ul>
-                    <li><a href="pages/lien-he.html">Liên hệ chúng tôi</a></li>
-                    <li><a href="https://t.me/" target="_blank">Kênh Telegram</a></li>
-                    <li><a href="#chart-section">Biểu đồ trực tiếp</a></li>
+                    <li><a href="pages/contact.html">Contact Editorial Team</a></li>
+                    <li><a href="https://t.me/" target="_blank">Telegram Intelligence</a></li>
+                    <li><a href="#live-chart">Live Market Chart</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>© 2026 PTvolume.com. Tất cả quyền được bảo lưu.</p>
-            <p style="color: #64748B;">Naked Chart • VSA • Wyckoff Method</p>
+            <p>© 2026 PTvolume.com. All rights reserved.</p>
+            <p style="color: #64748B;">Naked Chart • Volume Spread Analysis • Wyckoff Method</p>
         </div>
     </footer>
 
-    <!-- Toast thông báo bản quyền khi cố copy / click phải -->
-    <div id="copyToast">
-        <i class="fa-solid fa-shield-halved" style="color: #FF6B78; font-size: 1.1rem;"></i>
-        <span>© Bản quyền thuộc về PTvolume.com. Vui lòng không sao chép nội dung.</span>
-    </div>
-
-    <!-- SCRIPT CHỐNG SAO CHÉP -->
+    <!-- Anti-Copy Interceptor Script -->
     <script>
         document.addEventListener('keydown', function(e) {
             if ((e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's' || e.key === 'a')) || e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {

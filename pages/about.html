@@ -1,14 +1,14 @@
-﻿<!DOCTYPE html>
-<html lang="vi">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giới Thiệu | PTvolume - Chia Sẻ Kiến Thức & Kinh Nghiệm Giao Dịch</title>
-    <meta name="description" content="Giới thiệu về PTvolume - Nền tảng phi lợi nhuận chia sẻ kiến thức, kinh nghiệm thực chiến và tủ sách giao dịch theo phương pháp Price Action & VSA Wyckoff.">
+    <title>About Us | PTvolume - Premier Price Action & Volume Spread Analysis Authority</title>
+    <meta name="description" content="Discover the mission, philosophy, and editorial standards of PTvolume - dedicated to educating traders on Naked Charting, VSA, and Wyckoff principles.">
     <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
@@ -17,18 +17,23 @@
             --bg-card: #141822;
             --border-color: #222938;
             --primary: #2962FF;
-            --primary-glow: rgba(41, 98, 255, 0.2);
-            --bullish: #089981;
             --text-main: #F0F3FA;
             --text-muted: #8E9BAE;
+            --text-light: #CAD4E0;
             --accent-gold: #F0B90B;
+            --font-editorial: 'Merriweather', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: var(--font-sans);
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         body {
@@ -42,13 +47,12 @@
             color: inherit;
         }
 
-        /* Header */
         header {
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(11, 14, 20, 0.92);
-            backdrop-filter: blur(12px);
+            background: rgba(11, 14, 20, 0.95);
+            backdrop-filter: blur(14px);
             border-bottom: 1px solid var(--border-color);
         }
 
@@ -58,7 +62,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 14px 24px;
+            padding: 12px 24px;
         }
 
         .logo {
@@ -73,7 +77,7 @@
             height: 40px;
             border-radius: 8px;
             object-fit: cover;
-            border: 1px solid rgba(41, 98, 255, 0.3);
+            border: 1px solid rgba(41, 98, 255, 0.35);
         }
 
         .logo-text .brand {
@@ -87,23 +91,17 @@
 
         .btn {
             padding: 8px 16px;
-            border-radius: 8px;
+            border-radius: 6px;
             font-weight: 600;
-            font-size: 0.88rem;
-            cursor: pointer;
+            font-size: 0.85rem;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            border: none;
-            background: #2962FF;
+            background: var(--primary);
             color: #fff;
+            border: none;
         }
 
-        .btn:hover {
-            background: #1e4bd8;
-        }
-
-        /* Container */
         .page-container {
             max-width: 860px;
             margin: 50px auto 80px;
@@ -124,8 +122,9 @@
         }
 
         h1.page-title {
-            font-size: 2.4rem;
-            font-weight: 800;
+            font-family: var(--font-editorial);
+            font-size: 2.5rem;
+            font-weight: 700;
             line-height: 1.3;
             margin-bottom: 16px;
             color: #fff;
@@ -134,7 +133,7 @@
 
         .page-subtitle {
             font-size: 1.1rem;
-            color: #A5B4CB;
+            color: var(--text-muted);
             margin-bottom: 40px;
             padding-bottom: 24px;
             border-bottom: 1px solid var(--border-color);
@@ -145,6 +144,7 @@
         }
 
         .content-section h2 {
+            font-family: var(--font-editorial);
             font-size: 1.5rem;
             font-weight: 700;
             color: #fff;
@@ -155,7 +155,7 @@
         }
 
         .content-section p {
-            color: #D1D5DB;
+            color: var(--text-light);
             font-size: 1.05rem;
             margin-bottom: 18px;
         }
@@ -198,25 +198,59 @@
             background: rgba(41, 98, 255, 0.08);
             border-left: 4px solid var(--primary);
             border-radius: 0 10px 10px 0;
-            padding: 20px 24px;
-            margin: 30px 0;
+            padding: 22px 26px;
+            margin: 32px 0;
+            font-family: var(--font-editorial);
             font-style: italic;
             color: #E2E8F0;
-            font-size: 1.05rem;
+            font-size: 1.08rem;
         }
 
-        /* Footer */
+        #copyToast {
+            visibility: hidden;
+            min-width: 320px;
+            background-color: #161D2B;
+            color: #FF8E99;
+            text-align: center;
+            border-radius: 8px;
+            border: 1px solid rgba(242, 54, 69, 0.4);
+            padding: 14px 22px;
+            position: fixed;
+            z-index: 9999;
+            bottom: 30px;
+            right: 30px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        #copyToast.show {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(-5px);
+        }
+
         footer {
             border-top: 1px solid var(--border-color);
-            background: #080A0F;
-            padding: 30px 24px;
+            background: #07090E;
+            padding: 36px 24px;
             text-align: center;
             color: var(--text-muted);
             font-size: 0.88rem;
         }
     </style>
 </head>
-<body>
+<body oncontextmenu="showCopyAlert(event); return false;">
+
+    <div id="copyToast">
+        <i class="fa-solid fa-shield-halved" style="color: #FF6B78; font-size: 1.1rem;"></i>
+        <span>© Copyright Protected by PTvolume.com. Unauthorized copying is prohibited.</span>
+    </div>
 
     <header>
         <div class="nav-container">
@@ -227,75 +261,86 @@
                 </div>
             </a>
             <a href="../index.html" class="btn">
-                <i class="fa-solid fa-arrow-left"></i> Về Trang Chủ
+                <i class="fa-solid fa-arrow-left"></i> Return to Homepage
             </a>
         </div>
     </header>
 
     <main class="page-container">
         <div class="breadcrumb">
-            <a href="../index.html">Trang chủ</a>
+            <a href="../index.html">Home</a>
             <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
-            <span>Giới thiệu</span>
+            <span>About Us</span>
         </div>
 
-        <h1 class="page-title">Về Chúng Tôi — PTvolume</h1>
+        <h1 class="page-title">About PTvolume</h1>
         <div class="page-subtitle">
-            Nơi chia sẻ kiến thức, kinh nghiệm thực chiến và tủ sách giao dịch chuẩn mực theo phương pháp Price Action & VSA Wyckoff.
+            Demystifying financial market structure through naked price action, volume spread analysis, and institutional tape reading.
         </div>
 
         <div class="content-section">
-            <h2><i class="fa-solid fa-bullseye" style="color: var(--accent-gold);"></i> Mục Đích & Sứ Mệnh</h2>
+            <h2><i class="fa-solid fa-bullseye" style="color: var(--accent-gold);"></i> Mission & Editorial Philosophy</h2>
             <p>
-                <strong>PTvolume</strong> được thành lập từ chính những trải nghiệm thực tế, những bài học thăng trầm sau nhiều năm lăn lộn trên thị trường tài chính (Forex, Vàng, Tiền mã hóa, Chứng khoán). 
+                <strong>PTvolume.com</strong> was established with a singular objective: to deliver institutional-grade market education and empirical technical research to independent retail traders across the globe.
             </p>
             <p>
-                Chúng tôi nhận thấy rằng phần lớn nhà giao dịch cá nhân (Retail Traders) thường bị dẫn dắt vào các chỉ báo trễ phức tạp, các hội nhóm hô lệnh không có căn cứ hoặc rơi vào bẫy tâm lý cờ bạc, dẫn đến thua lỗ nặng nề. 
-            </p>
-            <p>
-                Sứ mệnh của <strong>PTvolume</strong> là xây dựng một <strong>không gian học tập, chia sẻ kiến thức và kinh nghiệm hoàn toàn minh bạch, chuẩn mực</strong>, giúp trader hiểu rõ bản chất cốt lõi của thị trường: <em>Quy luật Cung - Cầu và Hành vi của Dòng tiền thông minh (Smart Money)</em>.
+                Most modern retail trading education is saturated with derivative lagging indicators, ambiguous chart overlays, and gambling mindsets. At PTvolume, we strip away all market noise to focus exclusively on the two foundational truths of any liquid market: <strong>Price Action</strong> and <strong>Volume</strong>.
             </p>
         </div>
 
         <div class="quote-box">
-            "Thị trường tài chính không vận hành theo cảm xúc hay các chỉ báo toán học phức tạp. Nó vận hành theo sự tương tác thực tế giữa Giá và Khối lượng giao dịch."
+            "Markets do not move on mathematical formulas or emotional sentiment; they move strictly according to the interplay of Supply and Demand orchestrated by institutional composite operators."
         </div>
 
         <div class="content-section">
-            <h2><i class="fa-solid fa-gem" style="color: #00E5FF;"></i> Giá Trị Cốt Lõi Tại PTvolume</h2>
+            <h2><i class="fa-solid fa-gem" style="color: #00E5FF;"></i> Our Core Pillars</h2>
             <div class="values-grid">
                 <div class="value-card">
                     <i class="fa-solid fa-chart-line"></i>
-                    <h3>Naked Chart & VSA</h3>
-                    <p>Nói không với chỉ báo trễ gây nhiễu. Tập trung đọc hành động giá thuần túy kết hợp phân tích khối lượng.</p>
+                    <h3>Naked Charting & VSA</h3>
+                    <p>Rejecting lagging indicators in favor of raw price interaction at key institutional Supply & Demand barriers.</p>
                 </div>
                 <div class="value-card">
                     <i class="fa-solid fa-book-bookmark"></i>
-                    <h3>Tủ Sách Kinh Điển</h3>
-                    <p>Đúc kết tinh hoa từ các bậc thầy huyền thoại: Richard Wyckoff, Jesse Livermore, Tom Williams, David Weis.</p>
+                    <h3>Classic Literature</h3>
+                    <p>Rooted in time-tested principles established by Richard Wyckoff, Jesse Livermore, Tom Williams, and David Weis.</p>
                 </div>
                 <div class="value-card">
                     <i class="fa-solid fa-shield-heart"></i>
-                    <h3>Kỷ Luật & Quản Trị Vốn</h3>
-                    <p>Bảo vệ vốn là điều kiện tiên quyết để sống sót. Luôn tuân thủ tỷ lệ R:R tối thiểu 1:2 và kỷ luật thép.</p>
+                    <h3>Risk Asymmetry</h3>
+                    <p>Capital preservation as the non-negotiable prerequisite, targeting minimum 1:2.0+ Risk-to-Reward profiles.</p>
                 </div>
             </div>
         </div>
 
         <div class="content-section">
-            <h2><i class="fa-solid fa-handshake" style="color: var(--bullish);"></i> Tinh Thần Đồng Hành Cùng Cộng Đồng</h2>
+            <h2><i class="fa-solid fa-scale-balanced" style="color: #089981;"></i> Educational Integrity</h2>
             <p>
-                Mọi bài viết nhận định, tài liệu sách và nội dung chia sẻ trên PTvolume đều hướng đến việc nâng cao tư duy, kỹ năng phân tích và tính độc lập trong giao dịch của mỗi cá nhân. 
-            </p>
-            <p>
-                Chúng tôi khuyến khích các bạn không ngừng học hỏi, rèn luyện tính kiên nhẫn và luôn giữ một cái đầu lạnh trước mọi con sóng thị trường.
+                All research pieces, classical literature breakdowns, and technical articles published on PTvolume are designed to foster independent critical thinking, systematic risk management, and lifelong market mastery.
             </p>
         </div>
     </main>
 
     <footer>
-        <p>© 2026 PTvolume.com - Hệ thống phân tích kỹ thuật Price Action & VSA Wyckoff.</p>
+        <p>© 2026 PTvolume.com. All rights reserved. Naked Chart • VSA • Wyckoff Methodology.</p>
     </footer>
+
+    <script>
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's' || e.key === 'a')) || e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+                    e.preventDefault();
+                    showCopyAlert();
+                    return false;
+                }
+            }
+        });
+        function showCopyAlert() {
+            const toast = document.getElementById("copyToast");
+            toast.className = "show";
+            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+        }
+    </script>
 
 </body>
 </html>
