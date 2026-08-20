@@ -1,10 +1,13 @@
 # Bảo mật thông tin & API Key (Tuyệt đối không đẩy lên GitHub công khai)
 .env
+*/.env
 __pycache__/
+**/__pycache__/
 *.pyc
+**/*.pyc
 
 # Dữ liệu nội bộ và cache index lớn
 .dulieu_index.json
-extracted_1970.txt
+**/.dulieu_index.json
 DuLieu/
 kịch bản video/

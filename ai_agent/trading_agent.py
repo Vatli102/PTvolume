@@ -28,11 +28,18 @@ except ImportError:
     from document_indexer import build_or_load_index, search_relevant_knowledge
 
 # 1. Tải API Key
-load_dotenv()
-api_key = os.environ.get("GEMINI_API_KEY", "").strip()
+ENV_PATHS = [
+    os.path.join(os.path.dirname(__file__), ".env"),
+    os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".env")),
+]
+for ep in ENV_PATHS:
+    if os.path.exists(ep):
+        load_dotenv(ep, override=True)
 
 def get_gemini_client():
-    load_dotenv(override=True)
+    for ep in ENV_PATHS:
+        if os.path.exists(ep):
+            load_dotenv(ep, override=True)
     key = os.environ.get("GEMINI_API_KEY", "").strip()
     if not key or key.startswith("AIzaSy..."):
         return None
@@ -88,11 +95,15 @@ def find_image_path(input_str: str) -> Optional[str]:
     
     # Tìm theo tên file trong thư mục DuLieu
     image_extensions = ('.png', '.jpg', '.jpeg', '.webp')
-    for root, _, files in os.walk("DuLieu"):
-        for f in files:
-            if f.lower().endswith(image_extensions):
-                if f.lower() == cleaned.lower() or f.lower() == os.path.basename(cleaned).lower():
-                    return os.path.join(root, f)
+    dulieu_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "DuLieu"))
+    if not os.path.exists(dulieu_dir):
+        dulieu_dir = "DuLieu"
+    if os.path.exists(dulieu_dir):
+        for root, _, files in os.walk(dulieu_dir):
+            for f in files:
+                if f.lower().endswith(image_extensions):
+                    if f.lower() == cleaned.lower() or f.lower() == os.path.basename(cleaned).lower():
+                        return os.path.join(root, f)
     return None
 
 def print_banner():

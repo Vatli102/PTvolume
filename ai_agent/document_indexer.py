@@ -16,7 +16,10 @@ import pypdf
 import docx
 import pptx
 
-DATA_DIR = os.path.join(os.path.dirname(__file__), "DuLieu")
+# Tìm thư mục DuLieu ở thư mục cha hoặc cùng cấp
+_parent_dulieu = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "DuLieu"))
+_same_dulieu = os.path.abspath(os.path.join(os.path.dirname(__file__), "DuLieu"))
+DATA_DIR = _parent_dulieu if os.path.exists(_parent_dulieu) else _same_dulieu
 INDEX_CACHE_FILE = os.path.join(os.path.dirname(__file__), ".dulieu_index.json")
 
 def clean_text(text: str) -> str:
