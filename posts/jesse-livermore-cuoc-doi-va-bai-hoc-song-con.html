@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuộc Đời, Phương Pháp Giao Dịch & Bài Học Sống Còn Của Jesse Livermore | PTvolume</title>
+    <meta name="description" content="Đúc kết toàn diện cuộc đời thăng trầm, hệ thống giao dịch Tape Reading, Điểm then chốt Pivotal Points và các bài học quản trị tâm lý để đời của huyền thoại Jesse Livermore.">
+    <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-main: #0B0E14;
+            --bg-card: #141822;
+            --bg-card-hover: #1A2130;
+            --border-color: #222938;
+            --primary: #2962FF;
+            --primary-glow: rgba(41, 98, 255, 0.25);
+            --bullish: #089981;
+            --bearish: #F23645;
+            --text-main: #F0F3FA;
+            --text-muted: #8E9BAE;
+            --text-light: #CAD4E0;
+            --accent-gold: #F0B90B;
+            --font-editorial: 'Merriweather', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-sans);
+        }
+
+        input, textarea {
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            user-select: text !important;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.85;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 14, 20, 0.95);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 24px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 1.35rem;
+            color: #fff;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 1px solid rgba(41, 98, 255, 0.4);
+        }
+
+        .logo-text .brand {
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .logo-text .brand span {
+            color: #00E5FF;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lang-switcher {
+            display: inline-flex;
+            align-items: center;
+            background: #080B10;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2px;
+            gap: 2px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 16px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active, .lang-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background: #1e4bd8;
+            transform: translateY(-1px);
+        }
+
+        .article-container {
+            max-width: 900px;
+            margin: 40px auto 80px;
+            padding: 0 24px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb a:hover {
+            color: #00E5FF;
+        }
+
+        .article-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: rgba(240, 185, 11, 0.15);
+            color: var(--accent-gold);
+            border: 1px solid rgba(240, 185, 11, 0.3);
+            margin-bottom: 16px;
+        }
+
+        .article-title {
+            font-family: var(--font-editorial);
+            font-size: 2.2rem;
+            line-height: 1.35;
+            color: #fff;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            padding-bottom: 60px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .article-body {
+            font-family: var(--font-editorial);
+            font-size: 1.08rem;
+            color: var(--text-light);
+            line-height: 1.95;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-body p {
+            margin-bottom: 60px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-body h2 {
+            font-family: var(--font-sans);
+            font-size: 1.5rem;
+            color: #fff;
+            margin: 40px 0 16px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-left: 4px solid var(--primary);
+            padding-left: 12px;
+            text-align: left;
+        }
+
+        .article-body h3 {
+            font-family: var(--font-sans);
+            font-size: 1.2rem;
+            color: #00E5FF;
+            margin: 28px 0 12px;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        .article-body ul, .article-body ol {
+            margin-bottom: 60px;
+            padding-left: 24px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-body li {
+            margin-bottom: 10px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-body strong {
+            color: #fff;
+            font-family: inherit;
+        }
+
+        .article-body blockquote {
+            background: #141822;
+            border-left: 4px solid var(--accent-gold);
+            padding: 16px 20px;
+            margin: 24px 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: #F0F3FA;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .watermark-box {
+            position: relative;
+            margin: 32px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #080B10;
+            text-align: center;
+        }
+
+        .watermark-box img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .watermark-caption {
+            font-family: var(--font-sans);
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            padding: 8px 12px;
+            background: #10141D;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-style: italic;
+        }
+
+        .watermark-stamp {
+            position: absolute;
+            bottom: 60px;
+            right: 18px;
+            background: rgba(11, 14, 20, 0.35);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 3px 9px;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.45);
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        .highlight-box {
+            background: #141822;
+            border: 1px solid rgba(41, 98, 255, 0.3);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .highlight-box h3 {
+            color: var(--accent-gold);
+            margin-top: 0;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .highlight-box ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        .highlight-box li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+        }
+
+        .highlight-box li i {
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: #26E7A6;
+            font-size: 0.85rem;
+        }
+
+        .data-table-wrapper {
+            overflow-x: auto;
+            margin: 28px 0;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        table.data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-sans);
+            font-size: 0.92rem;
+            text-align: left;
+        }
+
+        table.data-table th {
+            background: #141822;
+            color: #00E5FF;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+            font-weight: 700;
+        }
+
+        table.data-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-light);
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        table.data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        table.data-table tr:hover td {
+            background: rgba(41, 98, 255, 0.05);
+        }
+
+        .comment-section {
+            margin-top: 60px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .comment-header {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 60px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .comment-form {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            width: 100%;
+            background: #080B10;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 10px 14px;
+            color: #fff;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px var(--primary-glow);
+        }
+
+        textarea.form-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .comment-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .comment-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px 20px;
+        }
+
+        .comment-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 0.82rem;
+        }
+
+        .comment-author {
+            font-weight: 700;
+            color: #00E5FF;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .comment-date {
+            color: var(--text-muted);
+        }
+
+        .comment-text {
+            font-size: 0.92rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        footer {
+            background: #080B10;
+            border-top: 1px solid var(--border-color);
+            padding: 40px 24px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo.jpg" alt="Logo PT VOLUME">
+                <div class="logo-text">
+                    <span class="brand">PT<span>VOLUME</span></span>
+                </div>
+            </a>
+            
+            <div class="nav-right">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" onclick="setLanguage('vi')" id="btn-lang-vi" title="Tiếng Việt">VI</button>
+                    <button class="lang-btn" onclick="setLanguage('en')" id="btn-lang-en" title="English">EN</button>
+                </div>
+                <a href="../index.html" class="btn">
+                    <i class="fa-solid fa-arrow-left"></i> Về Trang Chủ
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="article-container">
+        <div class="breadcrumb">
+            <a href="../index.html">Trang Chủ</a>
+            <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+            <a href="../index.html#library">Kho Sách Kinh Điển</a>
+            <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+            <span>Jesse Livermore</span>
+        </div>
+
+        <span class="article-badge"><i class="fa-solid fa-crown"></i> Nghiên Cứu Chuyên Sâu</span>
+        
+        <h1 class="article-title">Cuộc Đời Huyền Thoại, Phương Pháp Giao Dịch & Những Bài Học Sống Còn Của Jesse Livermore</h1>
+
+        <div class="article-meta">
+            <span><i class="fa-regular fa-user"></i> Tác giả: <strong>Richard Smitten & Edwin Lefèvre</strong></span>
+            <span>•</span>
+            <span><i class="fa-solid fa-book-bookmark"></i> Chủ đề: <strong>Nghiên Cứu Tâm Lý & Đọc Dòng Tiền</strong></span>
+            <span>•</span>
+            <span><i class="fa-regular fa-clock"></i> 12 phút đọc</span>
+        </div>
+
+        <div class="article-body">
+            <blockquote>
+                "Không có gì mới trên Phố Wall. Mọi điều xảy ra ngày hôm nay đều đã từng xảy ra trong quá khứ và sẽ tiếp tục lặp lại trong tương lai, bởi vì bản chất con người là không bao giờ thay đổi."<br>
+                — <strong>Jesse Lauriston Livermore (1877 – 1940)</strong>
+            </blockquote>
+
+            <p>
+                Trong biên niên sử tài chính thế giới, không một cái tên nào gợi lên sự kinh ngạc, kính phục lẫn niềm tiếc thương sâu sắc như <strong>Jesse Lauriston Livermore</strong>. Được mệnh danh là <em>"Con Gấu Vĩ Đại Của Phố Wall" (The Great Bear of Wall Street)</em>, ông là biểu tượng tối thượng của nghệ thuật đầu cơ: từ một cậu bé làm thuê vô danh trở thành người chi phối cả thị trường tài chính Mỹ, nắm giữ khối tài sản hàng trăm triệu USD, rồi rơi vào những lần phá sản tán gia bại sản và kết thúc bằng một phát súng bi kịch.
+            </p>
+
+            <div class="watermark-box">
+                <img src="../assets/images/livermore_wallstreet_cover.jpg" alt="Không khí giao dịch sôi động tại sàn chứng khoán Phố Wall thời kỳ Jesse Livermore" style="max-height: 460px;">
+                <div class="watermark-caption">Không khí bảng điện tử và sàn giao dịch Phố Wall trong những năm tháng đỉnh cao của Jesse Livermore</div>
+                <div class="watermark-stamp">
+                    <i class="fa-solid fa-shield-halved"></i> PTvolume.com
+                </div>
+            </div>
+
+            <h2><i class="fa-solid fa-hourglass-half"></i> I. CUỘC ĐỜI HUYỀN THOẠI & NHỮNG THĂNG TRẦM LỊCH SỬ</h2>
+
+            <h3>1. Cậu bé nông dân & Biệt danh "Boy Plunger" (1877 – 1899)</h3>
+            <p>
+                Jesse sinh năm 1877 trong một gia đình nông dân nghèo ở Shrewsbury, Massachusetts. Năm 14 tuổi, không chấp nhận cuộc đời làm nông nghèo khó, ông trốn nhà đến Boston với <strong>5 USD</strong> mẹ cho. Ông xin làm chân ghi bảng giá (Board Boy) tại hãng môi giới Paine Webber với đồng lương 5 USD/tuần.
+            </p>
+            <p>
+                Hàng ngày ghi chép hàng ngàn mức giá từ máy điện báo (Ticker Tape) lên bảng đen, Livermore nhận ra quy luật kỳ diệu: <em>Biến động giá không hề ngẫu nhiên, chúng luôn bộc lộ các mô thức hành vi lặp đi lặp lại trước khi bùng nổ thành một con sóng lớn.</em> Ông bắt đầu đặt cược tại các "Bucket Shop" (sòng cược chui) và thắng liên tục. Đến năm 20 tuổi, ông kiếm được hơn 10.000 USD và bị tất cả các sòng cược cấm cửa vì thắng quá nhiều, gắn liền với biệt danh <strong>"The Boy Plunger"</strong>.
+            </p>
+
+            <div class="watermark-box">
+                <img src="../assets/images/livermore_portrait.jpg" alt="Chân dung huyền thoại Jesse Lauriston Livermore tại bàn làm việc với máy đọc băng giá Ticker Tape" style="max-height: 480px;">
+                <div class="watermark-caption">Chân dung nhà đầu cơ huyền thoại Jesse Lauriston Livermore (1877 – 1940) bên bàn làm việc và sổ tay phân tích thị trường</div>
+                <div class="watermark-stamp">
+                    <i class="fa-solid fa-shield-halved"></i> PTvolume.com
+                </div>
+            </div>
+
+            <h3>2. Những trận đánh kinh điển ghi danh vào lịch sử tài chính</h3>
+            <ul>
+                <li><strong>Trận động đất San Francisco (1906):</strong> Nhận thấy cổ phiếu đường sắt Union Pacific có dấu hiệu suy yếu dù truyền thông rất tích cực, Livermore quyết định bán khống quy mô lớn. Trận động đất lịch sử xảy ra làm sụp đổ hệ thống đường sắt, mang về cho ông <strong>250.000 USD</strong>.</li>
+                <li><strong>Đại hoảng loạn năm 1907 (Panic of 1907):</strong> Khi thanh khoản hệ thống ngân hàng cạn kiệt, Livermore mở vị thế bán khống toàn diện. Ngày 24/10/1907, toàn bộ Phố Wall sụp đổ, ông thu về <strong>1 triệu USD chỉ trong một ngày</strong>. Nhà tài phiệt quyền lực nhất nước Mỹ <strong>J.P. Morgan</strong> đã phải đích thân cử người tới cầu xin Livermore ngừng bán khống để cứu thị trường tài chính quốc gia.</li>
+                <li><strong>Cú sập bẫy Bông vải (1908):</strong> Livermore mắc phải sai lầm nghiêm trọng nhất đời mình khi từ bỏ nguyên tắc độc lập để nghe theo lời khuyên của "Vua Bông" Percy Thomas. Ông liên tục mua bình quân giá xuống khi giá bông lao dốc, dẫn đến mất sạch tài sản và gánh khoản nợ gần 1 triệu USD.</li>
+                <li><strong>Tái sinh và trả nợ 100% (1915 – 1928):</strong> Trong Thế chiến I và thập niên 1920, Livermore trở lại kiên nhẫn nắm bắt các siêu chu kỳ và kiếm lại hàng triệu USD. Ông đã chủ động thanh toán 100% nợ gốc lẫn lãi cho toàn bộ chủ nợ cũ, dù tòa án đã tuyên bố ông phá sản và xóa nợ hợp pháp.</li>
+                <li><strong>Đỉnh cao vĩ đại 1929 (Thứ Ba Đen Tối - Black Tuesday):</strong> Nhận thấy thị trường tăng giá phi lý dựa trên đòn bẩy tín dụng, Livermore âm thầm tích lũy vị thế bán khống khổng lồ qua hơn 100 nhà môi giới. Khi Phố Wall sụp đổ ngày 29/10/1929, Livermore bỏ túi hơn <strong>100 triệu USD tiền mặt</strong> (tương đương hơn 3 - 4 tỷ USD ngày nay), trở thành một trong những người giàu nhất hành tinh.</li>
+            </ul>
+
+            <h3>3. Bi kịch hôn nhân, trầm cảm và Phát súng định mệnh (1930 – 1940)</h3>
+            <p>
+                Sau năm 1929, cuộc sống cá nhân của Livermore rơi vào bi kịch: Người vợ Dorothy nghiện rượu, ngoại tình và dùng súng bắn trọng thương con trai của ông. Cùng lúc đó, sự ra đời của Ủy ban Chứng khoán Mỹ (SEC) thắt chặt các quy định bán khống.
+            </p>
+            <p>
+                Căn bệnh trầm cảm lâm sàng khiến ông mất đi sự sắc bén và tính kỷ luật thép. Chiều ngày 27/11/1940, tại phòng thay đồ khách sạn Sherry-Netherland ở New York, Jesse Livermore đã dùng súng lục tự sát ở tuổi 63, để lại bức thư tuyệt mệnh đẫm nước mắt cho người vợ thứ ba Harriet: <em>"Nina thân yêu, anh không thể chịu đựng thêm được nữa... Anh là kẻ thất bại. Đây là lối thoát duy nhất..."</em>
+            </p>
+
+            <h2><i class="fa-solid fa-chart-line"></i> II. HỆ THỐNG PHƯƠNG PHÁP GIAO DỊCH CỦA JESSE LIVERMORE</h2>
+
+            <p>
+                Hệ thống của Jesse Livermore là khởi nguồn của trường phái <strong>Price Action (Hành động giá)</strong> và <strong>Order Flow (Dòng tiền)</strong> hiện đại, bao gồm 5 trụ cột cốt lõi:
+            </p>
+
+            <div class="highlight-box">
+                <h3><i class="fa-solid fa-compass"></i> 5 Trụ Cột Giao Dịch Của Jesse Livermore</h3>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> <strong>1. Đọc Băng Giá & Đường Đi Ít Kháng Cự Nhất (Line of Least Resistance):</strong> Giá luôn vận động theo hướng có ít lực cản nhất giữa Cung và Cầu. Đừng dự đoán; hãy theo dõi phản ứng của giá và khối lượng tại các vùng giá chủ chốt.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>2. Lý Thuyết Điểm Then Chốt (Pivotal Points):</strong> Chỉ vào lệnh tại các điểm bứt phá tiếp diễn xu hướng (Continuation Pivotal Point) hoặc điểm đảo chiều xu hướng lớn (Reversal Pivotal Point). Vào lệnh tại đây giúp trader biết ngay mình đúng hay sai chỉ sau 1-2 phiên.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>3. Thăm Dò & Nhồi Lệnh Kim Tự Tháp (Probing & Pyramiding):</strong> Giải ngân từng phần (20% - 20% - 20% - 40%). <em>CHỈ GIA TĂNG VỊ THẾ KHI LỆNH TRƯỚC ĐANG CÓ LÃI.</em> Tuyệt đối không bao giờ mua thêm khi đang lỗ.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>4. Tập Trung Vào Cổ Phiếu Dẫn Đầu (Market Leaders):</strong> Chỉ giao dịch cổ phiếu mạnh nhất thuộc nhóm ngành dẫn dắt sóng thị trường. Khi cổ phiếu đầu ngành suy yếu, toàn bộ thị trường sẽ sớm tạo đỉnh.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>5. Yếu Tố Thời Điểm & Nghệ Thuật "Ngồi Yên" (Sitting Tight):</strong> "Tiền lớn không được tạo ra từ việc mua bán liên tục, mà được tạo ra từ việc kiên nhẫn ngồi yên nắm giữ khi xu hướng đang chạy."</li>
+                </ul>
+            </div>
+
+            <h2><i class="fa-solid fa-shield-halved"></i> III. HỆ THỐNG QUẢN TRỊ VỐN & QUẢN TRỊ RỦI RO</h2>
+
+            <div class="data-table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Quy Tắc Quản Trị Vốn</th>
+                            <th>Nội Dung Thực Thi Của Livermore</th>
+                            <th>Mục Đích Bảo Toàn Vốn</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1. Cắt Lỗ Tuyệt Đối &le; 10%</strong></td>
+                            <td>Không bao giờ để mức lỗ trên 1 giao dịch vượt quá 10% vốn (thường cắt ở 5-8%).</td>
+                            <td>Bảo toàn vốn; tránh tình trạng mất 50% tài sản khiến trader phải kiếm lại 100% chỉ để hòa vốn.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2. Cấm Bình Quân Giá Xuống</strong></td>
+                            <td>Tuyệt đối không mua thêm khi vị thế đang thua lỗ (Averaging Down).</td>
+                            <td>Tránh ném thêm tiền tốt vào một thương vụ xấu; không cố chứng minh mình đúng khi thị trường bảo sai.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3. Rút 50% Lợi Nhuận</strong></td>
+                            <td>Sau mỗi chiến dịch thắng lớn, rút ngay 50% tiền lãi gửi ngân hàng hoặc cất két sắt.</td>
+                            <td>Hiện thực hóa tiền thật (Real Money), không để lợi nhuận bốc hơi trên bảng điện tử.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4. Tiền Mặt Là Vũ Khí</strong></td>
+                            <td>Luôn duy trì tỷ lệ tiền mặt dự trữ, kiên nhẫn đứng ngoài khi thị trường không rõ sóng.</td>
+                            <td>Bảo vệ tâm lý ổn định và luôn có sẵn hỏa lực để thâu tóm tài sản giá rẻ khi thị trường hoảng loạn.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5. Từ Chối Margin Call</strong></td>
+                            <td>Đóng toàn bộ vị thế ngay khi nhận thông báo yêu cầu nộp thêm tiền ký quỹ.</td>
+                            <td>Loại bỏ tâm lý gồng lỗ, bảo vệ tài khoản khỏi nguy cơ bị xóa sổ hoàn toàn.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2><i class="fa-solid fa-brain"></i> IV. CÁC BÀI HỌC TÂM LÝ ĐỂ ĐỜI CHO MỌI THẾ HỆ TRADER</h2>
+
+            <h3>1. Bốn Cạm Bẫy Tâm Lý Lớn Nhất</h3>
+            <ul>
+                <li><strong>Tham lam (Greed):</strong> Dùng đòn bẩy quá đà, không chịu chốt lời và muốn làm giàu sau một đêm.</li>
+                <li><strong>Sợ hãi (Fear):</strong> Cắt non các lệnh đang sinh lời lớn nhưng lại chần chừ, sợ hãi không dám cắt lỗ dứt khoát.</li>
+                <li><strong>Hy vọng (Hope):</strong> Căn bệnh nguy hiểm nhất — khi cổ phiếu lao dốc, trader "hy vọng" nó sẽ hồi phục để hòa vốn, biến một lệnh lướt sóng ngắn hạn thành một "khoản đầu tư dài hạn bất đắc dĩ".</li>
+                <li><strong>Cái tôi / Sĩ diện (Ego):</strong> Cố chấp bảo vệ quan điểm cá nhân. Cần nhớ: <em>Thị trường luôn luôn đúng, chỉ có nhà đầu tư là sai lầm.</em></li>
+            </ul>
+
+            <div class="watermark-box">
+                <img src="../assets/images/psychology_diagram.jpg" alt="Sơ đồ 4 kẻ thù tâm lý lớn nhất của Trader: Tham Lam, Sợ Hãi, Hy Vọng và Cái Tôi" style="max-height: 480px;">
+                <div class="watermark-caption">Sơ đồ tổng quan 4 cạm bẫy tâm lý kinh điển chi phối mọi chu kỳ thị trường tài chính</div>
+                <div class="watermark-stamp">
+                    <i class="fa-solid fa-shield-halved"></i> PTvolume.com
+                </div>
+            </div>
+
+            <h3>2. Đừng Bao Giờ Tranh Luận Với Bảng Điện</h3>
+            <p>
+                Bảng điện tử chỉ phản ánh sự thật khách quan của quy luật cung cầu. Nó không có cảm xúc, không nghe lời giải thích và không quan tâm bạn nghĩ gì. Khi giá đi ngược nhận định, hãy nhận sai và thoát ra ngay lập tức.
+            </p>
+
+            <div class="watermark-box">
+                <img src="../assets/images/ticker_tape_board.jpg" alt="Máy đọc băng giá Edison Ticker Tape và bảng yết giá chứng khoán cổ điển" style="max-height: 460px;">
+                <div class="watermark-caption">Máy đọc băng giá Ticker Tape cổ điển — công cụ giúp Jesse Livermore cảm nhận nhịp đập dòng tiền thực tế</div>
+                <div class="watermark-stamp">
+                    <i class="fa-solid fa-shield-halved"></i> PTvolume.com
+                </div>
+            </div>
+
+            <h3>3. Cảnh Giác Tuyệt Đối Với Tin Đồn & Lời Khuyên Nội Bộ (Tips & Rumors)</h3>
+            <p>
+                Mọi lời khuyên từ bạn bè, người thân, chuyên gia hay tin tức mật đều là cạm bẫy phá hủy tài khoản. Bài học đắt giá nhất của Livermore từ vụ sập bẫy thị trường bông năm 1908: Khi ông từ bỏ nhận định độc lập để tin lời "chuyên gia" Percy Thomas, ông đã mất toàn bộ cơ nghiệp.
+            </p>
+
+            <h3>4. Bài Học Cuối Cùng: Sự Cô Độc Của Nghề Giao Dịch & Cân Bằng Cuộc Sống</h3>
+            <p>
+                Jesse Livermore là thiên tài tối thượng về phân tích kỹ thuật và đọc dòng tiền, nhưng ông đã thất bại trong việc tìm kiếm sự bình yên nội tâm. Thành công tài chính chỉ thực sự trọn vẹn khi đi kèm với sức khỏe tinh thần, kỷ luật tự giác và sự cân bằng trong cuộc sống.
+            </p>
+        </div>
+
+        <section class="comment-section">
+            <h3 class="comment-header">
+                <i class="fa-regular fa-comments" style="color: #00E5FF;"></i> Thảo Luận Triết Lý Jesse Livermore (<span id="commentCount">2</span>)
+            </h3>
+
+            <form class="comment-form" id="commentForm" onsubmit="addComment(event)">
+                <div class="form-group">
+                    <label class="form-label">Tên Trader / Nickname:</label>
+                    <input type="text" id="commentName" class="form-control" placeholder="VD: Quốc Huy - Naked Chart Trader" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Cảm nhận của bạn về cuộc đời & phương pháp của Livermore:</label>
+                    <textarea id="commentContent" class="form-control" placeholder="Chia sẻ góc nhìn hoặc bài học bạn tâm đắc nhất từ Jesse Livermore..." required></textarea>
+                </div>
+                <button type="submit" class="btn">
+                    <i class="fa-regular fa-paper-plane"></i> Gửi Bình Luận
+                </button>
+            </form>
+
+            <div class="comment-list" id="commentList">
+                <div class="comment-item">
+                    <div class="comment-top">
+                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Minh Khang (Price Action Trader)</span>
+                        <span class="comment-date">20 Tháng 8, 2026 21:30 UTC</span>
+                    </div>
+                    <div class="comment-text">
+                        Đọc lại cuộc đời Livermore lần nào cũng thấy rợn người và thấm thía. Nguyên tắc 'Chỉ nhồi lệnh khi đang có lãi' và 'Rút 50% tiền lãi cất két sắt' thực sự là kim chỉ nam cứu mạng mọi trader.
+                    </div>
+                </div>
+
+                <div class="comment-item">
+                    <div class="comment-top">
+                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Thanh Tùng (VSA Trader)</span>
+                        <span class="comment-date">20 Tháng 8, 2026 21:35 UTC</span>
+                    </div>
+                    <div class="comment-text">
+                        Bài viết tổng hợp cực kỳ xuất sắc từ cả 2 cuốn 'Chết vì chứng khoán' và 'Hồi ức'. Khái niệm Pivotal Point kết hợp với xác nhận Volume chính là cốt lõi của phương pháp đọc dòng tiền thực chiến.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="../pages/about.html">Về PTvolume</a>
+            <a href="../pages/contact.html">Liên Hệ</a>
+            <a href="../pages/terms.html">Điều Khoản</a>
+            <a href="../pages/privacy.html">Bảo Mật</a>
+            <a href="../pages/disclaimer.html">Cảnh Báo Rủi Ro</a>
+        </div>
+        <p>© 2026 PTvolume.com. Toàn bộ bản quyền được bảo lưu. Naked Chart • VSA • Phương Pháp Wyckoff.</p>
+    </footer>
+
+    <!-- Hidden Google Translate Element -->
+    <div id="google_translate_element" style="display:none;"></div>
+
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'vi',
+                includedLanguages: 'en,vi',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function setLanguage(lang) {
+            if (lang === 'vi') {
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + location.hostname;
+                document.cookie = "googtrans=/vi/vi; path=/;";
+                document.cookie = "googtrans=/vi/vi; path=/; domain=" + location.hostname;
+                localStorage.setItem('ptvolume_lang', 'vi');
+                location.reload();
+            } else if (lang === 'en') {
+                document.cookie = "googtrans=/vi/en; path=/;";
+                document.cookie = "googtrans=/vi/en; path=/; domain=" + location.hostname;
+                localStorage.setItem('ptvolume_lang', 'en');
+                location.reload();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentLang = localStorage.getItem('ptvolume_lang') || 'vi';
+            const btnVi = document.getElementById('btn-lang-vi');
+            const btnEn = document.getElementById('btn-lang-en');
+            if (btnVi && btnEn) {
+                if (currentLang === 'en') {
+                    btnEn.classList.add('active');
+                    btnVi.classList.remove('active');
+                } else {
+                    btnVi.classList.add('active');
+                    btnEn.classList.remove('active');
+                }
+            }
+            loadSavedComments();
+        });
+
+        const POST_SLUG = "jesse-livermore-cuoc-doi-va-bai-hoc-song-con";
+
+        function loadSavedComments() {
+            const saved = JSON.parse(localStorage.getItem('ptvolume_comments_' + POST_SLUG) || '[]');
+            const commentList = document.getElementById("commentList");
+            if (commentList && saved.length > 0) {
+                saved.forEach(item => {
+                    const newComment = document.createElement("div");
+                    newComment.className = "comment-item";
+                    newComment.innerHTML = `
+                        <div class="comment-top">
+                            <span class="comment-author"><i class="fa-solid fa-circle-user"></i> ${escapeHtml(item.name)}</span>
+                            <span class="comment-date">${escapeHtml(item.date)}</span>
+                        </div>
+                        <div class="comment-text">${escapeHtml(item.content)}</div>
+                    `;
+                    commentList.prepend(newComment);
+                });
+                const countElem = document.getElementById("commentCount");
+                if (countElem) {
+                    countElem.innerText = parseInt(countElem.innerText || 0) + saved.length;
+                }
+            }
+        }
+
+        function addComment(e) {
+            e.preventDefault();
+            const nameInput = document.getElementById("commentName");
+            const contentInput = document.getElementById("commentContent");
+            if (!nameInput || !contentInput) return;
+            const name = nameInput.value.trim();
+            const content = contentInput.value.trim();
+            if (!name || !content) return;
+
+            const now = new Date();
+            const timeString = now.toLocaleDateString('vi-VN') + ' ' + now.toLocaleTimeString('vi-VN');
+
+            const commentList = document.getElementById("commentList");
+            const newComment = document.createElement("div");
+            newComment.className = "comment-item";
+            newComment.innerHTML = `
+                <div class="comment-top">
+                    <span class="comment-author"><i class="fa-solid fa-circle-user"></i> ${escapeHtml(name)}</span>
+                    <span class="comment-date">${timeString}</span>
+                </div>
+                <div class="comment-text">${escapeHtml(content)}</div>
+            `;
+            commentList.prepend(newComment);
+
+            const countElem = document.getElementById("commentCount");
+            if (countElem) countElem.innerText = parseInt(countElem.innerText || 0) + 1;
+
+            // Save to localStorage
+            const saved = JSON.parse(localStorage.getItem('ptvolume_comments_' + POST_SLUG) || '[]');
+            saved.push({ name, content, date: timeString });
+            localStorage.setItem('ptvolume_comments_' + POST_SLUG, JSON.stringify(saved));
+
+            nameInput.value = "";
+            contentInput.value = "";
+            alert("Bình luận của bạn đã được đăng thành công!");
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
