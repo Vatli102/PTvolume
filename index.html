@@ -390,7 +390,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(11, 14, 20, 0.92);
+            background: rgba(11, 14, 20, 0.94);
             backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border-color);
             height: var(--header-height);
@@ -473,7 +473,7 @@
         .header-right {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 12px;
             flex-shrink: 0;
         }
 
@@ -541,26 +541,26 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 8px 18px;
+            padding: 8px 16px;
             border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: 0.84rem;
             font-weight: 700;
             cursor: pointer;
             transition: var(--transition-smooth);
             text-decoration: none;
             white-space: nowrap;
-        }
-
-        .btn-forum-ask {
-            background: linear-gradient(135deg, #F0B90B, #E09E00);
-            color: #0B0E14;
-            box-shadow: 0 4px 14px rgba(240, 185, 11, 0.3);
             border: none;
         }
 
-        .btn-forum-ask:hover {
+        .btn-header-register {
+            background: linear-gradient(135deg, #00E5FF, #2962FF);
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(0, 229, 255, 0.3);
+        }
+
+        .btn-header-register:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(240, 185, 11, 0.45);
+            box-shadow: 0 6px 18px rgba(0, 229, 255, 0.45);
         }
 
         .btn-header-login {
@@ -574,23 +574,178 @@
             box-shadow: 0 4px 14px var(--primary-glow);
         }
 
-        /* --- TICKER BAR TRÀN TRANG (MARKET TICKER) --- */
-        .ticker-bar {
-            background: #080A0F;
-            border-bottom: 1px solid var(--border-color);
-            padding: 8px 28px;
+        /* --- USER LOGGED IN PROFILE DROPDOWN --- */
+        .user-profile-wrap {
+            position: relative;
+        }
+
+        .user-profile-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 12px 5px 6px;
+            border-radius: 50px;
+            background: #141824;
+            border: 1px solid var(--border-color);
+            color: #fff;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .user-profile-btn:hover {
+            border-color: var(--cyan);
+        }
+
+        .user-avatar-circle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2962FF, #00E5FF);
+            color: #fff;
             display: flex;
             align-items: center;
-            overflow-x: auto;
-            gap: 24px;
+            justify-content: center;
             font-size: 0.82rem;
+            font-weight: 800;
+        }
+
+        .user-name-text {
+            font-size: 0.84rem;
+            font-weight: 700;
+            max-width: 110px;
+            overflow: hidden;
+            text-overflow: ellipsis;
             white-space: nowrap;
+        }
+
+        .user-vip-badge {
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 2px 6px;
+            border-radius: 20px;
+            background: rgba(240, 185, 11, 0.2);
+            color: var(--accent-gold);
+            border: 1px solid rgba(240, 185, 11, 0.35);
+        }
+
+        .user-dropdown-card {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            width: 240px;
+            background: #141824;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 12px;
+            box-shadow: var(--shadow-md);
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            z-index: 1200;
+        }
+
+        .user-dropdown-card.active {
+            display: flex;
+        }
+
+        .user-dropdown-header {
+            padding: 8px 10px 10px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .user-dropdown-header strong {
+            font-size: 0.88rem;
+            color: #fff;
+        }
+
+        .user-dropdown-header span {
+            font-size: 0.74rem;
+            color: var(--text-muted);
+            word-break: break-all;
+        }
+
+        .user-dropdown-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 10px;
+            border-radius: var(--radius-sm);
+            font-size: 0.82rem;
+            color: var(--text-light);
+            transition: var(--transition-smooth);
+        }
+
+        .user-dropdown-link:hover {
+            background: rgba(41, 98, 255, 0.15);
+            color: var(--cyan);
+        }
+
+        .btn-logout {
+            width: 100%;
+            background: rgba(242, 54, 69, 0.12);
+            border: 1px solid rgba(242, 54, 69, 0.3);
+            color: #FF707E;
+            padding: 8px 10px;
+            border-radius: var(--radius-sm);
+            font-size: 0.82rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 4px;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-logout:hover {
+            background: #F23645;
+            color: #fff;
+        }
+
+        /* ══════════════════════════════════════════════════════════
+           BÁO GIÁ CHẠY LIÊN TỤC (CONTINUOUS INFINITE MARQUEE TICKER)
+           ══════════════════════════════════════════════════════════ */
+        .ticker-wrapper {
+            background: #080A0F;
+            border-bottom: 1px solid var(--border-color);
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            padding: 9px 0;
+            display: flex;
+            user-select: none;
+        }
+
+        .ticker-track {
+            display: inline-flex;
+            gap: 40px;
+            animation: tickerScroll 42s linear infinite;
+            flex-shrink: 0;
+            will-change: transform;
+        }
+
+        .ticker-wrapper:hover .ticker-track {
+            animation-play-state: paused;
+        }
+
+        @keyframes tickerScroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
         }
 
         .ticker-item {
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            font-size: 0.82rem;
             font-weight: 600;
         }
 
@@ -607,11 +762,17 @@
         .ticker-change.up {
             color: #26E7A6;
             font-family: var(--font-mono);
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
         }
 
         .ticker-change.down {
             color: #FF5263;
             font-family: var(--font-mono);
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
         }
 
         /* --- TRÀN TRANG MAIN CONTENT AREA --- */
@@ -1826,6 +1987,205 @@
             gap: 12px;
         }
 
+        /* --- AUTH MODAL (ĐĂNG NHẬP / ĐĂNG KÝ) --- */
+        .auth-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(8, 10, 15, 0.88);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .auth-modal-overlay.active {
+            display: flex;
+        }
+
+        .auth-modal-card {
+            width: 100%;
+            max-width: 440px;
+            background: #141824;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            box-shadow: 0 24px 50px rgba(0, 0, 0, 0.7);
+            position: relative;
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(20px) scale(0.96); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .auth-close-btn {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .auth-close-btn:hover {
+            color: #fff;
+        }
+
+        .auth-tabs-nav {
+            display: flex;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 24px;
+            gap: 16px;
+        }
+
+        .auth-tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            font-weight: 700;
+            padding: 8px 4px 14px;
+            cursor: pointer;
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        .auth-tab-btn.active {
+            color: var(--cyan);
+        }
+
+        .auth-tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--cyan);
+            border-radius: 3px 3px 0 0;
+            box-shadow: 0 0 10px var(--cyan);
+        }
+
+        .auth-form-body {
+            display: none;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .auth-form-body.active {
+            display: flex;
+        }
+
+        .auth-field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .auth-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .auth-input-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .auth-input-icon {
+            position: absolute;
+            left: 14px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .auth-input {
+            width: 100%;
+            background: #0B0E14;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 11px 14px 11px 40px;
+            color: #fff;
+            font-size: 0.9rem;
+            outline: none;
+            transition: var(--transition-smooth);
+        }
+
+        .auth-input:focus {
+            border-color: var(--cyan);
+            box-shadow: 0 0 12px rgba(0, 229, 255, 0.2);
+        }
+
+        .auth-btn-submit {
+            background: linear-gradient(135deg, #2962FF, #00E5FF);
+            color: #fff;
+            padding: 13px;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-weight: 800;
+            font-size: 0.95rem;
+            cursor: pointer;
+            margin-top: 6px;
+            box-shadow: 0 4px 16px rgba(41, 98, 255, 0.35);
+            transition: var(--transition-smooth);
+        }
+
+        .auth-btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(41, 98, 255, 0.5);
+        }
+
+        .auth-divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-muted);
+            font-size: 0.74rem;
+            margin: 4px 0;
+        }
+
+        .auth-divider::before, .auth-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+
+        .auth-social-row {
+            display: flex;
+            gap: 12px;
+        }
+
+        .auth-social-btn {
+            flex: 1;
+            background: #0B0E14;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 9px;
+            color: var(--text-light);
+            font-size: 0.82rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .auth-social-btn:hover {
+            border-color: var(--cyan);
+            color: #fff;
+        }
+
         /* --- MOBILE RESPONSIVE OPTIMIZATION --- */
         .mobile-overlay {
             display: none;
@@ -1873,16 +2233,16 @@
 
         @media (max-width: 640px) {
             .app-header {
-                padding: 0 16px;
+                padding: 0 14px;
             }
 
             .content-container {
-                padding: 20px 16px 40px;
+                padding: 20px 14px 40px;
                 gap: 36px;
             }
 
             .hero-banner {
-                padding: 24px 20px;
+                padding: 24px 18px;
             }
 
             .hero-title {
@@ -2050,24 +2410,55 @@
                         <button class="lang-btn" id="btn-lang-en" onclick="setLanguage('en')">🇬🇧 EN</button>
                     </div>
 
-                    <a href="#dien-dan" class="header-action-btn btn-forum-ask">
-                        <i class="fa-solid fa-circle-question"></i> Đặt câu hỏi
-                    </a>
-
-                    <a href="#hoc-tap" class="header-action-btn btn-header-login">
-                        <i class="fa-solid fa-user"></i> Tham gia Academy
-                    </a>
+                    <!-- DYNAMIC USER AUTH CONTAINER -->
+                    <div id="headerAuthContainer">
+                        <button class="header-action-btn btn-header-register" onclick="openAuthModal('register')">
+                            <i class="fa-solid fa-user-plus"></i> Đăng Ký
+                        </button>
+                        <button class="header-action-btn btn-header-login" onclick="openAuthModal('login')">
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i> Đăng Nhập
+                        </button>
+                    </div>
                 </div>
             </header>
 
-            <!-- LIVE MARKET TICKER -->
-            <div class="ticker-bar">
-                <div class="ticker-item"><span class="ticker-symbol">🥇 XAU/USD (Vàng):</span> <span class="ticker-price">$2,738.50</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +1.15%</span></div>
-                <div class="ticker-item"><span class="ticker-symbol">🛢️ WTI CRUDE (Dầu thô):</span> <span class="ticker-price">$74.45</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +1.82%</span></div>
-                <div class="ticker-item"><span class="ticker-symbol">🌽 ZC (Ngô Phái Sinh):</span> <span class="ticker-price">432.25¢</span> <span class="ticker-change down"><i class="fa-solid fa-arrow-trend-down"></i> -0.45%</span></div>
-                <div class="ticker-item"><span class="ticker-symbol">🌱 ZS (Đậu Tương):</span> <span class="ticker-price">1,028.50¢</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +0.65%</span></div>
-                <div class="ticker-item"><span class="ticker-symbol">💵 DXY (US Dollar):</span> <span class="ticker-price">103.65</span> <span class="ticker-change down"><i class="fa-solid fa-arrow-trend-down"></i> -0.38%</span></div>
-                <div class="ticker-item"><span class="ticker-symbol">⚡ BTC/USD:</span> <span class="ticker-price">$95,200</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +3.20%</span></div>
+            <!-- ══════════════════════════════════════════════════════════
+                 BÁO GIÁ CHẠY LIÊN TỤC (SEAMLESS INFINITE MARQUEE TICKER)
+                 ══════════════════════════════════════════════════════════ -->
+            <div class="ticker-wrapper" title="Rê chuột để tạm dừng theo dõi">
+                <div class="ticker-track">
+                    <!-- Set 1 -->
+                    <div class="ticker-item"><span class="ticker-symbol">🥇 XAU/USD (Vàng):</span> <span class="ticker-price">$2,738.50</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +1.15%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">🛢️ WTI CRUDE (Dầu thô CL):</span> <span class="ticker-price">$74.45</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +1.82%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">🌽 ZC (Ngô Phái Sinh):</span> <span class="ticker-price">432.25¢</span> <span class="ticker-change down"><i class="fa-solid fa-arrow-trend-down"></i> -0.45%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">🌱 ZS (Đậu Tương):</span> <span class="ticker-price">1,028.50¢</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +0.65%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">🌻 ZL (Dầu Đậu Nành):</span> <span class="ticker-price">44.20¢</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +1.30%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">🌾 ZM (Khô Đậu):</span> <span class="ticker-price">$318.50</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +0.90%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">🍬 SB (Đường #11):</span> <span class="ticker-price">22.40¢</span> <span class="ticker-change down"><i class="fa-solid fa-arrow-trend-down"></i> -0.80%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">🥈 XAG/USD (Bạc):</span> <span class="ticker-price">$32.85</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +2.10%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">💵 DXY (Dollar Index):</span> <span class="ticker-price">103.65</span> <span class="ticker-change down"><i class="fa-solid fa-arrow-trend-down"></i> -0.38%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">💶 EUR/USD:</span> <span class="ticker-price">1.0895</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +0.42%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">💷 GBP/USD:</span> <span class="ticker-price">1.2980</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +0.55%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">⚡ BTC/USD (Bitcoin):</span> <span class="ticker-price">$95,200</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +3.20%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">📈 VN-INDEX:</span> <span class="ticker-price">1,288.60</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +0.75%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">🇺🇸 S&P 500:</span> <span class="ticker-price">5,980.25</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +0.68%</span></div>
+
+                    <!-- Set 2 (Duplicate for Seamless Loop) -->
+                    <div class="ticker-item"><span class="ticker-symbol">🥇 XAU/USD (Vàng):</span> <span class="ticker-price">$2,738.50</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +1.15%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">🛢️ WTI CRUDE (Dầu thô CL):</span> <span class="ticker-price">$74.45</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +1.82%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">🌽 ZC (Ngô Phái Sinh):</span> <span class="ticker-price">432.25¢</span> <span class="ticker-change down"><i class="fa-solid fa-arrow-trend-down"></i> -0.45%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">🌱 ZS (Đậu Tương):</span> <span class="ticker-price">1,028.50¢</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +0.65%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">🌻 ZL (Dầu Đậu Nành):</span> <span class="ticker-price">44.20¢</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +1.30%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">🌾 ZM (Khô Đậu):</span> <span class="ticker-price">$318.50</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +0.90%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">🍬 SB (Đường #11):</span> <span class="ticker-price">22.40¢</span> <span class="ticker-change down"><i class="fa-solid fa-arrow-trend-down"></i> -0.80%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">🥈 XAG/USD (Bạc):</span> <span class="ticker-price">$32.85</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +2.10%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">💵 DXY (Dollar Index):</span> <span class="ticker-price">103.65</span> <span class="ticker-change down"><i class="fa-solid fa-arrow-trend-down"></i> -0.38%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">💶 EUR/USD:</span> <span class="ticker-price">1.0895</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +0.42%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">💷 GBP/USD:</span> <span class="ticker-price">1.2980</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +0.55%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">⚡ BTC/USD (Bitcoin):</span> <span class="ticker-price">$95,200</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +3.20%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">📈 VN-INDEX:</span> <span class="ticker-price">1,288.60</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +0.75%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">🇺🇸 S&P 500:</span> <span class="ticker-price">5,980.25</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +0.68%</span></div>
+                </div>
             </div>
 
             <!-- TRÀN TRANG CONTENT CONTAINER -->
@@ -2700,12 +3091,13 @@
                     </form>
 
                     <div class="comment-list" id="commentList">
+                        <!-- Default sample comments -->
                         <div class="comment-item">
                             <div class="comment-avatar">HL</div>
                             <div class="comment-content">
                                 <div class="comment-author-name">Hoàng Long (Trader Hà Nội)</div>
                                 <div class="comment-date">20 Tháng 8, 2026 • 18:45</div>
-                                <div class="comment-text">Giao diện mới menu bên trái tràn trang rất thoáng và chuyên nghiệp! Mục Tủ sách tài chính và Máy tính vị thế hỗ trợ vào lệnh rất nhanh.</div>
+                                <div class="comment-text">Giao diện mới menu bên trái tràn trang rất thoáng và chuyên nghiệp! Bảng báo giá chạy liên tục ở trên cùng giúp quan sát biến động FX và Dầu thô cực tiện.</div>
                             </div>
                         </div>
 
@@ -2774,6 +3166,99 @@
             </footer>
 
         </main>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════
+         AUTH MODAL (ĐĂNG NHẬP / ĐĂNG KÝ THÀNH VIÊN)
+         ══════════════════════════════════════════════════════════ -->
+    <div class="auth-modal-overlay" id="authModalOverlay" onclick="closeAuthModalOnBackdrop(event)">
+        <div class="auth-modal-card">
+            <button class="auth-close-btn" onclick="closeAuthModal()"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div class="auth-tabs-nav">
+                <button class="auth-tab-btn active" id="tabBtnLogin" onclick="switchAuthTab('login')">Đăng Nhập</button>
+                <button class="auth-tab-btn" id="tabBtnRegister" onclick="switchAuthTab('register')">Đăng Ký Tài Khoản</button>
+            </div>
+
+            <!-- TAB 1: FORM ĐĂNG NHẬP -->
+            <form class="auth-form-body active" id="formLogin" onsubmit="handleLoginSubmit(event)">
+                <div class="auth-field">
+                    <label class="auth-label">Email hoặc Tên Đăng Nhập</label>
+                    <div class="auth-input-wrap">
+                        <i class="fa-solid fa-envelope auth-input-icon"></i>
+                        <input type="text" id="loginEmail" class="auth-input" placeholder="trader@ptvolume.com" required>
+                    </div>
+                </div>
+
+                <div class="auth-field">
+                    <label class="auth-label">Mật Khẩu</label>
+                    <div class="auth-input-wrap">
+                        <i class="fa-solid fa-lock auth-input-icon"></i>
+                        <input type="password" id="loginPassword" class="auth-input" placeholder="••••••••" required>
+                    </div>
+                </div>
+
+                <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.78rem;">
+                    <label style="color:var(--text-muted); cursor:pointer; display:flex; align-items:center; gap:6px;">
+                        <input type="checkbox" checked> Ghi nhớ đăng nhập
+                    </label>
+                    <a href="javascript:void(0)" onclick="alert('Vui lòng liên hệ Admin qua email contact@ptvolume.com để cấp lại mật khẩu.')" style="color:var(--cyan);">Quên mật khẩu?</a>
+                </div>
+
+                <button type="submit" class="auth-btn-submit">
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i> Đăng Nhập Ngay
+                </button>
+
+                <div class="auth-divider">hoặc tiếp tục với</div>
+
+                <div class="auth-social-row">
+                    <button type="button" class="auth-social-btn" onclick="socialLogin('Google')">
+                        <i class="fa-brands fa-google" style="color:#EA4335;"></i> Google
+                    </button>
+                    <button type="button" class="auth-social-btn" onclick="socialLogin('TradingView')">
+                        <i class="fa-solid fa-chart-simple" style="color:var(--cyan);"></i> TradingView
+                    </button>
+                </div>
+            </form>
+
+            <!-- TAB 2: FORM ĐĂNG KÝ -->
+            <form class="auth-form-body" id="formRegister" onsubmit="handleRegisterSubmit(event)">
+                <div class="auth-field">
+                    <label class="auth-label">Họ và Tên / Handle Trader</label>
+                    <div class="auth-input-wrap">
+                        <i class="fa-solid fa-user auth-input-icon"></i>
+                        <input type="text" id="regName" class="auth-input" placeholder="VD: Hoàng Long VSA" required>
+                    </div>
+                </div>
+
+                <div class="auth-field">
+                    <label class="auth-label">Địa Chỉ Email</label>
+                    <div class="auth-input-wrap">
+                        <i class="fa-solid fa-envelope auth-input-icon"></i>
+                        <input type="email" id="regEmail" class="auth-input" placeholder="long.trader@gmail.com" required>
+                    </div>
+                </div>
+
+                <div class="auth-field">
+                    <label class="auth-label">Mật Khẩu</label>
+                    <div class="auth-input-wrap">
+                        <i class="fa-solid fa-lock auth-input-icon"></i>
+                        <input type="password" id="regPassword" class="auth-input" placeholder="Tối thiểu 6 ký tự" required>
+                    </div>
+                </div>
+
+                <div style="font-size:0.75rem; color:var(--text-muted);">
+                    <label style="cursor:pointer; display:flex; align-items:flex-start; gap:8px;">
+                        <input type="checkbox" required style="margin-top:2px;">
+                        <span>Tôi đồng ý với <a href="pages/terms.html" target="_blank" style="color:var(--cyan);">Điều khoản dịch vụ</a> & <a href="pages/privacy.html" target="_blank" style="color:var(--cyan);">Chính sách bảo mật</a> của PTvolume.</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="auth-btn-submit" style="background:linear-gradient(135deg, #00E5FF, #2962FF);">
+                    <i class="fa-solid fa-user-plus"></i> Tạo Tài Khoản Thành Viên
+                </button>
+            </form>
+        </div>
     </div>
 
     <!-- Hidden Google Translate Element -->
@@ -2845,7 +3330,6 @@
 
             let lotSize = 0.1;
             if (slPips > 0) {
-                // Approximate for Gold 1 Lot = 100 oz ($10 per $1 move)
                 lotSize = (riskAmount / (slPips * 100));
             }
 
@@ -2904,10 +3388,10 @@
                 <div class="forum-post-item" style="border-color:var(--cyan); animation: fadeIn 0.4s ease;">
                     <div class="forum-avatar" style="background:linear-gradient(135deg, #00E5FF, #2962FF);">${initial}</div>
                     <div class="forum-post-content">
-                        <h4 class="forum-post-title">${title}</h4>
-                        <p class="forum-post-snippet">${content}</p>
+                        <h4 class="forum-post-title">${escapeHtml(title)}</h4>
+                        <p class="forum-post-snippet">${escapeHtml(content)}</p>
                         <div class="forum-meta-bar">
-                            <span><i class="fa-solid fa-user-tie"></i> ${name}</span>
+                            <span><i class="fa-solid fa-user-tie"></i> ${escapeHtml(name)}</span>
                             <span><i class="fa-regular fa-clock"></i> Vừa xong</span>
                             <span style="color:var(--cyan);"><i class="fa-regular fa-comments"></i> 0 Phản hồi</span>
                         </div>
@@ -2924,34 +3408,230 @@
             alert('Đăng bài thành công! Thảo luận của bạn đã xuất hiện trên Diễn đàn PTvolume.');
         }
 
-        // 8. Comments Submission
+        // 8. Comments Submission & LocalStorage Persistence
         function handleCommentSubmit(e) {
             e.preventDefault();
             const name = document.getElementById('commentAuthor').value.trim();
+            const email = document.getElementById('commentEmail').value.trim();
             const msg = document.getElementById('commentMessage').value.trim();
 
             if (!name || !msg) return;
 
             const initial = name.substring(0, 2).toUpperCase();
             const newComment = `
-                <div class="comment-item" style="border-color:var(--cyan);">
-                    <div class="comment-avatar">${initial}</div>
+                <div class="comment-item" style="border-color:var(--cyan); animation: modalFadeIn 0.3s ease;">
+                    <div class="comment-avatar" style="background:linear-gradient(135deg,#00E5FF,#2962FF); color:#fff;">${initial}</div>
                     <div class="comment-content">
-                        <div class="comment-author-name">${name}</div>
+                        <div class="comment-author-name">${escapeHtml(name)}</div>
                         <div class="comment-date">Vừa xong</div>
-                        <div class="comment-text">${msg}</div>
+                        <div class="comment-text">${escapeHtml(msg)}</div>
                     </div>
                 </div>
             `;
 
-            document.getElementById('commentList').insertAdjacentHTML('afterbegin', newComment);
+            const list = document.getElementById('commentList');
+            list.insertAdjacentHTML('afterbegin', newComment);
+
+            // Save to localStorage
+            const saved = JSON.parse(localStorage.getItem('ptvolume_home_comments') || '[]');
+            saved.unshift({ name, msg, date: 'Vừa xong', initial });
+            localStorage.setItem('ptvolume_home_comments', JSON.stringify(saved));
+
             document.getElementById('commentAuthor').value = '';
             document.getElementById('commentEmail').value = '';
             document.getElementById('commentMessage').value = '';
+            updateCommentsCount();
             alert('Cảm ơn bạn! Bình luận đã được ghi nhận và hiển thị công khai.');
         }
 
-        // 9. Multi-Language Switcher
+        function loadSavedComments() {
+            const saved = JSON.parse(localStorage.getItem('ptvolume_home_comments') || '[]');
+            const list = document.getElementById('commentList');
+            saved.forEach(item => {
+                const commentHtml = `
+                    <div class="comment-item">
+                        <div class="comment-avatar" style="background:linear-gradient(135deg,#00E5FF,#2962FF); color:#fff;">${escapeHtml(item.initial)}</div>
+                        <div class="comment-content">
+                            <div class="comment-author-name">${escapeHtml(item.name)}</div>
+                            <div class="comment-date">${escapeHtml(item.date)}</div>
+                            <div class="comment-text">${escapeHtml(item.msg)}</div>
+                        </div>
+                    </div>
+                `;
+                list.insertAdjacentHTML('afterbegin', commentHtml);
+            });
+            updateCommentsCount();
+        }
+
+        function updateCommentsCount() {
+            const count = document.querySelectorAll('#commentList .comment-item').length;
+            const badge = document.getElementById('commentsCountBadge');
+            if (badge) badge.innerText = count + ' Bình luận';
+        }
+
+        // 9. Auth Modal (Đăng Nhập / Đăng Ký)
+        function openAuthModal(tab = 'login') {
+            document.getElementById('authModalOverlay').classList.add('active');
+            switchAuthTab(tab);
+        }
+
+        function closeAuthModal() {
+            document.getElementById('authModalOverlay').classList.remove('active');
+        }
+
+        function closeAuthModalOnBackdrop(e) {
+            if (e.target.id === 'authModalOverlay') {
+                closeAuthModal();
+            }
+        }
+
+        function switchAuthTab(tab) {
+            const btnLogin = document.getElementById('tabBtnLogin');
+            const btnRegister = document.getElementById('tabBtnRegister');
+            const formLogin = document.getElementById('formLogin');
+            const formRegister = document.getElementById('formRegister');
+
+            if (tab === 'login') {
+                btnLogin.classList.add('active');
+                btnRegister.classList.remove('active');
+                formLogin.classList.add('active');
+                formRegister.classList.remove('active');
+            } else {
+                btnRegister.classList.add('active');
+                btnLogin.classList.remove('active');
+                formRegister.classList.add('active');
+                formLogin.classList.remove('active');
+            }
+        }
+
+        function handleLoginSubmit(e) {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value.trim();
+            const name = email.split('@')[0] || 'Trader';
+
+            const user = {
+                name: name.toUpperCase(),
+                fullName: name,
+                email: email,
+                tier: 'VIP TRADER',
+                initial: name.substring(0, 2).toUpperCase()
+            };
+
+            localStorage.setItem('ptvolume_current_user', JSON.stringify(user));
+            renderUserHeader(user);
+            closeAuthModal();
+            alert('Đăng nhập thành công! Chào mừng ' + user.name + ' trở lại hệ thống PTvolume.');
+        }
+
+        function handleRegisterSubmit(e) {
+            e.preventDefault();
+            const fullName = document.getElementById('regName').value.trim();
+            const email = document.getElementById('regEmail').value.trim();
+
+            const user = {
+                name: fullName,
+                fullName: fullName,
+                email: email,
+                tier: 'VIP TRADER',
+                initial: fullName.substring(0, 2).toUpperCase()
+            };
+
+            localStorage.setItem('ptvolume_current_user', JSON.stringify(user));
+            renderUserHeader(user);
+            closeAuthModal();
+            alert('Chúc mừng ' + user.name + '! Bạn đã đăng ký thành công tài khoản VIP trên PTvolume.com.');
+        }
+
+        function socialLogin(provider) {
+            const user = {
+                name: 'Trader_' + provider,
+                fullName: 'Trader ' + provider,
+                email: 'user@' + provider.toLowerCase() + '.com',
+                tier: 'VIP TRADER',
+                initial: provider.substring(0, 2).toUpperCase()
+            };
+            localStorage.setItem('ptvolume_current_user', JSON.stringify(user));
+            renderUserHeader(user);
+            closeAuthModal();
+            alert('Đăng nhập nhanh qua ' + provider + ' thành công!');
+        }
+
+        function renderUserHeader(user) {
+            const container = document.getElementById('headerAuthContainer');
+            if (user) {
+                container.innerHTML = `
+                    <div class="user-profile-wrap">
+                        <button class="user-profile-btn" onclick="toggleUserDropdown()">
+                            <span class="user-avatar-circle">${escapeHtml(user.initial)}</span>
+                            <span class="user-name-text">${escapeHtml(user.name)}</span>
+                            <span class="user-vip-badge">${escapeHtml(user.tier)}</span>
+                            <i class="fa-solid fa-chevron-down" style="font-size:0.75rem; color:var(--text-muted); margin-left:4px;"></i>
+                        </button>
+                        <div class="user-dropdown-card" id="userDropdownCard">
+                            <div class="user-dropdown-header">
+                                <strong>${escapeHtml(user.fullName)}</strong>
+                                <span>${escapeHtml(user.email)}</span>
+                            </div>
+                            <a href="#hoc-tap" class="user-dropdown-link"><i class="fa-solid fa-graduation-cap" style="color:var(--cyan);"></i> Khóa học của tôi</a>
+                            <a href="#dien-dan" class="user-dropdown-link"><i class="fa-solid fa-comments" style="color:#F0B90B;"></i> Thảo luận đã đăng</a>
+                            <a href="#cong-cu" class="user-dropdown-link"><i class="fa-solid fa-calculator" style="color:#26E7A6;"></i> Nhật ký & Quản trị vốn</a>
+                            <div style="height:1px; background:var(--border-color); margin:4px 0;"></div>
+                            <button class="btn-logout" onclick="handleLogout()"><i class="fa-solid fa-arrow-right-from-bracket"></i> Đăng Xuất</button>
+                        </div>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = `
+                    <button class="header-action-btn btn-header-register" onclick="openAuthModal('register')">
+                        <i class="fa-solid fa-user-plus"></i> Đăng Ký
+                    </button>
+                    <button class="header-action-btn btn-header-login" onclick="openAuthModal('login')">
+                        <i class="fa-solid fa-arrow-right-to-bracket"></i> Đăng Nhập
+                    </button>
+                `;
+            }
+        }
+
+        function toggleUserDropdown() {
+            const dropdown = document.getElementById('userDropdownCard');
+            if (dropdown) dropdown.classList.toggle('active');
+        }
+
+        document.addEventListener('click', function(e) {
+            const wrap = document.querySelector('.user-profile-wrap');
+            const dropdown = document.getElementById('userDropdownCard');
+            if (wrap && dropdown && !wrap.contains(e.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+
+        function handleLogout() {
+            localStorage.removeItem('ptvolume_current_user');
+            renderUserHeader(null);
+            alert('Bạn đã đăng xuất an toàn khỏi hệ thống PTvolume.');
+        }
+
+        function checkUserSession() {
+            const userStr = localStorage.getItem('ptvolume_current_user');
+            if (userStr) {
+                try {
+                    const user = JSON.parse(userStr);
+                    renderUserHeader(user);
+                } catch(e) {
+                    renderUserHeader(null);
+                }
+            } else {
+                renderUserHeader(null);
+            }
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // 10. Multi-Language Switcher
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'vi',
@@ -2995,6 +3675,8 @@
         document.addEventListener('DOMContentLoaded', () => {
             const currentLang = localStorage.getItem('ptvolume_lang') || 'vi';
             updateLangUI(currentLang);
+            checkUserSession();
+            loadSavedComments();
         });
     </script>
     <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

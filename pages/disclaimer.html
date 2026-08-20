@@ -239,6 +239,44 @@
         .goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
         #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
         .goog-te-gadget { display: none !important; }
+    
+        /* --- Continuous Ticker --- */
+        .ticker-wrapper {
+            background: #080A0F;
+            border-bottom: 1px solid var(--border-color);
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            padding: 8px 0;
+            display: flex;
+            user-select: none;
+        }
+        .ticker-track {
+            display: inline-flex;
+            gap: 40px;
+            animation: tickerScroll 42s linear infinite;
+            flex-shrink: 0;
+            will-change: transform;
+        }
+        .ticker-wrapper:hover .ticker-track {
+            animation-play-state: paused;
+        }
+        @keyframes tickerScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+        .ticker-symbol { color: #fff; font-weight: 700; }
+        .ticker-price { font-family: var(--font-mono, monospace); color: var(--text-light); }
+        .ticker-change.up { color: #26E7A6; font-family: var(--font-mono, monospace); }
+        .ticker-change.down { color: #FF5263; font-family: var(--font-mono, monospace); }
+
     </style>
 </head>
 <body>

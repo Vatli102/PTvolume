@@ -425,6 +425,44 @@
         .goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
         #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
         .goog-te-gadget { display: none !important; }
+    
+        /* --- Continuous Ticker --- */
+        .ticker-wrapper {
+            background: #080A0F;
+            border-bottom: 1px solid var(--border-color);
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            padding: 8px 0;
+            display: flex;
+            user-select: none;
+        }
+        .ticker-track {
+            display: inline-flex;
+            gap: 40px;
+            animation: tickerScroll 42s linear infinite;
+            flex-shrink: 0;
+            will-change: transform;
+        }
+        .ticker-wrapper:hover .ticker-track {
+            animation-play-state: paused;
+        }
+        @keyframes tickerScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+        .ticker-symbol { color: #fff; font-weight: 700; }
+        .ticker-price { font-family: var(--font-mono, monospace); color: var(--text-light); }
+        .ticker-change.up { color: #26E7A6; font-family: var(--font-mono, monospace); }
+        .ticker-change.down { color: #FF5263; font-family: var(--font-mono, monospace); }
+
     </style>
 </head>
 <body>
@@ -648,6 +686,73 @@
             div.textContent = text;
             return div.innerHTML;
         }
+    
+        const POST_SLUG = "blog-mau";
+        function loadSavedComments() {
+            const saved = JSON.parse(localStorage.getItem('ptvolume_comments_' + POST_SLUG) || '[]');
+            const commentList = document.getElementById("commentList");
+            if (commentList && saved.length > 0) {
+                saved.forEach(item => {
+                    const newComment = document.createElement("div");
+                    newComment.className = "comment-item";
+                    newComment.innerHTML = `
+                        <div class="comment-top">
+                            <span class="comment-author"><i class="fa-solid fa-circle-user"></i> ${escapeHtml(item.name)}</span>
+                            <span class="comment-date">${escapeHtml(item.date)}</span>
+                        </div>
+                        <div class="comment-text">${escapeHtml(item.content)}</div>
+                    `;
+                    commentList.prepend(newComment);
+                });
+                const countElem = document.getElementById("commentCount");
+                if (countElem) {
+                    countElem.innerText = parseInt(countElem.innerText || 0) + saved.length;
+                }
+            }
+        }
+
+        const originalAddComment = typeof addComment === 'function' ? addComment : null;
+        function addComment(e) {
+            e.preventDefault();
+            const nameInput = document.getElementById("commentName");
+            const contentInput = document.getElementById("commentContent");
+            if (!nameInput || !contentInput) return;
+            const name = nameInput.value.trim();
+            const content = contentInput.value.trim();
+            if (!name || !content) return;
+
+            const now = new Date();
+            const timeString = now.toLocaleDateString('vi-VN') + ' ' + now.toLocaleTimeString('vi-VN');
+
+            const commentList = document.getElementById("commentList");
+            const newComment = document.createElement("div");
+            newComment.className = "comment-item";
+            newComment.innerHTML = `
+                <div class="comment-top">
+                    <span class="comment-author"><i class="fa-solid fa-circle-user"></i> ${escapeHtml(name)}</span>
+                    <span class="comment-date">${timeString}</span>
+                </div>
+                <div class="comment-text">${escapeHtml(content)}</div>
+            `;
+            commentList.prepend(newComment);
+
+            const countElem = document.getElementById("commentCount");
+            if (countElem) countElem.innerText = parseInt(countElem.innerText || 0) + 1;
+
+            // Save to localStorage
+            const saved = JSON.parse(localStorage.getItem('ptvolume_comments_' + POST_SLUG) || '[]');
+            saved.push({ name, content, date: timeString });
+            localStorage.setItem('ptvolume_comments_' + POST_SLUG, JSON.stringify(saved));
+
+            nameInput.value = "";
+            contentInput.value = "";
+            alert("Bình luận của bạn đã được đăng thành công!");
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadSavedComments();
+        });
+    
     </script>
     <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
