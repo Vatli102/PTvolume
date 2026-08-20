@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | PTvolume</title>
-    <meta name="description" content="Privacy Policy and data security standards at PTvolume.com.">
+    <title>Chính Sách Bảo Mật | PTvolume</title>
+    <meta name="description" content="Chính sách bảo mật quyền riêng tư và tiêu chuẩn bảo vệ dữ liệu người dùng tại PTvolume.com.">
     <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +29,6 @@
             padding: 0;
             box-sizing: border-box;
             font-family: var(--font-sans);
-            
         }
 
         body {
@@ -85,6 +84,42 @@
             color: #00E5FF;
         }
 
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lang-switcher {
+            display: inline-flex;
+            align-items: center;
+            background: #080B10;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2px;
+            gap: 2px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 16px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active, .lang-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
         .btn {
             padding: 8px 16px;
             border-radius: 6px;
@@ -128,68 +163,39 @@
         }
 
         .page-subtitle {
-            font-size: 0.95rem;
+            font-size: 1.1rem;
             color: var(--text-muted);
             margin-bottom: 40px;
             padding-bottom: 24px;
             border-bottom: 1px solid var(--border-color);
         }
 
-        .privacy-section {
+        .section-block {
             margin-bottom: 36px;
         }
 
-        .privacy-section h2 {
+        .section-block h2 {
             font-family: var(--font-editorial);
-            font-size: 1.35rem;
+            font-size: 1.45rem;
             font-weight: 700;
             color: #fff;
             margin-bottom: 14px;
         }
 
-        .privacy-section p {
+        .section-block p {
             color: var(--text-light);
-            font-size: 1rem;
-            margin-bottom: 14px;
+            font-size: 1.02rem;
+            margin-bottom: 16px;
         }
 
-        .privacy-section ul {
-            margin-left: 20px;
+        .section-block ul {
+            margin-left: 24px;
             margin-bottom: 16px;
             color: var(--text-light);
         }
 
-        .privacy-section li {
+        .section-block li {
             margin-bottom: 8px;
-        }
-
-        #copyToast {
-            visibility: hidden;
-            min-width: 320px;
-            background-color: #161D2B;
-            color: #FF8E99;
-            text-align: center;
-            border-radius: 8px;
-            border: 1px solid rgba(242, 54, 69, 0.4);
-            padding: 14px 22px;
-            position: fixed;
-            z-index: 9999;
-            bottom: 30px;
-            right: 30px;
-            font-size: 0.88rem;
-            font-weight: 600;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.6);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            transition: all 0.3s ease;
-            opacity: 0;
-        }
-
-        #copyToast.show {
-            visibility: visible;
-            opacity: 1;
-            transform: translateY(-5px);
         }
 
         footer {
@@ -200,11 +206,17 @@
             color: var(--text-muted);
             font-size: 0.88rem;
         }
+
+        /* Hide Google Translate Toolbars & Overlays */
+        .goog-te-banner-frame.skiptranslate { display: none !important; }
+        body { top: 0px !important; }
+        .goog-tooltip, .goog-tooltip:hover { display: none !important; }
+        .goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
+        #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
+        .goog-te-gadget { display: none !important; }
     </style>
 </head>
-<body >
-
-    
+<body>
 
     <header>
         <div class="nav-container">
@@ -214,66 +226,123 @@
                     <span class="brand">PT<span>VOLUME</span></span>
                 </div>
             </a>
-            <a href="../index.html" class="btn">
-                <i class="fa-solid fa-arrow-left"></i> Return to Homepage
-            </a>
+            
+            <div class="nav-right">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" onclick="setLanguage('vi')" id="btn-lang-vi" title="Tiếng Việt">
+                        <span>🇻🇳</span> VI
+                    </button>
+                    <button class="lang-btn" onclick="setLanguage('en')" id="btn-lang-en" title="English">
+                        <span>🇬🇧</span> EN
+                    </button>
+                </div>
+                <a href="../index.html" class="btn">
+                    <i class="fa-solid fa-arrow-left"></i> Về Trang Chủ
+                </a>
+            </div>
         </div>
     </header>
 
     <main class="page-container">
         <div class="breadcrumb">
-            <a href="../index.html">Home</a>
+            <a href="../index.html">Trang Chủ</a>
             <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
-            <span>Privacy Policy</span>
+            <span>Chính Sách Bảo Mật</span>
         </div>
 
-        <h1 class="page-title">Privacy Policy</h1>
+        <h1 class="page-title">Chính Sách Bảo Mật & Quyền Riêng Tư</h1>
         <div class="page-subtitle">
-            Commitment to transparent data governance, user confidentiality, and encryption standards.
+            Cam kết minh bạch về cách thức chúng tôi thu thập, sử dụng và bảo vệ dữ liệu cá nhân của bạn khi truy cập PTvolume.com.
         </div>
 
-        <div class="privacy-section">
-            <h2>1. Information We Do Not Collect</h2>
+        <div class="section-block">
+            <h2>1. Thu Thập Dữ Liệu</h2>
             <p>
-                <strong>PTvolume.com</strong> operates as an open-access educational repository. We firmly believe in reader privacy:
+                <strong>PTvolume.com</strong> tôn trọng tối đa quyền riêng tư của độc giả. Chúng tôi không yêu cầu bạn phải cung cấp thông tin nhạy cảm để đọc bài viết hay tra cứu kiến thức.
+            </p>
+            <p>
+                Các dữ liệu cơ bản có thể được ghi nhận bao gồm:
             </p>
             <ul>
-                <li>We <strong>never</strong> ask for financial account details, broker passwords, crypto private keys, or sensitive personal credentials.</li>
-                <li>Access to our educational articles, technical analyses, and classic book reviews is unrestricted and does not require credit card information.</li>
+                <li>Thông tin bạn tự nguyện gửi qua Form liên hệ hoặc Form bình luận bài viết (Họ tên/Nickname, Email, nội dung).</li>
+                <li>Dữ liệu kỹ thuật ẩn danh (Địa chỉ IP, loại trình duyệt, thời gian truy cập) nhằm tối ưu tốc độ tải trang và trải nghiệm người dùng.</li>
             </ul>
         </div>
 
-        <div class="privacy-section">
-            <h2>2. Cookies & Anonymous Analytics</h2>
+        <div class="section-block">
+            <h2>2. Sử Dụng Cookie & Bộ Nhớ Cục Bộ (LocalStorage)</h2>
             <p>
-                To maintain server performance, analyze aggregated traffic trends, and deliver interactive charting widgets (such as TradingView), our website may utilize standard session cookies and anonymous CDN telemetry (Cloudflare / GitHub Pages).
+                Chúng tôi sử dụng Cookie và LocalStorage nhẹ để:
+            </p>
+            <ul>
+                <li>Ghi nhớ lựa chọn ngôn ngữ của bạn (Tiếng Việt hoặc Tiếng Anh) để tự động hiển thị trong các lần truy cập tiếp theo.</li>
+                <li>Hỗ trợ tính năng hiển thị bình luận và giao diện Dark Theme mượt mà.</li>
+            </ul>
+        </div>
+
+        <div class="section-block">
+            <h2>3. Cam Kết Không Bán Dữ Liệu</h2>
+            <p>
+                Chúng tôi cam kết <strong>tuyệt đối không bán, trao đổi hoặc chia sẻ thông tin cá nhân của bạn</strong> cho bất kỳ bên thứ ba nào vì mục đích thương mại hay quảng cáo rác.
             </p>
         </div>
 
-        <div class="privacy-section">
-            <h2>3. Secure Encryption Standards</h2>
+        <div class="section-block">
+            <h2>4. Liên Hệ Về Quyền Riêng Tư</h2>
             <p>
-                All communications between your client device and our servers are encrypted end-to-end using <strong>Transport Layer Security (TLS/HTTPS)</strong>. We never sell, rent, or distribute user data to third-party marketing entities.
-            </p>
-        </div>
-
-        <div class="privacy-section">
-            <h2>4. Third-Party Links</h2>
-            <p>
-                Our articles and resources may link to third-party tools, broker platforms, or research references. PTvolume is not responsible for the privacy practices or contents of these external domains.
+                Nếu bạn có bất kỳ câu hỏi nào về chính sách bảo mật hoặc muốn yêu cầu xóa dữ liệu bình luận của mình, vui lòng liên hệ: <strong>privacy@ptvolume.com</strong>.
             </p>
         </div>
     </main>
 
     <footer>
-        <p>© 2026 PTvolume.com. All rights reserved. Naked Chart • VSA • Wyckoff Methodology.</p>
+        <p>© 2026 PTvolume.com. Toàn bộ bản quyền được bảo lưu. Naked Chart • VSA • Phương Pháp Wyckoff.</p>
     </footer>
 
+    <!-- Hidden Google Translate Element -->
+    <div id="google_translate_element" style="display:none;"></div>
+
     <script>
-        
-        , 3000);
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'vi',
+                includedLanguages: 'en,vi',
+                autoDisplay: false
+            }, 'google_translate_element');
         }
+
+        function setLanguage(lang) {
+            if (lang === 'vi') {
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + location.hostname;
+                document.cookie = "googtrans=/vi/vi; path=/;";
+                document.cookie = "googtrans=/vi/vi; path=/; domain=" + location.hostname;
+                localStorage.setItem('ptvolume_lang', 'vi');
+                location.reload();
+            } else if (lang === 'en') {
+                document.cookie = "googtrans=/vi/en; path=/;";
+                document.cookie = "googtrans=/vi/en; path=/; domain=" + location.hostname;
+                localStorage.setItem('ptvolume_lang', 'en');
+                location.reload();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentLang = localStorage.getItem('ptvolume_lang') || 'vi';
+            const btnVi = document.getElementById('btn-lang-vi');
+            const btnEn = document.getElementById('btn-lang-en');
+            if (btnVi && btnEn) {
+                if (currentLang === 'en') {
+                    btnEn.classList.add('active');
+                    btnVi.classList.remove('active');
+                } else {
+                    btnVi.classList.add('active');
+                    btnEn.classList.remove('active');
+                }
+            }
+        });
     </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>

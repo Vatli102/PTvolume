@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | PTvolume - Premier Price Action & Volume Spread Analysis Authority</title>
-    <meta name="description" content="Discover the mission, philosophy, and editorial standards of PTvolume - dedicated to educating traders on Naked Charting, VSA, and Wyckoff principles.">
+    <title>Về Chúng Tôi | PTvolume - Cẩm Nang Naked Chart & Volume Spread Analysis (VSA)</title>
+    <meta name="description" content="Khám phá sứ mệnh, triết lý giao dịch và tiêu chuẩn phân tích của PTvolume - Nền tảng chuyên sâu về Price Action, VSA và Phương pháp Wyckoff.">
     <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +30,6 @@
             padding: 0;
             box-sizing: border-box;
             font-family: var(--font-sans);
-            
         }
 
         body {
@@ -84,6 +83,42 @@
 
         .logo-text .brand span {
             color: #00E5FF;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lang-switcher {
+            display: inline-flex;
+            align-items: center;
+            background: #080B10;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2px;
+            gap: 2px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 16px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active, .lang-btn:hover {
+            background: var(--primary);
+            color: #fff;
         }
 
         .btn {
@@ -203,35 +238,6 @@
             font-size: 1.08rem;
         }
 
-        #copyToast {
-            visibility: hidden;
-            min-width: 320px;
-            background-color: #161D2B;
-            color: #FF8E99;
-            text-align: center;
-            border-radius: 8px;
-            border: 1px solid rgba(242, 54, 69, 0.4);
-            padding: 14px 22px;
-            position: fixed;
-            z-index: 9999;
-            bottom: 30px;
-            right: 30px;
-            font-size: 0.88rem;
-            font-weight: 600;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.6);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            transition: all 0.3s ease;
-            opacity: 0;
-        }
-
-        #copyToast.show {
-            visibility: visible;
-            opacity: 1;
-            transform: translateY(-5px);
-        }
-
         footer {
             border-top: 1px solid var(--border-color);
             background: #07090E;
@@ -240,11 +246,17 @@
             color: var(--text-muted);
             font-size: 0.88rem;
         }
+
+        /* Hide Google Translate Toolbars & Overlays */
+        .goog-te-banner-frame.skiptranslate { display: none !important; }
+        body { top: 0px !important; }
+        .goog-tooltip, .goog-tooltip:hover { display: none !important; }
+        .goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
+        #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
+        .goog-te-gadget { display: none !important; }
     </style>
 </head>
-<body >
-
-    
+<body>
 
     <header>
         <div class="nav-container">
@@ -254,76 +266,126 @@
                     <span class="brand">PT<span>VOLUME</span></span>
                 </div>
             </a>
-            <a href="../index.html" class="btn">
-                <i class="fa-solid fa-arrow-left"></i> Return to Homepage
-            </a>
+            
+            <div class="nav-right">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" onclick="setLanguage('vi')" id="btn-lang-vi" title="Tiếng Việt">
+                        <span>🇻🇳</span> VI
+                    </button>
+                    <button class="lang-btn" onclick="setLanguage('en')" id="btn-lang-en" title="English">
+                        <span>🇬🇧</span> EN
+                    </button>
+                </div>
+                <a href="../index.html" class="btn">
+                    <i class="fa-solid fa-arrow-left"></i> Về Trang Chủ
+                </a>
+            </div>
         </div>
     </header>
 
     <main class="page-container">
         <div class="breadcrumb">
-            <a href="../index.html">Home</a>
+            <a href="../index.html">Trang Chủ</a>
             <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
-            <span>About Us</span>
+            <span>Về Chúng Tôi</span>
         </div>
 
-        <h1 class="page-title">About PTvolume</h1>
+        <h1 class="page-title">Về PTvolume.com</h1>
         <div class="page-subtitle">
-            Demystifying financial market structure through naked price action, volume spread analysis, and institutional tape reading.
+            Giải mã cấu trúc thị trường tài chính thông qua Price Action biểu đồ trần, Volume Spread Analysis (VSA) và kỹ thuật đọc dòng lệnh tổ chức (Tape Reading).
         </div>
 
         <div class="content-section">
-            <h2><i class="fa-solid fa-bullseye" style="color: var(--accent-gold);"></i> Mission & Editorial Philosophy</h2>
+            <h2><i class="fa-solid fa-bullseye" style="color: var(--accent-gold);"></i> Sứ Mệnh & Triết Lý Biên Tập</h2>
             <p>
-                <strong>PTvolume.com</strong> was established with a singular objective: to deliver institutional-grade market education and empirical technical research to independent retail traders across the globe.
+                <strong>PTvolume.com</strong> được xây dựng với một tôn chỉ duy nhất: mang tri thức phân tích thị trường chuyên sâu chuẩn thể chế và các nghiên cứu kỹ thuật thực chiến đến cộng đồng nhà giao dịch độc lập tại Việt Nam và quốc tế.
             </p>
             <p>
-                Most modern retail trading education is saturated with derivative lagging indicators, ambiguous chart overlays, and gambling mindsets. At PTvolume, we strip away all market noise to focus exclusively on the two foundational truths of any liquid market: <strong>Price Action</strong> and <strong>Volume</strong>.
+                Phần lớn các phương pháp đào tạo hiện nay bị quá tải bởi các chỉ báo kỹ thuật trễ (RSI, MACD, Stochastic...), các đường kẻ rối rắm và tư duy cờ bạc đỏ đen. Tại PTvolume, chúng tôi loại bỏ toàn bộ các yếu tố nhiễu loạn để tập trung vào 2 sự thật cốt lõi nhất của bất kỳ thị trường thanh khoản nào: <strong>Hành Động Giá (Price Action)</strong> và <strong>Khối Lượng Giao Dịch (Volume)</strong>.
             </p>
         </div>
 
         <div class="quote-box">
-            "Markets do not move on mathematical formulas or emotional sentiment; they move strictly according to the interplay of Supply and Demand orchestrated by institutional composite operators."
+            "Thị trường không dịch chuyển vì các công thức toán học hay cảm xúc của đám đông; thị trường dịch chuyển hoàn toàn dựa trên sự tương tác giữa Cung và Cầu được điều phối bởi các dòng tiền thông minh (Smart Money / Composite Operator)."
         </div>
 
         <div class="content-section">
-            <h2><i class="fa-solid fa-gem" style="color: #00E5FF;"></i> Our Core Pillars</h2>
+            <h2><i class="fa-solid fa-gem" style="color: #00E5FF;"></i> 3 Trụ Cột Nền Tảng</h2>
             <div class="values-grid">
                 <div class="value-card">
                     <i class="fa-solid fa-chart-line"></i>
-                    <h3>Naked Charting & VSA</h3>
-                    <p>Rejecting lagging indicators in favor of raw price interaction at key institutional Supply & Demand barriers.</p>
+                    <h3>Naked Chart & VSA</h3>
+                    <p>Nói không với chỉ báo trễ. Đọc hiểu hành vi giá trực tiếp tại các vùng Cung - Cầu then chốt của các tổ chức tài chính.</p>
                 </div>
                 <div class="value-card">
                     <i class="fa-solid fa-book-bookmark"></i>
-                    <h3>Classic Literature</h3>
-                    <p>Rooted in time-tested principles established by Richard Wyckoff, Jesse Livermore, Tom Williams, and David Weis.</p>
+                    <h3>Tri Thức Kinh Điển</h3>
+                    <p>Được xây dựng trên nền tảng vững chắc của các bậc thầy: Richard Wyckoff, Jesse Livermore, Tom Williams và Bob Volman.</p>
                 </div>
                 <div class="value-card">
                     <i class="fa-solid fa-shield-heart"></i>
-                    <h3>Risk Asymmetry</h3>
-                    <p>Capital preservation as the non-negotiable prerequisite, targeting minimum 1:2.0+ Risk-to-Reward profiles.</p>
+                    <h3>Bất Đối Xứng Rủi Ro</h3>
+                    <p>Bảo toàn vốn là ưu tiên số một. Mọi thiết lập giao dịch đều phải tuân thủ tỷ lệ Lợi nhuận : Rủi ro (R:R) tối thiểu 1:2.5.</p>
                 </div>
             </div>
         </div>
 
         <div class="content-section">
-            <h2><i class="fa-solid fa-scale-balanced" style="color: #089981;"></i> Educational Integrity</h2>
+            <h2><i class="fa-solid fa-scale-balanced" style="color: #089981;"></i> Tính Liêm Chính Trong Đào Tạo</h2>
             <p>
-                All research pieces, classical literature breakdowns, and technical articles published on PTvolume are designed to foster independent critical thinking, systematic risk management, and lifelong market mastery.
+                Mọi bài viết nghiên cứu, tóm tắt sách kinh điển và phân tích kỹ thuật trên PTvolume đều hướng tới việc xây dựng tư duy phản biện độc lập, quản trị rủi ro nghiêm ngặt và đồng hành cùng trader trên hành trình làm chủ thị trường bền vững.
             </p>
         </div>
     </main>
 
     <footer>
-        <p>© 2026 PTvolume.com. All rights reserved. Naked Chart • VSA • Wyckoff Methodology.</p>
+        <p>© 2026 PTvolume.com. Toàn bộ bản quyền được bảo lưu. Naked Chart • VSA • Phương Pháp Wyckoff.</p>
     </footer>
 
+    <!-- Hidden Google Translate Element -->
+    <div id="google_translate_element" style="display:none;"></div>
+
     <script>
-        
-        , 3000);
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'vi',
+                includedLanguages: 'en,vi',
+                autoDisplay: false
+            }, 'google_translate_element');
         }
+
+        function setLanguage(lang) {
+            if (lang === 'vi') {
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + location.hostname;
+                document.cookie = "googtrans=/vi/vi; path=/;";
+                document.cookie = "googtrans=/vi/vi; path=/; domain=" + location.hostname;
+                localStorage.setItem('ptvolume_lang', 'vi');
+                location.reload();
+            } else if (lang === 'en') {
+                document.cookie = "googtrans=/vi/en; path=/;";
+                document.cookie = "googtrans=/vi/en; path=/; domain=" + location.hostname;
+                localStorage.setItem('ptvolume_lang', 'en');
+                location.reload();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentLang = localStorage.getItem('ptvolume_lang') || 'vi';
+            const btnVi = document.getElementById('btn-lang-vi');
+            const btnEn = document.getElementById('btn-lang-en');
+            if (btnVi && btnEn) {
+                if (currentLang === 'en') {
+                    btnEn.classList.add('active');
+                    btnVi.classList.remove('active');
+                } else {
+                    btnVi.classList.add('active');
+                    btnEn.classList.remove('active');
+                }
+            }
+        });
     </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>

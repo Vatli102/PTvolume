@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service | PTvolume</title>
-    <meta name="description" content="Terms of Service and legal conditions for using PTvolume.com.">
+    <title>Điều Khoản Dịch Vụ | PTvolume</title>
+    <meta name="description" content="Điều khoản dịch vụ, quy định bản quyền nội dung và thỏa thuận người dùng tại PTvolume.com.">
     <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +29,6 @@
             padding: 0;
             box-sizing: border-box;
             font-family: var(--font-sans);
-            
         }
 
         body {
@@ -85,6 +84,42 @@
             color: #00E5FF;
         }
 
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lang-switcher {
+            display: inline-flex;
+            align-items: center;
+            background: #080B10;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2px;
+            gap: 2px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 16px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active, .lang-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
         .btn {
             padding: 8px 16px;
             border-radius: 6px;
@@ -128,68 +163,39 @@
         }
 
         .page-subtitle {
-            font-size: 0.95rem;
+            font-size: 1.1rem;
             color: var(--text-muted);
             margin-bottom: 40px;
             padding-bottom: 24px;
             border-bottom: 1px solid var(--border-color);
         }
 
-        .terms-section {
+        .section-block {
             margin-bottom: 36px;
         }
 
-        .terms-section h2 {
+        .section-block h2 {
             font-family: var(--font-editorial);
-            font-size: 1.35rem;
+            font-size: 1.45rem;
             font-weight: 700;
             color: #fff;
             margin-bottom: 14px;
         }
 
-        .terms-section p {
+        .section-block p {
             color: var(--text-light);
-            font-size: 1rem;
-            margin-bottom: 14px;
+            font-size: 1.02rem;
+            margin-bottom: 16px;
         }
 
-        .terms-section ul {
-            margin-left: 20px;
+        .section-block ul {
+            margin-left: 24px;
             margin-bottom: 16px;
             color: var(--text-light);
         }
 
-        .terms-section li {
+        .section-block li {
             margin-bottom: 8px;
-        }
-
-        #copyToast {
-            visibility: hidden;
-            min-width: 320px;
-            background-color: #161D2B;
-            color: #FF8E99;
-            text-align: center;
-            border-radius: 8px;
-            border: 1px solid rgba(242, 54, 69, 0.4);
-            padding: 14px 22px;
-            position: fixed;
-            z-index: 9999;
-            bottom: 30px;
-            right: 30px;
-            font-size: 0.88rem;
-            font-weight: 600;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.6);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            transition: all 0.3s ease;
-            opacity: 0;
-        }
-
-        #copyToast.show {
-            visibility: visible;
-            opacity: 1;
-            transform: translateY(-5px);
         }
 
         footer {
@@ -200,11 +206,17 @@
             color: var(--text-muted);
             font-size: 0.88rem;
         }
+
+        /* Hide Google Translate Toolbars & Overlays */
+        .goog-te-banner-frame.skiptranslate { display: none !important; }
+        body { top: 0px !important; }
+        .goog-tooltip, .goog-tooltip:hover { display: none !important; }
+        .goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
+        #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
+        .goog-te-gadget { display: none !important; }
     </style>
 </head>
-<body >
-
-    
+<body>
 
     <header>
         <div class="nav-container">
@@ -214,73 +226,120 @@
                     <span class="brand">PT<span>VOLUME</span></span>
                 </div>
             </a>
-            <a href="../index.html" class="btn">
-                <i class="fa-solid fa-arrow-left"></i> Return to Homepage
-            </a>
+            
+            <div class="nav-right">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" onclick="setLanguage('vi')" id="btn-lang-vi" title="Tiếng Việt">
+                        <span>🇻🇳</span> VI
+                    </button>
+                    <button class="lang-btn" onclick="setLanguage('en')" id="btn-lang-en" title="English">
+                        <span>🇬🇧</span> EN
+                    </button>
+                </div>
+                <a href="../index.html" class="btn">
+                    <i class="fa-solid fa-arrow-left"></i> Về Trang Chủ
+                </a>
+            </div>
         </div>
     </header>
 
     <main class="page-container">
         <div class="breadcrumb">
-            <a href="../index.html">Home</a>
+            <a href="../index.html">Trang Chủ</a>
             <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
-            <span>Terms of Service</span>
+            <span>Điều Khoản Dịch Vụ</span>
         </div>
 
-        <h1 class="page-title">Terms of Service</h1>
+        <h1 class="page-title">Điều Khoản Dịch Vụ</h1>
         <div class="page-subtitle">
-            Effective Date: August 19, 2026 • Last Reviewed: August 2026
+            Các quy định pháp lý và điều kiện sử dụng khi truy cập và tương tác trên nền tảng PTvolume.com.
         </div>
 
-        <div class="terms-section">
-            <h2>1. Acceptance of Terms</h2>
+        <div class="section-block">
+            <h2>1. Chấp Thuận Điều Khoản</h2>
             <p>
-                By accessing, browsing, or utilizing any educational content, technical articles, book summaries, or charting utilities on <strong>PTvolume.com</strong> (the "Website"), you acknowledge that you have read, understood, and agree to be bound by these Terms of Service. If you do not agree, you must immediately cease using the platform.
+                Bằng việc truy cập, đọc bài viết hoặc sử dụng bất kỳ công cụ nào trên <strong>PTvolume.com</strong>, bạn xác nhận đã đọc, hiểu và đồng ý tuân thủ toàn bộ các điều khoản dịch vụ và cảnh báo rủi ro được nêu tại đây.
             </p>
         </div>
 
-        <div class="terms-section">
-            <h2>2. Intellectual Property Rights & Fair Use</h2>
+        <div class="section-block">
+            <h2>2. Quyền Sở Hữu Trí Tuệ & Bản Quyền</h2>
             <p>
-                All original textual analyses, structural market diagrams, proprietary watermarks, branding assets, and code implementations on PTvolume are the exclusive intellectual property of PTvolume.com.
+                Toàn bộ bài viết phân tích, giáo trình đào tạo, hình ảnh biểu đồ đóng dấu watermark <code>PTvolume.com</code>, tài liệu tóm tắt và thiết kế giao diện đều thuộc quyền sở hữu trí tuệ của PTvolume.com.
             </p>
             <ul>
-                <li>You may reference our educational content for non-commercial, personal study provided that clear attribution is given with a direct hyperlink to <strong>PTvolume.com</strong>.</li>
-                <li>Automated scraping, bulk downloading, commercial reproduction, or unauthorized redistribution of our materials without express written consent is strictly prohibited.</li>
+                <li>Bạn được phép chia sẻ, trích dẫn nội dung cho mục đích học tập cá nhân phi thương mại kèm ghi rõ nguồn gốc liên kết tới <code>PTvolume.com</code>.</li>
+                <li>Nghiêm cấm sao chép, phân phối lại hoặc bán lại tài liệu vì mục đích thương mại khi chưa có sự đồng ý bằng văn bản của ban quản trị.</li>
             </ul>
         </div>
 
-        <div class="terms-section">
-            <h2>3. Educational Nature & Non-Advisory Disclaimer</h2>
+        <div class="section-block">
+            <h2>3. Chuẩn Mực Thảo Luận Cộng Đồng</h2>
             <p>
-                All market commentaries, volume spread studies, and trade setup illustrations are provided strictly for <strong>educational and analytical demonstration</strong>. PTvolume does not provide bespoke financial advice, investment advisory services, or trade signals.
+                Khi tham gia bình luận tại khung thảo luận kỹ thuật:
             </p>
+            <ul>
+                <li>Tôn trọng các thành viên khác, trao đổi văn minh trên tinh thần học hỏi và phản biện logic.</li>
+                <li>Nghiêm cấm phát tán nội dung lừa đảo, lôi kéo đầu tư, chia sẻ link độc hại hoặc spam quảng cáo sàn giao dịch.</li>
+            </ul>
         </div>
 
-        <div class="terms-section">
-            <h2>4. Limitation of Liability</h2>
+        <div class="section-block">
+            <h2>4. Thay Đổi Điều Khoản</h2>
             <p>
-                Under no circumstances shall PTvolume, its contributors, or affiliates be liable for any direct, indirect, incidental, or consequential financial losses arising out of the execution of trades based on concepts discussed on this website.
-            </p>
-        </div>
-
-        <div class="terms-section">
-            <h2>5. Modifications to Service</h2>
-            <p>
-                PTvolume reserves the right to modify, amend, or update these terms at any time without prior individual notice. Continued use of the website constitutes acceptance of any updated terms.
+                PTvolume có quyền cập nhật hoặc điều chỉnh các điều khoản dịch vụ này vào bất kỳ lúc nào để phù hợp với định hướng phát triển và quy định pháp luật.
             </p>
         </div>
     </main>
 
     <footer>
-        <p>© 2026 PTvolume.com. All rights reserved. Naked Chart • VSA • Wyckoff Methodology.</p>
+        <p>© 2026 PTvolume.com. Toàn bộ bản quyền được bảo lưu. Naked Chart • VSA • Phương Pháp Wyckoff.</p>
     </footer>
 
+    <!-- Hidden Google Translate Element -->
+    <div id="google_translate_element" style="display:none;"></div>
+
     <script>
-        
-        , 3000);
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'vi',
+                includedLanguages: 'en,vi',
+                autoDisplay: false
+            }, 'google_translate_element');
         }
+
+        function setLanguage(lang) {
+            if (lang === 'vi') {
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + location.hostname;
+                document.cookie = "googtrans=/vi/vi; path=/;";
+                document.cookie = "googtrans=/vi/vi; path=/; domain=" + location.hostname;
+                localStorage.setItem('ptvolume_lang', 'vi');
+                location.reload();
+            } else if (lang === 'en') {
+                document.cookie = "googtrans=/vi/en; path=/;";
+                document.cookie = "googtrans=/vi/en; path=/; domain=" + location.hostname;
+                localStorage.setItem('ptvolume_lang', 'en');
+                location.reload();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentLang = localStorage.getItem('ptvolume_lang') || 'vi';
+            const btnVi = document.getElementById('btn-lang-vi');
+            const btnEn = document.getElementById('btn-lang-en');
+            if (btnVi && btnEn) {
+                if (currentLang === 'en') {
+                    btnEn.classList.add('active');
+                    btnVi.classList.remove('active');
+                } else {
+                    btnVi.classList.add('active');
+                    btnEn.classList.remove('active');
+                }
+            }
+        });
     </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>

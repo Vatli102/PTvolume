@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Risk Disclosure & Disclaimer | PTvolume</title>
-    <meta name="description" content="Important regulatory risk warning, leveraged trading notice, and non-advisory disclaimer for PTvolume.com.">
+    <title>Cảnh Báo Rủi Ro & Miễn Trừ Trách Nhiệm | PTvolume</title>
+    <meta name="description" content="Tuyên bố miễn trừ trách nhiệm pháp lý, cảnh báo rủi ro đòn bẩy tài chính và quy định cung cấp thông tin của PTvolume.com.">
     <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +30,6 @@
             padding: 0;
             box-sizing: border-box;
             font-family: var(--font-sans);
-            
         }
 
         body {
@@ -86,6 +85,42 @@
             color: #00E5FF;
         }
 
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lang-switcher {
+            display: inline-flex;
+            align-items: center;
+            background: #080B10;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2px;
+            gap: 2px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 16px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active, .lang-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
         .btn {
             padding: 8px 16px;
             border-radius: 6px;
@@ -120,94 +155,72 @@
 
         h1.page-title {
             font-family: var(--font-editorial);
-            font-size: 2.3rem;
+            font-size: 2.5rem;
             font-weight: 700;
             line-height: 1.3;
             margin-bottom: 16px;
-            color: #FF6B78;
+            color: #fff;
             letter-spacing: -0.5px;
-            display: flex;
-            align-items: center;
-            gap: 14px;
         }
 
         .page-subtitle {
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             color: var(--text-muted);
             margin-bottom: 40px;
             padding-bottom: 24px;
             border-bottom: 1px solid var(--border-color);
         }
 
-        .warning-callout {
+        .warning-banner {
             background: rgba(242, 54, 69, 0.08);
-            border: 1px solid rgba(242, 54, 69, 0.3);
-            border-radius: 12px;
+            border-left: 4px solid var(--bearish);
+            border-radius: 0 10px 10px 0;
             padding: 24px;
             margin-bottom: 36px;
-            color: #FFD2D6;
-            font-size: 1.02rem;
-            font-weight: 500;
         }
 
-        .risk-section {
+        .warning-banner h3 {
+            color: #FF8E99;
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .warning-banner p {
+            color: #E2E8F0;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            line-height: 1.65;
+        }
+
+        .section-block {
             margin-bottom: 36px;
         }
 
-        .risk-section h2 {
+        .section-block h2 {
             font-family: var(--font-editorial);
-            font-size: 1.35rem;
+            font-size: 1.45rem;
             font-weight: 700;
             color: #fff;
             margin-bottom: 14px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
-        .risk-section p {
+        .section-block p {
             color: var(--text-light);
-            font-size: 1rem;
-            margin-bottom: 14px;
+            font-size: 1.02rem;
+            margin-bottom: 16px;
         }
 
-        .risk-section ul {
-            margin-left: 20px;
+        .section-block ul {
+            margin-left: 24px;
             margin-bottom: 16px;
             color: var(--text-light);
         }
 
-        .risk-section li {
-            margin-bottom: 10px;
-        }
-
-        #copyToast {
-            visibility: hidden;
-            min-width: 320px;
-            background-color: #161D2B;
-            color: #FF8E99;
-            text-align: center;
-            border-radius: 8px;
-            border: 1px solid rgba(242, 54, 69, 0.4);
-            padding: 14px 22px;
-            position: fixed;
-            z-index: 9999;
-            bottom: 30px;
-            right: 30px;
-            font-size: 0.88rem;
-            font-weight: 600;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.6);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            transition: all 0.3s ease;
-            opacity: 0;
-        }
-
-        #copyToast.show {
-            visibility: visible;
-            opacity: 1;
-            transform: translateY(-5px);
+        .section-block li {
+            margin-bottom: 8px;
         }
 
         footer {
@@ -218,11 +231,17 @@
             color: var(--text-muted);
             font-size: 0.88rem;
         }
+
+        /* Hide Google Translate Toolbars & Overlays */
+        .goog-te-banner-frame.skiptranslate { display: none !important; }
+        body { top: 0px !important; }
+        .goog-tooltip, .goog-tooltip:hover { display: none !important; }
+        .goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
+        #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
+        .goog-te-gadget { display: none !important; }
     </style>
 </head>
-<body >
-
-    
+<body>
 
     <header>
         <div class="nav-container">
@@ -232,66 +251,120 @@
                     <span class="brand">PT<span>VOLUME</span></span>
                 </div>
             </a>
-            <a href="../index.html" class="btn">
-                <i class="fa-solid fa-arrow-left"></i> Return to Homepage
-            </a>
+            
+            <div class="nav-right">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" onclick="setLanguage('vi')" id="btn-lang-vi" title="Tiếng Việt">
+                        <span>🇻🇳</span> VI
+                    </button>
+                    <button class="lang-btn" onclick="setLanguage('en')" id="btn-lang-en" title="English">
+                        <span>🇬🇧</span> EN
+                    </button>
+                </div>
+                <a href="../index.html" class="btn">
+                    <i class="fa-solid fa-arrow-left"></i> Về Trang Chủ
+                </a>
+            </div>
         </div>
     </header>
 
     <main class="page-container">
         <div class="breadcrumb">
-            <a href="../index.html">Home</a>
+            <a href="../index.html">Trang Chủ</a>
             <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
-            <span>Risk Disclaimer</span>
+            <span>Cảnh Báo Rủi Ro</span>
         </div>
 
-        <h1 class="page-title">
-            <i class="fa-solid fa-triangle-exclamation"></i> Risk Disclosure & Legal Disclaimer
-        </h1>
+        <h1 class="page-title">Cảnh Báo Rủi Ro & Miễn Trừ Trách Nhiệm</h1>
         <div class="page-subtitle">
-            Mandatory regulatory disclosures regarding financial market volatility, leveraged products, and educational materials.
+            Vui lòng đọc kỹ thông báo rủi ro pháp lý trước khi tiếp cận bất kỳ nội dung phân tích hoặc giáo trình nào trên PTvolume.com.
         </div>
 
-        <div class="warning-callout">
-            <i class="fa-solid fa-circle-exclamation"></i> HIGH RISK WARNING: Trading leveraged financial instruments (such as Foreign Exchange, Spot Gold, Derivatives, and Cryptocurrencies) carries a high level of risk and may not be suitable for all investors. You could lose all or more of your initial investment.
-        </div>
-
-        <div class="risk-section">
-            <h2>1. Not Financial or Investment Advice</h2>
+        <div class="warning-banner">
+            <h3><i class="fa-solid fa-triangle-exclamation"></i> CẢNH BÁO RỦI RO ĐẦU TƯ TÀI CHÍNH</h3>
             <p>
-                All content, chart studies, price action diagrams, volume spread analyses, and book reviews provided on <strong>PTvolume.com</strong> are published solely for <strong>educational, research, and informational purposes</strong>.
-            </p>
-            <p>
-                Nothing published on this website constitutes a personalized investment recommendation, financial planning advice, tax advice, or a solicitation to buy or sell any security or financial instrument.
+                Giao dịch ngoại hối (Forex), Hàng hóa (Vàng, Dầu), Tiền mã hóa (Crypto) và các sản phẩm đòn bẩy tài chính (CFD / Phái sinh) có mức độ rủi ro vốn rất cao và có thể không phù hợp với tất cả các nhà đầu tư. Bạn có thể mất một phần hoặc toàn bộ số vốn đã nạp.
             </p>
         </div>
 
-        <div class="risk-section">
-            <h2>2. Market Risk & Leverage Dynamics</h2>
+        <div class="section-block">
+            <h2>1. Không Phải Lời Khuyên Đầu Tư Tài Chính (Non-Advisory)</h2>
             <p>
-                Financial markets are subject to sudden macroeconomic volatility, institutional liquidity gaps, geopolitical shocks, and spread widening. High leverage can work against you as well as for you. Past performance discussed in any analytical case study is never indicative of future market results.
+                Toàn bộ nội dung xuất bản trên <strong>PTvolume.com</strong> — bao gồm bài viết phân tích kỹ thuật, nhận định cấu trúc nến & Volume, bài viết tóm tắt sách, từ điển VSA và dữ liệu biểu đồ — chỉ nhằm mục đích <strong>giáo dục, nghiên cứu học thuật và trao đổi thông tin kỹ thuật</strong>.
+            </p>
+            <p>
+                Không có bất kỳ nội dung nào trên trang web được hiểu là lời mời chào, khuyến nghị mua/bán hay tư vấn quản lý danh mục đầu tư tài chính. Mọi quyết định giải ngân vốn đều do cá nhân bạn tự chịu trách nhiệm hoàn toàn.
             </p>
         </div>
 
-        <div class="risk-section">
-            <h2>3. Individual Trader Responsibility</h2>
+        <div class="section-block">
+            <h2>2. Tính Không Đảm Bảo Về Kết Quả Quá Khứ</h2>
+            <p>
+                Hiệu suất hoặc các thiết lập vào lệnh (Setup) được minh họa trong các nghiên cứu lịch sử (Backtest) không đảm bảo cho kết quả lợi nhuận trong tương lai. Thị trường tài chính luôn biến động không ngừng dưới tác động của các sự kiện kinh tế vĩ mô và dòng tiền thanh khoản bất ngờ.
+            </p>
+        </div>
+
+        <div class="section-block">
+            <h2>3. Nguyên Tắc Quản Trị Rủi Ro Cá Nhân</h2>
+            <p>
+                PTvolume luôn khuyến nghị trader:
+            </p>
             <ul>
-                <li>You maintain <strong>100% sole responsibility</strong> for any trade execution, capital allocation, and risk management decisions.</li>
-                <li>Never risk capital that you cannot afford to lose completely without compromising your financial well-being.</li>
-                <li>PTvolume.com, its contributors, and administrators disclaim any and all liability for any direct or consequential losses resulting from actions taken based on our educational research.</li>
+                <li>Chỉ giao dịch với số tiền bạn có thể chấp nhận mất (Risk Capital).</li>
+                <li>Tuyệt đối tuân thủ Stop Loss trên mọi vị thế và duy trì kỷ luật quản trị vốn (tối đa 1-2% rủi ro trên mỗi lệnh).</li>
+                <li>Tự kiểm tra và trải nghiệm trên tài khoản mô phỏng (Demo) trước khi giao dịch vốn thực.</li>
             </ul>
         </div>
     </main>
 
     <footer>
-        <p>© 2026 PTvolume.com. All rights reserved. Naked Chart • VSA • Wyckoff Methodology.</p>
+        <p>© 2026 PTvolume.com. Toàn bộ bản quyền được bảo lưu. Naked Chart • VSA • Phương Pháp Wyckoff.</p>
     </footer>
 
+    <!-- Hidden Google Translate Element -->
+    <div id="google_translate_element" style="display:none;"></div>
+
     <script>
-        
-        , 3000);
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'vi',
+                includedLanguages: 'en,vi',
+                autoDisplay: false
+            }, 'google_translate_element');
         }
+
+        function setLanguage(lang) {
+            if (lang === 'vi') {
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + location.hostname;
+                document.cookie = "googtrans=/vi/vi; path=/;";
+                document.cookie = "googtrans=/vi/vi; path=/; domain=" + location.hostname;
+                localStorage.setItem('ptvolume_lang', 'vi');
+                location.reload();
+            } else if (lang === 'en') {
+                document.cookie = "googtrans=/vi/en; path=/;";
+                document.cookie = "googtrans=/vi/en; path=/; domain=" + location.hostname;
+                localStorage.setItem('ptvolume_lang', 'en');
+                location.reload();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentLang = localStorage.getItem('ptvolume_lang') || 'vi';
+            const btnVi = document.getElementById('btn-lang-vi');
+            const btnEn = document.getElementById('btn-lang-en');
+            if (btnVi && btnEn) {
+                if (currentLang === 'en') {
+                    btnEn.classList.add('active');
+                    btnVi.classList.remove('active');
+                } else {
+                    btnVi.classList.add('active');
+                    btnEn.classList.remove('active');
+                }
+            }
+        });
     </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>

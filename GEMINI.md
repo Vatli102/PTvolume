@@ -4,9 +4,10 @@ Tài liệu này ghi nhớ toàn bộ các tiêu chuẩn bắt buộc cho mọi 
 
 ---
 
-### 1. TRẢI NGHIỆM NGƯỜI DÙNG & TƯƠNG TÁC (User Experience & Accessibility)
+### 1. TRẢI NGHIỆM NGƯỜI DÙNG & ĐA NGÔN NGỮ (User Experience & Multi-Language)
 * **Cho phép tương tác & Dịch tự nhiên:** Mở toàn bộ tính năng bôi đen văn bản, click chuột phải và dịch trang tự động qua trình duyệt để độc giả dễ dàng tra cứu, học tập và đọc hiểu đa ngôn ngữ.
-* **Ngôn ngữ chuẩn quốc tế:** Nội dung hiển thị mặc định 100% Tiếng Anh chuyên sâu tài chính chuẩn phong cách Investopedia.
+* **Ngôn ngữ mặc định:** Nội dung hiển thị mặc định 100% **Tiếng Việt chuyên sâu tài chính** chuẩn phong cách Investopedia (kết hợp các thuật ngữ giao dịch quốc tế chuẩn mực: *Naked Chart, Price Action, Volume Spread Analysis - VSA, Wyckoff, Order Flow, Supply & Demand, Smart Money, Entry, SL, TP*).
+* **Nút chuyển đổi Song ngữ (Language Switcher):** Mọi trang web đều tích hợp nút chuyển đổi `[ 🇻🇳 VI | 🇬🇧 EN ]` trên Header, cho phép độc giả quốc tế chuyển sang Tiếng Anh 1-click tức thì.
 
 ---
 

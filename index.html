@@ -1,38 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PTvolume | The Premier Authority on Price Action & Volume Spread Analysis (VSA)</title>
-    <meta name="description" content="PTvolume is the premier financial education and technical market intelligence platform dedicated to Naked Chart Price Action, Wyckoff Methodologies, and Volume Spread Analysis (VSA).">
+    <title>PTvolume.com | Cẩm Nang Phân Tích Kỹ Thuật Naked Chart & Volume Spread Analysis (VSA)</title>
+    <meta name="description" content="PTvolume.com — Nền tảng phân tích thị trường & đào tạo tài chính chuyên sâu hàng đầu. Price Action biểu đồ trần (Naked Chart), Phương pháp Wyckoff, Volume Spread Analysis (VSA), Order Flow và Tâm lý đầu tư.">
     <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <style>
         :root {
             --bg-main: #0B0E14;
-            --bg-card: #141822;
-            --bg-card-hover: #1A2130;
-            --bg-surface: #0F131C;
-            --border-color: #222938;
+            --bg-sidebar: #0E121B;
+            --bg-card: #141824;
+            --bg-card-hover: #1A2133;
+            --bg-surface: #101420;
+            --border-color: #202738;
             --border-light: rgba(255, 255, 255, 0.08);
             --primary: #2962FF;
-            --primary-hover: #1e4bd8;
-            --primary-glow: rgba(41, 98, 255, 0.2);
+            --primary-hover: #1E4BD8;
+            --primary-glow: rgba(41, 98, 255, 0.25);
+            --cyan: #00E5FF;
+            --cyan-dim: rgba(0, 229, 255, 0.1);
+            --cyan-glow: rgba(0, 229, 255, 0.25);
+            --accent-gold: #F0B90B;
+            --accent-gold-dim: rgba(240, 185, 11, 0.12);
             --bullish: #089981;
             --bullish-bg: rgba(8, 153, 129, 0.12);
             --bearish: #F23645;
             --bearish-bg: rgba(242, 54, 69, 0.12);
             --text-main: #F0F3FA;
-            --text-muted: #8E9BAE;
             --text-light: #CAD4E0;
-            --accent-gold: #F0B90B;
+            --text-muted: #8392A5;
+            --sidebar-width: 270px;
+            --sidebar-collapsed-width: 80px;
+            --header-height: 68px;
+            --font-sans: 'Be Vietnam Pro', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             --font-editorial: 'Merriweather', Georgia, serif;
-            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
+            --radius-lg: 16px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
+            --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.4);
+            --shadow-glow: 0 0 25px rgba(41, 98, 255, 0.2);
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -42,1309 +57,2946 @@
             font-family: var(--font-sans);
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background-color: var(--bg-main);
             color: var(--text-main);
             line-height: 1.65;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+            -webkit-user-select: text;
+            user-select: text;
         }
 
         a {
             text-decoration: none;
             color: inherit;
+            transition: var(--transition-smooth);
         }
 
-        /* --- Top Authority Header & Navigation --- */
-        .top-editorial-bar {
-            background: #080A0F;
-            border-bottom: 1px solid var(--border-color);
-            padding: 6px 24px;
-            font-size: 0.78rem;
-            color: var(--text-muted);
+        /* --- Scrollbar --- */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-main);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #222B3D;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
         }
 
-        .top-bar-inner {
-            max-width: 1280px;
-            margin: 0 auto;
+        /* --- APP WRAPPER LAYOUT (Left Sidebar + Full-width Main) --- */
+        .app-layout {
             display: flex;
+            min-height: 100vh;
+            width: 100vw;
+            position: relative;
+            background: var(--bg-main);
+        }
+
+        /* --- SIDEBAR NAVIGATION (LEFT) --- */
+        .app-sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: var(--bg-sidebar);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            z-index: 1100;
+            transition: var(--transition-smooth);
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        body.sidebar-collapsed .app-sidebar {
+            width: var(--sidebar-collapsed-width);
+        }
+
+        .sidebar-header {
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-items: center;
-        }
-
-        .editorial-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: #00E5FF;
-            font-weight: 600;
-        }
-
-        header {
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(14, 18, 27, 0.95);
+            backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
-            z-index: 1000;
-            background: rgba(11, 14, 20, 0.95);
-            backdrop-filter: blur(14px);
-            border-bottom: 1px solid var(--border-color);
+            z-index: 10;
         }
 
-        .nav-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 24px;
-        }
-
-        .logo {
+        .sidebar-brand {
             display: flex;
             align-items: center;
             gap: 12px;
-            color: #fff;
+            overflow: hidden;
+            text-decoration: none;
         }
 
-        .logo img {
-            width: 44px;
-            height: 44px;
-            border-radius: 8px;
+        .sidebar-logo-img {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
             object-fit: cover;
-            border: 1px solid rgba(41, 98, 255, 0.35);
+            border: 1.5px solid var(--cyan);
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.25);
+            flex-shrink: 0;
         }
 
-        .logo-text {
+        .sidebar-brand-text {
             display: flex;
             flex-direction: column;
-            line-height: 1.1;
+            line-height: 1.15;
+            white-space: nowrap;
+            transition: opacity 0.2s ease;
         }
 
-        .logo-text .brand {
-            font-size: 1.3rem;
+        body.sidebar-collapsed .sidebar-brand-text {
+            display: none;
+        }
+
+        .sidebar-brand-title {
+            font-size: 1.22rem;
             font-weight: 800;
+            color: #fff;
             letter-spacing: -0.5px;
         }
 
-        .logo-text .brand span {
-            color: #00E5FF;
+        .sidebar-brand-title span {
+            color: var(--cyan);
         }
 
-        .logo-text .sub-brand {
+        .sidebar-brand-subtitle {
             font-size: 0.65rem;
             font-weight: 700;
             color: var(--text-muted);
-            letter-spacing: 1.8px;
+            letter-spacing: 1.5px;
         }
 
-        .nav-links {
+        .sidebar-nav-container {
+            padding: 16px 12px;
             display: flex;
-            gap: 26px;
-            list-style: none;
-            font-size: 0.9rem;
-            font-weight: 600;
+            flex-direction: column;
+            gap: 6px;
+            flex: 1;
         }
 
-        .nav-links a {
+        .sidebar-group-label {
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
             color: var(--text-muted);
-            transition: color 0.2s;
+            padding: 14px 12px 6px;
             display: flex;
             align-items: center;
-            gap: 7px;
+            gap: 8px;
+            white-space: nowrap;
         }
 
-        .nav-links a:hover {
-            color: #00E5FF;
+        .sidebar-group-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
         }
 
-        .nav-actions {
+        body.sidebar-collapsed .sidebar-group-label {
+            display: none;
+        }
+
+        .sidebar-nav-item {
             display: flex;
             align-items: center;
             gap: 14px;
-        }
-
-        /* Search Trigger Button */
-        .search-btn {
-            background: transparent;
-            border: 1px solid var(--border-color);
-            color: var(--text-muted);
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-size: 0.95rem;
-        }
-
-        .search-btn:hover {
-            color: #00E5FF;
-            border-color: #00E5FF;
-            background: rgba(0, 229, 255, 0.08);
-        }
-
-        /* Log In Button */
-        .btn-login {
-            color: var(--text-main);
-            font-weight: 600;
-            font-size: 0.9rem;
-            padding: 8px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: transparent;
-            border: none;
-        }
-
-        .btn-login:hover {
-            color: #00E5FF;
-        }
-
-        .btn-join {
-            background: var(--primary);
-            color: #fff;
-            padding: 8px 18px;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.88rem;
-            cursor: pointer;
-            transition: all 0.2s;
-            border: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .btn-join:hover {
-            background: var(--primary-hover);
-        }
-
-        /* Search Modal Overlay */
-        .search-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(8, 10, 15, 0.85);
-            backdrop-filter: blur(8px);
-            z-index: 2000;
-            display: none;
-            align-items: flex-start;
-            justify-content: center;
-            padding-top: 100px;
-        }
-
-        .search-overlay.active {
-            display: flex;
-        }
-
-        .search-box-container {
-            width: 100%;
-            max-width: 680px;
-            background: #141822;
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
-            overflow: hidden;
-            margin: 0 20px;
-        }
-
-        .search-input-wrap {
-            display: flex;
-            align-items: center;
-            padding: 16px 20px;
-            border-bottom: 1px solid var(--border-color);
-            gap: 12px;
-        }
-
-        .search-input-wrap i {
-            color: #00E5FF;
-            font-size: 1.1rem;
-        }
-
-        .search-input-wrap input {
-            width: 100%;
-            background: transparent;
-            border: none;
-            outline: none;
-            color: #fff;
-            font-size: 1.1rem;
-            font-family: var(--font-sans);
-        }
-
-        .search-close-btn {
-            background: transparent;
-            border: none;
-            color: var(--text-muted);
-            cursor: pointer;
-            font-size: 1.1rem;
-        }
-
-        .search-close-btn:hover {
-            color: #fff;
-        }
-
-        .search-suggestions {
-            padding: 16px 20px;
-            color: var(--text-muted);
-            font-size: 0.88rem;
-        }
-
-        .search-tag-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 10px;
-        }
-
-        .search-tag {
-            background: #0B0E14;
-            border: 1px solid var(--border-color);
-            padding: 6px 12px;
-            border-radius: 6px;
+            padding: 12px 14px;
+            border-radius: var(--radius-md);
             color: var(--text-light);
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .search-tag:hover {
-            border-color: #2962FF;
-            color: #00E5FF;
-        }
-
-        /* Login Modal */
-        .login-modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(8, 10, 15, 0.85);
-            backdrop-filter: blur(8px);
-            z-index: 2000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .login-modal-overlay.active {
-            display: flex;
-        }
-
-        .login-card {
-            width: 100%;
-            max-width: 420px;
-            background: #141822;
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 32px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
-            position: relative;
-            margin: 0 20px;
-        }
-
-        .login-card-header {
-            text-align: center;
-            margin-bottom: 24px;
-        }
-
-        .login-card-header h2 {
-            font-family: var(--font-editorial);
-            color: #fff;
-            font-size: 1.5rem;
-            margin-bottom: 6px;
-        }
-
-        .login-card-header p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        .login-field {
-            margin-bottom: 16px;
-        }
-
-        .login-label {
-            display: block;
-            font-size: 0.82rem;
-            font-weight: 600;
-            color: #cfd8ea;
-            margin-bottom: 6px;
-        }
-
-        .login-input {
-            width: 100%;
-            padding: 11px 14px;
-            background: #0B0E14;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            color: #fff;
-            outline: none;
             font-size: 0.92rem;
-        }
-
-        .login-input:focus {
-            border-color: var(--primary);
-        }
-
-        .login-btn-submit {
-            width: 100%;
-            padding: 12px;
-            background: var(--primary);
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            font-weight: 700;
-            cursor: pointer;
-            margin-top: 10px;
-            font-size: 0.95rem;
-        }
-
-        .login-btn-submit:hover {
-            background: var(--primary-hover);
-        }
-
-        .login-close {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            background: transparent;
-            border: none;
-            color: var(--text-muted);
-            cursor: pointer;
-            font-size: 1.1rem;
-        }
-
-        /* --- Investopedia Editorial Hero Grid --- */
-        .editorial-hero {
-            max-width: 1280px;
-            margin: 40px auto 30px;
-            padding: 0 24px;
-            display: grid;
-            grid-template-columns: 2fr 1.15fr;
-            gap: 32px;
-        }
-
-        @media (max-width: 960px) {
-            .editorial-hero {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .lead-story {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: border-color 0.2s;
-        }
-
-        .lead-story:hover {
-            border-color: rgba(41, 98, 255, 0.4);
-        }
-
-        .lead-image-box {
-            height: 320px;
-            background: linear-gradient(135deg, #182236 0%, #0d1422 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .lead-image-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Image Watermark Stamp */
-        .watermark-stamp {
-            position: absolute;
-            bottom: 12px;
-            right: 12px;
-            background: rgba(11, 14, 20, 0.8);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 5px 12px;
-            border-radius: 20px;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            pointer-events: none;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .lead-content {
-            padding: 28px 32px;
-        }
-
-        .category-tag {
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--accent-gold);
-            margin-bottom: 10px;
-            display: inline-block;
-        }
-
-        .lead-title {
-            font-family: var(--font-editorial);
-            font-size: 1.95rem;
-            font-weight: 700;
-            line-height: 1.35;
-            color: #FFFFFF;
-            margin-bottom: 14px;
-            letter-spacing: -0.3px;
-        }
-
-        .lead-title a:hover {
-            color: #00E5FF;
-        }
-
-        .lead-excerpt {
-            color: var(--text-light);
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-
-        .byline {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border-light);
-            padding-top: 16px;
-        }
-
-        .byline-author {
-            color: #00E5FF;
             font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            position: relative;
+            white-space: nowrap;
         }
 
-        /* Side Briefings */
-        .side-briefings {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .section-header-compact {
-            font-size: 0.95rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .sidebar-nav-item:hover {
+            background: rgba(41, 98, 255, 0.12);
             color: #fff;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--primary);
-            margin-bottom: 4px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .briefing-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 18px 20px;
-            transition: all 0.2s;
-        }
-
-        .briefing-card:hover {
-            background: var(--bg-card-hover);
-            border-color: #3b82f6;
             transform: translateX(3px);
         }
 
-        .briefing-category {
-            font-size: 0.72rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            margin-bottom: 6px;
-        }
-
-        .briefing-title {
-            font-family: var(--font-editorial);
-            font-size: 1.05rem;
-            font-weight: 700;
-            line-height: 1.45;
+        .sidebar-nav-item.active {
+            background: linear-gradient(135deg, rgba(41, 98, 255, 0.25), rgba(0, 229, 255, 0.15));
             color: #fff;
-            margin-bottom: 8px;
+            border: 1px solid rgba(0, 229, 255, 0.35);
+            box-shadow: 0 4px 16px rgba(41, 98, 255, 0.2);
         }
 
-        .briefing-meta {
-            font-size: 0.76rem;
-            color: var(--text-muted);
+        .sidebar-nav-item.active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 20%;
+            height: 60%;
+            width: 4px;
+            background: var(--cyan);
+            border-radius: 0 4px 4px 0;
+            box-shadow: 0 0 10px var(--cyan);
         }
 
-        /* --- Sections Layout --- */
-        .section {
-            padding: 50px 24px;
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        .section-title-wrap {
-            margin-bottom: 30px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 14px;
+        .nav-icon-wrap {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
             display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.05rem;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--cyan);
+            flex-shrink: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .sidebar-nav-item:hover .nav-icon-wrap,
+        .sidebar-nav-item.active .nav-icon-wrap {
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 0 12px var(--primary-glow);
+        }
+
+        .nav-text {
+            flex: 1;
+            transition: opacity 0.2s ease;
+        }
+
+        body.sidebar-collapsed .nav-text {
+            display: none;
+        }
+
+        .nav-badge {
+            font-size: 0.68rem;
+            font-weight: 800;
+            padding: 2px 7px;
+            border-radius: 20px;
+            background: rgba(240, 185, 11, 0.15);
+            color: var(--accent-gold);
+            border: 1px solid rgba(240, 185, 11, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        body.sidebar-collapsed .nav-badge {
+            display: none;
+        }
+
+        .nav-badge.hot {
+            background: rgba(242, 54, 69, 0.15);
+            color: #FF707E;
+            border-color: rgba(242, 54, 69, 0.35);
+        }
+
+        .nav-badge.live {
+            background: rgba(8, 153, 129, 0.15);
+            color: #26E7A6;
+            border-color: rgba(8, 153, 129, 0.35);
+        }
+
+        .sidebar-footer {
+            padding: 16px 14px;
+            border-top: 1px solid var(--border-color);
+            background: rgba(10, 13, 20, 0.9);
+            display: flex;
+            flex-direction: column;
             gap: 12px;
         }
 
-        .section-main-title {
-            font-size: 1.75rem;
+        .sidebar-toggle-btn {
+            background: #141824;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 8px 12px;
+            border-radius: var(--radius-sm);
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: var(--transition-smooth);
+            width: 100%;
+        }
+
+        .sidebar-toggle-btn:hover {
+            color: #fff;
+            border-color: var(--cyan);
+            background: rgba(0, 229, 255, 0.08);
+        }
+
+        body.sidebar-collapsed .sidebar-toggle-btn .toggle-text {
+            display: none;
+        }
+
+        .sidebar-quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            padding: 0 4px;
+        }
+
+        body.sidebar-collapsed .sidebar-quick-links {
+            display: none;
+        }
+
+        .sidebar-quick-links a:hover {
+            color: var(--cyan);
+        }
+
+        /* --- MAIN WRAPPER (TRÀN TRANG / FULL-WIDTH FLUID) --- */
+        .app-main {
+            flex: 1;
+            margin-left: var(--sidebar-width);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            width: calc(100vw - var(--sidebar-width));
+            transition: var(--transition-smooth);
+            background: var(--bg-main);
+        }
+
+        body.sidebar-collapsed .app-main {
+            margin-left: var(--sidebar-collapsed-width);
+            width: calc(100vw - var(--sidebar-collapsed-width));
+        }
+
+        /* --- TOP HEADER (STICKY HEADER TRÀN TRANG) --- */
+        .app-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 14, 20, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            height: var(--header-height);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 28px;
+            gap: 20px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: #fff;
+            width: 38px;
+            height: 38px;
+            border-radius: var(--radius-sm);
+            font-size: 1.1rem;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-search-bar {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-search-input {
+            width: 100%;
+            background: #141824;
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            padding: 9px 18px 9px 42px;
+            color: #fff;
+            font-size: 0.88rem;
+            outline: none;
+            transition: var(--transition-smooth);
+        }
+
+        .header-search-input:focus {
+            border-color: var(--cyan);
+            box-shadow: 0 0 16px rgba(0, 229, 255, 0.2);
+            background: #181E2E;
+        }
+
+        .header-search-icon {
+            position: absolute;
+            left: 16px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            pointer-events: none;
+        }
+
+        .header-search-shortcut {
+            position: absolute;
+            right: 12px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: var(--font-mono);
+        }
+
+        /* --- Header Right Controls --- */
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-shrink: 0;
+        }
+
+        .live-status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(8, 153, 129, 0.12);
+            border: 1px solid rgba(8, 153, 129, 0.3);
+            color: #26E7A6;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .live-status-pill .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: #089981;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #089981;
+            animation: pulse-glow 1.5s infinite;
+        }
+
+        @keyframes pulse-glow {
+            0% { transform: scale(0.9); opacity: 0.7; }
+            50% { transform: scale(1.3); opacity: 1; }
+            100% { transform: scale(0.9); opacity: 0.7; }
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            display: inline-flex;
+            align-items: center;
+            background: #141824;
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            padding: 3px;
+            gap: 3px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition-smooth);
+        }
+
+        .lang-btn.active, .lang-btn:hover {
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 2px 8px var(--primary-glow);
+        }
+
+        .header-action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .btn-forum-ask {
+            background: linear-gradient(135deg, #F0B90B, #E09E00);
+            color: #0B0E14;
+            box-shadow: 0 4px 14px rgba(240, 185, 11, 0.3);
+            border: none;
+        }
+
+        .btn-forum-ask:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(240, 185, 11, 0.45);
+        }
+
+        .btn-header-login {
+            background: rgba(41, 98, 255, 0.15);
+            border: 1px solid rgba(41, 98, 255, 0.4);
+            color: #fff;
+        }
+
+        .btn-header-login:hover {
+            background: var(--primary);
+            box-shadow: 0 4px 14px var(--primary-glow);
+        }
+
+        /* --- TICKER BAR TRÀN TRANG (MARKET TICKER) --- */
+        .ticker-bar {
+            background: #080A0F;
+            border-bottom: 1px solid var(--border-color);
+            padding: 8px 28px;
+            display: flex;
+            align-items: center;
+            overflow-x: auto;
+            gap: 24px;
+            font-size: 0.82rem;
+            white-space: nowrap;
+        }
+
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+
+        .ticker-symbol {
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .ticker-price {
+            font-family: var(--font-mono);
+            color: var(--text-light);
+        }
+
+        .ticker-change.up {
+            color: #26E7A6;
+            font-family: var(--font-mono);
+        }
+
+        .ticker-change.down {
+            color: #FF5263;
+            font-family: var(--font-mono);
+        }
+
+        /* --- TRÀN TRANG MAIN CONTENT AREA --- */
+        .content-container {
+            padding: 32px 36px 60px;
+            width: 100%;
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 52px;
+        }
+
+        /* --- HERO BANNER SECTION (TRÀN MÀN HÌNH ĐẲNG CẤP) --- */
+        .hero-banner {
+            position: relative;
+            background: linear-gradient(135deg, #111624 0%, #151C2E 50%, #0E1320 100%);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 38px 42px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 36px;
+            align-items: center;
+        }
+
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 229, 255, 0.12) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .hero-banner::after {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(41, 98, 255, 0.15) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 229, 255, 0.12);
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            color: var(--cyan);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .hero-title {
+            font-size: 2.35rem;
+            font-weight: 900;
+            line-height: 1.25;
+            color: #fff;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, #00E5FF, #2962FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 1.02rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 26px;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 28px;
+        }
+
+        .btn-hero-primary {
+            background: linear-gradient(135deg, #2962FF, #00E5FF);
+            color: #fff;
+            padding: 13px 28px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 8px 24px rgba(41, 98, 255, 0.35);
+            transition: var(--transition-smooth);
+        }
+
+        .btn-hero-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(41, 98, 255, 0.5);
+        }
+
+        .btn-hero-secondary {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--border-color);
+            color: #fff;
+            padding: 13px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-hero-secondary:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--cyan);
+            color: var(--cyan);
+        }
+
+        .hero-stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        .hero-stat-item b {
+            display: block;
+            font-size: 1.45rem;
+            font-weight: 900;
+            color: var(--cyan);
+            font-family: var(--font-mono);
+        }
+
+        .hero-stat-item span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        /* Hero Right: Quick Action Grid */
+        .hero-quick-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .hero-action-card {
+            background: rgba(20, 24, 36, 0.85);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            backdrop-filter: blur(8px);
+        }
+
+        .hero-action-card:hover {
+            background: rgba(26, 33, 51, 0.95);
+            border-color: var(--cyan);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+        }
+
+        .action-card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            background: rgba(41, 98, 255, 0.15);
+            color: var(--cyan);
+            margin-bottom: 4px;
+        }
+
+        .action-card-title {
+            font-size: 0.95rem;
             font-weight: 800;
             color: #fff;
-            letter-spacing: -0.5px;
+        }
+
+        .action-card-desc {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.45;
+        }
+
+        /* --- SECTION STRUCTURE (FULL-WIDTH SECTIONS) --- */
+        .full-section {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            scroll-margin-top: 90px;
+        }
+
+        .section-header-bar {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 14px;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .section-headline {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .section-kicker {
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--cyan);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #fff;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        .section-sub-text {
+        .section-subtitle {
+            font-size: 0.88rem;
             color: var(--text-muted);
-            font-size: 0.92rem;
-            margin-top: 4px;
         }
 
-        /* --- 1. Structured Curriculum / Learning Path --- */
-        .curriculum-grid {
+        .section-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-view-all {
+            color: var(--cyan);
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .section-view-all:hover {
+            color: #fff;
+            transform: translateX(3px);
+        }
+
+        /* --- GRID LAYOUTS --- */
+        .cards-grid-4 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
 
-        .curriculum-card {
+        .cards-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 22px;
+        }
+
+        .cards-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+            gap: 24px;
+        }
+
+        /* --- MODULE 1: HỌC TẬP (ACADEMY CARDS) --- */
+        .course-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 24px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition-smooth);
             position: relative;
-            transition: all 0.25s ease;
         }
 
-        .curriculum-card:hover {
-            border-color: #00E5FF;
-            transform: translateY(-3px);
+        .course-card:hover {
+            border-color: rgba(0, 229, 255, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
         }
 
-        .stage-number {
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: #00E5FF;
-            background: rgba(0, 229, 255, 0.1);
+        .course-card-badge-top {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            z-index: 3;
+            background: rgba(14, 18, 27, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(6px);
             padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+        }
+
+        .course-thumb-box {
+            position: relative;
+            height: 180px;
+            background: #080A0F;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .course-thumb-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .course-card:hover .course-thumb-box img {
+            transform: scale(1.05);
+        }
+
+        .watermark-box {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            background: rgba(11, 14, 20, 0.85);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: rgba(255, 255, 255, 0.75);
+            padding: 3px 8px;
             border-radius: 4px;
-            display: inline-block;
+            font-size: 0.68rem;
+            font-weight: 700;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .course-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .course-level {
+            font-size: 0.74rem;
+            font-weight: 700;
+            color: var(--cyan);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .course-title {
+            font-size: 1.12rem;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.35;
+            margin-bottom: 10px;
+        }
+
+        .course-desc {
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+            margin-bottom: 16px;
+            flex: 1;
+        }
+
+        .course-meta-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid var(--border-color);
+            padding-top: 14px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .btn-study-now {
+            background: rgba(41, 98, 255, 0.15);
+            border: 1px solid rgba(41, 98, 255, 0.35);
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-study-now:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: #fff;
+        }
+
+        /* --- MODULE 2: ĐẦU TƯ (INVESTING & COMMODITIES) --- */
+        .asset-table-wrap {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            overflow-x: auto;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .asset-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.88rem;
+        }
+
+        .asset-table th {
+            background: #0D111A;
+            padding: 14px 20px;
+            color: var(--text-muted);
+            font-weight: 700;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .asset-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            color: var(--text-light);
+        }
+
+        .asset-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .asset-name-col {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .asset-badge {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            font-weight: 800;
+            background: rgba(41, 98, 255, 0.15);
+            color: var(--cyan);
+            border: 1px solid rgba(41, 98, 255, 0.3);
+        }
+
+        /* --- MODULE 3: PHÂN TÍCH (MARKET ANALYSIS & ORDER FLOW) --- */
+        .analysis-lead-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .analysis-lead-card:hover {
+            border-color: rgba(41, 98, 255, 0.4);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .analysis-lead-img {
+            position: relative;
+            height: 100%;
+            min-height: 280px;
+            background: #080A0F;
+        }
+
+        .analysis-lead-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .analysis-lead-content {
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .analysis-category {
+            color: var(--accent-gold);
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .analysis-lead-title {
+            font-family: var(--font-editorial);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.35;
             margin-bottom: 14px;
         }
 
-        .curriculum-card h3 {
-            font-size: 1.15rem;
+        .analysis-lead-title a:hover {
+            color: var(--cyan);
+        }
+
+        .analysis-lead-excerpt {
+            font-size: 0.92rem;
+            color: var(--text-light);
+            line-height: 1.65;
+            margin-bottom: 20px;
+        }
+
+        /* --- MODULE 4: THƯ VIỆN (LIBRARY & CASE STUDIES) --- */
+        .case-study-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: var(--transition-smooth);
+        }
+
+        .case-study-card:hover {
+            border-color: var(--cyan);
+            transform: translateY(-3px);
+            background: var(--bg-card-hover);
+        }
+
+        .case-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .case-tag {
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 4px;
+            background: rgba(0, 229, 255, 0.12);
+            color: var(--cyan);
+        }
+
+        .case-result {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .case-result.win { color: #26E7A6; }
+        .case-result.lesson { color: #FF707E; }
+
+        .case-title {
+            font-size: 1rem;
             font-weight: 700;
             color: #fff;
-            margin-bottom: 10px;
-            line-height: 1.4;
         }
 
-        .curriculum-card p {
-            font-size: 0.88rem;
+        .case-desc {
+            font-size: 0.82rem;
             color: var(--text-muted);
-            line-height: 1.65;
+            line-height: 1.5;
         }
 
-        /* --- 2. Classic Trading Library (Books) --- */
-        .books-grid {
+        /* --- MODULE 5: DIỄN ĐÀN (FORUM & COMMUNITY) --- */
+        .forum-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            grid-template-columns: 1.8fr 1.1fr;
+            gap: 24px;
+        }
+
+        .forum-posts-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .forum-post-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 18px 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            transition: var(--transition-smooth);
+        }
+
+        .forum-post-item:hover {
+            border-color: rgba(41, 98, 255, 0.4);
+            background: var(--bg-card-hover);
+        }
+
+        .forum-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #2962FF, #00E5FF);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .forum-post-content {
+            flex: 1;
+        }
+
+        .forum-post-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .forum-post-snippet {
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .forum-meta-bar {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.76rem;
+            color: var(--text-muted);
+        }
+
+        .forum-stats-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .forum-form-input {
+            width: 100%;
+            background: #0B0E14;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 12px;
+            color: #fff;
+            font-size: 0.88rem;
+            outline: none;
+            margin-bottom: 10px;
+        }
+
+        .forum-form-input:focus {
+            border-color: var(--cyan);
+        }
+
+        /* --- MODULE 6: CÔNG CỤ VÀ TIỆN ÍCH (TOOLS & CALCULATORS) --- */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .tool-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 26px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .tool-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 14px;
+        }
+
+        .tool-header-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 229, 255, 0.12);
+            color: var(--cyan);
+            font-size: 1.2rem;
+        }
+
+        .tool-header-text h3 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .tool-header-text p {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .calc-form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .calc-field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .calc-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .calc-input {
+            width: 100%;
+            background: #0B0E14;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 10px 12px;
+            color: #fff;
+            font-size: 0.92rem;
+            font-family: var(--font-mono);
+            outline: none;
+            transition: var(--transition-smooth);
+        }
+
+        .calc-input:focus {
+            border-color: var(--cyan);
+        }
+
+        .calc-btn-compute {
+            grid-column: span 2;
+            background: linear-gradient(135deg, #2962FF, #1E4BD8);
+            color: #fff;
+            padding: 11px;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .calc-btn-compute:hover {
+            background: var(--primary-hover);
+            box-shadow: 0 4px 14px var(--primary-glow);
+        }
+
+        .calc-result-box {
+            grid-column: span 2;
+            background: #0B0E14;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 14px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            text-align: center;
+        }
+
+        .calc-result-item b {
+            display: block;
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--cyan);
+            font-family: var(--font-mono);
+        }
+
+        .calc-result-item span {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        /* --- MODULE 7: TỦ SÁCH TÀI CHÍNH (FINANCIAL BOOKSHELF) --- */
+        .bookshelf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 22px;
         }
 
         .book-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border-radius: var(--radius-md);
             padding: 22px;
             display: flex;
-            flex-direction: column;
-            transition: all 0.2s;
+            gap: 18px;
+            transition: var(--transition-smooth);
+            position: relative;
         }
 
         .book-card:hover {
-            background: var(--bg-card-hover);
-            border-color: #3b82f6;
-            transform: translateY(-3px);
+            border-color: var(--accent-gold);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
         }
 
-        .book-badge {
-            font-size: 0.72rem;
+        .book-cover {
+            width: 90px;
+            height: 130px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #1C2333, #0F131C);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8px;
+            flex-shrink: 0;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        .book-cover i {
+            font-size: 1.8rem;
+            color: var(--accent-gold);
+            margin-bottom: 6px;
+        }
+
+        .book-cover-title {
+            font-size: 0.65rem;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.2;
+        }
+
+        .book-info {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .book-author {
+            font-size: 0.74rem;
             font-weight: 700;
             color: var(--accent-gold);
             text-transform: uppercase;
             letter-spacing: 0.8px;
+            margin-bottom: 4px;
+        }
+
+        .book-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.35;
             margin-bottom: 8px;
         }
 
-        .book-author {
+        .book-summary {
             font-size: 0.8rem;
-            color: #00E5FF;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        .book-card h3 {
-            font-family: var(--font-editorial);
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #fff;
-            line-height: 1.4;
-            margin-bottom: 10px;
-        }
-
-        .book-desc {
-            font-size: 0.86rem;
             color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 18px;
-            flex-grow: 1;
+            line-height: 1.5;
+            margin-bottom: 14px;
+            flex: 1;
         }
 
-        .book-link {
-            font-size: 0.82rem;
-            font-weight: 600;
-            color: #82B1FF;
+        .book-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-read-summary {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--cyan);
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
         }
 
-        .book-link:hover {
+        .btn-read-summary:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* --- MODULE 8: TÂM LÍ ĐẦU TƯ (TRADING PSYCHOLOGY) --- */
+        .psychology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .psychology-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: var(--transition-smooth);
+        }
+
+        .psychology-card:hover {
+            border-color: #00E5FF;
+            transform: translateY(-3px);
+            background: var(--bg-card-hover);
+        }
+
+        .psychology-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            background: rgba(242, 54, 69, 0.12);
+            color: #FF5263;
+        }
+
+        .psychology-icon.green {
+            background: rgba(8, 153, 129, 0.12);
+            color: #26E7A6;
+        }
+
+        .psychology-icon.blue {
+            background: rgba(41, 98, 255, 0.12);
+            color: var(--cyan);
+        }
+
+        .psychology-card h4 {
+            font-size: 1.08rem;
+            font-weight: 800;
             color: #fff;
         }
 
-        /* --- 3. VSA Terminology Dictionary Grid --- */
-        .dictionary-grid {
+        .psychology-card p {
+            font-size: 0.84rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* --- COMMENTS SECTION (BÌNH LUẬN ĐỘC GIẢ) --- */
+        .comments-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .comments-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 14px;
+        }
+
+        .comment-form {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 16px;
         }
 
-        .dict-item {
-            background: var(--bg-surface);
+        .comment-form textarea {
+            grid-column: span 2;
+            width: 100%;
+            height: 90px;
+            background: #0B0E14;
             border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 18px 20px;
-            border-left: 3px solid var(--primary);
+            border-radius: var(--radius-sm);
+            padding: 12px;
+            color: #fff;
+            font-size: 0.88rem;
+            outline: none;
+            resize: vertical;
         }
 
-        .dict-term {
-            font-size: 1rem;
+        .comment-form textarea:focus {
+            border-color: var(--cyan);
+        }
+
+        .comment-form input {
+            width: 100%;
+            background: #0B0E14;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 10px 12px;
+            color: #fff;
+            font-size: 0.88rem;
+            outline: none;
+        }
+
+        .comment-form input:focus {
+            border-color: var(--cyan);
+        }
+
+        .btn-submit-comment {
+            grid-column: span 2;
+            background: var(--primary);
+            color: #fff;
+            padding: 11px;
+            border: none;
+            border-radius: var(--radius-sm);
             font-weight: 700;
-            color: #FFFFFF;
-            margin-bottom: 6px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-submit-comment:hover {
+            background: var(--primary-hover);
+        }
+
+        .comment-list {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .comment-item {
+            background: #0E121B;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            display: flex;
+            gap: 14px;
+        }
+
+        .comment-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(41, 98, 255, 0.2);
+            color: var(--cyan);
+            display: flex;
             align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            flex-shrink: 0;
         }
 
-        .dict-badge {
-            font-size: 0.68rem;
-            font-family: var(--font-mono);
+        .comment-content {
+            flex: 1;
+        }
+
+        .comment-author-name {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 2px;
+        }
+
+        .comment-date {
+            font-size: 0.72rem;
             color: var(--text-muted);
-            background: #141924;
-            padding: 2px 6px;
-            border-radius: 4px;
+            margin-bottom: 6px;
         }
 
-        .dict-definition {
+        .comment-text {
             font-size: 0.85rem;
-            color: var(--text-muted);
-            line-height: 1.6;
+            color: var(--text-light);
+            line-height: 1.5;
         }
 
-        /* --- 4. Live Technical Charting --- */
+        /* --- TRADINGVIEW & DISCLAIMER --- */
         .chart-box {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 14px;
-            height: 580px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            height: 520px;
+            position: relative;
         }
 
-        /* --- Risk Disclaimer Banner --- */
         .disclaimer-box {
-            background: rgba(242, 54, 69, 0.04);
-            border: 1px solid rgba(242, 54, 69, 0.2);
-            border-radius: 10px;
+            background: rgba(242, 54, 69, 0.05);
+            border: 1px solid rgba(242, 54, 69, 0.25);
+            border-radius: var(--radius-md);
             padding: 20px 24px;
-            margin: 40px 0 20px;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            line-height: 1.6;
         }
 
         .disclaimer-box h4 {
-            color: #FF6B78;
-            font-size: 0.9rem;
-            font-weight: 700;
+            color: #FF5263;
+            font-size: 0.95rem;
+            font-weight: 800;
             margin-bottom: 8px;
             display: flex;
             align-items: center;
             gap: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
-        .disclaimer-box p {
-            color: #929db0;
-            font-size: 0.82rem;
-            line-height: 1.65;
-        }
-
-        /* --- Institutional Footer --- */
+        /* --- FOOTER (TRÀN TRANG ĐẲNG CẤP) --- */
         footer {
+            background: #080A0F;
             border-top: 1px solid var(--border-color);
-            background: #07090E;
-            padding: 50px 24px 30px;
-            color: var(--text-muted);
-            font-size: 0.88rem;
+            padding: 48px 36px 28px;
+            margin-top: 40px;
         }
 
-        .footer-container {
-            max-width: 1280px;
-            margin: 0 auto;
+        .footer-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
+            grid-template-columns: 1.5fr repeat(3, 1fr);
             gap: 36px;
             margin-bottom: 36px;
-        }
-
-        @media (max-width: 900px) {
-            .footer-container {
-                grid-template-columns: 1fr 1fr;
-            }
-            .nav-links { display: none; }
-        }
-
-        @media (max-width: 600px) {
-            .footer-container {
-                grid-template-columns: 1fr;
-            }
         }
 
         .footer-brand p {
             font-size: 0.85rem;
             color: var(--text-muted);
+            line-height: 1.65;
             margin-top: 12px;
             max-width: 320px;
-            line-height: 1.6;
         }
 
         .footer-col h4 {
-            color: #fff;
             font-size: 0.92rem;
-            font-weight: 700;
-            margin-bottom: 16px;
+            font-weight: 800;
+            color: #fff;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
+            margin-bottom: 16px;
         }
 
         .footer-col ul {
             list-style: none;
-        }
-
-        .footer-col li {
-            margin-bottom: 10px;
-        }
-
-        .footer-col a {
-            color: var(--text-muted);
-            transition: color 0.2s;
-        }
-
-        .footer-col a:hover {
-            color: #00E5FF;
-        }
-
-        .footer-bottom {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding-top: 24px;
-            border-top: 1px solid rgba(255,255,255,0.06);
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 0.84rem;
+            color: var(--text-muted);
+        }
+
+        .footer-col ul a:hover {
+            color: var(--cyan);
+        }
+
+        .footer-bottom-bar {
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            display: flex;
             align-items: center;
+            justify-content: space-between;
+            font-size: 0.78rem;
+            color: var(--text-muted);
             flex-wrap: wrap;
-            gap: 16px;
-            font-size: 0.8rem;
+            gap: 12px;
+        }
+
+        /* --- MOBILE RESPONSIVE OPTIMIZATION --- */
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+            z-index: 1050;
+        }
+
+        @media (max-width: 1024px) {
+            .app-sidebar {
+                transform: translateX(-100%);
+            }
+
+            body.sidebar-mobile-open .app-sidebar {
+                transform: translateX(0);
+            }
+
+            body.sidebar-mobile-open .mobile-overlay {
+                display: block;
+            }
+
+            .app-main {
+                margin-left: 0 !important;
+                width: 100vw !important;
+            }
+
+            .mobile-menu-btn {
+                display: inline-flex;
+            }
+
+            .hero-banner {
+                grid-template-columns: 1fr;
+            }
+
+            .tools-grid, .forum-container, .analysis-lead-card {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .app-header {
+                padding: 0 16px;
+            }
+
+            .content-container {
+                padding: 20px 16px 40px;
+                gap: 36px;
+            }
+
+            .hero-banner {
+                padding: 24px 20px;
+            }
+
+            .hero-title {
+                font-size: 1.7rem;
+            }
+
+            .hero-stats-row {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-quick-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comment-form {
+                grid-template-columns: 1fr;
+            }
+
+            .comment-form textarea, .btn-submit-comment {
+                grid-column: span 1;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Editorial Top Authority Bar -->
-    <div class="top-editorial-bar">
-        <div class="top-bar-inner">
-            <div class="editorial-badge">
-                <i class="fa-solid fa-shield-check"></i> PT VOLUME EDITORIAL STANDARDS • NAKED CHART & VSA METHODOLOGIES
-            </div>
-            <div>
-                <span>Institutional Knowledge for Independent Traders</span>
-            </div>
-        </div>
-    </div>
+    <!-- Mobile Drawer Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMobileSidebar()"></div>
 
-    <!-- Header Navigation with Search Icon & Log In Button -->
-    <header>
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="assets/images/logo.jpg" alt="PTvolume Institutional Logo">
-                <div class="logo-text">
-                    <span class="brand">PT<span>VOLUME</span></span>
-                    <span class="sub-brand">MARKET ANALYSIS</span>
-                </div>
-            </a>
-            
-            <ul class="nav-links">
-                <li><a href="#education"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
-                <li><a href="#market-analysis"><i class="fa-solid fa-newspaper"></i> Market Analysis</a></li>
-                <li><a href="#library"><i class="fa-solid fa-book-bookmark"></i> Classic Library</a></li>
-                <li><a href="#dictionary"><i class="fa-solid fa-spell-check"></i> VSA Dictionary</a></li>
-                <li><a href="#live-chart"><i class="fa-solid fa-chart-line"></i> Live Chart</a></li>
-                <li><a href="pages/about.html"><i class="fa-solid fa-circle-info"></i> About</a></li>
-            </ul>
+    <!-- MAIN APP LAYOUT CONTAINER -->
+    <div class="app-layout">
 
-            <div class="nav-actions">
-                <!-- Search Trigger Button -->
-                <button class="search-btn" onclick="toggleSearchModal()" title="Search Terms & Articles">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+        <!-- ══════════════════════════════════════════════════════════
+             SIDEBAR MENU BÊN TRÁI (LEFT NAVIGATION SIDEBAR)
+             ══════════════════════════════════════════════════════════ -->
+        <aside class="app-sidebar" id="appSidebar" aria-label="Menu chính">
+            <div class="sidebar-header">
+                <a href="index.html" class="sidebar-brand" title="PTvolume.com Trang chủ">
+                    <img src="assets/images/logo.jpg" alt="PTvolume Logo" class="sidebar-logo-img">
+                    <div class="sidebar-brand-text">
+                        <span class="sidebar-brand-title">PT<span>VOLUME</span></span>
+                        <span class="sidebar-brand-subtitle">MARKET ANALYSIS</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="sidebar-nav-container">
+                <div class="sidebar-group-label">HỆ THỐNG TRỌNG TÂM</div>
+
+                <!-- 1. HỌC TẬP -->
+                <a href="#hoc-tap" class="sidebar-nav-item active" onclick="highlightNav(this)">
+                    <div class="nav-icon-wrap"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <span class="nav-text">Học tập</span>
+                    <span class="nav-badge">Free</span>
+                </a>
+
+                <!-- 2. ĐẦU TƯ -->
+                <a href="#dau-tu" class="sidebar-nav-item" onclick="highlightNav(this)">
+                    <div class="nav-icon-wrap"><i class="fa-solid fa-briefcase"></i></div>
+                    <span class="nav-text">Đầu tư</span>
+                    <span class="nav-badge">Danh mục</span>
+                </a>
+
+                <!-- 3. PHÂN TÍCH -->
+                <a href="#phan-tich" class="sidebar-nav-item" onclick="highlightNav(this)">
+                    <div class="nav-icon-wrap"><i class="fa-solid fa-chart-line"></i></div>
+                    <span class="nav-text">Phân tích</span>
+                    <span class="nav-badge live">Live</span>
+                </a>
+
+                <!-- 4. THƯ VIỆN -->
+                <a href="#thu-vien" class="sidebar-nav-item" onclick="highlightNav(this)">
+                    <div class="nav-icon-wrap"><i class="fa-solid fa-landmark"></i></div>
+                    <span class="nav-text">Thư viện</span>
+                    <span class="nav-badge">Kho data</span>
+                </a>
+
+                <!-- 5. DIỄN ĐÀN -->
+                <a href="#dien-dan" class="sidebar-nav-item" onclick="highlightNav(this)">
+                    <div class="nav-icon-wrap"><i class="fa-solid fa-comments"></i></div>
+                    <span class="nav-text">Diễn đàn</span>
+                    <span class="nav-badge hot">Sôi nổi</span>
+                </a>
+
+                <!-- 6. CÔNG CỤ VÀ TIỆN ÍCH -->
+                <a href="#cong-cu" class="sidebar-nav-item" onclick="highlightNav(this)">
+                    <div class="nav-icon-wrap"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                    <span class="nav-text">Công cụ & Tiện ích</span>
+                    <span class="nav-badge hot">Hot tool</span>
+                </a>
+
+                <!-- 7. TỦ SÁCH TÀI CHÍNH -->
+                <a href="#tu-sach" class="sidebar-nav-item" onclick="highlightNav(this)">
+                    <div class="nav-icon-wrap"><i class="fa-solid fa-book-bookmark"></i></div>
+                    <span class="nav-text">Tủ sách tài chính</span>
+                    <span class="nav-badge">6+ Sách</span>
+                </a>
+
+                <!-- 8. TÂM LÍ ĐẦU TƯ -->
+                <a href="#tam-li" class="sidebar-nav-item" onclick="highlightNav(this)">
+                    <div class="nav-icon-wrap"><i class="fa-solid fa-brain"></i></div>
+                    <span class="nav-text">Tâm lí đầu tư</span>
+                    <span class="nav-badge">Kỷ luật</span>
+                </a>
+
+                <div class="sidebar-group-label">TIỆN ÍCH TRỰC TIẾP</div>
+
+                <a href="#bieu-do-live" class="sidebar-nav-item" onclick="highlightNav(this)">
+                    <div class="nav-icon-wrap"><i class="fa-solid fa-chart-candlestick"></i></div>
+                    <span class="nav-text">Biểu đồ Trực tuyến</span>
+                </a>
+
+                <a href="#thao-luan-cong-dong" class="sidebar-nav-item" onclick="highlightNav(this)">
+                    <div class="nav-icon-wrap"><i class="fa-solid fa-message"></i></div>
+                    <span class="nav-text">Bình luận Độc giả</span>
+                </a>
+            </div>
+
+            <div class="sidebar-footer">
+                <button class="sidebar-toggle-btn" onclick="toggleSidebarCollapse()" title="Thu nhỏ/Mở rộng Sidebar">
+                    <i class="fa-solid fa-chevron-left" id="toggleIcon"></i>
+                    <span class="toggle-text">Thu nhỏ Sidebar</span>
                 </button>
-                
-                <!-- Log In Button -->
-                <button class="btn-login" onclick="toggleLoginModal()">
-                    <i class="fa-regular fa-user"></i> Log In
-                </button>
-
-                <!-- Join / Register Button -->
-                <button class="btn-join" onclick="toggleLoginModal()">
-                    Join Free
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Search Modal Overlay -->
-    <div class="search-overlay" id="searchOverlay" onclick="closeSearchOnBackdrop(event)">
-        <div class="search-box-container" onclick="event.stopPropagation()">
-            <div class="search-input-wrap">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="searchInput" placeholder="Search VSA terms, Wyckoff phases, articles (e.g. Upthrust, Gold, Spring)..." autofocus>
-                <button class="search-close-btn" onclick="toggleSearchModal()"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <div class="search-suggestions">
-                <span>Popular Technical Searches:</span>
-                <div class="search-tag-list">
-                    <span class="search-tag" onclick="selectSearchTag('Upthrust')">Upthrust (UTAD)</span>
-                    <span class="search-tag" onclick="selectSearchTag('Spring')">Phase C Spring</span>
-                    <span class="search-tag" onclick="selectSearchTag('Effort vs Result')">Effort vs. Result</span>
-                    <span class="search-tag" onclick="selectSearchTag('Gold XAUUSD')">Gold (XAU/USD)</span>
-                    <span class="search-tag" onclick="selectSearchTag('Stopping Volume')">Stopping Volume</span>
-                    <span class="search-tag" onclick="selectSearchTag('Wyckoff')">Wyckoff 5 Phases</span>
+                <div class="sidebar-quick-links">
+                    <a href="pages/about.html">Về chúng tôi</a> •
+                    <a href="pages/contact.html">Liên hệ</a> •
+                    <a href="pages/terms.html">Điều khoản</a> •
+                    <a href="pages/privacy.html">Bảo mật</a> •
+                    <a href="pages/disclaimer.html">Rủi ro</a>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Login Modal Overlay -->
-    <div class="login-modal-overlay" id="loginOverlay" onclick="closeLoginOnBackdrop(event)">
-        <div class="login-card" onclick="event.stopPropagation()">
-            <button class="login-close" onclick="toggleLoginModal()"><i class="fa-solid fa-xmark"></i></button>
-            <div class="login-card-header">
-                <h2>Account Sign In</h2>
-                <p>Access exclusive market briefings and community research</p>
-            </div>
-            <form onsubmit="handleLoginSubmit(event)">
-                <div class="login-field">
-                    <label class="login-label">Email Address</label>
-                    <input type="email" class="login-input" placeholder="trader@example.com" required>
-                </div>
-                <div class="login-field">
-                    <label class="login-label">Password</label>
-                    <input type="password" class="login-input" placeholder="••••••••" required>
-                </div>
-                <button type="submit" class="login-btn-submit">Sign In to PTvolume</button>
-            </form>
-            <p style="text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-top: 16px;">
-                Don't have an account? <a href="#" style="color: #00E5FF; font-weight: 600;" onclick="alert('Registration is free and open to all traders!');">Create an Account</a>
-            </p>
-        </div>
-    </div>
-
-    <!-- Investopedia Editorial Lead Section -->
-    <section class="editorial-hero" id="market-analysis">
-        <!-- Lead Feature Story -->
-        <article class="lead-story">
-            <div class="lead-image-box">
-                <img src="assets/images/logo.jpg" alt="Institutional Market Analysis">
-                <div class="watermark-stamp">
-                    <i class="fa-solid fa-shield-halved"></i> PTvolume.com
-                </div>
-            </div>
-            <div class="lead-content">
-                <span class="category-tag">Institutional Macro & Order Flow</span>
-                <h1 class="lead-title">
-                    <a href="posts/2026-08-20-treasury-intervention-counters-hawkish-fed-order-flow-triggers-gold-breakout.html">Treasury Intervention Counters Hawkish Fed: Order Flow Triggers Gold Breakout</a>
-                </h1>
-                <p class="lead-excerpt">
-                    Despite hawkish FOMC minutes signaling potential further rate hikes, aggressive Treasury bond buybacks have capsized long-end yields and crushed the US Dollar to three-month lows. Smart Money order flow reveals textbook Wyckoff Phase C liquidity sweeps across FX majors and a massive VSA effort-versus-result breakout in Spot Gold.
-                </p>
-                <div class="byline">
-                    <span>Written by <strong class="byline-author">PTvolume Research Group</strong></span>
-                    <span>•</span>
-                    <span>August 20, 2026</span>
-                    <span>•</span>
-                    <span><i class="fa-regular fa-clock"></i> 6 min read</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- Side Briefings & Core Themes -->
-        <aside class="side-briefings">
-            <div class="section-header-compact">
-                <i class="fa-solid fa-bolt" style="color: var(--accent-gold);"></i> Essential Briefings
-            </div>
-
-            <div class="briefing-card">
-                <div class="briefing-category" style="color: #00E5FF;">Wyckoff Methodology</div>
-                <h3 class="briefing-title">
-                    <a href="posts/blog-mau.html">Mastering Phase C: Identifying Clean Springs & Low-Volume Test Bars</a>
-                </h3>
-                <div class="briefing-meta">Institutional Accumulation • 7 min read</div>
-            </div>
-
-            <div class="briefing-card">
-                <div class="briefing-category" style="color: var(--bullish);">Risk & Expected Value</div>
-                <h3 class="briefing-title">
-                    <a href="posts/blog-mau.html">The Mathematics of Trading: Why a 40% Win Rate Generates Multi-Fold Returns</a>
-                </h3>
-                <div class="briefing-meta">Capital Preservation • 5 min read</div>
-            </div>
-
-            <div class="briefing-card">
-                <div class="briefing-category" style="color: var(--accent-gold);">Naked Chart Principles</div>
-                <h3 class="briefing-title">
-                    <a href="posts/blog-mau.html">Eliminating Lagging Indicators: Reading Pure Market Order Flow</a>
-                </h3>
-                <div class="briefing-meta">Price Action Core • 4 min read</div>
             </div>
         </aside>
-    </section>
 
-    <!-- 1. STRUCTURED EDUCATION CURRICULUM -->
-    <section id="education" class="section">
-        <div class="section-title-wrap">
-            <div>
-                <h2 class="section-main-title"><i class="fa-solid fa-graduation-cap" style="color: var(--primary);"></i> The Institutional Trading Curriculum</h2>
-                <p class="section-sub-text">A rigorous step-by-step masterclass from structural foundation to professional execution.</p>
-            </div>
-        </div>
+        <!-- ══════════════════════════════════════════════════════════
+             PHẦN NỘI DUNG CHÍNH (MAIN FLUID FULL-WIDTH CONTENT)
+             ══════════════════════════════════════════════════════════ -->
+        <main class="app-main">
 
-        <div class="curriculum-grid">
-            <div class="curriculum-card">
-                <span class="stage-number">MODULE 01</span>
-                <h3>Market Structure & Order Flow</h3>
-                <p>Learn to map swing highs and swing lows, identify genuine structural shifts (BOS / CHoCH), and pinpoint institutional Supply & Demand zones without indicator clutter.</p>
-            </div>
-
-            <div class="curriculum-card">
-                <span class="stage-number">MODULE 02</span>
-                <h3>Volume Spread Analysis (VSA)</h3>
-                <p>Deconstruct the 3 core Wyckoff laws: Supply vs. Demand, Cause vs. Effect, and Effort vs. Result. Decipher the definitive footprints of Smart Money on high-spread candles.</p>
-            </div>
-
-            <div class="curriculum-card">
-                <span class="stage-number">MODULE 03</span>
-                <h3>Accumulation & Distribution Cycles</h3>
-                <p>Master the 5 structural phases (A through E). Identify low-risk entry triggers during Phase C Springs and Upthrust After Distribution (UTAD) events.</p>
-            </div>
-
-            <div class="curriculum-card">
-                <span class="stage-number">MODULE 04</span>
-                <h3>Asymmetric Risk & Psychology</h3>
-                <p>Implement fractional position sizing, mathematical Stop Loss placement, and rigorous execution rules to maintain long-term positive expectancy (+EV).</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 2. CLASSIC TRADING LIBRARY -->
-    <section id="library" class="section">
-        <div class="section-title-wrap">
-            <div>
-                <h2 class="section-main-title"><i class="fa-solid fa-book-bookmark" style="color: var(--accent-gold);"></i> Essential Trading Library</h2>
-                <p class="section-sub-text">Foundational literature from legendary market masters that define sound financial speculation.</p>
-            </div>
-        </div>
-
-        <div class="books-grid">
-            <div class="book-card">
-                <span class="book-badge">Foundational Masterwork</span>
-                <div class="book-author">Richard D. Wyckoff & David Weis</div>
-                <h3>The Wyckoff Methodology in Depth</h3>
-                <p class="book-desc">
-                    The seminal framework for understanding market phases, composite operator campaigns, and high-probability volume confirmation.
-                </p>
-                <a href="posts/blog-mau.html" class="book-link">
-                    <i class="fa-solid fa-file-lines"></i> Read Key Takeaways & Summary
-                </a>
-            </div>
-
-            <div class="book-card">
-                <span class="book-badge">Speculative Classic</span>
-                <div class="book-author">Jesse Livermore (1940)</div>
-                <h3>How To Trade In Stocks</h3>
-                <p class="book-desc">
-                    Timeless psychological discipline, emotional control, and pivotal point theory from Wall Street's most legendary market operator.
-                </p>
-                <a href="posts/blog-mau.html" class="book-link">
-                    <i class="fa-solid fa-file-lines"></i> Read Key Takeaways & Summary
-                </a>
-            </div>
-
-            <div class="book-card">
-                <span class="book-badge">VSA Foundation</span>
-                <div class="book-author">Tom Williams</div>
-                <h3>Master the Markets</h3>
-                <p class="book-desc">
-                    The definitive guide to Volume Spread Analysis: Uncovering hidden buying and selling through bar spread and relative volume dynamics.
-                </p>
-                <a href="posts/blog-mau.html" class="book-link">
-                    <i class="fa-solid fa-file-lines"></i> Read Key Takeaways & Summary
-                </a>
-            </div>
-
-            <div class="book-card">
-                <span class="book-badge">Price Action Manual</span>
-                <div class="book-author">Bob Volman & Al Brooks</div>
-                <h3>Understanding Price Action</h3>
-                <p class="book-desc">
-                    Detailed micro-structure reading, consecutive candle pressure analysis, and pristine trade setups without secondary lagging indicators.
-                </p>
-                <a href="posts/blog-mau.html" class="book-link">
-                    <i class="fa-solid fa-file-lines"></i> Read Key Takeaways & Summary
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. VSA TERMINOLOGY GLOSSARY (Investopedia Dictionary Style) -->
-    <section id="dictionary" class="section">
-        <div class="section-title-wrap">
-            <div>
-                <h2 class="section-main-title"><i class="fa-solid fa-spell-check" style="color: #00E5FF;"></i> Key VSA Terminology Dictionary</h2>
-                <p class="section-sub-text">Quick reference guide to critical Volume Spread Analysis and Wyckoff concepts.</p>
-            </div>
-        </div>
-
-        <div class="dictionary-grid">
-            <div class="dict-item">
-                <div class="dict-term">
-                    <span>Upthrust (UT / UTAD)</span>
-                    <span class="dict-badge">BEARISH TRAP</span>
-                </div>
-                <div class="dict-definition">
-                    A sharp price push above resistance on high volume that immediately closes back below the barrier, confirming institutional supply dumping.
-                </div>
-            </div>
-
-            <div class="dict-item">
-                <div class="dict-term">
-                    <span>Spring (Phase C)</span>
-                    <span class="dict-badge">BULLISH TEST</span>
-                </div>
-                <div class="dict-definition">
-                    A temporary breakdown below support designed to trigger stops and capture liquidity before an impulsive markup campaign begins.
-                </div>
-            </div>
-
-            <div class="dict-item">
-                <div class="dict-term">
-                    <span>Stopping Volume</span>
-                    <span class="dict-badge">ACCUMULATION</span>
-                </div>
-                <div class="dict-definition">
-                    Ultra-high volume appearing during a downtrend where the bar fails to produce downside follow-through, indicating Smart Money absorption.
-                </div>
-            </div>
-
-            <div class="dict-item">
-                <div class="dict-term">
-                    <span>No Demand / No Supply Bar</span>
-                    <span class="dict-badge">VALIDATION</span>
-                </div>
-                <div class="dict-definition">
-                    Narrow spread candles on noticeably low volume, confirming an absence of counter-trend interest and clearing the path for trend resumption.
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. LIVE TECHNICAL CHARTING -->
-    <section id="live-chart" class="section">
-        <div class="section-title-wrap">
-            <div>
-                <h2 class="section-main-title"><i class="fa-solid fa-chart-candlestick" style="color: var(--bullish);"></i> Real-Time Technical Charting</h2>
-                <p class="section-sub-text">Multi-timeframe charting environment configured for naked price action and volume analysis.</p>
-            </div>
-        </div>
-
-        <div class="chart-box">
-            <!-- TradingView Widget BEGIN -->
-            <div class="tradingview-widget-container" style="height:100%;width:100%">
-                <div id="tradingview_chart" style="height:calc(100% - 32px);width:100%"></div>
-                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-                <script type="text/javascript">
-                new TradingView.widget({
-                    "autosize": true,
-                    "symbol": "OANDA:XAUUSD",
-                    "interval": "60",
-                    "timezone": "Etc/UTC",
-                    "theme": "dark",
-                    "style": "1",
-                    "locale": "en",
-                    "toolbar_bg": "#141822",
-                    "enable_publishing": false,
-                    "withdateranges": true,
-                    "hide_side_toolbar": false,
-                    "allow_symbol_change": true,
-                    "details": false,
-                    "hotlist": false,
-                    "calendar": false,
-                    "studies": [
-                        "Volume@tv-basicstudies"
-                    ],
-                    "container_id": "tradingview_chart"
-                });
-                </script>
-            </div>
-            <!-- TradingView Widget END -->
-        </div>
-
-        <!-- Risk Disclaimer -->
-        <div class="disclaimer-box">
-            <h4><i class="fa-solid fa-triangle-exclamation"></i> Financial & Risk Disclaimer</h4>
-            <p>
-                All materials, market commentaries, educational tutorials, and classic book reviews provided on <strong>PTvolume.com</strong> are strictly for educational and informational purposes and do not constitute financial, investment, or trading advice. Financial speculation involves substantial risk of capital loss. <a href="pages/disclaimer.html" style="color: #FF6B78; text-decoration: underline;">Read our complete Risk Disclaimer &raquo;</a>
-            </p>
-        </div>
-    </section>
-
-    <!-- Institutional Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-brand">
-                <div class="logo" style="font-size: 1.15rem;">
-                    <img src="assets/images/logo.jpg" alt="PTvolume Logo" style="width: 36px; height: 36px;">
-                    <div class="logo-text">
-                        <span class="brand">PT<span>VOLUME</span></span>
-                        <span class="sub-brand">MARKET ANALYSIS</span>
+            <!-- STICKY TOP HEADER -->
+            <header class="app-header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn" onclick="toggleMobileSidebar()" aria-label="Mở menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <div class="header-search-bar">
+                        <i class="fa-solid fa-magnifying-glass header-search-icon"></i>
+                        <input type="text" id="liveSearchInput" class="header-search-input" placeholder="Tìm kiếm bài học, mã hàng hóa, tín hiệu VSA, sách..." onkeyup="filterWebsiteContent()">
+                        <span class="header-search-shortcut">Ctrl + K</span>
                     </div>
                 </div>
-                <p>The premier educational authority on Naked Chart Price Action, Wyckoff accumulation/distribution cycles, and Volume Spread Analysis (VSA).</p>
+
+                <div class="header-right">
+                    <div class="live-status-pill">
+                        <span class="pulse-dot"></span>
+                        <span>TRADING ROOM LIVE</span>
+                    </div>
+
+                    <!-- Language Switcher [ 🇻🇳 VI | 🇬🇧 EN ] -->
+                    <div class="lang-switcher">
+                        <button class="lang-btn active" id="btn-lang-vi" onclick="setLanguage('vi')">🇻🇳 VI</button>
+                        <button class="lang-btn" id="btn-lang-en" onclick="setLanguage('en')">🇬🇧 EN</button>
+                    </div>
+
+                    <a href="#dien-dan" class="header-action-btn btn-forum-ask">
+                        <i class="fa-solid fa-circle-question"></i> Đặt câu hỏi
+                    </a>
+
+                    <a href="#hoc-tap" class="header-action-btn btn-header-login">
+                        <i class="fa-solid fa-user"></i> Tham gia Academy
+                    </a>
+                </div>
+            </header>
+
+            <!-- LIVE MARKET TICKER -->
+            <div class="ticker-bar">
+                <div class="ticker-item"><span class="ticker-symbol">🥇 XAU/USD (Vàng):</span> <span class="ticker-price">$2,738.50</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +1.15%</span></div>
+                <div class="ticker-item"><span class="ticker-symbol">🛢️ WTI CRUDE (Dầu thô):</span> <span class="ticker-price">$74.45</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +1.82%</span></div>
+                <div class="ticker-item"><span class="ticker-symbol">🌽 ZC (Ngô Phái Sinh):</span> <span class="ticker-price">432.25¢</span> <span class="ticker-change down"><i class="fa-solid fa-arrow-trend-down"></i> -0.45%</span></div>
+                <div class="ticker-item"><span class="ticker-symbol">🌱 ZS (Đậu Tương):</span> <span class="ticker-price">1,028.50¢</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +0.65%</span></div>
+                <div class="ticker-item"><span class="ticker-symbol">💵 DXY (US Dollar):</span> <span class="ticker-price">103.65</span> <span class="ticker-change down"><i class="fa-solid fa-arrow-trend-down"></i> -0.38%</span></div>
+                <div class="ticker-item"><span class="ticker-symbol">⚡ BTC/USD:</span> <span class="ticker-price">$95,200</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +3.20%</span></div>
             </div>
 
-            <div class="footer-col">
-                <h4>Knowledge Hub</h4>
-                <ul>
-                    <li><a href="pages/about.html">About PTvolume</a></li>
-                    <li><a href="#education">Trading Curriculum</a></li>
-                    <li><a href="#library">Classic Library</a></li>
-                    <li><a href="#dictionary">VSA Dictionary</a></li>
-                </ul>
+            <!-- TRÀN TRANG CONTENT CONTAINER -->
+            <div class="content-container">
+
+                <!-- ═══ HERO BANNER (TỔNG QUAN HỆ THỐNG PTVOLUME) ═══ -->
+                <section class="hero-banner">
+                    <div class="hero-content">
+                        <div class="hero-tag"><i class="fa-solid fa-shield-halved"></i> Naked Chart & Volume Spread Analysis</div>
+                        <h1 class="hero-title">Đọc Vị Dòng Tiền <span>Smart Money</span> Bằng Hành Động Giá & Khối Lượng</h1>
+                        <p class="hero-desc">
+                            PTvolume.com mang đến phương pháp phân tích biểu đồ trần (Naked Chart), chu kỳ tích lũy/phân phối Wyckoff và kỹ thuật VSA chuyên sâu chuẩn mực Investopedia. Loại bỏ 100% chỉ báo trễ, giao dịch đồng pha cùng các nhà tạo lập thị trường quốc tế.
+                        </p>
+                        <div class="hero-cta-group">
+                            <a href="#hoc-tap" class="btn-hero-primary"><i class="fa-solid fa-play"></i> Bắt đầu Học Miễn Phí</a>
+                            <a href="#cong-cu" class="btn-hero-secondary"><i class="fa-solid fa-calculator"></i> Máy tính Quản trị Vốn</a>
+                        </div>
+                        <div class="hero-stats-row">
+                            <div class="hero-stat-item"><b>15,000+</b><span>Trader Học Tập</span></div>
+                            <div class="hero-stat-item"><b>250+</b><span>Báo Cáo Thực Chiến</span></div>
+                            <div class="hero-stat-item"><b>100%</b><span>Naked Chart Chuẩn</span></div>
+                        </div>
+                    </div>
+
+                    <div class="hero-quick-grid">
+                        <a href="#hoc-tap" class="hero-action-card">
+                            <div class="action-card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <div class="action-card-title">1. Học Tập</div>
+                            <div class="action-card-desc">Giáo trình Price Action & VSA từ cơ bản đến nâng cao.</div>
+                        </a>
+                        <a href="#dau-tu" class="hero-action-card">
+                            <div class="action-card-icon" style="color:#F0B90B; background:rgba(240,185,11,0.15);"><i class="fa-solid fa-briefcase"></i></div>
+                            <div class="action-card-title">2. Đầu Tư</div>
+                            <div class="action-card-desc">Chiến lược danh mục Hàng hóa, Ngoại hối & Crypto.</div>
+                        </a>
+                        <a href="#phan-tich" class="hero-action-card">
+                            <div class="action-card-icon" style="color:#26E7A6; background:rgba(8,153,129,0.15);"><i class="fa-solid fa-chart-line"></i></div>
+                            <div class="action-card-title">3. Phân Tích</div>
+                            <div class="action-card-desc">Bản tin Order Flow & Điểm xoay Wyckoff thời gian thực.</div>
+                        </a>
+                        <a href="#cong-cu" class="hero-action-card">
+                            <div class="action-card-icon" style="color:#FF707E; background:rgba(242,54,69,0.15);"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                            <div class="action-card-title">4. Công Cụ & Tiện Ích</div>
+                            <div class="action-card-desc">Bộ tính Lot, Tỷ lệ R:R & Tra cứu tín hiệu VSA.</div>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- ══════════════════════════════════════════════════════════
+                     MỤC 1: HỌC TẬP (ACADEMY - GIÁO TRÌNH NAKED CHART & VSA)
+                     ══════════════════════════════════════════════════════════ -->
+                <section id="hoc-tap" class="full-section">
+                    <div class="section-header-bar">
+                        <div class="section-headline">
+                            <div class="section-kicker"><i class="fa-solid fa-book-open-reader"></i> Khóa Học & Giáo Trình</div>
+                            <h2 class="section-title">🎓 Học Tập: Làm Chủ Naked Chart & VSA Thực Chiến</h2>
+                            <p class="section-subtitle">Chương trình đào tạo từ nền tảng Nến Nhật đến nghệ thuật đọc dòng tiền Wyckoff & VSA.</p>
+                        </div>
+                        <div class="section-actions">
+                            <a href="#dien-dan" class="section-view-all">Hỏi đáp giảng viên &raquo;</a>
+                        </div>
+                    </div>
+
+                    <div class="cards-grid-3">
+                        <!-- Khóa 1 -->
+                        <div class="course-card">
+                            <div class="course-card-badge-top">Module 1</div>
+                            <div class="course-thumb-box">
+                                <img src="assets/images/logo.jpg" alt="Price Action Naked Chart">
+                                <div class="watermark-box"><i class="fa-solid fa-shield-halved"></i> PTvolume.com</div>
+                            </div>
+                            <div class="course-body">
+                                <div class="course-level"><i class="fa-solid fa-signal"></i> Căn Bản Đến Trung Cấp</div>
+                                <h3 class="course-title">Bản Chất Nến Nhật & Price Action Biểu Đồ Trần</h3>
+                                <p class="course-desc">Hiểu sâu cấu trúc nến Pinbar, Engulfing, Inside Bar và bẫy thanh khoản của Smart Money không dùng indicator trễ.</p>
+                                <div class="course-meta-row">
+                                    <span><i class="fa-regular fa-clock"></i> 8 Bài Học • 4.5 Giờ</span>
+                                    <a href="posts/eliminating-lagging-indicators-pure-order-flow.html" class="btn-study-now">Vào Học</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Khóa 2 -->
+                        <div class="course-card">
+                            <div class="course-card-badge-top">Module 2</div>
+                            <div class="course-thumb-box">
+                                <img src="assets/images/logo.jpg" alt="Volume Spread Analysis">
+                                <div class="watermark-box"><i class="fa-solid fa-shield-halved"></i> PTvolume.com</div>
+                            </div>
+                            <div class="course-body">
+                                <div class="course-level"><i class="fa-solid fa-signal"></i> Chuyên Sâu VSA</div>
+                                <h3 class="course-title">Volume Spread Analysis (VSA): Khối Lượng & Biên Độ</h3>
+                                <p class="course-desc">Khai phá tín hiệu Stopping Volume, No Demand, No Supply Bar, và nguyên lý Nỗ lực vs Kết quả (Effort vs Result).</p>
+                                <div class="course-meta-row">
+                                    <span><i class="fa-regular fa-clock"></i> 10 Bài Học • 6 Giờ</span>
+                                    <a href="posts/book-tom-williams-vsa-summary.html" class="btn-study-now">Vào Học</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Khóa 3 -->
+                        <div class="course-card">
+                            <div class="course-card-badge-top">Module 3</div>
+                            <div class="course-thumb-box">
+                                <img src="assets/images/logo.jpg" alt="Wyckoff Methodology">
+                                <div class="watermark-box"><i class="fa-solid fa-shield-halved"></i> PTvolume.com</div>
+                            </div>
+                            <div class="course-body">
+                                <div class="course-level"><i class="fa-solid fa-signal"></i> Bậc Thầy Wyckoff</div>
+                                <h3 class="course-title">Phương Pháp Wyckoff: 5 Pha Tích Lũy & Phân Phối</h3>
+                                <p class="course-desc">Nhận diện điểm săn thanh khoản Spring (Pha C), Upthrust (UTAD), Điểm hấp thụ cung (Absorption) và đợt Markup đẩy giá.</p>
+                                <div class="course-meta-row">
+                                    <span><i class="fa-regular fa-clock"></i> 12 Bài Học • 8 Giờ</span>
+                                    <a href="posts/book-wyckoff-methodology-summary.html" class="btn-study-now">Vào Học</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ══════════════════════════════════════════════════════════
+                     MỤC 2: ĐẦU TƯ (INVESTING & COMMODITIES PORTFOLIO)
+                     ══════════════════════════════════════════════════════════ -->
+                <section id="dau-tu" class="full-section">
+                    <div class="section-header-bar">
+                        <div class="section-headline">
+                            <div class="section-kicker"><i class="fa-solid fa-wallet"></i> Danh Mục Tài Sản</div>
+                            <h2 class="section-title">💼 Đầu Tư: Hàng Hóa Phái Sinh, Forex & Toàn Cầu</h2>
+                            <p class="section-subtitle">Ma trận theo dõi và chiến lược phân bổ vốn trên các thị trường giao dịch có thanh khoản cao nhất.</p>
+                        </div>
+                        <div class="section-actions">
+                            <span class="nav-badge live">Cập nhật theo phiên</span>
+                        </div>
+                    </div>
+
+                    <div class="asset-table-wrap">
+                        <table class="asset-table">
+                            <thead>
+                                <tr>
+                                    <th>Mặt Hàng / Cặp Tài Sản</th>
+                                    <th>Nhóm Thị Trường</th>
+                                    <th>Giá Giao Dịch</th>
+                                    <th>Biến Động 24h</th>
+                                    <th>Tín Hiệu VSA / Order Flow</th>
+                                    <th>Khuyến Nghị</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="asset-name-col">
+                                            <div class="asset-badge">CL</div>
+                                            <div>
+                                                <div>Dầu Thô WTI (Crude Oil)</div>
+                                                <small style="color:var(--text-muted);">NYMEX / CME Futures</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Hàng Hóa Năng Lượng</td>
+                                    <td style="font-family:var(--font-mono); font-weight:700;">$74.45 / thùng</td>
+                                    <td style="color:#26E7A6; font-weight:700;">+1.82%</td>
+                                    <td><span class="nav-badge live">Absorption Breakout</span></td>
+                                    <td><strong style="color:#26E7A6;">Canh Mua (Long)</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="asset-name-col">
+                                            <div class="asset-badge" style="color:#F0B90B; border-color:#F0B90B;">AU</div>
+                                            <div>
+                                                <div>Vàng Thế Giới (Spot Gold)</div>
+                                                <small style="color:var(--text-muted);">XAU/USD Interbank</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Kim Loại Quý</td>
+                                    <td style="font-family:var(--font-mono); font-weight:700;">$2,738.50 / oz</td>
+                                    <td style="color:#26E7A6; font-weight:700;">+1.15%</td>
+                                    <td><span class="nav-badge live">Wyckoff Phase D SOS</span></td>
+                                    <td><strong style="color:#26E7A6;">Nắm Giữ Vị Thế</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="asset-name-col">
+                                            <div class="asset-badge" style="color:#00E5FF; border-color:#00E5FF;">ZC</div>
+                                            <div>
+                                                <div>Ngô Phái Sinh (Corn)</div>
+                                                <small style="color:var(--text-muted);">CBOT Commodity</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Nông Sản Thế Giới</td>
+                                    <td style="font-family:var(--font-mono); font-weight:700;">432.25 ¢ / bushel</td>
+                                    <td style="color:#FF5263; font-weight:700;">-0.45%</td>
+                                    <td><span class="nav-badge">No Supply Test</span></td>
+                                    <td><strong style="color:var(--cyan);">Chờ Điểm Spring</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="asset-name-col">
+                                            <div class="asset-badge" style="color:#26E7A6; border-color:#26E7A6;">ZS</div>
+                                            <div>
+                                                <div>Đậu Tương (Soybeans)</div>
+                                                <small style="color:var(--text-muted);">CBOT Commodity</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Nông Sản Thế Giới</td>
+                                    <td style="font-family:var(--font-mono); font-weight:700;">1,028.50 ¢ / bushel</td>
+                                    <td style="color:#26E7A6; font-weight:700;">+0.65%</td>
+                                    <td><span class="nav-badge live">Stopping Volume</span></td>
+                                    <td><strong style="color:#26E7A6;">Gom Theo Pha C</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ══════════════════════════════════════════════════════════
+                     MỤC 3: PHÂN TÍCH (MARKET ANALYSIS & ORDER FLOW)
+                     ══════════════════════════════════════════════════════════ -->
+                <section id="phan-tich" class="full-section">
+                    <div class="section-header-bar">
+                        <div class="section-headline">
+                            <div class="section-kicker"><i class="fa-solid fa-magnifying-glass-chart"></i> Báo Cáo Kỹ Thuật</div>
+                            <h2 class="section-title">📊 Phân Tích: Báo Cáo Order Flow & Dòng Tiền</h2>
+                            <p class="section-subtitle">Giải mã hành vi mua/bán của tổ chức lớn thông qua cấu trúc nến và khối lượng giao dịch.</p>
+                        </div>
+                        <div class="section-actions">
+                            <a href="posts/2026-08-20-treasury-intervention-counters-hawkish-fed-order-flow-triggers-gold-breakout.html" class="section-view-all">Xem tất cả báo cáo &raquo;</a>
+                        </div>
+                    </div>
+
+                    <div class="analysis-lead-card">
+                        <div class="analysis-lead-img">
+                            <img src="assets/images/logo.jpg" alt="Phân tích Vĩ mô & Order Flow">
+                            <div class="watermark-box"><i class="fa-solid fa-shield-halved"></i> PTvolume.com</div>
+                        </div>
+                        <div class="analysis-lead-content">
+                            <div class="analysis-category"><i class="fa-solid fa-fire"></i> Báo Cáo Tiêu Điểm 2026</div>
+                            <h3 class="analysis-lead-title">
+                                <a href="posts/2026-08-20-treasury-intervention-counters-hawkish-fed-order-flow-triggers-gold-breakout.html">
+                                    Bộ Tài Chính Mỹ Can Thiệp Khắc Phục FED Diều Hâu: Order Flow Kích Hoạt Cú Bứt Phá Của Vàng
+                                </a>
+                            </h3>
+                            <p class="analysis-lead-excerpt">
+                                Dữ liệu Order Flow thực tế cho thấy các đợt quét thanh khoản Wyckoff Phase C điển hình. Khối lượng siêu cao (Ultra High Volume) đã hấp thụ sạch phe bán, tạo tiền đề cho đợt bứt phá mạnh mẽ của XAU/USD và Dầu thô WTI.
+                            </p>
+                            <div>
+                                <a href="posts/2026-08-20-treasury-intervention-counters-hawkish-fed-order-flow-triggers-gold-breakout.html" class="btn-hero-primary" style="padding:10px 22px; font-size:0.88rem;">
+                                    Đọc Toàn Văn Báo Cáo <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ══════════════════════════════════════════════════════════
+                     MỤC 4: THƯ VIỆN (LIBRARY & CASE STUDIES)
+                     ══════════════════════════════════════════════════════════ -->
+                <section id="thu-vien" class="full-section">
+                    <div class="section-header-bar">
+                        <div class="section-headline">
+                            <div class="section-kicker"><i class="fa-solid fa-box-archive"></i> Kho Tri Thức & Case Studies</div>
+                            <h2 class="section-title">🏛️ Thư Viện: Nhật Ký Lệnh & Kịch Bản Thực Chiến</h2>
+                            <p class="section-subtitle">Tổng hợp các tình huống giao dịch thực tế, phân tích nguyên nhân thắng/thua từ kho dữ liệu Trader.</p>
+                        </div>
+                    </div>
+
+                    <div class="cards-grid-4">
+                        <div class="case-study-card">
+                            <div class="case-header">
+                                <span class="case-tag">DẦU THÔ CL</span>
+                                <span class="case-result win">+250 Bước Giá</span>
+                            </div>
+                            <h4 class="case-title">Điểm Hấp Thụ VSA & Nhảy GAP Bán Đẹp</h4>
+                            <p class="case-desc">Bắt trọn nhịp rơi của Dầu thô sau thanh nến Upthrust tại kháng cự khung thời gian H4 kết hợp nến Stopping Volume.</p>
+                        </div>
+
+                        <div class="case-study-card">
+                            <div class="case-header">
+                                <span class="case-tag">ĐẬU TƯƠNG ZS</span>
+                                <span class="case-result lesson">Bài Học Điểm Vào Sai</span>
+                            </div>
+                            <h4 class="case-title">Phân Tích Lỗi Sai Vội Vàng Mua Sớm</h4>
+                            <p class="case-desc">Đánh giá sai lầm khi bắt đáy trước khi có thanh nến kiểm định cạn cung (No Supply Bar) trong Pha C Wyckoff.</p>
+                        </div>
+
+                        <div class="case-study-card">
+                            <div class="case-header">
+                                <span class="case-tag">NGÔ ZC</span>
+                                <span class="case-result win">Điểm Mua Chuẩn VSA</span>
+                            </div>
+                            <h4 class="case-title">Bắt Nhịp Bật Tăng Tại Hỗ Trợ Cứng</h4>
+                            <p class="case-desc">Hành động giá nén chặt với Volume thu hẹp (VCP), nến xác nhận dòng tiền lớn gia nhập đẩy giá vượt đỉnh.</p>
+                        </div>
+
+                        <div class="case-study-card">
+                            <div class="case-header">
+                                <span class="case-tag">EXCEL QUẢN TRỊ</span>
+                                <span class="case-result win">File NKGD.xlsx</span>
+                            </div>
+                            <h4 class="case-title">Mẫu Nhật Ký Giao Dịch & Quản Trị Vốn</h4>
+                            <p class="case-desc">Tải bảng tính Excel tự động tính toán tỷ lệ Winrate, Drawdown, Profit Factor và chỉ số R:R từng lệnh.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ══════════════════════════════════════════════════════════
+                     MỤC 5: DIỄN ĐÀN (FORUM & COMMUNITY TRADING)
+                     ══════════════════════════════════════════════════════════ -->
+                <section id="dien-dan" class="full-section">
+                    <div class="section-header-bar">
+                        <div class="section-headline">
+                            <div class="section-kicker"><i class="fa-solid fa-users"></i> Cộng Đồng Trader</div>
+                            <h2 class="section-title">💬 Diễn Đàn: Thảo Luận & Hỏi Đáp Kèo Giao Dịch</h2>
+                            <p class="section-subtitle">Không gian trao đổi đa chiều về Naked Chart, bẫy giá Smart Money và nhận định thị trường.</p>
+                        </div>
+                    </div>
+
+                    <div class="forum-container">
+                        <div class="forum-posts-list" id="forumPostsList">
+                            <div class="forum-post-item">
+                                <div class="forum-avatar">TN</div>
+                                <div class="forum-post-content">
+                                    <h4 class="forum-post-title">Kèo Vàng XAU/USD hôm nay: Đã hoàn tất Pha C Spring chưa các bác?</h4>
+                                    <p class="forum-post-snippet">Khung H1 vừa xuất hiện thanh nến rút chân mạnh ở vùng 2,720 với khối lượng siêu cao. Mình dự kiến canh re-test vào lệnh Long với SL 2,714.</p>
+                                    <div class="forum-meta-bar">
+                                        <span><i class="fa-solid fa-user-tie"></i> TraderNam (Hà Nội)</span>
+                                        <span><i class="fa-regular fa-clock"></i> 25 phút trước</span>
+                                        <span style="color:var(--cyan);"><i class="fa-regular fa-comments"></i> 14 Phản hồi</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="forum-post-item">
+                                <div class="forum-avatar" style="background:linear-gradient(135deg, #F0B90B, #FF707E);">PV</div>
+                                <div class="forum-post-content">
+                                    <h4 class="forum-post-title">Hỏi về cách nhận biết thanh No Demand thật vs nến ngưng trệ giả mạo</h4>
+                                    <p class="forum-post-snippet">Trong xu hướng giảm, xuất hiện nến xanh thân nhỏ khối lượng thấp nhưng cây sau lại là nến tăng mạnh. Nhờ anh em PTvolume giải thích nguyên lý.</p>
+                                    <div class="forum-meta-bar">
+                                        <span><i class="fa-solid fa-user-tie"></i> PhongVSA</span>
+                                        <span><i class="fa-regular fa-clock"></i> 1 giờ trước</span>
+                                        <span style="color:var(--cyan);"><i class="fa-regular fa-comments"></i> 8 Phản hồi</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form Đăng Bài / Đặt Câu Hỏi Nhanh -->
+                        <div class="forum-stats-box">
+                            <h3 style="font-size:1.15rem; font-weight:800; color:#fff; display:flex; align-items:center; gap:8px;">
+                                <i class="fa-solid fa-pen-to-square" style="color:var(--cyan);"></i> Gửi Thảo Luận Mới
+                            </h3>
+                            <p style="font-size:0.8rem; color:var(--text-muted);">Chia sẻ góc nhìn nến, biểu đồ hoặc đặt câu hỏi kỹ thuật cho cộng đồng Trader.</p>
+                            <div>
+                                <input type="text" id="forumInputName" class="forum-form-input" placeholder="Họ tên hoặc Handle của bạn (VD: TraderViet_88)">
+                                <input type="text" id="forumInputTitle" class="forum-form-input" placeholder="Tiêu đề câu hỏi / Kèo giao dịch...">
+                                <textarea id="forumInputContent" class="forum-form-input" style="height:90px; resize:none;" placeholder="Nội dung chi tiết phân tích biểu đồ..."></textarea>
+                                <button type="button" class="btn-hero-primary" style="width:100%; justify-content:center;" onclick="submitForumPost()">
+                                    <i class="fa-solid fa-paper-plane"></i> Đăng Lên Diễn Đàn
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ══════════════════════════════════════════════════════════
+                     MỤC 6: CÔNG CỤ VÀ TIỆN ÍCH (TOOLS & UTILITIES)
+                     ══════════════════════════════════════════════════════════ -->
+                <section id="cong-cu" class="full-section">
+                    <div class="section-header-bar">
+                        <div class="section-headline">
+                            <div class="section-kicker"><i class="fa-solid fa-toolbox"></i> Tiện Ích Trực Tuyến</div>
+                            <h2 class="section-title">🛠️ Công Cụ & Tiện Ích: Máy Tính Vốn & Tra Cứu VSA</h2>
+                            <p class="section-subtitle">Bộ công cụ hỗ trợ Trader tính toán chính xác rủi ro và xác thực thanh nến Smart Money trước khi bấm lệnh.</p>
+                        </div>
+                    </div>
+
+                    <div class="tools-grid">
+                        <!-- Tool 1: Máy tính Lot & Quản trị Rủi ro -->
+                        <div class="tool-box">
+                            <div class="tool-header">
+                                <div class="tool-header-icon"><i class="fa-solid fa-calculator"></i></div>
+                                <div class="tool-header-text">
+                                    <h3>Máy Tính Quy Mô Vị Thế (Position Size)</h3>
+                                    <p>Tính chính xác số Lot / Số hợp đồng dựa trên % rủi ro tài khoản.</p>
+                                </div>
+                            </div>
+
+                            <div class="calc-form-grid">
+                                <div class="calc-field">
+                                    <label class="calc-label">Vốn Tài Khoản ($)</label>
+                                    <input type="number" id="calcEquity" class="calc-input" value="10000">
+                                </div>
+                                <div class="calc-field">
+                                    <label class="calc-label">% Rủi Ro Chấp Nhận (%)</label>
+                                    <input type="number" id="calcRiskPct" class="calc-input" value="1" step="0.5">
+                                </div>
+                                <div class="calc-field">
+                                    <label class="calc-label">Giá Entry (Vào Lệnh)</label>
+                                    <input type="number" id="calcEntry" class="calc-input" value="2730" step="0.1">
+                                </div>
+                                <div class="calc-field">
+                                    <label class="calc-label">Giá Cắt Lỗ (Stop Loss)</label>
+                                    <input type="number" id="calcSL" class="calc-input" value="2720" step="0.1">
+                                </div>
+                                <button type="button" class="calc-btn-compute" onclick="computePositionSize()">
+                                    <i class="fa-solid fa-calculator"></i> Tính Toán Khối Lượng
+                                </button>
+                                <div class="calc-result-box">
+                                    <div class="calc-result-item"><b id="resRiskAmount">$100.00</b><span>Số Tiền Rủi Ro</span></div>
+                                    <div class="calc-result-item"><b id="resSLPips">100.0 pips</b><span>Khoảng Cách SL</span></div>
+                                    <div class="calc-result-item"><b id="resLotSize" style="color:#26E7A6;">0.10 Lot</b><span>Khối Lượng Khuyên Dùng</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tool 2: Tra cứu nhanh thanh nến VSA -->
+                        <div class="tool-box">
+                            <div class="tool-header">
+                                <div class="tool-header-icon" style="color:#F0B90B; background:rgba(240,185,11,0.15);"><i class="fa-solid fa-spell-check"></i></div>
+                                <div class="tool-header-text">
+                                    <h3>Bộ Tra Cứu Tín Hiệu Nến VSA & Wyckoff</h3>
+                                    <p>Chọn mẫu hình để xem cách Smart Money thao túng và hành động chuẩn.</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px;">
+                                    <button class="nav-badge" style="cursor:pointer; padding:6px 12px;" onclick="showVsaDetail('ut')">Upthrust (UTAD)</button>
+                                    <button class="nav-badge live" style="cursor:pointer; padding:6px 12px;" onclick="showVsaDetail('spring')">Spring (Pha C)</button>
+                                    <button class="nav-badge" style="cursor:pointer; padding:6px 12px;" onclick="showVsaDetail('stop')">Stopping Volume</button>
+                                    <button class="nav-badge" style="cursor:pointer; padding:6px 12px;" onclick="showVsaDetail('nod')">No Demand Bar</button>
+                                    <button class="nav-badge" style="cursor:pointer; padding:6px 12px;" onclick="showVsaDetail('nos')">No Supply Bar</button>
+                                </div>
+
+                                <div id="vsaDetailDisplay" style="background:#0B0E14; border:1px solid var(--border-color); border-radius:var(--radius-sm); padding:16px; min-height:130px;">
+                                    <h4 style="color:#FF707E; margin-bottom:6px; font-size:0.95rem;">🔴 Upthrust (UT / UTAD) — Bẫy Giá Giảm</h4>
+                                    <p style="font-size:0.82rem; color:var(--text-light); line-height:1.55;">
+                                        Thanh nến đẩy mạnh vượt đỉnh kháng cự với Volume cao nhưng đóng cửa quay ngược về dưới cản. Đây là hành vi nhà tạo lập xả hàng vào thanh khoản Breakout của trader nhỏ lẻ. Canh lệnh Bán khi có nến xác nhận.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ══════════════════════════════════════════════════════════
+                     MỤC 7: TỦ SÁCH TÀI CHÍNH (FINANCIAL BOOKSHELF)
+                     ══════════════════════════════════════════════════════════ -->
+                <section id="tu-sach" class="full-section">
+                    <div class="section-header-bar">
+                        <div class="section-headline">
+                            <div class="section-kicker"><i class="fa-solid fa-book"></i> Tinh Hoa Sách Đầu Tư</div>
+                            <h2 class="section-title">📖 Tủ Sách Tài Chính: Các Tác Phẩm Bất Hủ</h2>
+                            <p class="section-subtitle">Tóm tắt và đúc kết những nguyên lý giao dịch trường tồn từ các huyền thoại phố Wall.</p>
+                        </div>
+                    </div>
+
+                    <div class="bookshelf-grid">
+                        <!-- Sách 1: Jesse Livermore -->
+                        <div class="book-card">
+                            <div class="book-cover">
+                                <i class="fa-solid fa-book-open"></i>
+                                <div class="book-cover-title">JESSE LIVERMORE</div>
+                            </div>
+                            <div class="book-info">
+                                <div class="book-author">Jesse Livermore (1940)</div>
+                                <h3 class="book-title">How To Trade In Stocks</h3>
+                                <p class="book-summary">Lý thuyết Điểm xoay then chốt (Pivotal Point), kỷ luật cắt lỗ nhanh và nghệ thuật gồng lãi theo xu hướng lớn.</p>
+                                <div class="book-actions">
+                                    <a href="posts/book-jesse-livermore-summary.html" class="btn-read-summary">Đọc Tóm Tắt Chi Tiết &raquo;</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sách 2: Tom Williams -->
+                        <div class="book-card">
+                            <div class="book-cover">
+                                <i class="fa-solid fa-chart-simple" style="color:var(--cyan);"></i>
+                                <div class="book-cover-title">TOM WILLIAMS</div>
+                            </div>
+                            <div class="book-info">
+                                <div class="book-author">Tom Williams</div>
+                                <h3 class="book-title">Master the Markets (VSA)</h3>
+                                <p class="book-summary">Cội nguồn của Volume Spread Analysis, cách nhận diện nhà tạo lập thao túng giá và đón đầu dòng tiền thông minh.</p>
+                                <div class="book-actions">
+                                    <a href="posts/book-tom-williams-vsa-summary.html" class="btn-read-summary">Đọc Tóm Tắt Chi Tiết &raquo;</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sách 3: Bob Volman -->
+                        <div class="book-card">
+                            <div class="book-cover">
+                                <i class="fa-solid fa-compass" style="color:#26E7A6;"></i>
+                                <div class="book-cover-title">BOB VOLMAN</div>
+                            </div>
+                            <div class="book-info">
+                                <div class="book-author">Bob Volman</div>
+                                <h3 class="book-title">Understanding Price Action</h3>
+                                <p class="book-summary">Nghệ thuật đọc biểu đồ trần không chỉ báo, phân tích vi cấu trúc giá và 7 mô hình hành động giá kinh điển.</p>
+                                <div class="book-actions">
+                                    <a href="posts/book-bob-volman-price-action-summary.html" class="btn-read-summary">Đọc Tóm Tắt Chi Tiết &raquo;</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sách 4: Richard Wyckoff -->
+                        <div class="book-card">
+                            <div class="book-cover">
+                                <i class="fa-solid fa-cubes" style="color:#FF707E;"></i>
+                                <div class="book-cover-title">WYCKOFF METHOD</div>
+                            </div>
+                            <div class="book-info">
+                                <div class="book-author">Richard D. Wyckoff</div>
+                                <h3 class="book-title">The Wyckoff Methodology in Depth</h3>
+                                <p class="book-summary">3 Quy luật kinh điển (Cung-Cầu, Nguyên nhân-Kết quả, Nỗ lực-Kết quả) và sơ đồ tích lũy phân phối hoàn chỉnh.</p>
+                                <div class="book-actions">
+                                    <a href="posts/book-wyckoff-methodology-summary.html" class="btn-read-summary">Đọc Tóm Tắt Chi Tiết &raquo;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ══════════════════════════════════════════════════════════
+                     MỤC 8: TÂM LÍ ĐẦU TƯ (TRADING PSYCHOLOGY & DISCIPLINE)
+                     ══════════════════════════════════════════════════════════ -->
+                <section id="tam-li" class="full-section">
+                    <div class="section-header-bar">
+                        <div class="section-headline">
+                            <div class="section-kicker"><i class="fa-solid fa-shield-heart"></i> Kỷ Luật & Tâm Trí</div>
+                            <h2 class="section-title">🧠 Tâm Lí Đầu Tư: Kỷ Luật Thép Của Pro Trader</h2>
+                            <p class="section-subtitle">Phương pháp kiểm soát cảm xúc, vượt qua nỗi sợ thua lỗ và duy trì tư duy xác suất nhất quán.</p>
+                        </div>
+                    </div>
+
+                    <div class="psychology-grid">
+                        <div class="psychology-card">
+                            <div class="psychology-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+                            <h4>Chống Lại Bẫy FOMO & Trả Thù Thị Trường</h4>
+                            <p>Không bao giờ nhảy vào lệnh khi giá đã chạy xa khỏi vùng tích lũy. Chấp nhận bỏ lỡ cơ hội còn hơn là trở thành thanh khoản cho Smart Money.</p>
+                        </div>
+
+                        <div class="psychology-card">
+                            <div class="psychology-icon green"><i class="fa-solid fa-scale-balanced"></i></div>
+                            <h4>Tư Duy Xác Suất & Chấp Nhận Lỗ Nhẹ</h4>
+                            <p>Mỗi lệnh giao dịch chỉ là một xác suất thống kê. Cắt lỗ là chi phí kinh doanh bắt buộc để bảo toàn vốn cho những cú thắng lớn theo tỷ lệ R:R cao.</p>
+                        </div>
+
+                        <div class="psychology-card">
+                            <div class="psychology-icon blue"><i class="fa-solid fa-spa"></i></div>
+                            <h4>Tâm Thái Tĩnh Lặng & Nhật Ký Giao Dịch</h4>
+                            <p>Duy trì trạng thái tâm lý ổn định, ghi chép nhật ký cảm xúc trước và sau mỗi lệnh để loại bỏ hoàn toàn yếu tố bốc đồng trong trading.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ══════════════════════════════════════════════════════════
+                     BIỂU ĐỒ KỸ THUẬT TRỰC TUYẾN & BẢN QUYỀN
+                     ══════════════════════════════════════════════════════════ -->
+                <section id="bieu-do-live" class="full-section">
+                    <div class="section-header-bar">
+                        <div class="section-headline">
+                            <div class="section-kicker"><i class="fa-solid fa-chart-line"></i> Biểu Đồ Trực Tiếp</div>
+                            <h2 class="section-title">📈 Môi Trường Biểu Đồ Naked Chart & Volume</h2>
+                            <p class="section-subtitle">Theo dõi hành động giá thời gian thực cấu hình tối ưu cho phân tích Price Action và VSA.</p>
+                        </div>
+                    </div>
+
+                    <div class="chart-box">
+                        <div class="tradingview-widget-container" style="height:100%;width:100%">
+                            <div id="tradingview_chart" style="height:100%;width:100%"></div>
+                            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                            <script type="text/javascript">
+                            new TradingView.widget({
+                                "autosize": true,
+                                "symbol": "OANDA:XAUUSD",
+                                "interval": "60",
+                                "timezone": "Asia/Ho_Chi_Minh",
+                                "theme": "dark",
+                                "style": "1",
+                                "locale": "vi",
+                                "toolbar_bg": "#141824",
+                                "enable_publishing": false,
+                                "withdateranges": true,
+                                "hide_side_toolbar": false,
+                                "allow_symbol_change": true,
+                                "details": false,
+                                "hotlist": false,
+                                "calendar": false,
+                                "studies": [
+                                    "Volume@tv-basicstudies"
+                                ],
+                                "container_id": "tradingview_chart"
+                            });
+                            </script>
+                        </div>
+                    </div>
+
+                    <!-- Risk Disclaimer Box -->
+                    <div class="disclaimer-box">
+                        <h4><i class="fa-solid fa-triangle-exclamation"></i> Tuyên Bố Miễn Trừ Trách Nhiệm & Cảnh Báo Rủi Ro</h4>
+                        <p>
+                            Mọi tài liệu, nhận định thị trường, bài học và phân tích trên <strong>PTvolume.com</strong> chỉ mang tính chất giáo dục và nghiên cứu thông tin, không cấu thành lời khuyên đầu tư tài chính hay khuyến nghị mua bán cụ thể. Giao dịch đòn bẩy tài chính luôn tiềm ẩn rủi ro thua lỗ vốn. <a href="pages/disclaimer.html" style="color: #FF707E; text-decoration: underline;">Đọc toàn văn Cảnh báo Rủi ro &raquo;</a>
+                        </p>
+                    </div>
+                </section>
+
+                <!-- ══════════════════════════════════════════════════════════
+                     BÌNH LUẬN ĐỘC GIẢ (INTERACTIVE COMMENTS SECTION)
+                     ══════════════════════════════════════════════════════════ -->
+                <section id="thao-luan-cong-dong" class="comments-section">
+                    <div class="comments-header">
+                        <div>
+                            <h3 style="font-size:1.25rem; font-weight:800; color:#fff; display:flex; align-items:center; gap:8px;">
+                                <i class="fa-solid fa-comments" style="color:var(--cyan);"></i> Bình Luận & Thảo Luận Độc Giả
+                            </h3>
+                            <p style="font-size:0.82rem; color:var(--text-muted);">Gửi câu hỏi hoặc ý kiến phân tích kỹ thuật của bạn về hệ thống PTvolume.com</p>
+                        </div>
+                        <span class="nav-badge live" id="commentsCountBadge">3 Bình luận</span>
+                    </div>
+
+                    <form class="comment-form" onsubmit="handleCommentSubmit(event)">
+                        <input type="text" id="commentAuthor" placeholder="Họ và tên / Handle của bạn (VD: Hoàng Long VSA)" required>
+                        <input type="email" id="commentEmail" placeholder="Email của bạn (Được bảo mật an toàn)" required>
+                        <textarea id="commentMessage" placeholder="Nhập nội dung bình luận, trao đổi về nến, khối lượng hoặc câu hỏi của bạn..." required></textarea>
+                        <button type="submit" class="btn-submit-comment"><i class="fa-solid fa-paper-plane"></i> Gửi Bình Luận</button>
+                    </form>
+
+                    <div class="comment-list" id="commentList">
+                        <div class="comment-item">
+                            <div class="comment-avatar">HL</div>
+                            <div class="comment-content">
+                                <div class="comment-author-name">Hoàng Long (Trader Hà Nội)</div>
+                                <div class="comment-date">20 Tháng 8, 2026 • 18:45</div>
+                                <div class="comment-text">Giao diện mới menu bên trái tràn trang rất thoáng và chuyên nghiệp! Mục Tủ sách tài chính và Máy tính vị thế hỗ trợ vào lệnh rất nhanh.</div>
+                            </div>
+                        </div>
+
+                        <div class="comment-item">
+                            <div class="comment-avatar" style="background:rgba(0,229,255,0.2); color:#00E5FF;">MT</div>
+                            <div class="comment-content">
+                                <div class="comment-author-name">Minh Triết (Hàng Hóa Phái Sinh)</div>
+                                <div class="comment-date">20 Tháng 8, 2026 • 17:30</div>
+                                <div class="comment-text">Cảm ơn ban biên tập PTvolume. Phương pháp Wyckoff 5 pha kết hợp đọc khối lượng VSA giúp mình lọc sạch các cú bẫy False Breakout của Dầu thô và Ngô.</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
             </div>
 
-            <div class="footer-col">
-                <h4>Governance & Legal</h4>
-                <ul>
-                    <li><a href="pages/terms.html">Terms of Service</a></li>
-                    <li><a href="pages/privacy.html">Privacy Policy</a></li>
-                    <li><a href="pages/disclaimer.html">Risk Disclosure</a></li>
-                </ul>
-            </div>
+            <!-- ══════════════════════════════════════════════════════════
+                 FOOTER HỆ THỐNG PTVOLUME.COM
+                 ══════════════════════════════════════════════════════════ -->
+            <footer>
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div style="display:flex; align-items:center; gap:10px;">
+                            <img src="assets/images/logo.jpg" alt="PTvolume Logo" style="width:38px; height:38px; border-radius:8px; border:1px solid var(--cyan);">
+                            <span style="font-size:1.25rem; font-weight:900; color:#fff;">PT<span style="color:var(--cyan);">VOLUME</span></span>
+                        </div>
+                        <p>Nền tảng nghiên cứu tài chính và đào tạo chuyên sâu về Price Action biểu đồ trần, chu kỳ tích lũy/phân phối Wyckoff và Volume Spread Analysis (VSA).</p>
+                    </div>
 
-            <div class="footer-col">
-                <h4>Editorial & Research</h4>
-                <ul>
-                    <li><a href="pages/contact.html">Contact Editorial Desk</a></li>
-                    <li><a href="#market-analysis">Market Briefings</a></li>
-                    <li><a href="#live-chart">Live Market Chart</a></li>
-                </ul>
-            </div>
-        </div>
+                    <div class="footer-col">
+                        <h4>Kho Tri Thức</h4>
+                        <ul>
+                            <li><a href="#hoc-tap">Giáo Trình Naked Chart</a></li>
+                            <li><a href="#dau-tu">Danh Mục Hàng Hóa & FX</a></li>
+                            <li><a href="#tu-sach">Tủ Sách Tài Chính</a></li>
+                            <li><a href="#tam-li">Tâm Lí & Kỷ Luật Trader</a></li>
+                        </ul>
+                    </div>
 
-        <div class="footer-bottom">
-            <p>© 2026 PTvolume.com. All rights reserved.</p>
-            <p style="color: #64748B;">Naked Chart • Volume Spread Analysis • Wyckoff Method</p>
-        </div>
-    </footer>
+                    <div class="footer-col">
+                        <h4>Công Cụ & Diễn Đàn</h4>
+                        <ul>
+                            <li><a href="#cong-cu">Máy Tính Quy Mô Vị Thế</a></li>
+                            <li><a href="#cong-cu">Tra Cứu Tín Hiệu VSA</a></li>
+                            <li><a href="#dien-dan">Diễn Đàn Cộng Đồng</a></li>
+                            <li><a href="#bieu-do-live">Biểu Đồ Trực Tuyến</a></li>
+                        </ul>
+                    </div>
 
-    <!-- Search & Login Modal Script -->
+                    <div class="footer-col">
+                        <h4>Pháp Lý & Vận Hành</h4>
+                        <ul>
+                            <li><a href="pages/about.html">Về Chúng Tôi</a></li>
+                            <li><a href="pages/contact.html">Liên Hệ Ban Biên Tập</a></li>
+                            <li><a href="pages/terms.html">Điều Khoản Dịch Vụ</a></li>
+                            <li><a href="pages/privacy.html">Chính Sách Bảo Mật</a></li>
+                            <li><a href="pages/disclaimer.html">Cảnh Báo Rủi Ro</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-bottom-bar">
+                    <div>© 2026 PTvolume.com. Toàn bộ bản quyền được bảo lưu.</div>
+                    <div style="color:var(--cyan); font-weight:600;">Naked Chart • Volume Spread Analysis • Wyckoff Methodology</div>
+                </div>
+            </footer>
+
+        </main>
+    </div>
+
+    <!-- Hidden Google Translate Element -->
+    <div id="google_translate_element" style="display:none;"></div>
+
+    <!-- ══════════════════════════════════════════════════════════
+         INTERACTIVE JAVASCRIPT SYSTEM
+         ══════════════════════════════════════════════════════════ -->
     <script>
-        function toggleSearchModal() {
-            const overlay = document.getElementById("searchOverlay");
-            overlay.classList.toggle("active");
-            if (overlay.classList.contains("active")) {
-                setTimeout(() => document.getElementById("searchInput").focus(), 100);
+        // 1. Sidebar Collapse / Expand Toggle
+        function toggleSidebarCollapse() {
+            document.body.classList.toggle('sidebar-collapsed');
+            const icon = document.getElementById('toggleIcon');
+            if (document.body.classList.contains('sidebar-collapsed')) {
+                icon.className = 'fa-solid fa-chevron-right';
+            } else {
+                icon.className = 'fa-solid fa-chevron-left';
             }
         }
 
-        function closeSearchOnBackdrop(e) {
-            if (e.target.id === "searchOverlay") {
-                toggleSearchModal();
+        // 2. Mobile Sidebar Toggle
+        function toggleMobileSidebar() {
+            document.body.classList.toggle('sidebar-mobile-open');
+        }
+
+        // 3. Highlight Nav Item
+        function highlightNav(element) {
+            document.querySelectorAll('.sidebar-nav-item').forEach(el => el.classList.remove('active'));
+            element.classList.add('active');
+            if (window.innerWidth <= 1024) {
+                toggleMobileSidebar();
             }
         }
 
-        function selectSearchTag(tag) {
-            const input = document.getElementById("searchInput");
-            input.value = tag;
-            input.focus();
+        // 4. Live Search Filter
+        function filterWebsiteContent() {
+            const query = document.getElementById('liveSearchInput').value.toLowerCase().trim();
+            if (!query) return;
+
+            const cards = document.querySelectorAll('.course-card, .case-study-card, .book-card, .psychology-card');
+            cards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                if (text.includes(query)) {
+                    card.style.display = 'flex';
+                    card.style.opacity = '1';
+                } else {
+                    card.style.opacity = '0.3';
+                }
+            });
         }
 
-        function toggleLoginModal() {
-            const overlay = document.getElementById("loginOverlay");
-            overlay.classList.toggle("active");
+        // Shortcut Ctrl+K
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                document.getElementById('liveSearchInput').focus();
+            }
+        });
+
+        // 5. Position Size Calculator
+        function computePositionSize() {
+            const equity = parseFloat(document.getElementById('calcEquity').value) || 10000;
+            const riskPct = parseFloat(document.getElementById('calcRiskPct').value) || 1;
+            const entry = parseFloat(document.getElementById('calcEntry').value) || 2730;
+            const sl = parseFloat(document.getElementById('calcSL').value) || 2720;
+
+            const riskAmount = equity * (riskPct / 100);
+            const slPips = Math.abs(entry - sl);
+
+            let lotSize = 0.1;
+            if (slPips > 0) {
+                // Approximate for Gold 1 Lot = 100 oz ($10 per $1 move)
+                lotSize = (riskAmount / (slPips * 100));
+            }
+
+            document.getElementById('resRiskAmount').innerText = '$' + riskAmount.toFixed(2);
+            document.getElementById('resSLPips').innerText = slPips.toFixed(1) + ' pts';
+            document.getElementById('resLotSize').innerText = lotSize.toFixed(2) + ' Lot';
         }
 
-        function closeLoginOnBackdrop(e) {
-            if (e.target.id === "loginOverlay") {
-                toggleLoginModal();
+        // 6. VSA Interactive Detail Switcher
+        const vsaSignals = {
+            'ut': {
+                title: '🔴 Upthrust (UT / UTAD) — Bẫy Giá Giảm',
+                desc: 'Thanh nến đẩy mạnh vượt đỉnh kháng cự với Volume cao nhưng đóng cửa quay ngược về dưới cản. Đây là hành vi nhà tạo lập xả hàng vào thanh khoản Breakout của trader nhỏ lẻ. Canh lệnh Bán khi có nến xác nhận.'
+            },
+            'spring': {
+                title: '🟢 Spring (Pha C Wyckoff) — Cú Rũ Bỏ Tăng Giá',
+                desc: 'Đợt đạp giá xuyên thủng hỗ trợ tạm thời nhằm quét sạch lệnh Stop Loss và gom nốt lượng hàng trôi nổi giá rẻ trước khi khởi động chiến dịch đẩy giá (Markup). Canh Mua khi giá quay lại biên tích lũy.'
+            },
+            'stop': {
+                title: '🟡 Stopping Volume — Hấp Thụ Cung Hoảng Loạn',
+                desc: 'Xuất hiện trong xu hướng giảm mạnh với thanh nến biên độ rộng và Khối lượng siêu cao (Ultra High Volume), nhưng giá sau đó không giảm tiếp. Báo hiệu Smart Money đã gom hết lực bán hoảng loạn.'
+            },
+            'nod': {
+                title: '🔵 No Demand Bar — Thanh Nến Cạn Cầu',
+                desc: 'Thanh nến tăng thân hẹp với khối lượng thấp hơn 2 nến trước đó. Cho thấy phe mua không còn mặn mà đẩy giá lên vùng cao hơn. Chuẩn bị cho đợt giảm giá tiếp diễn.'
+            },
+            'nos': {
+                title: '🟢 No Supply Bar — Thanh Nến Cạn Cung',
+                desc: 'Thanh nến giảm thân hẹp với khối lượng cực thấp trong vùng hỗ trợ hoặc sau cú Spring. Xác nhận phe bán đã hoàn toàn kiệt sức, mở đường cho phe Mua đẩy giá bứt phá.'
+            }
+        };
+
+        function showVsaDetail(key) {
+            const data = vsaSignals[key];
+            if (data) {
+                document.getElementById('vsaDetailDisplay').innerHTML = `
+                    <h4 style="color:var(--cyan); margin-bottom:6px; font-size:0.95rem;">${data.title}</h4>
+                    <p style="font-size:0.82rem; color:var(--text-light); line-height:1.55;">${data.desc}</p>
+                `;
             }
         }
 
-        function handleLoginSubmit(e) {
+        // 7. Forum Post Submission
+        function submitForumPost() {
+            const name = document.getElementById('forumInputName').value.trim();
+            const title = document.getElementById('forumInputTitle').value.trim();
+            const content = document.getElementById('forumInputContent').value.trim();
+
+            if (!name || !title || !content) {
+                alert('Vui lòng điền đầy đủ Họ tên, Tiêu đề và Nội dung câu hỏi!');
+                return;
+            }
+
+            const initial = name.substring(0, 2).toUpperCase();
+            const newPostHtml = `
+                <div class="forum-post-item" style="border-color:var(--cyan); animation: fadeIn 0.4s ease;">
+                    <div class="forum-avatar" style="background:linear-gradient(135deg, #00E5FF, #2962FF);">${initial}</div>
+                    <div class="forum-post-content">
+                        <h4 class="forum-post-title">${title}</h4>
+                        <p class="forum-post-snippet">${content}</p>
+                        <div class="forum-meta-bar">
+                            <span><i class="fa-solid fa-user-tie"></i> ${name}</span>
+                            <span><i class="fa-regular fa-clock"></i> Vừa xong</span>
+                            <span style="color:var(--cyan);"><i class="fa-regular fa-comments"></i> 0 Phản hồi</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            const list = document.getElementById('forumPostsList');
+            list.insertAdjacentHTML('afterbegin', newPostHtml);
+
+            document.getElementById('forumInputName').value = '';
+            document.getElementById('forumInputTitle').value = '';
+            document.getElementById('forumInputContent').value = '';
+            alert('Đăng bài thành công! Thảo luận của bạn đã xuất hiện trên Diễn đàn PTvolume.');
+        }
+
+        // 8. Comments Submission
+        function handleCommentSubmit(e) {
             e.preventDefault();
-            alert("Signed in successfully! Welcome to PTvolume Institutional Research.");
-            toggleLoginModal();
-        }
-    </script>
+            const name = document.getElementById('commentAuthor').value.trim();
+            const msg = document.getElementById('commentMessage').value.trim();
 
+            if (!name || !msg) return;
+
+            const initial = name.substring(0, 2).toUpperCase();
+            const newComment = `
+                <div class="comment-item" style="border-color:var(--cyan);">
+                    <div class="comment-avatar">${initial}</div>
+                    <div class="comment-content">
+                        <div class="comment-author-name">${name}</div>
+                        <div class="comment-date">Vừa xong</div>
+                        <div class="comment-text">${msg}</div>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('commentList').insertAdjacentHTML('afterbegin', newComment);
+            document.getElementById('commentAuthor').value = '';
+            document.getElementById('commentEmail').value = '';
+            document.getElementById('commentMessage').value = '';
+            alert('Cảm ơn bạn! Bình luận đã được ghi nhận và hiển thị công khai.');
+        }
+
+        // 9. Multi-Language Switcher
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'vi',
+                includedLanguages: 'en,vi',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function setLanguage(lang) {
+            if (lang === 'vi') {
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + location.hostname;
+                document.cookie = "googtrans=/vi/vi; path=/;";
+                document.cookie = "googtrans=/vi/vi; path=/; domain=" + location.hostname;
+                localStorage.setItem('ptvolume_lang', 'vi');
+                updateLangUI('vi');
+                location.reload();
+            } else if (lang === 'en') {
+                document.cookie = "googtrans=/vi/en; path=/;";
+                document.cookie = "googtrans=/vi/en; path=/; domain=" + location.hostname;
+                localStorage.setItem('ptvolume_lang', 'en');
+                updateLangUI('en');
+                location.reload();
+            }
+        }
+
+        function updateLangUI(lang) {
+            const btnVi = document.getElementById('btn-lang-vi');
+            const btnEn = document.getElementById('btn-lang-en');
+            if (btnVi && btnEn) {
+                if (lang === 'en') {
+                    btnEn.classList.add('active');
+                    btnVi.classList.remove('active');
+                } else {
+                    btnVi.classList.add('active');
+                    btnEn.classList.remove('active');
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentLang = localStorage.getItem('ptvolume_lang') || 'vi';
+            updateLangUI(currentLang);
+        });
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>

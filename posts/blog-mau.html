@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deconstructing Institutional Supply: Identifying the Upthrust in Gold (XAU/USD) | PTvolume</title>
-    <meta name="description" content="Technical analysis case study on identifying Upthrust Action and institutional supply absorption in Spot Gold XAU/USD using VSA and Wyckoff principles.">
+    <title>Bóc Tách Cung Tổ Chức: Nhận Diện Bẫy Giá Upthrust Trên Vàng (XAU/USD) | PTvolume</title>
+    <meta name="description" content="Nghiên cứu thực chiến về cách nhận diện hành vi Upthrust và sự hấp thụ nguồn cung của Smart Money trên Vàng Spot XAU/USD bằng VSA và Phương pháp Wyckoff.">
     <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,16 +30,13 @@
             --font-mono: 'JetBrains Mono', monospace;
         }
 
-        /* --- 1. ANTI-COPY PROTECTION --- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: var(--font-sans);
-            
         }
 
-        /* Allow typing in comment form */
         input, textarea {
             -webkit-user-select: text !important;
             -moz-user-select: text !important;
@@ -102,6 +99,42 @@
             color: #00E5FF;
         }
 
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lang-switcher {
+            display: inline-flex;
+            align-items: center;
+            background: #080B10;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2px;
+            gap: 2px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 16px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active, .lang-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
         .btn {
             padding: 8px 16px;
             border-radius: 6px;
@@ -114,9 +147,14 @@
             border: none;
             background: var(--primary);
             color: #fff;
+            transition: all 0.2s ease;
         }
 
-        /* Article Layout */
+        .btn:hover {
+            background: #1e4bd8;
+            transform: translateY(-1px);
+        }
+
         .article-container {
             max-width: 860px;
             margin: 50px auto 60px;
@@ -163,7 +201,8 @@
         .article-meta {
             display: flex;
             align-items: center;
-            gap: 20px;
+            flex-wrap: wrap;
+            gap: 16px;
             padding-bottom: 24px;
             border-bottom: 1px solid var(--border-color);
             margin-bottom: 36px;
@@ -190,7 +229,6 @@
             margin-bottom: 20px;
         }
 
-        /* --- 2. WATERMARK OVERLAY CONTAINER --- */
         .watermark-box {
             position: relative;
             margin: 32px 0;
@@ -202,54 +240,50 @@
 
         .watermark-box img {
             width: 100%;
-            height: auto;
             display: block;
-            pointer-events: none;
+            object-fit: cover;
         }
 
         .watermark-stamp {
             position: absolute;
             bottom: 14px;
             right: 14px;
+            background: rgba(11, 14, 20, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: rgba(255, 255, 255, 0.75);
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            pointer-events: none;
             display: flex;
             align-items: center;
             gap: 6px;
-            background: rgba(11, 14, 20, 0.8);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 6px 14px;
-            border-radius: 30px;
-            color: rgba(255, 255, 255, 0.75);
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 0.8px;
-            text-transform: uppercase;
-            pointer-events: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-        }
-
-        .watermark-stamp i {
-            color: #00E5FF;
         }
 
         .highlight-box {
-            background: var(--bg-card);
+            background: rgba(41, 98, 255, 0.08);
             border: 1px solid rgba(41, 98, 255, 0.3);
-            border-radius: 12px;
+            border-radius: 10px;
             padding: 24px;
-            margin: 30px 0;
+            margin: 32px 0;
         }
 
         .highlight-box h3 {
-            color: #82B1FF;
-            font-size: 1.15rem;
-            margin-bottom: 12px;
+            color: #fff;
+            margin-top: 0;
+            margin-bottom: 14px;
             display: flex;
             align-items: center;
             gap: 10px;
+            font-size: 1.15rem;
         }
 
         .highlight-box ul {
+            margin: 0;
+            padding-left: 0;
             list-style: none;
         }
 
@@ -265,7 +299,7 @@
             margin-top: 5px;
         }
 
-        /* --- 3. INTERACTIVE READER COMMENTS --- */
+        /* Comments Section */
         .comment-section {
             margin-top: 60px;
             padding-top: 40px;
@@ -297,21 +331,21 @@
         .form-label {
             display: block;
             font-size: 0.85rem;
-            font-weight: 600;
-            color: #cfd8ea;
-            margin-bottom: 8px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            font-weight: 500;
         }
 
         .form-control {
             width: 100%;
-            padding: 12px 16px;
-            background: #0B0E14;
+            background: var(--bg-main);
             border: 1px solid var(--border-color);
-            border-radius: 6px;
-            color: #fff;
-            font-size: 0.92rem;
+            border-radius: 8px;
+            padding: 12px 16px;
+            color: var(--text-main);
+            font-size: 0.95rem;
             outline: none;
-            transition: border-color 0.2s;
+            transition: border-color 0.2s ease;
         }
 
         .form-control:focus {
@@ -319,8 +353,8 @@
         }
 
         textarea.form-control {
-            resize: vertical;
             min-height: 100px;
+            resize: vertical;
         }
 
         .comment-list {
@@ -338,13 +372,13 @@
 
         .comment-top {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
             margin-bottom: 8px;
         }
 
         .comment-author {
-            font-weight: 700;
+            font-weight: 600;
             color: #00E5FF;
             font-size: 0.92rem;
             display: flex;
@@ -353,58 +387,47 @@
         }
 
         .comment-date {
-            font-size: 0.76rem;
+            font-size: 0.78rem;
             color: var(--text-muted);
         }
 
         .comment-text {
-            font-size: 0.9rem;
-            color: #E2E8F0;
+            font-size: 0.95rem;
+            color: var(--text-light);
             line-height: 1.6;
         }
 
-        #copyToast {
-            visibility: hidden;
-            min-width: 320px;
-            background-color: #161D2B;
-            color: #FF8E99;
-            text-align: center;
-            border-radius: 8px;
-            border: 1px solid rgba(242, 54, 69, 0.4);
-            padding: 14px 22px;
-            position: fixed;
-            z-index: 9999;
-            bottom: 30px;
-            right: 30px;
-            font-size: 0.88rem;
-            font-weight: 600;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.6);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            transition: all 0.3s ease;
-            opacity: 0;
-        }
-
-        #copyToast.show {
-            visibility: visible;
-            opacity: 1;
-            transform: translateY(-5px);
-        }
-
         footer {
+            background: #080B10;
             border-top: 1px solid var(--border-color);
-            background: #07090E;
-            padding: 36px 24px;
+            padding: 40px 24px;
             text-align: center;
             color: var(--text-muted);
             font-size: 0.88rem;
         }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a:hover {
+            color: #00E5FF;
+        }
+
+        /* Hide Google Translate Toolbars & Overlays */
+        .goog-te-banner-frame.skiptranslate { display: none !important; }
+        body { top: 0px !important; }
+        .goog-tooltip, .goog-tooltip:hover { display: none !important; }
+        .goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
+        #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
+        .goog-te-gadget { display: none !important; }
     </style>
 </head>
-<body >
-
-    
+<body>
 
     <header>
         <div class="nav-container">
@@ -414,110 +437,117 @@
                     <span class="brand">PT<span>VOLUME</span></span>
                 </div>
             </a>
-            <a href="../index.html" class="btn">
-                <i class="fa-solid fa-arrow-left"></i> Return to Homepage
-            </a>
+            
+            <div class="nav-right">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" onclick="setLanguage('vi')" id="btn-lang-vi" title="Tiếng Việt">
+                        <span>🇻🇳</span> VI
+                    </button>
+                    <button class="lang-btn" onclick="setLanguage('en')" id="btn-lang-en" title="English">
+                        <span>🇬🇧</span> EN
+                    </button>
+                </div>
+                <a href="../index.html" class="btn">
+                    <i class="fa-solid fa-arrow-left"></i> Về Trang Chủ
+                </a>
+            </div>
         </div>
     </header>
 
     <main class="article-container">
         <div class="breadcrumb">
-            <a href="../index.html">Home</a>
+            <a href="../index.html">Trang Chủ</a>
             <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
-            <a href="../index.html#market-analysis">Market Analysis</a>
+            <a href="../index.html#market-analysis">Phân Tích Thị Trường</a>
             <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
-            <span>Spot Gold (XAU/USD)</span>
+            <span>Vàng Spot (XAU/USD)</span>
         </div>
 
-        <span class="article-badge"><i class="fa-solid fa-coins"></i> Spot Gold Analysis</span>
+        <span class="article-badge"><i class="fa-solid fa-coins"></i> Phân Tích Vàng Spot</span>
         
-        <h1 class="article-title">Deconstructing Institutional Supply: Identifying the Upthrust in Gold (XAU/USD)</h1>
+        <h1 class="article-title">Bóc Tách Cung Tổ Chức: Nhận Diện Bẫy Giá Upthrust Trên Vàng (XAU/USD)</h1>
 
         <div class="article-meta">
-            <span><i class="fa-regular fa-user"></i> Written by: <strong>PTvolume Research Desk</strong></span>
+            <span><i class="fa-regular fa-user"></i> Biên soạn: <strong>Nhóm Nghiên Cứu PTvolume</strong></span>
             <span>•</span>
-            <span><i class="fa-regular fa-calendar"></i> August 19, 2026</span>
+            <span><i class="fa-regular fa-calendar"></i> 19 Tháng 8, 2026</span>
             <span>•</span>
-            <span><i class="fa-regular fa-clock"></i> 6 min read</span>
+            <span><i class="fa-regular fa-clock"></i> 6 phút đọc</span>
         </div>
 
         <div class="article-body">
             <p>
-                In today's London and New York overlapping session, Spot Gold ($XAU/USD$) exhibited classic signs of distribution at major multi-week resistance. Operating strictly under <strong>Naked Chart Price Action and Volume Spread Analysis (VSA)</strong>, we do not rely on predictive bias; rather, we decode the empirical interaction between price range and relative tick volume.
+                Trong phiên giao dịch trùng lặp London - New York hôm nay, Vàng Spot (<strong>XAU/USD</strong>) đã xuất hiện các dấu hiệu phân phối kinh điển tại vùng kháng cự nhiều tuần. Vận hành theo trường phái <strong>Naked Chart Price Action và Volume Spread Analysis (VSA)</strong>, chúng tôi không dự đoán mù quáng mà giải mã sự tương tác thực chứng giữa biên độ nến và khối lượng giao dịch.
             </p>
 
-            <!-- WATERMARKED IMAGE DEMONSTRATION -->
             <div class="watermark-box">
-                <img src="../assets/images/logo.jpg" alt="VSA Price Action Structure on Gold" style="max-height: 380px; object-fit: cover;">
+                <img src="../assets/images/logo.jpg" alt="Cấu Trúc Price Action & VSA Trên Vàng" style="max-height: 380px; object-fit: cover;">
                 <div class="watermark-stamp">
                     <i class="fa-solid fa-shield-halved"></i> PTvolume.com
                 </div>
             </div>
 
-            <h2>1. Structural Breakdown & Effort vs. Result</h2>
+            <h2>1. Bóc Tách Cấu Trúc & Quy Luật Nỗ Lực vs. Kết Quả</h2>
             <p>
-                Examining the 4-Hour (H4) timeframe, price pushed aggressively through the previous structural swing high. However, despite ultra-high volume registering on the bar, the candle close settled in the lower quartile with an extended upper wick. 
+                Quan sát trên khung thời gian H4, giá đã có nhịp đẩy mạnh vượt qua đỉnh cấu trúc trước đó. Tuy nhiên, dù khối lượng (Volume) nổ siêu cao, cây nến lại đóng cửa ở 1/4 phía dưới với phần râu nến trên kéo dài rõ rệt.
             </p>
             <p>
-                According to Richard Wyckoff's <em>Law of Effort vs. Result</em>: An enormous surge in volume (Effort) that fails to produce a sustained bullish breakout (Result) confirms heavy institutional selling (Hidden Supply Dumping) into retail breakout liquidity.
+                Theo <em>Quy luật Nỗ lực vs. Kết quả</em> của Richard Wyckoff: Khối lượng cực lớn (Nỗ lực) nhưng không tạo ra được một đợt bứt phá tăng tương xứng (Kết quả) chứng minh phe tổ chức đang xả hàng ngầm (Hidden Supply Dumping) vào dòng tiền mua Breakout của retail trader.
             </p>
 
             <div class="highlight-box">
-                <h3><i class="fa-solid fa-crosshairs"></i> Institutional Trade Execution Plan</h3>
+                <h3><i class="fa-solid fa-crosshairs"></i> Kế Hoạch Vào Lệnh Chuẩn Thể Chế</h3>
                 <ul>
-                    <li><i class="fa-solid fa-check"></i> <strong>Bias / Position:</strong> Short (Sell Limit / Market confirmation on lower timeframe rejection).</li>
-                    <li><i class="fa-solid fa-check"></i> <strong>Trigger:</strong> Re-test of the Upthrust bar on low volume (No Demand Confirmation).</li>
-                    <li><i class="fa-solid fa-check"></i> <strong>Stop Loss (SL):</strong> Placed strictly above the high of the Upthrust wick (+15-20 pips buffer).</li>
-                    <li><i class="fa-solid fa-check"></i> <strong>Take Profit (TP):</strong> Major structural Demand Zone, delivering a minimum <strong>1:2.5 Risk-to-Reward ratio</strong>.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Thiên hướng (Bias):</strong> Bán (Short / Canh tín hiệu từ chối giá ở khung nhỏ).</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Kích hoạt:</strong> Nhịp retest lại cây nến Upthrust với Volume cạn kiệt (No Demand Bar).</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Cắt lỗ (SL):</strong> Đặt tuyệt đối trên đỉnh râu nến Upthrust (+15-20 pips buffer).</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Chốt lời (TP):</strong> Vùng Cầu (Demand Zone) cấu trúc then chốt, mang lại <strong>tỷ lệ R:R tối thiểu 1:2.5</strong>.</li>
                 </ul>
             </div>
 
-            <h2>2. Capital Discipline & Risk Management</h2>
+            <h2>2. Kỷ Luật Vốn & Quản Trị Rủi Ro</h2>
             <p>
-                Never execute prior to receiving confirmation on your designated execution timeframe. Consistent profitability in financial speculation is a function of positive mathematical expectation (+EV) executed with unwavering emotional discipline.
+                Không bao giờ vào lệnh trước khi có tín hiệu xác nhận cạn cung/cầu trên khung thời gian thực thi. Lợi nhuận bền vững trong đầu cơ tài chính là kết quả của việc kiên định thực thi các thiết lập có kỳ vọng toán học dương (+EV) đi kèm kỷ luật cảm xúc vững vàng.
             </p>
         </div>
 
-        <!-- INTERACTIVE COMMENTS SECTION -->
         <section class="comment-section">
             <h3 class="comment-header">
-                <i class="fa-regular fa-comments" style="color: #00E5FF;"></i> Reader Discussions & Technical Exchange (<span id="commentCount">2</span>)
+                <i class="fa-regular fa-comments" style="color: #00E5FF;"></i> Thảo Luận Kỹ Thuật Cộng Đồng (<span id="commentCount">2</span>)
             </h3>
 
-            <!-- Comment Form -->
             <form class="comment-form" id="commentForm" onsubmit="addComment(event)">
                 <div class="form-group">
-                    <label class="form-label">Trader Name / Handle:</label>
-                    <input type="text" id="commentName" class="form-control" placeholder="e.g. Marcus - Price Action Trader" required>
+                    <label class="form-label">Tên Trader / Nickname:</label>
+                    <input type="text" id="commentName" class="form-control" placeholder="VD: Hoàng Nam - Price Action Trader" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Your Technical Perspective or Question:</label>
-                    <textarea id="commentContent" class="form-control" placeholder="Share your analysis or observations regarding this Upthrust structure..." required></textarea>
+                    <label class="form-label">Góc nhìn kỹ thuật hoặc câu hỏi của bạn:</label>
+                    <textarea id="commentContent" class="form-control" placeholder="Chia sẻ quan sát của bạn về cấu trúc nến và khối lượng VSA này..." required></textarea>
                 </div>
                 <button type="submit" class="btn">
-                    <i class="fa-regular fa-paper-plane"></i> Submit Comment
+                    <i class="fa-regular fa-paper-plane"></i> Gửi Bình Luận
                 </button>
             </form>
 
-            <!-- Comments List -->
             <div class="comment-list" id="commentList">
                 <div class="comment-item">
                     <div class="comment-top">
-                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> David K. (Macro Trader)</span>
-                        <span class="comment-date">Aug 19, 2026 20:15 UTC</span>
+                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Minh Đức (VSA Trader)</span>
+                        <span class="comment-date">19 Tháng 8, 2026 20:15 UTC</span>
                     </div>
                     <div class="comment-text">
-                        The Effort vs. Result principle explained here is textbook Wyckoff. Notice how the subsequent 1-hour bar showed zero follow-through buying volume. Excellent breakdown!
+                        Quy luật Nỗ lực vs Kết quả giải thích ở đây rất chuẩn sách giáo khoa Wyckoff. Để ý cây nến H1 sau đó gần như không có khối lượng mua tiếp diễn. Bài phân tích rất sắc nét!
                     </div>
                 </div>
 
                 <div class="comment-item">
                     <div class="comment-top">
-                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Alex Mercer</span>
-                        <span class="comment-date">Aug 19, 2026 21:02 UTC</span>
+                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Quốc Huy</span>
+                        <span class="comment-date">19 Tháng 8, 2026 21:02 UTC</span>
                     </div>
                     <div class="comment-text">
-                        What lower timeframe do you prefer for the No Demand test bar confirmation? 15m or 5m? Great Risk-to-Reward structure as always.
+                        Cho mình hỏi khung thời gian nào tối ưu nhất để chờ thanh No Demand test lại sau Upthrust? M15 hay M5? Tỷ lệ R:R 1:2.5 bài bản quá.
                     </div>
                 </div>
             </div>
@@ -525,15 +555,58 @@
     </main>
 
     <footer>
-        <p>© 2026 PTvolume.com. All rights reserved. Naked Chart • VSA • Wyckoff Methodology.</p>
+        <div class="footer-links">
+            <a href="../pages/about.html">Về PTvolume</a>
+            <a href="../pages/contact.html">Liên Hệ</a>
+            <a href="../pages/terms.html">Điều Khoản</a>
+            <a href="../pages/privacy.html">Bảo Mật</a>
+            <a href="../pages/disclaimer.html">Cảnh Báo Rủi Ro</a>
+        </div>
+        <p>© 2026 PTvolume.com. Toàn bộ bản quyền được bảo lưu. Naked Chart • VSA • Phương Pháp Wyckoff.</p>
     </footer>
 
-    <!-- Anti-Copy & Comment Scripts -->
-    <script>
-        
+    <!-- Hidden Google Translate Element -->
+    <div id="google_translate_element" style="display:none;"></div>
 
-        , 3000);
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'vi',
+                includedLanguages: 'en,vi',
+                autoDisplay: false
+            }, 'google_translate_element');
         }
+
+        function setLanguage(lang) {
+            if (lang === 'vi') {
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + location.hostname;
+                document.cookie = "googtrans=/vi/vi; path=/;";
+                document.cookie = "googtrans=/vi/vi; path=/; domain=" + location.hostname;
+                localStorage.setItem('ptvolume_lang', 'vi');
+                location.reload();
+            } else if (lang === 'en') {
+                document.cookie = "googtrans=/vi/en; path=/;";
+                document.cookie = "googtrans=/vi/en; path=/; domain=" + location.hostname;
+                localStorage.setItem('ptvolume_lang', 'en');
+                location.reload();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentLang = localStorage.getItem('ptvolume_lang') || 'vi';
+            const btnVi = document.getElementById('btn-lang-vi');
+            const btnEn = document.getElementById('btn-lang-en');
+            if (btnVi && btnEn) {
+                if (currentLang === 'en') {
+                    btnEn.classList.add('active');
+                    btnVi.classList.remove('active');
+                } else {
+                    btnVi.classList.add('active');
+                    btnEn.classList.remove('active');
+                }
+            }
+        });
 
         function addComment(e) {
             e.preventDefault();
@@ -546,7 +619,7 @@
             if (!name || !content) return;
 
             const now = new Date();
-            const timeString = now.toUTCString().slice(5, 22) + ' UTC';
+            const timeString = now.toLocaleDateString('vi-VN') + ' ' + now.toLocaleTimeString('vi-VN');
 
             const commentList = document.getElementById("commentList");
             const newComment = document.createElement("div");
@@ -567,7 +640,7 @@
             nameInput.value = "";
             contentInput.value = "";
 
-            alert("Your comment has been submitted successfully!");
+            alert("Bình luận của bạn đã được gửi thành công lên cộng đồng!");
         }
 
         function escapeHtml(text) {
@@ -576,6 +649,7 @@
             return div.innerHTML;
         }
     </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>

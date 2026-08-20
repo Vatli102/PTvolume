@@ -129,61 +129,58 @@ def generate_article_payload(news_items: List[Dict[str, str]]) -> Optional[Dict[
         news_text += f"{idx}. [{item['source']}] {item['title']}\n   Summary: {item['summary']}\n   Date: {item['pubDate']}\n\n"
         
     prompt = f"""
-You are the Chief Macro Strategist & Head of Technical Order Flow at PTvolume.com.
-Synthesize the following live global market news into a master daily market analysis report for international traders and institutional investors.
+Bạn là Trưởng ban Chiến lược Vĩ mô & Phân tích Dòng tiền Thể chế tại PTvolume.com.
+Hãy tổng hợp tin tức tài chính quốc tế mới nhất dưới đây thành một bài phân tích thị trường chuyên sâu hàng ngày bằng TIẾNG VIỆT dành cho cộng đồng nhà giao dịch độc lập.
 
-MANDATORY RULES:
-1. LANGUAGE: 100% fluent, high-level financial English (Investopedia / Bloomberg / Financial Times style).
-2. TRADING FRAMEWORK: Naked Chart Price Action, Volume Spread Analysis (VSA), Wyckoff accumulation/distribution, and Smart Money liquidity concepts. No lagging indicators (RSI/MACD).
-3. OUTPUT FORMAT: Output ONLY valid, parseable JSON with NO markdown code fences.
+QUY TẮC BẮT BUỘC:
+1. NGÔN NGỮ: Tiếng Việt chuẩn mực, văn phong tài chính vĩ mô chuyên nghiệp phong cách Investopedia/Bloomberg.
+   - Giữ nguyên các thuật ngữ giao dịch quốc tế không dịch thô: Price Action, Wyckoff, VSA, Order Flow, Supply & Demand, Smart Money, Entry, Stop Loss, Take Profit, Risk-to-Reward (R:R), Fair Value Gap (FVG), Upthrust, Spring, No Demand/No Supply.
+2. PHƯƠNG PHÁP: Naked Chart Price Action, Volume Spread Analysis (VSA), Chu kỳ Tích lũy/Phân phối Wyckoff và Dòng tiền lớn (Smart Money). Tuyệt đối không dùng chỉ báo trễ (RSI/MACD).
+3. ĐỊNH DẠNG ĐẦU RA: Trả về DUY NHẤT một chuỗi JSON hợp lệ, KHÔNG bọc trong markdown code fence.
 
-JSON SCHEMA TO RETURN:
+JSON SCHEMA:
 {{
-  "title": "A captivating, high-impact institutional headline (max 90 chars)",
-  "slug": "url-friendly-slug-lowercase-with-hyphens",
-  "meta_description": "Precise 1-2 sentence SEO meta description highlighting key market themes and technical order flow.",
-  "category": "Daily Market Intelligence",
-  "badge": "Institutional Macro & Order Flow",
-  "read_time": "6 min read",
-  "lead_excerpt": "A concise 2-3 sentence executive summary of today's dominant macroeconomic forces and trading implications.",
-  "html_body": "The complete HTML formatted body of the article. Use semantic HTML (<h2>, <h3>, <p>, <ul>, <li>, <strong>, <em>, <div class=\\"highlight-box\\">). DO NOT include the main <h1> title or outer <html>/<head>/<body> tags.",
+  "title": "Tiêu đề bài viết hấp dẫn, chuẩn phong cách thể chế (tối đa 90 ký tự)",
+  "slug": "slug-tieng-anh-viet-thuong-khong-dau-ngan-cach-bang-dau-gach-ngang",
+  "meta_description": "Mô tả SEO 1-2 câu tóm tắt trọng tâm kinh tế vĩ mô và dòng tiền kỹ thuật.",
+  "category": "Bản Tin Thị Trường Hàng Ngày",
+  "badge": "Dòng Tiền Vĩ Mô & Khối Lượng Thể Chế",
+  "read_time": "6 phút đọc",
+  "lead_excerpt": "Đoạn tóm tắt mở đầu súc tích (2-3 câu) về động lực vĩ mô chi phối và hàm ý giao dịch hôm nay.",
+  "html_body": "Nội dung HTML đầy đủ của bài viết (dùng <h2>, <h3>, <p>, <ul>, <li>, <strong>, <em>, <div class=\\"highlight-box\\">). KHÔNG chứa thẻ <h1> tiêu đề chính hay thẻ <html>/<body> ngoài.",
   "initial_comments": [
     {{
-      "name": "Unique trader name & professional desk (e.g., Jonathan Reed - London Macro Desk / Kenji Takahashi - Tokyo FX Flow / Sarah Jenkins - NY Energy Trader)",
-      "date": "Realistic UTC timestamp (e.g., Today, 07:45 UTC)",
-      "text": "Deep, realistic comment debating or verifying a specific technical price level, Wyckoff phase, or data point mentioned in THIS specific article."
+      "name": "Tên trader và vai trò chuyên môn (VD: Hoàng Nam - London FX Flow / Minh Trí - VSA Trader)",
+      "date": "Thời gian (VD: Hôm nay, 08:15 UTC)",
+      "text": "Bình luận thảo luận chuyên sâu, phản biện hoặc xác nhận một mức giá, pha Wyckoff hoặc dữ liệu cụ thể trong bài viết NÀY."
     }},
     {{
-      "name": "Another unique trader name & role (e.g., Arthur Pendelton - Zurich Multi-Asset)",
-      "date": "Realistic UTC timestamp (e.g., Today, 08:20 UTC)",
-      "text": "Insightful question or confirmation regarding the risk-to-reward parameters and order flow absorption for the assets covered today."
+      "name": "Tên trader thứ hai và vai trò (VD: Kenji Takahashi - Macro Desk)",
+      "date": "Thời gian (VD: Hôm nay, 09:30 UTC)",
+      "text": "Câu hỏi hoặc góc nhìn kỹ thuật về quản trị rủi ro và điểm vào lệnh của bài viết."
     }}
   ]
 }}
 
-CRITICAL REQUIREMENT FOR 'initial_comments':
-- Generate 2 to 3 completely UNIQUE, diverse trader personas (different names, institutional desks, global trading hubs).
-- The comments MUST specifically debate the exact assets, key price levels, and macro news from today's report (DO NOT use generic or repeated comments).
-
-CONTENT STRUCTURE REQUIREMENTS FOR 'html_body':
-1. Executive Market Pulse (3 core drivers shaping today's global order flow).
-2. Central Bank Dynamics & Macro Catalysts (Fed, ECB, BOJ, Treasury yields, Inflation).
-3. Multi-Asset Impact Matrix (Forex Majors, Spot Gold XAU/USD, Crude Oil, US Indices).
-4. Order Flow & Volume Spread Analysis (Smart Money accumulation/distribution footprints, Effort vs Result, Upthrust/Spring setups).
-5. Tactical Execution Plan & Key Levels (Clear support/resistance zones, invalidation points, strict R:R >= 1:2.5).
-6. Include a callout block with:
+CẤU TRÚC NỘI DUNG 'html_body':
+1. Nhịp Đập Thị Trường & 3 Động Lực Cốt Lõi.
+2. Diễn Biến Ngân Hàng Trung Ương & Xúc Tác Vĩ Mô (Fed, ECB, BOJ, Lợi suất trái phiếu, Lạm phát).
+3. Ma Trận Tác Động Đa Tài Sản (Forex, Vàng Spot XAU/USD, Dầu thô, Chỉ số chứng khoán Mỹ).
+4. Phân Tích Dòng Lệnh & Volume Spread Analysis (Dấu chân Smart Money, Nỗ lực vs Kết quả, bẫy giá Upthrust/Spring).
+5. Kế Hoạch Vào Lệnh Thực Chiến & Mức Giá Then Chốt.
+6. Khung Highlight tham số vào lệnh:
 <div class="highlight-box">
-  <h3><i class="fa-solid fa-crosshairs"></i> Institutional Execution Parameters</h3>
+  <h3><i class="fa-solid fa-crosshairs"></i> Thông Số Vào Lệnh Thực Chiến</h3>
   <ul>
-    <li><i class="fa-solid fa-check"></i> <strong>Primary Macro Bias:</strong> ...</li>
-    <li><i class="fa-solid fa-check"></i> <strong>Key Catalysts:</strong> ...</li>
-    <li><i class="fa-solid fa-check"></i> <strong>Technical Invalidation:</strong> ...</li>
-    <li><i class="fa-solid fa-check"></i> <strong>Target Risk-to-Reward:</strong> Minimum 1:2.5 R:R</li>
+    <li><i class="fa-solid fa-check"></i> <strong>Thiên hướng vĩ mô:</strong> ...</li>
+    <li><i class="fa-solid fa-check"></i> <strong>Vùng giá kích hoạt:</strong> ...</li>
+    <li><i class="fa-solid fa-check"></i> <strong>Điểm cắt lỗ (SL):</strong> ...</li>
+    <li><i class="fa-solid fa-check"></i> <strong>Mục tiêu chốt lời (TP):</strong> Tỷ lệ R:R tối thiểu 1:2.5</li>
   </ul>
 </div>
-7. Capital Discipline & Risk Management Mandate.
+7. Kỷ Luật Vốn & Nguyên Tắc Quản Trị Rủi Ro.
 
-CURRENT LIVE MARKET HEADLINES:
+TIN TỨC THỜI SỰ QUỐC TẾ THU THẬP ĐƯỢC:
 {news_text}
 """
 
@@ -214,7 +211,7 @@ CURRENT LIVE MARKET HEADLINES:
     return None
 
 HTML_TEMPLATE = """<!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -312,6 +309,42 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
         .logo-text .brand span {
             color: #00E5FF;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lang-switcher {
+            display: inline-flex;
+            align-items: center;
+            background: #080B10;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2px;
+            gap: 2px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 16px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active, .lang-btn:hover {
+            background: var(--primary);
+            color: #fff;
         }
 
         .btn {
@@ -493,6 +526,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
             margin-top: 5px;
         }
 
+        /* Comments Section */
         .comment-section {
             margin-top: 60px;
             padding-top: 40px;
@@ -610,6 +644,14 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         .footer-links a:hover {
             color: #00E5FF;
         }
+
+        /* Hide Google Translate Toolbars & Overlays */
+        .goog-te-banner-frame.skiptranslate { display: none !important; }
+        body { top: 0px !important; }
+        .goog-tooltip, .goog-tooltip:hover { display: none !important; }
+        .goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
+        #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
+        .goog-te-gadget { display: none !important; }
     </style>
 </head>
 <body>
@@ -622,19 +664,30 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                     <span class="brand">PT<span>VOLUME</span></span>
                 </div>
             </a>
-            <a href="../index.html" class="btn">
-                <i class="fa-solid fa-arrow-left"></i> Return to Homepage
-            </a>
+            
+            <div class="nav-right">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" onclick="setLanguage('vi')" id="btn-lang-vi" title="Tiếng Việt">
+                        <span>🇻🇳</span> VI
+                    </button>
+                    <button class="lang-btn" onclick="setLanguage('en')" id="btn-lang-en" title="English">
+                        <span>🇬🇧</span> EN
+                    </button>
+                </div>
+                <a href="../index.html" class="btn">
+                    <i class="fa-solid fa-arrow-left"></i> Về Trang Chủ
+                </a>
+            </div>
         </div>
     </header>
 
     <main class="article-container">
         <div class="breadcrumb">
-            <a href="../index.html">Home</a>
+            <a href="../index.html">Trang Chủ</a>
             <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
-            <a href="../index.html#market-analysis">Market Analysis</a>
+            <a href="../index.html#market-analysis">Phân Tích Thị Trường</a>
             <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
-            <span>Daily Intelligence</span>
+            <span>Bản Tin Dòng Tiền</span>
         </div>
 
         <span class="article-badge"><i class="fa-solid fa-globe"></i> __BADGE__</span>
@@ -642,7 +695,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         <h1 class="article-title">__TITLE__</h1>
 
         <div class="article-meta">
-            <span><i class="fa-regular fa-user"></i> Written by: <strong>PTvolume Institutional Desk</strong></span>
+            <span><i class="fa-regular fa-user"></i> Biên soạn: <strong>Nhóm Phân Tích Thể Chế PTvolume</strong></span>
             <span>•</span>
             <span><i class="fa-regular fa-calendar"></i> __DATE_STR__</span>
             <span>•</span>
@@ -662,20 +715,20 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
         <section class="comment-section">
             <h3 class="comment-header">
-                <i class="fa-regular fa-comments" style="color: #00E5FF;"></i> Institutional Trader Exchange (<span id="commentCount">__COMMENT_COUNT__</span>)
+                <i class="fa-regular fa-comments" style="color: #00E5FF;"></i> Thảo Luận Kỹ Thuật Cộng Đồng (<span id="commentCount">__COMMENT_COUNT__</span>)
             </h3>
 
             <form class="comment-form" id="commentForm" onsubmit="addComment(event)">
                 <div class="form-group">
-                    <label class="form-label">Trader Name / Institutional Handle:</label>
-                    <input type="text" id="commentName" class="form-control" placeholder="e.g. Liam - FX Flow Trader" required>
+                    <label class="form-label">Tên Trader / Nickname:</label>
+                    <input type="text" id="commentName" class="form-control" placeholder="VD: Hoàng Nam - FX Flow Trader" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Your Technical Perspective or Order Flow Analysis:</label>
-                    <textarea id="commentContent" class="form-control" placeholder="Share your observations regarding today's price action and volume distribution..." required></textarea>
+                    <label class="form-label">Góc nhìn kỹ thuật hoặc phân tích dòng tiền của bạn:</label>
+                    <textarea id="commentContent" class="form-control" placeholder="Chia sẻ quan sát của bạn về hành động giá và khối lượng hôm nay..." required></textarea>
                 </div>
                 <button type="submit" class="btn">
-                    <i class="fa-regular fa-paper-plane"></i> Submit Comment
+                    <i class="fa-regular fa-paper-plane"></i> Gửi Bình Luận
                 </button>
             </form>
 
@@ -687,16 +740,58 @@ __COMMENTS_HTML__
 
     <footer>
         <div class="footer-links">
-            <a href="../pages/about.html">About PTvolume</a>
-            <a href="../pages/contact.html">Contact</a>
-            <a href="../pages/terms.html">Terms of Service</a>
-            <a href="../pages/privacy.html">Privacy Policy</a>
-            <a href="../pages/disclaimer.html">Risk Disclaimer</a>
+            <a href="../pages/about.html">Về PTvolume</a>
+            <a href="../pages/contact.html">Liên Hệ</a>
+            <a href="../pages/terms.html">Điều Khoản</a>
+            <a href="../pages/privacy.html">Bảo Mật</a>
+            <a href="../pages/disclaimer.html">Cảnh Báo Rủi Ro</a>
         </div>
-        <p>© 2026 PTvolume.com. All rights reserved. Naked Chart • Volume Spread Analysis • Wyckoff Order Flow.</p>
+        <p>© 2026 PTvolume.com. Toàn bộ bản quyền được bảo lưu. Naked Chart • VSA • Phương Pháp Wyckoff.</p>
     </footer>
 
+    <!-- Hidden Google Translate Element -->
+    <div id="google_translate_element" style="display:none;"></div>
+
     <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'vi',
+                includedLanguages: 'en,vi',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function setLanguage(lang) {
+            if (lang === 'vi') {
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + location.hostname;
+                document.cookie = "googtrans=/vi/vi; path=/;";
+                document.cookie = "googtrans=/vi/vi; path=/; domain=" + location.hostname;
+                localStorage.setItem('ptvolume_lang', 'vi');
+                location.reload();
+            } else if (lang === 'en') {
+                document.cookie = "googtrans=/vi/en; path=/;";
+                document.cookie = "googtrans=/vi/en; path=/; domain=" + location.hostname;
+                localStorage.setItem('ptvolume_lang', 'en');
+                location.reload();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentLang = localStorage.getItem('ptvolume_lang') || 'vi';
+            const btnVi = document.getElementById('btn-lang-vi');
+            const btnEn = document.getElementById('btn-lang-en');
+            if (btnVi && btnEn) {
+                if (currentLang === 'en') {
+                    btnEn.classList.add('active');
+                    btnVi.classList.remove('active');
+                } else {
+                    btnVi.classList.add('active');
+                    btnEn.classList.remove('active');
+                }
+            }
+        });
+
         function addComment(e) {
             e.preventDefault();
             const nameInput = document.getElementById("commentName");
@@ -708,7 +803,7 @@ __COMMENTS_HTML__
             if (!name || !content) return;
 
             const now = new Date();
-            const timeString = now.toUTCString().slice(5, 22) + ' UTC';
+            const timeString = now.toLocaleDateString('vi-VN') + ' ' + now.toLocaleTimeString('vi-VN');
 
             const commentList = document.getElementById("commentList");
             const newComment = document.createElement("div");
@@ -729,7 +824,7 @@ __COMMENTS_HTML__
             nameInput.value = "";
             contentInput.value = "";
 
-            alert("Your comment has been submitted successfully to the community exchange!");
+            alert("Bình luận của bạn đã được gửi thành công!");
         }
 
         function escapeHtml(text) {
@@ -738,15 +833,17 @@ __COMMENTS_HTML__
             return div.innerHTML;
         }
     </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>
 """
 
 def build_post_html(data: Dict[str, Any], date_str: str) -> str:
-    title = data.get("title", "Daily Global Market Intelligence | PTvolume")
-    meta_desc = data.get("meta_description", "Daily institutional macroeconomic and technical order flow analysis.")
-    badge = data.get("badge", "Daily Market Intelligence")
-    read_time = data.get("read_time", "6 min read")
+    title = data.get("title", "Bản Tin Dòng Tiền Thị Trường Quốc Tế | PTvolume")
+    meta_desc = data.get("meta_description", "Phân tích kinh tế vĩ mô và dòng tiền kỹ thuật hàng ngày.")
+    badge = data.get("badge", "Dòng Tiền Vĩ Mô & Khối Lượng Thể Chế")
+    read_time = data.get("read_time", "6 phút đọc")
     html_body = data.get("html_body", "")
     comments = data.get("initial_comments", [])
     
@@ -756,7 +853,7 @@ def build_post_html(data: Dict[str, Any], date_str: str) -> str:
                 <div class="comment-item">
                     <div class="comment-top">
                         <span class="comment-author"><i class="fa-solid fa-circle-user"></i> {c.get('name', 'Trader')}</span>
-                        <span class="comment-date">{c.get('date', 'Today')}</span>
+                        <span class="comment-date">{c.get('date', 'Hôm nay')}</span>
                     </div>
                     <div class="comment-text">
                         {c.get('text', '')}
@@ -788,15 +885,15 @@ def update_homepage(post_data: Dict[str, Any], post_filename: str, date_str: str
 
         title = post_data.get("title", "")
         excerpt = post_data.get("lead_excerpt", "")
-        badge = post_data.get("badge", "Daily Market Intelligence")
-        read_time = post_data.get("read_time", "6 min read")
+        badge = post_data.get("badge", "Dòng Tiền Vĩ Mô & Khối Lượng Thể Chế")
+        read_time = post_data.get("read_time", "6 phút đọc")
         post_rel_path = f"posts/{post_filename}"
 
         lead_story_regex = r'(<article class="lead-story">[\s\S]*?</article>)'
         
         new_lead_story = f"""<article class="lead-story">
             <div class="lead-image-box">
-                <img src="assets/images/logo.jpg" alt="Institutional Market Analysis">
+                <img src="assets/images/logo.jpg" alt="Phân Tích Dòng Tiền Tổ Chức">
                 <div class="watermark-stamp">
                     <i class="fa-solid fa-shield-halved"></i> PTvolume.com
                 </div>
@@ -810,7 +907,7 @@ def update_homepage(post_data: Dict[str, Any], post_filename: str, date_str: str
                     {excerpt}
                 </p>
                 <div class="byline">
-                    <span>Written by <strong class="byline-author">PTvolume Research Group</strong></span>
+                    <span>Biên soạn bởi <strong class="byline-author">Nhóm Nghiên Cứu PTvolume</strong></span>
                     <span>•</span>
                     <span>{date_str}</span>
                     <span>•</span>
@@ -865,10 +962,10 @@ def run_auto_publisher():
 
     # 3. Create post HTML
     today = datetime.now(timezone.utc)
-    date_str = today.strftime("%B %d, %Y")
+    date_str = today.strftime("%d Tháng %m, %Y")
     date_slug = today.strftime("%Y-%m-%d")
     
-    slug = payload.get("slug", "daily-market-intelligence").strip()
+    slug = payload.get("slug", "ban-tin-dong-tien-thi-truong").strip()
     slug = re.sub(r'[^a-zA-Z0-9\-]', '', slug).lower()
     post_filename = f"{date_slug}-{slug}.html"
     post_filepath = os.path.join(POSTS_DIR, post_filename)
