@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PTvolume.com | Cẩm Nang Phân Tích Kỹ Thuật Naked Chart & Volume Spread Analysis (VSA)</title>
-    <meta name="description" content="PTvolume.com — Nền tảng phân tích thị trường & đào tạo tài chính chuyên sâu hàng đầu. Price Action biểu đồ trần (Naked Chart), Phương pháp Wyckoff, Volume Spread Analysis (VSA), Order Flow và Tâm lý đầu tư.">
+    <title>PTvolume.com | Chuyên Trang Phân Tích Kỹ Thuật Naked Chart & Volume Spread Analysis (VSA)</title>
+    <meta name="description" content="PTvolume.com — Nền tảng nghiên cứu và chia sẻ kiến thức giao dịch thực chiến: Hành động giá biểu đồ trần (Naked Price Action), Phương pháp Wyckoff, Volume Spread Analysis (VSA), Dòng lệnh Order Flow và Quản trị rủi ro.">
     <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -93,7 +93,7 @@
             background: var(--primary);
         }
 
-        /* --- APP WRAPPER LAYOUT (Left Sidebar + Full-width Main) --- */
+        /* --- APP WRAPPER LAYOUT (Menu Trái + Nội Dung Tràn Trang) --- */
         .app-layout {
             display: flex;
             min-height: 100vh;
@@ -102,7 +102,7 @@
             background: var(--bg-main);
         }
 
-        /* --- SIDEBAR NAVIGATION (LEFT) --- */
+        /* --- SIDEBAR NAVIGATION (MENU BÊN TRÁI) --- */
         .app-sidebar {
             width: var(--sidebar-width);
             height: 100vh;
@@ -368,7 +368,7 @@
             color: var(--cyan);
         }
 
-        /* --- MAIN WRAPPER (TRÀN TRANG / FULL-WIDTH FLUID) --- */
+        /* --- MAIN WRAPPER (BỐ CỤC TRÀN TRANG HIỆN ĐẠI) --- */
         .app-main {
             flex: 1;
             margin-left: var(--sidebar-width);
@@ -385,7 +385,7 @@
             width: calc(100vw - var(--sidebar-collapsed-width));
         }
 
-        /* --- TOP HEADER (STICKY HEADER TRÀN TRANG) --- */
+        /* --- TOP HEADER (STICKY HEADER) --- */
         .app-header {
             position: sticky;
             top: 0;
@@ -707,7 +707,7 @@
         }
 
         /* ══════════════════════════════════════════════════════════
-           BÁO GIÁ CHẠY LIÊN TỤC (CONTINUOUS INFINITE MARQUEE TICKER)
+           BÁO GIÁ THỊ TRƯỜNG CHẠY LIÊN TỤC (TICKER MARQUEE)
            ══════════════════════════════════════════════════════════ */
         .ticker-wrapper {
             background: #080A0F;
@@ -775,7 +775,7 @@
             gap: 3px;
         }
 
-        /* --- TRÀN TRANG MAIN CONTENT AREA --- */
+        /* --- KHU VỰC NỘI DUNG CHÍNH (CONTENT CONTAINER) --- */
         .content-container {
             padding: 32px 36px 60px;
             width: 100%;
@@ -785,7 +785,7 @@
             gap: 52px;
         }
 
-        /* --- HERO BANNER SECTION (TRÀN MÀN HÌNH ĐẲNG CẤP) --- */
+        /* --- HERO BANNER (TỔNG QUAN HỆ THỐNG GIAO DỊCH) --- */
         .hero-banner {
             position: relative;
             background: linear-gradient(135deg, #111624 0%, #151C2E 50%, #0E1320 100%);
@@ -990,7 +990,7 @@
             line-height: 1.45;
         }
 
-        /* --- SECTION STRUCTURE (FULL-WIDTH SECTIONS) --- */
+        /* --- SECTION STRUCTURE --- */
         .full-section {
             display: flex;
             flex-direction: column;
@@ -1078,7 +1078,7 @@
             gap: 24px;
         }
 
-        /* --- MODULE 1: HỌC TẬP (ACADEMY CARDS) --- */
+        /* --- MODULE 1: HỌC TẬP (ACADEMY) --- */
         .course-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -1930,7 +1930,7 @@
             gap: 8px;
         }
 
-        /* --- FOOTER (TRÀN TRANG ĐẲNG CẤP) --- */
+        /* --- FOOTER --- */
         footer {
             background: #080A0F;
             border-top: 1px solid var(--border-color);
@@ -2186,7 +2186,7 @@
             color: #fff;
         }
 
-        /* --- MOBILE RESPONSIVE OPTIMIZATION --- */
+        /* --- MOBILE RESPONSIVE --- */
         .mobile-overlay {
             display: none;
             position: fixed;
@@ -2273,7 +2273,7 @@
 </head>
 <body>
 
-    <!-- Mobile Drawer Overlay -->
+    <!-- Mobile Overlay -->
     <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMobileSidebar()"></div>
 
     <!-- MAIN APP LAYOUT CONTAINER -->
@@ -2294,13 +2294,13 @@
             </div>
 
             <div class="sidebar-nav-container">
-                <div class="sidebar-group-label">HỆ THỐNG TRỌNG TÂM</div>
+                <div class="sidebar-group-label">CHUYÊN MỤC TRỌNG TÂM</div>
 
                 <!-- 1. HỌC TẬP -->
                 <a href="#hoc-tap" class="sidebar-nav-item active" onclick="highlightNav(this)">
                     <div class="nav-icon-wrap"><i class="fa-solid fa-graduation-cap"></i></div>
                     <span class="nav-text">Học tập</span>
-                    <span class="nav-badge">Free</span>
+                    <span class="nav-badge">Giáo trình</span>
                 </a>
 
                 <!-- 2. ĐẦU TƯ -->
@@ -2314,35 +2314,35 @@
                 <a href="#phan-tich" class="sidebar-nav-item" onclick="highlightNav(this)">
                     <div class="nav-icon-wrap"><i class="fa-solid fa-chart-line"></i></div>
                     <span class="nav-text">Phân tích</span>
-                    <span class="nav-badge live">Live</span>
+                    <span class="nav-badge live">Báo cáo</span>
                 </a>
 
                 <!-- 4. THƯ VIỆN -->
                 <a href="#thu-vien" class="sidebar-nav-item" onclick="highlightNav(this)">
                     <div class="nav-icon-wrap"><i class="fa-solid fa-landmark"></i></div>
                     <span class="nav-text">Thư viện</span>
-                    <span class="nav-badge">Kho data</span>
+                    <span class="nav-badge">Dữ liệu</span>
                 </a>
 
                 <!-- 5. DIỄN ĐÀN -->
                 <a href="#dien-dan" class="sidebar-nav-item" onclick="highlightNav(this)">
                     <div class="nav-icon-wrap"><i class="fa-solid fa-comments"></i></div>
                     <span class="nav-text">Diễn đàn</span>
-                    <span class="nav-badge hot">Sôi nổi</span>
+                    <span class="nav-badge hot">Thảo luận</span>
                 </a>
 
                 <!-- 6. CÔNG CỤ VÀ TIỆN ÍCH -->
                 <a href="#cong-cu" class="sidebar-nav-item" onclick="highlightNav(this)">
                     <div class="nav-icon-wrap"><i class="fa-solid fa-screwdriver-wrench"></i></div>
                     <span class="nav-text">Công cụ & Tiện ích</span>
-                    <span class="nav-badge hot">Hot tool</span>
+                    <span class="nav-badge hot">Tính Lot</span>
                 </a>
 
                 <!-- 7. TỦ SÁCH TÀI CHÍNH -->
                 <a href="#tu-sach" class="sidebar-nav-item" onclick="highlightNav(this)">
                     <div class="nav-icon-wrap"><i class="fa-solid fa-book-bookmark"></i></div>
                     <span class="nav-text">Tủ sách tài chính</span>
-                    <span class="nav-badge">6+ Sách</span>
+                    <span class="nav-badge">Kinh điển</span>
                 </a>
 
                 <!-- 8. TÂM LÍ ĐẦU TƯ -->
@@ -2352,7 +2352,7 @@
                     <span class="nav-badge">Kỷ luật</span>
                 </a>
 
-                <div class="sidebar-group-label">TIỆN ÍCH TRỰC TIẾP</div>
+                <div class="sidebar-group-label">TRỰC TIẾP & TRA CỨU</div>
 
                 <a href="#bieu-do-live" class="sidebar-nav-item" onclick="highlightNav(this)">
                     <div class="nav-icon-wrap"><i class="fa-solid fa-chart-candlestick"></i></div>
@@ -2366,12 +2366,12 @@
             </div>
 
             <div class="sidebar-footer">
-                <button class="sidebar-toggle-btn" onclick="toggleSidebarCollapse()" title="Thu nhỏ/Mở rộng Sidebar">
+                <button class="sidebar-toggle-btn" onclick="toggleSidebarCollapse()" title="Thu nhỏ hoặc Mở rộng Menu">
                     <i class="fa-solid fa-chevron-left" id="toggleIcon"></i>
                     <span class="toggle-text">Thu nhỏ Sidebar</span>
                 </button>
                 <div class="sidebar-quick-links">
-                    <a href="pages/about.html">Về chúng tôi</a> •
+                    <a href="pages/about.html">Giới thiệu</a> •
                     <a href="pages/contact.html">Liên hệ</a> •
                     <a href="pages/terms.html">Điều khoản</a> •
                     <a href="pages/privacy.html">Bảo mật</a> •
@@ -2381,19 +2381,19 @@
         </aside>
 
         <!-- ══════════════════════════════════════════════════════════
-             PHẦN NỘI DUNG CHÍNH (MAIN FLUID FULL-WIDTH CONTENT)
+             PHẦN NỘI DUNG CHÍNH (MAIN CONTENT)
              ══════════════════════════════════════════════════════════ -->
         <main class="app-main">
 
             <!-- STICKY TOP HEADER -->
             <header class="app-header">
                 <div class="header-left">
-                    <button class="mobile-menu-btn" onclick="toggleMobileSidebar()" aria-label="Mở menu">
+                    <button class="mobile-menu-btn" onclick="toggleMobileSidebar()" aria-label="Mở menu điều hướng">
                         <i class="fa-solid fa-bars"></i>
                     </button>
                     <div class="header-search-bar">
                         <i class="fa-solid fa-magnifying-glass header-search-icon"></i>
-                        <input type="text" id="liveSearchInput" class="header-search-input" placeholder="Tìm kiếm bài học, mã hàng hóa, tín hiệu VSA, sách..." onkeyup="filterWebsiteContent()">
+                        <input type="text" id="liveSearchInput" class="header-search-input" placeholder="Tìm kiếm bài học, mã hàng hóa, tín hiệu VSA, tóm tắt sách..." onkeyup="filterWebsiteContent()">
                         <span class="header-search-shortcut">Ctrl + K</span>
                     </div>
                 </div>
@@ -2401,7 +2401,7 @@
                 <div class="header-right">
                     <div class="live-status-pill">
                         <span class="pulse-dot"></span>
-                        <span>TRADING ROOM LIVE</span>
+                        <span>PHÒNG PHÂN TÍCH LIVE</span>
                     </div>
 
                     <!-- Language Switcher [ 🇻🇳 VI | 🇬🇧 EN ] -->
@@ -2423,36 +2423,36 @@
             </header>
 
             <!-- ══════════════════════════════════════════════════════════
-                 BÁO GIÁ CHẠY LIÊN TỤC (SEAMLESS INFINITE MARQUEE TICKER)
+                 BÁO GIÁ THỊ TRƯỜNG CHẠY LIÊN TỤC (TICKER MARQUEE)
                  ══════════════════════════════════════════════════════════ -->
             <div class="ticker-wrapper" title="Rê chuột để tạm dừng theo dõi">
                 <div class="ticker-track">
-                    <!-- Set 1 -->
-                    <div class="ticker-item"><span class="ticker-symbol">🥇 XAU/USD (Vàng):</span> <span class="ticker-price">$2,738.50</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +1.15%</span></div>
-                    <div class="ticker-item"><span class="ticker-symbol">🛢️ WTI CRUDE (Dầu thô CL):</span> <span class="ticker-price">$74.45</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +1.82%</span></div>
+                    <!-- Track 1 -->
+                    <div class="ticker-item"><span class="ticker-symbol">🥇 XAU/USD (Vàng Thế Giới):</span> <span class="ticker-price">$2,738.50</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +1.15%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">🛢️ WTI (Dầu Thô CL):</span> <span class="ticker-price">$74.45</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +1.82%</span></div>
                     <div class="ticker-item"><span class="ticker-symbol">🌽 ZC (Ngô Phái Sinh):</span> <span class="ticker-price">432.25¢</span> <span class="ticker-change down"><i class="fa-solid fa-arrow-trend-down"></i> -0.45%</span></div>
                     <div class="ticker-item"><span class="ticker-symbol">🌱 ZS (Đậu Tương):</span> <span class="ticker-price">1,028.50¢</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +0.65%</span></div>
                     <div class="ticker-item"><span class="ticker-symbol">🌻 ZL (Dầu Đậu Nành):</span> <span class="ticker-price">44.20¢</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +1.30%</span></div>
-                    <div class="ticker-item"><span class="ticker-symbol">🌾 ZM (Khô Đậu):</span> <span class="ticker-price">$318.50</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +0.90%</span></div>
-                    <div class="ticker-item"><span class="ticker-symbol">🍬 SB (Đường #11):</span> <span class="ticker-price">22.40¢</span> <span class="ticker-change down"><i class="fa-solid fa-arrow-trend-down"></i> -0.80%</span></div>
-                    <div class="ticker-item"><span class="ticker-symbol">🥈 XAG/USD (Bạc):</span> <span class="ticker-price">$32.85</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +2.10%</span></div>
-                    <div class="ticker-item"><span class="ticker-symbol">💵 DXY (Dollar Index):</span> <span class="ticker-price">103.65</span> <span class="ticker-change down"><i class="fa-solid fa-arrow-trend-down"></i> -0.38%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">🌾 ZM (Khô Đậu Tương):</span> <span class="ticker-price">$318.50</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +0.90%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">🍬 SB (Đường Thế Giới #11):</span> <span class="ticker-price">22.40¢</span> <span class="ticker-change down"><i class="fa-solid fa-arrow-trend-down"></i> -0.80%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">🥈 XAG/USD (Bạc Spot):</span> <span class="ticker-price">$32.85</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +2.10%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">💵 DXY (Chỉ Số USD):</span> <span class="ticker-price">103.65</span> <span class="ticker-change down"><i class="fa-solid fa-arrow-trend-down"></i> -0.38%</span></div>
                     <div class="ticker-item"><span class="ticker-symbol">💶 EUR/USD:</span> <span class="ticker-price">1.0895</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +0.42%</span></div>
                     <div class="ticker-item"><span class="ticker-symbol">💷 GBP/USD:</span> <span class="ticker-price">1.2980</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +0.55%</span></div>
                     <div class="ticker-item"><span class="ticker-symbol">⚡ BTC/USD (Bitcoin):</span> <span class="ticker-price">$95,200</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +3.20%</span></div>
                     <div class="ticker-item"><span class="ticker-symbol">📈 VN-INDEX:</span> <span class="ticker-price">1,288.60</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +0.75%</span></div>
                     <div class="ticker-item"><span class="ticker-symbol">🇺🇸 S&P 500:</span> <span class="ticker-price">5,980.25</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +0.68%</span></div>
 
-                    <!-- Set 2 (Duplicate for Seamless Loop) -->
-                    <div class="ticker-item"><span class="ticker-symbol">🥇 XAU/USD (Vàng):</span> <span class="ticker-price">$2,738.50</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +1.15%</span></div>
-                    <div class="ticker-item"><span class="ticker-symbol">🛢️ WTI CRUDE (Dầu thô CL):</span> <span class="ticker-price">$74.45</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +1.82%</span></div>
+                    <!-- Track 2 (Duplicate chạy vòng lặp mượt mà) -->
+                    <div class="ticker-item"><span class="ticker-symbol">🥇 XAU/USD (Vàng Thế Giới):</span> <span class="ticker-price">$2,738.50</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +1.15%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">🛢️ WTI (Dầu Thô CL):</span> <span class="ticker-price">$74.45</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +1.82%</span></div>
                     <div class="ticker-item"><span class="ticker-symbol">🌽 ZC (Ngô Phái Sinh):</span> <span class="ticker-price">432.25¢</span> <span class="ticker-change down"><i class="fa-solid fa-arrow-trend-down"></i> -0.45%</span></div>
                     <div class="ticker-item"><span class="ticker-symbol">🌱 ZS (Đậu Tương):</span> <span class="ticker-price">1,028.50¢</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +0.65%</span></div>
                     <div class="ticker-item"><span class="ticker-symbol">🌻 ZL (Dầu Đậu Nành):</span> <span class="ticker-price">44.20¢</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +1.30%</span></div>
-                    <div class="ticker-item"><span class="ticker-symbol">🌾 ZM (Khô Đậu):</span> <span class="ticker-price">$318.50</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +0.90%</span></div>
-                    <div class="ticker-item"><span class="ticker-symbol">🍬 SB (Đường #11):</span> <span class="ticker-price">22.40¢</span> <span class="ticker-change down"><i class="fa-solid fa-arrow-trend-down"></i> -0.80%</span></div>
-                    <div class="ticker-item"><span class="ticker-symbol">🥈 XAG/USD (Bạc):</span> <span class="ticker-price">$32.85</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +2.10%</span></div>
-                    <div class="ticker-item"><span class="ticker-symbol">💵 DXY (Dollar Index):</span> <span class="ticker-price">103.65</span> <span class="ticker-change down"><i class="fa-solid fa-arrow-trend-down"></i> -0.38%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">🌾 ZM (Khô Đậu Tương):</span> <span class="ticker-price">$318.50</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +0.90%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">🍬 SB (Đường Thế Giới #11):</span> <span class="ticker-price">22.40¢</span> <span class="ticker-change down"><i class="fa-solid fa-arrow-trend-down"></i> -0.80%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">🥈 XAG/USD (Bạc Spot):</span> <span class="ticker-price">$32.85</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +2.10%</span></div>
+                    <div class="ticker-item"><span class="ticker-symbol">💵 DXY (Chỉ Số USD):</span> <span class="ticker-price">103.65</span> <span class="ticker-change down"><i class="fa-solid fa-arrow-trend-down"></i> -0.38%</span></div>
                     <div class="ticker-item"><span class="ticker-symbol">💶 EUR/USD:</span> <span class="ticker-price">1.0895</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +0.42%</span></div>
                     <div class="ticker-item"><span class="ticker-symbol">💷 GBP/USD:</span> <span class="ticker-price">1.2980</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +0.55%</span></div>
                     <div class="ticker-item"><span class="ticker-symbol">⚡ BTC/USD (Bitcoin):</span> <span class="ticker-price">$95,200</span> <span class="ticker-change up"><i class="fa-solid fa-arrow-trend-up"></i> +3.20%</span></div>
@@ -2461,25 +2461,25 @@
                 </div>
             </div>
 
-            <!-- TRÀN TRANG CONTENT CONTAINER -->
+            <!-- NỘI DUNG CHÍNH (CONTENT CONTAINER) -->
             <div class="content-container">
 
-                <!-- ═══ HERO BANNER (TỔNG QUAN HỆ THỐNG PTVOLUME) ═══ -->
+                <!-- ═══ HERO BANNER (TỔNG QUAN HỆ THỐNG GIAO DỊCH) ═══ -->
                 <section class="hero-banner">
                     <div class="hero-content">
                         <div class="hero-tag"><i class="fa-solid fa-shield-halved"></i> Naked Chart & Volume Spread Analysis</div>
                         <h1 class="hero-title">Đọc Vị Dòng Tiền <span>Smart Money</span> Bằng Hành Động Giá & Khối Lượng</h1>
                         <p class="hero-desc">
-                            PTvolume.com mang đến phương pháp phân tích biểu đồ trần (Naked Chart), chu kỳ tích lũy/phân phối Wyckoff và kỹ thuật VSA chuyên sâu chuẩn mực Investopedia. Loại bỏ 100% chỉ báo trễ, giao dịch đồng pha cùng các nhà tạo lập thị trường quốc tế.
+                            Giao dịch thực chiến theo phương pháp biểu đồ trần (Naked Chart), chu kỳ tích lũy/phân phối Wyckoff và phân tích khối lượng VSA. Loại bỏ sự phụ thuộc vào các chỉ báo kỹ thuật trễ, nhận diện hành vi gom hàng, xả hàng và bẫy giá của các nhà tạo lập thị trường.
                         </p>
                         <div class="hero-cta-group">
-                            <a href="#hoc-tap" class="btn-hero-primary"><i class="fa-solid fa-play"></i> Bắt đầu Học Miễn Phí</a>
-                            <a href="#cong-cu" class="btn-hero-secondary"><i class="fa-solid fa-calculator"></i> Máy tính Quản trị Vốn</a>
+                            <a href="#hoc-tap" class="btn-hero-primary"><i class="fa-solid fa-book-open"></i> Vào Học Giáo Trình</a>
+                            <a href="#cong-cu" class="btn-hero-secondary"><i class="fa-solid fa-calculator"></i> Máy Tính Quản Trị Vốn</a>
                         </div>
                         <div class="hero-stats-row">
-                            <div class="hero-stat-item"><b>15,000+</b><span>Trader Học Tập</span></div>
-                            <div class="hero-stat-item"><b>250+</b><span>Báo Cáo Thực Chiến</span></div>
-                            <div class="hero-stat-item"><b>100%</b><span>Naked Chart Chuẩn</span></div>
+                            <div class="hero-stat-item"><b>15,000+</b><span>Nhà Giao Dịch</span></div>
+                            <div class="hero-stat-item"><b>250+</b><span>Bài Học & Case Study</span></div>
+                            <div class="hero-stat-item"><b>100%</b><span>Naked Chart Thực Chiến</span></div>
                         </div>
                     </div>
 
@@ -2487,22 +2487,22 @@
                         <a href="#hoc-tap" class="hero-action-card">
                             <div class="action-card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
                             <div class="action-card-title">1. Học Tập</div>
-                            <div class="action-card-desc">Giáo trình Price Action & VSA từ cơ bản đến nâng cao.</div>
+                            <div class="action-card-desc">Lộ trình Price Action, VSA và Phương pháp Wyckoff từ căn bản.</div>
                         </a>
                         <a href="#dau-tu" class="hero-action-card">
                             <div class="action-card-icon" style="color:#F0B90B; background:rgba(240,185,11,0.15);"><i class="fa-solid fa-briefcase"></i></div>
                             <div class="action-card-title">2. Đầu Tư</div>
-                            <div class="action-card-desc">Chiến lược danh mục Hàng hóa, Ngoại hối & Crypto.</div>
+                            <div class="action-card-desc">Danh mục theo dõi Hàng hóa phái sinh, Kim loại quý & Ngoại hối.</div>
                         </a>
                         <a href="#phan-tich" class="hero-action-card">
                             <div class="action-card-icon" style="color:#26E7A6; background:rgba(8,153,129,0.15);"><i class="fa-solid fa-chart-line"></i></div>
                             <div class="action-card-title">3. Phân Tích</div>
-                            <div class="action-card-desc">Bản tin Order Flow & Điểm xoay Wyckoff thời gian thực.</div>
+                            <div class="action-card-desc">Báo cáo bóc tách cấu trúc giá, Order Flow và khối lượng giao dịch.</div>
                         </a>
                         <a href="#cong-cu" class="hero-action-card">
                             <div class="action-card-icon" style="color:#FF707E; background:rgba(242,54,69,0.15);"><i class="fa-solid fa-screwdriver-wrench"></i></div>
                             <div class="action-card-title">4. Công Cụ & Tiện Ích</div>
-                            <div class="action-card-desc">Bộ tính Lot, Tỷ lệ R:R & Tra cứu tín hiệu VSA.</div>
+                            <div class="action-card-desc">Tính toán khối lượng vào lệnh (Lot), tỷ lệ R:R và tra cứu nến VSA.</div>
                         </a>
                     </div>
                 </section>
@@ -2513,17 +2513,17 @@
                 <section id="hoc-tap" class="full-section">
                     <div class="section-header-bar">
                         <div class="section-headline">
-                            <div class="section-kicker"><i class="fa-solid fa-book-open-reader"></i> Khóa Học & Giáo Trình</div>
-                            <h2 class="section-title">🎓 Học Tập: Làm Chủ Naked Chart & VSA Thực Chiến</h2>
-                            <p class="section-subtitle">Chương trình đào tạo từ nền tảng Nến Nhật đến nghệ thuật đọc dòng tiền Wyckoff & VSA.</p>
+                            <div class="section-kicker"><i class="fa-solid fa-book-open-reader"></i> Giáo Trình Thực Chiến</div>
+                            <h2 class="section-title">🎓 Học Tập: Làm Chủ Naked Chart & VSA</h2>
+                            <p class="section-subtitle">Chương trình đào tạo bài bản từ cấu trúc nến Nhật đến phương pháp đọc vị dòng tiền lớn.</p>
                         </div>
                         <div class="section-actions">
-                            <a href="#dien-dan" class="section-view-all">Hỏi đáp giảng viên &raquo;</a>
+                            <a href="#dien-dan" class="section-view-all">Trao đổi cùng cộng đồng &raquo;</a>
                         </div>
                     </div>
 
                     <div class="cards-grid-3">
-                        <!-- Khóa 1 -->
+                        <!-- Module 1 -->
                         <div class="course-card">
                             <div class="course-card-badge-top">Module 1</div>
                             <div class="course-thumb-box">
@@ -2531,9 +2531,9 @@
                                 <div class="watermark-box"><i class="fa-solid fa-shield-halved"></i> PTvolume.com</div>
                             </div>
                             <div class="course-body">
-                                <div class="course-level"><i class="fa-solid fa-signal"></i> Căn Bản Đến Trung Cấp</div>
-                                <h3 class="course-title">Bản Chất Nến Nhật & Price Action Biểu Đồ Trần</h3>
-                                <p class="course-desc">Hiểu sâu cấu trúc nến Pinbar, Engulfing, Inside Bar và bẫy thanh khoản của Smart Money không dùng indicator trễ.</p>
+                                <div class="course-level"><i class="fa-solid fa-signal"></i> Căn Bản & Hành Động Giá</div>
+                                <h3 class="course-title">Cấu Trúc Nến Nhật & Biểu Đồ Trần (Naked Chart)</h3>
+                                <p class="course-desc">Phân tích lực mua bán qua thân nến, bóng nến (Pinbar, Engulfing, Inside Bar) và cách xác định vùng thanh khoản then chốt mà không cần chỉ báo trễ.</p>
                                 <div class="course-meta-row">
                                     <span><i class="fa-regular fa-clock"></i> 8 Bài Học • 4.5 Giờ</span>
                                     <a href="posts/eliminating-lagging-indicators-pure-order-flow.html" class="btn-study-now">Vào Học</a>
@@ -2541,7 +2541,7 @@
                             </div>
                         </div>
 
-                        <!-- Khóa 2 -->
+                        <!-- Module 2 -->
                         <div class="course-card">
                             <div class="course-card-badge-top">Module 2</div>
                             <div class="course-thumb-box">
@@ -2550,8 +2550,8 @@
                             </div>
                             <div class="course-body">
                                 <div class="course-level"><i class="fa-solid fa-signal"></i> Chuyên Sâu VSA</div>
-                                <h3 class="course-title">Volume Spread Analysis (VSA): Khối Lượng & Biên Độ</h3>
-                                <p class="course-desc">Khai phá tín hiệu Stopping Volume, No Demand, No Supply Bar, và nguyên lý Nỗ lực vs Kết quả (Effort vs Result).</p>
+                                <h3 class="course-title">Volume Spread Analysis: Khối Lượng & Biên Độ</h3>
+                                <p class="course-desc">Mối quan hệ giữa Biên độ giá (Spread) và Khối lượng (Volume). Nhận diện các thanh nến No Demand, No Supply, Stopping Volume và quy luật Nỗ lực vs Kết quả.</p>
                                 <div class="course-meta-row">
                                     <span><i class="fa-regular fa-clock"></i> 10 Bài Học • 6 Giờ</span>
                                     <a href="posts/book-tom-williams-vsa-summary.html" class="btn-study-now">Vào Học</a>
@@ -2559,7 +2559,7 @@
                             </div>
                         </div>
 
-                        <!-- Khóa 3 -->
+                        <!-- Module 3 -->
                         <div class="course-card">
                             <div class="course-card-badge-top">Module 3</div>
                             <div class="course-thumb-box">
@@ -2567,9 +2567,9 @@
                                 <div class="watermark-box"><i class="fa-solid fa-shield-halved"></i> PTvolume.com</div>
                             </div>
                             <div class="course-body">
-                                <div class="course-level"><i class="fa-solid fa-signal"></i> Bậc Thầy Wyckoff</div>
-                                <h3 class="course-title">Phương Pháp Wyckoff: 5 Pha Tích Lũy & Phân Phối</h3>
-                                <p class="course-desc">Nhận diện điểm săn thanh khoản Spring (Pha C), Upthrust (UTAD), Điểm hấp thụ cung (Absorption) và đợt Markup đẩy giá.</p>
+                                <div class="course-level"><i class="fa-solid fa-signal"></i> Phương Pháp Wyckoff</div>
+                                <h3 class="course-title">Wyckoff Thực Chiến: 5 Pha Tích Lũy & Phân Phối</h3>
+                                <p class="course-desc">Nắm vững sơ đồ cấu trúc thị trường từ Phase A đến E. Cách tìm điểm vào lệnh tại cú rũ bỏ Spring (Pha C), bẫy giá Upthrust (UTAD) và điểm hấp thụ cung.</p>
                                 <div class="course-meta-row">
                                     <span><i class="fa-regular fa-clock"></i> 12 Bài Học • 8 Giờ</span>
                                     <a href="posts/book-wyckoff-methodology-summary.html" class="btn-study-now">Vào Học</a>
@@ -2585,12 +2585,12 @@
                 <section id="dau-tu" class="full-section">
                     <div class="section-header-bar">
                         <div class="section-headline">
-                            <div class="section-kicker"><i class="fa-solid fa-wallet"></i> Danh Mục Tài Sản</div>
-                            <h2 class="section-title">💼 Đầu Tư: Hàng Hóa Phái Sinh, Forex & Toàn Cầu</h2>
-                            <p class="section-subtitle">Ma trận theo dõi và chiến lược phân bổ vốn trên các thị trường giao dịch có thanh khoản cao nhất.</p>
+                            <div class="section-kicker"><i class="fa-solid fa-wallet"></i> Quản Lý Danh Mục</div>
+                            <h2 class="section-title">💼 Đầu Tư: Hàng Hóa Phái Sinh, Kim Loại & Ngoại Hối</h2>
+                            <p class="section-subtitle">Bảng theo dõi thị trường tài chính và chiến lược phân bổ vốn theo chu kỳ dòng tiền lớn.</p>
                         </div>
                         <div class="section-actions">
-                            <span class="nav-badge live">Cập nhật theo phiên</span>
+                            <span class="nav-badge live">Cập nhật liên tục</span>
                         </div>
                     </div>
 
@@ -2598,12 +2598,12 @@
                         <table class="asset-table">
                             <thead>
                                 <tr>
-                                    <th>Mặt Hàng / Cặp Tài Sản</th>
-                                    <th>Nhóm Thị Trường</th>
-                                    <th>Giá Giao Dịch</th>
+                                    <th>Tài Sản / Mặt Hàng</th>
+                                    <th>Phân Khúc</th>
+                                    <th>Giá Khớp Lệnh</th>
                                     <th>Biến Động 24h</th>
-                                    <th>Tín Hiệu VSA / Order Flow</th>
-                                    <th>Khuyến Nghị</th>
+                                    <th>Tín Hiệu Hành Động Giá</th>
+                                    <th>Định Hướng Giao Dịch</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -2613,15 +2613,15 @@
                                             <div class="asset-badge">CL</div>
                                             <div>
                                                 <div>Dầu Thô WTI (Crude Oil)</div>
-                                                <small style="color:var(--text-muted);">NYMEX / CME Futures</small>
+                                                <small style="color:var(--text-muted);">Hợp đồng tương lai NYMEX</small>
                                             </div>
                                         </div>
                                     </td>
                                     <td>Hàng Hóa Năng Lượng</td>
                                     <td style="font-family:var(--font-mono); font-weight:700;">$74.45 / thùng</td>
                                     <td style="color:#26E7A6; font-weight:700;">+1.82%</td>
-                                    <td><span class="nav-badge live">Absorption Breakout</span></td>
-                                    <td><strong style="color:#26E7A6;">Canh Mua (Long)</strong></td>
+                                    <td><span class="nav-badge live">Hấp Thụ Cung Vùng Cản</span></td>
+                                    <td><strong style="color:#26E7A6;">Ưu Tiên Mua (Long)</strong></td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -2629,15 +2629,15 @@
                                             <div class="asset-badge" style="color:#F0B90B; border-color:#F0B90B;">AU</div>
                                             <div>
                                                 <div>Vàng Thế Giới (Spot Gold)</div>
-                                                <small style="color:var(--text-muted);">XAU/USD Interbank</small>
+                                                <small style="color:var(--text-muted);">XAU/USD Thị trường liên ngân hàng</small>
                                             </div>
                                         </div>
                                     </td>
                                     <td>Kim Loại Quý</td>
                                     <td style="font-family:var(--font-mono); font-weight:700;">$2,738.50 / oz</td>
                                     <td style="color:#26E7A6; font-weight:700;">+1.15%</td>
-                                    <td><span class="nav-badge live">Wyckoff Phase D SOS</span></td>
-                                    <td><strong style="color:#26E7A6;">Nắm Giữ Vị Thế</strong></td>
+                                    <td><span class="nav-badge live">Xác Nhận Dấu Hiệu Mạnh (SOS)</span></td>
+                                    <td><strong style="color:#26E7A6;">Nắm Giữ Vị Thế Mua</strong></td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -2645,15 +2645,15 @@
                                             <div class="asset-badge" style="color:#00E5FF; border-color:#00E5FF;">ZC</div>
                                             <div>
                                                 <div>Ngô Phái Sinh (Corn)</div>
-                                                <small style="color:var(--text-muted);">CBOT Commodity</small>
+                                                <small style="color:var(--text-muted);">Sở Giao Dịch CBOT</small>
                                             </div>
                                         </div>
                                     </td>
                                     <td>Nông Sản Thế Giới</td>
-                                    <td style="font-family:var(--font-mono); font-weight:700;">432.25 ¢ / bushel</td>
+                                    <td style="font-family:var(--font-mono); font-weight:700;">432.25 ¢ / giạ</td>
                                     <td style="color:#FF5263; font-weight:700;">-0.45%</td>
-                                    <td><span class="nav-badge">No Supply Test</span></td>
-                                    <td><strong style="color:var(--cyan);">Chờ Điểm Spring</strong></td>
+                                    <td><span class="nav-badge">Kiểm Định Cạn Cung (No Supply)</span></td>
+                                    <td><strong style="color:var(--cyan);">Chờ Xác Nhận Bứt Phá</strong></td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -2661,15 +2661,15 @@
                                             <div class="asset-badge" style="color:#26E7A6; border-color:#26E7A6;">ZS</div>
                                             <div>
                                                 <div>Đậu Tương (Soybeans)</div>
-                                                <small style="color:var(--text-muted);">CBOT Commodity</small>
+                                                <small style="color:var(--text-muted);">Sở Giao Dịch CBOT</small>
                                             </div>
                                         </div>
                                     </td>
                                     <td>Nông Sản Thế Giới</td>
-                                    <td style="font-family:var(--font-mono); font-weight:700;">1,028.50 ¢ / bushel</td>
+                                    <td style="font-family:var(--font-mono); font-weight:700;">1,028.50 ¢ / giạ</td>
                                     <td style="color:#26E7A6; font-weight:700;">+0.65%</td>
-                                    <td><span class="nav-badge live">Stopping Volume</span></td>
-                                    <td><strong style="color:#26E7A6;">Gom Theo Pha C</strong></td>
+                                    <td><span class="nav-badge live">Khối Lượng Hấp Thụ (Stopping Vol)</span></td>
+                                    <td><strong style="color:#26E7A6;">Tích Lũy Pha C</strong></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -2682,12 +2682,12 @@
                 <section id="phan-tich" class="full-section">
                     <div class="section-header-bar">
                         <div class="section-headline">
-                            <div class="section-kicker"><i class="fa-solid fa-magnifying-glass-chart"></i> Báo Cáo Kỹ Thuật</div>
-                            <h2 class="section-title">📊 Phân Tích: Báo Cáo Order Flow & Dòng Tiền</h2>
-                            <p class="section-subtitle">Giải mã hành vi mua/bán của tổ chức lớn thông qua cấu trúc nến và khối lượng giao dịch.</p>
+                            <div class="section-kicker"><i class="fa-solid fa-magnifying-glass-chart"></i> Nghiên Cứu Kỹ Thuật</div>
+                            <h2 class="section-title">📊 Phân Tích: Báo Cáo Order Flow & Dòng Tiền Lớn</h2>
+                            <p class="section-subtitle">Bóc tách hành vi gom/xả hàng của các tổ chức tài chính thông qua mối quan hệ Giá & Khối lượng.</p>
                         </div>
                         <div class="section-actions">
-                            <a href="posts/2026-08-20-treasury-intervention-counters-hawkish-fed-order-flow-triggers-gold-breakout.html" class="section-view-all">Xem tất cả báo cáo &raquo;</a>
+                            <a href="posts/2026-08-20-treasury-intervention-counters-hawkish-fed-order-flow-triggers-gold-breakout.html" class="section-view-all">Tất cả báo cáo &raquo;</a>
                         </div>
                     </div>
 
@@ -2697,10 +2697,10 @@
                             <div class="watermark-box"><i class="fa-solid fa-shield-halved"></i> PTvolume.com</div>
                         </div>
                         <div class="analysis-lead-content">
-                            <div class="analysis-category"><i class="fa-solid fa-fire"></i> Báo Cáo Tiêu Điểm 2026</div>
+                            <div class="analysis-category"><i class="fa-solid fa-fire"></i> Phân Tích Tiêu Điểm</div>
                             <h3 class="analysis-lead-title">
                                 <a href="posts/2026-08-20-treasury-intervention-counters-hawkish-fed-order-flow-triggers-gold-breakout.html">
-                                    Bộ Tài Chính Mỹ Can Thiệp Khắc Phục FED Diều Hâu: Order Flow Kích Hoạt Cú Bứt Phá Của Vàng
+                                    Bộ Tài Chính Mỹ Mua Lại Trái Phiếu: Dòng Lệnh Order Flow Kích Hoạt Đợt Bứt Phá Của Vàng
                                 </a>
                             </h3>
                             <p class="analysis-lead-excerpt">
@@ -2708,7 +2708,7 @@
                             </p>
                             <div>
                                 <a href="posts/2026-08-20-treasury-intervention-counters-hawkish-fed-order-flow-triggers-gold-breakout.html" class="btn-hero-primary" style="padding:10px 22px; font-size:0.88rem;">
-                                    Đọc Toàn Văn Báo Cáo <i class="fa-solid fa-arrow-right"></i>
+                                    Đọc Bài Phân Tích Chi Tiết <i class="fa-solid fa-arrow-right"></i>
                                 </a>
                             </div>
                         </div>
@@ -2721,29 +2721,29 @@
                 <section id="thu-vien" class="full-section">
                     <div class="section-header-bar">
                         <div class="section-headline">
-                            <div class="section-kicker"><i class="fa-solid fa-box-archive"></i> Kho Tri Thức & Case Studies</div>
-                            <h2 class="section-title">🏛️ Thư Viện: Nhật Ký Lệnh & Kịch Bản Thực Chiến</h2>
-                            <p class="section-subtitle">Tổng hợp các tình huống giao dịch thực tế, phân tích nguyên nhân thắng/thua từ kho dữ liệu Trader.</p>
+                            <div class="section-kicker"><i class="fa-solid fa-box-archive"></i> Kho Tài Liệu & Nhật Ký</div>
+                            <h2 class="section-title">🏛️ Thư Viện: Case Study Thực Chiến & File Quản Trị Vốn</h2>
+                            <p class="section-subtitle">Tổng hợp các tình huống giao dịch thực tế trên thị trường, phân tích lệnh thắng/thua để rút kinh nghiệm.</p>
                         </div>
                     </div>
 
                     <div class="cards-grid-4">
                         <div class="case-study-card">
                             <div class="case-header">
-                                <span class="case-tag">DẦU THÔ CL</span>
+                                <span class="case-tag">DẦU THÔ WTI</span>
                                 <span class="case-result win">+250 Bước Giá</span>
                             </div>
-                            <h4 class="case-title">Điểm Hấp Thụ VSA & Nhảy GAP Bán Đẹp</h4>
-                            <p class="case-desc">Bắt trọn nhịp rơi của Dầu thô sau thanh nến Upthrust tại kháng cự khung thời gian H4 kết hợp nến Stopping Volume.</p>
+                            <h4 class="case-title">Bắt Nhịp Rơi Sau Nến Upthrust Khung H4</h4>
+                            <p class="case-desc">Bắt trọn nhịp điều chỉnh của Dầu thô sau thanh nến Upthrust tại vùng kháng cự kết hợp nến Stopping Volume xác nhận.</p>
                         </div>
 
                         <div class="case-study-card">
                             <div class="case-header">
                                 <span class="case-tag">ĐẬU TƯƠNG ZS</span>
-                                <span class="case-result lesson">Bài Học Điểm Vào Sai</span>
+                                <span class="case-result lesson">Bài Học Vào Lệnh Sớm</span>
                             </div>
-                            <h4 class="case-title">Phân Tích Lỗi Sai Vội Vàng Mua Sớm</h4>
-                            <p class="case-desc">Đánh giá sai lầm khi bắt đáy trước khi có thanh nến kiểm định cạn cung (No Supply Bar) trong Pha C Wyckoff.</p>
+                            <h4 class="case-title">Phân Tích Sai Lầm Khi Mua Trước Nến No Supply</h4>
+                            <p class="case-desc">Đánh giá rủi ro khi vội vàng bắt đáy ở Pha C Wyckoff mà chưa chờ thanh nến kiểm định cạn cung (No Supply Bar) xác nhận.</p>
                         </div>
 
                         <div class="case-study-card">
@@ -2751,30 +2751,30 @@
                                 <span class="case-tag">NGÔ ZC</span>
                                 <span class="case-result win">Điểm Mua Chuẩn VSA</span>
                             </div>
-                            <h4 class="case-title">Bắt Nhịp Bật Tăng Tại Hỗ Trợ Cứng</h4>
-                            <p class="case-desc">Hành động giá nén chặt với Volume thu hẹp (VCP), nến xác nhận dòng tiền lớn gia nhập đẩy giá vượt đỉnh.</p>
+                            <h4 class="case-title">Mô Hình Thu Hẹp Biến Động (VCP) & Nến Bứt Phá</h4>
+                            <p class="case-desc">Hành động giá nén chặt với khối lượng cạn kiệt trước khi xuất hiện nến xác nhận dòng tiền lớn đẩy giá vượt đỉnh.</p>
                         </div>
 
                         <div class="case-study-card">
                             <div class="case-header">
                                 <span class="case-tag">EXCEL QUẢN TRỊ</span>
-                                <span class="case-result win">File NKGD.xlsx</span>
+                                <span class="case-result win">Mẫu File NKGD.xlsx</span>
                             </div>
-                            <h4 class="case-title">Mẫu Nhật Ký Giao Dịch & Quản Trị Vốn</h4>
-                            <p class="case-desc">Tải bảng tính Excel tự động tính toán tỷ lệ Winrate, Drawdown, Profit Factor và chỉ số R:R từng lệnh.</p>
+                            <h4 class="case-title">Bảng Tính Quản Trị Lệnh & Theo Dõi Drawdown</h4>
+                            <p class="case-desc">Tải bảng tính Excel tự động tính toán tỷ lệ Thắng (Winrate), Tỷ lệ Lời/Lỗ (R:R), Max Drawdown và kỳ vọng toán học.</p>
                         </div>
                     </div>
                 </section>
 
                 <!-- ══════════════════════════════════════════════════════════
-                     MỤC 5: DIỄN ĐÀN (FORUM & COMMUNITY TRADING)
+                     MỤC 5: DIỄN ĐÀN (FORUM & THẢO LUẬN TRADER)
                      ══════════════════════════════════════════════════════════ -->
                 <section id="dien-dan" class="full-section">
                     <div class="section-header-bar">
                         <div class="section-headline">
-                            <div class="section-kicker"><i class="fa-solid fa-users"></i> Cộng Đồng Trader</div>
-                            <h2 class="section-title">💬 Diễn Đàn: Thảo Luận & Hỏi Đáp Kèo Giao Dịch</h2>
-                            <p class="section-subtitle">Không gian trao đổi đa chiều về Naked Chart, bẫy giá Smart Money và nhận định thị trường.</p>
+                            <div class="section-kicker"><i class="fa-solid fa-users"></i> Diễn Đàn Giao Dịch</div>
+                            <h2 class="section-title">💬 Diễn Đàn: Thảo Luận & Hỏi Đáp Kỹ Thuật</h2>
+                            <p class="section-subtitle">Không gian trao đổi góc nhìn kỹ thuật, thảo luận tín hiệu nến và chia sẻ nhận định thị trường hàng ngày.</p>
                         </div>
                     </div>
 
@@ -2783,8 +2783,8 @@
                             <div class="forum-post-item">
                                 <div class="forum-avatar">TN</div>
                                 <div class="forum-post-content">
-                                    <h4 class="forum-post-title">Kèo Vàng XAU/USD hôm nay: Đã hoàn tất Pha C Spring chưa các bác?</h4>
-                                    <p class="forum-post-snippet">Khung H1 vừa xuất hiện thanh nến rút chân mạnh ở vùng 2,720 với khối lượng siêu cao. Mình dự kiến canh re-test vào lệnh Long với SL 2,714.</p>
+                                    <h4 class="forum-post-title">Vàng XAU/USD: Khung H1 đã hoàn tất nhịp rũ bỏ Spring (Pha C) chưa?</h4>
+                                    <p class="forum-post-snippet">Khung H1 vừa xuất hiện thanh nến rút chân mạnh ở vùng 2,720 với khối lượng siêu cao. Mình dự kiến canh nhịp re-test kiểm định để vào lệnh Mua với mức cắt lỗ dưới 2,714.</p>
                                     <div class="forum-meta-bar">
                                         <span><i class="fa-solid fa-user-tie"></i> TraderNam (Hà Nội)</span>
                                         <span><i class="fa-regular fa-clock"></i> 25 phút trước</span>
@@ -2796,8 +2796,8 @@
                             <div class="forum-post-item">
                                 <div class="forum-avatar" style="background:linear-gradient(135deg, #F0B90B, #FF707E);">PV</div>
                                 <div class="forum-post-content">
-                                    <h4 class="forum-post-title">Hỏi về cách nhận biết thanh No Demand thật vs nến ngưng trệ giả mạo</h4>
-                                    <p class="forum-post-snippet">Trong xu hướng giảm, xuất hiện nến xanh thân nhỏ khối lượng thấp nhưng cây sau lại là nến tăng mạnh. Nhờ anh em PTvolume giải thích nguyên lý.</p>
+                                    <h4 class="forum-post-title">Cách phân biệt nến No Demand chuẩn và nến dừng tạm thời trong xu hướng giảm</h4>
+                                    <p class="forum-post-snippet">Trong xu hướng giảm, khi gặp nến xanh thân nhỏ với khối lượng thấp, điều kiện nào cần quan sát ở thanh nến tiếp theo để xác nhận phe mua đã cạn kiệt lực?</p>
                                     <div class="forum-meta-bar">
                                         <span><i class="fa-solid fa-user-tie"></i> PhongVSA</span>
                                         <span><i class="fa-regular fa-clock"></i> 1 giờ trước</span>
@@ -2807,15 +2807,15 @@
                             </div>
                         </div>
 
-                        <!-- Form Đăng Bài / Đặt Câu Hỏi Nhanh -->
+                        <!-- Form Đăng Thảo Luận Mới -->
                         <div class="forum-stats-box">
                             <h3 style="font-size:1.15rem; font-weight:800; color:#fff; display:flex; align-items:center; gap:8px;">
-                                <i class="fa-solid fa-pen-to-square" style="color:var(--cyan);"></i> Gửi Thảo Luận Mới
+                                <i class="fa-solid fa-pen-to-square" style="color:var(--cyan);"></i> Gửi Bài Thảo Luận Mới
                             </h3>
-                            <p style="font-size:0.8rem; color:var(--text-muted);">Chia sẻ góc nhìn nến, biểu đồ hoặc đặt câu hỏi kỹ thuật cho cộng đồng Trader.</p>
+                            <p style="font-size:0.8rem; color:var(--text-muted);">Chia sẻ biểu đồ phân tích hoặc đặt câu hỏi kỹ thuật cho cộng đồng trader.</p>
                             <div>
-                                <input type="text" id="forumInputName" class="forum-form-input" placeholder="Họ tên hoặc Handle của bạn (VD: TraderViet_88)">
-                                <input type="text" id="forumInputTitle" class="forum-form-input" placeholder="Tiêu đề câu hỏi / Kèo giao dịch...">
+                                <input type="text" id="forumInputName" class="forum-form-input" placeholder="Tên hoặc Nickname của bạn (VD: TraderViet_88)">
+                                <input type="text" id="forumInputTitle" class="forum-form-input" placeholder="Tiêu đề câu hỏi hoặc góc nhìn giao dịch...">
                                 <textarea id="forumInputContent" class="forum-form-input" style="height:90px; resize:none;" placeholder="Nội dung chi tiết phân tích biểu đồ..."></textarea>
                                 <button type="button" class="btn-hero-primary" style="width:100%; justify-content:center;" onclick="submitForumPost()">
                                     <i class="fa-solid fa-paper-plane"></i> Đăng Lên Diễn Đàn
@@ -2831,9 +2831,9 @@
                 <section id="cong-cu" class="full-section">
                     <div class="section-header-bar">
                         <div class="section-headline">
-                            <div class="section-kicker"><i class="fa-solid fa-toolbox"></i> Tiện Ích Trực Tuyến</div>
-                            <h2 class="section-title">🛠️ Công Cụ & Tiện Ích: Máy Tính Vốn & Tra Cứu VSA</h2>
-                            <p class="section-subtitle">Bộ công cụ hỗ trợ Trader tính toán chính xác rủi ro và xác thực thanh nến Smart Money trước khi bấm lệnh.</p>
+                            <div class="section-kicker"><i class="fa-solid fa-toolbox"></i> Tiện Ích Hỗ Trợ Trader</div>
+                            <h2 class="section-title">🛠️ Công Cụ & Tiện Ích: Tính Khối Lượng & Tra Cứu VSA</h2>
+                            <p class="section-subtitle">Bộ công cụ hỗ trợ tính toán chuẩn xác quy mô vị thế, số tiền rủi ro và nhận diện nhanh các thanh nến VSA.</p>
                         </div>
                     </div>
 
@@ -2843,8 +2843,8 @@
                             <div class="tool-header">
                                 <div class="tool-header-icon"><i class="fa-solid fa-calculator"></i></div>
                                 <div class="tool-header-text">
-                                    <h3>Máy Tính Quy Mô Vị Thế (Position Size)</h3>
-                                    <p>Tính chính xác số Lot / Số hợp đồng dựa trên % rủi ro tài khoản.</p>
+                                    <h3>Máy Tính Quy Mô Vị Thế (Position Size Calculator)</h3>
+                                    <p>Xác định khối lượng vào lệnh (Lot) dựa trên % rủi ro cho phép trên tổng vốn.</p>
                                 </div>
                             </div>
 
@@ -2858,7 +2858,7 @@
                                     <input type="number" id="calcRiskPct" class="calc-input" value="1" step="0.5">
                                 </div>
                                 <div class="calc-field">
-                                    <label class="calc-label">Giá Entry (Vào Lệnh)</label>
+                                    <label class="calc-label">Giá Vào Lệnh (Entry)</label>
                                     <input type="number" id="calcEntry" class="calc-input" value="2730" step="0.1">
                                 </div>
                                 <div class="calc-field">
@@ -2870,7 +2870,7 @@
                                 </button>
                                 <div class="calc-result-box">
                                     <div class="calc-result-item"><b id="resRiskAmount">$100.00</b><span>Số Tiền Rủi Ro</span></div>
-                                    <div class="calc-result-item"><b id="resSLPips">100.0 pips</b><span>Khoảng Cách SL</span></div>
+                                    <div class="calc-result-item"><b id="resSLPips">10.0 giá</b><span>Khoảng Cách Cắt Lỗ</span></div>
                                     <div class="calc-result-item"><b id="resLotSize" style="color:#26E7A6;">0.10 Lot</b><span>Khối Lượng Khuyên Dùng</span></div>
                                 </div>
                             </div>
@@ -2881,8 +2881,8 @@
                             <div class="tool-header">
                                 <div class="tool-header-icon" style="color:#F0B90B; background:rgba(240,185,11,0.15);"><i class="fa-solid fa-spell-check"></i></div>
                                 <div class="tool-header-text">
-                                    <h3>Bộ Tra Cứu Tín Hiệu Nến VSA & Wyckoff</h3>
-                                    <p>Chọn mẫu hình để xem cách Smart Money thao túng và hành động chuẩn.</p>
+                                    <h3>Tra Cứu Tín Hiệu Nến VSA & Wyckoff</h3>
+                                    <p>Chọn loại thanh nến để tra cứu ý nghĩa cung cầu và hành động kỹ thuật chuẩn.</p>
                                 </div>
                             </div>
 
@@ -2896,9 +2896,9 @@
                                 </div>
 
                                 <div id="vsaDetailDisplay" style="background:#0B0E14; border:1px solid var(--border-color); border-radius:var(--radius-sm); padding:16px; min-height:130px;">
-                                    <h4 style="color:#FF707E; margin-bottom:6px; font-size:0.95rem;">🔴 Upthrust (UT / UTAD) — Bẫy Giá Giảm</h4>
+                                    <h4 style="color:#FF707E; margin-bottom:6px; font-size:0.95rem;">🔴 Upthrust (UT / UTAD) — Bẫy Giá Vượt Đỉnh</h4>
                                     <p style="font-size:0.82rem; color:var(--text-light); line-height:1.55;">
-                                        Thanh nến đẩy mạnh vượt đỉnh kháng cự với Volume cao nhưng đóng cửa quay ngược về dưới cản. Đây là hành vi nhà tạo lập xả hàng vào thanh khoản Breakout của trader nhỏ lẻ. Canh lệnh Bán khi có nến xác nhận.
+                                        Thanh nến đẩy mạnh vượt đỉnh kháng cự với khối lượng lớn nhưng đóng cửa quay ngược về dưới cản. Đây là hành vi nhà tạo lập xả hàng vào thanh khoản Breakout của trader nhỏ lẻ. Canh lệnh Bán khi có nến xác nhận.
                                     </p>
                                 </div>
                             </div>
@@ -2912,9 +2912,9 @@
                 <section id="tu-sach" class="full-section">
                     <div class="section-header-bar">
                         <div class="section-headline">
-                            <div class="section-kicker"><i class="fa-solid fa-book"></i> Tinh Hoa Sách Đầu Tư</div>
-                            <h2 class="section-title">📖 Tủ Sách Tài Chính: Các Tác Phẩm Bất Hủ</h2>
-                            <p class="section-subtitle">Tóm tắt và đúc kết những nguyên lý giao dịch trường tồn từ các huyền thoại phố Wall.</p>
+                            <div class="section-kicker"><i class="fa-solid fa-book"></i> Tinh Hoa Sách Giao Dịch</div>
+                            <h2 class="section-title">📖 Tủ Sách Tài Chính: Các Tác Phẩm Kinh Điển</h2>
+                            <p class="section-subtitle">Đúc kết những nguyên lý giao dịch trường tồn từ các bậc thầy đầu cơ và phân tích kỹ thuật.</p>
                         </div>
                     </div>
 
@@ -2928,7 +2928,7 @@
                             <div class="book-info">
                                 <div class="book-author">Jesse Livermore (1940)</div>
                                 <h3 class="book-title">How To Trade In Stocks</h3>
-                                <p class="book-summary">Lý thuyết Điểm xoay then chốt (Pivotal Point), kỷ luật cắt lỗ nhanh và nghệ thuật gồng lãi theo xu hướng lớn.</p>
+                                <p class="book-summary">Lý thuyết Điểm xoay then chốt (Pivotal Point), nguyên tắc cắt lỗ dứt khoát và nghệ thuật nắm giữ vị thế theo xu hướng lớn.</p>
                                 <div class="book-actions">
                                     <a href="posts/book-jesse-livermore-summary.html" class="btn-read-summary">Đọc Tóm Tắt Chi Tiết &raquo;</a>
                                 </div>
@@ -2944,7 +2944,7 @@
                             <div class="book-info">
                                 <div class="book-author">Tom Williams</div>
                                 <h3 class="book-title">Master the Markets (VSA)</h3>
-                                <p class="book-summary">Cội nguồn của Volume Spread Analysis, cách nhận diện nhà tạo lập thao túng giá và đón đầu dòng tiền thông minh.</p>
+                                <p class="book-summary">Cội nguồn của phương pháp Volume Spread Analysis, cách nhận diện dấu chân nhà tạo lập và giao dịch đồng pha cùng dòng tiền lớn.</p>
                                 <div class="book-actions">
                                     <a href="posts/book-tom-williams-vsa-summary.html" class="btn-read-summary">Đọc Tóm Tắt Chi Tiết &raquo;</a>
                                 </div>
@@ -2960,7 +2960,7 @@
                             <div class="book-info">
                                 <div class="book-author">Bob Volman</div>
                                 <h3 class="book-title">Understanding Price Action</h3>
-                                <p class="book-summary">Nghệ thuật đọc biểu đồ trần không chỉ báo, phân tích vi cấu trúc giá và 7 mô hình hành động giá kinh điển.</p>
+                                <p class="book-summary">Nghệ thuật đọc biểu đồ trần không dùng chỉ báo, phân tích vi cấu trúc thị trường và 7 mô hình hành động giá thực chiến.</p>
                                 <div class="book-actions">
                                     <a href="posts/book-bob-volman-price-action-summary.html" class="btn-read-summary">Đọc Tóm Tắt Chi Tiết &raquo;</a>
                                 </div>
@@ -2976,7 +2976,7 @@
                             <div class="book-info">
                                 <div class="book-author">Richard D. Wyckoff</div>
                                 <h3 class="book-title">The Wyckoff Methodology in Depth</h3>
-                                <p class="book-summary">3 Quy luật kinh điển (Cung-Cầu, Nguyên nhân-Kết quả, Nỗ lực-Kết quả) và sơ đồ tích lũy phân phối hoàn chỉnh.</p>
+                                <p class="book-summary">3 Quy luật kinh điển (Cung-Cầu, Nguyên nhân-Kết quả, Nỗ lực-Kết quả) cùng sơ đồ tích lũy và phân phối chuẩn mực.</p>
                                 <div class="book-actions">
                                     <a href="posts/book-wyckoff-methodology-summary.html" class="btn-read-summary">Đọc Tóm Tắt Chi Tiết &raquo;</a>
                                 </div>
@@ -2986,47 +2986,47 @@
                 </section>
 
                 <!-- ══════════════════════════════════════════════════════════
-                     MỤC 8: TÂM LÍ ĐẦU TƯ (TRADING PSYCHOLOGY & DISCIPLINE)
+                     MỤC 8: TÂM LÍ ĐẦU TƯ (TRADING PSYCHOLOGY & KỶ LUẬT)
                      ══════════════════════════════════════════════════════════ -->
                 <section id="tam-li" class="full-section">
                     <div class="section-header-bar">
                         <div class="section-headline">
-                            <div class="section-kicker"><i class="fa-solid fa-shield-heart"></i> Kỷ Luật & Tâm Trí</div>
-                            <h2 class="section-title">🧠 Tâm Lí Đầu Tư: Kỷ Luật Thép Của Pro Trader</h2>
-                            <p class="section-subtitle">Phương pháp kiểm soát cảm xúc, vượt qua nỗi sợ thua lỗ và duy trì tư duy xác suất nhất quán.</p>
+                            <div class="section-kicker"><i class="fa-solid fa-shield-heart"></i> Kỷ Luật & Quản Trị Cảm Xúc</div>
+                            <h2 class="section-title">🧠 Tâm Lí Đầu Tư: Kỷ Luật Thép Của Trader Chuyên Nghiệp</h2>
+                            <p class="section-subtitle">Kiểm soát cảm xúc, xóa bỏ nỗi sợ thua lỗ và xây dựng tư duy xác suất nhất quán trong từng lệnh giao dịch.</p>
                         </div>
                     </div>
 
                     <div class="psychology-grid">
                         <div class="psychology-card">
                             <div class="psychology-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
-                            <h4>Chống Lại Bẫy FOMO & Trả Thù Thị Trường</h4>
-                            <p>Không bao giờ nhảy vào lệnh khi giá đã chạy xa khỏi vùng tích lũy. Chấp nhận bỏ lỡ cơ hội còn hơn là trở thành thanh khoản cho Smart Money.</p>
+                            <h4>Kiểm Soát FOMO & Giao Dịch Trả Thù (Revenge Trading)</h4>
+                            <p>Tuyệt đối không vào lệnh khi giá đã chạy xa khỏi vùng tích lũy. Bỏ lỡ một cơ hội luôn tốt hơn việc vào lệnh vội vàng và trở thành thanh khoản cho thị trường.</p>
                         </div>
 
                         <div class="psychology-card">
                             <div class="psychology-icon green"><i class="fa-solid fa-scale-balanced"></i></div>
-                            <h4>Tư Duy Xác Suất & Chấp Nhận Lỗ Nhẹ</h4>
-                            <p>Mỗi lệnh giao dịch chỉ là một xác suất thống kê. Cắt lỗ là chi phí kinh doanh bắt buộc để bảo toàn vốn cho những cú thắng lớn theo tỷ lệ R:R cao.</p>
+                            <h4>Tư Duy Xác Suất & Chấp Nhận Thua Lỗ Nhẹ</h4>
+                            <p>Mỗi lệnh giao dịch là một phép thử xác suất độc lập. Cắt lỗ là chi phí kinh doanh bắt buộc để bảo toàn vốn cho những lệnh có tỷ lệ Lợi nhuận/Rủi ro (R:R) cao.</p>
                         </div>
 
                         <div class="psychology-card">
                             <div class="psychology-icon blue"><i class="fa-solid fa-spa"></i></div>
-                            <h4>Tâm Thái Tĩnh Lặng & Nhật Ký Giao Dịch</h4>
-                            <p>Duy trì trạng thái tâm lý ổn định, ghi chép nhật ký cảm xúc trước và sau mỗi lệnh để loại bỏ hoàn toàn yếu tố bốc đồng trong trading.</p>
+                            <h4>Nhật Ký Giao Dịch & Quản Trị Cảm Xúc</h4>
+                            <p>Duy trì thói quen ghi chép nhật ký trước và sau mỗi lệnh: lý do vào lệnh, trạng thái tâm lý và bài học rút ra nhằm loại bỏ hoàn toàn tính bốc đồng.</p>
                         </div>
                     </div>
                 </section>
 
                 <!-- ══════════════════════════════════════════════════════════
-                     BIỂU ĐỒ KỸ THUẬT TRỰC TUYẾN & BẢN QUYỀN
+                     BIỂU ĐỒ TRỰC TUYẾN & CẢNH BÁO RỦI RO
                      ══════════════════════════════════════════════════════════ -->
                 <section id="bieu-do-live" class="full-section">
                     <div class="section-header-bar">
                         <div class="section-headline">
-                            <div class="section-kicker"><i class="fa-solid fa-chart-line"></i> Biểu Đồ Trực Tiếp</div>
-                            <h2 class="section-title">📈 Môi Trường Biểu Đồ Naked Chart & Volume</h2>
-                            <p class="section-subtitle">Theo dõi hành động giá thời gian thực cấu hình tối ưu cho phân tích Price Action và VSA.</p>
+                            <div class="section-kicker"><i class="fa-solid fa-chart-line"></i> Biểu Đồ Kỹ Thuật</div>
+                            <h2 class="section-title">📈 Biểu Đồ Trực Tuyến: Naked Chart & Volume</h2>
+                            <p class="section-subtitle">Môi trường phân tích biểu đồ thời gian thực tối ưu cho Price Action và Volume Spread Analysis.</p>
                         </div>
                     </div>
 
@@ -3064,13 +3064,13 @@
                     <div class="disclaimer-box">
                         <h4><i class="fa-solid fa-triangle-exclamation"></i> Tuyên Bố Miễn Trừ Trách Nhiệm & Cảnh Báo Rủi Ro</h4>
                         <p>
-                            Mọi tài liệu, nhận định thị trường, bài học và phân tích trên <strong>PTvolume.com</strong> chỉ mang tính chất giáo dục và nghiên cứu thông tin, không cấu thành lời khuyên đầu tư tài chính hay khuyến nghị mua bán cụ thể. Giao dịch đòn bẩy tài chính luôn tiềm ẩn rủi ro thua lỗ vốn. <a href="pages/disclaimer.html" style="color: #FF707E; text-decoration: underline;">Đọc toàn văn Cảnh báo Rủi ro &raquo;</a>
+                            Toàn bộ tài liệu, nhận định thị trường, bài học và phân tích trên <strong>PTvolume.com</strong> chỉ mang tính chất giáo dục và tham khảo thông tin, không cấu thành lời khuyên đầu tư tài chính hay khuyến nghị mua bán cụ thể. Giao dịch đòn bẩy tài chính luôn tiềm ẩn rủi ro thua lỗ vốn. <a href="pages/disclaimer.html" style="color: #FF707E; text-decoration: underline;">Đọc toàn văn Cảnh báo Rủi ro &raquo;</a>
                         </p>
                     </div>
                 </section>
 
                 <!-- ══════════════════════════════════════════════════════════
-                     BÌNH LUẬN ĐỘC GIẢ (INTERACTIVE COMMENTS SECTION)
+                     BÌNH LUẬN ĐỘC GIẢ (COMMENTS SECTION)
                      ══════════════════════════════════════════════════════════ -->
                 <section id="thao-luan-cong-dong" class="comments-section">
                     <div class="comments-header">
@@ -3078,26 +3078,26 @@
                             <h3 style="font-size:1.25rem; font-weight:800; color:#fff; display:flex; align-items:center; gap:8px;">
                                 <i class="fa-solid fa-comments" style="color:var(--cyan);"></i> Bình Luận & Thảo Luận Độc Giả
                             </h3>
-                            <p style="font-size:0.82rem; color:var(--text-muted);">Gửi câu hỏi hoặc ý kiến phân tích kỹ thuật của bạn về hệ thống PTvolume.com</p>
+                            <p style="font-size:0.82rem; color:var(--text-muted);">Gửi ý kiến thảo luận, góc nhìn kỹ thuật hoặc câu hỏi của bạn về hệ thống PTvolume.com</p>
                         </div>
                         <span class="nav-badge live" id="commentsCountBadge">3 Bình luận</span>
                     </div>
 
                     <form class="comment-form" onsubmit="handleCommentSubmit(event)">
-                        <input type="text" id="commentAuthor" placeholder="Họ và tên / Handle của bạn (VD: Hoàng Long VSA)" required>
+                        <input type="text" id="commentAuthor" placeholder="Họ và tên / Nickname của bạn (VD: Hoàng Long VSA)" required>
                         <input type="email" id="commentEmail" placeholder="Email của bạn (Được bảo mật an toàn)" required>
-                        <textarea id="commentMessage" placeholder="Nhập nội dung bình luận, trao đổi về nến, khối lượng hoặc câu hỏi của bạn..." required></textarea>
+                        <textarea id="commentMessage" placeholder="Nhập nội dung bình luận, trao đổi về hành vi nến, khối lượng hoặc câu hỏi của bạn..." required></textarea>
                         <button type="submit" class="btn-submit-comment"><i class="fa-solid fa-paper-plane"></i> Gửi Bình Luận</button>
                     </form>
 
                     <div class="comment-list" id="commentList">
-                        <!-- Default sample comments -->
+                        <!-- Sample comments -->
                         <div class="comment-item">
                             <div class="comment-avatar">HL</div>
                             <div class="comment-content">
                                 <div class="comment-author-name">Hoàng Long (Trader Hà Nội)</div>
                                 <div class="comment-date">20 Tháng 8, 2026 • 18:45</div>
-                                <div class="comment-text">Giao diện mới menu bên trái tràn trang rất thoáng và chuyên nghiệp! Bảng báo giá chạy liên tục ở trên cùng giúp quan sát biến động FX và Dầu thô cực tiện.</div>
+                                <div class="comment-text">Giao diện menu bên trái và bố cục tràn trang rất thoáng và trực quan! Bảng báo giá chạy liên tục ở trên cùng giúp quan sát nhanh biến động FX và Dầu thô.</div>
                             </div>
                         </div>
 
@@ -3106,7 +3106,7 @@
                             <div class="comment-content">
                                 <div class="comment-author-name">Minh Triết (Hàng Hóa Phái Sinh)</div>
                                 <div class="comment-date">20 Tháng 8, 2026 • 17:30</div>
-                                <div class="comment-text">Cảm ơn ban biên tập PTvolume. Phương pháp Wyckoff 5 pha kết hợp đọc khối lượng VSA giúp mình lọc sạch các cú bẫy False Breakout của Dầu thô và Ngô.</div>
+                                <div class="comment-text">Phương pháp Wyckoff 5 pha kết hợp đọc khối lượng VSA giúp mình lọc sạch các cú bẫy False Breakout của Dầu thô và Ngô. Cảm ơn ban biên tập PTvolume!</div>
                             </div>
                         </div>
                     </div>
@@ -3124,11 +3124,11 @@
                             <img src="assets/images/logo.jpg" alt="PTvolume Logo" style="width:38px; height:38px; border-radius:8px; border:1px solid var(--cyan);">
                             <span style="font-size:1.25rem; font-weight:900; color:#fff;">PT<span style="color:var(--cyan);">VOLUME</span></span>
                         </div>
-                        <p>Nền tảng nghiên cứu tài chính và đào tạo chuyên sâu về Price Action biểu đồ trần, chu kỳ tích lũy/phân phối Wyckoff và Volume Spread Analysis (VSA).</p>
+                        <p>Nền tảng nghiên cứu tài chính và chia sẻ kiến thức chuyên sâu về Price Action biểu đồ trần, chu kỳ tích lũy/phân phối Wyckoff và Volume Spread Analysis (VSA).</p>
                     </div>
 
                     <div class="footer-col">
-                        <h4>Kho Tri Thức</h4>
+                        <h4>Kho Kiến Thức</h4>
                         <ul>
                             <li><a href="#hoc-tap">Giáo Trình Naked Chart</a></li>
                             <li><a href="#dau-tu">Danh Mục Hàng Hóa & FX</a></li>
@@ -3142,7 +3142,7 @@
                         <ul>
                             <li><a href="#cong-cu">Máy Tính Quy Mô Vị Thế</a></li>
                             <li><a href="#cong-cu">Tra Cứu Tín Hiệu VSA</a></li>
-                            <li><a href="#dien-dan">Diễn Đàn Cộng Đồng</a></li>
+                            <li><a href="#dien-dan">Diễn Đàn Thảo Luận</a></li>
                             <li><a href="#bieu-do-live">Biểu Đồ Trực Tuyến</a></li>
                         </ul>
                     </div>
@@ -3202,14 +3202,14 @@
                     <label style="color:var(--text-muted); cursor:pointer; display:flex; align-items:center; gap:6px;">
                         <input type="checkbox" checked> Ghi nhớ đăng nhập
                     </label>
-                    <a href="javascript:void(0)" onclick="alert('Vui lòng liên hệ Admin qua email contact@ptvolume.com để cấp lại mật khẩu.')" style="color:var(--cyan);">Quên mật khẩu?</a>
+                    <a href="javascript:void(0)" onclick="alert('Vui lòng liên hệ ban quản trị qua email contact@ptvolume.com để được cấp lại mật khẩu.')" style="color:var(--cyan);">Quên mật khẩu?</a>
                 </div>
 
                 <button type="submit" class="auth-btn-submit">
                     <i class="fa-solid fa-arrow-right-to-bracket"></i> Đăng Nhập Ngay
                 </button>
 
-                <div class="auth-divider">hoặc tiếp tục với</div>
+                <div class="auth-divider">hoặc đăng nhập nhanh với</div>
 
                 <div class="auth-social-row">
                     <button type="button" class="auth-social-btn" onclick="socialLogin('Google')">
@@ -3224,7 +3224,7 @@
             <!-- TAB 2: FORM ĐĂNG KÝ -->
             <form class="auth-form-body" id="formRegister" onsubmit="handleRegisterSubmit(event)">
                 <div class="auth-field">
-                    <label class="auth-label">Họ và Tên / Handle Trader</label>
+                    <label class="auth-label">Họ và Tên / Nickname Trader</label>
                     <div class="auth-input-wrap">
                         <i class="fa-solid fa-user auth-input-icon"></i>
                         <input type="text" id="regName" class="auth-input" placeholder="VD: Hoàng Long VSA" required>
@@ -3334,27 +3334,27 @@
             }
 
             document.getElementById('resRiskAmount').innerText = '$' + riskAmount.toFixed(2);
-            document.getElementById('resSLPips').innerText = slPips.toFixed(1) + ' pts';
+            document.getElementById('resSLPips').innerText = slPips.toFixed(1) + ' giá';
             document.getElementById('resLotSize').innerText = lotSize.toFixed(2) + ' Lot';
         }
 
         // 6. VSA Interactive Detail Switcher
         const vsaSignals = {
             'ut': {
-                title: '🔴 Upthrust (UT / UTAD) — Bẫy Giá Giảm',
-                desc: 'Thanh nến đẩy mạnh vượt đỉnh kháng cự với Volume cao nhưng đóng cửa quay ngược về dưới cản. Đây là hành vi nhà tạo lập xả hàng vào thanh khoản Breakout của trader nhỏ lẻ. Canh lệnh Bán khi có nến xác nhận.'
+                title: '🔴 Upthrust (UT / UTAD) — Bẫy Giá Vượt Đỉnh',
+                desc: 'Thanh nến đẩy mạnh vượt đỉnh kháng cự với khối lượng lớn nhưng đóng cửa quay ngược về dưới cản. Đây là hành vi nhà tạo lập xả hàng vào thanh khoản Breakout của trader nhỏ lẻ. Canh lệnh Bán khi có nến xác nhận.'
             },
             'spring': {
-                title: '🟢 Spring (Pha C Wyckoff) — Cú Rũ Bỏ Tăng Giá',
+                title: '🟢 Spring (Pha C Wyckoff) — Cú Rũ Bỏ Quét Thanh Khoản',
                 desc: 'Đợt đạp giá xuyên thủng hỗ trợ tạm thời nhằm quét sạch lệnh Stop Loss và gom nốt lượng hàng trôi nổi giá rẻ trước khi khởi động chiến dịch đẩy giá (Markup). Canh Mua khi giá quay lại biên tích lũy.'
             },
             'stop': {
-                title: '🟡 Stopping Volume — Hấp Thụ Cung Hoảng Loạn',
-                desc: 'Xuất hiện trong xu hướng giảm mạnh với thanh nến biên độ rộng và Khối lượng siêu cao (Ultra High Volume), nhưng giá sau đó không giảm tiếp. Báo hiệu Smart Money đã gom hết lực bán hoảng loạn.'
+                title: '🟡 Stopping Volume — Khối Lượng Hấp Thụ Cung',
+                desc: 'Xuất hiện trong xu hướng giảm mạnh với thanh nến biên độ rộng và Khối lượng siêu cao (Ultra High Volume), nhưng giá sau đó không giảm tiếp. Báo hiệu dòng tiền lớn đã gom hết lực bán hoảng loạn.'
             },
             'nod': {
                 title: '🔵 No Demand Bar — Thanh Nến Cạn Cầu',
-                desc: 'Thanh nến tăng thân hẹp với khối lượng thấp hơn 2 nến trước đó. Cho thấy phe mua không còn mặn mà đẩy giá lên vùng cao hơn. Chuẩn bị cho đợt giảm giá tiếp diễn.'
+                desc: 'Thanh nến tăng thân hẹp với khối lượng thấp hơn 2 nến trước đó. Cho thấy phe mua không còn mặn mà đẩy giá lên vùng cao hơn. Dấu hiệu cảnh báo đà tăng suy yếu.'
             },
             'nos': {
                 title: '🟢 No Supply Bar — Thanh Nến Cạn Cung',
@@ -3379,7 +3379,7 @@
             const content = document.getElementById('forumInputContent').value.trim();
 
             if (!name || !title || !content) {
-                alert('Vui lòng điền đầy đủ Họ tên, Tiêu đề và Nội dung câu hỏi!');
+                alert('Vui lòng điền đầy đủ Họ tên, Tiêu đề và Nội dung thảo luận!');
                 return;
             }
 
@@ -3441,7 +3441,7 @@
             document.getElementById('commentEmail').value = '';
             document.getElementById('commentMessage').value = '';
             updateCommentsCount();
-            alert('Cảm ơn bạn! Bình luận đã được ghi nhận và hiển thị công khai.');
+            alert('Cảm ơn bạn! Bình luận đã được đăng thành công.');
         }
 
         function loadSavedComments() {
@@ -3539,7 +3539,7 @@
             localStorage.setItem('ptvolume_current_user', JSON.stringify(user));
             renderUserHeader(user);
             closeAuthModal();
-            alert('Chúc mừng ' + user.name + '! Bạn đã đăng ký thành công tài khoản VIP trên PTvolume.com.');
+            alert('Chúc mừng ' + user.name + '! Bạn đã đăng ký thành công tài khoản thành viên trên PTvolume.com.');
         }
 
         function socialLogin(provider) {
