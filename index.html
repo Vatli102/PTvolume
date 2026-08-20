@@ -2400,14 +2400,7 @@
                     <span class="nav-badge">Giáo trình</span>
                 </a>
 
-                <!-- 2. ĐẦU TƯ -->
-                <a href="#dau-tu" class="sidebar-nav-item" onclick="highlightNav(this)">
-                    <div class="nav-icon-wrap"><i class="fa-solid fa-briefcase"></i></div>
-                    <span class="nav-text">Đầu tư</span>
-                    <span class="nav-badge">Danh mục</span>
-                </a>
-
-                <!-- 3. PHÂN TÍCH -->
+                <!-- 2. PHÂN TÍCH -->
                 <a href="#phan-tich" class="sidebar-nav-item" onclick="highlightNav(this)">
                     <div class="nav-icon-wrap"><i class="fa-solid fa-chart-line"></i></div>
                     <span class="nav-text">Phân tích</span>
@@ -2586,15 +2579,15 @@
                             <div class="action-card-title">1. Học Tập</div>
                             <div class="action-card-desc">Lộ trình Price Action, VSA và Phương pháp Wyckoff từ căn bản.</div>
                         </a>
-                        <a href="#dau-tu" class="hero-action-card">
-                            <div class="action-card-icon" style="color:#F0B90B; background:rgba(240,185,11,0.15);"><i class="fa-solid fa-briefcase"></i></div>
-                            <div class="action-card-title">2. Đầu Tư</div>
-                            <div class="action-card-desc">Danh mục theo dõi Hàng hóa phái sinh, Kim loại quý & Ngoại hối.</div>
-                        </a>
                         <a href="#phan-tich" class="hero-action-card">
                             <div class="action-card-icon" style="color:#26E7A6; background:rgba(8,153,129,0.15);"><i class="fa-solid fa-chart-line"></i></div>
-                            <div class="action-card-title">3. Phân Tích</div>
+                            <div class="action-card-title">2. Phân Tích</div>
                             <div class="action-card-desc">Báo cáo bóc tách cấu trúc giá, Order Flow và khối lượng giao dịch.</div>
+                        </a>
+                        <a href="#thu-vien" class="hero-action-card">
+                            <div class="action-card-icon" style="color:#F0B90B; background:rgba(240,185,11,0.15);"><i class="fa-solid fa-landmark"></i></div>
+                            <div class="action-card-title">3. Thư Viện</div>
+                            <div class="action-card-desc">Case study thực chiến, nhật ký lệnh và file quản trị vốn.</div>
                         </a>
                         <a href="#cong-cu" class="hero-action-card">
                             <div class="action-card-icon" style="color:#FF707E; background:rgba(242,54,69,0.15);"><i class="fa-solid fa-screwdriver-wrench"></i></div>
@@ -2677,104 +2670,7 @@
                 </section>
 
                 <!-- ══════════════════════════════════════════════════════════
-                     MỤC 2: ĐẦU TƯ (INVESTING & COMMODITIES PORTFOLIO)
-                     ══════════════════════════════════════════════════════════ -->
-                <section id="dau-tu" class="full-section">
-                    <div class="section-header-bar">
-                        <div class="section-headline">
-                            <div class="section-kicker"><i class="fa-solid fa-wallet"></i> Quản Lý Danh Mục</div>
-                            <h2 class="section-title">💼 Đầu Tư: Hàng Hóa Phái Sinh, Kim Loại & Ngoại Hối</h2>
-                            <p class="section-subtitle">Bảng theo dõi thị trường tài chính và chiến lược phân bổ vốn theo chu kỳ dòng tiền lớn.</p>
-                        </div>
-                        <div class="section-actions">
-                            <span class="nav-badge live">Cập nhật liên tục</span>
-                        </div>
-                    </div>
-
-                    <div class="asset-table-wrap">
-                        <table class="asset-table">
-                            <thead>
-                                <tr>
-                                    <th>Tài Sản / Mặt Hàng</th>
-                                    <th>Phân Khúc</th>
-                                    <th>Giá Khớp Lệnh</th>
-                                    <th>Biến Động 24h</th>
-                                    <th>Tín Hiệu Hành Động Giá</th>
-                                    <th>Định Hướng Giao Dịch</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="asset-name-col">
-                                            <div class="asset-badge">CL</div>
-                                            <div>
-                                                <div>Dầu Thô WTI (Crude Oil)</div>
-                                                <small style="color:var(--text-muted);">Hợp đồng tương lai NYMEX</small>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>Hàng Hóa Năng Lượng</td>
-                                    <td style="font-family:var(--font-mono); font-weight:700;">$74.45 / thùng</td>
-                                    <td style="color:#26E7A6; font-weight:700;">+1.82%</td>
-                                    <td><span class="nav-badge live">Hấp Thụ Cung Vùng Cản</span></td>
-                                    <td><strong style="color:#26E7A6;">Ưu Tiên Mua (Long)</strong></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="asset-name-col">
-                                            <div class="asset-badge" style="color:#F0B90B; border-color:#F0B90B;">AU</div>
-                                            <div>
-                                                <div>Vàng Thế Giới (Spot Gold)</div>
-                                                <small style="color:var(--text-muted);">XAU/USD Thị trường liên ngân hàng</small>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>Kim Loại Quý</td>
-                                    <td style="font-family:var(--font-mono); font-weight:700;">$2,738.50 / oz</td>
-                                    <td style="color:#26E7A6; font-weight:700;">+1.15%</td>
-                                    <td><span class="nav-badge live">Xác Nhận Dấu Hiệu Mạnh (SOS)</span></td>
-                                    <td><strong style="color:#26E7A6;">Nắm Giữ Vị Thế Mua</strong></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="asset-name-col">
-                                            <div class="asset-badge" style="color:#00E5FF; border-color:#00E5FF;">ZC</div>
-                                            <div>
-                                                <div>Ngô Phái Sinh (Corn)</div>
-                                                <small style="color:var(--text-muted);">Sở Giao Dịch CBOT</small>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>Nông Sản Thế Giới</td>
-                                    <td style="font-family:var(--font-mono); font-weight:700;">432.25 ¢ / giạ</td>
-                                    <td style="color:#FF5263; font-weight:700;">-0.45%</td>
-                                    <td><span class="nav-badge">Kiểm Định Cạn Cung (No Supply)</span></td>
-                                    <td><strong style="color:var(--cyan);">Chờ Xác Nhận Bứt Phá</strong></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="asset-name-col">
-                                            <div class="asset-badge" style="color:#26E7A6; border-color:#26E7A6;">ZS</div>
-                                            <div>
-                                                <div>Đậu Tương (Soybeans)</div>
-                                                <small style="color:var(--text-muted);">Sở Giao Dịch CBOT</small>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>Nông Sản Thế Giới</td>
-                                    <td style="font-family:var(--font-mono); font-weight:700;">1,028.50 ¢ / giạ</td>
-                                    <td style="color:#26E7A6; font-weight:700;">+0.65%</td>
-                                    <td><span class="nav-badge live">Khối Lượng Hấp Thụ (Stopping Vol)</span></td>
-                                    <td><strong style="color:#26E7A6;">Tích Lũy Pha C</strong></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-
-                <!-- ══════════════════════════════════════════════════════════
-                     MỤC 3: PHÂN TÍCH (MARKET ANALYSIS & ORDER FLOW)
+                     MỤC 2: PHÂN TÍCH (MARKET ANALYSIS & ORDER FLOW)
                      ══════════════════════════════════════════════════════════ -->
                 <section id="phan-tich" class="full-section">
                     <div class="section-header-bar">
@@ -3232,7 +3128,8 @@
                         <h4>Kho Kiến Thức</h4>
                         <ul>
                             <li><a href="#hoc-tap">Giáo Trình Naked Chart</a></li>
-                            <li><a href="#dau-tu">Danh Mục Hàng Hóa & FX</a></li>
+                            <li><a href="#phan-tich">Báo Cáo Phân Tích</a></li>
+                            <li><a href="#thu-vien">Thư Viện Case Study</a></li>
                             <li><a href="#tu-sach">Tủ Sách Tài Chính</a></li>
                             <li><a href="#tam-li">Tâm Lí & Kỷ Luật Trader</a></li>
                         </ul>
