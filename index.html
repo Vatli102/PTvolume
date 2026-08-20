@@ -1901,13 +1901,110 @@
         }
 
         /* --- TRADINGVIEW & DISCLAIMER --- */
+        .chart-controls-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+            background: #101420;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 10px 16px;
+        }
+
+        .chart-symbols-nav {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .chart-symbol-btn {
+            background: #141824;
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition-smooth);
+        }
+
+        .chart-symbol-btn:hover {
+            border-color: var(--cyan);
+            color: #fff;
+        }
+
+        .chart-symbol-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: #fff;
+            box-shadow: 0 2px 10px var(--primary-glow);
+        }
+
+        .chart-actions-nav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chart-action-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition-smooth);
+        }
+
+        .chart-action-btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: #fff;
+        }
+
         .chart-box {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-lg);
             overflow: hidden;
-            height: 520px;
+            height: 720px;
+            min-height: 600px;
             position: relative;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-smooth);
+            width: 100%;
+        }
+
+        .chart-box.expanded-width {
+            margin-left: -36px;
+            margin-right: -36px;
+            width: calc(100% + 72px) !important;
+            border-radius: 0;
+            height: 850px;
+        }
+
+        @media (max-width: 640px) {
+            .chart-box {
+                height: 560px;
+            }
+            .chart-box.expanded-width {
+                margin-left: -14px;
+                margin-right: -14px;
+                width: calc(100% + 28px) !important;
+                height: 680px;
+            }
         }
 
         .disclaimer-box {
@@ -3021,6 +3118,9 @@
                 <!-- ══════════════════════════════════════════════════════════
                      BIỂU ĐỒ TRỰC TUYẾN & CẢNH BÁO RỦI RO
                      ══════════════════════════════════════════════════════════ -->
+                <!-- ══════════════════════════════════════════════════════════
+                     BIỂU ĐỒ TRỰC TUYẾN & CẢNH BÁO RỦI RO
+                     ══════════════════════════════════════════════════════════ -->
                 <section id="bieu-do-live" class="full-section">
                     <div class="section-header-bar">
                         <div class="section-headline">
@@ -3028,33 +3128,36 @@
                             <h2 class="section-title">📈 Biểu Đồ Trực Tuyến: Naked Chart & Volume</h2>
                             <p class="section-subtitle">Môi trường phân tích biểu đồ thời gian thực tối ưu cho Price Action và Volume Spread Analysis.</p>
                         </div>
+                        <div class="section-actions">
+                            <button type="button" class="chart-action-btn" id="btnExpandWidth" onclick="toggleChartExpanded()" title="Mở rộng không gian ngang">
+                                <i class="fa-solid fa-up-right-and-down-left-from-center"></i> Mở Rộng Tràn Viền
+                            </button>
+                            <button type="button" class="chart-action-btn" onclick="toggleChartFullscreen()" title="Xem toàn màn hình">
+                                <i class="fa-solid fa-expand"></i> Toàn Màn Hình
+                            </button>
+                        </div>
                     </div>
 
-                    <div class="chart-box">
+                    <!-- Chart Controls: Fast Symbol Switcher -->
+                    <div class="chart-controls-bar">
+                        <div class="chart-symbols-nav">
+                            <button type="button" class="chart-symbol-btn active" onclick="switchChartSymbol('OANDA:XAUUSD', this)">🥇 Vàng (XAU/USD)</button>
+                            <button type="button" class="chart-symbol-btn" onclick="switchChartSymbol('NYMEX:CL1!', this)">🛢️ Dầu WTI (CL)</button>
+                            <button type="button" class="chart-symbol-btn" onclick="switchChartSymbol('CBOT:ZC1!', this)">🌽 Ngô (ZC)</button>
+                            <button type="button" class="chart-symbol-btn" onclick="switchChartSymbol('CBOT:ZS1!', this)">🌱 Đậu Tương (ZS)</button>
+                            <button type="button" class="chart-symbol-btn" onclick="switchChartSymbol('BINANCE:BTCUSDT', this)">⚡ Bitcoin (BTC)</button>
+                            <button type="button" class="chart-symbol-btn" onclick="switchChartSymbol('SSI:VNINDEX', this)">📈 VN-INDEX</button>
+                            <button type="button" class="chart-symbol-btn" onclick="switchChartSymbol('FX:EURUSD', this)">💶 EUR/USD</button>
+                        </div>
+                        <div style="font-size:0.75rem; color:var(--text-muted); display:flex; align-items:center; gap:6px;">
+                            <i class="fa-solid fa-circle-info" style="color:var(--cyan);"></i> Hỗ trợ đầy đủ công cụ vẽ & thước đo
+                        </div>
+                    </div>
+
+                    <div class="chart-box" id="chartBoxMain">
                         <div class="tradingview-widget-container" style="height:100%;width:100%">
                             <div id="tradingview_chart" style="height:100%;width:100%"></div>
                             <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-                            <script type="text/javascript">
-                            new TradingView.widget({
-                                "autosize": true,
-                                "symbol": "OANDA:XAUUSD",
-                                "interval": "60",
-                                "timezone": "Asia/Ho_Chi_Minh",
-                                "theme": "dark",
-                                "style": "1",
-                                "locale": "vi",
-                                "toolbar_bg": "#141824",
-                                "enable_publishing": false,
-                                "withdateranges": true,
-                                "hide_side_toolbar": false,
-                                "allow_symbol_change": true,
-                                "details": false,
-                                "hotlist": false,
-                                "calendar": false,
-                                "studies": [],
-                                "container_id": "tradingview_chart"
-                            });
-                            </script>
                         </div>
                     </div>
 
@@ -3670,11 +3773,89 @@
             }
         }
 
+        // 11. TradingView Dynamic Chart Loader & Mode Controls
+        let currentChartSymbol = 'OANDA:XAUUSD';
+        let currentChartInterval = '60';
+
+        function loadTradingViewChart(symbol = currentChartSymbol, interval = currentChartInterval) {
+            currentChartSymbol = symbol;
+            currentChartInterval = interval;
+            const container = document.getElementById('tradingview_chart');
+            if (!container) return;
+            container.innerHTML = '';
+            
+            new TradingView.widget({
+                "autosize": true,
+                "symbol": symbol,
+                "interval": interval,
+                "timezone": "Asia/Ho_Chi_Minh",
+                "theme": "dark",
+                "style": "1",
+                "locale": "vi",
+                "toolbar_bg": "#141824",
+                "enable_publishing": false,
+                "withdateranges": true,
+                "hide_side_toolbar": false,
+                "allow_symbol_change": true,
+                "details": false,
+                "hotlist": false,
+                "calendar": false,
+                "studies": [],
+                "container_id": "tradingview_chart"
+            });
+        }
+
+        function switchChartSymbol(symbol, btn) {
+            document.querySelectorAll('.chart-symbol-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            loadTradingViewChart(symbol);
+        }
+
+        function toggleChartExpanded() {
+            const box = document.getElementById('chartBoxMain');
+            if (!box) return;
+            box.classList.toggle('expanded-width');
+            const btn = document.getElementById('btnExpandWidth');
+            
+            if (box.classList.contains('expanded-width')) {
+                // Also auto collapse sidebar for maximum horizontal space
+                document.body.classList.add('sidebar-collapsed');
+                const toggleIcon = document.getElementById('toggleIcon');
+                if (toggleIcon) toggleIcon.className = 'fa-solid fa-chevron-right';
+                btn.innerHTML = '<i class="fa-solid fa-compress"></i> Thu Gọn Khung';
+            } else {
+                btn.innerHTML = '<i class="fa-solid fa-up-right-and-down-left-from-center"></i> Mở Rộng Tràn Viền';
+            }
+            // Trigger TV redraw
+            setTimeout(() => {
+                window.dispatchEvent(new Event('resize'));
+            }, 350);
+        }
+
+        function toggleChartFullscreen() {
+            const box = document.getElementById('chartBoxMain');
+            if (!box) return;
+            if (!document.fullscreenElement) {
+                if (box.requestFullscreen) {
+                    box.requestFullscreen();
+                } else if (box.webkitRequestFullscreen) {
+                    box.webkitRequestFullscreen();
+                } else if (box.msRequestFullscreen) {
+                    box.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             const currentLang = localStorage.getItem('ptvolume_lang') || 'vi';
             updateLangUI(currentLang);
             checkUserSession();
             loadSavedComments();
+            loadTradingViewChart();
         });
     </script>
     <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
