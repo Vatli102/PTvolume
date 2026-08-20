@@ -1,4 +1,4 @@
-﻿import os
+import os
 import sys
 import re
 import json
@@ -149,17 +149,21 @@ JSON SCHEMA TO RETURN:
   "html_body": "The complete HTML formatted body of the article. Use semantic HTML (<h2>, <h3>, <p>, <ul>, <li>, <strong>, <em>, <div class=\\"highlight-box\\">). DO NOT include the main <h1> title or outer <html>/<head>/<body> tags.",
   "initial_comments": [
     {{
-      "name": "Marcus Vance (Senior FX Trader)",
-      "date": "Today, 08:30 UTC",
-      "text": "Insightful breakdown on the DXY liquidity sweep. The Effort vs. Result dynamic on the 4H chart aligns exactly with Wyckoff Phase C."
+      "name": "Unique trader name & professional desk (e.g., Jonathan Reed - London Macro Desk / Kenji Takahashi - Tokyo FX Flow / Sarah Jenkins - NY Energy Trader)",
+      "date": "Realistic UTC timestamp (e.g., Today, 07:45 UTC)",
+      "text": "Deep, realistic comment debating or verifying a specific technical price level, Wyckoff phase, or data point mentioned in THIS specific article."
     }},
     {{
-      "name": "Elena Rostova (Macro Quant)",
-      "date": "Today, 09:15 UTC",
-      "text": "Great risk-to-reward parameters on Gold. Waiting for the low-volume test bar before confirming entry."
+      "name": "Another unique trader name & role (e.g., Arthur Pendelton - Zurich Multi-Asset)",
+      "date": "Realistic UTC timestamp (e.g., Today, 08:20 UTC)",
+      "text": "Insightful question or confirmation regarding the risk-to-reward parameters and order flow absorption for the assets covered today."
     }}
   ]
 }}
+
+CRITICAL REQUIREMENT FOR 'initial_comments':
+- Generate 2 to 3 completely UNIQUE, diverse trader personas (different names, institutional desks, global trading hubs).
+- The comments MUST specifically debate the exact assets, key price levels, and macro news from today's report (DO NOT use generic or repeated comments).
 
 CONTENT STRUCTURE REQUIREMENTS FOR 'html_body':
 1. Executive Market Pulse (3 core drivers shaping today's global order flow).
