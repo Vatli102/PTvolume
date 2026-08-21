@@ -3221,6 +3221,9 @@
                             <p class="section-subtitle">Môi trường phân tích biểu đồ thời gian thực tối ưu cho Price Action và Volume Spread Analysis.</p>
                         </div>
                         <div class="section-actions">
+                            <a id="btnOpenTradingViewDirect" href="https://www.tradingview.com/chart/?symbol=OANDA:XAUUSD" target="_blank" class="chart-action-btn" style="color:var(--cyan);" title="Mở biểu đồ toàn diện trên TradingView">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Mở Trên TradingView
+                            </a>
                             <button type="button" class="chart-action-btn" id="btnExpandWidth" onclick="toggleChartExpanded()" title="Mở rộng không gian ngang">
                                 <i class="fa-solid fa-up-right-and-down-left-from-center"></i> Mở Rộng Tràn Viền
                             </button>
@@ -3233,18 +3236,18 @@
                     <!-- Chart Controls: Fast Symbol & Timeframe Switcher -->
                     <div class="chart-controls-bar">
                         <div style="display:flex; flex-direction:column; gap:10px; width:100%;">
-                            <!-- Hàng Hóa Nông Sản & Năng Lượng (CBOT / NYMEX / ICE) -->
+                            <!-- Hàng Hóa Nông Sản & Năng Lượng -->
                             <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
                                 <span style="font-size:0.75rem; font-weight:800; color:var(--cyan); text-transform:uppercase; letter-spacing:0.5px; display:inline-flex; align-items:center; gap:5px;">
-                                    <i class="fa-solid fa-wheat-awn"></i> Hàng Hóa CBOT / NYMEX:
+                                    <i class="fa-solid fa-wheat-awn"></i> Hàng Hóa & Năng Lượng:
                                 </span>
-                                <button type="button" class="chart-symbol-btn" onclick="switchChartSymbol('PEPPERSTONE:CORN', this)" title="Ngô (ZC / Corn Spot)">🌽 Ngô (ZC)</button>
-                                <button type="button" class="chart-symbol-btn" onclick="switchChartSymbol('PEPPERSTONE:SOYBEANOIL', this)" title="Dầu Đậu Tương (ZL / Soybean Oil)">🛢️ Dầu Đậu (ZL)</button>
-                                <button type="button" class="chart-symbol-btn" onclick="switchChartSymbol('PEPPERSTONE:SOYBEANMEAL', this)" title="Khô Đậu Tương (ZM / Soybean Meal)">🌾 Khô Đậu (ZM)</button>
-                                <button type="button" class="chart-symbol-btn" onclick="switchChartSymbol('PEPPERSTONE:SOYBEANS', this)" title="Đậu Tương (ZS / Soybeans)">🌱 Đậu Tương (ZS)</button>
+                                <button type="button" class="chart-symbol-btn" onclick="switchChartSymbol('OANDA:CORNUSD', this)" title="Ngô (ZC / Corn Spot)">🌽 Ngô (ZC)</button>
+                                <button type="button" class="chart-symbol-btn" onclick="switchChartSymbol('CAPITALCOM:SOYBEANOIL', this)" title="Dầu Đậu Tương (ZL / Soybean Oil)">🛢️ Dầu Đậu (ZL)</button>
+                                <button type="button" class="chart-symbol-btn" onclick="switchChartSymbol('CAPITALCOM:SOYBEANMEAL', this)" title="Khô Đậu Tương (ZM / Soybean Meal)">🌾 Khô Đậu (ZM)</button>
+                                <button type="button" class="chart-symbol-btn" onclick="switchChartSymbol('OANDA:SOYBNUSD', this)" title="Đậu Tương (ZS / Soybeans)">🌱 Đậu Tương (ZS)</button>
                                 <button type="button" class="chart-symbol-btn" onclick="switchChartSymbol('TVC:USOIL', this)" title="Dầu Thô WTI (CL / US Oil)">🛢️ Dầu WTI (CL)</button>
-                                <button type="button" class="chart-symbol-btn" onclick="switchChartSymbol('PEPPERSTONE:SUGAR', this)" title="Đường (SB #11 / Sugar)">🍬 Đường (SB #11)</button>
-                                <button type="button" class="chart-symbol-btn" onclick="switchChartSymbol('PEPPERSTONE:COTTON', this)" title="Bông (CT #2 / Cotton)">☁️ Bông (CT #2)</button>
+                                <button type="button" class="chart-symbol-btn" onclick="switchChartSymbol('OANDA:SUGARUSD', this)" title="Đường (SB #11 / Sugar)">🍬 Đường (SB #11)</button>
+                                <button type="button" class="chart-symbol-btn" onclick="switchChartSymbol('CAPITALCOM:COTTON', this)" title="Bông (CT #2 / Cotton)">☁️ Bông (CT #2)</button>
                                 <button type="button" class="chart-symbol-btn" onclick="switchChartSymbol('TVC:NATURALGAS', this)" title="Khí Tự Nhiên (NG / Natural Gas)">🔥 Khí Tự Nhiên (NG)</button>
                             </div>
 
@@ -4387,9 +4390,31 @@ Theo thống kê thực chiến của anh em, phương pháp nào hạn chế t�
             renderWidget();
         }
 
+        const TV_DIRECT_MAP = {
+            'OANDA:CORNUSD': 'CBOT:ZC1!',
+            'CAPITALCOM:SOYBEANOIL': 'CBOT:ZL1!',
+            'CAPITALCOM:SOYBEANMEAL': 'CBOT:ZM1!',
+            'OANDA:SOYBNUSD': 'CBOT:ZS1!',
+            'TVC:USOIL': 'NYMEX:CL1!',
+            'OANDA:SUGARUSD': 'ICEUS:SB1!',
+            'CAPITALCOM:COTTON': 'ICEUS:CT1!',
+            'TVC:NATURALGAS': 'NYMEX:NG1!',
+            'OANDA:XAUUSD': 'OANDA:XAUUSD',
+            'FX:EURUSD': 'FX:EURUSD',
+            'BINANCE:BTCUSDT': 'BINANCE:BTCUSDT',
+            'SSI:VNINDEX': 'SSI:VNINDEX'
+        };
+
         function switchChartSymbol(symbol, btn) {
             document.querySelectorAll('.chart-symbol-btn').forEach(b => b.classList.remove('active'));
             if (btn) btn.classList.add('active');
+            
+            const directLink = document.getElementById('btnOpenTradingViewDirect');
+            if (directLink) {
+                const targetSym = TV_DIRECT_MAP[symbol] || symbol;
+                directLink.href = `https://www.tradingview.com/chart/?symbol=${encodeURIComponent(targetSym)}`;
+            }
+
             loadTradingViewChart(symbol, currentChartInterval);
         }
 
