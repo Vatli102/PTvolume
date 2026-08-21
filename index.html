@@ -1420,17 +1420,21 @@
             display: flex;
             align-items: flex-start;
             gap: 16px;
-            transition: var(--transition-smooth);
+            cursor: pointer;
+            position: relative;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .forum-post-item:hover {
-            border-color: rgba(41, 98, 255, 0.4);
-            background: var(--bg-card-hover);
+            border-color: var(--cyan);
+            background: #182030;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 229, 255, 0.12);
         }
 
         .forum-avatar {
-            width: 44px;
-            height: 44px;
+            width: 46px;
+            height: 46px;
             border-radius: 12px;
             background: linear-gradient(135deg, #2962FF, #00E5FF);
             color: #fff;
@@ -1440,32 +1444,82 @@
             font-weight: 800;
             font-size: 1.1rem;
             flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
         .forum-post-content {
             flex: 1;
         }
 
+        .forum-post-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 6px;
+        }
+
         .forum-post-title {
             font-size: 1.05rem;
             font-weight: 700;
             color: #fff;
-            margin-bottom: 6px;
+            transition: color 0.2s ease;
+        }
+
+        .forum-post-item:hover .forum-post-title {
+            color: var(--cyan);
+        }
+
+        .forum-badge-category {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--cyan);
+            background: rgba(0, 229, 255, 0.1);
+            border: 1px solid rgba(0, 229, 255, 0.25);
+            padding: 3px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
         }
 
         .forum-post-snippet {
-            font-size: 0.84rem;
+            font-size: 0.86rem;
             color: var(--text-muted);
-            line-height: 1.5;
-            margin-bottom: 10px;
+            line-height: 1.55;
+            margin-bottom: 12px;
         }
 
         .forum-meta-bar {
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
             gap: 16px;
-            font-size: 0.76rem;
+            font-size: 0.78rem;
             color: var(--text-muted);
+        }
+
+        .forum-meta-bar span {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .forum-click-prompt {
+            margin-left: auto;
+            color: var(--cyan);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            opacity: 0.85;
+            transition: transform 0.2s ease;
+        }
+
+        .forum-post-item:hover .forum-click-prompt {
+            transform: translateX(4px);
+            opacity: 1;
         }
 
         .forum-stats-box {
@@ -1483,15 +1537,264 @@
             background: #0B0E14;
             border: 1px solid var(--border-color);
             border-radius: var(--radius-sm);
-            padding: 12px;
+            padding: 12px 14px;
             color: #fff;
             font-size: 0.88rem;
             outline: none;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            transition: border-color 0.2s ease;
         }
 
         .forum-form-input:focus {
             border-color: var(--cyan);
+        }
+
+        /* --- FORUM THREAD DETAIL MODAL --- */
+        .forum-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(8, 10, 15, 0.88);
+            backdrop-filter: blur(10px);
+            z-index: 2100;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .forum-modal-overlay.active {
+            display: flex;
+        }
+
+        .forum-modal-card {
+            width: 100%;
+            max-width: 820px;
+            max-height: 90vh;
+            background: #121622;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 28px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 229, 255, 0.08);
+            position: relative;
+            animation: modalFadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .forum-modal-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--border-color);
+            background: #151B2B;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .forum-modal-close-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.3rem;
+            cursor: pointer;
+            padding: 6px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s ease, background 0.2s ease;
+        }
+
+        .forum-modal-close-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .forum-modal-scroll-body {
+            padding: 24px;
+            overflow-y: auto;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .forum-modal-scroll-body::-webkit-scrollbar {
+            width: 6px;
+        }
+        .forum-modal-scroll-body::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 3px;
+        }
+
+        .forum-thread-author-bar {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .forum-thread-author-info h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .forum-thread-author-tag {
+            font-size: 0.7rem;
+            background: rgba(41, 98, 255, 0.2);
+            color: #82B1FF;
+            border: 1px solid rgba(41, 98, 255, 0.4);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .forum-thread-time {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 3px;
+        }
+
+        .forum-thread-main-content {
+            font-size: 0.94rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            white-space: pre-line;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 18px 20px;
+            border-radius: var(--radius-sm);
+            border-left: 3px solid var(--cyan);
+        }
+
+        .forum-thread-actions-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .forum-action-btn-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .forum-btn-action {
+            background: #1A2133;
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            font-size: 0.84rem;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .forum-btn-action:hover {
+            border-color: var(--cyan);
+            color: #fff;
+            background: #20293F;
+        }
+
+        .forum-btn-action.liked {
+            background: rgba(242, 54, 69, 0.15);
+            border-color: #F23645;
+            color: #FF6B7A;
+        }
+
+        .forum-replies-heading {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 6px;
+        }
+
+        .forum-replies-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .forum-reply-card {
+            background: #151A27;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-sm);
+            padding: 14px 16px;
+            display: flex;
+            gap: 12px;
+            transition: border-color 0.2s ease;
+        }
+
+        .forum-reply-card:hover {
+            border-color: rgba(0, 229, 255, 0.3);
+        }
+
+        .forum-reply-avatar {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #1E4BD8, #00E5FF);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .forum-reply-content {
+            flex: 1;
+        }
+
+        .forum-reply-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 4px;
+        }
+
+        .forum-reply-author {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .forum-reply-date {
+            font-size: 0.74rem;
+            color: var(--text-muted);
+        }
+
+        .forum-reply-text {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        .forum-reply-form-wrap {
+            background: #151A27;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
         }
 
         /* --- MODULE 6: CÔNG CỤ VÀ TIỆN ÍCH (TOOLS & CALCULATORS) --- */
@@ -2782,28 +3085,38 @@
 
                     <div class="forum-container">
                         <div class="forum-posts-list" id="forumPostsList">
-                            <div class="forum-post-item">
+                            <div class="forum-post-item" onclick="openForumThread('th-gold-spring')">
                                 <div class="forum-avatar">TN</div>
                                 <div class="forum-post-content">
-                                    <h4 class="forum-post-title">Vàng XAU/USD: Khung H1 đã hoàn tất nhịp rũ bỏ Spring (Pha C) chưa?</h4>
+                                    <div class="forum-post-header">
+                                        <h4 class="forum-post-title">Vàng XAU/USD: Khung H1 đã hoàn tất nhịp rũ bỏ Spring (Pha C) chưa?</h4>
+                                        <span class="forum-badge-category">Vàng Spot • Wyckoff</span>
+                                    </div>
                                     <p class="forum-post-snippet">Khung H1 vừa xuất hiện thanh nến rút chân mạnh ở vùng 2,720 với khối lượng siêu cao. Mình dự kiến canh nhịp re-test kiểm định để vào lệnh Mua với mức cắt lỗ dưới 2,714.</p>
                                     <div class="forum-meta-bar">
                                         <span><i class="fa-solid fa-user-tie"></i> TraderNam (Hà Nội)</span>
                                         <span><i class="fa-regular fa-clock"></i> 25 phút trước</span>
-                                        <span style="color:var(--cyan);"><i class="fa-regular fa-comments"></i> 14 Phản hồi</span>
+                                        <span style="color:var(--cyan);"><i class="fa-regular fa-comments"></i> 3 Phản hồi</span>
+                                        <span><i class="fa-regular fa-heart"></i> 28 Thích</span>
+                                        <span class="forum-click-prompt">Xem thảo luận <i class="fa-solid fa-arrow-right"></i></span>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="forum-post-item">
+                            <div class="forum-post-item" onclick="openForumThread('th-no-demand')">
                                 <div class="forum-avatar" style="background:linear-gradient(135deg, #F0B90B, #FF707E);">PV</div>
                                 <div class="forum-post-content">
-                                    <h4 class="forum-post-title">Cách phân biệt nến No Demand chuẩn và nến dừng tạm thời trong xu hướng giảm</h4>
+                                    <div class="forum-post-header">
+                                        <h4 class="forum-post-title">Cách phân biệt nến No Demand chuẩn và nến dừng tạm thời trong xu hướng giảm</h4>
+                                        <span class="forum-badge-category">Lý Thuyết VSA</span>
+                                    </div>
                                     <p class="forum-post-snippet">Trong xu hướng giảm, khi gặp nến xanh thân nhỏ với khối lượng thấp, điều kiện nào cần quan sát ở thanh nến tiếp theo để xác nhận phe mua đã cạn kiệt lực?</p>
                                     <div class="forum-meta-bar">
                                         <span><i class="fa-solid fa-user-tie"></i> PhongVSA</span>
                                         <span><i class="fa-regular fa-clock"></i> 1 giờ trước</span>
-                                        <span style="color:var(--cyan);"><i class="fa-regular fa-comments"></i> 8 Phản hồi</span>
+                                        <span style="color:var(--cyan);"><i class="fa-regular fa-comments"></i> 2 Phản hồi</span>
+                                        <span><i class="fa-regular fa-heart"></i> 45 Thích</span>
+                                        <span class="forum-click-prompt">Xem thảo luận <i class="fa-solid fa-arrow-right"></i></span>
                                     </div>
                                 </div>
                             </div>
@@ -3228,6 +3541,90 @@
         </div>
     </div>
 
+    <!-- ══════════════════════════════════════════════════════════
+         FORUM THREAD DETAIL & DISCUSSION MODAL
+         ══════════════════════════════════════════════════════════ -->
+    <div class="forum-modal-overlay" id="forumModalOverlay" onclick="closeForumModalOnBackdrop(event)">
+        <div class="forum-modal-card">
+            <div class="forum-modal-header">
+                <div style="display:flex; align-items:center; gap:10px;">
+                    <span class="forum-badge-category" id="modalThreadBadge"><i class="fa-solid fa-comments"></i> Diễn Đàn Giao Dịch</span>
+                    <span style="font-size:0.8rem; color:var(--text-muted);" id="modalThreadViews"><i class="fa-regular fa-eye"></i> 0 Lượt xem</span>
+                </div>
+                <button class="forum-modal-close-btn" onclick="closeForumModal()" title="Đóng cửa sổ">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="forum-modal-scroll-body">
+                <!-- THREAD HEADER & AUTHOR -->
+                <div>
+                    <h2 style="font-size:1.35rem; font-weight:800; color:#fff; line-height:1.4; margin-bottom:14px;" id="modalThreadTitle">
+                        Tiêu đề thảo luận
+                    </h2>
+                    <div class="forum-thread-author-bar">
+                        <div class="forum-avatar" id="modalThreadAvatar">TN</div>
+                        <div class="forum-thread-author-info">
+                            <h4>
+                                <span id="modalThreadAuthor">Trader</span>
+                                <span class="forum-thread-author-tag" id="modalThreadTag">Thành Viên</span>
+                            </h4>
+                            <div class="forum-thread-time" id="modalThreadTime">Vừa xong</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MAIN THREAD CONTENT -->
+                <div class="forum-thread-main-content" id="modalThreadContent">
+                    Nội dung phân tích thảo luận chi tiết...
+                </div>
+
+                <!-- ACTIONS BAR (LIKE, SHARE, REPLY) -->
+                <div class="forum-thread-actions-bar">
+                    <div class="forum-action-btn-group">
+                        <button type="button" class="forum-btn-action" id="btnLikeThread" onclick="handleLikeCurrentThread()">
+                            <i class="fa-regular fa-heart"></i> <span id="modalThreadLikes">0</span> Thích
+                        </button>
+                        <button type="button" class="forum-btn-action" onclick="focusReplyInput()">
+                            <i class="fa-solid fa-reply"></i> Viết phản hồi
+                        </button>
+                    </div>
+                    <button type="button" class="forum-btn-action" onclick="copyThreadShareLink()">
+                        <i class="fa-solid fa-share-nodes"></i> Chia sẻ thảo luận
+                    </button>
+                </div>
+
+                <!-- REPLIES LIST -->
+                <div>
+                    <div class="forum-replies-heading">
+                        <i class="fa-regular fa-comments" style="color:var(--cyan);"></i>
+                        <span id="modalRepliesHeading">Phản hồi cộng đồng (0)</span>
+                    </div>
+
+                    <div class="forum-replies-list" id="modalRepliesList" style="margin-top:14px;">
+                        <!-- Rendered dynamically -->
+                    </div>
+                </div>
+
+                <!-- REPLY SUBMISSION FORM -->
+                <div class="forum-reply-form-wrap" id="replyFormSection">
+                    <h4 style="font-size:0.95rem; font-weight:700; color:#fff; display:flex; align-items:center; gap:8px;">
+                        <i class="fa-solid fa-pen-nib" style="color:var(--cyan);"></i> Trả Lời & Góp Ý Kỹ Thuật
+                    </h4>
+                    <div style="display:grid; grid-template-columns:1fr; gap:10px;">
+                        <input type="text" id="modalReplyName" class="forum-form-input" style="margin-bottom:0;" placeholder="Tên / Nickname của bạn (VD: MasterVSA_HCM)">
+                        <textarea id="modalReplyText" class="forum-form-input" style="height:80px; resize:none; margin-bottom:0;" placeholder="Nhập góc nhìn phân tích, lý giải nến hoặc câu hỏi phản biện của bạn..."></textarea>
+                    </div>
+                    <div style="display:flex; justify-content:flex-end;">
+                        <button type="button" class="btn-hero-primary" onclick="submitModalReply()">
+                            <i class="fa-solid fa-paper-plane"></i> Gửi Phản Hồi
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Hidden Google Translate Element -->
     <div id="google_translate_element" style="display:none;"></div>
 
@@ -3339,7 +3736,356 @@
             }
         }
 
-        // 7. Forum Post Submission
+        // 7. Dynamic Forum System with Thread Reader & Reply Capabilities
+        const DEFAULT_FORUM_THREADS = [
+            {
+                id: 'th-gold-spring',
+                title: 'Vàng XAU/USD: Khung H1 đã hoàn tất nhịp rũ bỏ Spring (Pha C) chưa?',
+                badge: 'Vàng Spot • Wyckoff',
+                author: 'TraderNam (Hà Nội)',
+                tag: 'Chuyên Gia VSA',
+                avatarText: 'TN',
+                avatarBg: 'linear-gradient(135deg, #2962FF, #00E5FF)',
+                time: '25 phút trước',
+                views: 342,
+                likes: 28,
+                likedByMe: false,
+                snippet: 'Khung H1 vừa xuất hiện thanh nến rút chân mạnh ở vùng 2,720 với khối lượng siêu cao. Mình dự kiến canh nhịp re-test kiểm định để vào lệnh Mua với mức cắt lỗ dưới 2,714.',
+                content: `Chào anh em cộng đồng PTvolume,
+
+Quan sát biểu đồ Vàng XAU/USD trên khung thời gian H1 trong phiên giao dịch hôm nay:
+1. Vùng giá 2,720 vừa xuất hiện một thanh nến Upthrust ngược (Pin bar rút chân dưới cực dài) kèm theo dải Khối lượng Siêu Cao (Ultra High Volume).
+2. Hành vi này thể hiện rõ dấu hiệu dòng tiền tổ chức (Smart Money) vừa thực hiện nhịp rũ bỏ (Spring / Shakeout - Pha C theo phương pháp Wyckoff), quét sạch lượng Stop Loss của các vị thế Buy breakout và gom lại toàn bộ thanh khoản trôi nổi giá rẻ.
+3. Kế hoạch giao dịch: Tôi sẽ không đuổi lệnh ngay tại râu nến mà kiên nhẫn đợi 1-2 thanh nến tiếp theo kiểm định lại (Test bar) với biên độ hẹp và khối lượng kiệt quệ (Low Volume). Điểm vào lệnh (Entry) quanh 2,723 - 2,725, Stop Loss bảo vệ tài khoản đặt dưới 2,714.
+
+Anh em đánh giá nhịp này đã đủ điều kiện kích hoạt Pha D (Đẩy giá vào biên trên) chưa? Xin ý kiến thảo luận của mọi người!`,
+                replies: [
+                    {
+                        author: 'Wyckoff_Master',
+                        avatar: 'WM',
+                        date: '18 phút trước',
+                        text: 'Hoàn toàn đồng thuận với nhận định của bác! Khối lượng tại đáy 2,720 vượt trội gấp 3 lần trung bình 20 phiên, chứng tỏ có lực hấp thụ bán hoảng loạn (Stopping Volume). Chỉ cần nến tiếp theo là nến xanh test cạn cung (No Supply) là kích hoạt điểm Mua tuyệt đẹp.'
+                    },
+                    {
+                        author: 'MinhHieu_FX',
+                        avatar: 'MH',
+                        date: '10 phút trước',
+                        text: 'Lưu ý vùng 2,735 là kháng cự cũ (LPS / Ice line). Nếu giá chạm 2,735 mà gặp nến Upthrust râu trên dài thì nên chốt 50% khối lượng để bảo toàn lợi nhuận.'
+                    },
+                    {
+                        author: 'GoldHunter_99',
+                        avatar: 'GH',
+                        date: '3 phút trước',
+                        text: 'Em vừa vào 0.5 lot theo nhịp test nến M15 cạn vol lúc nãy, kỳ vọng mục tiêu TP lên 2,748!'
+                    }
+                ]
+            },
+            {
+                id: 'th-no-demand',
+                title: 'Cách phân biệt nến No Demand chuẩn và nến dừng tạm thời trong xu hướng giảm',
+                badge: 'Lý Thuyết VSA',
+                author: 'PhongVSA',
+                tag: 'Trader Thực Chiến',
+                avatarText: 'PV',
+                avatarBg: 'linear-gradient(135deg, #F0B90B, #FF707E)',
+                time: '1 giờ trước',
+                views: 518,
+                likes: 45,
+                likedByMe: false,
+                snippet: 'Trong xu hướng giảm, khi gặp nến xanh thân nhỏ với khối lượng thấp, điều kiện nào cần quan sát ở thanh nến tiếp theo để xác nhận phe mua đã cạn kiệt lực?',
+                content: `Gửi anh em nghiên cứu Volume Spread Analysis:
+
+Rất nhiều trader mới học VSA thường nhầm lẫn giữa một thanh nến "No Demand" (Cạn cầu - báo hiệu tiếp tục giảm) và một nhịp "Pause" (Giá dừng chân tích lũy để đảo chiều).
+
+Theo kinh nghiệm của tôi, để xác nhận một nến No Demand đạt chuẩn cần hội tụ 3 yếu tố:
+1. Thân nến phải hẹp (Narrow Spread), đóng cửa ở giữa hoặc nửa dưới của thanh nến.
+2. Khối lượng (Volume) bắt buộc phải THẤP HƠN rõ rệt so với 2 thanh nến liền trước đó (chứng tỏ phe Mua không có tổ chức nào tham gia).
+3. NẾN XÁC NHẬN (Confirmation Bar): Thanh nến ngay sau đó phải là một nến giảm đóng cửa thấp hơn đáy của nến No Demand.
+
+Mọi người hay dùng thêm tiêu chí nào để lọc nhiễu không? Mời anh em cùng đóng góp thêm.`,
+                replies: [
+                    {
+                        author: 'LeThanh_Trader',
+                        avatar: 'LT',
+                        date: '45 phút trước',
+                        text: 'Một điểm cực kỳ quan trọng nữa là vị trí xuất hiện (Background Context). No Demand chỉ có giá trị cao nhất khi nó xuất hiện sau một đợt phân phối hoặc tại vùng kháng cự vừa bị phá vỡ (Breakout Retest).'
+                    },
+                    {
+                        author: 'SmartMoney_Pro',
+                        avatar: 'SM',
+                        date: '20 phút trước',
+                        text: 'Chuẩn luôn! Nếu nến khối lượng thấp mà lại xuất hiện ở vùng hỗ trợ mạnh sau chuỗi giảm kéo dài thì đôi khi lại là No Supply chứ không phải No Demand.'
+                    }
+                ]
+            },
+            {
+                id: 'th-trailing-stop',
+                title: 'Quản trị lệnh trong Pha E (Markup): Dời Stop Loss theo Swing Low hay Trailing MA20?',
+                badge: 'Quản Trị Rủi Ro',
+                author: 'MinhHieu_FX',
+                tag: 'Trend Follower',
+                avatarText: 'MH',
+                avatarBg: 'linear-gradient(135deg, #089981, #00E5FF)',
+                time: '3 giờ trước',
+                views: 289,
+                likes: 19,
+                likedByMe: false,
+                snippet: 'Khi thị trường bước vào pha tăng giá mạnh (Pha E), việc giữ lệnh ăn trọn con sóng lớn đòi hỏi quy tắc dời SL chặt chẽ để tránh bị quét râu nến non.',
+                content: `Chào toàn thể anh em trader,
+
+Một trong những bài toán khó nhất của Naked Price Action & Wyckoff không phải là tìm điểm Entry, mà là GIỮ LỆNH khi giá đã bước vào Pha E (Đẩy giá xu hướng bùng nổ).
+
+Tôi thấy có 2 trường phái chính:
+1. Dời Stop Loss thủ công theo từng đáy Swing Low mới được tạo lập (sau khi đỉnh mới cao hơn được thiết lập).
+2. Sử dụng đường trung bình động EMA 20 (hoặc MA 21) làm đường dải băng chặn dưới, đóng nến dưới MA thì thoát toàn bộ.
+
+Theo thống kê thực chiến của anh em, phương pháp nào hạn chế tối đa việc bị Smart Money quét râu nến (Shakeout) trước khi bay tiếp?`,
+                replies: [
+                    {
+                        author: 'NguyenKien_VSA',
+                        avatar: 'NK',
+                        date: '2 giờ trước',
+                        text: 'Kinh nghiệm của tôi là dùng kết hợp Swing Low + Volume: Chỉ dời SL lên đáy Swing Low nào mà tại đó xuất hiện nến Test cạn kiệt khối lượng. Đáy nào nến vol cao thì không dời sát vì rất dễ bị test lại lần 2.'
+                    },
+                    {
+                        author: 'TraderViet_88',
+                        avatar: 'TV',
+                        date: '1 giờ trước',
+                        text: 'Cảm ơn bài chia sẻ rất thực tế! Tôi thường chốt 50% ở R:R 1:2, phần còn lại thả trôi theo Swing Low để tâm lý nhẹ nhàng nhất.'
+                    }
+                ]
+            }
+        ];
+
+        let currentActiveThreadId = null;
+
+        function getForumThreads() {
+            try {
+                const stored = localStorage.getItem('ptvolume_forum_threads_v3');
+                if (stored) {
+                    return JSON.parse(stored);
+                }
+            } catch(e) {
+                console.error(e);
+            }
+            return DEFAULT_FORUM_THREADS;
+        }
+
+        function saveForumThreads(threads) {
+            try {
+                localStorage.setItem('ptvolume_forum_threads_v3', JSON.stringify(threads));
+            } catch(e) {
+                console.error(e);
+            }
+        }
+
+        function renderForumPosts() {
+            const list = document.getElementById('forumPostsList');
+            if (!list) return;
+
+            const threads = getForumThreads();
+            let html = '';
+
+            threads.forEach(t => {
+                const replyCount = (t.replies && t.replies.length) ? t.replies.length : 0;
+                const likesCount = t.likes || 0;
+
+                html += `
+                    <div class="forum-post-item" onclick="openForumThread('${t.id}')">
+                        <div class="forum-avatar" style="background:${t.avatarBg || 'linear-gradient(135deg, #2962FF, #00E5FF)'};">
+                            ${escapeHtml(t.avatarText || 'TR')}
+                        </div>
+                        <div class="forum-post-content">
+                            <div class="forum-post-header">
+                                <h4 class="forum-post-title">${escapeHtml(t.title)}</h4>
+                                <span class="forum-badge-category">${escapeHtml(t.badge || 'Thảo Luận')}</span>
+                            </div>
+                            <p class="forum-post-snippet">${escapeHtml(t.snippet || (t.content.substring(0, 160) + '...'))}</p>
+                            <div class="forum-meta-bar">
+                                <span><i class="fa-solid fa-user-tie"></i> ${escapeHtml(t.author)}</span>
+                                <span><i class="fa-regular fa-clock"></i> ${escapeHtml(t.time)}</span>
+                                <span style="color:var(--cyan);"><i class="fa-regular fa-comments"></i> ${replyCount} Phản hồi</span>
+                                <span><i class="fa-regular fa-heart"></i> ${likesCount} Thích</span>
+                                <span class="forum-click-prompt">Xem thảo luận <i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            list.innerHTML = html;
+        }
+
+        function openForumThread(threadId) {
+            const threads = getForumThreads();
+            const thread = threads.find(t => t.id === threadId);
+            if (!thread) return;
+
+            currentActiveThreadId = threadId;
+
+            // Increment view count
+            thread.views = (thread.views || 0) + 1;
+            saveForumThreads(threads);
+
+            // Populate Modal
+            document.getElementById('modalThreadBadge').innerHTML = `<i class="fa-solid fa-tag"></i> ${escapeHtml(thread.badge || 'Diễn Đàn Giao Dịch')}`;
+            document.getElementById('modalThreadViews').innerHTML = `<i class="fa-regular fa-eye"></i> ${thread.views} Lượt xem`;
+            document.getElementById('modalThreadTitle').innerText = thread.title;
+            
+            const avatarElem = document.getElementById('modalThreadAvatar');
+            avatarElem.innerText = thread.avatarText || 'TR';
+            avatarElem.style.background = thread.avatarBg || 'linear-gradient(135deg, #2962FF, #00E5FF)';
+
+            document.getElementById('modalThreadAuthor').innerText = thread.author;
+            document.getElementById('modalThreadTag').innerText = thread.tag || 'Thành Viên';
+            document.getElementById('modalThreadTime').innerText = thread.time;
+            document.getElementById('modalThreadContent').innerText = thread.content;
+
+            const likeBtn = document.getElementById('btnLikeThread');
+            const likesElem = document.getElementById('modalThreadLikes');
+            likesElem.innerText = thread.likes || 0;
+            if (thread.likedByMe) {
+                likeBtn.classList.add('liked');
+                likeBtn.innerHTML = `<i class="fa-solid fa-heart"></i> <span id="modalThreadLikes">${thread.likes || 0}</span> Đã thích`;
+            } else {
+                likeBtn.classList.remove('liked');
+                likeBtn.innerHTML = `<i class="fa-regular fa-heart"></i> <span id="modalThreadLikes">${thread.likes || 0}</span> Thích`;
+            }
+
+            renderModalReplies(thread);
+
+            document.getElementById('forumModalOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function renderModalReplies(thread) {
+            const repliesList = document.getElementById('modalRepliesList');
+            const repliesHeading = document.getElementById('modalRepliesHeading');
+            const replies = thread.replies || [];
+
+            repliesHeading.innerText = `Phản hồi cộng đồng (${replies.length})`;
+
+            if (replies.length === 0) {
+                repliesList.innerHTML = `
+                    <div style="padding:16px; text-align:center; color:var(--text-muted); font-size:0.85rem; background:rgba(0,0,0,0.15); border-radius:var(--radius-sm);">
+                        <i class="fa-regular fa-comment-dots" style="font-size:1.4rem; color:var(--cyan); margin-bottom:6px; display:block;"></i>
+                        Chưa có phản hồi nào. Hãy là người đầu tiên chia sẻ góc nhìn kỹ thuật cho chủ đề này!
+                    </div>
+                `;
+                return;
+            }
+
+            let html = '';
+            replies.forEach(r => {
+                const initial = (r.avatar || r.author.substring(0, 2)).toUpperCase();
+                html += `
+                    <div class="forum-reply-card">
+                        <div class="forum-reply-avatar">${escapeHtml(initial)}</div>
+                        <div class="forum-reply-content">
+                            <div class="forum-reply-header">
+                                <span class="forum-reply-author">${escapeHtml(r.author)}</span>
+                                <span class="forum-reply-date">${escapeHtml(r.date || 'Hôm nay')}</span>
+                            </div>
+                            <div class="forum-reply-text">${escapeHtml(r.text)}</div>
+                        </div>
+                    </div>
+                `;
+            });
+            repliesList.innerHTML = html;
+        }
+
+        function closeForumModal() {
+            const modal = document.getElementById('forumModalOverlay');
+            if (modal) modal.classList.remove('active');
+            document.body.style.overflow = '';
+            renderForumPosts();
+        }
+
+        function closeForumModalOnBackdrop(e) {
+            if (e.target.id === 'forumModalOverlay') {
+                closeForumModal();
+            }
+        }
+
+        function handleLikeCurrentThread() {
+            if (!currentActiveThreadId) return;
+            const threads = getForumThreads();
+            const thread = threads.find(t => t.id === currentActiveThreadId);
+            if (!thread) return;
+
+            if (!thread.likedByMe) {
+                thread.likes = (thread.likes || 0) + 1;
+                thread.likedByMe = true;
+            } else {
+                thread.likes = Math.max(0, (thread.likes || 0) - 1);
+                thread.likedByMe = false;
+            }
+
+            saveForumThreads(threads);
+
+            const likeBtn = document.getElementById('btnLikeThread');
+            if (thread.likedByMe) {
+                likeBtn.classList.add('liked');
+                likeBtn.innerHTML = `<i class="fa-solid fa-heart"></i> <span id="modalThreadLikes">${thread.likes}</span> Đã thích`;
+            } else {
+                likeBtn.classList.remove('liked');
+                likeBtn.innerHTML = `<i class="fa-regular fa-heart"></i> <span id="modalThreadLikes">${thread.likes}</span> Thích`;
+            }
+        }
+
+        function focusReplyInput() {
+            const input = document.getElementById('modalReplyText');
+            if (input) {
+                input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                input.focus();
+            }
+        }
+
+        function submitModalReply() {
+            if (!currentActiveThreadId) return;
+            const nameInput = document.getElementById('modalReplyName');
+            const textInput = document.getElementById('modalReplyText');
+
+            const name = nameInput.value.trim() || 'Trader PTvolume';
+            const text = textInput.value.trim();
+
+            if (!text) {
+                alert('Vui lòng nhập nội dung phản hồi của bạn!');
+                return;
+            }
+
+            const threads = getForumThreads();
+            const thread = threads.find(t => t.id === currentActiveThreadId);
+            if (!thread) return;
+
+            if (!thread.replies) thread.replies = [];
+
+            const newReply = {
+                author: name,
+                avatar: name.substring(0, 2).toUpperCase(),
+                date: 'Vừa xong',
+                text: text
+            };
+
+            thread.replies.push(newReply);
+            saveForumThreads(threads);
+
+            renderModalReplies(thread);
+            textInput.value = '';
+            alert('Cảm ơn bạn! Phản hồi của bạn đã được đăng thành công.');
+        }
+
+        function copyThreadShareLink() {
+            const url = window.location.origin + window.location.pathname + '#dien-dan';
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(url).then(() => {
+                    alert('Đã sao chép liên kết bài thảo luận: ' + url);
+                });
+            } else {
+                alert('Liên kết thảo luận: ' + url);
+            }
+        }
+
         function submitForumPost() {
             const name = document.getElementById('forumInputName').value.trim();
             const title = document.getElementById('forumInputTitle').value.trim();
@@ -3350,29 +4096,37 @@
                 return;
             }
 
+            const threads = getForumThreads();
             const initial = name.substring(0, 2).toUpperCase();
-            const newPostHtml = `
-                <div class="forum-post-item" style="border-color:var(--cyan); animation: fadeIn 0.4s ease;">
-                    <div class="forum-avatar" style="background:linear-gradient(135deg, #00E5FF, #2962FF);">${initial}</div>
-                    <div class="forum-post-content">
-                        <h4 class="forum-post-title">${escapeHtml(title)}</h4>
-                        <p class="forum-post-snippet">${escapeHtml(content)}</p>
-                        <div class="forum-meta-bar">
-                            <span><i class="fa-solid fa-user-tie"></i> ${escapeHtml(name)}</span>
-                            <span><i class="fa-regular fa-clock"></i> Vừa xong</span>
-                            <span style="color:var(--cyan);"><i class="fa-regular fa-comments"></i> 0 Phản hồi</span>
-                        </div>
-                    </div>
-                </div>
-            `;
+            const newId = 'th-' + Date.now();
 
-            const list = document.getElementById('forumPostsList');
-            list.insertAdjacentHTML('afterbegin', newPostHtml);
+            const newThread = {
+                id: newId,
+                title: title,
+                badge: 'Thảo Luận Mới',
+                author: name,
+                tag: 'Thành Viên',
+                avatarText: initial,
+                avatarBg: 'linear-gradient(135deg, #00E5FF, #2962FF)',
+                time: 'Vừa xong',
+                views: 1,
+                likes: 0,
+                likedByMe: false,
+                snippet: content.substring(0, 160) + (content.length > 160 ? '...' : ''),
+                content: content,
+                replies: []
+            };
+
+            threads.unshift(newThread);
+            saveForumThreads(threads);
+            renderForumPosts();
 
             document.getElementById('forumInputName').value = '';
             document.getElementById('forumInputTitle').value = '';
             document.getElementById('forumInputContent').value = '';
-            alert('Đăng bài thành công! Thảo luận của bạn đã xuất hiện trên Diễn đàn PTvolume.');
+
+            alert('Đăng bài thành công! Đang mở bài thảo luận của bạn...');
+            openForumThread(newId);
         }
 
         // 8. Comments Submission & LocalStorage Persistence
@@ -3721,6 +4475,7 @@
             updateLangUI(currentLang);
             checkUserSession();
             loadSavedComments();
+            renderForumPosts();
             loadTradingViewChart();
         });
     </script>
