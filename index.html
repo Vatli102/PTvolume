@@ -1345,60 +1345,6 @@
             margin-bottom: 20px;
         }
 
-        /* --- MODULE 4: THƯ VIỆN (LIBRARY & CASE STUDIES) --- */
-        .case-study-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            transition: var(--transition-smooth);
-        }
-
-        .case-study-card:hover {
-            border-color: var(--cyan);
-            transform: translateY(-3px);
-            background: var(--bg-card-hover);
-        }
-
-        .case-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .case-tag {
-            font-size: 0.72rem;
-            font-weight: 800;
-            padding: 3px 8px;
-            border-radius: 4px;
-            background: rgba(0, 229, 255, 0.12);
-            color: var(--cyan);
-        }
-
-        .case-result {
-            font-family: var(--font-mono);
-            font-size: 0.8rem;
-            font-weight: 700;
-        }
-
-        .case-result.win { color: #26E7A6; }
-        .case-result.lesson { color: #FF707E; }
-
-        .case-title {
-            font-size: 1rem;
-            font-weight: 700;
-            color: #fff;
-        }
-
-        .case-desc {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            line-height: 1.5;
-        }
-
         /* --- MODULE 5: DIỄN ĐÀN (FORUM & COMMUNITY) --- */
         .forum-container {
             display: grid;
@@ -2719,14 +2665,7 @@
                     <span class="nav-badge live">Báo cáo</span>
                 </a>
 
-                <!-- 4. THƯ VIỆN -->
-                <a href="#thu-vien" class="sidebar-nav-item" onclick="highlightNav(this)">
-                    <div class="nav-icon-wrap"><i class="fa-solid fa-landmark"></i></div>
-                    <span class="nav-text">Thư viện</span>
-                    <span class="nav-badge">Dữ liệu</span>
-                </a>
-
-                <!-- 5. DIỄN ĐÀN -->
+                <!-- 3. DIỄN ĐÀN -->
                 <a href="#dien-dan" class="sidebar-nav-item" onclick="highlightNav(this)">
                     <div class="nav-icon-wrap"><i class="fa-solid fa-comments"></i></div>
                     <span class="nav-text">Diễn đàn</span>
@@ -2896,10 +2835,10 @@
                             <div class="action-card-title">2. Phân Tích</div>
                             <div class="action-card-desc">Báo cáo bóc tách cấu trúc giá, Order Flow và khối lượng giao dịch.</div>
                         </a>
-                        <a href="#thu-vien" class="hero-action-card">
-                            <div class="action-card-icon" style="color:#F0B90B; background:rgba(240,185,11,0.15);"><i class="fa-solid fa-landmark"></i></div>
-                            <div class="action-card-title">3. Thư Viện</div>
-                            <div class="action-card-desc">Case study thực chiến, nhật ký lệnh và file quản trị vốn.</div>
+                        <a href="#dien-dan" class="hero-action-card">
+                            <div class="action-card-icon" style="color:#00E5FF; background:rgba(0,229,255,0.15);"><i class="fa-solid fa-comments"></i></div>
+                            <div class="action-card-title">3. Diễn Đàn</div>
+                            <div class="action-card-desc">Thảo luận kỹ thuật, hỏi đáp thực chiến và chia sẻ nhận định thị trường.</div>
                         </a>
                         <a href="#cong-cu" class="hero-action-card">
                             <div class="action-card-icon" style="color:#FF707E; background:rgba(242,54,69,0.15);"><i class="fa-solid fa-screwdriver-wrench"></i></div>
@@ -3020,56 +2959,6 @@
                     </div>
                 </section>
 
-                <!-- ══════════════════════════════════════════════════════════
-                     MỤC 4: THƯ VIỆN (LIBRARY & CASE STUDIES)
-                     ══════════════════════════════════════════════════════════ -->
-                <section id="thu-vien" class="full-section">
-                    <div class="section-header-bar">
-                        <div class="section-headline">
-                            <div class="section-kicker"><i class="fa-solid fa-box-archive"></i> Kho Tài Liệu & Nhật Ký</div>
-                            <h2 class="section-title">🏛️ Thư Viện: Case Study Thực Chiến & File Quản Trị Vốn</h2>
-                            <p class="section-subtitle">Tổng hợp các tình huống giao dịch thực tế trên thị trường, phân tích lệnh thắng/thua để rút kinh nghiệm.</p>
-                        </div>
-                    </div>
-
-                    <div class="cards-grid-4">
-                        <div class="case-study-card">
-                            <div class="case-header">
-                                <span class="case-tag">DẦU THÔ WTI</span>
-                                <span class="case-result win">+250 Bước Giá</span>
-                            </div>
-                            <h4 class="case-title">Bắt Nhịp Rơi Sau Nến Upthrust Khung H4</h4>
-                            <p class="case-desc">Bắt trọn nhịp điều chỉnh của Dầu thô sau thanh nến Upthrust tại vùng kháng cự kết hợp nến Stopping Volume xác nhận.</p>
-                        </div>
-
-                        <div class="case-study-card">
-                            <div class="case-header">
-                                <span class="case-tag">ĐẬU TƯƠNG ZS</span>
-                                <span class="case-result lesson">Bài Học Vào Lệnh Sớm</span>
-                            </div>
-                            <h4 class="case-title">Phân Tích Sai Lầm Khi Mua Trước Nến No Supply</h4>
-                            <p class="case-desc">Đánh giá rủi ro khi vội vàng bắt đáy ở Pha C Wyckoff mà chưa chờ thanh nến kiểm định cạn cung (No Supply Bar) xác nhận.</p>
-                        </div>
-
-                        <div class="case-study-card">
-                            <div class="case-header">
-                                <span class="case-tag">NGÔ ZC</span>
-                                <span class="case-result win">Điểm Mua Chuẩn VSA</span>
-                            </div>
-                            <h4 class="case-title">Mô Hình Thu Hẹp Biến Động (VCP) & Nến Bứt Phá</h4>
-                            <p class="case-desc">Hành động giá nén chặt với khối lượng cạn kiệt trước khi xuất hiện nến xác nhận dòng tiền lớn đẩy giá vượt đỉnh.</p>
-                        </div>
-
-                        <div class="case-study-card">
-                            <div class="case-header">
-                                <span class="case-tag">EXCEL QUẢN TRỊ</span>
-                                <span class="case-result win">Mẫu File NKGD.xlsx</span>
-                            </div>
-                            <h4 class="case-title">Bảng Tính Quản Trị Lệnh & Theo Dõi Drawdown</h4>
-                            <p class="case-desc">Tải bảng tính Excel tự động tính toán tỷ lệ Thắng (Winrate), Tỷ lệ Lời/Lỗ (R:R), Max Drawdown và kỳ vọng toán học.</p>
-                        </div>
-                    </div>
-                </section>
 
                 <!-- ══════════════════════════════════════════════════════════
                      MỤC 5: DIỄN ĐÀN (FORUM & THẢO LUẬN TRADER)
@@ -3411,7 +3300,6 @@
                         <ul>
                             <li><a href="#hoc-tap">Giáo Trình Naked Chart</a></li>
                             <li><a href="#phan-tich">Báo Cáo Phân Tích</a></li>
-                            <li><a href="#thu-vien">Thư Viện Case Study</a></li>
                             <li><a href="#tu-sach">Tủ Sách Tài Chính</a></li>
                             <li><a href="#tam-li">Tâm Lí & Kỷ Luật Trader</a></li>
                         </ul>
