@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+    <!-- Trang chu PTvolume.com -->
+    <url>
+        <loc>https://ptvolume.com/</loc>
+        <lastmod>2026-08-21</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Bai viet phan tich & Chuyen muc -->
+    <url>
+        <loc>https://ptvolume.com/posts/jesse-livermore-cuoc-doi-va-bai-hoc-song-con.html</loc>
+        <lastmod>2026-08-21</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Trang thong tin cot loi -->
+    <url>
+        <loc>https://ptvolume.com/pages/about.html</loc>
+        <lastmod>2026-08-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://ptvolume.com/pages/contact.html</loc>
+        <lastmod>2026-08-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://ptvolume.com/pages/disclaimer.html</loc>
+        <lastmod>2026-08-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://ptvolume.com/pages/privacy.html</loc>
+        <lastmod>2026-08-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://ptvolume.com/pages/terms.html</loc>
+        <lastmod>2026-08-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+</urlset>

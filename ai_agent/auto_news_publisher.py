@@ -34,6 +34,14 @@ POSTS_INDEX_JSON = os.path.join(POSTS_DIR, "posts.json")
 
 os.makedirs(POSTS_DIR, exist_ok=True)
 
+try:
+    from sitemap_generator import generate_sitemap
+except ImportError:
+    try:
+        from ai_agent.sitemap_generator import generate_sitemap
+    except ImportError:
+        generate_sitemap = None
+
 RSS_FEEDS = [
     {
         "name": "Reuters / Bloomberg / Financial Press",
@@ -995,6 +1003,14 @@ def run_auto_publisher():
         "excerpt": payload.get("lead_excerpt"),
         "read_time": payload.get("read_time")
     })
+
+    # 6. Automatically update sitemap.xml for Google Crawlers
+    if generate_sitemap:
+        try:
+            generate_sitemap()
+            print("[+] Updated sitemap.xml for fast Google indexing.")
+        except Exception as e:
+            print(f"[!] Warning: Failed to update sitemap: {e}")
 
     print("\n" + "=" * 70)
     print(f"PUBLISHED SUCCESSFULLY: {payload.get('title')}")
