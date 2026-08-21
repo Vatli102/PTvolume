@@ -1,0 +1,239 @@
+====================================================================================================
+               LỘ TRÌNH CHIẾN LƯỢC XÂY DỰNG NỘI DUNG CHUYÊN SÂU CHO PTVOLUME.COM
+                 Chuyên Trang Naked Chart, Wyckoff & Volume Spread Analysis (VSA)
+====================================================================================================
+Tên tài liệu: LỘ TRÌNH 1 (Kế hoạch 90 ngày xuất bản nội dung hàng ngày - 1 bài/ngày)
+Mục tiêu: Xây dựng hệ sinh thái nội dung tài chính chuẩn Investopedia, bài bản cho người mới (F0)
+          và chuyên sâu cho Trader chuyên nghiệp; đảm bảo tăng trưởng SEO, lưu lượng truy cập và cộng đồng.
+Định dạng xuất bản: Bài viết phân tích chuẩn HTML tại ptvolume.com/posts/ + Thảo luận Diễn Đàn.
+====================================================================================================
+
+I. TRIẾT LÝ VÀ TIÊU CHUẨN XUẤT BẢN CỦA PTVOLUME.COM
+----------------------------------------------------------------------------------------------------
+1. TIÊU CHUẨN PHONG CÁCH INVESTOPEDIA FINANCIAL:
+   - Bài viết luôn sử dụng thuật ngữ tài chính quốc tế chuẩn mực: Naked Price Action, Wyckoff Method,
+     Volume Spread Analysis (VSA), Order Flow, Smart Money Concepts, Supply & Demand, Liquidity Hunt,
+     Point of Control (POC), Fair Value Gap, Entry, Stop Loss (SL), Take Profit (TP), Risk-Reward (R:R).
+   - Nội dung đi thẳng vào bản chất cung - cầu và khối lượng giao dịch thực tế, loại bỏ hoàn toàn các
+     chỉ báo trễ (Lagging Indicators) gây nhiễu.
+
+2. CẤU TRÚC BÀI VIẾT CHUẨN 6 PHẦN BẮT BUỘC:
+   - Phần 1 (Executive Summary / Key Takeaways): 3-4 gạch đầu dòng đúc kết ngắn gọn giá trị bài viết.
+   - Phần 2 (Market Context & Background): Bối cảnh thị trường hoặc nền tảng lý thuyết gốc.
+   - Phần 3 (Naked Chart & Volume Breakdown): Bóc tách chi tiết hành vi nến và khối lượng giao dịch.
+   - Phần 4 (Institutional Footprint): Giải mã mục đích của Nhà tạo lập thị trường / Smart Money.
+   - Phần 5 (Actionable Trade Setup): Thiết lập giao dịch thực tế (Điều kiện kích hoạt, Entry, SL, TP).
+   - Phần 6 (Risk Management & Community Discussion): Bài học tâm lý + Câu hỏi gợi mở thảo luận.
+
+3. TIÊU CHUẨN HÌNH ẢNH & BẢN QUYỀN:
+   - Mọi hình ảnh biểu đồ đều phải có khung Watermark đóng dấu thương hiệu "PTvolume.com".
+
+----------------------------------------------------------------------------------------------------
+II. MA TRẬN PHÂN PHỔI NỘI DUNG THEO TUẦN (7 NGÀY / 7 CHỦ ĐỀ CỐT LÕI)
+----------------------------------------------------------------------------------------------------
+- THỨ HAI: [DÒNG TIỀN VĨ MÔ & LIÊN THỊ TRƯỜNG] (Macro & Intermarket Order Flow)
+  -> Phân tích dòng tiền quốc tế, chỉ số DXY, Lợi suất Trái phiếu Mỹ, Vàng (XAU/USD), Dầu thô (WTI), Fed Policy.
+
+- THỨ BA: [GIÁO TRÌNH NAKED CHART - CHO NGƯỜI MỚI] (Beginner Price Action Mastery)
+  -> Cấu trúc nến Nhật, vùng phản ứng Cung Cầu, kháng cự hỗ trợ động, mô hình giá nguyên bản.
+
+- THỨ TƯ: [CHUYÊN SÂU WYCKOFF & VSA THỰC CHIẾN] (Advanced Wyckoff & Volume Spread Analysis)
+  -> Bóc tách 5 Pha tích lũy/phân phối (Phase A - E), phân tích từng thanh nến VSA đặc thù.
+
+- THỨ NĂM: [CASE STUDY BÓC TÁCH LỆNH THỰC CHIẾN] (Real-Market Trade Breakdown)
+  -> Phân tích chi tiết các case study vào lệnh thực tế trên Vàng, Ngoại hối, Hàng hóa, Cổ phiếu (Thắng & Thua).
+
+- THỨ SÁU: [TOÁN HỌC GIAO DỊCH & QUẢN TRỊ RỦI RO] (Risk Engineering & Math of Trading)
+  -> Tính toán quy mô vị thế (Position Sizing), Tỷ lệ R:R, Kỳ vọng toán học (Positive Expectancy), Drawdown.
+
+- THỨ BẢY: [TỦ SÁCH KINH ĐIỂN & TÂM LÝ GIAO DỊCH] (Master Classics & Trader Psychology)
+  -> Đúc kết tinh hoa từ Jesse Livermore, Richard Wyckoff, Bob Volman, Mark Douglas, Mark Minervini.
+
+- CHỦ NHẬT: [DIỄN ĐÀN TRADER & KẾ HOẠCH TUẦN MỚI] (Community Forum & Trading Plan)
+  -> Tổng kết tuần, đăng chủ đề thảo luận kỹ thuật lên Diễn đàn PTvolume và lên kế hoạch giao dịch tuần tới.
+
+====================================================================================================
+III. CHI TIẾT LỘ TRÌNH 90 NGÀY XUẤT BẢN (1 NGÀY / 1 BÀI CỤ THỂ)
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+THÁNG THỨ NHẤT: XÂY DỰNG NỀN MÓNG PRICE ACTION & NGUYÊN LÝ KHỐI LƯỢNG (NGÀY 1 - 30)
+----------------------------------------------------------------------------------------------------
+Mục tiêu: Định hình tư duy giao dịch không chỉ báo trễ, làm chủ cấu trúc nến và bản chất khối lượng.
+
+Tuần 1: Khởi Động Naked Chart & Bản Chất Khối Lượng
+- Ngày 01 (Thứ 2): Báo Cáo Tuần: Dòng tiền tổ chức luân chuyển giữa Đồng USD, Vàng và Lợi suất trái phiếu.
+- Ngày 02 (Thứ 3): Naked Chart là gì? Tại sao các chỉ báo trễ (RSI, MACD) khiến trader thua lỗ dài hạn?
+- Ngày 03 (Thứ 4): Ba Quy luật cốt lõi của Richard Wyckoff: Cung - Cầu, Nguyên nhân - Kết quả, Nỗ lực - Kết quả.
+- Ngày 04 (Thứ 5): Case Study: Bóc tách cấu trúc nến nhấn chìm (Engulfing) kết hợp Volume đột biến trên Vàng.
+- Ngày 05 (Thứ 6): Toán học giao dịch: Vì sao tỷ lệ thắng 40% vẫn kiếm được lợi nhuận khủng với R:R 1:3?
+- Ngày 06 (Thứ 7): Jesse Livermore: Bài học đầu đời tại các sàn Bucket Shops và nghệ thuật đọc băng giá (Tape Reading).
+- Ngày 07 (Chủ Nhật): Bàn tròn kỹ thuật: Khảo sát thói quen sử dụng chỉ báo của trader và cách cai nghiện Indicator.
+
+Tuần 2: Cấu Trúc Thị Trường & Vùng Giá Trị
+- Ngày 08 (Thứ 2): Vĩ mô: Đọc vị chỉ số Dollar Index (DXY) và tác động dây chuyền tới giá Hàng hóa quốc tế.
+- Ngày 09 (Thứ 3): Cấu trúc thị trường: Cách xác định chính xác Đỉnh/Đáy quan trọng (Swing High / Swing Low).
+- Ngày 10 (Thứ 4): VSA Căn bản: Spread là gì? Mối quan hệ tương quan giữa Thân nến và Khối lượng giao dịch.
+- Ngày 11 (Thứ 5): Case Study: Đọc vị pha phục hồi kỹ thuật thất bại của Dầu Thô WTI qua góc nhìn VSA.
+- Ngày 12 (Thứ 6): Quản trị rủi ro: Công thức tính kích thước vị thế (Position Sizing) chuẩn xác theo % vốn.
+- Ngày 13 (Thứ 7): Bob Volman: Khái niệm "Vùng nén tích lũy" (Build-up) trước ngưỡng cản then chốt.
+- Ngày 14 (Chủ Nhật): Diễn đàn thảo luận: Nhận diện vùng hỗ trợ giả lập và bẫy thanh khoản của Market Maker.
+
+Tuần 3: Đọc Vị Tín Hiệu Nến Đơn VSA (Single Bar Analysis)
+- Ngày 15 (Thứ 2): Vĩ mô: Mối liên hệ giữa thanh khoản ngân hàng trung ương và chu kỳ đẩy giá tài sản.
+- Ngày 16 (Thứ 3): Nến Pin Bar & Fakey: Phân biệt cú từ chối giá thực sự và bẫy dụ lệnh (Trapped Traders).
+- Ngày 17 (Thứ 4): Nến No Demand Bar: Dấu hiệu dòng tiền lớn từ chối mua đẩy giá lên cao hơn.
+- Ngày 18 (Thứ 5): Case Study: Bắt lệnh Sell Vàng chuẩn chỉ sau khi xuất hiện nến No Demand trên đỉnh H4.
+- Ngày 19 (Thứ 6): Quản trị rủi ro: Cách thiết lập mức Stop Loss hợp lý dựa trên cấu trúc biến động nến thực tế.
+- Ngày 20 (Thứ 7): Mark Douglas (Trading in the Zone): Chấp nhận rủi ro hoàn toàn trước khi bấm nút vào lệnh.
+- Ngày 21 (Chủ Nhật): Diễn đàn thảo luận: Bạn xử lý thế nào khi giá quay lại quét Stop Loss rồi mới chạy đúng hướng?
+
+Tuần 4: Thanh Nến Hấp Thụ Cung & Dừng Xu Hướng
+- Ngày 22 (Thứ 2): Vĩ mô: Phân tích báo cáo vị thế giao dịch COT (Commitment of Traders) của các quỹ lớn.
+- Ngày 23 (Thứ 3): Nến Inside Bar & Vùng phá vỡ: Kỹ thuật giao dịch bứt phá của Bob Volman.
+- Ngày 24 (Thứ 4): Nến No Supply Bar: Dấu hiệu cạn kiệt nguồn cung bán tháo tại đáy hỗ trợ.
+- Ngày 25 (Thứ 5): Case Study: Điểm vào lệnh Buy Ngô (ZC) theo mô hình No Supply Bar xác nhận đáy.
+- Ngày 26 (Thứ 6): Bảng tính Excel NKGD: Hướng dẫn sử dụng file nhật ký để kiểm soát mức sụt giảm (Max Drawdown).
+- Ngày 27 (Thứ 7): Jesse Livermore: Nguyên tắc "Tiền chỉ được tạo ra khi bạn kiên nhẫn ngồi chờ" (Sitting Tight).
+- Ngày 28 (Chủ Nhật): Diễn đàn thảo luận: Chia sẻ biểu đồ nhật ký giao dịch tuần qua của bạn.
+- Ngày 29 (Thứ 2): Tổng kết tháng 1: Bản đồ tư duy (Mindmap) hệ thống Naked Price Action & VSA căn bản.
+- Ngày 30 (Thứ 3): Bài kiểm tra thực hành: 5 bài tập nhận diện thanh nến VSA trên đồ thị thực tế.
+
+----------------------------------------------------------------------------------------------------
+THÁNG THỨ HAI: BÓC TÁCH TOÀN DIỆN PHƯƠNG PHÁP WYCKOFF & BẪY GIÁ (NGÀY 31 - 60)
+----------------------------------------------------------------------------------------------------
+Mục tiêu: Nắm vững cấu trúc 5 Pha Wyckoff, nhận diện các điểm bẫy Spring / Upthrust và hấp thụ cung cầu.
+
+Tuần 5: Chu Kỳ Tích Lũy Wyckoff (Accumulation Schematic)
+- Ngày 31 (Thứ 4): Tổng quan sơ đồ Tích lũy Wyckoff: Phân biệt 5 Pha (Pha A, B, C, D, E) chuẩn mực.
+- Ngày 32 (Thứ 5): Case Study: Nhận diện Pha A kết thúc xu hướng giảm với nến Selling Climax (SC) & Automatic Rally (AR).
+- Ngày 33 (Thứ 6): Toán học: Tối ưu tỷ lệ Sharpe và kỳ vọng lợi nhuận trong giai đoạn thị trường đi ngang (Range-bound).
+- Ngày 34 (Thứ 7): Richard Wyckoff: Triết lý đằng sau "Kẻ thao túng vô hình" (The Composite Operator).
+- Ngày 35 (Chủ Nhật): Diễn đàn thảo luận: Cách phân biệt giữa Tái tích lũy (Re-accumulation) và Phân phối đỉnh.
+- Ngày 36 (Thứ 2): Vĩ mô: Chu kỳ thanh khoản liên thị trường tác động đến độ dài của Pha Tích lũy ra sao?
+- Ngày 37 (Thứ 3): Nền tảng: Khái niệm "Đường biên giao dịch" (Trading Range - TR) và cách kẻ vùng Kháng cự/Hỗ trợ chuẩn.
+
+Tuần 6: Tuyệt Kỹ Bắt Điểm Rũ Bỏ Spring (Pha C Wyckoff)
+- Ngày 38 (Thứ 4): Spring là gì? Phân loại Spring Type 1, Type 2, Type 3 và điều kiện kích hoạt lệnh Mua.
+- Ngày 39 (Thứ 5): Case Study: Bắt trọn con sóng tăng 300 pips Vàng XAU/USD sau cú Spring quét thanh khoản H1.
+- Ngày 40 (Thứ 6): Kỹ thuật dời Stop Loss hòa vốn (Breakeven): Khi nào nên dời và khi nào KHÔNG ĐƯỢC dời?
+- Ngày 41 (Thứ 7): David Weis: Sử dụng sóng Weis Wave để lượng hóa khối lượng mua/bán trong từng nhịp đẩy.
+- Ngày 42 (Chủ Nhật): Diễn đàn thảo luận: Bạn thường vào lệnh ngay cú Spring hay đợi nến Test kiểm định cạn vol?
+- Ngày 43 (Thứ 2): Vĩ mô: Sự bất cân xứng thông tin khi tin tức xấu bùng nổ nhưng giá lại tạo Spring đảo chiều.
+- Ngày 44 (Thứ 3): Điểm tựa cuối cùng (Last Point of Support - LPS): Tín hiệu gia tăng khối lượng an toàn trong Pha D.
+
+Tuần 7: Chu Kỳ Phân Phối & Bẫy Giá Upthrust (Distribution & UTAD)
+- Ngày 45 (Thứ 4): Sơ đồ Phân phối Wyckoff: Dấu hiệu nhận biết Smart Money thoát hàng trong im lặng.
+- Ngày 46 (Thứ 5): Case Study: Cú lừa thế kỷ UTAD (Upthrust After Distribution) trên chỉ số chứng khoán Mỹ.
+- Ngày 47 (Thứ 6): Quản trị rủi ro: Quy tắc 2% và bài toán bảo toàn sinh mạng tài khoản khi gặp chuỗi thua liên tiếp.
+- Ngày 48 (Thứ 7): Tom Williams (Master the Markets): Khái niệm "Điểm suy yếu" (Sign of Weakness - SOW).
+- Ngày 49 (Chủ Nhật): Diễn đàn thảo luận: Cách kiềm chế tâm lý FOMO mua đuổi khi gặp nến Breakout giả tạo đỉnh.
+- Ngày 50 (Thứ 2): Vĩ mô: Mối tương quan nghịch đảo giữa chính sách thắt chặt tiền tệ và giai đoạn Phân phối.
+- Ngày 51 (Thứ 3): Nến Stopping Volume chuyên sâu: Bóc tách lực mua đối ứng hấp thụ toàn bộ áp lực xả hàng.
+
+Tuần 8: Bẫy Thanh Khoản & Kỹ Thuật Đọc Khối Lượng Tinh Gọn
+- Ngày 52 (Thứ 4): Bẫy giá Shakeout (Rũ bỏ diện rộng): Phân biệt Shakeout thông thường và Spring cổ điển.
+- Ngày 53 (Thứ 5): Case Study: Phân tích lệnh Short Đậu Tương (ZS) sau khi xuất hiện nến Upthrust tại kháng cự khung D1.
+- Ngày 54 (Thứ 6): Quản trị tâm lý: Làm sao để giữ lệnh trọn vẹn trong Pha E (Markup) mà không chốt non?
+- Ngày 55 (Thứ 7): Jesse Livermore: Khái niệm "Điểm Then Chốt" (Pivotal Points) và phương pháp giải ngân từng phần.
+- Ngày 56 (Chủ Nhật): Diễn đàn thảo luận: Bài học nhớ đời nhất của bạn về việc bị bẫy giá quét râu nến.
+- Ngày 57 (Thứ 2): Vĩ mô: Hiện tượng "Sell the rumor, Buy the news" dưới lăng kính gom hàng của dòng tiền lớn.
+- Ngày 58 (Thứ 3): Kỹ thuật quan sát nến Test: 3 tiêu chí để xác nhận nến kiểm định thành công trước khi vào lệnh.
+- Ngày 59 (Thứ 4): Sự phân kỳ giữa Giá và Khối lượng (Effort vs Result Divergence): Tín hiệu cảnh báo đảo chiều sớm.
+- Ngày 60 (Thứ 5): Case Study tổng hợp: Bóc tách toàn diện 1 vòng đời cổ phiếu từ Tích lũy -> Đẩy giá -> Phân phối -> Đè giá.
+
+----------------------------------------------------------------------------------------------------
+THÁNG THỨ BA: NÂNG CAO ORDER FLOW, QUẢN TRỊ DANH MỤC & TÂM THẾ BẬC THẦY (NGÀY 61 - 90)
+----------------------------------------------------------------------------------------------------
+Mục tiêu: Đưa trader lên đẳng cấp chuyên nghiệp với Order Flow, quản trị vốn toán học và tâm lý sắt đá.
+
+Tuần 9: Nhập Môn Dòng Lệnh Chuyên Sâu (Order Flow & Volume Profile)
+- Ngày 61 (Thứ 6): Khái niệm Order Flow: Sổ lệnh Limit Orders vs Khớp lệnh thị trường Market Orders.
+- Ngày 62 (Thứ 7): Bob Volman: Tuyệt chiêu xử lý các vùng nén giá giả mạo (False Breakout Pro-trap).
+- Ngày 63 (Chủ Nhật): Diễn đàn thảo luận: Bạn theo trường phái đọc Nến trần hay kết hợp thêm Volume Profile?
+- Ngày 64 (Thứ 2): Vĩ mô: Theo dõi dòng tiền quốc tế thông qua thị trường Repo và bảng cân đối kế toán Fed.
+- Ngày 65 (Thứ 3): Volume Profile là gì? Điểm kiểm soát khối lượng (POC) và vùng giá trị cao/thấp (VAH/VAL).
+- Ngày 66 (Thứ 4): CVD (Cumulative Volume Delta): Phát hiện sự phân kỳ giữa lực mua chủ động và hành động giá.
+- Ngày 67 (Thứ 5): Case Study: Bắt đáy Bitcoin / Vàng cực nhạy nhờ tín hiệu phân kỳ hấp thụ Delta (Absorption).
+
+Tuần 10: Chiến Thuật Giao Dịch Đa Khung Thời Gian (Multi-Timeframe Mastery)
+- Ngày 68 (Thứ 6): Ma trận đa khung thời gian: Kết hợp xu hướng D1, cấu trúc H4 và điểm kích hoạt lệnh M15/M5.
+- Ngày 69 (Thứ 7): Mark Minervini: Tiêu chí lựa chọn điểm Pivot thu hẹp biến động (VCP Pattern).
+- Ngày 70 (Chủ Nhật): Diễn đàn thảo luận: Những lỗi sai phổ biến nhất khi soi quá nhiều khung thời gian cùng lúc.
+- Ngày 71 (Thứ 2): Vĩ mô: Phân tích sự dịch chuyển của đường cong lợi suất (Yield Curve) và chu kỳ suy thoái.
+- Ngày 72 (Thứ 3): Kỹ thuật "Khối lệnh cản trở" (Order Block) dưới góc nhìn cung cầu thuần túy của Wyckoff.
+- Ngày 73 (Thứ 4): Tín hiệu "Hấp thụ trên đỉnh" (Absorption at Resistance): Chuẩn bị cho một pha Breakout bùng nổ.
+- Ngày 74 (Thứ 5): Case Study: Bắt nhịp bứt phá đỉnh lịch sử của Vàng sau giai đoạn Absorption chặt chẽ.
+
+Tuần 11: Thiết Kế Hệ Thống Giao Dịch Toàn Diện (Trading System Blueprint)
+- Ngày 75 (Thứ 6): Bản thiết kế Checklist 5 bước trước khi vào bất kỳ một lệnh giao dịch nào.
+- Ngày 76 (Thứ 7): Jesse Livermore: Quy tắc quản trị vốn nghiêm ngặt - Rút 50% lợi nhuận ra khỏi sàn định kỳ.
+- Ngày 77 (Chủ Nhật): Diễn đàn thảo luận: Chia sẻ quy tắc vào lệnh bất di bất dịch trong Trading Plan của bạn.
+- Ngày 78 (Thứ 2): Vĩ mô: Quản trị biến động tài khoản trong những tuần công bố dữ liệu Non-Farm và CPI của Mỹ.
+- Ngày 79 (Thứ 3): Kỹ thuật "Nhồi lệnh thuận xu hướng" (Pyramiding): Cách nhân đôi lợi nhuận mà không tăng rủi ro.
+- Ngày 80 (Thứ 4): Nhận diện các bẫy giá mở phiên (Opening Range Traps) ở các phiên London và New York.
+- Ngày 81 (Thứ 5): Case Study: Toàn bộ quá trình từ lúc phân tích, vào lệnh, nhồi lệnh và chốt lời 1 thương vụ lớn.
+
+Tuần 12: Kỷ Luật Thép, Tâm Lý Bất Biến & Đạt Trạng Thái Nhất Quán
+- Ngày 82 (Thứ 6): Toán học: Mô hình tiêu chuẩn Kelly và cách áp dụng thông minh để tối ưu đòn bẩy.
+- Ngày 83 (Thứ 7): Mark Douglas: Khái niệm "Tâm trí không thành kiến" (Thinking in Probabilities).
+- Ngày 84 (Chủ Nhật): Diễn đàn thảo luận: Cách bạn vượt qua cảm giác cay cú muốn trả thù sàn (Revenge Trading).
+- Ngày 85 (Thứ 2): Báo cáo vĩ mô quý: Định hình bức tranh dòng tiền lớn cho quý tiếp theo.
+- Ngày 86 (Thứ 3): Chiến thuật xử lý lệnh khi thị trường bất ngờ đảo chiều chống lại phân tích của bạn.
+- Ngày 87 (Thứ 4): 10 Quy tắc vàng đúc kết từ 100 năm phát triển của phương pháp Naked Chart & Wyckoff.
+- Ngày 88 (Thứ 5): Case Study tổng hợp: 5 sai lầm lớn nhất khiến trader mất tiền và cách khắc phục triệt để.
+- Ngày 89 (Thứ 6): Hướng dẫn thiết lập không gian làm việc chuyên nghiệp và nhật ký theo dõi kỷ luật hàng ngày.
+- Ngày 90 (Thứ 7): Đúc kết lộ trình 90 ngày: Cẩm nang toàn thư Naked Chart & VSA Mastery của PTvolume.com.
+
+====================================================================================================
+IV. QUY TRÌNH 6 BƯỚC SẢN XUẤT 1 BÀI VIẾT CHẤT LƯỢNG MỖI NGÀY (30 - 45 PHÚT)
+====================================================================================================
+
+BƯỚC 1: TRA CỨU CHỦ ĐỀ TRONG LỘ TRÌNH (Thời gian: 2 phút)
+- Mở file "lộ trình 1.txt", xem chủ đề của ngày hôm nay và tài liệu tham khảo tương ứng trong thư mục "Tủ sách tài chính/".
+
+BƯỚC 2: THU THẬP TÀI LIỆU NGUỒN & BIỂU ĐỒ (Thời gian: 8 phút)
+- Lấy ví dụ biểu đồ nến thực tế (từ TradingView hoặc các case study trong thư mục DuLieu/).
+- Lưu ý: Xuất ảnh biểu đồ sạch, rõ ràng các thanh nến và volume.
+
+BƯỚC 3: SOẠN THẢO NỘI DUNG CHUYÊN SÂU (Thời gian: 15-20 phút)
+- Soạn thảo theo đúng cấu trúc 6 phần chuẩn Investopedia:
+  + Key Takeaways (Tóm tắt nhanh)
+  + Bối cảnh & Lý thuyết
+  + Bóc tách Nến + Khối lượng
+  + Giải mã Smart Money
+  + Setup vào lệnh & Quản trị rủi ro
+  + Câu hỏi gợi mở cộng đồng
+- Sử dụng AI Agent hỗ trợ viết bài: Có thể dùng script `ai_agent/auto_news_publisher.py` hoặc prompt lệnh để tạo bài viết mẫu chuẩn HTML.
+
+BƯỚC 4: ĐÓNG DẤU WATERMARK & TỐI ƯU HÌNH ẢNH (Thời gian: 5 phút)
+- Đảm bảo ảnh minh họa được lưu vào `assets/images/` và có bọc thẻ watermark `.watermark-box` mang tên PTvolume.com.
+
+BƯỚC 5: XUẤT BẢN FILE HTML & TỰ ĐỘNG CẬP NHẬT SITEMAP (Thời gian: 5 phút)
+- Lưu file bài viết vào thư mục `posts/[YYYY-MM-DD-slug-bai-viet].html`.
+- Cập nhật bài mới lên trang chủ `index.html`.
+- Chạy script `py ai_agent/sitemap_generator.py` để sitemap.xml tự động nhận bài mới gửi lên Google Search Console.
+
+BƯỚC 6: KÍCH HOẠT THẢO LUẬN TRÊN DIỄN ĐÀN (Thời gian: 3 phút)
+- Lấy tiêu đề và 1 câu hỏi trọng tâm từ bài viết vừa đăng, truy cập mục "💬 Diễn Đàn: Thảo Luận & Hỏi Đáp Kỹ Thuật" trên trang chủ PTvolume.com và đăng 1 chủ đề mới.
+- Khuyến khích trader phản hồi góc nhìn, tạo luồng tương tác sôi động cho website.
+
+====================================================================================================
+V. CÔNG CỤ & TÀI NGUYÊN SẴN CÓ TRONG DỰ ÁN ĐỂ HỖ TRỢ XUẤT BẢN
+====================================================================================================
+1. Kho Ebook gốc làm dữ liệu tham chiếu:
+   - `Tủ sách tài chính/1. Jesse Livermore - Thiên Tài Đầu Cơ/`
+   - `Tủ sách tài chính/2. Richard Wyckoff & VSA - Đọc Dòng Tiền/`
+   - `Tủ sách tài chính/3. Bob Volman - Naked Price Action/`
+   - `Tủ sách tài chính/4. Tâm Lý & Phương Pháp Kinh Điển/`
+   - `Tủ sách tài chính/5. Tài Liệu Hàng Hóa & Nghiên Cứu Khác/`
+   - `Tủ sách tài chính/6. Tóm Tắt & Đúc Kết Ebook/`
+
+2. Bộ công cụ tự động hóa của AI Agent:
+   - `ai_agent/auto_news_publisher.py` (Bot tự động cào tin quốc tế và soạn thảo bài viết chuẩn HTML).
+   - `ai_agent/sitemap_generator.py` (Script tự động quét và cập nhật sitemap.xml cho Googlebot).
+   - `ai_agent/Chay_Auto_News.bat` (File chạy tự động 1-click trên máy tính).
+
+====================================================================================================
+CHÚC BẠN XÂY DỰNG PTVOLUME.COM TRỞ THÀNH CHUYÊN TRANG PHÂN TÍCH TÀI CHÍNH HÀNG ĐẦU VIỆT NAM!
+====================================================================================================
