@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T0JM1RNTZ9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-T0JM1RNTZ9');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3: Các Khái Niệm Cốt Lõi & Thuật Ngữ Giao Dịch Hàng Hóa Phái Sinh | PTvolume</title>
+    <meta name="description" content="Giáo trình Bài 3: Giải thích cặn kẽ Hợp đồng tương lai, Vị thế Long/Short, Kích thước Lot, Bước giá Tick Size, Tick Value, Công thức tính Lãi/Lỗ, Ký quỹ ban đầu và Tỷ lệ an toàn tài khoản qua Sở MXV.">
+    <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-main: #0B0E14;
+            --bg-card: #141822;
+            --bg-card-hover: #1A2130;
+            --border-color: #222938;
+            --primary: #2962FF;
+            --primary-glow: rgba(41, 98, 255, 0.25);
+            --bullish: #089981;
+            --bearish: #F23645;
+            --text-main: #F0F3FA;
+            --text-muted: #8E9BAE;
+            --text-light: #CAD4E0;
+            --accent-gold: #F0B90B;
+            --accent-cyan: #00E5FF;
+            --font-editorial: 'Merriweather', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-sans);
+        }
+
+        input, textarea {
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            user-select: text !important;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.85;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 14, 20, 0.95);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 24px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 1.35rem;
+            color: #fff;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 1px solid rgba(41, 98, 255, 0.4);
+        }
+
+        .logo-text .brand {
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .logo-text .brand span {
+            color: var(--accent-cyan);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lang-switcher {
+            display: inline-flex;
+            align-items: center;
+            background: #080B10;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2px;
+            gap: 2px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 16px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active, .lang-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background: #1e4bd8;
+            transform: translateY(-1px);
+        }
+
+        .article-container {
+            max-width: 940px;
+            margin: 40px auto 80px;
+            padding: 0 24px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .article-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: rgba(0, 229, 255, 0.15);
+            color: var(--accent-cyan);
+            border: 1px solid rgba(0, 229, 255, 0.35);
+            margin-bottom: 16px;
+        }
+
+        .article-title {
+            font-family: var(--font-editorial);
+            font-size: 2.2rem;
+            line-height: 1.35;
+            color: #fff;
+            margin-bottom: 18px;
+            font-weight: 700;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .article-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .article-body {
+            font-family: var(--font-editorial);
+            font-size: 1.08rem;
+            color: var(--text-light);
+            line-height: 1.95;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-body p {
+            margin-bottom: 24px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-body h2 {
+            font-family: var(--font-sans);
+            font-size: 1.45rem;
+            color: #fff;
+            margin: 42px 0 18px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-left: 4px solid var(--primary);
+            padding-left: 14px;
+            text-align: left;
+        }
+
+        .article-body h3 {
+            font-family: var(--font-sans);
+            font-size: 1.18rem;
+            color: var(--accent-cyan);
+            margin: 28px 0 12px;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        .article-body ul, .article-body ol {
+            margin-bottom: 26px;
+            padding-left: 24px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-body li {
+            margin-bottom: 12px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-body strong {
+            color: #fff;
+            font-family: inherit;
+        }
+
+        .article-body blockquote {
+            background: #141822;
+            border-left: 4px solid var(--accent-cyan);
+            padding: 18px 22px;
+            margin: 26px 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: #F0F3FA;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .watermark-box {
+            position: relative;
+            margin: 32px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #080B10;
+            text-align: center;
+        }
+
+        .watermark-box img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .watermark-caption {
+            font-family: var(--font-sans);
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            padding: 8px 14px;
+            background: #10141D;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-style: italic;
+        }
+
+        .watermark-stamp {
+            position: absolute;
+            bottom: 45px;
+            right: 18px;
+            background: rgba(11, 14, 20, 0.45);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.75);
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            pointer-events: none;
+        }
+
+        .highlight-box {
+            background: #141822;
+            border: 1px solid rgba(41, 98, 255, 0.35);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .highlight-box h3 {
+            color: var(--accent-gold);
+            margin-top: 0;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .highlight-box ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        .highlight-box li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            line-height: 1.65;
+        }
+
+        .highlight-box li i {
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: #26E7A6;
+            font-size: 0.85rem;
+        }
+
+        .data-table-wrapper {
+            overflow-x: auto;
+            margin: 28px 0;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        table.data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-sans);
+            font-size: 0.92rem;
+            text-align: left;
+        }
+
+        table.data-table th {
+            background: #141822;
+            color: var(--accent-cyan);
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+            font-weight: 700;
+        }
+
+        table.data-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-light);
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        table.data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        table.data-table tr:hover td {
+            background: rgba(41, 98, 255, 0.05);
+        }
+
+        .step-card {
+            background: #141822;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent-cyan);
+        }
+
+        .step-card h4 {
+            color: #fff;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .formula-box {
+            background: #080B10;
+            border: 1px dashed rgba(0, 229, 255, 0.4);
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin: 16px 0;
+            font-family: var(--font-mono);
+            font-size: 0.95rem;
+            color: #26E7A6;
+            text-align: center;
+        }
+
+        .comment-section {
+            margin-top: 60px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .comment-header {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .comment-form {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            width: 100%;
+            background: #080B10;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 10px 14px;
+            color: #fff;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px var(--primary-glow);
+        }
+
+        textarea.form-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .comment-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .comment-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px 20px;
+        }
+
+        .comment-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 0.82rem;
+        }
+
+        .comment-author {
+            font-weight: 700;
+            color: var(--accent-cyan);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .comment-date {
+            color: var(--text-muted);
+        }
+
+        .comment-text {
+            font-size: 0.92rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        footer {
+            background: #080B10;
+            border-top: 1px solid var(--border-color);
+            padding: 40px 24px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo.jpg" alt="Logo PT VOLUME">
+                <div class="logo-text">
+                    <span class="brand">PT<span>VOLUME</span></span>
+                </div>
+            </a>
+            
+            <div class="nav-right">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" onclick="setLanguage('vi')" id="btn-lang-vi" title="Tiếng Việt">VI</button>
+                    <button class="lang-btn" onclick="setLanguage('en')" id="btn-lang-en" title="English">EN</button>
+                </div>
+                <a href="../index.html" class="btn">
+                    <i class="fa-solid fa-arrow-left"></i> Về Trang Chủ
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="article-container">
+        <div class="breadcrumb">
+            <a href="../index.html">Trang Chủ</a>
+            <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+            <a href="../index.html#hoc-tap">Giáo Trình Học Tập</a>
+            <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+            <span>Bài 3: Các Khái Niệm Hàng Hóa Phái Sinh</span>
+        </div>
+
+        <span class="article-badge"><i class="fa-solid fa-book-bookmark"></i> Giáo Trình Nhập Môn Hàng Hóa • Bài 3</span>
+        
+        <h1 class="article-title">Bài 3: Các Khái Niệm Cốt Lõi & Thuật Ngữ Giao Dịch Hàng Hóa Phái Sinh</h1>
+
+        <div class="article-meta">
+            <span><i class="fa-regular fa-user"></i> Ban Học Thuật <strong>PTvolume Academy</strong></span>
+            <span>•</span>
+            <span><i class="fa-solid fa-wheat-awn"></i> Chuyên mục: <strong>Hàng Hóa Phái Sinh (Commodity Futures)</strong></span>
+            <span>•</span>
+            <span><i class="fa-regular fa-calendar-check"></i> Biên soạn: 2026</span>
+            <span>•</span>
+            <span><i class="fa-regular fa-clock"></i> 15 phút đọc & tra cứu</span>
+        </div>
+
+        <div class="article-body">
+            <blockquote>
+                "Để sinh tồn và chiến thắng trên thị trường hàng hóa, việc hiểu rõ từng thông số hợp đồng — từ Kích thước Lot, Bước giá Tick Size đến Tỷ lệ Ký quỹ an toàn — cũng quan trọng như người lính nắm rõ từng chi tiết trên khẩu súng trước khi bước vào trận địa."<br>
+                — <strong>PTvolume Educational Desk</strong>
+            </blockquote>
+
+            <!-- PHẦN TÓM TẮT CỐT LÕI -->
+            <div class="highlight-box">
+                <h3><i class="fa-solid fa-list-check"></i> Mục Tiêu Cốt Lõi Của Bài 3</h3>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> <strong>Bản chất hợp đồng:</strong> Phân biệt 4 loại hợp đồng phái sinh (Forward, Futures, Options, Swaps) và trọng tâm Hợp đồng Tương lai tại Sở MXV.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Cơ chế vị thế 2 chiều:</strong> Hiểu rõ Vị thế Mua (Long), Vị thế Bán (Short), Mở lệnh, Đóng lệnh (Tất toán) bằng lệnh đối ứng.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Đặc tả hợp đồng & Bước giá:</strong> Nắm trọn bảng tra cứu Kích thước Lot, Đơn vị yết giá, Bước giá tối thiểu (Tick Size) và Giá trị 1 bước giá (Tick Value).</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Công thức tính Lãi / Lỗ:</strong> Tự tính toán chính xác số tiền lời/lỗ trên mỗi giao dịch.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Hệ thống Ký Quỹ & An toàn vốn:</strong> Khái niệm Ký quỹ ban đầu (IM), Ký quỹ khả dụng, Tỷ lệ ký quỹ và các mốc cảnh báo Margin Call / Force Close.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Quy luật Đáo Hạn:</strong> Ngày thông báo đầu tiên (FND), Ngày giao dịch cuối cùng (LTD) và lưu ý đóng lệnh tránh giao nhận hàng vật chất.</li>
+                </ul>
+            </div>
+
+            <!-- WATERMARK IMAGE -->
+            <div class="watermark-box">
+                <img src="../assets/images/gold_commodities_analysis.jpg" alt="Các thông số đặc tả hợp đồng hàng hóa phái sinh chuẩn quốc tế" style="max-height: 460px;">
+                <div class="watermark-caption">Đặc tả hợp đồng quy chuẩn quốc tế được niêm yết công khai trên các Sở giao dịch CME, CBOT, NYMEX, ICE</div>
+                <div class="watermark-stamp">
+                    <i class="fa-solid fa-shield-halved"></i> PTvolume.com
+                </div>
+            </div>
+
+            <!-- PHẦN 1: PHÂN LOẠI HỢP ĐỒNG -->
+            <h2><i class="fa-solid fa-file-contract"></i> I. HỢP ĐỒNG TƯƠNG LAI LÀ GÌ & TẠI SAO ĐƯỢC CHUẨN HÓA?</h2>
+            
+            <h3>1. Thị trường Giao Ngay (Spot) vs Thị Trường Phái Sinh (Derivatives)</h3>
+            <p>
+                Xét về phương thức giao dịch hàng hóa trên thế giới, thị trường được chia làm 2 nhánh chính:
+            </p>
+            <ul>
+                <li><strong>Thị trường giao ngay (Spot Market):</strong> Mua bán hàng hóa vật chất thực tế tại thời điểm hiện tại theo nguyên tắc <em>"tiền trao cháo múc"</em> (giao tiền nhận hàng ngay).</li>
+                <li><strong>Thị trường phái sinh (Derivatives Market):</strong> Giao dịch các hợp đồng tài chính có giá trị dựa trên biến động giá của tài sản cơ sở (nông sản, năng lượng, kim loại) với thời điểm thực hiện trong tương lai.</li>
+            </ul>
+
+            <h3>2. 4 Loại Hợp Đồng Phái Sinh Trên Thế Giới</h3>
+            <ol>
+                <li><strong>Hợp đồng kỳ hạn không quy chuẩn (Forward Contract):</strong> Thỏa thuận song phương giữa 2 bên tự do, không qua sàn, tự chịu rủi ro đối tác.</li>
+                <li><strong>Hợp đồng tương lai quy chuẩn (Futures Contract):</strong> Hợp đồng được chuẩn hóa 100% về chất lượng, số lượng, thời gian và được giao dịch tập trung qua Sở giao dịch. <em>(Đây là sản phẩm chính tại Việt Nam qua Sở MXV)</em>.</li>
+                <li><strong>Hợp đồng quyền chọn (Options Contract):</strong> Trao cho người mua quyền (nhưng không phải nghĩa vụ) mua hoặc bán hàng hóa ở mức giá xác định.</li>
+                <li><strong>Hợp đồng hoán đổi (Swaps Contract):</strong> Thỏa thuận hoán đổi dòng tiền giữa các định chế tài chính.</li>
+            </ol>
+
+            <div class="step-card">
+                <h4><i class="fa-solid fa-cow" style="color:var(--accent-gold);"></i> Câu chuyện ngụ ngôn: Nguồn gốc của Hợp đồng tương lai</h4>
+                <p>
+                    Anh <strong>Ramu</strong> nuôi 10 con bò nhưng sợ dịch bệnh làm giá bò sụt giảm vào năm sau. Anh <strong>Adin</strong> muốn mua 10 con bò vào năm sau để mở lò mổ nhưng sợ giá bò tăng vọt. Hai bên đã ký thỏa thuận: Năm sau Adin chắc chắn mua 10 con bò của Ramu với giá cố định 100 Rupee/con.
+                </p>
+                <p style="margin-bottom:0;">
+                    Thỏa thuận song phương đó chính là <em>Hợp đồng kỳ hạn sơ khai</em>. Khi hàng triệu người mua và người bán xuất hiện, các **Sở Giao Dịch Hàng Hóa (Exchange)** ra đời làm trung gian thanh toán bù trừ, đưa ra các bộ quy chuẩn chất lượng đồng nhất để mọi người có thể mua bán khớp lệnh tức thì mà không sợ đối tác quỵt nợ.
+                </p>
+            </div>
+
+            <!-- PHẦN 2: CƠ CHẾ GIAO DỊCH 2 CHIỀU & VỊ THẾ -->
+            <h2><i class="fa-solid fa-arrows-up-down"></i> II. VỊ THẾ GIAO DỊCH & CƠ CHẾ KIẾM LỢI NHUẬN 2 CHIỀU</h2>
+            <p>
+                Một trong những ưu thế vượt trội nhất của Hàng hóa phái sinh là cơ chế **giao dịch 2 chiều (Long / Short)** linh hoạt:
+            </p>
+            <ul>
+                <li><strong>Vị thế (Position):</strong> Số lượng hợp đồng hàng hóa mà nhà đầu tư đang nắm giữ tại một thời điểm.</li>
+                <li><strong>Mở Vị Thế MUA (Long Position):</strong> Đặt lệnh Mua khi bạn nhận định xu hướng giá hàng hóa sẽ <strong>TĂNG</strong> trong tương lai. Bạn có lãi khi giá thị trường tăng cao hơn giá bạn đã mua.</li>
+                <li><strong>Mở Vị Thế BÁN (Short Position / Bán khống):</strong> Đặt lệnh Bán khi bạn nhận định xu hướng giá hàng hóa sẽ <strong>GIẢM</strong> trong tương lai. Bạn có lãi khi giá thị trường giảm thấp hơn giá bạn đã bán.</li>
+                <li><strong>Đóng Vị Thế (Tất toán / Offset Order):</strong> Hành động kết thúc giao dịch bằng cách vào một lệnh <em>ngược chiều với khối lượng tương đương</em>:
+                    <ul>
+                        <li>Đóng vị thế MUA bằng một lệnh BÁN cùng khối lượng.</li>
+                        <li>Đóng vị thế BÁN bằng một lệnh MUA cùng khối lượng.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- PHẦN 3: BẢNG ĐẶC TẢ HỢP ĐỒNG & TICK VALUE -->
+            <h2><i class="fa-solid fa-table-list"></i> III. BẢNG TRA CỨU ĐẶC TẢ HỢP ĐỒNG, BƯỚC GIÁ & TICK VALUE</h2>
+            <p>
+                Để quản trị rủi ro chính xác, nhà đầu tư cần nắm vững:
+            </p>
+            <ul>
+                <li><strong>Lot:</strong> Đơn vị khối lượng giao dịch nhỏ nhất cho mỗi loại hợp đồng.</li>
+                <li><strong>Bước giá tối thiểu (Tick Size):</strong> Mức chênh lệch nhỏ nhất giữa hai mức giá liên tiếp trên bảng điện.</li>
+                <li><strong>Giá trị 1 bước giá (Tick Value):</strong> Số tiền lãi/lỗ (USD) thay đổi trên tài khoản khi giá dịch chuyển đúng 1 bước giá tối thiểu.</li>
+            </ul>
+
+            <div class="formula-box">
+                Tick Value (USD) = Độ lớn hợp đồng × Đơn vị yết giá × Bước giá tối thiểu
+            </div>
+
+            <div class="data-table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Mặt Hàng Giao Dịch</th>
+                            <th>Mã Sàn (Ticker)</th>
+                            <th>Quy Mô 1 Lot (Contract Size)</th>
+                            <th>Bước Giá Tối Thiểu</th>
+                            <th>Giá Trị 1 Bước Giá (Tick Value)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>🌽 Ngô (Corn)</strong></td>
+                            <td>CBOT: ZC</td>
+                            <td>5,000 Giạ (Bushels) ~ 127 Tấn</td>
+                            <td>0.25 cent/giạ</td>
+                            <td><span style="color:#26E7A6; font-weight:700;">$12.50 USD</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>🌱 Đậu Tương (Soybeans)</strong></td>
+                            <td>CBOT: ZS</td>
+                            <td>5,000 Giạ (Bushels) ~ 136 Tấn</td>
+                            <td>0.25 cent/giạ</td>
+                            <td><span style="color:#26E7A6; font-weight:700;">$12.50 USD</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>🌾 Lúa Mì (Wheat)</strong></td>
+                            <td>CBOT: ZW</td>
+                            <td>5,000 Giạ (Bushels) ~ 136 Tấn</td>
+                            <td>0.25 cent/giạ</td>
+                            <td><span style="color:#26E7A6; font-weight:700;">$12.50 USD</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>🛢️ Dầu Đậu Tương (Soybean Oil)</strong></td>
+                            <td>CBOT: ZL</td>
+                            <td>60,000 Pound (lbs) ~ 27 Tấn</td>
+                            <td>0.01 cent/pound</td>
+                            <td><span style="color:#26E7A6; font-weight:700;">$6.00 USD</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>🌾 Khô Đậu Tương (Soybean Meal)</strong></td>
+                            <td>CBOT: ZM</td>
+                            <td>100 Tấn ngắn (Short Tons)</td>
+                            <td>0.10 USD/tấn</td>
+                            <td><span style="color:#26E7A6; font-weight:700;">$10.00 USD</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>🛢️ Dầu Thô WTI (Crude Oil)</strong></td>
+                            <td>NYMEX: CL</td>
+                            <td>1,000 Thùng (Barrels)</td>
+                            <td>0.01 USD/thùng</td>
+                            <td><span style="color:#26E7A6; font-weight:700;">$10.00 USD</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>🥈 Bạc (Silver)</strong></td>
+                            <td>COMEX: SI</td>
+                            <td>5,000 Troy Ounces (oz)</td>
+                            <td>0.005 USD/oz</td>
+                            <td><span style="color:#26E7A6; font-weight:700;">$25.00 USD</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>🍬 Đường #11 (Sugar)</strong></td>
+                            <td>ICEUS: SB</td>
+                            <td>112,000 Pound (lbs) ~ 50.8 Tấn</td>
+                            <td>0.01 cent/pound</td>
+                            <td><span style="color:#26E7A6; font-weight:700;">$11.20 USD</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>☕ Cà Phê Robusta</strong></td>
+                            <td>ICEEU: RC</td>
+                            <td>10 Tấn (Metric Tons)</td>
+                            <td>1.00 USD/tấn</td>
+                            <td><span style="color:#26E7A6; font-weight:700;">$10.00 USD</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>☕ Cà Phê Arabica</strong></td>
+                            <td>ICEUS: KC</td>
+                            <td>37,500 Pound (lbs) ~ 17 Tấn</td>
+                            <td>0.05 cent/pound</td>
+                            <td><span style="color:#26E7A6; font-weight:700;">$18.75 USD</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- PHẦN 4: CÔNG THỨC TÍNH LÃI LỖ -->
+            <h2><i class="fa-solid fa-calculator"></i> IV. CÔNG THỨC TÍNH TOÁN LÃI / LỖ THỰC CHIẾN</h2>
+            
+            <div class="formula-box">
+                Lãi/Lỗ (USD) = [(Giá Đóng - Giá Mở) / Bước giá tối thiểu] × Tick Value × Số Lot
+            </div>
+
+            <div class="step-card">
+                <h4><i class="fa-solid fa-receipt" style="color:var(--accent-gold);"></i> Ví dụ 1: Giao dịch Mua Đậu Tương (CBOT: ZS)</h4>
+                <p>
+                    Bạn mở <strong>Vị thế Mua 1 lot Đậu tương</strong> ở mức giá <strong>917.00 cent/giạ</strong>.<br>
+                    Sau đó bạn đóng vị thế (bán chốt lời) ở mức giá <strong>920.50 cent/giạ</strong>.
+                </p>
+                <p style="margin-bottom:0;">
+                    <code>Lợi nhuận = [(920.50 - 917.00) / 0.25] × $12.50 × 1 Lot = (3.50 / 0.25) × $12.50 = 14 ticks × $12.50 = <strong>+$175.00 USD</strong></code>
+                </p>
+            </div>
+
+            <div class="step-card">
+                <h4><i class="fa-solid fa-receipt" style="color:#FF707E;"></i> Ví dụ 2: Giao dịch Bán khống Dầu Thô WTI (NYMEX: CL)</h4>
+                <p>
+                    Bạn mở <strong>Vị thế Bán 1 lot Dầu WTI</strong> ở mức giá <strong>$75.50/thùng</strong>.<br>
+                    Giá giảm xuống và bạn mua đóng lệnh tất toán ở mức giá <strong>$74.20/thùng</strong>.
+                </p>
+                <p style="margin-bottom:0;">
+                    <code>Lợi nhuận = [($75.50 - $74.20) / 0.01] × $10.00 × 1 Lot = 130 ticks × $10.00 = <strong>+$1,300.00 USD</strong></code>
+                </p>
+            </div>
+
+            <!-- PHẦN 5: CÁC KHÁI NIỆM KÝ QUỸ -->
+            <h2><i class="fa-solid fa-vault"></i> V. CÁC KHÁI NIỆM KÝ QUỸ & QUẢN TRỊ AN TOÀN TÀI KHOẢN</h2>
+            <p>
+                Ký quỹ trong giao dịch hàng hóa là khoản tiền bảo chứng mà nhà đầu tư phải duy trì để thực hiện nghĩa vụ hợp đồng:
+            </p>
+            <ul>
+                <li><strong>Ký Quỹ Ban Đầu (Initial Margin - IM):</strong> Số tiền tối thiểu bắt buộc phải có trong tài khoản để được phép mở mới 1 lot vị thế. <em>(Tại Sở MXV, mức ký quỹ ban đầu được quy định bằng 120% mức ký quỹ của Sở giao dịch quốc tế nhằm tăng cường lá chắn an toàn)</em>.</li>
+                <li><strong>Tổng Ký Quỹ Yêu Cầu:</strong> Tổng số tiền ký quỹ của tất cả các vị thế đang nắm giữ mở.</li>
+                <li><strong>Giá Trị Ròng Ký Quỹ (Net Equity):</strong> Tổng số dư khả dụng thực tế của tài khoản:
+                    <div class="formula-box">Giá trị ròng ký quỹ = Số dư đầu phiên ± Lãi/Lỗ dự kiến (Floating PnL)</div>
+                </li>
+                <li><strong>Ký Quỹ Khả Dụng (Free Margin):</strong> Lượng tiền nhàn rỗi còn lại chưa bị phong tỏa, có thể dùng để mở thêm lệnh mới:
+                    <div class="formula-box">Ký quỹ khả dụng = Giá trị ròng ký quỹ - Tổng ký quỹ yêu cầu</div>
+                </li>
+                <li><strong>Tỷ Lệ Ký Quỹ (Margin Level %):</strong> Thước đo tình trạng sức khỏe tài khoản:
+                    <div class="formula-box">Tỷ lệ ký quỹ (%) = (Giá trị ròng ký quỹ / Tổng ký quỹ yêu cầu) × 100%</div>
+                </li>
+            </ul>
+
+            <!-- BẢNG TÌNH TRẠNG TÀI KHOẢN -->
+            <div class="data-table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Tỷ Lệ Ký Quỹ (%)</th>
+                            <th>Tình Trạng Sức Khỏe Tài Khoản</th>
+                            <th>Hành Động Khuyến Nghị Của Trader</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>> 300%</strong></td>
+                            <td><span style="color:#089981; font-weight:700;">🟢 Cực kỳ an toàn</span></td>
+                            <td>Tài khoản dư dả vốn, có thể tự tin duy trì chiến lược dài hơi.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>200% – 300%</strong></td>
+                            <td><span style="color:#26E7A6; font-weight:700;">🟢 Khá an toàn</span></td>
+                            <td>Trạng thái cân bằng chuẩn mực cho tài khoản lướt sóng ngắn hạn.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>100% – 200%</strong></td>
+                            <td><span style="color:#F0B90B; font-weight:700;">🟡 Tương đối rủi ro</span></td>
+                            <td>Khối lượng mở đang chiếm nhiều vốn. Tuyệt đối không nhồi thêm lệnh.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>&le; 100%</strong></td>
+                            <td><span style="color:#FF707E; font-weight:700;">🔴 Nguy hiểm (Margin Call)</span></td>
+                            <td>Sở MXV phát cảnh báo nộp thêm tiền ký quỹ hoặc phải chủ động hạ bớt vị thế.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>&le; 40%</strong></td>
+                            <td><span style="color:#F23645; font-weight:700;">⛔ Cưỡng chế đóng lệnh (Force Close / Stop Out)</span></td>
+                            <td>Hệ thống tự động kích hoạt đóng toàn bộ các vị thế mở ở giá thị trường để chống âm vốn.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- PHẦN 6: ĐÁO HẠN HỢP ĐỒNG -->
+            <h2><i class="fa-solid fa-calendar-xmark"></i> VI. QUY TẮC ĐÁO HẠN HỢP ĐỒNG (EXPIRATION RULES)</h2>
+            <p>
+                Vì nhà đầu tư cá nhân tại Việt Nam giao dịch để tìm kiếm lợi nhuận chênh lệch giá (Speculation) chứ không nhận hàng triệu tấn ngô hay hàng nghìn thùng dầu vật chất về nhà, bạn cần nắm chắc 2 mốc thời gian:
+            </p>
+            <ul>
+                <li><strong>Ngày thông báo đầu tiên (First Notice Day - FND):</strong> Ngày Sở giao dịch quốc tế bắt đầu tiếp nhận quy trình giao nhận hàng thực tế.</li>
+                <li><strong>Ngày giao dịch cuối cùng (Last Trading Day - LTD):</strong> Ngày hợp đồng chính thức hết hạn niêm yết trên sàn.</li>
+                <li><strong>Quy định bắt buộc tại Sở MXV:</strong> Toàn bộ nhà đầu tư phải chủ động <strong>đóng vị thế trước ngày FND tối thiểu 2 ngày làm việc</strong>. Nếu quá hạn mà tài khoản vẫn mở vị thế, hệ thống quản lý rủi ro của MXV sẽ tự động đóng lệnh tại mức giá thị trường.</li>
+            </ul>
+
+            <!-- PHẦN 7: KẾT LUẬN -->
+            <div class="highlight-box">
+                <h3><i class="fa-solid fa-flag-checkered"></i> Lời Khuyên Từ PTvolume Academy</h3>
+                <p style="margin-bottom:12px;">
+                    Hãy luôn ghi nhớ bảng Tick Value và duy trì Tỷ lệ ký quỹ tài khoản trên 200%. Đừng bao giờ mở quá nhiều Lot vượt quá khả năng chịu đựng của tài khoản. Trong các bài học tiếp theo, chúng ta sẽ bước vào phần kỹ thuật chuyên sâu: Đọc vị nến Nhật và Phân tích Khối lượng VSA để tìm điểm vào lệnh hoàn hảo!
+                </p>
+                <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+                    <a href="bai-2-tu-duy-dau-tu-hang-hoa-phai-sinh.html" class="btn" style="background:var(--bg-card); border:1px solid var(--border-color); color:#fff;">
+                        <i class="fa-solid fa-arrow-left"></i> Xem Lại Bài 2
+                    </a>
+                    <a href="../index.html#cong-cu" class="btn" style="background:var(--accent-cyan); color:#000; font-weight:700;">
+                        <i class="fa-solid fa-calculator"></i> Thực Hành Tính Toán Lot Chuẩn
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMMENT SECTION -->
+        <section class="comment-section">
+            <h3 class="comment-header">
+                <i class="fa-regular fa-comments" style="color: #00E5FF;"></i> Thảo Luận Bài Học Khái Niệm (<span id="commentCount">2</span>)
+            </h3>
+
+            <form class="comment-form" id="commentForm" onsubmit="addComment(event)">
+                <div class="form-group">
+                    <label class="form-label">Tên Học Viên / Nickname:</label>
+                    <input type="text" id="commentName" class="form-control" placeholder="VD: Quang Huy (Trader Phái Sinh)" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Câu hỏi hoặc Cảm nhận của bạn về các thông số đặc tả hợp đồng:</label>
+                    <textarea id="commentContent" class="form-control" placeholder="Bạn có thắc mắc gì về Tick Value, cách tính Lãi/Lỗ hay Tỷ lệ ký quỹ an toàn không? Đặt câu hỏi tại đây..." required></textarea>
+                </div>
+                <button type="submit" class="btn">
+                    <i class="fa-regular fa-paper-plane"></i> Gửi Thảo Luận
+                </button>
+            </form>
+
+            <div class="comment-list" id="commentList">
+                <div class="comment-item">
+                    <div class="comment-top">
+                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Lê Hoàng Hải (TP.HCM)</span>
+                        <span class="comment-date">24 Tháng 8, 2026</span>
+                    </div>
+                    <div class="comment-text">
+                        Bảng tra cứu Tick Value quá đầy đủ và rõ ràng! Giờ mình mới nhớ chuẩn: Đậu tương, Ngô, Lúa mì đều là $12.5 mỗi bước 0.25; Dầu WTI là $10 mỗi bước 0.01. Rất tiện để tính rủi ro trước khi vào lệnh.
+                    </div>
+                </div>
+
+                <div class="comment-item">
+                    <div class="comment-top">
+                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Phạm Đức Thắng (Hải Dương)</span>
+                        <span class="comment-date">24 Tháng 8, 2026</span>
+                    </div>
+                    <div class="comment-text">
+                        Quy tắc quản trị Tỷ lệ ký quỹ > 200% cực kỳ quan trọng cho trader mới để tránh bị Margin Call khi thị trường rung lắc mạnh. Cảm ơn ban biên tập PTvolume!
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="../pages/about.html">Về PTvolume</a>
+            <a href="../pages/contact.html">Liên Hệ</a>
+            <a href="../pages/terms.html">Điều Khoản</a>
+            <a href="../pages/privacy.html">Bảo Mật</a>
+            <a href="../pages/disclaimer.html">Cảnh Báo Rủi Ro</a>
+        </div>
+        <p>© 2026 PTvolume.com. Toàn bộ bản quyền được bảo lưu. Naked Chart • VSA • Phương Pháp Wyckoff.</p>
+    </footer>
+
+    <!-- Hidden Google Translate Element -->
+    <div id="google_translate_element" style="display:none;"></div>
+
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'vi',
+                includedLanguages: 'en,vi',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function setLanguage(lang) {
+            if (lang === 'vi') {
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + location.hostname;
+                document.cookie = "googtrans=/vi/vi; path=/;";
+                document.cookie = "googtrans=/vi/vi; path=/; domain=" + location.hostname;
+                localStorage.setItem('ptvolume_lang', 'vi');
+                location.reload();
+            } else if (lang === 'en') {
+                document.cookie = "googtrans=/vi/en; path=/;";
+                document.cookie = "googtrans=/vi/en; path=/; domain=" + location.hostname;
+                localStorage.setItem('ptvolume_lang', 'en');
+                location.reload();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentLang = localStorage.getItem('ptvolume_lang') || 'vi';
+            const btnVi = document.getElementById('btn-lang-vi');
+            const btnEn = document.getElementById('btn-lang-en');
+            if (btnVi && btnEn) {
+                if (currentLang === 'en') {
+                    btnEn.classList.add('active');
+                    btnVi.classList.remove('active');
+                } else {
+                    btnVi.classList.add('active');
+                    btnEn.classList.remove('active');
+                }
+            }
+            loadSavedComments();
+        });
+
+        const POST_SLUG = "bai-3-cac-khai-niem-hang-hoa-phai-sinh";
+
+        function loadSavedComments() {
+            const saved = JSON.parse(localStorage.getItem('ptvolume_comments_' + POST_SLUG) || '[]');
+            const commentList = document.getElementById("commentList");
+            if (commentList && saved.length > 0) {
+                saved.forEach(item => {
+                    const newComment = document.createElement("div");
+                    newComment.className = "comment-item";
+                    newComment.innerHTML = `
+                        <div class="comment-top">
+                            <span class="comment-author"><i class="fa-solid fa-circle-user"></i> ${escapeHtml(item.name)}</span>
+                            <span class="comment-date">${escapeHtml(item.date)}</span>
+                        </div>
+                        <div class="comment-text">${escapeHtml(item.content)}</div>
+                    `;
+                    commentList.prepend(newComment);
+                });
+                const countElem = document.getElementById("commentCount");
+                if (countElem) {
+                    countElem.innerText = parseInt(countElem.innerText || 0) + saved.length;
+                }
+            }
+        }
+
+        function addComment(e) {
+            e.preventDefault();
+            const nameInput = document.getElementById("commentName");
+            const contentInput = document.getElementById("commentContent");
+            if (!nameInput || !contentInput) return;
+            const name = nameInput.value.trim();
+            const content = contentInput.value.trim();
+            if (!name || !content) return;
+
+            const now = new Date();
+            const timeString = now.toLocaleDateString('vi-VN') + ' ' + now.toLocaleTimeString('vi-VN');
+
+            const commentList = document.getElementById("commentList");
+            const newComment = document.createElement("div");
+            newComment.className = "comment-item";
+            newComment.innerHTML = `
+                <div class="comment-top">
+                    <span class="comment-author"><i class="fa-solid fa-circle-user"></i> ${escapeHtml(name)}</span>
+                    <span class="comment-date">${timeString}</span>
+                </div>
+                <div class="comment-text">${escapeHtml(content)}</div>
+            `;
+            commentList.prepend(newComment);
+
+            const countElem = document.getElementById("commentCount");
+            if (countElem) countElem.innerText = parseInt(countElem.innerText || 0) + 1;
+
+            // Save to localStorage
+            const saved = JSON.parse(localStorage.getItem('ptvolume_comments_' + POST_SLUG) || '[]');
+            saved.push({ name, content, date: timeString });
+            localStorage.setItem('ptvolume_comments_' + POST_SLUG, JSON.stringify(saved));
+
+            nameInput.value = "";
+            contentInput.value = "";
+            alert("Bình luận của bạn đã được đăng thành công!");
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
