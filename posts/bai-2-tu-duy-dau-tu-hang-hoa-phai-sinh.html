@@ -710,7 +710,7 @@
                     <tbody>
                         <tr>
                             <td><strong>Bước 1: Xác lập Mục Tiêu</strong></td>
-                            <td>Xác định rõ mức sinh lời kỳ vọng hàng tháng (VD: 5% - 10%/tháng), khẩu vị rủi ro tối đa trên mỗi giao dịch (1% - 2% vốn).</td>
+                            <td>Xác định rõ mức sinh lời kỳ vọng hàng tháng (VD: 5% - 10%/tháng) và <strong>mức chịu lỗ tối đa cho phép</strong> trên mỗi giao dịch (chỉ từ 1% - 2% tổng vốn).</td>
                             <td>Nhật ký giao dịch & Kế hoạch tài chính cá nhân</td>
                         </tr>
                         <tr>
@@ -734,7 +734,7 @@
 
             <!-- PHẦN 5: ĐẦU TƯ VÀO BẢN THÂN -->
             <div class="highlight-box">
-                <h3><i class="fa-solid fa-graduation-cap"></i> Nguyên Tắc Vàng: Hãy Đầu Tư Vào Bản Thân Bạn Trước Tiên!</h3>
+                <h3><i class="fa-solid fa-graduation-cap"></i> Nguyên Tắc Cốt Lõi: Hãy Đầu Tư Vào Bản Thân Bạn Trước Tiên!</h3>
                 <p style="margin-bottom:12px;">
                     Khoản đầu tư không bao giờ lỗ vốn chính là đầu tư vào <strong>Tri thức, Sức khỏe và Tư duy giao dịch kỷ luật</strong>. Thị trường tài chính luôn chuyển động theo chu kỳ: có giai đoạn hưng thịnh và có giai đoạn thoái trào. Khi bạn trang bị vững vàng kiến thức nền tảng về Phân tích Hành động giá, Đọc vị dòng tiền VSA và Quản trị tâm lý, bạn sẽ luôn nhìn ra cơ hội kiếm lợi nhuận ngay cả khi người khác đang hoang mang.
                 </p>
@@ -808,7 +808,7 @@
     <div id="google_translate_element" style="display:none;"></div>
 
     <script>
-        function googleTranslateElementInit() {
+                function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'vi',
                 includedLanguages: 'en,vi',
@@ -817,27 +817,30 @@
         }
 
         function setLanguage(lang) {
-            if (lang === 'vi') {
-                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + location.hostname;
-                document.cookie = "googtrans=/vi/vi; path=/;";
-                document.cookie = "googtrans=/vi/vi; path=/; domain=" + location.hostname;
-                localStorage.setItem('ptvolume_lang', 'vi');
-                location.reload();
-            } else if (lang === 'en') {
-                document.cookie = "googtrans=/vi/en; path=/;";
-                document.cookie = "googtrans=/vi/en; path=/; domain=" + location.hostname;
-                localStorage.setItem('ptvolume_lang', 'en');
-                location.reload();
+            localStorage.setItem('ptvolume_lang', lang);
+            updateLangButtons(lang);
+
+            // Set cookies
+            document.cookie = "googtrans=/vi/" + lang + "; path=/;";
+            if (window.location.hostname && window.location.hostname !== '') {
+                document.cookie = "googtrans=/vi/" + lang + "; path=/; domain=" + window.location.hostname;
+            }
+
+            // Trigger Google Translate dropdown
+            const select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = lang;
+                select.dispatchEvent(new Event('change'));
+            } else {
+                window.location.reload();
             }
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const currentLang = localStorage.getItem('ptvolume_lang') || 'vi';
+        function updateLangButtons(lang) {
             const btnVi = document.getElementById('btn-lang-vi');
             const btnEn = document.getElementById('btn-lang-en');
             if (btnVi && btnEn) {
-                if (currentLang === 'en') {
+                if (lang === 'en') {
                     btnEn.classList.add('active');
                     btnVi.classList.remove('active');
                 } else {
@@ -845,6 +848,28 @@
                     btnEn.classList.remove('active');
                 }
             }
+        }
+
+        function applyStoredLanguage() {
+            const currentLang = localStorage.getItem('ptvolume_lang') || 'vi';
+            updateLangButtons(currentLang);
+            if (currentLang === 'en') {
+                let attempts = 0;
+                const checkCombo = setInterval(() => {
+                    const select = document.querySelector('.goog-te-combo');
+                    if (select) {
+                        select.value = 'en';
+                        select.dispatchEvent(new Event('change'));
+                        clearInterval(checkCombo);
+                    }
+                    attempts++;
+                    if (attempts > 30) clearInterval(checkCombo);
+                }, 200);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            applyStoredLanguage();
             loadSavedComments();
         });
 
@@ -916,7 +941,7 @@
             return div.innerHTML;
         }
     </script>
-    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>

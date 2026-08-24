@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T0JM1RNTZ9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-T0JM1RNTZ9');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2: Nến Nhật & Các Loại Nến Quan Trọng Nhất Trong Giao Dịch | PTvolume</title>
+    <meta name="description" content="Giáo trình Đọc Biểu Đồ Bài 2: Cấu tạo nến Nhật OHLC, chi tiết hình ảnh minh họa Marubozu, Hammer, Inverted Hammer, Hanging Man, Shooting Star, Doji, Engulfing, Morning/Evening Star từ tài liệu thực chiến A-Z.">
+    <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-main: #0B0E14;
+            --bg-card: #141822;
+            --bg-card-hover: #1A2130;
+            --border-color: #222938;
+            --primary: #2962FF;
+            --primary-glow: rgba(41, 98, 255, 0.25);
+            --bullish: #089981;
+            --bearish: #F23645;
+            --text-main: #F0F3FA;
+            --text-muted: #8E9BAE;
+            --text-light: #CAD4E0;
+            --accent-gold: #F0B90B;
+            --accent-cyan: #00E5FF;
+            --font-editorial: 'Merriweather', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-sans);
+        }
+
+        input, textarea {
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            user-select: text !important;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.85;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 14, 20, 0.95);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 24px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 1.35rem;
+            color: #fff;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 1px solid rgba(41, 98, 255, 0.4);
+        }
+
+        .logo-text .brand {
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .logo-text .brand span {
+            color: var(--accent-cyan);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lang-switcher {
+            display: inline-flex;
+            align-items: center;
+            background: #080B10;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2px;
+            gap: 2px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 16px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active, .lang-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background: #1e4bd8;
+            transform: translateY(-1px);
+        }
+
+        .article-container {
+            max-width: 940px;
+            margin: 40px auto 80px;
+            padding: 0 24px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .article-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: rgba(8, 153, 129, 0.15);
+            color: #26E7A6;
+            border: 1px solid rgba(8, 153, 129, 0.35);
+            margin-bottom: 16px;
+        }
+
+        .article-title {
+            font-family: var(--font-editorial);
+            font-size: 2.2rem;
+            line-height: 1.35;
+            color: #fff;
+            margin-bottom: 18px;
+            font-weight: 700;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .article-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .article-body {
+            font-family: var(--font-editorial);
+            font-size: 1.08rem;
+            color: var(--text-light);
+            line-height: 1.95;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-body p {
+            margin-bottom: 24px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-body h2 {
+            font-family: var(--font-sans);
+            font-size: 1.45rem;
+            color: #fff;
+            margin: 42px 0 18px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-left: 4px solid var(--bullish);
+            padding-left: 14px;
+            text-align: left;
+        }
+
+        .article-body h3 {
+            font-family: var(--font-sans);
+            font-size: 1.2rem;
+            color: var(--accent-cyan);
+            margin: 32px 0 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-align: left;
+        }
+
+        .article-body ul, .article-body ol {
+            margin-bottom: 26px;
+            padding-left: 24px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-body li {
+            margin-bottom: 12px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-body strong {
+            color: #fff;
+            font-family: inherit;
+        }
+
+        .article-body blockquote {
+            background: #141822;
+            border-left: 4px solid var(--bullish);
+            padding: 18px 22px;
+            margin: 26px 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: #F0F3FA;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .watermark-box {
+            position: relative;
+            margin: 24px 0 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #080B10;
+            text-align: center;
+        }
+
+        .watermark-box img {
+            max-width: 100%;
+            height: auto;
+            display: inline-block;
+            margin: 0 auto;
+            border-radius: 6px;
+        }
+
+        .watermark-caption {
+            font-family: var(--font-sans);
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            padding: 8px 14px;
+            background: #10141D;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-style: italic;
+        }
+
+        .watermark-stamp {
+            position: absolute;
+            bottom: 45px;
+            right: 18px;
+            background: rgba(11, 14, 20, 0.55);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.85);
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            pointer-events: none;
+        }
+
+        .highlight-box {
+            background: #141822;
+            border: 1px solid rgba(8, 153, 129, 0.35);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .highlight-box h3 {
+            color: #26E7A6;
+            margin-top: 0;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .highlight-box ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        .highlight-box li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            line-height: 1.65;
+        }
+
+        .highlight-box li i {
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: #26E7A6;
+            font-size: 0.85rem;
+        }
+
+        .data-table-wrapper {
+            overflow-x: auto;
+            margin: 28px 0;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        table.data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-sans);
+            font-size: 0.92rem;
+            text-align: left;
+        }
+
+        table.data-table th {
+            background: #141822;
+            color: var(--accent-cyan);
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+            font-weight: 700;
+        }
+
+        table.data-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-light);
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        table.data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        table.data-table tr:hover td {
+            background: rgba(41, 98, 255, 0.05);
+        }
+
+        .step-card {
+            background: #141822;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 22px;
+            margin-bottom: 24px;
+            border-left: 4px solid var(--bullish);
+        }
+
+        .step-card h4 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dual-img-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            margin: 16px 0;
+        }
+
+        .single-candle-img-box {
+            background: #080B10;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .single-candle-img-box img {
+            max-height: 240px;
+            object-fit: contain;
+            border-radius: 6px;
+        }
+
+        .single-candle-img-box span {
+            display: block;
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-family: var(--font-sans);
+        }
+
+        .comment-section {
+            margin-top: 60px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .comment-header {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .comment-form {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            width: 100%;
+            background: #080B10;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 10px 14px;
+            color: #fff;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px var(--primary-glow);
+        }
+
+        textarea.form-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .comment-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .comment-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px 20px;
+        }
+
+        .comment-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 0.82rem;
+        }
+
+        .comment-author {
+            font-weight: 700;
+            color: var(--accent-cyan);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .comment-date {
+            color: var(--text-muted);
+        }
+
+        .comment-text {
+            font-size: 0.92rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        footer {
+            background: #080B10;
+            border-top: 1px solid var(--border-color);
+            padding: 40px 24px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo.jpg" alt="Logo PT VOLUME">
+                <div class="logo-text">
+                    <span class="brand">PT<span>VOLUME</span></span>
+                </div>
+            </a>
+            
+            <div class="nav-right">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" onclick="setLanguage('vi')" id="btn-lang-vi" title="Tiếng Việt">VI</button>
+                    <button class="lang-btn" onclick="setLanguage('en')" id="btn-lang-en" title="English">EN</button>
+                </div>
+                <a href="../index.html" class="btn">
+                    <i class="fa-solid fa-arrow-left"></i> Về Trang Chủ
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="article-container">
+        <div class="breadcrumb">
+            <a href="../index.html">Trang Chủ</a>
+            <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+            <a href="../index.html#hoc-tap">Giáo Trình Học Tập</a>
+            <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+            <span>Đọc Biểu Đồ • Bài 2: Nến Nhật & Các Loại Nến Quan Trọng</span>
+        </div>
+
+        <span class="article-badge"><i class="fa-solid fa-chart-simple"></i> Phân Tích Đọc Biểu Đồ • Bài 2</span>
+        
+        <h1 class="article-title">Bài 2: Nến Nhật & Các Loại Nến Quan Trọng Nhất Trong Giao Dịch</h1>
+
+        <div class="article-meta">
+            <span><i class="fa-regular fa-user"></i> Ban Học Thuật <strong>PTvolume Academy</strong></span>
+            <span>•</span>
+            <span><i class="fa-solid fa-chart-line"></i> Chuyên mục: <strong>Đọc Biểu Đồ & Phân Tích Kỹ Thuật</strong></span>
+            <span>•</span>
+            <span><i class="fa-regular fa-calendar-check"></i> Biên soạn: 2026</span>
+            <span>•</span>
+            <span><i class="fa-regular fa-clock"></i> 18 phút đọc & thực hành</span>
+        </div>
+
+        <div class="article-body">
+            <blockquote>
+                "Mỗi cây nến Nhật không đơn thuần là 4 mức giá Open - High - Low - Close. Đó là một chiến trường tâm lý thu nhỏ, ghi lại toàn bộ sự thắng bại giữa phe Bò (Mua) và phe Gấu (Bán) trong một khoảng thời gian."<br>
+                — <strong>Steve Nison (Tác giả cuốn 'Japanese Candlestick Charting Techniques')</strong>
+            </blockquote>
+
+            <!-- PHẦN TÓM TẮT CỐT LÕI -->
+            <div class="highlight-box">
+                <h3><i class="fa-solid fa-candle-holder"></i> Trọng Tâm Kiến Thức Của Bài 2</h3>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> <strong>Cấu tạo nến Nhật OHLC:</strong> Giải mã 4 mức giá Mở cửa, Cao nhất, Thấp nhất, Đóng cửa, Thân nến (Spread) và Bóng nến (Shadows).</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Bộ nến đơn lẻ quan trọng nhất:</strong> Marubozu (Nến cường lực), Spinning Top (Nến xoay), Hammer (Nến búa), Inverted Hammer (Búa ngược), Hanging Man (Người treo cổ), Shooting Star (Sao băng), và Bộ Nến Doji.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Các mô hình tổ hợp nến đảo chiều kinh điển:</strong> Engulfing (Nhấn chìm tăng / giảm), Morning Star (Sao mai), Evening Star (Sao hôm).</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Hình ảnh minh họa thực chiến:</strong> Kèm sơ đồ cấu trúc và biểu đồ ứng dụng điểm vào lệnh thực tế cho từng mẫu nến.</li>
+                </ul>
+            </div>
+
+            <!-- WATERMARK IMAGE TỔNG QUAN -->
+            <div class="watermark-box">
+                <img src="../assets/images/gold_commodities_analysis.jpg" alt="Cấu trúc nến Nhật và các mô hình nến đảo chiều thực chiến" style="max-height: 460px;">
+                <div class="watermark-caption">Các cấu trúc nến Nhật quan trọng được sử dụng để bắt điểm kích hoạt lệnh Naked Chart và VSA</div>
+                <div class="watermark-stamp">
+                    <i class="fa-solid fa-shield-halved"></i> PTvolume.com
+                </div>
+            </div>
+
+            <!-- PHẦN 1: NGUỒN GỐC & CẤU TẠO NẾN NHẬT -->
+            <h2><i class="fa-solid fa-ruler-combined"></i> I. NGUỒN GỐC & CẤU TRÚC 4 MỨC GIÁ CỦA NẾN NHẬT (OHLC)</h2>
+            <p>
+                Đồ thị nến Nhật được hình thành từ những năm 1600 bởi thương gia buôn gạo huyền thoại <strong>Munehisa Homma</strong> tại Nhật Bản dùng để phân tích và dự đoán giá gạo. Sau đó, chuyên gia phân tích <strong>Steve Nison</strong> được xem là người có công lớn nhất trong việc phổ biến đồ thị nến ra toàn thế giới qua cuốn sách kinh điển <em>Japanese Candlestick Charting Techniques</em>.
+            </p>
+            
+            <div class="step-card">
+                <h4><i class="fa-solid fa-cube" style="color:var(--bullish);"></i> 1. Cấu trúc 4 mức giá tạo nên một cây nến (OHLC):</h4>
+                <ul>
+                    <li><strong>Open (Giá mở cửa):</strong> Mức giá giao dịch đầu tiên khi cây nến bắt đầu hình thành.</li>
+                    <li><strong>High (Giá cao nhất):</strong> Mức giá đỉnh cao nhất mà phe Mua đẩy lên được trong suốt phiên.</li>
+                    <li><strong>Low (Giá thấp nhất):</strong> Mức giá đáy thấp nhất mà phe Bán ép xuống được trong phiên.</li>
+                    <li><strong>Close (Giá đóng cửa):</strong> Mức giá giao dịch cuối cùng trước khi chuyển sang cây nến tiếp theo &rarr; <em>Đây là mức giá quan trọng nhất quyết định phe nào chiến thắng!</em></li>
+                </ul>
+            </div>
+
+            <p>
+                <strong>Thân nến (Real Body):</strong> Khoảng cách giữa Giá mở cửa và Giá đóng cửa.
+                <br>&bull; <strong>Nến Xanh (Tăng giá):</strong> Giá đóng cửa &gt; Giá mở cửa &rarr; Phe Mua giành quyền kiểm soát.
+                <br>&bull; <strong>Nến Đỏ (Giảm giá):</strong> Giá đóng cửa &lt; Giá mở cửa &rarr; Phe Bán chiếm ưu thế áp đảo.
+            </p>
+            <p>
+                <strong>Bóng nến / Râu nến (Shadow / Wick / Tail):</strong> Phần que nhô ra ở đỉnh hoặc đáy nến, thể hiện <strong>Sự Từ Chối Mức Giá (Price Rejection)</strong>. Râu nến càng dài chứng tỏ phe đối lập đã phản công cực kỳ mãnh liệt.
+            </p>
+
+            <!-- HÌNH MINH HỌA CẤU TRÚC OHLC -->
+            <div class="watermark-box">
+                <img src="../assets/images/candlesticks/ohlc_candlestick_anatomy.svg" alt="Sơ đồ giải phẫu cấu trúc 4 mức giá OHLC của Nến Nhật Tăng và Nến Nhật Giảm" style="width:100%; max-height:480px; display:block;">
+                <div class="watermark-caption">Sơ đồ giải phẫu chi tiết cấu tạo Nến Tăng (Bullish) và Nến Giảm (Bearish) qua 4 mức giá OHLC</div>
+                <div class="watermark-stamp"><i class="fa-solid fa-shield-halved"></i> PTvolume.com</div>
+            </div>
+
+            <!-- PHẦN 2: CÁC LOẠI NẾN ĐƠN LẺ -->
+            <h2><i class="fa-solid fa-bars-staggered"></i> II. CÁC LOẠI NẾN ĐƠN LẺ QUAN TRỌNG NHẤT</h2>
+            
+            <!-- 2.1 MARUBOZU -->
+            <h3>1. Nến Cường Lực (Marubozu)</h3>
+            <p>
+                Nến Marubozu có thân rất dài, đặc ruột, <strong>hoàn toàn không có bóng nến (hoặc bóng nến cực kỳ ngắn)</strong>. Thể hiện một phe hoàn toàn áp đảo kiểm soát trận đấu từ đầu đến cuối phiên.
+            </p>
+            <ul>
+                <li><strong>Marubozu Tăng (Xanh):</strong> Giá mở cửa = Giá thấp nhất, Giá đóng cửa = Giá cao nhất. Phe Mua dồn toàn lực đẩy giá tăng phi mã.</li>
+                <li><strong>Marubozu Giảm (Đỏ):</strong> Giá mở cửa = Giá cao nhất, Giá đóng cửa = Giá thấp nhất. Phe Bán xả hàng dứt khoát không hề có sự kháng cự.</li>
+            </ul>
+
+            <div class="watermark-box">
+                <div class="dual-img-grid">
+                    <div class="single-candle-img-box">
+                        <img src="../assets/images/candlesticks/marubozu_candle.jpg" alt="Hình thái nến Marubozu Tăng và Giảm">
+                        <span>Hình thái nến Marubozu Tăng & Giảm</span>
+                    </div>
+                    <div class="single-candle-img-box">
+                        <img src="../assets/images/candlesticks/marubozu_trend.jpg" alt="Ứng dụng nến Marubozu xác nhận xu hướng đẩy giá">
+                        <span>Ứng dụng Marubozu bứt phá cản tiếp diễn sóng</span>
+                    </div>
+                </div>
+                <div class="watermark-caption">Hình ảnh minh họa Nến Marubozu và mô hình bứt phá xu hướng thực chiến</div>
+                <div class="watermark-stamp"><i class="fa-solid fa-shield-halved"></i> PTvolume.com</div>
+            </div>
+
+            <!-- 2.2 SPINNING TOP -->
+            <h3>2. Nến Xoay (Spinning Top / Con Quay)</h3>
+            <p>
+                Nến có **thân nhỏ** nằm ở giữa và **hai bóng nến trên/dưới dài tương đương nhau**. Thể hiện sự giằng co, lưỡng lự quyết liệt giữa phe Mua và phe Bán nhưng chưa bên nào giành được chiến thắng cuối cùng.
+            </p>
+
+            <div class="watermark-box">
+                <div class="single-candle-img-box" style="max-width:400px; margin:0 auto;">
+                    <img src="../assets/images/candlesticks/spinning_top_candle.jpg" alt="Hình thái nến xoay Spinning Top">
+                    <span>Nến Spinning Top: Thân hẹp, hai bóng dài cân bằng</span>
+                </div>
+                <div class="watermark-caption">Nến Xoay thể hiện thị trường đang tích lũy hoặc cảnh báo xu hướng cũ đang suy yếu</div>
+                <div class="watermark-stamp"><i class="fa-solid fa-shield-halved"></i> PTvolume.com</div>
+            </div>
+
+            <!-- 2.3 HAMMER & INVERTED HAMMER -->
+            <h3>3. Nến Búa (Hammer) & Nến Búa Ngược (Inverted Hammer)</h3>
+            <p>
+                Đây là 2 mẫu nến <strong>bắt đáy đảo chiều tăng giá</strong> cực kỳ nổi tiếng xuất hiện ở cuối một con sóng giảm:
+            </p>
+            <ul>
+                <li><strong>Nến Búa (Hammer):</strong> Thân nến nhỏ ở đỉnh, bóng dưới rất dài (gấp ít nhất 2 đến 3 lần thân), hầu như không có bóng trên. Phe Bán dìm giá sâu nhưng phe Mua nhảy vào hấp thụ toàn bộ lực bán và đẩy giá đóng cửa sát đỉnh.</li>
+                <li><strong>Nến Búa Ngược (Inverted Hammer):</strong> Thân nến nhỏ ở đáy, bóng trên rất dài. Phe Mua đã bắt đầu xuất kích thử sức đẩy giá lên cao, báo hiệu phe Bán đã bắt đầu suy yếu.</li>
+            </ul>
+
+            <div class="watermark-box">
+                <div class="dual-img-grid">
+                    <div class="single-candle-img-box">
+                        <img src="../assets/images/candlesticks/hammer_candle.jpg" alt="Hình thái nến Búa Hammer">
+                        <span>Nến Búa (Hammer) rút chân đáy</span>
+                    </div>
+                    <div class="single-candle-img-box">
+                        <img src="../assets/images/candlesticks/inverted_hammer_candle.jpg" alt="Hình thái nến Búa ngược Inverted Hammer">
+                        <span>Nến Búa Ngược (Inverted Hammer)</span>
+                    </div>
+                </div>
+                <div class="single-candle-img-box" style="max-width:500px; margin:14px auto 0;">
+                    <img src="../assets/images/candlesticks/inverted_hammer_chart.jpg" alt="Điểm kích hoạt lệnh Buy với Nến Búa">
+                    <span>Biểu đồ thực tế: Điểm Mua tại đáy xu hướng khi xuất hiện nến Búa</span>
+                </div>
+                <div class="watermark-caption">Cụm nến Búa (Hammer) và Búa ngược (Inverted Hammer) kích hoạt đảo chiều tăng giá tại vùng Hỗ trợ</div>
+                <div class="watermark-stamp"><i class="fa-solid fa-shield-halved"></i> PTvolume.com</div>
+            </div>
+
+            <!-- 2.4 HANGING MAN & SHOOTING STAR -->
+            <h3>4. Nến Người Treo Cổ (Hanging Man) & Nến Sao Băng (Shooting Star)</h3>
+            <p>
+                Đây là 2 mẫu nến <strong>bắt đỉnh đảo chiều giảm giá</strong> xuất hiện ở cuối một con sóng tăng:
+            </p>
+            <ul>
+                <li><strong>Nến Người Treo Cổ (Hanging Man):</strong> Hình dáng giống nến Hammer nhưng xuất hiện ở **Đỉnh xu hướng tăng**. Bóng dưới dài chứng tỏ áp lực bán tháo bất ngờ xuất hiện trong phiên.</li>
+                <li><strong>Nến Sao Băng (Shooting Star):</strong> Thân nến nhỏ ở đáy, **bóng trên rất dài**. Phe Mua cố đẩy giá lên đỉnh cao mới nhưng bị phe Bán dội gáo nước lạnh xả hàng ào ạt dìm giá về sát đáy phiên. Tín hiệu Bán khống cực mạnh tại vùng Kháng cự!</li>
+            </ul>
+
+            <div class="watermark-box">
+                <div class="dual-img-grid">
+                    <div class="single-candle-img-box">
+                        <img src="../assets/images/candlesticks/hanging_man_candle.jpg" alt="Nến Người Treo Cổ Hanging Man">
+                        <span>Nến Hanging Man tại đỉnh sóng tăng</span>
+                    </div>
+                    <div class="single-candle-img-box">
+                        <img src="../assets/images/candlesticks/shooting_star_candle.jpg" alt="Nến Sao Băng Shooting Star">
+                        <span>Nến Shooting Star (Từ chối giá tại đỉnh)</span>
+                    </div>
+                </div>
+                <div class="single-candle-img-box" style="max-width:500px; margin:14px auto 0;">
+                    <img src="../assets/images/candlesticks/shooting_star_chart.jpg" alt="Biểu đồ thực tế Nến Sao Băng Shooting Star đảo chiều giảm">
+                    <span>Biểu đồ thực tế: Kích hoạt lệnh Bán khi xuất hiện Shooting Star tại Kháng cự</span>
+                </div>
+                <div class="watermark-caption">Nến Hanging Man và Shooting Star báo hiệu dòng tiền lớn Smart Money bắt đầu xả hàng chốt lời</div>
+                <div class="watermark-stamp"><i class="fa-solid fa-shield-halved"></i> PTvolume.com</div>
+            </div>
+
+            <!-- 2.5 DOJI -->
+            <h3>5. Các Loại Nến Doji Quan Trọng</h3>
+            <p>
+                Nến Doji có giá mở cửa và đóng cửa **gần như trùng khớp hoàn toàn**, nến trông giống hình dấu cộng (+). Thể hiện sự giằng co và cảnh báo xu hướng hiện tại đã cạn kiệt năng lượng:
+            </p>
+            <ul>
+                <li><strong>Standard Doji (Doji Tiêu Chuẩn):</strong> Bóng trên và bóng dưới ngắn, thể hiện sự lưỡng lự tạm thời.</li>
+                <li><strong>Long-legged Doji (Doji Chân Dài):</strong> Bóng trên và bóng dưới rất dài, thể hiện thị trường vừa trải qua một đợt tranh chấp dữ dội.</li>
+                <li><strong>Dragonfly Doji (Doji Chuồn Chuồn):</strong> Bóng dưới rất dài, không có bóng trên. Giá mở cửa, cao nhất và đóng cửa bằng nhau ở đỉnh &rarr; <em>Tín hiệu đảo chiều tăng giá mạnh tại đáy!</em></li>
+                <li><strong>Gravestone Doji (Doji Bia Mộ):</strong> Bóng trên rất dài, không có bóng dưới. Giá mở cửa, thấp nhất và đóng cửa bằng nhau ở đáy &rarr; <em>Tín hiệu đảo chiều sập giá mạnh tại đỉnh!</em></li>
+            </ul>
+
+            <div class="watermark-box">
+                <div class="dual-img-grid">
+                    <div class="single-candle-img-box">
+                        <img src="../assets/images/candlesticks/doji_types.jpg" alt="Các dạng nến Doji tiêu chuẩn và chân dài">
+                        <span>4 Dạng nến Doji thường gặp</span>
+                    </div>
+                    <div class="single-candle-img-box">
+                        <img src="../assets/images/candlesticks/dragonfly_gravestone_doji.jpg" alt="Doji Chuồn Chuồn và Doji Bia Mộ">
+                        <span>Dragonfly Doji (Chuồn chuồn) & Gravestone Doji (Bia mộ)</span>
+                    </div>
+                </div>
+                <div class="single-candle-img-box" style="max-width:500px; margin:14px auto 0;">
+                    <img src="../assets/images/candlesticks/doji_chart.jpg" alt="Ứng dụng nến Doji đảo chiều trên biểu đồ">
+                    <span>Biểu đồ thực tế: Điểm đảo chiều xu hướng khi cụm Doji xuất hiện</span>
+                </div>
+                <div class="watermark-caption">Bộ sưu tập nến Doji và cách nhận biết thời điểm xu hướng thị trường cạn kiệt lực</div>
+                <div class="watermark-stamp"><i class="fa-solid fa-shield-halved"></i> PTvolume.com</div>
+            </div>
+
+            <!-- PHẦN 3: CÁC MÔ HÌNH TỔ HỢP ĐẢO CHIỀU -->
+            <h2><i class="fa-solid fa-shapes"></i> III. BỘ CỤM NẾN TỔ HỢP ĐẢO CHIỀU KINH ĐIỂN</h2>
+            
+            <!-- 3.1 ENGULFING -->
+            <div class="step-card">
+                <h4><i class="fa-solid fa-shield" style="color:#26E7A6;"></i> 1. Cụm Nến Nhấn Chìm Tăng (Bullish Engulfing) & Giảm (Bearish Engulfing)</h4>
+                <p>
+                    Gồm bộ 2 cây nến: Cây nến thứ 2 có thân lớn **nuốt trọn toàn bộ thân cây nến thứ nhất**.
+                </p>
+                <ul>
+                    <li><strong>Bullish Engulfing (Nhấn chìm tăng):</strong> Cây nến xanh lớn bao trùm toàn bộ nến đỏ trước đó tại vùng đáy hỗ trợ &rarr; Phe Mua quay lại áp đảo hoàn toàn.</li>
+                    <li><strong>Bearish Engulfing (Nhấn chìm giảm):</strong> Cây nến đỏ lớn nuốt chửng nến xanh trước đó tại vùng đỉnh kháng cự &rarr; Phe Bán dội áp lực xả hàng quyết liệt.</li>
+                </ul>
+
+                <div class="watermark-box" style="margin-bottom:0;">
+                    <div class="dual-img-grid">
+                        <div class="single-candle-img-box">
+                            <img src="../assets/images/candlesticks/engulfing_patterns.jpg" alt="Mô hình nến Nhấn chìm tăng và giảm">
+                            <span>Cấu trúc Bullish / Bearish Engulfing</span>
+                        </div>
+                        <div class="single-candle-img-box">
+                            <img src="../assets/images/candlesticks/engulfing_chart.jpg" alt="Biểu đồ thực tế giao dịch mô hình Engulfing">
+                            <span>Biểu đồ thực tế: Điểm vào lệnh khi nến Engulfing nuốt trọn nến trước</span>
+                        </div>
+                    </div>
+                    <div class="watermark-caption">Mô hình Nhấn Chìm Engulfing - Một trong những thế nến có xác suất thắng cao nhất</div>
+                    <div class="watermark-stamp"><i class="fa-solid fa-shield-halved"></i> PTvolume.com</div>
+                </div>
+            </div>
+
+            <!-- 3.2 MORNING & EVENING STAR -->
+            <div class="step-card">
+                <h4><i class="fa-solid fa-sun" style="color:var(--accent-gold);"></i> 2. Cụm Nến Sao Mai (Morning Star) & Sao Hôm (Evening Star)</h4>
+                <p>
+                    Bộ 3 cây nến tinh hoa có độ tin cậy đảo chiều thuộc hàng cao nhất:
+                </p>
+                <ul>
+                    <li><strong>Morning Star (Sao Mai - Đáy &rarr; Tăng):</strong> Nến 1 giảm mạnh &rarr; Nến 2 thân nhỏ hoặc Doji (ngừng đà rơi) &rarr; Nến 3 tăng mạnh đóng cửa vượt quá 50% thân nến 1.</li>
+                    <li><strong>Evening Star (Sao Hôm - Đỉnh &rarr; Giảm):</strong> Nến 1 tăng mạnh &rarr; Nến 2 thân nhỏ hoặc Doji (chững lại đà tăng) &rarr; Nến 3 giảm mạnh xé toạc đà tăng trước đó.</li>
+                </ul>
+
+                <div class="watermark-box" style="margin-bottom:0;">
+                    <div class="dual-img-grid">
+                        <div class="single-candle-img-box">
+                            <img src="../assets/images/candlesticks/morning_evening_star.jpg" alt="Mô hình Sao Mai Morning Star và Sao Hôm Evening Star">
+                            <span>Cấu trúc Morning Star & Evening Star</span>
+                        </div>
+                        <div class="single-candle-img-box">
+                            <img src="../assets/images/candlesticks/morning_star_chart.jpg" alt="Biểu đồ thực tế mô hình Morning Star">
+                            <span>Biểu đồ thực tế: Điểm Mua tại đáy khi cụm Sao Mai hoàn thành</span>
+                        </div>
+                    </div>
+                    <div class="watermark-caption">Mô hình Sao Mai (Morning Star) và Sao Hôm (Evening Star) trên biểu đồ thực chiến</div>
+                    <div class="watermark-stamp"><i class="fa-solid fa-shield-halved"></i> PTvolume.com</div>
+                </div>
+            </div>
+
+            <!-- PHẦN 4: NẾN KẾT HỢP VOLUME VSA -->
+            <h2><i class="fa-solid fa-chart-column"></i> IV. BÍ QUYẾT ĐỌC NẾN KẾT HỢP KHỐI LƯỢNG VSA (VOLUME SPREAD ANALYSIS)</h2>
+            <div class="data-table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Hình Thái Nến (Spread)</th>
+                            <th>Khối Lượng (Volume)</th>
+                            <th>Đọc Vị Bản Chất Dòng Tiền (Smart Money)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Nến thân dài (Marubozu tăng)</td>
+                            <td><span style="color:#26E7A6; font-weight:700;">Rất Cao (Ultra High Vol)</span></td>
+                            <td><strong>Đẩy giá thật (True Breakout):</strong> Nỗ lực mua đi kèm kết quả tăng giá tương xứng. Xu hướng tăng rất vững chắc.</td>
+                        </tr>
+                        <tr>
+                            <td>Nến thân rất hẹp (Doji / Nến nhỏ)</td>
+                            <td><span style="color:#F23645; font-weight:700;">Đột Biến Rất Cao</span></td>
+                            <td><strong>Bất thường (Anomalies / Bẫy):</strong> Nỗ lực cực lớn nhưng giá không tăng nổi chứng tỏ Smart Money đang âm thầm xả hàng chặn giá (Absorption / Climax). Cảnh báo đảo chiều sập giá!</td>
+                        </tr>
+                        <tr>
+                            <td>Nến rút chân Pin Bar</td>
+                            <td><span style="color:var(--accent-gold); font-weight:700;">Thấp (Low Volume)</span></td>
+                            <td><strong>Kiểm định cạn cung (Test Supply):</strong> Phe bán đã cạn kiệt hàng, dọn đường cho phe mua dễ dàng đẩy giá bốc đầu.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- PHẦN 5: KẾT LUẬN -->
+            <div class="highlight-box">
+                <h3><i class="fa-solid fa-arrow-right"></i> Tổng Kết & Chuẩn Bị Cho Bài 3</h3>
+                <p style="margin-bottom:12px;">
+                    Nến Nhật cung cấp tín hiệu kích hoạt (Trigger). Tuy nhiên, một cây nến Pin Bar hay Engulfing đẹp đến mấy cũng sẽ vô nghĩa nếu nó xuất hiện lơ lửng ở giữa khoảng trống. Trong bài học tiếp theo, chúng ta sẽ học cách gắn nến vào các vùng cản then chốt: <strong>Bài 3: Kháng Cự & Hỗ Trợ – Bản Đồ Tác Chiến Của Mọi Trader</strong>!
+                </p>
+                <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+                    <a href="doc-bieu-do-bai-1-phan-tich-ky-thuat-va-co-ban.html" class="btn" style="background:var(--bg-card); border:1px solid var(--border-color); color:#fff;">
+                        <i class="fa-solid fa-arrow-left"></i> Xem Lại Bài 1
+                    </a>
+                    <a href="doc-bieu-do-bai-3-khang-cu-va-ho-tro.html" class="btn" style="background:var(--bullish); color:#fff; font-weight:700;">
+                        <i class="fa-solid fa-chart-area"></i> Học Tiếp Bài 3: Kháng Cự & Hỗ Trợ <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMMENT SECTION -->
+        <section class="comment-section">
+            <h3 class="comment-header">
+                <i class="fa-regular fa-comments" style="color: #00E5FF;"></i> Thảo Luận Bài Học Nến Nhật (<span id="commentCount">2</span>)
+            </h3>
+
+            <form class="comment-form" id="commentForm" onsubmit="addComment(event)">
+                <div class="form-group">
+                    <label class="form-label">Tên Học Viên / Nickname:</label>
+                    <input type="text" id="commentName" class="form-control" placeholder="VD: Hoàng Long (Price Action)" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Cảm nhận hoặc Thắc mắc của bạn về các mô hình nến:</label>
+                    <textarea id="commentContent" class="form-control" placeholder="Mẫu nến nào bạn hay dùng nhất: Pin Bar, Engulfing hay Morning Star?..." required></textarea>
+                </div>
+                <button type="submit" class="btn">
+                    <i class="fa-regular fa-paper-plane"></i> Gửi Bình Luận
+                </button>
+            </form>
+
+            <div class="comment-list" id="commentList">
+                <div class="comment-item">
+                    <div class="comment-top">
+                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Trịnh Quốc Bảo (Hà Nội)</span>
+                        <span class="comment-date">24 Tháng 8, 2026</span>
+                    </div>
+                    <div class="comment-text">
+                        Có hình minh họa trực quan từ nến Marubozu, Hammer đến Morning Star nhìn rõ ràng hẳn! Đọc phần giải thích nến kèm biểu đồ thực tế giúp dễ nhớ hơn rất nhiều.
+                    </div>
+                </div>
+
+                <div class="comment-item">
+                    <div class="comment-top">
+                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Nguyễn Thùy Linh (Đà Nẵng)</span>
+                        <span class="comment-date">24 Tháng 8, 2026</span>
+                    </div>
+                    <div class="comment-text">
+                        Phân biệt Shooting Star và Inverted Hammer nhờ vị trí đỉnh đáy rất dễ hiểu. Cảm ơn ban biên tập PTvolume đã trích dẫn tài liệu chi tiết!
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="../pages/about.html">Về PTvolume</a>
+            <a href="../pages/contact.html">Liên Hệ</a>
+            <a href="../pages/terms.html">Điều Khoản</a>
+            <a href="../pages/privacy.html">Bảo Mật</a>
+            <a href="../pages/disclaimer.html">Cảnh Báo Rủi Ro</a>
+        </div>
+        <p>© 2026 PTvolume.com. Toàn bộ bản quyền được bảo lưu. Naked Chart • VSA • Phương Pháp Wyckoff.</p>
+    </footer>
+
+    <!-- Hidden Google Translate Element -->
+    <div id="google_translate_element" style="display:none;"></div>
+
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'vi',
+                includedLanguages: 'en,vi',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function setLanguage(lang) {
+            localStorage.setItem('ptvolume_lang', lang);
+            updateLangButtons(lang);
+
+            // Set cookies
+            document.cookie = "googtrans=/vi/" + lang + "; path=/;";
+            if (window.location.hostname && window.location.hostname !== '') {
+                document.cookie = "googtrans=/vi/" + lang + "; path=/; domain=" + window.location.hostname;
+            }
+
+            // Trigger Google Translate dropdown
+            const select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = lang;
+                select.dispatchEvent(new Event('change'));
+            } else {
+                window.location.reload();
+            }
+        }
+
+        function updateLangButtons(lang) {
+            const btnVi = document.getElementById('btn-lang-vi');
+            const btnEn = document.getElementById('btn-lang-en');
+            if (btnVi && btnEn) {
+                if (lang === 'en') {
+                    btnEn.classList.add('active');
+                    btnVi.classList.remove('active');
+                } else {
+                    btnVi.classList.add('active');
+                    btnEn.classList.remove('active');
+                }
+            }
+        }
+
+        function applyStoredLanguage() {
+            const currentLang = localStorage.getItem('ptvolume_lang') || 'vi';
+            updateLangButtons(currentLang);
+            if (currentLang === 'en') {
+                let attempts = 0;
+                const checkCombo = setInterval(() => {
+                    const select = document.querySelector('.goog-te-combo');
+                    if (select) {
+                        select.value = 'en';
+                        select.dispatchEvent(new Event('change'));
+                        clearInterval(checkCombo);
+                    }
+                    attempts++;
+                    if (attempts > 30) clearInterval(checkCombo);
+                }, 200);
+            }
+        }
+
+        const POST_SLUG = "doc-bieu-do-bai-2-nen-nhat-va-cac-loai-nen-quan-trong";
+
+        function loadSavedComments() {
+            const saved = JSON.parse(localStorage.getItem('ptvolume_comments_' + POST_SLUG) || '[]');
+            const commentList = document.getElementById("commentList");
+            if (commentList && saved.length > 0) {
+                saved.forEach(item => {
+                    const newComment = document.createElement("div");
+                    newComment.className = "comment-item";
+                    newComment.innerHTML = `
+                        <div class="comment-top">
+                            <span class="comment-author"><i class="fa-solid fa-circle-user"></i> ${escapeHtml(item.name)}</span>
+                            <span class="comment-date">${escapeHtml(item.date)}</span>
+                        </div>
+                        <div class="comment-text">${escapeHtml(item.content)}</div>
+                    `;
+                    commentList.prepend(newComment);
+                });
+                const countElem = document.getElementById("commentCount");
+                if (countElem) {
+                    countElem.innerText = parseInt(countElem.innerText || 0) + saved.length;
+                }
+            }
+        }
+
+        function addComment(e) {
+            e.preventDefault();
+            const nameInput = document.getElementById("commentName");
+            const contentInput = document.getElementById("commentContent");
+            if (!nameInput || !contentInput) return;
+            const name = nameInput.value.trim();
+            const content = contentInput.value.trim();
+            if (!name || !content) return;
+
+            const now = new Date();
+            const timeString = now.toLocaleDateString('vi-VN') + ' ' + now.toLocaleTimeString('vi-VN');
+
+            const commentList = document.getElementById("commentList");
+            const newComment = document.createElement("div");
+            newComment.className = "comment-item";
+            newComment.innerHTML = `
+                <div class="comment-top">
+                    <span class="comment-author"><i class="fa-solid fa-circle-user"></i> ${escapeHtml(name)}</span>
+                    <span class="comment-date">${timeString}</span>
+                </div>
+                <div class="comment-text">${escapeHtml(content)}</div>
+            `;
+            commentList.prepend(newComment);
+
+            const countElem = document.getElementById("commentCount");
+            if (countElem) countElem.innerText = parseInt(countElem.innerText || 0) + 1;
+
+            // Save to localStorage
+            const saved = JSON.parse(localStorage.getItem('ptvolume_comments_' + POST_SLUG) || '[]');
+            saved.push({ name, content, date: timeString });
+            localStorage.setItem('ptvolume_comments_' + POST_SLUG, JSON.stringify(saved));
+
+            nameInput.value = "";
+            contentInput.value = "";
+            alert("Bình luận của bạn đã được đăng thành công!");
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            applyStoredLanguage();
+            loadSavedComments();
+        });
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>

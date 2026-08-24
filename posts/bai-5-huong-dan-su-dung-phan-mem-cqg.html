@@ -12,8 +12,8 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cuộc Đời, Phương Pháp Giao Dịch & Bài Học Sống Còn Của Jesse Livermore | PTvolume</title>
-    <meta name="description" content="Đúc kết toàn diện cuộc đời thăng trầm, hệ thống giao dịch Tape Reading, Điểm then chốt Pivotal Points và các bài học quản trị tâm lý để đời của huyền thoại Jesse Livermore.">
+    <title>Bài 5: Hướng Dẫn Sử Dụng Phần Mềm Giao Dịch CQG & M-System Toàn Tập | PTvolume</title>
+    <meta name="description" content="Giáo trình Bài 5: Hướng dẫn toàn diện nền tảng CQG Desktop HTML5, CQG Mobile, giải mã mã tháng hợp đồng (F-Z), các loại lệnh MKT, LMT, STP, OCO Bracket và hệ thống quản lý M-System tại MXV.">
     <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,6 +34,7 @@
             --text-muted: #8E9BAE;
             --text-light: #CAD4E0;
             --accent-gold: #F0B90B;
+            --accent-cyan: #00E5FF;
             --font-editorial: 'Merriweather', Georgia, serif;
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
@@ -105,7 +106,7 @@
         }
 
         .logo-text .brand span {
-            color: #00E5FF;
+            color: var(--accent-cyan);
         }
 
         .nav-right {
@@ -165,7 +166,7 @@
         }
 
         .article-container {
-            max-width: 900px;
+            max-width: 940px;
             margin: 40px auto 80px;
             padding: 0 24px;
         }
@@ -177,25 +178,26 @@
             font-size: 0.85rem;
             color: var(--text-muted);
             margin-bottom: 20px;
+            flex-wrap: wrap;
         }
 
         .breadcrumb a:hover {
-            color: #00E5FF;
+            color: var(--accent-cyan);
         }
 
         .article-badge {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 4px 12px;
+            padding: 4px 14px;
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            background: rgba(240, 185, 11, 0.15);
-            color: var(--accent-gold);
-            border: 1px solid rgba(240, 185, 11, 0.3);
+            background: rgba(41, 98, 255, 0.15);
+            color: #6095FF;
+            border: 1px solid rgba(41, 98, 255, 0.35);
             margin-bottom: 16px;
         }
 
@@ -204,7 +206,7 @@
             font-size: 2.2rem;
             line-height: 1.35;
             color: #fff;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
             font-weight: 700;
         }
 
@@ -214,10 +216,16 @@
             gap: 16px;
             font-size: 0.85rem;
             color: var(--text-muted);
-            padding-bottom: 60px;
+            padding-bottom: 20px;
             border-bottom: 1px solid var(--border-color);
             margin-bottom: 32px;
             flex-wrap: wrap;
+        }
+
+        .article-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .article-body {
@@ -230,43 +238,43 @@
         }
 
         .article-body p {
-            margin-bottom: 60px;
+            margin-bottom: 24px;
             text-align: justify;
             text-justify: inter-word;
         }
 
         .article-body h2 {
             font-family: var(--font-sans);
-            font-size: 1.5rem;
+            font-size: 1.45rem;
             color: #fff;
-            margin: 40px 0 16px;
+            margin: 42px 0 18px;
             font-weight: 700;
             display: flex;
             align-items: center;
             gap: 10px;
             border-left: 4px solid var(--primary);
-            padding-left: 12px;
+            padding-left: 14px;
             text-align: left;
         }
 
         .article-body h3 {
             font-family: var(--font-sans);
-            font-size: 1.2rem;
-            color: #00E5FF;
+            font-size: 1.18rem;
+            color: var(--accent-cyan);
             margin: 28px 0 12px;
             font-weight: 600;
             text-align: left;
         }
 
         .article-body ul, .article-body ol {
-            margin-bottom: 60px;
+            margin-bottom: 26px;
             padding-left: 24px;
             text-align: justify;
             text-justify: inter-word;
         }
 
         .article-body li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             text-align: justify;
             text-justify: inter-word;
         }
@@ -278,9 +286,9 @@
 
         .article-body blockquote {
             background: #141822;
-            border-left: 4px solid var(--accent-gold);
-            padding: 16px 20px;
-            margin: 24px 0;
+            border-left: 4px solid var(--primary);
+            padding: 18px 22px;
+            margin: 26px 0;
             border-radius: 0 8px 8px 0;
             font-style: italic;
             color: #F0F3FA;
@@ -308,7 +316,7 @@
             font-family: var(--font-sans);
             font-size: 0.82rem;
             color: var(--text-muted);
-            padding: 8px 12px;
+            padding: 8px 14px;
             background: #10141D;
             border-top: 1px solid var(--border-color);
             text-align: center;
@@ -317,27 +325,26 @@
 
         .watermark-stamp {
             position: absolute;
-            bottom: 60px;
+            bottom: 45px;
             right: 18px;
-            background: rgba(11, 14, 20, 0.35);
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 3px 9px;
+            background: rgba(11, 14, 20, 0.45);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 4px 10px;
             border-radius: 6px;
             font-size: 0.72rem;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.45);
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.75);
             letter-spacing: 0.5px;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 6px;
             pointer-events: none;
-            opacity: 0.6;
         }
 
         .highlight-box {
             background: #141822;
-            border: 1px solid rgba(41, 98, 255, 0.3);
+            border: 1px solid rgba(41, 98, 255, 0.35);
             border-radius: 12px;
             padding: 24px;
             margin: 32px 0;
@@ -348,7 +355,7 @@
         .highlight-box h3 {
             color: var(--accent-gold);
             margin-top: 0;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -366,6 +373,7 @@
             margin-bottom: 12px;
             font-family: var(--font-sans);
             font-size: 0.95rem;
+            line-height: 1.65;
         }
 
         .highlight-box li i {
@@ -393,7 +401,7 @@
 
         table.data-table th {
             background: #141822;
-            color: #00E5FF;
+            color: var(--accent-cyan);
             padding: 12px 16px;
             border-bottom: 1px solid var(--border-color);
             font-weight: 700;
@@ -415,6 +423,34 @@
             background: rgba(41, 98, 255, 0.05);
         }
 
+        .step-card {
+            background: #141822;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .step-card h4 {
+            color: #fff;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .code-tag {
+            background: #080B10;
+            border: 1px solid var(--border-color);
+            color: var(--accent-cyan);
+            font-family: var(--font-mono);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
         .comment-section {
             margin-top: 60px;
             padding-top: 32px;
@@ -424,7 +460,7 @@
         .comment-header {
             font-size: 1.3rem;
             color: #fff;
-            margin-bottom: 60px;
+            margin-bottom: 24px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -495,7 +531,7 @@
 
         .comment-author {
             font-weight: 700;
-            color: #00E5FF;
+            color: var(--accent-cyan);
             display: flex;
             align-items: center;
             gap: 6px;
@@ -562,213 +598,303 @@
         <div class="breadcrumb">
             <a href="../index.html">Trang Chủ</a>
             <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
-            <a href="../index.html#library">Kho Sách Kinh Điển</a>
+            <a href="../index.html#hoc-tap">Giáo Trình Học Tập</a>
             <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
-            <span>Jesse Livermore</span>
+            <span>Bài 5: Hướng Dẫn Sử Dụng CQG & M-System</span>
         </div>
 
-        <span class="article-badge"><i class="fa-solid fa-crown"></i> Nghiên Cứu Chuyên Sâu</span>
+        <span class="article-badge"><i class="fa-solid fa-desktop"></i> Giáo Trình Nhập Môn Hàng Hóa • Bài 5</span>
         
-        <h1 class="article-title">Cuộc Đời Huyền Thoại, Phương Pháp Giao Dịch & Những Bài Học Sống Còn Của Jesse Livermore</h1>
+        <h1 class="article-title">Bài 5: Hướng Dẫn Sử Dụng Phần Mềm Giao Dịch CQG & M-System Toàn Tập</h1>
 
         <div class="article-meta">
-            <span><i class="fa-regular fa-user"></i> Tác giả: <strong>Richard Smitten & Edwin Lefèvre</strong></span>
+            <span><i class="fa-regular fa-user"></i> Ban Học Thuật <strong>PTvolume Academy</strong></span>
             <span>•</span>
-            <span><i class="fa-solid fa-book-bookmark"></i> Chủ đề: <strong>Nghiên Cứu Tâm Lý & Đọc Dòng Tiền</strong></span>
+            <span><i class="fa-solid fa-wheat-awn"></i> Chuyên mục: <strong>Hàng Hóa Phái Sinh (Commodity Futures)</strong></span>
             <span>•</span>
-            <span><i class="fa-regular fa-clock"></i> 12 phút đọc</span>
+            <span><i class="fa-regular fa-calendar-check"></i> Cập nhật công nghệ: 2026</span>
+            <span>•</span>
+            <span><i class="fa-regular fa-clock"></i> 16 phút đọc & thực hành</span>
         </div>
 
         <div class="article-body">
             <blockquote>
-                "Không có gì mới trên Phố Wall. Mọi điều xảy ra ngày hôm nay đều đã từng xảy ra trong quá khứ và sẽ tiếp tục lặp lại trong tương lai, bởi vì bản chất con người là không bao giờ thay đổi."<br>
-                — <strong>Jesse Lauriston Livermore (1877 – 1940)</strong>
+                "Nền tảng giao dịch là cây cầu nối trực tiếp tư duy phân tích của bạn với máy chủ khớp lệnh toàn cầu. Nắm vững cách thao tác lệnh MKT, LMT, STP và OCO Bracket trên CQG sẽ giúp bạn phản xạ nhanh chóng và bảo vệ từng đồng vốn trước biến động từng giây của thị trường."<br>
+                — <strong>PTvolume Platform Engineering</strong>
             </blockquote>
 
-            <p>
-                Trong biên niên sử tài chính thế giới, không một cái tên nào gợi lên sự kinh ngạc, kính phục lẫn niềm tiếc thương sâu sắc như <strong>Jesse Lauriston Livermore</strong>. Được mệnh danh là <em>"Con Gấu Vĩ Đại Của Phố Wall" (The Great Bear of Wall Street)</em>, ông là biểu tượng tối thượng của nghệ thuật đầu cơ: từ một cậu bé làm thuê vô danh trở thành người chi phối cả thị trường tài chính Mỹ, nắm giữ khối tài sản hàng trăm triệu USD, rồi rơi vào những lần phá sản tán gia bại sản và kết thúc bằng một phát súng bi kịch.
-            </p>
-
-            <div class="watermark-box">
-                <img src="../assets/images/livermore_wallstreet_cover.jpg" alt="Không khí giao dịch sôi động tại sàn chứng khoán Phố Wall thời kỳ Jesse Livermore" style="max-height: 460px;">
-                <div class="watermark-caption">Không khí bảng điện tử và sàn giao dịch Phố Wall trong những năm tháng đỉnh cao của Jesse Livermore</div>
-                <div class="watermark-stamp">
-                    <i class="fa-solid fa-shield-halved"></i> PTvolume.com
-                </div>
-            </div>
-
-            <h2><i class="fa-solid fa-hourglass-half"></i> I. CUỘC ĐỜI HUYỀN THOẠI & NHỮNG THĂNG TRẦM LỊCH SỬ</h2>
-
-            <h3>1. Cậu bé nông dân & Biệt danh "Boy Plunger" (1877 – 1899)</h3>
-            <p>
-                Jesse sinh năm 1877 trong một gia đình nông dân nghèo ở Shrewsbury, Massachusetts. Năm 14 tuổi, không chấp nhận cuộc đời làm nông nghèo khó, ông trốn nhà đến Boston với <strong>5 USD</strong> mẹ cho. Ông xin làm chân ghi bảng giá (Board Boy) tại hãng môi giới Paine Webber với đồng lương 5 USD/tuần.
-            </p>
-            <p>
-                Hàng ngày ghi chép hàng ngàn mức giá từ máy điện báo (Ticker Tape) lên bảng đen, Livermore nhận ra quy luật kỳ diệu: <em>Biến động giá không hề ngẫu nhiên, chúng luôn bộc lộ các mô thức hành vi lặp đi lặp lại trước khi bùng nổ thành một con sóng lớn.</em> Ông bắt đầu đặt cược tại các "Bucket Shop" (sòng cược chui) và thắng liên tục. Đến năm 20 tuổi, ông kiếm được hơn 10.000 USD và bị tất cả các sòng cược cấm cửa vì thắng quá nhiều, gắn liền với biệt danh <strong>"The Boy Plunger"</strong>.
-            </p>
-
-            <div class="watermark-box">
-                <img src="../assets/images/livermore_portrait.jpg" alt="Chân dung huyền thoại Jesse Lauriston Livermore tại bàn làm việc với máy đọc băng giá Ticker Tape" style="max-height: 480px;">
-                <div class="watermark-caption">Chân dung nhà đầu cơ huyền thoại Jesse Lauriston Livermore (1877 – 1940) bên bàn làm việc và sổ tay phân tích thị trường</div>
-                <div class="watermark-stamp">
-                    <i class="fa-solid fa-shield-halved"></i> PTvolume.com
-                </div>
-            </div>
-
-            <h3>2. Những trận đánh kinh điển ghi danh vào lịch sử tài chính</h3>
-            <ul>
-                <li><strong>Trận động đất San Francisco (1906):</strong> Nhận thấy cổ phiếu đường sắt Union Pacific có dấu hiệu suy yếu dù truyền thông rất tích cực, Livermore quyết định bán khống quy mô lớn. Trận động đất lịch sử xảy ra làm sụp đổ hệ thống đường sắt, mang về cho ông <strong>250.000 USD</strong>.</li>
-                <li><strong>Đại hoảng loạn năm 1907 (Panic of 1907):</strong> Khi thanh khoản hệ thống ngân hàng cạn kiệt, Livermore mở vị thế bán khống toàn diện. Ngày 24/10/1907, toàn bộ Phố Wall sụp đổ, ông thu về <strong>1 triệu USD chỉ trong một ngày</strong>. Nhà tài phiệt quyền lực nhất nước Mỹ <strong>J.P. Morgan</strong> đã phải đích thân cử người tới cầu xin Livermore ngừng bán khống để cứu thị trường tài chính quốc gia.</li>
-                <li><strong>Cú sập bẫy Bông vải (1908):</strong> Livermore mắc phải sai lầm nghiêm trọng nhất đời mình khi từ bỏ nguyên tắc độc lập để nghe theo lời khuyên của "Vua Bông" Percy Thomas. Ông liên tục mua bình quân giá xuống khi giá bông lao dốc, dẫn đến mất sạch tài sản và gánh khoản nợ gần 1 triệu USD.</li>
-                <li><strong>Tái sinh và trả nợ 100% (1915 – 1928):</strong> Trong Thế chiến I và thập niên 1920, Livermore trở lại kiên nhẫn nắm bắt các siêu chu kỳ và kiếm lại hàng triệu USD. Ông đã chủ động thanh toán 100% nợ gốc lẫn lãi cho toàn bộ chủ nợ cũ, dù tòa án đã tuyên bố ông phá sản và xóa nợ hợp pháp.</li>
-                <li><strong>Đỉnh cao vĩ đại 1929 (Thứ Ba Đen Tối - Black Tuesday):</strong> Nhận thấy thị trường tăng giá phi lý dựa trên đòn bẩy tín dụng, Livermore âm thầm tích lũy vị thế bán khống khổng lồ qua hơn 100 nhà môi giới. Khi Phố Wall sụp đổ ngày 29/10/1929, Livermore bỏ túi hơn <strong>100 triệu USD tiền mặt</strong> (tương đương hơn 3 - 4 tỷ USD ngày nay), trở thành một trong những người giàu nhất hành tinh.</li>
-            </ul>
-
-            <h3>3. Bi kịch hôn nhân, trầm cảm và Phát súng định mệnh (1930 – 1940)</h3>
-            <p>
-                Sau năm 1929, cuộc sống cá nhân của Livermore rơi vào bi kịch: Người vợ Dorothy nghiện rượu, ngoại tình và dùng súng bắn trọng thương con trai của ông. Cùng lúc đó, sự ra đời của Ủy ban Chứng khoán Mỹ (SEC) thắt chặt các quy định bán khống.
-            </p>
-            <p>
-                Căn bệnh trầm cảm lâm sàng khiến ông mất đi sự sắc bén và tính kỷ luật thép. Chiều ngày 27/11/1940, tại phòng thay đồ khách sạn Sherry-Netherland ở New York, Jesse Livermore đã dùng súng lục tự sát ở tuổi 63, để lại bức thư tuyệt mệnh đẫm nước mắt cho người vợ thứ ba Harriet: <em>"Nina thân yêu, anh không thể chịu đựng thêm được nữa... Anh là kẻ thất bại. Đây là lối thoát duy nhất..."</em>
-            </p>
-
-            <h2><i class="fa-solid fa-chart-line"></i> II. HỆ THỐNG PHƯƠNG PHÁP GIAO DỊCH CỦA JESSE LIVERMORE</h2>
-
-            <p>
-                Hệ thống của Jesse Livermore là khởi nguồn của trường phái <strong>Price Action (Hành động giá)</strong> và <strong>Order Flow (Dòng tiền)</strong> hiện đại, bao gồm 5 trụ cột cốt lõi:
-            </p>
-
+            <!-- PHẦN TÓM TẮT CỐT LÕI -->
             <div class="highlight-box">
-                <h3><i class="fa-solid fa-compass"></i> 5 Trụ Cột Giao Dịch Của Jesse Livermore</h3>
+                <h3><i class="fa-solid fa-sliders"></i> Trọng Tâm Kỹ Thuật Của Bài 5</h3>
                 <ul>
-                    <li><i class="fa-solid fa-check"></i> <strong>1. Đọc Băng Giá & Đường Đi Ít Kháng Cự Nhất (Line of Least Resistance):</strong> Giá luôn vận động theo hướng có ít lực cản nhất giữa Cung và Cầu. Đừng dự đoán; hãy theo dõi phản ứng của giá và khối lượng tại các vùng giá chủ chốt.</li>
-                    <li><i class="fa-solid fa-check"></i> <strong>2. Lý Thuyết Điểm Then Chốt (Pivotal Points):</strong> Chỉ vào lệnh tại các điểm bứt phá tiếp diễn xu hướng (Continuation Pivotal Point) hoặc điểm đảo chiều xu hướng lớn (Reversal Pivotal Point). Vào lệnh tại đây giúp trader biết ngay mình đúng hay sai chỉ sau 1-2 phiên.</li>
-                    <li><i class="fa-solid fa-check"></i> <strong>3. Thăm Dò & Nhồi Lệnh Kim Tự Tháp (Probing & Pyramiding):</strong> Giải ngân từng phần (20% - 20% - 20% - 40%). <em>CHỈ GIA TĂNG VỊ THẾ KHI LỆNH TRƯỚC ĐANG CÓ LÃI.</em> Tuyệt đối không bao giờ mua thêm khi đang lỗ.</li>
-                    <li><i class="fa-solid fa-check"></i> <strong>4. Tập Trung Vào Cổ Phiếu Dẫn Đầu (Market Leaders):</strong> Chỉ giao dịch cổ phiếu mạnh nhất thuộc nhóm ngành dẫn dắt sóng thị trường. Khi cổ phiếu đầu ngành suy yếu, toàn bộ thị trường sẽ sớm tạo đỉnh.</li>
-                    <li><i class="fa-solid fa-check"></i> <strong>5. Yếu Tố Thời Điểm & Nghệ Thuật "Ngồi Yên" (Sitting Tight):</strong> "Tiền lớn không được tạo ra từ việc mua bán liên tục, mà được tạo ra từ việc kiên nhẫn ngồi yên nắm giữ khi xu hướng đang chạy."</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Hệ sinh thái CQG hiện đại:</strong> CQG Desktop (HTML5 WebSockets không cần cài đặt), CQG Mobile và cơ chế khớp lệnh siêu tốc kết nối trực tiếp hơn 45 Sở giao dịch toàn cầu.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Quy tắc mã tháng hợp đồng (F - Z):</strong> Giải mã toàn bộ 12 ký tự chữ cái quy chuẩn quốc tế cho từng tháng đáo hạn.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Bộ lệnh giao dịch chuyên sâu:</strong> Phân biệt chi tiết lệnh MKT (Thị trường), LMT (Giới hạn), STP (Dừng), STP LMT và các lệnh hiệu lực DAY, GTC, GTD.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Lệnh phức hợp OCO & Bracket Order:</strong> Kỹ thuật cài đặt tự động 1 chạm: Vào lệnh đồng thời thiết lập sẵn Stop Loss + Take Profit.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Hệ thống quản trị tài khoản M-System:</strong> Cách theo dõi báo cáo sao kê, nạp/rút tiền ký quỹ và quản lý hạn mức chính thức tại Sở Giao dịch Hàng hóa Việt Nam (MXV).</li>
                 </ul>
             </div>
 
-            <h2><i class="fa-solid fa-shield-halved"></i> III. HỆ THỐNG QUẢN TRỊ VỐN & QUẢN TRỊ RỦI RO</h2>
+            <!-- WATERMARK IMAGE -->
+            <div class="watermark-box">
+                <img src="../assets/images/gold_commodities_analysis.jpg" alt="Giao diện đặt lệnh và phân tích kỹ thuật trên phần mềm CQG Desktop" style="max-height: 460px;">
+                <div class="watermark-caption">Môi trường giao dịch CQG Desktop HTML5 tích hợp đầy đủ bảng giá DOM, biểu đồ nến và quản trị lệnh thời gian thực</div>
+                <div class="watermark-stamp">
+                    <i class="fa-solid fa-shield-halved"></i> PTvolume.com
+                </div>
+            </div>
 
+            <!-- PHẦN 1: TỔNG QUAN VỀ CQG -->
+            <h2><i class="fa-solid fa-network-wired"></i> I. TỔNG QUAN VỀ NỀN TẢNG GIAO DỊCH TOÀN CẦU CQG</h2>
+            <p>
+                <strong>CQG (Commodity Quote Graphics)</strong> là nhà cung cấp giải pháp công nghệ giao dịch phái sinh hàng đầu thế giới với hơn 40 năm kinh nghiệm. Tại Việt Nam, <strong>Sở Giao dịch Hàng hóa Việt Nam (MXV)</strong> đã lựa chọn CQG làm đối tác công nghệ chiến lược để truyền tải dữ liệu giá thời gian thực và đẩy lệnh trực tiếp đến các sàn CME, CBOT, NYMEX, COMEX, ICE, TOCOM và SGX.
+            </p>
+
+            <h3>Các phiên bản CQG đang vận hành:</h3>
+            <ul>
+                <li><strong>CQG Desktop (Web-based HTML5):</strong> Phiên bản hiện đại và phổ biến nhất hiện nay. Chạy trực tiếp trên trình duyệt web (Chrome, Edge, Safari, Firefox) tại địa chỉ <span class="code-tag">https://m.cqg.com/cqg/desktop/logon</span> mà không cần cài đặt phần mềm. Ứng dụng công nghệ <em>WebSockets & Protobuf</em> cho độ trễ truyền dữ liệu cực thấp.</li>
+                <li><strong>CQG Mobile:</strong> Ứng dụng trên điện thoại iOS và Android, tối ưu cho việc theo dõi danh mục, thông báo biến động giá và đóng mở vị thế khẩn cấp khi di chuyển.</li>
+                <li><strong>CQG Integrated Client (QTrader/Trader):</strong> Phiên bản phần mềm cài đặt chuyên sâu dành cho các tổ chức đầu tư lớn cần lập trình thuật toán và bảng giá đa tầng.</li>
+            </ul>
+
+            <!-- PHẦN 2: BẢNG KÝ HIỆU THÁNG GIAO DỊCH -->
+            <h2><i class="fa-solid fa-calendar-days"></i> II. QUY TẮC ĐẶT TÊN MÃ HÀNG HÓA & KÝ HIỆU 12 THÁNG ĐÁO HẠN</h2>
+            <p>
+                Trên phần mềm CQG, mỗi mã hợp đồng tương lai được cấu thành từ 3 phần: <strong>[Mã Hàng Hóa] + [Ký Hiệu Tháng] + [Năm Đáo Hạn]</strong>.
+            </p>
+
+            <div class="step-card">
+                <h4><i class="fa-solid fa-magnifying-glass" style="color:var(--accent-cyan);"></i> Bảng mã hóa 12 tháng giao dịch chuẩn quốc tế (F - Z):</h4>
+                <div class="data-table-wrapper" style="margin: 10px 0;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Tháng</th>
+                                <th>Mã Tháng</th>
+                                <th>Tháng</th>
+                                <th>Mã Tháng</th>
+                                <th>Tháng</th>
+                                <th>Mã Tháng</th>
+                                <th>Tháng</th>
+                                <th>Mã Tháng</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tháng 1</td>
+                                <td><strong style="color:var(--accent-gold);">F</strong> (Jan)</td>
+                                <td>Tháng 4</td>
+                                <td><strong style="color:var(--accent-gold);">J</strong> (Apr)</td>
+                                <td>Tháng 7</td>
+                                <td><strong style="color:var(--accent-gold);">N</strong> (Jul)</td>
+                                <td>Tháng 10</td>
+                                <td><strong style="color:var(--accent-gold);">V</strong> (Oct)</td>
+                            </tr>
+                            <tr>
+                                <td>Tháng 2</td>
+                                <td><strong style="color:var(--accent-gold);">G</strong> (Feb)</td>
+                                <td>Tháng 5</td>
+                                <td><strong style="color:var(--accent-gold);">K</strong> (May)</td>
+                                <td>Tháng 8</td>
+                                <td><strong style="color:var(--accent-gold);">Q</strong> (Aug)</td>
+                                <td>Tháng 11</td>
+                                <td><strong style="color:var(--accent-gold);">X</strong> (Nov)</td>
+                            </tr>
+                            <tr>
+                                <td>Tháng 3</td>
+                                <td><strong style="color:var(--accent-gold);">H</strong> (Mar)</td>
+                                <td>Tháng 6</td>
+                                <td><strong style="color:var(--accent-gold);">M</strong> (Jun)</td>
+                                <td>Tháng 9</td>
+                                <td><strong style="color:var(--accent-gold);">U</strong> (Sep)</td>
+                                <td>Tháng 12</td>
+                                <td><strong style="color:var(--accent-gold);">Z</strong> (Dec)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <h4><i class="fa-solid fa-lightbulb" style="color:var(--accent-gold);"></i> Ví dụ đọc mã hợp đồng trên phần mềm CQG:</h4>
+                <ul>
+                    <li><span class="code-tag">ZCEZ26</span>: Hợp đồng <strong>Ngô (ZCE)</strong> kỳ hạn <strong>Tháng 12 (Z)</strong> năm <strong>2026 (26)</strong> sàn CBOT.</li>
+                    <li><span class="code-tag">ZSEX26</span>: Hợp đồng <strong>Đậu Tương (ZSE)</strong> kỳ hạn <strong>Tháng 11 (X)</strong> năm <strong>2026 (26)</strong> sàn CBOT.</li>
+                    <li><span class="code-tag">ZLEZ26</span>: Hợp đồng <strong>Dầu Đậu Tương (ZLE)</strong> kỳ hạn <strong>Tháng 12 (Z)</strong> năm <strong>2026 (26)</strong> sàn CBOT.</li>
+                    <li><span class="code-tag">CLEV26</span>: Hợp đồng <strong>Dầu Thô WTI (CLE)</strong> kỳ hạn <strong>Tháng 10 (V)</strong> năm <strong>2026 (26)</strong> sàn NYMEX.</li>
+                    <li><span class="code-tag">SBEV26</span>: Hợp đồng <strong>Đường #11 (SBE)</strong> kỳ hạn <strong>Tháng 10 (V)</strong> năm <strong>2026 (26)</strong> sàn ICE US.</li>
+                </ul>
+            </div>
+
+            <!-- PHẦN 3: CÁC LOẠI LỆNH TRÊN CQG -->
+            <h2><i class="fa-solid fa-list-check"></i> III. BỘ LỆNH GIAO DỊCH CỐT LÕI TRÊN PHẦN MỀM CQG</h2>
             <div class="data-table-wrapper">
                 <table class="data-table">
                     <thead>
                         <tr>
-                            <th>Quy Tắc Quản Trị Vốn</th>
-                            <th>Nội Dung Thực Thi Của Livermore</th>
-                            <th>Mục Đích Bảo Toàn Vốn</th>
+                            <th>Loại Lệnh</th>
+                            <th>Tên Tiếng Anh</th>
+                            <th>Đặc Điểm & Ứng Dụng Thực Chiến</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>1. Cắt Lỗ Tuyệt Đối &le; 10%</strong></td>
-                            <td>Không bao giờ để mức lỗ trên 1 giao dịch vượt quá 10% vốn (thường cắt ở 5-8%).</td>
-                            <td>Bảo toàn vốn; tránh tình trạng mất 50% tài sản khiến trader phải kiếm lại 100% chỉ để hòa vốn.</td>
+                            <td><strong>Lệnh MKT</strong></td>
+                            <td>Market Order</td>
+                            <td><strong>Lệnh thị trường:</strong> Khớp ngay lập tức tại mức giá chào mua/chào bán tốt nhất hiện tại trên bảng điện. Dùng khi cần vào/thoát vị thế khẩn cấp.</td>
                         </tr>
                         <tr>
-                            <td><strong>2. Cấm Bình Quân Giá Xuống</strong></td>
-                            <td>Tuyệt đối không mua thêm khi vị thế đang thua lỗ (Averaging Down).</td>
-                            <td>Tránh ném thêm tiền tốt vào một thương vụ xấu; không cố chứng minh mình đúng khi thị trường bảo sai.</td>
+                            <td><strong>Lệnh LMT</strong></td>
+                            <td>Limit Order</td>
+                            <td><strong>Lệnh giới hạn (Chờ):</strong> Khớp ở mức giá chỉ định hoặc tốt hơn.<br>
+                            - <em>Buy Limit:</em> Đặt mua ở giá thấp hơn thị trường.<br>
+                            - <em>Sell Limit:</em> Đặt bán ở giá cao hơn thị trường.<br>
+                            &rarr; <strong>Thường dùng làm lệnh Chốt Lời (Take Profit).</strong></td>
                         </tr>
                         <tr>
-                            <td><strong>3. Rút 50% Lợi Nhuận</strong></td>
-                            <td>Sau mỗi chiến dịch thắng lớn, rút ngay 50% tiền lãi gửi ngân hàng hoặc cất két sắt.</td>
-                            <td>Hiện thực hóa tiền thật (Real Money), không để lợi nhuận bốc hơi trên bảng điện tử.</td>
+                            <td><strong>Lệnh STP</strong></td>
+                            <td>Stop Order</td>
+                            <td><strong>Lệnh dừng (Chờ):</strong> Tự động kích hoạt thành lệnh MKT khi giá thị trường chạm tới mức giá đặt sẵn.<br>
+                            - <em>Sell Stop:</em> Đặt bán ở giá thấp hơn thị trường (Cắt lỗ vị thế Mua).<br>
+                            - <em>Buy Stop:</em> Đặt mua ở giá cao hơn thị trường (Cắt lỗ vị thế Bán khống).<br>
+                            &rarr; <strong>Bắt buộc dùng làm lệnh Chặn Lỗ (Stop Loss) hoặc đánh Breakout.</strong></td>
                         </tr>
                         <tr>
-                            <td><strong>4. Tiền Mặt Là Vũ Khí</strong></td>
-                            <td>Luôn duy trì tỷ lệ tiền mặt dự trữ, kiên nhẫn đứng ngoài khi thị trường không rõ sóng.</td>
-                            <td>Bảo vệ tâm lý ổn định và luôn có sẵn hỏa lực để thâu tóm tài sản giá rẻ khi thị trường hoảng loạn.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>5. Từ Chối Margin Call</strong></td>
-                            <td>Đóng toàn bộ vị thế ngay khi nhận thông báo yêu cầu nộp thêm tiền ký quỹ.</td>
-                            <td>Loại bỏ tâm lý gồng lỗ, bảo vệ tài khoản khỏi nguy cơ bị xóa sổ hoàn toàn.</td>
+                            <td><strong>Lệnh STP LMT</strong></td>
+                            <td>Stop Limit Order</td>
+                            <td>Lệnh kết hợp: Khi giá chạm mức Stop, hệ thống sẽ đẩy ra một lệnh Limit để tránh bị trượt giá (Slippage) quá lớn khi thị trường biến động mạnh.</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <h2><i class="fa-solid fa-brain"></i> IV. CÁC BÀI HỌC TÂM LÝ ĐỂ ĐỜI CHO MỌI THẾ HỆ TRADER</h2>
+            <!-- PHẦN 4: LỆNH PHỨC HỢP OCO & BRACKET -->
+            <h2><i class="fa-solid fa-diagram-project"></i> IV. THIẾT LẬP LỆNH PHỨC HỢP OCO & BRACKET ORDER (QUẢN TRỊ TỰ ĐỘNG)</h2>
+            <p>
+                <strong>Lệnh OCO (One Cancels the Other)</strong> là bộ lệnh điều kiện gồm từ 2 lệnh chờ trở lên liên kết với nhau. Khi một trong các lệnh được khớp thành công, <strong>hệ thống máy chủ CQG sẽ tự động hủy toàn bộ các lệnh còn lại</strong>.
+            </p>
 
-            <h3>1. Bốn Cạm Bẫy Tâm Lý Lớn Nhất</h3>
+            <div class="step-card">
+                <h4><i class="fa-solid fa-cube" style="color:var(--accent-cyan);"></i> Kịch bản 1: Mở vị thế Mua kèm sẵn Cắt lỗ & Chốt lời (Bracket Order)</h4>
+                <p>
+                    Giá Dầu đậu tương hiện tại là <strong>32.00</strong>. Bạn muốn mua ngay và bảo vệ lệnh:
+                </p>
+                <ul>
+                    <li>Lệnh 1 (Vào lệnh): <span class="code-tag">Buy MKT</span> ở giá 32.00.</li>
+                    <li>Lệnh 2 (Chặn lỗ OCO): <span class="code-tag">Sell STP 31.80</span> (Stop Loss).</li>
+                    <li>Lệnh 3 (Chốt lời OCO): <span class="code-tag">Sell LMT 32.40</span> (Take Profit).</li>
+                </ul>
+                <p style="margin-bottom:0;">
+                    &rarr; Nếu giá tăng lên 32.40 khớp lệnh Chốt lời, lệnh Cắt lỗ ở 31.80 sẽ <strong>tự động bị hủy</strong>, giúp tài khoản không bị dính lệnh thừa ngoài ý muốn!
+                </p>
+            </div>
+
+            <div class="step-card">
+                <h4><i class="fa-solid fa-cube" style="color:#FF707E;"></i> Kịch bản 2: Bán khống kèm sẵn Cắt lỗ & Chốt lời</h4>
+                <p>
+                    Giá Dầu thô WTI hiện tại là <strong>75.00</strong>. Bạn nhận định giá giảm:
+                </p>
+                <ul>
+                    <li>Lệnh 1 (Vào lệnh): <span class="code-tag">Sell MKT</span> ở giá 75.00.</li>
+                    <li>Lệnh 2 (Chặn lỗ OCO): <span class="code-tag">Buy STP 75.80</span> (Stop Loss).</li>
+                    <li>Lệnh 3 (Chốt lời OCO): <span class="code-tag">Buy LMT 73.50</span> (Take Profit).</li>
+                </ul>
+            </div>
+
+            <!-- PHẦN 5: HIỆU LỰC LỆNH -->
+            <h2><i class="fa-solid fa-clock-rotate-left"></i> V. HIỆU LỰC THỜI GIAN CỦA LỆNH (DURATION)</h2>
             <ul>
-                <li><strong>Tham lam (Greed):</strong> Dùng đòn bẩy quá đà, không chịu chốt lời và muốn làm giàu sau một đêm.</li>
-                <li><strong>Sợ hãi (Fear):</strong> Cắt non các lệnh đang sinh lời lớn nhưng lại chần chừ, sợ hãi không dám cắt lỗ dứt khoát.</li>
-                <li><strong>Hy vọng (Hope):</strong> Căn bệnh nguy hiểm nhất — khi cổ phiếu lao dốc, trader "hy vọng" nó sẽ hồi phục để hòa vốn, biến một lệnh lướt sóng ngắn hạn thành một "khoản đầu tư dài hạn bất đắc dĩ".</li>
-                <li><strong>Cái tôi / Sĩ diện (Ego):</strong> Cố chấp bảo vệ quan điểm cá nhân. Cần nhớ: <em>Thị trường luôn luôn đúng, chỉ có nhà đầu tư là sai lầm.</em></li>
+                <li><strong>DAY (Hết ngày):</strong> Lệnh chỉ có hiệu lực trong ngày giao dịch hiện tại. Nếu hết phiên mà chưa khớp, lệnh sẽ tự động bị hủy.</li>
+                <li><strong>GTC (Good 'Til Canceled):</strong> Lệnh có hiệu lực vĩnh viễn xuyên phiên cho đến khi được khớp hoặc cho đến khi bạn chủ động bấm nút Hủy. <em>(Rất tiện lợi cho các lệnh Stop Loss và Take Profit dài hạn)</em>.</li>
+                <li><strong>GTD (Good 'Til Date):</strong> Lệnh có hiệu lực duy trì đến một ngày giờ cụ thể do bạn chỉ định.</li>
             </ul>
 
-            <div class="watermark-box">
-                <img src="../assets/images/psychology_diagram.jpg" alt="Sơ đồ 4 kẻ thù tâm lý lớn nhất của Trader: Tham Lam, Sợ Hãi, Hy Vọng và Cái Tôi" style="max-height: 480px;">
-                <div class="watermark-caption">Sơ đồ tổng quan 4 cạm bẫy tâm lý kinh điển chi phối mọi chu kỳ thị trường tài chính</div>
-                <div class="watermark-stamp">
-                    <i class="fa-solid fa-shield-halved"></i> PTvolume.com
-                </div>
+            <!-- PHẦN 6: HỆ THỐNG M-SYSTEM -->
+            <h2><i class="fa-solid fa-server"></i> VI. PHÂN BIỆT PHẦN MỀM CQG & HỆ THỐNG M-SYSTEM TẠI MXV</h2>
+            <div class="data-table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Tiêu Chí</th>
+                            <th>Phần Mềm CQG (Giao Dịch)</th>
+                            <th>Hệ Thống M-System (Quản Trị)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Mục đích chính</strong></td>
+                            <td>Xem biểu đồ, bảng giá trực tuyến và <strong>thực hiện đặt lệnh / hủy lệnh</strong> liên thông quốc tế.</td>
+                            <td><strong>Quản lý tài khoản</strong>: Xem sao kê tài sản, lịch sử nạp/rút tiền, chi tiết biểu phí và hạn mức ký quỹ.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Địa chỉ truy cập</strong></td>
+                            <td><a href="https://m.cqg.com/cqg/desktop/logon" target="_blank" style="color:var(--accent-cyan); font-weight:700;">m.cqg.com/cqg/desktop/logon</a></td>
+                            <td><a href="https://mstrading.mxv.com.vn/" target="_blank" style="color:#F0B90B; font-weight:700;">mstrading.mxv.com.vn</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Đơn vị vận hành</strong></td>
+                            <td>Tập đoàn Công nghệ CQG Quốc tế</td>
+                            <td>Sở Giao dịch Hàng hóa Việt Nam (MXV)</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
-            <h3>2. Đừng Bao Giờ Tranh Luận Với Bảng Điện</h3>
-            <p>
-                Bảng điện tử chỉ phản ánh sự thật khách quan của quy luật cung cầu. Nó không có cảm xúc, không nghe lời giải thích và không quan tâm bạn nghĩ gì. Khi giá đi ngược nhận định, hãy nhận sai và thoát ra ngay lập tức.
-            </p>
-
-            <div class="watermark-box">
-                <img src="../assets/images/ticker_tape_board.jpg" alt="Máy đọc băng giá Edison Ticker Tape và bảng yết giá chứng khoán cổ điển" style="max-height: 460px;">
-                <div class="watermark-caption">Máy đọc băng giá Ticker Tape cổ điển — công cụ giúp Jesse Livermore cảm nhận nhịp đập dòng tiền thực tế</div>
-                <div class="watermark-stamp">
-                    <i class="fa-solid fa-shield-halved"></i> PTvolume.com
+            <!-- PHẦN 7: KẾT LUẬN -->
+            <div class="highlight-box">
+                <h3><i class="fa-solid fa-flag-checkered"></i> Lời Khuyên Dành Cho Trader Thực Chiến</h3>
+                <p style="margin-bottom:12px;">
+                    Hãy luôn luyện tập thao tác đặt lệnh trên tài khoản Demo CQG trước khi giao dịch bằng tiền thật. Khi vào bất kỳ lệnh nào, hãy hình thành phản xạ <strong>cài đặt ngay lệnh Chặn lỗ (Stop Loss) dạng GTC hoặc sử dụng OCO Bracket</strong> để tài khoản luôn được bảo vệ 24/24 ngay cả khi bạn đang ngủ!
+                </p>
+                <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+                    <a href="bai-4-quan-li-von-trong-giao-dich-hang-hoa.html" class="btn" style="background:var(--bg-card); border:1px solid var(--border-color); color:#fff;">
+                        <i class="fa-solid fa-arrow-left"></i> Xem Lại Bài 4
+                    </a>
+                    <a href="../index.html#bieu-do-live" class="btn" style="background:var(--primary); color:#fff; font-weight:700;">
+                        <i class="fa-solid fa-chart-candlestick"></i> Luyện Tập Phân Tích Biểu Đồ Trực Tuyến
+                    </a>
                 </div>
             </div>
-
-            <h3>3. Cảnh Giác Tuyệt Đối Với Tin Đồn & Lời Khuyên Nội Bộ (Tips & Rumors)</h3>
-            <p>
-                Mọi lời khuyên từ bạn bè, người thân, chuyên gia hay tin tức mật đều là cạm bẫy phá hủy tài khoản. Bài học đắt giá nhất của Livermore từ vụ sập bẫy thị trường bông năm 1908: Khi ông từ bỏ nhận định độc lập để tin lời "chuyên gia" Percy Thomas, ông đã mất toàn bộ cơ nghiệp.
-            </p>
-
-            <h3>4. Bài Học Cuối Cùng: Sự Cô Độc Của Nghề Giao Dịch & Cân Bằng Cuộc Sống</h3>
-            <p>
-                Jesse Livermore là thiên tài tối thượng về phân tích kỹ thuật và đọc dòng tiền, nhưng ông đã thất bại trong việc tìm kiếm sự bình yên nội tâm. Thành công tài chính chỉ thực sự trọn vẹn khi đi kèm với sức khỏe tinh thần, kỷ luật tự giác và sự cân bằng trong cuộc sống.
-            </p>
         </div>
 
+        <!-- COMMENT SECTION -->
         <section class="comment-section">
             <h3 class="comment-header">
-                <i class="fa-regular fa-comments" style="color: #00E5FF;"></i> Thảo Luận Triết Lý Jesse Livermore (<span id="commentCount">2</span>)
+                <i class="fa-regular fa-comments" style="color: #00E5FF;"></i> Thảo Luận Bài Học Phần Mềm CQG (<span id="commentCount">2</span>)
             </h3>
 
             <form class="comment-form" id="commentForm" onsubmit="addComment(event)">
                 <div class="form-group">
-                    <label class="form-label">Tên Trader / Nickname:</label>
-                    <input type="text" id="commentName" class="form-control" placeholder="VD: Quốc Huy - Naked Chart Trader" required>
+                    <label class="form-label">Tên Học Viên / Nickname:</label>
+                    <input type="text" id="commentName" class="form-control" placeholder="VD: Bảo Long (Trader CQG)" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Cảm nhận của bạn về cuộc đời & phương pháp của Livermore:</label>
-                    <textarea id="commentContent" class="form-control" placeholder="Chia sẻ góc nhìn hoặc bài học bạn tâm đắc nhất từ Jesse Livermore..." required></textarea>
+                    <label class="form-label">Câu hỏi hoặc Chia sẻ về thao tác phần mềm CQG & M-System:</label>
+                    <textarea id="commentContent" class="form-control" placeholder="Bạn có thắc mắc gì về cách đặt lệnh OCO Bracket, mã tháng F-Z hay đăng nhập CQG Desktop HTML5 không? Hãy để lại bình luận..." required></textarea>
                 </div>
                 <button type="submit" class="btn">
-                    <i class="fa-regular fa-paper-plane"></i> Gửi Bình Luận
+                    <i class="fa-regular fa-paper-plane"></i> Gửi Thảo Luận
                 </button>
             </form>
 
             <div class="comment-list" id="commentList">
                 <div class="comment-item">
                     <div class="comment-top">
-                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Minh Khang (Price Action Trader)</span>
-                        <span class="comment-date">20 Tháng 8, 2026 21:30 UTC</span>
+                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Tuấn Kiệt (Hà Nội)</span>
+                        <span class="comment-date">24 Tháng 8, 2026</span>
                     </div>
                     <div class="comment-text">
-                        Đọc lại cuộc đời Livermore lần nào cũng thấy rợn người và thấm thía. Nguyên tắc 'Chỉ nhồi lệnh khi đang có lãi' và 'Rút 50% tiền lãi cất két sắt' thực sự là kim chỉ nam cứu mạng mọi trader.
+                        Bảng tra cứu mã tháng F-Z rất trực quan! Trước giờ cứ hay bị nhầm giữa tháng 8 (Q), tháng 9 (U) và tháng 11 (X). Giờ lưu bài viết lại để tra cứu mỗi khi đổi kỳ hạn giao dịch.
                     </div>
                 </div>
 
                 <div class="comment-item">
                     <div class="comment-top">
-                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Thanh Tùng (VSA Trader)</span>
-                        <span class="comment-date">20 Tháng 8, 2026 21:35 UTC</span>
+                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Minh Hoàng (Đà Nẵng)</span>
+                        <span class="comment-date">24 Tháng 8, 2026</span>
                     </div>
                     <div class="comment-text">
-                        Bài viết tổng hợp cực kỳ xuất sắc từ cả 2 cuốn 'Chết vì chứng khoán' và 'Hồi ức của một thiên tài'. Khái niệm Pivotal Point kết hợp với xác nhận Volume chính là cốt lõi của phương pháp đọc dòng tiền thực chiến.
+                        CQG Desktop trên nền web HTML5 tiện thật sự, mở trên trình duyệt điện thoại hay máy tính đều mượt mà, không cần cài đặt rườm rà như ngày xưa nữa.
                     </div>
                 </div>
             </div>
@@ -855,7 +981,7 @@
             loadSavedComments();
         });
 
-        const POST_SLUG = "jesse-livermore-cuoc-doi-va-bai-hoc-song-con";
+        const POST_SLUG = "bai-5-huong-dan-su-dung-phan-mem-cqg";
 
         function loadSavedComments() {
             const saved = JSON.parse(localStorage.getItem('ptvolume_comments_' + POST_SLUG) || '[]');

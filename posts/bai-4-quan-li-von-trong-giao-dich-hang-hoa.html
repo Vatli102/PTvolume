@@ -12,8 +12,8 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cuộc Đời, Phương Pháp Giao Dịch & Bài Học Sống Còn Của Jesse Livermore | PTvolume</title>
-    <meta name="description" content="Đúc kết toàn diện cuộc đời thăng trầm, hệ thống giao dịch Tape Reading, Điểm then chốt Pivotal Points và các bài học quản trị tâm lý để đời của huyền thoại Jesse Livermore.">
+    <title>Bài 4: Nghệ Thuật Quản Trị Vốn & Kỷ Luật Cắt Lỗ Trong Giao Dịch Hàng Hóa | PTvolume</title>
+    <meta name="description" content="Giáo trình Bài 4: Cần bao nhiêu vốn để giao dịch 1 lot an toàn, nguyên tắc cốt lõi chặn lỗ Stop Loss, tỷ lệ Risk:Reward tối ưu và 5 nguyên tắc quản trị vốn sinh tồn trong Hàng hóa phái sinh.">
     <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,6 +34,7 @@
             --text-muted: #8E9BAE;
             --text-light: #CAD4E0;
             --accent-gold: #F0B90B;
+            --accent-cyan: #00E5FF;
             --font-editorial: 'Merriweather', Georgia, serif;
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
@@ -105,7 +106,7 @@
         }
 
         .logo-text .brand span {
-            color: #00E5FF;
+            color: var(--accent-cyan);
         }
 
         .nav-right {
@@ -165,7 +166,7 @@
         }
 
         .article-container {
-            max-width: 900px;
+            max-width: 940px;
             margin: 40px auto 80px;
             padding: 0 24px;
         }
@@ -177,25 +178,26 @@
             font-size: 0.85rem;
             color: var(--text-muted);
             margin-bottom: 20px;
+            flex-wrap: wrap;
         }
 
         .breadcrumb a:hover {
-            color: #00E5FF;
+            color: var(--accent-cyan);
         }
 
         .article-badge {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 4px 12px;
+            padding: 4px 14px;
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            background: rgba(240, 185, 11, 0.15);
-            color: var(--accent-gold);
-            border: 1px solid rgba(240, 185, 11, 0.3);
+            background: rgba(242, 54, 69, 0.15);
+            color: #FF707E;
+            border: 1px solid rgba(242, 54, 69, 0.35);
             margin-bottom: 16px;
         }
 
@@ -204,7 +206,7 @@
             font-size: 2.2rem;
             line-height: 1.35;
             color: #fff;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
             font-weight: 700;
         }
 
@@ -214,10 +216,16 @@
             gap: 16px;
             font-size: 0.85rem;
             color: var(--text-muted);
-            padding-bottom: 60px;
+            padding-bottom: 20px;
             border-bottom: 1px solid var(--border-color);
             margin-bottom: 32px;
             flex-wrap: wrap;
+        }
+
+        .article-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .article-body {
@@ -230,43 +238,43 @@
         }
 
         .article-body p {
-            margin-bottom: 60px;
+            margin-bottom: 24px;
             text-align: justify;
             text-justify: inter-word;
         }
 
         .article-body h2 {
             font-family: var(--font-sans);
-            font-size: 1.5rem;
+            font-size: 1.45rem;
             color: #fff;
-            margin: 40px 0 16px;
+            margin: 42px 0 18px;
             font-weight: 700;
             display: flex;
             align-items: center;
             gap: 10px;
             border-left: 4px solid var(--primary);
-            padding-left: 12px;
+            padding-left: 14px;
             text-align: left;
         }
 
         .article-body h3 {
             font-family: var(--font-sans);
-            font-size: 1.2rem;
-            color: #00E5FF;
+            font-size: 1.18rem;
+            color: var(--accent-cyan);
             margin: 28px 0 12px;
             font-weight: 600;
             text-align: left;
         }
 
         .article-body ul, .article-body ol {
-            margin-bottom: 60px;
+            margin-bottom: 26px;
             padding-left: 24px;
             text-align: justify;
             text-justify: inter-word;
         }
 
         .article-body li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             text-align: justify;
             text-justify: inter-word;
         }
@@ -278,9 +286,9 @@
 
         .article-body blockquote {
             background: #141822;
-            border-left: 4px solid var(--accent-gold);
-            padding: 16px 20px;
-            margin: 24px 0;
+            border-left: 4px solid #FF707E;
+            padding: 18px 22px;
+            margin: 26px 0;
             border-radius: 0 8px 8px 0;
             font-style: italic;
             color: #F0F3FA;
@@ -308,7 +316,7 @@
             font-family: var(--font-sans);
             font-size: 0.82rem;
             color: var(--text-muted);
-            padding: 8px 12px;
+            padding: 8px 14px;
             background: #10141D;
             border-top: 1px solid var(--border-color);
             text-align: center;
@@ -317,27 +325,26 @@
 
         .watermark-stamp {
             position: absolute;
-            bottom: 60px;
+            bottom: 45px;
             right: 18px;
-            background: rgba(11, 14, 20, 0.35);
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 3px 9px;
+            background: rgba(11, 14, 20, 0.45);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 4px 10px;
             border-radius: 6px;
             font-size: 0.72rem;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.45);
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.75);
             letter-spacing: 0.5px;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 6px;
             pointer-events: none;
-            opacity: 0.6;
         }
 
         .highlight-box {
             background: #141822;
-            border: 1px solid rgba(41, 98, 255, 0.3);
+            border: 1px solid rgba(41, 98, 255, 0.35);
             border-radius: 12px;
             padding: 24px;
             margin: 32px 0;
@@ -348,7 +355,7 @@
         .highlight-box h3 {
             color: var(--accent-gold);
             margin-top: 0;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -366,6 +373,7 @@
             margin-bottom: 12px;
             font-family: var(--font-sans);
             font-size: 0.95rem;
+            line-height: 1.65;
         }
 
         .highlight-box li i {
@@ -393,7 +401,7 @@
 
         table.data-table th {
             background: #141822;
-            color: #00E5FF;
+            color: var(--accent-cyan);
             padding: 12px 16px;
             border-bottom: 1px solid var(--border-color);
             font-weight: 700;
@@ -415,6 +423,36 @@
             background: rgba(41, 98, 255, 0.05);
         }
 
+        .step-card {
+            background: #141822;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #FF707E;
+        }
+
+        .step-card h4 {
+            color: #fff;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .formula-box {
+            background: #080B10;
+            border: 1px dashed rgba(242, 54, 69, 0.4);
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin: 16px 0;
+            font-family: var(--font-mono);
+            font-size: 0.95rem;
+            color: #FF707E;
+            text-align: center;
+        }
+
         .comment-section {
             margin-top: 60px;
             padding-top: 32px;
@@ -424,7 +462,7 @@
         .comment-header {
             font-size: 1.3rem;
             color: #fff;
-            margin-bottom: 60px;
+            margin-bottom: 24px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -495,7 +533,7 @@
 
         .comment-author {
             font-weight: 700;
-            color: #00E5FF;
+            color: var(--accent-cyan);
             display: flex;
             align-items: center;
             gap: 6px;
@@ -562,213 +600,264 @@
         <div class="breadcrumb">
             <a href="../index.html">Trang Chủ</a>
             <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
-            <a href="../index.html#library">Kho Sách Kinh Điển</a>
+            <a href="../index.html#hoc-tap">Giáo Trình Học Tập</a>
             <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
-            <span>Jesse Livermore</span>
+            <span>Bài 4: Quản Lý Vốn & Kỷ Luật Cắt Lỗ</span>
         </div>
 
-        <span class="article-badge"><i class="fa-solid fa-crown"></i> Nghiên Cứu Chuyên Sâu</span>
+        <span class="article-badge"><i class="fa-solid fa-shield-halved"></i> Giáo Trình Nhập Môn Hàng Hóa • Bài 4</span>
         
-        <h1 class="article-title">Cuộc Đời Huyền Thoại, Phương Pháp Giao Dịch & Những Bài Học Sống Còn Của Jesse Livermore</h1>
+        <h1 class="article-title">Bài 4: Nghệ Thuật Quản Trị Vốn & Kỷ Luật Cắt Lỗ Sinh Tồn</h1>
 
         <div class="article-meta">
-            <span><i class="fa-regular fa-user"></i> Tác giả: <strong>Richard Smitten & Edwin Lefèvre</strong></span>
+            <span><i class="fa-regular fa-user"></i> Ban Học Thuật <strong>PTvolume Academy</strong></span>
             <span>•</span>
-            <span><i class="fa-solid fa-book-bookmark"></i> Chủ đề: <strong>Nghiên Cứu Tâm Lý & Đọc Dòng Tiền</strong></span>
+            <span><i class="fa-solid fa-wheat-awn"></i> Chuyên mục: <strong>Hàng Hóa Phái Sinh (Commodity Futures)</strong></span>
             <span>•</span>
-            <span><i class="fa-regular fa-clock"></i> 12 phút đọc</span>
+            <span><i class="fa-regular fa-calendar-check"></i> Biên soạn: 2026</span>
+            <span>•</span>
+            <span><i class="fa-regular fa-clock"></i> 14 phút đọc & rèn luyện</span>
         </div>
 
         <div class="article-body">
             <blockquote>
-                "Không có gì mới trên Phố Wall. Mọi điều xảy ra ngày hôm nay đều đã từng xảy ra trong quá khứ và sẽ tiếp tục lặp lại trong tương lai, bởi vì bản chất con người là không bao giờ thay đổi."<br>
-                — <strong>Jesse Lauriston Livermore (1877 – 1940)</strong>
+                "Nhà giao dịch nghiệp dư tập trung tìm kiếm chiến lược để làm giàu nhanh. Nhà giao dịch chuyên nghiệp tập trung quản lý vốn để sống sót đủ lâu trên thị trường. Bởi vì chỉ có sự sống sót của nguồn vốn mới là thứ tạo ra lợi nhuận bền vững."<br>
+                — <strong>PTvolume Risk Management Desk</strong>
             </blockquote>
 
-            <p>
-                Trong biên niên sử tài chính thế giới, không một cái tên nào gợi lên sự kinh ngạc, kính phục lẫn niềm tiếc thương sâu sắc như <strong>Jesse Lauriston Livermore</strong>. Được mệnh danh là <em>"Con Gấu Vĩ Đại Của Phố Wall" (The Great Bear of Wall Street)</em>, ông là biểu tượng tối thượng của nghệ thuật đầu cơ: từ một cậu bé làm thuê vô danh trở thành người chi phối cả thị trường tài chính Mỹ, nắm giữ khối tài sản hàng trăm triệu USD, rồi rơi vào những lần phá sản tán gia bại sản và kết thúc bằng một phát súng bi kịch.
-            </p>
-
-            <div class="watermark-box">
-                <img src="../assets/images/livermore_wallstreet_cover.jpg" alt="Không khí giao dịch sôi động tại sàn chứng khoán Phố Wall thời kỳ Jesse Livermore" style="max-height: 460px;">
-                <div class="watermark-caption">Không khí bảng điện tử và sàn giao dịch Phố Wall trong những năm tháng đỉnh cao của Jesse Livermore</div>
-                <div class="watermark-stamp">
-                    <i class="fa-solid fa-shield-halved"></i> PTvolume.com
-                </div>
-            </div>
-
-            <h2><i class="fa-solid fa-hourglass-half"></i> I. CUỘC ĐỜI HUYỀN THOẠI & NHỮNG THĂNG TRẦM LỊCH SỬ</h2>
-
-            <h3>1. Cậu bé nông dân & Biệt danh "Boy Plunger" (1877 – 1899)</h3>
-            <p>
-                Jesse sinh năm 1877 trong một gia đình nông dân nghèo ở Shrewsbury, Massachusetts. Năm 14 tuổi, không chấp nhận cuộc đời làm nông nghèo khó, ông trốn nhà đến Boston với <strong>5 USD</strong> mẹ cho. Ông xin làm chân ghi bảng giá (Board Boy) tại hãng môi giới Paine Webber với đồng lương 5 USD/tuần.
-            </p>
-            <p>
-                Hàng ngày ghi chép hàng ngàn mức giá từ máy điện báo (Ticker Tape) lên bảng đen, Livermore nhận ra quy luật kỳ diệu: <em>Biến động giá không hề ngẫu nhiên, chúng luôn bộc lộ các mô thức hành vi lặp đi lặp lại trước khi bùng nổ thành một con sóng lớn.</em> Ông bắt đầu đặt cược tại các "Bucket Shop" (sòng cược chui) và thắng liên tục. Đến năm 20 tuổi, ông kiếm được hơn 10.000 USD và bị tất cả các sòng cược cấm cửa vì thắng quá nhiều, gắn liền với biệt danh <strong>"The Boy Plunger"</strong>.
-            </p>
-
-            <div class="watermark-box">
-                <img src="../assets/images/livermore_portrait.jpg" alt="Chân dung huyền thoại Jesse Lauriston Livermore tại bàn làm việc với máy đọc băng giá Ticker Tape" style="max-height: 480px;">
-                <div class="watermark-caption">Chân dung nhà đầu cơ huyền thoại Jesse Lauriston Livermore (1877 – 1940) bên bàn làm việc và sổ tay phân tích thị trường</div>
-                <div class="watermark-stamp">
-                    <i class="fa-solid fa-shield-halved"></i> PTvolume.com
-                </div>
-            </div>
-
-            <h3>2. Những trận đánh kinh điển ghi danh vào lịch sử tài chính</h3>
-            <ul>
-                <li><strong>Trận động đất San Francisco (1906):</strong> Nhận thấy cổ phiếu đường sắt Union Pacific có dấu hiệu suy yếu dù truyền thông rất tích cực, Livermore quyết định bán khống quy mô lớn. Trận động đất lịch sử xảy ra làm sụp đổ hệ thống đường sắt, mang về cho ông <strong>250.000 USD</strong>.</li>
-                <li><strong>Đại hoảng loạn năm 1907 (Panic of 1907):</strong> Khi thanh khoản hệ thống ngân hàng cạn kiệt, Livermore mở vị thế bán khống toàn diện. Ngày 24/10/1907, toàn bộ Phố Wall sụp đổ, ông thu về <strong>1 triệu USD chỉ trong một ngày</strong>. Nhà tài phiệt quyền lực nhất nước Mỹ <strong>J.P. Morgan</strong> đã phải đích thân cử người tới cầu xin Livermore ngừng bán khống để cứu thị trường tài chính quốc gia.</li>
-                <li><strong>Cú sập bẫy Bông vải (1908):</strong> Livermore mắc phải sai lầm nghiêm trọng nhất đời mình khi từ bỏ nguyên tắc độc lập để nghe theo lời khuyên của "Vua Bông" Percy Thomas. Ông liên tục mua bình quân giá xuống khi giá bông lao dốc, dẫn đến mất sạch tài sản và gánh khoản nợ gần 1 triệu USD.</li>
-                <li><strong>Tái sinh và trả nợ 100% (1915 – 1928):</strong> Trong Thế chiến I và thập niên 1920, Livermore trở lại kiên nhẫn nắm bắt các siêu chu kỳ và kiếm lại hàng triệu USD. Ông đã chủ động thanh toán 100% nợ gốc lẫn lãi cho toàn bộ chủ nợ cũ, dù tòa án đã tuyên bố ông phá sản và xóa nợ hợp pháp.</li>
-                <li><strong>Đỉnh cao vĩ đại 1929 (Thứ Ba Đen Tối - Black Tuesday):</strong> Nhận thấy thị trường tăng giá phi lý dựa trên đòn bẩy tín dụng, Livermore âm thầm tích lũy vị thế bán khống khổng lồ qua hơn 100 nhà môi giới. Khi Phố Wall sụp đổ ngày 29/10/1929, Livermore bỏ túi hơn <strong>100 triệu USD tiền mặt</strong> (tương đương hơn 3 - 4 tỷ USD ngày nay), trở thành một trong những người giàu nhất hành tinh.</li>
-            </ul>
-
-            <h3>3. Bi kịch hôn nhân, trầm cảm và Phát súng định mệnh (1930 – 1940)</h3>
-            <p>
-                Sau năm 1929, cuộc sống cá nhân của Livermore rơi vào bi kịch: Người vợ Dorothy nghiện rượu, ngoại tình và dùng súng bắn trọng thương con trai của ông. Cùng lúc đó, sự ra đời của Ủy ban Chứng khoán Mỹ (SEC) thắt chặt các quy định bán khống.
-            </p>
-            <p>
-                Căn bệnh trầm cảm lâm sàng khiến ông mất đi sự sắc bén và tính kỷ luật thép. Chiều ngày 27/11/1940, tại phòng thay đồ khách sạn Sherry-Netherland ở New York, Jesse Livermore đã dùng súng lục tự sát ở tuổi 63, để lại bức thư tuyệt mệnh đẫm nước mắt cho người vợ thứ ba Harriet: <em>"Nina thân yêu, anh không thể chịu đựng thêm được nữa... Anh là kẻ thất bại. Đây là lối thoát duy nhất..."</em>
-            </p>
-
-            <h2><i class="fa-solid fa-chart-line"></i> II. HỆ THỐNG PHƯƠNG PHÁP GIAO DỊCH CỦA JESSE LIVERMORE</h2>
-
-            <p>
-                Hệ thống của Jesse Livermore là khởi nguồn của trường phái <strong>Price Action (Hành động giá)</strong> và <strong>Order Flow (Dòng tiền)</strong> hiện đại, bao gồm 5 trụ cột cốt lõi:
-            </p>
-
+            <!-- PHẦN TÓM TẮT CỐT LÕI -->
             <div class="highlight-box">
-                <h3><i class="fa-solid fa-compass"></i> 5 Trụ Cột Giao Dịch Của Jesse Livermore</h3>
+                <h3><i class="fa-solid fa-shield-virus"></i> Mục Tiêu Sống Còn Của Bài 4</h3>
                 <ul>
-                    <li><i class="fa-solid fa-check"></i> <strong>1. Đọc Băng Giá & Đường Đi Ít Kháng Cự Nhất (Line of Least Resistance):</strong> Giá luôn vận động theo hướng có ít lực cản nhất giữa Cung và Cầu. Đừng dự đoán; hãy theo dõi phản ứng của giá và khối lượng tại các vùng giá chủ chốt.</li>
-                    <li><i class="fa-solid fa-check"></i> <strong>2. Lý Thuyết Điểm Then Chốt (Pivotal Points):</strong> Chỉ vào lệnh tại các điểm bứt phá tiếp diễn xu hướng (Continuation Pivotal Point) hoặc điểm đảo chiều xu hướng lớn (Reversal Pivotal Point). Vào lệnh tại đây giúp trader biết ngay mình đúng hay sai chỉ sau 1-2 phiên.</li>
-                    <li><i class="fa-solid fa-check"></i> <strong>3. Thăm Dò & Nhồi Lệnh Kim Tự Tháp (Probing & Pyramiding):</strong> Giải ngân từng phần (20% - 20% - 20% - 40%). <em>CHỈ GIA TĂNG VỊ THẾ KHI LỆNH TRƯỚC ĐANG CÓ LÃI.</em> Tuyệt đối không bao giờ mua thêm khi đang lỗ.</li>
-                    <li><i class="fa-solid fa-check"></i> <strong>4. Tập Trung Vào Cổ Phiếu Dẫn Đầu (Market Leaders):</strong> Chỉ giao dịch cổ phiếu mạnh nhất thuộc nhóm ngành dẫn dắt sóng thị trường. Khi cổ phiếu đầu ngành suy yếu, toàn bộ thị trường sẽ sớm tạo đỉnh.</li>
-                    <li><i class="fa-solid fa-check"></i> <strong>5. Yếu Tố Thời Điểm & Nghệ Thuật "Ngồi Yên" (Sitting Tight):</strong> "Tiền lớn không được tạo ra từ việc mua bán liên tục, mà được tạo ra từ việc kiên nhẫn ngồi yên nắm giữ khi xu hướng đang chạy."</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Quy chuẩn an toàn vốn:</strong> Cần bao nhiêu tiền trong tài khoản để giao dịch 1 lot với tâm lý vững vàng nhất.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Chặn lỗ (Stop Loss) — Nguyên tắc sống còn:</strong> Bài học xương máu từ các tài khoản thắng 80% nhưng bị xóa sổ vì 1 lần gồng lỗ.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Tỷ lệ Risk : Reward (R:R):</strong> Nghệ thuật lọc kèo giao dịch chuẩn mực ($R:R \ge 1:1.5 - 1:2$).</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Quy trình tính Lot chuyên nghiệp:</strong> Xác định Entry, Stop Loss &rarr; Tính toán rủi ro cố định (1-2% vốn) &rarr; Ra quyết định số Lot.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>5 Nguyên tắc quản trị vốn sinh tồn:</strong> Phòng chống giao dịch trả thù, không để lệnh thắng thành lệnh thua và kiểm soát nguồn vốn nhàn rỗi.</li>
                 </ul>
             </div>
 
-            <h2><i class="fa-solid fa-shield-halved"></i> III. HỆ THỐNG QUẢN TRỊ VỐN & QUẢN TRỊ RỦI RO</h2>
+            <!-- WATERMARK IMAGE -->
+            <div class="watermark-box">
+                <img src="../assets/images/macro_intermarket_flow.jpg" alt="Quản trị vốn và kỷ luật cắt lỗ trong giao dịch phái sinh" style="max-height: 460px;">
+                <div class="watermark-caption">Cơ chế bảo toàn vốn và thiết lập tỷ lệ R:R tối ưu trong từng vị thế giao dịch hàng hóa</div>
+                <div class="watermark-stamp">
+                    <i class="fa-solid fa-shield-halved"></i> PTvolume.com
+                </div>
+            </div>
+
+            <!-- PHẦN 1: CẦN BAO NHIÊU TIỀN ĐỂ GIAO DỊCH 1 LOT -->
+            <h2><i class="fa-solid fa-coins"></i> I. CẦN BAO NHIÊU VỐN ĐỂ GIAO DỊCH 1 LOT AN TOÀN?</h2>
+            <p>
+                Rất nhiều nhà đầu tư mới bước vào thị trường thường đặt câu hỏi: <em>"Tôi có 25 triệu hay 50 triệu thì có giao dịch được Đậu tương, Dầu đậu hay Ngô không?"</em>
+            </p>
+            <p>
+                Về mặt lý thuyết, bạn chỉ cần nạp đúng số tiền bằng <strong>Ký quỹ ban đầu × 1.2</strong> (hệ số an toàn của Sở MXV) là hệ thống đã cho phép mở lệnh. Ví dụ: Ký quỹ ban đầu của 1 lot Dầu đậu tương là $770 USD &times; 1.2 = <strong>$924 USD (~23 triệu VNĐ)</strong>.
+            </p>
+            
+            <div class="step-card">
+                <h4><i class="fa-solid fa-triangle-exclamation" style="color:#FF707E;"></i> Cạm bẫy tâm lý khi nạp "vừa đủ ký quỹ":</h4>
+                <p>
+                    Mỗi ngày, giá Dầu đậu tương biến động trung bình từ <strong>30 đến 70 bước giá</strong> (mỗi bước giá tương ứng $6 USD). Nếu bạn vào lệnh nhưng thị trường rung lắc ngược hướng 30 bước giá, bạn sẽ âm ngay <code>30 × $6 = -$180 USD</code>.
+                </p>
+                <p style="margin-bottom:0;">
+                    Đối với tài khoản chỉ có $924 USD, mức lỗ $180 USD tương đương <strong>mất gần 20% tổng tài khoản chỉ trong 1 phiên</strong>! Điều này gây ra sự hoảng loạn, sợ hãi dồn dập, dẫn đến việc cắt lỗ non ngay đáy hoặc gồng lỗ đến cháy tài khoản.
+                </p>
+            </div>
+
+            <p>
+                <strong>Quy Tắc Cốt Lõi Từ Chuyên Gia:</strong> Để đảm bảo tâm lý giao dịch thoải mái, chịu được các nhịp điều chỉnh tự nhiên của thị trường và duy trì Tỷ lệ Ký quỹ luôn nằm trong vùng an toàn (> 200%), số vốn trên tài khoản để giao dịch 1 lot nên đạt <strong>ít nhất 1/4 giá trị thực của hợp đồng</strong> (hoặc gấp <strong>3 đến 5 lần mức ký quỹ ban đầu tối thiểu</strong>).
+            </p>
+
+            <!-- PHẦN 2: CHẶN LỖ LÀ NGUYÊN TẮC BẤT BIẾN -->
+            <h2><i class="fa-solid fa-hand-holding-dollar"></i> II. CHẶN LỖ (STOP LOSS) – NGUYÊN TẮC BẤT DI BẤT DỊCH</h2>
+            <p>
+                Trên thị trường tài chính, có rất nhiều trader có khả năng phân tích kỹ thuật xuất sắc, tỷ lệ lệnh thắng lên tới <strong>70% – 80%</strong>. Nhưng chỉ sau một thời gian, toàn bộ tài khoản bị xóa sổ. Nguyên nhân duy nhất: <strong>Không đặt lệnh dừng lỗ (Stop Loss) và có thói quen gồng lỗ</strong>.
+            </p>
+
+            <h3>1. Tâm lý hy vọng mù quáng vs Thực tế khách quan</h3>
+            <p>
+                Trước khi bấm nút vào lệnh, bạn bắt buộc phải trang bị tâm thế: <em>"Nhận định của mình hoàn toàn có thể sai"</em>. Hy vọng và suy nghĩ lạc quan có thể giúp ích trong cuộc sống, nhưng trong giao dịch tài chính, <strong>hy vọng mù quáng là kẻ thù số một</strong>. Thị trường không quan tâm bạn nghĩ gì hay bạn đang gồng lỗ bao nhiêu. Rào trước mức thua lỗ tối đa chính là cách duy nhất bảo vệ sự sống còn của bạn.
+            </p>
+
+            <h3>2. Tuyệt đối KHÔNG dời Stop Loss ra xa</h3>
+            <p>
+                Một sai lầm chí mạng khác của trader mới là khi thấy giá tiến sát điểm dừng lỗ đã đặt, liền vội vã <strong>dời Stop Loss ra xa hơn</strong> vì hy vọng giá sẽ quay đầu. Đây là hành vi phá vỡ toàn bộ kỷ luật phân tích ban đầu và tự đẩy tài khoản vào bờ vực cháy lệnh không thể cứu vãn.
+            </p>
+
+            <!-- PHẦN 3: TỶ LỆ RISK REWARD -->
+            <h2><i class="fa-solid fa-scale-balanced"></i> III. TỶ LỆ RISK : REWARD (R:R) & NGHỆ THUẬT CHỌN KÈO</h2>
+            <p>
+                <strong>Tỷ lệ Risk : Reward (R:R)</strong> là tỷ số so sánh giữa <em>Mức rủi ro tối đa bạn chấp nhận mất (Risk)</em> và <em>Mức lợi nhuận kỳ vọng đạt được (Reward)</em> trên một giao dịch.
+            </p>
+
+            <div class="formula-box">
+                Tỷ lệ R:R = Khoảng cách Cắt lỗ (Stop Loss) : Khoảng cách Chốt lời (Take Profit)
+            </div>
+
+            <div class="step-card">
+                <h4><i class="fa-solid fa-bullseye" style="color:var(--accent-cyan);"></i> Ví dụ tính toán tỷ lệ R:R thực tế:</h4>
+                <p>
+                    Bạn nhận tín hiệu Mua Dầu đậu tương ở giá <strong>33.05</strong>, đặt Stop Loss ở <strong>32.80</strong>, đặt Take Profit ở <strong>33.50</strong>:
+                </p>
+                <ul>
+                    <li>Khoảng chặn lỗ (Risk): <code>(33.05 - 32.80) = 25 bước giá × $6 = $150 USD</code>.</li>
+                    <li>Khoảng chốt lời (Reward): <code>(33.50 - 33.05) = 45 bước giá × $6 = $270 USD</code>.</li>
+                    <li>Tỷ lệ R:R = <code>$150 : $270 = 1 : 1.8</code> &rarr; <strong>Tín hiệu đạt tiêu chuẩn giao dịch tốt!</strong></li>
+                </ul>
+            </div>
 
             <div class="data-table-wrapper">
                 <table class="data-table">
                     <thead>
                         <tr>
-                            <th>Quy Tắc Quản Trị Vốn</th>
-                            <th>Nội Dung Thực Thi Của Livermore</th>
-                            <th>Mục Đích Bảo Toàn Vốn</th>
+                            <th>Tỷ Lệ Risk : Reward (R:R)</th>
+                            <th>Đánh Giá Chất Lượng Kèo</th>
+                            <th>Khuyến Nghị Hành Động</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>1. Cắt Lỗ Tuyệt Đối &le; 10%</strong></td>
-                            <td>Không bao giờ để mức lỗ trên 1 giao dịch vượt quá 10% vốn (thường cắt ở 5-8%).</td>
-                            <td>Bảo toàn vốn; tránh tình trạng mất 50% tài sản khiến trader phải kiếm lại 100% chỉ để hòa vốn.</td>
+                            <td><strong>R:R < 1 : 1</strong> (Ví dụ 1:0.8)</td>
+                            <td><span style="color:#F23645; font-weight:700;">⛔ Rất xấu (Ăn ít chịu rủi ro nhiều)</span></td>
+                            <td>Tuyệt đối bỏ qua, không bao giờ vào lệnh.</td>
                         </tr>
                         <tr>
-                            <td><strong>2. Cấm Bình Quân Giá Xuống</strong></td>
-                            <td>Tuyệt đối không mua thêm khi vị thế đang thua lỗ (Averaging Down).</td>
-                            <td>Tránh ném thêm tiền tốt vào một thương vụ xấu; không cố chứng minh mình đúng khi thị trường bảo sai.</td>
+                            <td><strong>R:R = 1 : 1 đến 1 : 1.5</strong></td>
+                            <td><span style="color:#F0B90B; font-weight:700;">🟡 Trung bình</span></td>
+                            <td>Chỉ cân nhắc khi có nến VSA xác nhận cực mạnh tại vùng hỗ trợ/kháng cự cứng.</td>
                         </tr>
                         <tr>
-                            <td><strong>3. Rút 50% Lợi Nhuận</strong></td>
-                            <td>Sau mỗi chiến dịch thắng lớn, rút ngay 50% tiền lãi gửi ngân hàng hoặc cất két sắt.</td>
-                            <td>Hiện thực hóa tiền thật (Real Money), không để lợi nhuận bốc hơi trên bảng điện tử.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>4. Tiền Mặt Là Vũ Khí</strong></td>
-                            <td>Luôn duy trì tỷ lệ tiền mặt dự trữ, kiên nhẫn đứng ngoài khi thị trường không rõ sóng.</td>
-                            <td>Bảo vệ tâm lý ổn định và luôn có sẵn hỏa lực để thâu tóm tài sản giá rẻ khi thị trường hoảng loạn.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>5. Từ Chối Margin Call</strong></td>
-                            <td>Đóng toàn bộ vị thế ngay khi nhận thông báo yêu cầu nộp thêm tiền ký quỹ.</td>
-                            <td>Loại bỏ tâm lý gồng lỗ, bảo vệ tài khoản khỏi nguy cơ bị xóa sổ hoàn toàn.</td>
+                            <td><strong>R:R &ge; 1 : 2 đến 1 : 3+</strong></td>
+                            <td><span style="color:#089981; font-weight:700;">🟢 Tuyệt vời (Chuẩn Trader Chuyên Nghiệp)</span></td>
+                            <td>Kèo chuẩn mực. Ngay cả khi tỷ lệ thắng chỉ đạt 40-50%, tài khoản vẫn tăng trưởng mạnh mẽ!</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <h2><i class="fa-solid fa-brain"></i> IV. CÁC BÀI HỌC TÂM LÝ ĐỂ ĐỜI CHO MỌI THẾ HỆ TRADER</h2>
-
-            <h3>1. Bốn Cạm Bẫy Tâm Lý Lớn Nhất</h3>
-            <ul>
-                <li><strong>Tham lam (Greed):</strong> Dùng đòn bẩy quá đà, không chịu chốt lời và muốn làm giàu sau một đêm.</li>
-                <li><strong>Sợ hãi (Fear):</strong> Cắt non các lệnh đang sinh lời lớn nhưng lại chần chừ, sợ hãi không dám cắt lỗ dứt khoát.</li>
-                <li><strong>Hy vọng (Hope):</strong> Căn bệnh nguy hiểm nhất — khi cổ phiếu lao dốc, trader "hy vọng" nó sẽ hồi phục để hòa vốn, biến một lệnh lướt sóng ngắn hạn thành một "khoản đầu tư dài hạn bất đắc dĩ".</li>
-                <li><strong>Cái tôi / Sĩ diện (Ego):</strong> Cố chấp bảo vệ quan điểm cá nhân. Cần nhớ: <em>Thị trường luôn luôn đúng, chỉ có nhà đầu tư là sai lầm.</em></li>
-            </ul>
-
-            <div class="watermark-box">
-                <img src="../assets/images/psychology_diagram.jpg" alt="Sơ đồ 4 kẻ thù tâm lý lớn nhất của Trader: Tham Lam, Sợ Hãi, Hy Vọng và Cái Tôi" style="max-height: 480px;">
-                <div class="watermark-caption">Sơ đồ tổng quan 4 cạm bẫy tâm lý kinh điển chi phối mọi chu kỳ thị trường tài chính</div>
-                <div class="watermark-stamp">
-                    <i class="fa-solid fa-shield-halved"></i> PTvolume.com
-                </div>
+            <!-- PHẦN 4: SO SÁNH TRADER NGHIỆP DƯ VS CHUYÊN NGHIỆP -->
+            <h2><i class="fa-solid fa-user-check"></i> IV. QUY TRÌNH TÍNH KHỐI LƯỢNG LOT CHUẨN CỦA PRO TRADER</h2>
+            
+            <div class="data-table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Trader Nghiệp Dư (Thua Lỗ)</th>
+                            <th>Trader Chuyên Nghiệp (Kiếm Tiền Bền Vững)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Vào lệnh trước với số Lot tùy hứng theo cảm xúc (All-in, 5 lot, 10 lot).</td>
+                            <td><strong>Bước 1:</strong> Xác định điểm Entry, điểm Stop Loss và điểm Take Profit theo cấu trúc nến & VSA.</td>
+                        </tr>
+                        <tr>
+                            <td>Sau khi vào lệnh xong mới nhìn lại xem Stop Loss ở đâu hoặc không thèm đặt Stop Loss.</td>
+                            <td><strong>Bước 2:</strong> Tính toán tỷ lệ Risk:Reward. Nếu R:R < 1:1.5 &rarr; <em>Bỏ kèo, không giao dịch!</em></td>
+                        </tr>
+                        <tr>
+                            <td>Khi giá đi ngược thì hoảng loạn, nhồi lệnh gấp thếp gỡ gạc (Martingale) dẫn tới cháy tài khoản.</td>
+                            <td><strong>Bước 3:</strong> Cố định mức rủi ro tối đa cho lệnh (Ví dụ: 1% – 2% tài khoản = $200 USD).<br>
+                            <code>Số Lot tối đa = Số tiền rủi ro cho phép / Khoảng cách Stop Loss</code></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
-            <h3>2. Đừng Bao Giờ Tranh Luận Với Bảng Điện</h3>
-            <p>
-                Bảng điện tử chỉ phản ánh sự thật khách quan của quy luật cung cầu. Nó không có cảm xúc, không nghe lời giải thích và không quan tâm bạn nghĩ gì. Khi giá đi ngược nhận định, hãy nhận sai và thoát ra ngay lập tức.
-            </p>
-
-            <div class="watermark-box">
-                <img src="../assets/images/ticker_tape_board.jpg" alt="Máy đọc băng giá Edison Ticker Tape và bảng yết giá chứng khoán cổ điển" style="max-height: 460px;">
-                <div class="watermark-caption">Máy đọc băng giá Ticker Tape cổ điển — công cụ giúp Jesse Livermore cảm nhận nhịp đập dòng tiền thực tế</div>
-                <div class="watermark-stamp">
-                    <i class="fa-solid fa-shield-halved"></i> PTvolume.com
-                </div>
+            <!-- PHẦN 5: 5 NGUYÊN TẮC QUẢN TRỊ VỐN -->
+            <h2><i class="fa-solid fa-list-ol"></i> V. 5 NGUYÊN TẮC QUẢN TRỊ VỐN SINH TỒN CHO TRADER</h2>
+            
+            <div class="step-card">
+                <h4><i class="fa-solid fa-1" style="color:var(--accent-cyan);"></i> Nguyên tắc 1: Giới hạn rủi ro tối đa mỗi lệnh (Risk Per Trade &le; 1% - 2%)</h4>
+                <p style="margin-bottom:0;">
+                    Không bao giờ để một lệnh thua lỗ vượt quá <strong>1% đến 2% tổng vốn tài khoản</strong>. Nếu bạn có tài khoản $10,000 USD, mức lỗ tối đa cho mỗi lệnh chỉ được phép là $100 – $200 USD. Với kỷ luật này, bạn phải thua liên tiếp 50 đến 100 lệnh thì tài khoản mới có nguy cơ cạn kiệt — một điều gần như không thể xảy ra nếu bạn tuân thủ hệ thống.
+                </p>
             </div>
 
-            <h3>3. Cảnh Giác Tuyệt Đối Với Tin Đồn & Lời Khuyên Nội Bộ (Tips & Rumors)</h3>
-            <p>
-                Mọi lời khuyên từ bạn bè, người thân, chuyên gia hay tin tức mật đều là cạm bẫy phá hủy tài khoản. Bài học đắt giá nhất của Livermore từ vụ sập bẫy thị trường bông năm 1908: Khi ông từ bỏ nhận định độc lập để tin lời "chuyên gia" Percy Thomas, ông đã mất toàn bộ cơ nghiệp.
-            </p>
+            <div class="step-card">
+                <h4><i class="fa-solid fa-2" style="color:var(--accent-cyan);"></i> Nguyên tắc 2: Kiểm tra cẩn thận Checklist trước khi bấm nút</h4>
+                <p style="margin-bottom:0;">
+                    Tránh các sai lầm ngớ ngẩn do vội vã: nhập thừa một số 0 (1 lot thành 10 lot), nhầm lẫn giữa nút Mua và Bán, chọn sai kỳ hạn đáo hạn. Luôn dành 5 giây kiểm tra lại toàn bộ thông số lệnh trước khi xác nhận.
+                </p>
+            </div>
 
-            <h3>4. Bài Học Cuối Cùng: Sự Cô Độc Của Nghề Giao Dịch & Cân Bằng Cuộc Sống</h3>
-            <p>
-                Jesse Livermore là thiên tài tối thượng về phân tích kỹ thuật và đọc dòng tiền, nhưng ông đã thất bại trong việc tìm kiếm sự bình yên nội tâm. Thành công tài chính chỉ thực sự trọn vẹn khi đi kèm với sức khỏe tinh thần, kỷ luật tự giác và sự cân bằng trong cuộc sống.
-            </p>
+            <div class="step-card">
+                <h4><i class="fa-solid fa-3" style="color:var(--accent-cyan);"></i> Nguyên tắc 3: Không bao giờ để một lệnh đang thắng lớn trở thành lệnh thua</h4>
+                <p style="margin-bottom:0;">
+                    Khi giá đã chạy đúng hướng được khoảng <strong>1R hoặc 1.5R</strong>, hãy chủ động <strong>dời Stop Loss về điểm hòa vốn (Entry / Breakeven)</strong> hoặc thực hiện chốt lời từng phần (Partial Take Profit 50%). Lúc này, bạn đã đưa vị thế về trạng thái <em>"Free Trade"</em> (giao dịch miễn phí không rủi ro).
+                </p>
+            </div>
+
+            <div class="step-card">
+                <h4><i class="fa-solid fa-4" style="color:var(--accent-cyan);"></i> Nguyên tắc 4: Tuyệt đối không trả thù thị trường (No Revenge Trading)</h4>
+                <p style="margin-bottom:0;">
+                    Khi dính Stop Loss 2 hoặc 3 lệnh liên tiếp trong ngày, tâm lý của bạn sẽ bị xáo trộn bởi sự bực tức và muốn gỡ gạc. Hãy tắt máy tính, rời khỏi bàn làm việc và đi dạo. Thị trường luôn ở đó ngày mai, cơ hội không bao giờ hết!
+                </p>
+            </div>
+
+            <div class="step-card">
+                <h4><i class="fa-solid fa-5" style="color:var(--accent-cyan);"></i> Nguyên tắc 5: Chỉ giao dịch bằng nguồn tiền nhàn rỗi (Risk Capital)</h4>
+                <p style="margin-bottom:0;">
+                    Tuyệt đối không vay mượn nóng lãi suất cao, không dùng tiền đóng học phí cho con cái, tiền sinh hoạt phí gia đình hay tiền bảo hiểm y tế để nạp vào tài khoản giao dịch. Chỉ khi giao dịch bằng nguồn vốn nhàn rỗi thực sự, bạn mới có được sự bình tĩnh và minh mẫn để đưa ra các quyết định sáng suốt nhất.
+                </p>
+            </div>
+
+            <!-- PHẦN 6: KẾT LUẬN -->
+            <div class="highlight-box">
+                <h3><i class="fa-solid fa-flag-checkered"></i> Tổng Kết & Hành Trang Cho Bài Học Tiếp Theo</h3>
+                <p style="margin-bottom:12px;">
+                    Quản trị vốn chính là sợi dây an toàn giữ bạn ở lại với thị trường. Khi đã nắm chắc tư duy, thông số hợp đồng và phương pháp tính Lot kỷ luật, chúng ta đã sẵn sàng bước vào vũ khí sắc bén nhất: <strong>Phân tích Kỹ thuật chuyên sâu — Mô hình nến Nhật & Đọc vị Khối lượng VSA</strong>!
+                </p>
+                <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+                    <a href="bai-3-cac-khai-niem-hang-hoa-phai-sinh.html" class="btn" style="background:var(--bg-card); border:1px solid var(--border-color); color:#fff;">
+                        <i class="fa-solid fa-arrow-left"></i> Xem Lại Bài 3
+                    </a>
+                    <a href="../index.html#cong-cu" class="btn" style="background:#089981; color:#fff; font-weight:700;">
+                        <i class="fa-solid fa-calculator"></i> Máy Tính Quản Trị Vị Thế PTvolume
+                    </a>
+                </div>
+            </div>
         </div>
 
+        <!-- COMMENT SECTION -->
         <section class="comment-section">
             <h3 class="comment-header">
-                <i class="fa-regular fa-comments" style="color: #00E5FF;"></i> Thảo Luận Triết Lý Jesse Livermore (<span id="commentCount">2</span>)
+                <i class="fa-regular fa-comments" style="color: #00E5FF;"></i> Thảo Luận Bài Học Quản Lý Vốn (<span id="commentCount">2</span>)
             </h3>
 
             <form class="comment-form" id="commentForm" onsubmit="addComment(event)">
                 <div class="form-group">
-                    <label class="form-label">Tên Trader / Nickname:</label>
-                    <input type="text" id="commentName" class="form-control" placeholder="VD: Quốc Huy - Naked Chart Trader" required>
+                    <label class="form-label">Tên Học Viên / Nickname:</label>
+                    <input type="text" id="commentName" class="form-control" placeholder="VD: Đức Anh (Học viên)" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Cảm nhận của bạn về cuộc đời & phương pháp của Livermore:</label>
-                    <textarea id="commentContent" class="form-control" placeholder="Chia sẻ góc nhìn hoặc bài học bạn tâm đắc nhất từ Jesse Livermore..." required></textarea>
+                    <label class="form-label">Chia sẻ trải nghiệm hoặc câu hỏi về Quản lý vốn & Stop Loss:</label>
+                    <textarea id="commentContent" class="form-control" placeholder="Bạn đã từng gặp phải bẫy gồng lỗ hay nhồi lệnh trả thù thị trường chưa? Hãy chia sẻ cảm nhận..." required></textarea>
                 </div>
                 <button type="submit" class="btn">
-                    <i class="fa-regular fa-paper-plane"></i> Gửi Bình Luận
+                    <i class="fa-regular fa-paper-plane"></i> Gửi Thảo Luận
                 </button>
             </form>
 
             <div class="comment-list" id="commentList">
                 <div class="comment-item">
                     <div class="comment-top">
-                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Minh Khang (Price Action Trader)</span>
-                        <span class="comment-date">20 Tháng 8, 2026 21:30 UTC</span>
+                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Hoàng Minh (Vũng Tàu)</span>
+                        <span class="comment-date">24 Tháng 8, 2026</span>
                     </div>
                     <div class="comment-text">
-                        Đọc lại cuộc đời Livermore lần nào cũng thấy rợn người và thấm thía. Nguyên tắc 'Chỉ nhồi lệnh khi đang có lãi' và 'Rút 50% tiền lãi cất két sắt' thực sự là kim chỉ nam cứu mạng mọi trader.
+                        Bài viết chỉ ra đúng tim đen của mình ngày xưa! Thắng 7-8 lệnh liên tiếp nhưng chỉ vì 1 lệnh không đặt Stop Loss rồi gồng lỗ là cháy sạch tài khoản. Quy tắc 1-2% rủi ro/lệnh là bài học xương máu nhất.
                     </div>
                 </div>
 
                 <div class="comment-item">
                     <div class="comment-top">
-                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Thanh Tùng (VSA Trader)</span>
-                        <span class="comment-date">20 Tháng 8, 2026 21:35 UTC</span>
+                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Mai Lan (Hà Nội)</span>
+                        <span class="comment-date">24 Tháng 8, 2026</span>
                     </div>
                     <div class="comment-text">
-                        Bài viết tổng hợp cực kỳ xuất sắc từ cả 2 cuốn 'Chết vì chứng khoán' và 'Hồi ức của một thiên tài'. Khái niệm Pivotal Point kết hợp với xác nhận Volume chính là cốt lõi của phương pháp đọc dòng tiền thực chiến.
+                        Quy trình tính Lot ngược: Xác định Stop loss trước -> Tính tiền rủi ro -> Mới ra số Lot. Rất logic và chuyên nghiệp!
                     </div>
                 </div>
             </div>
@@ -855,7 +944,7 @@
             loadSavedComments();
         });
 
-        const POST_SLUG = "jesse-livermore-cuoc-doi-va-bai-hoc-song-con";
+        const POST_SLUG = "bai-4-quan-li-von-trong-giao-dich-hang-hoa";
 
         function loadSavedComments() {
             const saved = JSON.parse(localStorage.getItem('ptvolume_comments_' + POST_SLUG) || '[]');

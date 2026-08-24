@@ -12,8 +12,8 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cuộc Đời, Phương Pháp Giao Dịch & Bài Học Sống Còn Của Jesse Livermore | PTvolume</title>
-    <meta name="description" content="Đúc kết toàn diện cuộc đời thăng trầm, hệ thống giao dịch Tape Reading, Điểm then chốt Pivotal Points và các bài học quản trị tâm lý để đời của huyền thoại Jesse Livermore.">
+    <title>Bài 3: Kháng Cự & Hỗ Trợ – Bản Đồ Tác Chiến Của Mọi Nhà Giao Dịch | PTvolume</title>
+    <meta name="description" content="Giáo trình Đọc Biểu Đồ Bài 3: Bản chất Cung - Cầu của Hỗ trợ và Kháng cự, hiện tượng chuyển đổi vai trò Flip Zone, các mức giá tròn số tâm lý và cách dùng Volume VSA phân biệt Breakout thật vs Bẫy Fakeout.">
     <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,6 +34,7 @@
             --text-muted: #8E9BAE;
             --text-light: #CAD4E0;
             --accent-gold: #F0B90B;
+            --accent-cyan: #00E5FF;
             --font-editorial: 'Merriweather', Georgia, serif;
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
@@ -105,7 +106,7 @@
         }
 
         .logo-text .brand span {
-            color: #00E5FF;
+            color: var(--accent-cyan);
         }
 
         .nav-right {
@@ -165,7 +166,7 @@
         }
 
         .article-container {
-            max-width: 900px;
+            max-width: 940px;
             margin: 40px auto 80px;
             padding: 0 24px;
         }
@@ -177,17 +178,18 @@
             font-size: 0.85rem;
             color: var(--text-muted);
             margin-bottom: 20px;
+            flex-wrap: wrap;
         }
 
         .breadcrumb a:hover {
-            color: #00E5FF;
+            color: var(--accent-cyan);
         }
 
         .article-badge {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 4px 12px;
+            padding: 4px 14px;
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 700;
@@ -195,7 +197,7 @@
             letter-spacing: 0.5px;
             background: rgba(240, 185, 11, 0.15);
             color: var(--accent-gold);
-            border: 1px solid rgba(240, 185, 11, 0.3);
+            border: 1px solid rgba(240, 185, 11, 0.35);
             margin-bottom: 16px;
         }
 
@@ -204,7 +206,7 @@
             font-size: 2.2rem;
             line-height: 1.35;
             color: #fff;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
             font-weight: 700;
         }
 
@@ -214,10 +216,16 @@
             gap: 16px;
             font-size: 0.85rem;
             color: var(--text-muted);
-            padding-bottom: 60px;
+            padding-bottom: 20px;
             border-bottom: 1px solid var(--border-color);
             margin-bottom: 32px;
             flex-wrap: wrap;
+        }
+
+        .article-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .article-body {
@@ -230,43 +238,43 @@
         }
 
         .article-body p {
-            margin-bottom: 60px;
+            margin-bottom: 24px;
             text-align: justify;
             text-justify: inter-word;
         }
 
         .article-body h2 {
             font-family: var(--font-sans);
-            font-size: 1.5rem;
+            font-size: 1.45rem;
             color: #fff;
-            margin: 40px 0 16px;
+            margin: 42px 0 18px;
             font-weight: 700;
             display: flex;
             align-items: center;
             gap: 10px;
-            border-left: 4px solid var(--primary);
-            padding-left: 12px;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 14px;
             text-align: left;
         }
 
         .article-body h3 {
             font-family: var(--font-sans);
-            font-size: 1.2rem;
-            color: #00E5FF;
+            font-size: 1.18rem;
+            color: var(--accent-cyan);
             margin: 28px 0 12px;
             font-weight: 600;
             text-align: left;
         }
 
         .article-body ul, .article-body ol {
-            margin-bottom: 60px;
+            margin-bottom: 26px;
             padding-left: 24px;
             text-align: justify;
             text-justify: inter-word;
         }
 
         .article-body li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             text-align: justify;
             text-justify: inter-word;
         }
@@ -279,8 +287,8 @@
         .article-body blockquote {
             background: #141822;
             border-left: 4px solid var(--accent-gold);
-            padding: 16px 20px;
-            margin: 24px 0;
+            padding: 18px 22px;
+            margin: 26px 0;
             border-radius: 0 8px 8px 0;
             font-style: italic;
             color: #F0F3FA;
@@ -308,7 +316,7 @@
             font-family: var(--font-sans);
             font-size: 0.82rem;
             color: var(--text-muted);
-            padding: 8px 12px;
+            padding: 8px 14px;
             background: #10141D;
             border-top: 1px solid var(--border-color);
             text-align: center;
@@ -317,27 +325,26 @@
 
         .watermark-stamp {
             position: absolute;
-            bottom: 60px;
+            bottom: 45px;
             right: 18px;
-            background: rgba(11, 14, 20, 0.35);
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 3px 9px;
+            background: rgba(11, 14, 20, 0.45);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 4px 10px;
             border-radius: 6px;
             font-size: 0.72rem;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.45);
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.75);
             letter-spacing: 0.5px;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 6px;
             pointer-events: none;
-            opacity: 0.6;
         }
 
         .highlight-box {
             background: #141822;
-            border: 1px solid rgba(41, 98, 255, 0.3);
+            border: 1px solid rgba(240, 185, 11, 0.35);
             border-radius: 12px;
             padding: 24px;
             margin: 32px 0;
@@ -348,7 +355,7 @@
         .highlight-box h3 {
             color: var(--accent-gold);
             margin-top: 0;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -366,6 +373,7 @@
             margin-bottom: 12px;
             font-family: var(--font-sans);
             font-size: 0.95rem;
+            line-height: 1.65;
         }
 
         .highlight-box li i {
@@ -393,7 +401,7 @@
 
         table.data-table th {
             background: #141822;
-            color: #00E5FF;
+            color: var(--accent-cyan);
             padding: 12px 16px;
             border-bottom: 1px solid var(--border-color);
             font-weight: 700;
@@ -415,6 +423,24 @@
             background: rgba(41, 98, 255, 0.05);
         }
 
+        .step-card {
+            background: #141822;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .step-card h4 {
+            color: #fff;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
         .comment-section {
             margin-top: 60px;
             padding-top: 32px;
@@ -424,7 +450,7 @@
         .comment-header {
             font-size: 1.3rem;
             color: #fff;
-            margin-bottom: 60px;
+            margin-bottom: 24px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -495,7 +521,7 @@
 
         .comment-author {
             font-weight: 700;
-            color: #00E5FF;
+            color: var(--accent-cyan);
             display: flex;
             align-items: center;
             gap: 6px;
@@ -562,189 +588,249 @@
         <div class="breadcrumb">
             <a href="../index.html">Trang Chủ</a>
             <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
-            <a href="../index.html#library">Kho Sách Kinh Điển</a>
+            <a href="../index.html#hoc-tap">Giáo Trình Học Tập</a>
             <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
-            <span>Jesse Livermore</span>
+            <span>Đọc Biểu Đồ • Bài 3: Kháng Cự & Hỗ Trợ</span>
         </div>
 
-        <span class="article-badge"><i class="fa-solid fa-crown"></i> Nghiên Cứu Chuyên Sâu</span>
+        <span class="article-badge"><i class="fa-solid fa-layer-group"></i> Phân Tích Đọc Biểu Đồ • Bài 3</span>
         
-        <h1 class="article-title">Cuộc Đời Huyền Thoại, Phương Pháp Giao Dịch & Những Bài Học Sống Còn Của Jesse Livermore</h1>
+        <h1 class="article-title">Bài 3: Kháng Cự & Hỗ Trợ – Bản Đồ Tác Chiến Của Mọi Nhà Giao Dịch</h1>
 
         <div class="article-meta">
-            <span><i class="fa-regular fa-user"></i> Tác giả: <strong>Richard Smitten & Edwin Lefèvre</strong></span>
+            <span><i class="fa-regular fa-user"></i> Ban Học Thuật <strong>PTvolume Academy</strong></span>
             <span>•</span>
-            <span><i class="fa-solid fa-book-bookmark"></i> Chủ đề: <strong>Nghiên Cứu Tâm Lý & Đọc Dòng Tiền</strong></span>
+            <span><i class="fa-solid fa-chart-line"></i> Chuyên mục: <strong>Đọc Biểu Đồ & Phân Tích Kỹ Thuật</strong></span>
             <span>•</span>
-            <span><i class="fa-regular fa-clock"></i> 12 phút đọc</span>
+            <span><i class="fa-regular fa-calendar-check"></i> Biên soạn: 2026</span>
+            <span>•</span>
+            <span><i class="fa-regular fa-clock"></i> 16 phút đọc & thực hành</span>
         </div>
 
         <div class="article-body">
             <blockquote>
-                "Không có gì mới trên Phố Wall. Mọi điều xảy ra ngày hôm nay đều đã từng xảy ra trong quá khứ và sẽ tiếp tục lặp lại trong tương lai, bởi vì bản chất con người là không bao giờ thay đổi."<br>
-                — <strong>Jesse Lauriston Livermore (1877 – 1940)</strong>
+                "Kháng cự và Hỗ trợ không phải là những đường kẻ mỏng manh vô hồn. Đó là các <strong>Vùng Chiến Tuyến (Price Zones)</strong> nơi dòng tiền lớn Smart Money bố trí sẵn hàng triệu USD lệnh chờ Buy Limit / Sell Limit để hấp thụ toàn bộ lực mua bán của đám đông."<br>
+                — <strong>PTvolume Naked Chart Desk</strong>
             </blockquote>
 
-            <p>
-                Trong biên niên sử tài chính thế giới, không một cái tên nào gợi lên sự kinh ngạc, kính phục lẫn niềm tiếc thương sâu sắc như <strong>Jesse Lauriston Livermore</strong>. Được mệnh danh là <em>"Con Gấu Vĩ Đại Của Phố Wall" (The Great Bear of Wall Street)</em>, ông là biểu tượng tối thượng của nghệ thuật đầu cơ: từ một cậu bé làm thuê vô danh trở thành người chi phối cả thị trường tài chính Mỹ, nắm giữ khối tài sản hàng trăm triệu USD, rồi rơi vào những lần phá sản tán gia bại sản và kết thúc bằng một phát súng bi kịch.
-            </p>
-
-            <div class="watermark-box">
-                <img src="../assets/images/livermore_wallstreet_cover.jpg" alt="Không khí giao dịch sôi động tại sàn chứng khoán Phố Wall thời kỳ Jesse Livermore" style="max-height: 460px;">
-                <div class="watermark-caption">Không khí bảng điện tử và sàn giao dịch Phố Wall trong những năm tháng đỉnh cao của Jesse Livermore</div>
-                <div class="watermark-stamp">
-                    <i class="fa-solid fa-shield-halved"></i> PTvolume.com
-                </div>
-            </div>
-
-            <h2><i class="fa-solid fa-hourglass-half"></i> I. CUỘC ĐỜI HUYỀN THOẠI & NHỮNG THĂNG TRẦM LỊCH SỬ</h2>
-
-            <h3>1. Cậu bé nông dân & Biệt danh "Boy Plunger" (1877 – 1899)</h3>
-            <p>
-                Jesse sinh năm 1877 trong một gia đình nông dân nghèo ở Shrewsbury, Massachusetts. Năm 14 tuổi, không chấp nhận cuộc đời làm nông nghèo khó, ông trốn nhà đến Boston với <strong>5 USD</strong> mẹ cho. Ông xin làm chân ghi bảng giá (Board Boy) tại hãng môi giới Paine Webber với đồng lương 5 USD/tuần.
-            </p>
-            <p>
-                Hàng ngày ghi chép hàng ngàn mức giá từ máy điện báo (Ticker Tape) lên bảng đen, Livermore nhận ra quy luật kỳ diệu: <em>Biến động giá không hề ngẫu nhiên, chúng luôn bộc lộ các mô thức hành vi lặp đi lặp lại trước khi bùng nổ thành một con sóng lớn.</em> Ông bắt đầu đặt cược tại các "Bucket Shop" (sòng cược chui) và thắng liên tục. Đến năm 20 tuổi, ông kiếm được hơn 10.000 USD và bị tất cả các sòng cược cấm cửa vì thắng quá nhiều, gắn liền với biệt danh <strong>"The Boy Plunger"</strong>.
-            </p>
-
-            <div class="watermark-box">
-                <img src="../assets/images/livermore_portrait.jpg" alt="Chân dung huyền thoại Jesse Lauriston Livermore tại bàn làm việc với máy đọc băng giá Ticker Tape" style="max-height: 480px;">
-                <div class="watermark-caption">Chân dung nhà đầu cơ huyền thoại Jesse Lauriston Livermore (1877 – 1940) bên bàn làm việc và sổ tay phân tích thị trường</div>
-                <div class="watermark-stamp">
-                    <i class="fa-solid fa-shield-halved"></i> PTvolume.com
-                </div>
-            </div>
-
-            <h3>2. Những trận đánh kinh điển ghi danh vào lịch sử tài chính</h3>
-            <ul>
-                <li><strong>Trận động đất San Francisco (1906):</strong> Nhận thấy cổ phiếu đường sắt Union Pacific có dấu hiệu suy yếu dù truyền thông rất tích cực, Livermore quyết định bán khống quy mô lớn. Trận động đất lịch sử xảy ra làm sụp đổ hệ thống đường sắt, mang về cho ông <strong>250.000 USD</strong>.</li>
-                <li><strong>Đại hoảng loạn năm 1907 (Panic of 1907):</strong> Khi thanh khoản hệ thống ngân hàng cạn kiệt, Livermore mở vị thế bán khống toàn diện. Ngày 24/10/1907, toàn bộ Phố Wall sụp đổ, ông thu về <strong>1 triệu USD chỉ trong một ngày</strong>. Nhà tài phiệt quyền lực nhất nước Mỹ <strong>J.P. Morgan</strong> đã phải đích thân cử người tới cầu xin Livermore ngừng bán khống để cứu thị trường tài chính quốc gia.</li>
-                <li><strong>Cú sập bẫy Bông vải (1908):</strong> Livermore mắc phải sai lầm nghiêm trọng nhất đời mình khi từ bỏ nguyên tắc độc lập để nghe theo lời khuyên của "Vua Bông" Percy Thomas. Ông liên tục mua bình quân giá xuống khi giá bông lao dốc, dẫn đến mất sạch tài sản và gánh khoản nợ gần 1 triệu USD.</li>
-                <li><strong>Tái sinh và trả nợ 100% (1915 – 1928):</strong> Trong Thế chiến I và thập niên 1920, Livermore trở lại kiên nhẫn nắm bắt các siêu chu kỳ và kiếm lại hàng triệu USD. Ông đã chủ động thanh toán 100% nợ gốc lẫn lãi cho toàn bộ chủ nợ cũ, dù tòa án đã tuyên bố ông phá sản và xóa nợ hợp pháp.</li>
-                <li><strong>Đỉnh cao vĩ đại 1929 (Thứ Ba Đen Tối - Black Tuesday):</strong> Nhận thấy thị trường tăng giá phi lý dựa trên đòn bẩy tín dụng, Livermore âm thầm tích lũy vị thế bán khống khổng lồ qua hơn 100 nhà môi giới. Khi Phố Wall sụp đổ ngày 29/10/1929, Livermore bỏ túi hơn <strong>100 triệu USD tiền mặt</strong> (tương đương hơn 3 - 4 tỷ USD ngày nay), trở thành một trong những người giàu nhất hành tinh.</li>
-            </ul>
-
-            <h3>3. Bi kịch hôn nhân, trầm cảm và Phát súng định mệnh (1930 – 1940)</h3>
-            <p>
-                Sau năm 1929, cuộc sống cá nhân của Livermore rơi vào bi kịch: Người vợ Dorothy nghiện rượu, ngoại tình và dùng súng bắn trọng thương con trai của ông. Cùng lúc đó, sự ra đời của Ủy ban Chứng khoán Mỹ (SEC) thắt chặt các quy định bán khống.
-            </p>
-            <p>
-                Căn bệnh trầm cảm lâm sàng khiến ông mất đi sự sắc bén và tính kỷ luật thép. Chiều ngày 27/11/1940, tại phòng thay đồ khách sạn Sherry-Netherland ở New York, Jesse Livermore đã dùng súng lục tự sát ở tuổi 63, để lại bức thư tuyệt mệnh đẫm nước mắt cho người vợ thứ ba Harriet: <em>"Nina thân yêu, anh không thể chịu đựng thêm được nữa... Anh là kẻ thất bại. Đây là lối thoát duy nhất..."</em>
-            </p>
-
-            <h2><i class="fa-solid fa-chart-line"></i> II. HỆ THỐNG PHƯƠNG PHÁP GIAO DỊCH CỦA JESSE LIVERMORE</h2>
-
-            <p>
-                Hệ thống của Jesse Livermore là khởi nguồn của trường phái <strong>Price Action (Hành động giá)</strong> và <strong>Order Flow (Dòng tiền)</strong> hiện đại, bao gồm 5 trụ cột cốt lõi:
-            </p>
-
+            <!-- PHẦN TÓM TẮT CỐT LÕI -->
             <div class="highlight-box">
-                <h3><i class="fa-solid fa-compass"></i> 5 Trụ Cột Giao Dịch Của Jesse Livermore</h3>
+                <h3><i class="fa-solid fa-map-location-dot"></i> Mục Tiêu Sống Còn Của Bài 3</h3>
                 <ul>
-                    <li><i class="fa-solid fa-check"></i> <strong>1. Đọc Băng Giá & Đường Đi Ít Kháng Cự Nhất (Line of Least Resistance):</strong> Giá luôn vận động theo hướng có ít lực cản nhất giữa Cung và Cầu. Đừng dự đoán; hãy theo dõi phản ứng của giá và khối lượng tại các vùng giá chủ chốt.</li>
-                    <li><i class="fa-solid fa-check"></i> <strong>2. Lý Thuyết Điểm Then Chốt (Pivotal Points):</strong> Chỉ vào lệnh tại các điểm bứt phá tiếp diễn xu hướng (Continuation Pivotal Point) hoặc điểm đảo chiều xu hướng lớn (Reversal Pivotal Point). Vào lệnh tại đây giúp trader biết ngay mình đúng hay sai chỉ sau 1-2 phiên.</li>
-                    <li><i class="fa-solid fa-check"></i> <strong>3. Thăm Dò & Nhồi Lệnh Kim Tự Tháp (Probing & Pyramiding):</strong> Giải ngân từng phần (20% - 20% - 20% - 40%). <em>CHỈ GIA TĂNG VỊ THẾ KHI LỆNH TRƯỚC ĐANG CÓ LÃI.</em> Tuyệt đối không bao giờ mua thêm khi đang lỗ.</li>
-                    <li><i class="fa-solid fa-check"></i> <strong>4. Tập Trung Vào Cổ Phiếu Dẫn Đầu (Market Leaders):</strong> Chỉ giao dịch cổ phiếu mạnh nhất thuộc nhóm ngành dẫn dắt sóng thị trường. Khi cổ phiếu đầu ngành suy yếu, toàn bộ thị trường sẽ sớm tạo đỉnh.</li>
-                    <li><i class="fa-solid fa-check"></i> <strong>5. Yếu Tố Thời Điểm & Nghệ Thuật "Ngồi Yên" (Sitting Tight):</strong> "Tiền lớn không được tạo ra từ việc mua bán liên tục, mà được tạo ra từ việc kiên nhẫn ngồi yên nắm giữ khi xu hướng đang chạy."</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Bản chất Cung &ndash; Cầu:</strong> Hiểu rõ Hỗ trợ là Vùng Cầu (Demand / Buy Orders) và Kháng cự là Vùng Cung (Supply / Sell Orders).</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>4 Cách xác định vùng cản then chốt:</strong> Đỉnh/đáy quá khứ (Swing High/Low), Vùng giá tròn số tâm lý (Round Numbers), Trendline và Hỗ trợ động qua đường EMA.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Hiện tượng chuyển đổi vai trò (Flip Zone / Role Reversal):</strong> Cơ chế Kháng cự chuyển thành Hỗ trợ mới (và ngược lại) &mdash; Điểm vào lệnh Retest an toàn nhất.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Xác định xu hướng thị trường (Market Structure):</strong> Định vị Uptrend, Downtrend và tín hiệu gãy cấu trúc đảo chiều sớm (BOS/CHoCH) qua các vùng cản.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Phân biệt Phá vỡ thật (True Breakout) vs Bẫy giá (Fakeout / Trap):</strong> Ứng dụng Khối lượng Volume VSA để không bao giờ bị đu đỉnh hay bán đáy.</li>
                 </ul>
             </div>
 
-            <h2><i class="fa-solid fa-shield-halved"></i> III. HỆ THỐNG QUẢN TRỊ VỐN & QUẢN TRỊ RỦI RO</h2>
+            <!-- WATERMARK IMAGE -->
+            <div class="watermark-box">
+                <img src="../assets/images/macro_intermarket_flow.jpg" alt="Vùng hỗ trợ kháng cự và điểm chuyển đổi vai trò Flip Zone trên biểu đồ" style="max-height: 460px;">
+                <div class="watermark-caption">Các vùng cản Hỗ trợ - Kháng cự quan trọng và cơ chế kiểm định lại (Retest) của dòng tiền lớn</div>
+                <div class="watermark-stamp">
+                    <i class="fa-solid fa-shield-halved"></i> PTvolume.com
+                </div>
+            </div>
+
+            <!-- PHẦN 1: BẢN CHẤT HỖ TRỢ VÀ KHÁNG CỰ -->
+            <h2><i class="fa-solid fa-arrows-down-to-line"></i> I. BẢN CHẤT DÒNG TIỀN CỦA HỖ TRỢ & KHÁNG CỰ</h2>
+            
+            <div class="step-card">
+                <h4><i class="fa-solid fa-shield-halved" style="color:#26E7A6;"></i> 1. Vùng Hỗ Trợ (Support Zone / Vùng Cầu - Demand)</h4>
+                <p>
+                    Là vùng giá mà tại đó <strong>áp lực Mua đủ mạnh để chặn đứng đà rơi của giá</strong> và đẩy giá bật tăng trở lại.
+                </p>
+                <p style="margin-bottom:0;">
+                    <em>Tâm lý học thị trường:</em> Tại vùng này, người mua cảm thấy mức giá đã quá hấp dẫn (giá rẻ), trong khi người bán không muốn bán lỗ thêm nữa. Các quỹ đầu tư và Smart Money kích hoạt khối lượng lớn lệnh chờ <strong>Buy Limit</strong> gom hàng tại đây.
+                </p>
+            </div>
+
+            <div class="step-card">
+                <h4><i class="fa-solid fa-hand" style="color:#FF707E;"></i> 2. Vùng Kháng Cự (Resistance Zone / Vùng Cung - Supply)</h4>
+                <p>
+                    Là vùng giá mà tại đó <strong>áp lực Bán đủ mạnh để chặn đứng đà tăng của giá</strong> và ép giá quay đầu sụt giảm.
+                </p>
+                <p style="margin-bottom:0;">
+                    <em>Tâm lý học thị trường:</em> Tại vùng này, những người đã mua từ dưới thấp tranh nhau chốt lời, còn những người bị kẹp hàng ở đỉnh cũ vội vã bán tháo để hòa vốn. Smart Money kích hoạt khối lượng lệnh chờ <strong>Sell Limit</strong> chặn đầu xả hàng.
+                </p>
+            </div>
+
+            <!-- PHẦN 2: CÁCH XÁC ĐỊNH VÙNG CẢN -->
+            <h2><i class="fa-solid fa-crosshairs"></i> II. 4 PHƯƠNG PHÁP XÁC ĐỊNH VÙNG CẢN QUYỀN LỰC NHẤT</h2>
+            
+            <h3>1. Đỉnh và Đáy Quá Khứ (Swing High & Swing Low)</h3>
+            <p>
+                Đây là phương pháp cơ bản và có độ tin cậy cao nhất. Đỉnh cũ là nơi phe Bán từng chiến thắng (Kháng cự), đáy cũ là nơi phe Mua từng xuất kích thành công (Hỗ trợ). Vùng cản càng được giá chạm vào và phản ứng nhiều lần mà không bị phá thủng thì cản đó càng cứng và giá trị.
+            </p>
+
+            <h3>2. Vùng Giá Tròn Số Tâm Lý (Round Numbers / Psychological Levels)</h3>
+            <p>
+                Bộ não con người luôn có xu hướng đặt lệnh chờ tại các con số tròn chục, tròn trăm:
+            </p>
+            <ul>
+                <li><strong>Vàng:</strong> Mức $2,500, $2,600, $2,700/ounce.</li>
+                <li><strong>Dầu Thô WTI:</strong> Mức $70.00, $75.00, $80.00/thùng.</li>
+                <li><strong>Ngô / Đậu tương:</strong> Mức 400, 450, 1000 cent/giạ.</li>
+            </ul>
+
+            <h3>3. Đường Xu Hướng (Trendlines)</h3>
+            <p>
+                Đường thẳng nối các đáy cao dần trong xu hướng Tăng đóng vai trò là <strong>Đường Hỗ Trợ Động</strong>. Đường thẳng nối các đỉnh thấp dần trong xu hướng Giảm đóng vai trò là <strong>Đường Kháng Cự Động</strong>.
+            </p>
+
+            <h3>4. Các Đường Trung Bình Động (Dynamic S/R - EMA 20, EMA 50, EMA 200)</h3>
+            <p>
+                Trong một con sóng xu hướng mạnh mẽ, đường <strong>EMA 20</strong> (ngắn hạn) và <strong>EMA 50 / 200</strong> (trung & dài hạn) liên tục đóng vai trò là bệ đỡ lực đẩy giá bật tăng tiếp diễn.
+            </p>
+
+            <!-- PHẦN 3: HIỆN TƯỢNG CHUYỂN ĐỔI VAI TRÒ -->
+            <h2><i class="fa-solid fa-repeat"></i> III. HIỆN TƯỢNG CHUYỂN ĐỔI VAI TRÒ (FLIP ZONE / ROLE REVERSAL)</h2>
+            <p>
+                Một trong những quy luật quan trọng nhất của Price Action là: <strong>Vùng cản một khi đã bị xuyên thủng thì vai trò của nó sẽ lập tức bị đảo ngược 180 độ!</strong>
+            </p>
+
+            <div class="step-card">
+                <h4><i class="fa-solid fa-arrows-spin" style="color:var(--accent-gold);"></i> Cơ chế hoạt động của Flip Zone:</h4>
+                <ul>
+                    <li><strong>Kháng cự bị phá vỡ &rarr; Biến thành Hỗ trợ mới:</strong> Khi giá vượt đỉnh cũ thành công, những người bán khống bị dính cắt lỗ (buộc phải mua lại) và những người lỡ chuyến đò trước đó sẽ tranh nhau đặt lệnh Mua ngay khi giá quay về kiểm định (Retest) đỉnh cũ.</li>
+                    <li><strong>Hỗ trợ bị xuyên thủng &rarr; Biến thành Kháng cự mới:</strong> Khi giá sập gãy đáy cũ, toàn bộ phe Mua bị kẹp hàng sẽ chờ giá hồi phục về đáy cũ để Bán cắt lỗ hòa vốn, tạo nên áp lực bán chặn đứng đà hồi.</li>
+                </ul>
+            </div>
+
+            <!-- PHẦN 4: XÁC ĐỊNH XU HƯỚNG BẰNG HỖ TRỢ VÀ KHÁNG CỰ -->
+            <h2><i class="fa-solid fa-arrow-trend-up"></i> IV. BÍ QUYẾT XÁC ĐỊNH XU HƯỚNG THỊ TRƯỜNG NHỜ KHÁNG CỰ & HỖ TRỢ</h2>
+            <p>
+                Kháng cự và Hỗ trợ không chỉ dùng để tìm điểm đặt lệnh, mà đó chính là <strong>chiếc la bàn định vị Cấu Trúc Xu Hướng (Market Structure)</strong> của toàn bộ thị trường theo Lý thuyết Dow kinh điển:
+            </p>
+
+            <div class="step-card">
+                <h4><i class="fa-solid fa-arrow-up-right-dots" style="color:#26E7A6;"></i> 1. Cấu Trúc Xu Hướng Tăng (Uptrend Structure)</h4>
+                <p>
+                    Được định nghĩa bởi chuỗi liên tiếp các <strong>Đỉnh sau cao hơn Đỉnh trước (Higher High - HH)</strong> và <strong>Đáy sau cao hơn Đáy trước (Higher Low - HL)</strong>.
+                </p>
+                <ul>
+                    <li><strong>Hành vi của Kháng cự:</strong> Các vùng Kháng cự liên tục bị <strong>phá vỡ (Breakout)</strong> một cách dễ dàng.</li>
+                    <li><strong>Hành vi của Hỗ trợ:</strong> Các vùng Hỗ trợ luôn được <strong>bảo vệ kiên cố</strong>. Mỗi khi giá điều chỉnh giảm chạm về vùng Hỗ trợ (hoặc đỉnh cũ vừa phá), phe Mua lập tức đẩy giá bật tăng tạo đỉnh cao mới.</li>
+                    <li><strong>Quy tắc giao dịch:</strong> <em>Thuận xu hướng Tăng &mdash; Chỉ canh MUA tại các vùng Hỗ trợ / Flip Zone, tuyệt đối KHÔNG chặn đầu Bán khống!</em></li>
+                </ul>
+            </div>
+
+            <div class="step-card">
+                <h4><i class="fa-solid fa-arrow-down-right-dots" style="color:#FF707E;"></i> 2. Cấu Trúc Xu Hướng Giảm (Downtrend Structure)</h4>
+                <p>
+                    Được định nghĩa bởi chuỗi liên tiếp các <strong>Đỉnh sau thấp hơn Đỉnh trước (Lower High - LH)</strong> và <strong>Đáy sau thấp hơn Đáy trước (Lower Low - LL)</strong>.
+                </p>
+                <ul>
+                    <li><strong>Hành vi của Hỗ trợ:</strong> Các vùng Hỗ trợ liên tục bị <strong>xuyên thủng (Breakdown)</strong> một cách dứt khoát.</li>
+                    <li><strong>Hành vi của Kháng cự:</strong> Các vùng Kháng cự được <strong>giữ vững tuyệt đối</strong>. Mỗi khi giá hồi phục chạm vào Kháng cự (hoặc đáy cũ vừa thủng), phe Bán lập tức xả hàng dìm giá tạo đáy sâu mới.</li>
+                    <li><strong>Quy tắc giao dịch:</strong> <em>Thuận xu hướng Giảm &mdash; Chỉ canh BÁN KHỐNG tại các vùng Kháng cự / Flip Zone, tuyệt đối KHÔNG bắt dao rơi Mua đáy!</em></li>
+                </ul>
+            </div>
+
+            <div class="step-card">
+                <h4><i class="fa-solid fa-arrows-split-up-and-left" style="color:var(--accent-cyan);"></i> 3. Tín Hiệu Đảo Chiều Xu Hướng Sớm (Break of Structure - BOS / CHoCH)</h4>
+                <p>
+                    Làm thế nào để nhận biết xu hướng Tăng hoặc Giảm đã thực sự chấm dứt? Hãy quan sát sự sụp đổ của các vùng cản then chốt:
+                </p>
+                <ul>
+                    <li><strong>Từ TĂNG sang GIẢM:</strong> Giá thất bại trong việc tạo Đỉnh cao mới (Failure High), sau đó quay đầu <strong>xuyên thủng Đáy Hỗ Trợ quan trọng gần nhất (Higher Low)</strong> &rarr; Cấu trúc tăng bị gãy hoàn toàn (BOS/CHoCH), báo hiệu thị trường chính thức bước vào xu hướng Giảm hoặc Đi ngang tích lũy.</li>
+                    <li><strong>Từ GIẢM sang TĂNG:</strong> Giá không còn tạo được Đáy sâu hơn (Higher Low xuất hiện), sau đó bất ngờ <strong>bứt phá vượt qua Đỉnh Kháng Cự quan trọng gần nhất (Lower High)</strong> &rarr; Phe Bán cạn kiệt lực, thị trường đảo chiều sang xu hướng Tăng mới.</li>
+                </ul>
+            </div>
 
             <div class="data-table-wrapper">
                 <table class="data-table">
                     <thead>
                         <tr>
-                            <th>Quy Tắc Quản Trị Vốn</th>
-                            <th>Nội Dung Thực Thi Của Livermore</th>
-                            <th>Mục Đích Bảo Toàn Vốn</th>
+                            <th>Trạng Thái Cấu Trúc</th>
+                            <th>Phản Ứng Tại Vùng Cản</th>
+                            <th>Chiến Lược Hành Động Chuẩn Naked Chart</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>1. Cắt Lỗ Tuyệt Đối &le; 10%</strong></td>
-                            <td>Không bao giờ để mức lỗ trên 1 giao dịch vượt quá 10% vốn (thường cắt ở 5-8%).</td>
-                            <td>Bảo toàn vốn; tránh tình trạng mất 50% tài sản khiến trader phải kiếm lại 100% chỉ để hòa vốn.</td>
+                            <td><strong>Xu hướng TĂNG (Uptrend)</strong></td>
+                            <td>Kháng cự bị phá &bull; Hỗ trợ được giữ vững</td>
+                            <td><span style="color:#26E7A6; font-weight:700;">Chỉ Canh MUA (Long)</span> tại Hỗ trợ hoặc khi Retest đỉnh cũ.</td>
                         </tr>
                         <tr>
-                            <td><strong>2. Cấm Bình Quân Giá Xuống</strong></td>
-                            <td>Tuyệt đối không mua thêm khi vị thế đang thua lỗ (Averaging Down).</td>
-                            <td>Tránh ném thêm tiền tốt vào một thương vụ xấu; không cố chứng minh mình đúng khi thị trường bảo sai.</td>
+                            <td><strong>Xu hướng GIẢM (Downtrend)</strong></td>
+                            <td>Hỗ trợ bị thủng &bull; Kháng cự được giữ vững</td>
+                            <td><span style="color:#FF707E; font-weight:700;">Chỉ Canh BÁN (Short)</span> tại Kháng cự hoặc khi Retest đáy cũ.</td>
                         </tr>
                         <tr>
-                            <td><strong>3. Rút 50% Lợi Nhuận</strong></td>
-                            <td>Sau mỗi chiến dịch thắng lớn, rút ngay 50% tiền lãi gửi ngân hàng hoặc cất két sắt.</td>
-                            <td>Hiện thực hóa tiền thật (Real Money), không để lợi nhuận bốc hơi trên bảng điện tử.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>4. Tiền Mặt Là Vũ Khí</strong></td>
-                            <td>Luôn duy trì tỷ lệ tiền mặt dự trữ, kiên nhẫn đứng ngoài khi thị trường không rõ sóng.</td>
-                            <td>Bảo vệ tâm lý ổn định và luôn có sẵn hỏa lực để thâu tóm tài sản giá rẻ khi thị trường hoảng loạn.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>5. Từ Chối Margin Call</strong></td>
-                            <td>Đóng toàn bộ vị thế ngay khi nhận thông báo yêu cầu nộp thêm tiền ký quỹ.</td>
-                            <td>Loại bỏ tâm lý gồng lỗ, bảo vệ tài khoản khỏi nguy cơ bị xóa sổ hoàn toàn.</td>
+                            <td><strong>Đi ngang (Trading Range / Sideway)</strong></td>
+                            <td>Cả Hỗ trợ đáy và Kháng cự đỉnh đều giữ nguyên</td>
+                            <td>Mua tại Biên Hỗ Trợ dưới &bull; Bán tại Biên Kháng Cự trên (SL ngoài biên).</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <h2><i class="fa-solid fa-brain"></i> IV. CÁC BÀI HỌC TÂM LÝ ĐỂ ĐỜI CHO MỌI THẾ HỆ TRADER</h2>
-
-            <h3>1. Bốn Cạm Bẫy Tâm Lý Lớn Nhất</h3>
-            <ul>
-                <li><strong>Tham lam (Greed):</strong> Dùng đòn bẩy quá đà, không chịu chốt lời và muốn làm giàu sau một đêm.</li>
-                <li><strong>Sợ hãi (Fear):</strong> Cắt non các lệnh đang sinh lời lớn nhưng lại chần chừ, sợ hãi không dám cắt lỗ dứt khoát.</li>
-                <li><strong>Hy vọng (Hope):</strong> Căn bệnh nguy hiểm nhất — khi cổ phiếu lao dốc, trader "hy vọng" nó sẽ hồi phục để hòa vốn, biến một lệnh lướt sóng ngắn hạn thành một "khoản đầu tư dài hạn bất đắc dĩ".</li>
-                <li><strong>Cái tôi / Sĩ diện (Ego):</strong> Cố chấp bảo vệ quan điểm cá nhân. Cần nhớ: <em>Thị trường luôn luôn đúng, chỉ có nhà đầu tư là sai lầm.</em></li>
-            </ul>
-
-            <div class="watermark-box">
-                <img src="../assets/images/psychology_diagram.jpg" alt="Sơ đồ 4 kẻ thù tâm lý lớn nhất của Trader: Tham Lam, Sợ Hãi, Hy Vọng và Cái Tôi" style="max-height: 480px;">
-                <div class="watermark-caption">Sơ đồ tổng quan 4 cạm bẫy tâm lý kinh điển chi phối mọi chu kỳ thị trường tài chính</div>
-                <div class="watermark-stamp">
-                    <i class="fa-solid fa-shield-halved"></i> PTvolume.com
-                </div>
+            <!-- PHẦN 5: PHÂN BIỆT BREAKOUT THẬT VS FAKEOUT -->
+            <h2><i class="fa-solid fa-filter"></i> V. DÙNG VOLUME VSA PHÂN BIỆT PHÁ VỠ THẬT (BREAKOUT) VS BẪY GIÁ (FAKEOUT)</h2>
+            <div class="data-table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Yếu Tố Phân Tích</th>
+                            <th>Phá Vỡ Thật (True Breakout)</th>
+                            <th>Bẫy Phá Vỡ Giả (Fakeout / Bull/Bear Trap)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Hình thái cây nến vượt cản</strong></td>
+                            <td>Nến thân dài đầy đặn (Marubozu), đóng cửa vượt xa ngoài vùng cản dứt khoát.</td>
+                            <td>Nến vượt cản nhưng lập tức rút râu dài ngoằng (Pin Bar / Doji) đóng cửa tụt lùi vào trong cản.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Khối lượng (Volume)</strong></td>
+                            <td><span style="color:#26E7A6; font-weight:700;">Volume Bùng Nổ Cực Đại (Ultra High Vol)</span>: Thể hiện Smart Money bỏ tiền lớn nuốt trọn mọi lệnh cản.</td>
+                            <td><span style="color:#F23645; font-weight:700;">Volume Thấp hoặc Volume Bất Thường</span>: Thể hiện thiếu vắng lực mua đẩy thật sự, chỉ là chiêu trò quét thanh khoản (Stop Hunt).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Chiến lược giao dịch tối ưu</strong></td>
+                            <td>Chờ giá hồi nhẹ (Retest) về vùng cản với Volume cạn kiệt rồi kích hoạt lệnh thuận xu hướng.</td>
+                            <td>Đánh ngược chiều ngay lập tức khi nến rút chân xác nhận bẫy giá (Bắt nhịp Spring / Upthrust Wyckoff).</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
-            <h3>2. Đừng Bao Giờ Tranh Luận Với Bảng Điện</h3>
-            <p>
-                Bảng điện tử chỉ phản ánh sự thật khách quan của quy luật cung cầu. Nó không có cảm xúc, không nghe lời giải thích và không quan tâm bạn nghĩ gì. Khi giá đi ngược nhận định, hãy nhận sai và thoát ra ngay lập tức.
-            </p>
-
-            <div class="watermark-box">
-                <img src="../assets/images/ticker_tape_board.jpg" alt="Máy đọc băng giá Edison Ticker Tape và bảng yết giá chứng khoán cổ điển" style="max-height: 460px;">
-                <div class="watermark-caption">Máy đọc băng giá Ticker Tape cổ điển — công cụ giúp Jesse Livermore cảm nhận nhịp đập dòng tiền thực tế</div>
-                <div class="watermark-stamp">
-                    <i class="fa-solid fa-shield-halved"></i> PTvolume.com
+            <!-- PHẦN 5: KẾT LUẬN -->
+            <div class="highlight-box">
+                <h3><i class="fa-solid fa-trophy"></i> Tổng Kết Học Phần Đọc Biểu Đồ Cốt Lõi</h3>
+                <p style="margin-bottom:12px;">
+                    Bạn đã nắm trọn bộ 3 trụ cột kỹ thuật: <strong>Hiểu bản chất TA/FA &rarr; Đọc từng cây nến Nhật &rarr; Xác định vùng Kháng cự/Hỗ trợ then chốt</strong>. Hãy áp dụng ngay vào biểu đồ trực tuyến để rèn luyện mắt nhìn thị trường mỗi ngày!
+                </p>
+                <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+                    <a href="doc-bieu-do-bai-2-nen-nhat-va-cac-loai-nen-quan-trong.html" class="btn" style="background:var(--bg-card); border:1px solid var(--border-color); color:#fff;">
+                        <i class="fa-solid fa-arrow-left"></i> Xem Lại Bài 2: Nến Nhật
+                    </a>
+                    <a href="../index.html#bieu-do-live" class="btn" style="background:var(--accent-gold); color:#000; font-weight:700;">
+                        <i class="fa-solid fa-chart-line"></i> Mở Biểu Đồ Trực Tuyến Thực Hành Ngay
+                    </a>
                 </div>
             </div>
-
-            <h3>3. Cảnh Giác Tuyệt Đối Với Tin Đồn & Lời Khuyên Nội Bộ (Tips & Rumors)</h3>
-            <p>
-                Mọi lời khuyên từ bạn bè, người thân, chuyên gia hay tin tức mật đều là cạm bẫy phá hủy tài khoản. Bài học đắt giá nhất của Livermore từ vụ sập bẫy thị trường bông năm 1908: Khi ông từ bỏ nhận định độc lập để tin lời "chuyên gia" Percy Thomas, ông đã mất toàn bộ cơ nghiệp.
-            </p>
-
-            <h3>4. Bài Học Cuối Cùng: Sự Cô Độc Của Nghề Giao Dịch & Cân Bằng Cuộc Sống</h3>
-            <p>
-                Jesse Livermore là thiên tài tối thượng về phân tích kỹ thuật và đọc dòng tiền, nhưng ông đã thất bại trong việc tìm kiếm sự bình yên nội tâm. Thành công tài chính chỉ thực sự trọn vẹn khi đi kèm với sức khỏe tinh thần, kỷ luật tự giác và sự cân bằng trong cuộc sống.
-            </p>
         </div>
 
+        <!-- COMMENT SECTION -->
         <section class="comment-section">
             <h3 class="comment-header">
-                <i class="fa-regular fa-comments" style="color: #00E5FF;"></i> Thảo Luận Triết Lý Jesse Livermore (<span id="commentCount">2</span>)
+                <i class="fa-regular fa-comments" style="color: #00E5FF;"></i> Thảo Luận Bài Học Kháng Cự & Hỗ Trợ (<span id="commentCount">2</span>)
             </h3>
 
             <form class="comment-form" id="commentForm" onsubmit="addComment(event)">
                 <div class="form-group">
-                    <label class="form-label">Tên Trader / Nickname:</label>
-                    <input type="text" id="commentName" class="form-control" placeholder="VD: Quốc Huy - Naked Chart Trader" required>
+                    <label class="form-label">Tên Học Viên / Nickname:</label>
+                    <input type="text" id="commentName" class="form-control" placeholder="VD: Quang Tuấn (Trader VSA)" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Cảm nhận của bạn về cuộc đời & phương pháp của Livermore:</label>
-                    <textarea id="commentContent" class="form-control" placeholder="Chia sẻ góc nhìn hoặc bài học bạn tâm đắc nhất từ Jesse Livermore..." required></textarea>
+                    <label class="form-label">Chia sẻ kinh nghiệm hoặc Thắc mắc về cách vẽ vùng cản & Flip Zone:</label>
+                    <textarea id="commentContent" class="form-control" placeholder="Bạn thường vẽ kháng cự hỗ trợ theo bóng nến hay thân nến? Hãy để lại bình luận..." required></textarea>
                 </div>
                 <button type="submit" class="btn">
                     <i class="fa-regular fa-paper-plane"></i> Gửi Bình Luận
@@ -754,21 +840,21 @@
             <div class="comment-list" id="commentList">
                 <div class="comment-item">
                     <div class="comment-top">
-                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Minh Khang (Price Action Trader)</span>
-                        <span class="comment-date">20 Tháng 8, 2026 21:30 UTC</span>
+                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Đoàn Việt Hưng (Cần Thơ)</span>
+                        <span class="comment-date">24 Tháng 8, 2026</span>
                     </div>
                     <div class="comment-text">
-                        Đọc lại cuộc đời Livermore lần nào cũng thấy rợn người và thấm thía. Nguyên tắc 'Chỉ nhồi lệnh khi đang có lãi' và 'Rút 50% tiền lãi cất két sắt' thực sự là kim chỉ nam cứu mạng mọi trader.
+                        Khái niệm Flip Zone chuyển đổi vai trò Kháng cự thành Hỗ trợ là điểm vào lệnh đẹp nhất mình từng học. Đợi giá phá đỉnh rồi quay về Retest với Volume thấp là vào lệnh tỷ lệ thắng cực cao!
                     </div>
                 </div>
 
                 <div class="comment-item">
                     <div class="comment-top">
-                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Thanh Tùng (VSA Trader)</span>
-                        <span class="comment-date">20 Tháng 8, 2026 21:35 UTC</span>
+                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Bùi Thanh Tùng (Quảng Ninh)</span>
+                        <span class="comment-date">24 Tháng 8, 2026</span>
                     </div>
                     <div class="comment-text">
-                        Bài viết tổng hợp cực kỳ xuất sắc từ cả 2 cuốn 'Chết vì chứng khoán' và 'Hồi ức của một thiên tài'. Khái niệm Pivotal Point kết hợp với xác nhận Volume chính là cốt lõi của phương pháp đọc dòng tiền thực chiến.
+                        Bảng so sánh True Breakout vs Fakeout rất chi tiết. Nhìn Volume bùng nổ mới tin tưởng là phá vỡ thật, tránh được bao nhiêu cú đu đỉnh oan ức.
                     </div>
                 </div>
             </div>
@@ -855,7 +941,7 @@
             loadSavedComments();
         });
 
-        const POST_SLUG = "jesse-livermore-cuoc-doi-va-bai-hoc-song-con";
+        const POST_SLUG = "doc-bieu-do-bai-3-khang-cu-va-ho-tro";
 
         function loadSavedComments() {
             const saved = JSON.parse(localStorage.getItem('ptvolume_comments_' + POST_SLUG) || '[]');

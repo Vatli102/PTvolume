@@ -673,14 +673,14 @@
                     Anh <strong>Ramu</strong> nuôi 10 con bò nhưng sợ dịch bệnh làm giá bò sụt giảm vào năm sau. Anh <strong>Adin</strong> muốn mua 10 con bò vào năm sau để mở lò mổ nhưng sợ giá bò tăng vọt. Hai bên đã ký thỏa thuận: Năm sau Adin chắc chắn mua 10 con bò của Ramu với giá cố định 100 Rupee/con.
                 </p>
                 <p style="margin-bottom:0;">
-                    Thỏa thuận song phương đó chính là <em>Hợp đồng kỳ hạn sơ khai</em>. Khi hàng triệu người mua và người bán xuất hiện, các **Sở Giao Dịch Hàng Hóa (Exchange)** ra đời làm trung gian thanh toán bù trừ, đưa ra các bộ quy chuẩn chất lượng đồng nhất để mọi người có thể mua bán khớp lệnh tức thì mà không sợ đối tác quỵt nợ.
+                    Thỏa thuận song phương đó chính là <em>Hợp đồng kỳ hạn sơ khai</em>. Khi hàng triệu người mua và người bán xuất hiện, các <strong>Sở Giao Dịch Hàng Hóa (Exchange)</strong> ra đời làm trung gian thanh toán bù trừ, đưa ra các bộ quy chuẩn chất lượng đồng nhất để mọi người có thể mua bán khớp lệnh tức thì mà không sợ đối tác quỵt nợ.
                 </p>
             </div>
 
             <!-- PHẦN 2: CƠ CHẾ GIAO DỊCH 2 CHIỀU & VỊ THẾ -->
             <h2><i class="fa-solid fa-arrows-up-down"></i> II. VỊ THẾ GIAO DỊCH & CƠ CHẾ KIẾM LỢI NHUẬN 2 CHIỀU</h2>
             <p>
-                Một trong những ưu thế vượt trội nhất của Hàng hóa phái sinh là cơ chế **giao dịch 2 chiều (Long / Short)** linh hoạt:
+                Một trong những ưu thế vượt trội nhất của Hàng hóa phái sinh là cơ chế <strong>giao dịch 2 chiều (Long / Short)</strong> linh hoạt:
             </p>
             <ul>
                 <li><strong>Vị thế (Position):</strong> Số lượng hợp đồng hàng hóa mà nhà đầu tư đang nắm giữ tại một thời điểm.</li>
@@ -970,7 +970,7 @@
     <div id="google_translate_element" style="display:none;"></div>
 
     <script>
-        function googleTranslateElementInit() {
+                function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'vi',
                 includedLanguages: 'en,vi',
@@ -979,27 +979,30 @@
         }
 
         function setLanguage(lang) {
-            if (lang === 'vi') {
-                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + location.hostname;
-                document.cookie = "googtrans=/vi/vi; path=/;";
-                document.cookie = "googtrans=/vi/vi; path=/; domain=" + location.hostname;
-                localStorage.setItem('ptvolume_lang', 'vi');
-                location.reload();
-            } else if (lang === 'en') {
-                document.cookie = "googtrans=/vi/en; path=/;";
-                document.cookie = "googtrans=/vi/en; path=/; domain=" + location.hostname;
-                localStorage.setItem('ptvolume_lang', 'en');
-                location.reload();
+            localStorage.setItem('ptvolume_lang', lang);
+            updateLangButtons(lang);
+
+            // Set cookies
+            document.cookie = "googtrans=/vi/" + lang + "; path=/;";
+            if (window.location.hostname && window.location.hostname !== '') {
+                document.cookie = "googtrans=/vi/" + lang + "; path=/; domain=" + window.location.hostname;
+            }
+
+            // Trigger Google Translate dropdown
+            const select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = lang;
+                select.dispatchEvent(new Event('change'));
+            } else {
+                window.location.reload();
             }
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const currentLang = localStorage.getItem('ptvolume_lang') || 'vi';
+        function updateLangButtons(lang) {
             const btnVi = document.getElementById('btn-lang-vi');
             const btnEn = document.getElementById('btn-lang-en');
             if (btnVi && btnEn) {
-                if (currentLang === 'en') {
+                if (lang === 'en') {
                     btnEn.classList.add('active');
                     btnVi.classList.remove('active');
                 } else {
@@ -1007,6 +1010,28 @@
                     btnEn.classList.remove('active');
                 }
             }
+        }
+
+        function applyStoredLanguage() {
+            const currentLang = localStorage.getItem('ptvolume_lang') || 'vi';
+            updateLangButtons(currentLang);
+            if (currentLang === 'en') {
+                let attempts = 0;
+                const checkCombo = setInterval(() => {
+                    const select = document.querySelector('.goog-te-combo');
+                    if (select) {
+                        select.value = 'en';
+                        select.dispatchEvent(new Event('change'));
+                        clearInterval(checkCombo);
+                    }
+                    attempts++;
+                    if (attempts > 30) clearInterval(checkCombo);
+                }, 200);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            applyStoredLanguage();
             loadSavedComments();
         });
 
@@ -1078,7 +1103,7 @@
             return div.innerHTML;
         }
     </script>
-    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
