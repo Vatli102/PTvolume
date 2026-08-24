@@ -67,7 +67,7 @@ SCRIPT_TEMPLATE = '''        function googleTranslateElementInit() {
         });'''
 
 def update_scripts():
-    all_files = glob.glob('posts/*.html') + glob.glob('pages/*.html')
+    all_files = glob.glob('tu-sach/*.html') + glob.glob('phan-tich/*.html') + glob.glob('hoc-tap/*.html') + glob.glob('pages/*.html')
     for filepath in all_files:
         with open(filepath, 'r', encoding='utf-8') as f:
             content = f.read()

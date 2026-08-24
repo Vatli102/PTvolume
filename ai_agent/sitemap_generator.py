@@ -12,7 +12,11 @@ except Exception:
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 SITEMAP_PATH = os.path.join(BASE_DIR, "sitemap.xml")
-POSTS_DIR = os.path.join(BASE_DIR, "posts")
+CATEGORY_DIRS = [
+    ("tu-sach", "0.95", "weekly"),
+    ("phan-tich", "0.9", "weekly"),
+    ("hoc-tap", "0.9", "weekly"),
+]
 PAGES_DIR = os.path.join(BASE_DIR, "pages")
 BASE_URL = "https://ptvolume.com"
 
@@ -31,7 +35,7 @@ def get_page_info(file_path: str):
 def generate_sitemap() -> str:
     """
     Generates standard sitemap.xml for PTvolume.com
-    scanning all pages and posts.
+    scanning all pages and category folders (tu-sach, phan-tich, hoc-tap).
     """
     today_iso = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     
@@ -50,31 +54,31 @@ def generate_sitemap() -> str:
         '        <priority>1.0</priority>',
         '    </url>',
         '',
-        '    <!-- Bai viet phan tich & Chuyen muc -->'
+        '    <!-- Bai viet theo Chuyen muc Menu -->'
     ]
 
-    # Add all posts
-    if os.path.exists(POSTS_DIR):
-        post_files = sorted(
-            [f for f in os.listdir(POSTS_DIR) if f.endswith(".html")],
-            reverse=True
-        )
-        for post_file in post_files:
-            file_path = os.path.join(POSTS_DIR, post_file)
-            title = get_page_info(file_path) or "Phân tích kỹ thuật PTvolume"
-            # Get file modification date or fallback to today
-            try:
-                mtime = os.path.getmtime(file_path)
-                mod_date = datetime.fromtimestamp(mtime, tz=timezone.utc).strftime("%Y-%m-%d")
-            except Exception:
-                mod_date = today_iso
-                
-            xml_lines.append('    <url>')
-            xml_lines.append(f'        <loc>{BASE_URL}/posts/{post_file}</loc>')
-            xml_lines.append(f'        <lastmod>{mod_date}</lastmod>')
-            xml_lines.append('        <changefreq>weekly</changefreq>')
-            xml_lines.append('        <priority>0.9</priority>')
-            xml_lines.append('    </url>')
+    # Add all category articles
+    for folder_name, priority, changefreq in CATEGORY_DIRS:
+        folder_path = os.path.join(BASE_DIR, folder_name)
+        if os.path.exists(folder_path):
+            files = sorted(
+                [f for f in os.listdir(folder_path) if f.endswith(".html")],
+                reverse=True
+            )
+            for file_name in files:
+                file_path = os.path.join(folder_path, file_name)
+                try:
+                    mtime = os.path.getmtime(file_path)
+                    mod_date = datetime.fromtimestamp(mtime, tz=timezone.utc).strftime("%Y-%m-%d")
+                except Exception:
+                    mod_date = today_iso
+                    
+                xml_lines.append('    <url>')
+                xml_lines.append(f'        <loc>{BASE_URL}/{folder_name}/{file_name}</loc>')
+                xml_lines.append(f'        <lastmod>{mod_date}</lastmod>')
+                xml_lines.append(f'        <changefreq>{changefreq}</changefreq>')
+                xml_lines.append(f'        <priority>{priority}</priority>')
+                xml_lines.append('    </url>')
 
     xml_lines.append('')
     xml_lines.append('    <!-- Trang thong tin cot loi -->')

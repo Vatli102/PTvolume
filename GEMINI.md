@@ -28,5 +28,5 @@ Tài liệu này ghi nhớ toàn bộ các tiêu chuẩn bắt buộc cho mọi 
 ### 4. NHẬN DIỆN THƯƠNG HIỆU & PHÁP LÝ
 * Logo: Báo đen `PT VOLUME - MARKET ANALYSIS` (`assets/images/logo.jpg`).
 * Tone màu: Dark Theme chuyên nghiệp phong cách Investopedia Financial (`#0B0E14`, `#141822`, xanh `#2962FF`, xanh cyan `#00E5FF`, vàng `#F0B90B`).
-* Cấu trúc thư mục chuẩn: `pages/`, `posts/`, `assets/images/`.
+* Cấu trúc thư mục chuẩn theo Menu: `pages/`, `tu-sach/`, `phan-tich/`, `hoc-tap/`, `assets/images/`.
 * Luôn giữ liên kết 5 trang cốt lõi: About, Contact, Terms, Privacy, Risk Disclaimer.
