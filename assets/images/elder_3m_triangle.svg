@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="100%" height="100%" style="background:#0B0E14; font-family: 'Inter', system-ui, -apple-system, sans-serif;">
+  <defs>
+    <linearGradient id="gradCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141822" />
+      <stop offset="100%" stop-color="#1A2130" />
+    </linearGradient>
+    <linearGradient id="gradBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF" />
+      <stop offset="100%" stop-color="#2962FF" />
+    </linearGradient>
+    <linearGradient id="gradGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F0B90B" />
+      <stop offset="100%" stop-color="#FF9100" />
+    </linearGradient>
+    <linearGradient id="gradGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E676" />
+      <stop offset="100%" stop-color="#089981" />
+    </linearGradient>
+  </defs>
+
+  <!-- Title Header -->
+  <text x="450" y="45" text-anchor="middle" fill="#00E5FF" font-size="22" font-weight="800" letter-spacing="1.5">TAM GIÁC KIỀNG 3 CHÂN (3M) - DR. ALEXANDER ELDER</text>
+  <text x="450" y="72" text-anchor="middle" fill="#8E9BAE" font-size="13">The New Trading for a Living • Nền tảng sống còn và thịnh vượng của Trader chuyên nghiệp</text>
+
+  <!-- Central Triangle Connections -->
+  <polygon points="450,130 180,360 720,360" fill="none" stroke="#222938" stroke-width="4" stroke-dasharray="6 6" />
+  <polygon points="450,130 180,360 720,360" fill="rgba(41, 98, 255, 0.03)" />
+
+  <!-- Center Hub -->
+  <circle cx="450" cy="285" r="48" fill="url(#gradCard)" stroke="#2962FF" stroke-width="2" />
+  <text x="450" y="278" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="800">GIAO DỊCH</text>
+  <text x="450" y="298" text-anchor="middle" fill="#00E5FF" font-size="13" font-weight="700">KIẾM SỐNG</text>
+
+  <!-- 1. MIND (Top) -->
+  <g transform="translate(300, 95)">
+    <rect width="300" height="105" rx="10" fill="url(#gradCard)" stroke="url(#gradGold)" stroke-width="2" />
+    <text x="150" y="28" text-anchor="middle" fill="#F0B90B" font-size="16" font-weight="800">1. MIND (TÂM LÝ)</text>
+    <text x="150" y="50" text-anchor="middle" fill="#CAD4E0" font-size="12">• Kiểm soát cảm xúc, dẹp bỏ Cái tôi (Ego)</text>
+    <text x="150" y="68" text-anchor="middle" fill="#CAD4E0" font-size="12">• Nhận diện Ảo tưởng &amp; Tự hủy hoại</text>
+    <text x="150" y="86" text-anchor="middle" fill="#CAD4E0" font-size="12">• Bài học AA: Thừa nhận 'Kẻ thua nặc danh'</text>
+  </g>
+
+  <!-- 2. METHOD (Left) -->
+  <g transform="translate(50, 310)">
+    <rect width="310" height="115" rx="10" fill="url(#gradCard)" stroke="url(#gradBlue)" stroke-width="2" />
+    <text x="155" y="28" text-anchor="middle" fill="#00E5FF" font-size="16" font-weight="800">2. METHOD (PHƯƠNG PHÁP)</text>
+    <text x="155" y="50" text-anchor="middle" fill="#CAD4E0" font-size="12">• Hệ thống Ba Màn Hình (Triple Screen)</text>
+    <text x="155" y="68" text-anchor="middle" fill="#CAD4E0" font-size="12">• Phân kỳ MACD Histogram &amp; Kênh giá EMA</text>
+    <text x="155" y="86" text-anchor="middle" fill="#CAD4E0" font-size="12">• Đọc hành vi đám đông &amp; Force Index</text>
+    <text x="155" y="104" text-anchor="middle" fill="#8E9BAE" font-size="11">Chỉ giao dịch khi có Lợi thế xác suất (Edge)</text>
+  </g>
+
+  <!-- 3. MONEY (Right) -->
+  <g transform="translate(540, 310)">
+    <rect width="310" height="115" rx="10" fill="url(#gradCard)" stroke="url(#gradGreen)" stroke-width="2" />
+    <text x="155" y="28" text-anchor="middle" fill="#00E676" font-size="16" font-weight="800">3. MONEY (QUẢN TRỊ VỐN)</text>
+    <text x="155" y="50" text-anchor="middle" fill="#CAD4E0" font-size="12">• Quy tắc 2%: Không mất quá 2% vốn/lệnh</text>
+    <text x="155" y="68" text-anchor="middle" fill="#CAD4E0" font-size="12">• Quy tắc 6%: Chạm 6% lỗ/tháng -&gt; Dừng giao dịch</text>
+    <text x="155" y="86" text-anchor="middle" fill="#CAD4E0" font-size="12">• Tính khối lượng theo Stop-loss &amp; Vốn rủi ro</text>
+    <text x="155" y="104" text-anchor="middle" fill="#8E9BAE" font-size="11">Bảo vệ mạng sống trước khi nghĩ đến lợi nhuận</text>
+  </g>
+
+  <!-- Footer Watermark -->
+  <text x="450" y="475" text-anchor="middle" fill="#5A6E85" font-size="11" font-weight="600">PTvolume.com • Nền tảng phân tích kỹ thuật &amp; tâm lý giao dịch chuyên sâu</text>
+</svg>

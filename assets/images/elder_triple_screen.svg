@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 520" width="100%" height="100%" style="background:#0B0E14; font-family: 'Inter', system-ui, -apple-system, sans-serif;">
+  <defs>
+    <linearGradient id="bgScreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141822" />
+      <stop offset="100%" stop-color="#1A2130" />
+    </linearGradient>
+  </defs>
+
+  <!-- Main Title -->
+  <text x="460" y="42" text-anchor="middle" fill="#00E5FF" font-size="21" font-weight="800" letter-spacing="1.2">HỆ THỐNG GIAO DỊCH BA MÀN HÌNH (TRIPLE SCREEN TRADING SYSTEM)</text>
+  <text x="460" y="68" text-anchor="middle" fill="#8E9BAE" font-size="13">Chiến lược phối hợp đa khung thời gian độc quyền của Tiến sĩ Alexander Elder</text>
+
+  <!-- SCREEN 1 -->
+  <g transform="translate(30, 95)">
+    <rect width="265" height="345" rx="10" fill="url(#bgScreen)" stroke="#2962FF" stroke-width="2" />
+    <rect width="265" height="40" rx="10" fill="#2962FF" />
+    <text x="132" y="25" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="800">MÀN HÌNH 1: THỦY TRIỀU</text>
+    <text x="132" y="65" text-anchor="middle" fill="#00E5FF" font-size="13" font-weight="700">Khung Lớn (Weekly / H4)</text>
+    <circle cx="132" cy="105" r="28" fill="#0B0E14" stroke="#2962FF" stroke-width="1.5"/>
+    <text x="132" y="112" text-anchor="middle" fill="#00E5FF" font-size="20">🌊</text>
+    <text x="20" y="155" fill="#F0B90B" font-size="12" font-weight="700">Nhiệm vụ: Xác định Xu hướng</text>
+    <text x="20" y="180" fill="#CAD4E0" font-size="11.5">• Công cụ: EMA 26 + MACD-Hist</text>
+    <text x="20" y="205" fill="#CAD4E0" font-size="11.5">• Độ dốc MACD-Hist hướng lên:</text>
+    <text x="35" y="225" fill="#00E676" font-size="11" font-weight="600">➔ Đèn Xanh: CHỈ MUA</text>
+    <text x="20" y="250" fill="#CAD4E0" font-size="11.5">• Độ dốc MACD-Hist hướng xuống:</text>
+    <text x="35" y="270" fill="#F23645" font-size="11" font-weight="600">➔ Đèn Đỏ: CHỈ BÁN</text>
+    <rect x="15" y="295" width="235" height="35" rx="6" fill="#0B0E14" stroke="#222938"/>
+    <text x="132" y="317" text-anchor="middle" fill="#8E9BAE" font-size="11">Không bao giờ chống lại Thủy triều</text>
+  </g>
+
+  <!-- SCREEN 2 -->
+  <g transform="translate(325, 95)">
+    <rect width="265" height="345" rx="10" fill="url(#bgScreen)" stroke="#FF9100" stroke-width="2" />
+    <rect width="265" height="40" rx="10" fill="#FF9100" />
+    <text x="132" y="25" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="800">MÀN HÌNH 2: CON SÓNG</text>
+    <text x="132" y="65" text-anchor="middle" fill="#FFB74D" font-size="13" font-weight="700">Khung Trung (Daily / H1)</text>
+    <circle cx="132" cy="105" r="28" fill="#0B0E14" stroke="#FF9100" stroke-width="1.5"/>
+    <text x="132" y="112" text-anchor="middle" fill="#FF9100" font-size="20">🏄</text>
+    <text x="20" y="155" fill="#F0B90B" font-size="12" font-weight="700">Nhiệm vụ: Bắt Sóng Hồi (Pullback)</text>
+    <text x="20" y="180" fill="#CAD4E0" font-size="11.5">• Công cụ: Stochastic / Force Index</text>
+    <text x="20" y="205" fill="#CAD4E0" font-size="11.5">• Nếu Tuần TĂNG (Màn hình 1):</text>
+    <text x="35" y="225" fill="#00E676" font-size="11" font-weight="600">➔ Đợi Ngày Quá Bán (Oversold)</text>
+    <text x="20" y="250" fill="#CAD4E0" font-size="11.5">• Nếu Tuần GIẢM (Màn hình 1):</text>
+    <text x="35" y="270" fill="#F23645" font-size="11" font-weight="600">➔ Đợi Ngày Quá Mua (Overbought)</text>
+    <rect x="15" y="295" width="235" height="35" rx="6" fill="#0B0E14" stroke="#222938"/>
+    <text x="132" y="317" text-anchor="middle" fill="#8E9BAE" font-size="11">Săn điểm vào tối ưu giá tốt</text>
+  </g>
+
+  <!-- SCREEN 3 -->
+  <g transform="translate(620, 95)">
+    <rect width="265" height="345" rx="10" fill="url(#bgScreen)" stroke="#00E676" stroke-width="2" />
+    <rect width="265" height="40" rx="10" fill="#089981" />
+    <text x="132" y="25" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="800">MÀN HÌNH 3: GỢN SÓNG</text>
+    <text x="132" y="65" text-anchor="middle" fill="#00E676" font-size="13" font-weight="700">Khung Kích Hoạt (Intraday/M15)</text>
+    <circle cx="132" cy="105" r="28" fill="#0B0E14" stroke="#00E676" stroke-width="1.5"/>
+    <text x="132" y="112" text-anchor="middle" fill="#00E676" font-size="20">🎯</text>
+    <text x="20" y="155" fill="#F0B90B" font-size="12" font-weight="700">Nhiệm vụ: Bắn Tỉa Điểm Vào (Entry)</text>
+    <text x="20" y="180" fill="#CAD4E0" font-size="11.5">• Công cụ: Trailing Stop / Breakout</text>
+    <text x="20" y="205" fill="#CAD4E0" font-size="11.5">• Mua: Đặt Buy Stop trên đỉnh nến</text>
+    <text x="35" y="225" fill="#00E676" font-size="11" font-weight="600">➔ Khớp khi sóng hồi kết thúc</text>
+    <text x="20" y="250" fill="#CAD4E0" font-size="11.5">• Bán: Đặt Sell Stop dưới đáy nến</text>
+    <text x="35" y="270" fill="#F23645" font-size="11" font-weight="600">➔ Khớp khi đà bán kích hoạt</text>
+    <rect x="15" y="295" width="235" height="35" rx="6" fill="#0B0E14" stroke="#222938"/>
+    <text x="132" y="317" text-anchor="middle" fill="#8E9BAE" font-size="11">Cắt lỗ ngay lập tức dưới đáy/đỉnh gần</text>
+  </g>
+
+  <!-- Footer Watermark -->
+  <text x="460" y="490" text-anchor="middle" fill="#5A6E85" font-size="11" font-weight="600">PTvolume.com • Nền tảng phân tích kỹ thuật &amp; tâm lý giao dịch chuyên sâu</text>
+</svg>
