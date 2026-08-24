@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T0JM1RNTZ9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-T0JM1RNTZ9');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1: Tổng Quan Về Thị Trường Giao Dịch Hàng Hóa Phái Sinh | PTvolume</title>
+    <meta name="description" content="Giáo trình nhập môn Hàng hóa Phái sinh bài bản, dễ hiểu: Khái niệm, 4 nhóm hàng hóa chính, cơ chế bảo hiểm giá Hedging cho nông dân/doanh nghiệp, so sánh với chứng khoán/forex và tính pháp lý qua Sở MXV.">
+    <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-main: #0B0E14;
+            --bg-card: #141822;
+            --bg-card-hover: #1A2130;
+            --border-color: #222938;
+            --primary: #2962FF;
+            --primary-glow: rgba(41, 98, 255, 0.25);
+            --bullish: #089981;
+            --bearish: #F23645;
+            --text-main: #F0F3FA;
+            --text-muted: #8E9BAE;
+            --text-light: #CAD4E0;
+            --accent-gold: #F0B90B;
+            --accent-cyan: #00E5FF;
+            --font-editorial: 'Merriweather', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-sans);
+        }
+
+        input, textarea {
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            user-select: text !important;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.85;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 14, 20, 0.95);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 24px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 1.35rem;
+            color: #fff;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 1px solid rgba(41, 98, 255, 0.4);
+        }
+
+        .logo-text .brand {
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .logo-text .brand span {
+            color: var(--accent-cyan);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lang-switcher {
+            display: inline-flex;
+            align-items: center;
+            background: #080B10;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2px;
+            gap: 2px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 16px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active, .lang-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background: #1e4bd8;
+            transform: translateY(-1px);
+        }
+
+        .article-container {
+            max-width: 940px;
+            margin: 40px auto 80px;
+            padding: 0 24px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .article-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: rgba(8, 153, 129, 0.15);
+            color: #26E7A6;
+            border: 1px solid rgba(8, 153, 129, 0.35);
+            margin-bottom: 16px;
+        }
+
+        .article-title {
+            font-family: var(--font-editorial);
+            font-size: 2.2rem;
+            line-height: 1.35;
+            color: #fff;
+            margin-bottom: 18px;
+            font-weight: 700;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .article-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .article-body {
+            font-family: var(--font-editorial);
+            font-size: 1.08rem;
+            color: var(--text-light);
+            line-height: 1.95;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-body p {
+            margin-bottom: 24px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-body h2 {
+            font-family: var(--font-sans);
+            font-size: 1.45rem;
+            color: #fff;
+            margin: 42px 0 18px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-left: 4px solid var(--primary);
+            padding-left: 14px;
+            text-align: left;
+        }
+
+        .article-body h3 {
+            font-family: var(--font-sans);
+            font-size: 1.18rem;
+            color: var(--accent-cyan);
+            margin: 28px 0 12px;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        .article-body ul, .article-body ol {
+            margin-bottom: 26px;
+            padding-left: 24px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-body li {
+            margin-bottom: 12px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-body strong {
+            color: #fff;
+            font-family: inherit;
+        }
+
+        .article-body blockquote {
+            background: #141822;
+            border-left: 4px solid var(--accent-gold);
+            padding: 18px 22px;
+            margin: 26px 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: #F0F3FA;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .watermark-box {
+            position: relative;
+            margin: 32px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #080B10;
+            text-align: center;
+        }
+
+        .watermark-box img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .watermark-caption {
+            font-family: var(--font-sans);
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            padding: 8px 14px;
+            background: #10141D;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-style: italic;
+        }
+
+        .watermark-stamp {
+            position: absolute;
+            bottom: 45px;
+            right: 18px;
+            background: rgba(11, 14, 20, 0.45);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.75);
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            pointer-events: none;
+        }
+
+        .highlight-box {
+            background: #141822;
+            border: 1px solid rgba(41, 98, 255, 0.35);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .highlight-box h3 {
+            color: var(--accent-gold);
+            margin-top: 0;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .highlight-box ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        .highlight-box li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            line-height: 1.65;
+        }
+
+        .highlight-box li i {
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: #26E7A6;
+            font-size: 0.85rem;
+        }
+
+        .data-table-wrapper {
+            overflow-x: auto;
+            margin: 28px 0;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        table.data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-sans);
+            font-size: 0.92rem;
+            text-align: left;
+        }
+
+        table.data-table th {
+            background: #141822;
+            color: var(--accent-cyan);
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+            font-weight: 700;
+        }
+
+        table.data-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-light);
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        table.data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        table.data-table tr:hover td {
+            background: rgba(41, 98, 255, 0.05);
+        }
+
+        .step-card {
+            background: #141822;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent-cyan);
+        }
+
+        .step-card h4 {
+            color: #fff;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .comment-section {
+            margin-top: 60px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .comment-header {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .comment-form {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            width: 100%;
+            background: #080B10;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 10px 14px;
+            color: #fff;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px var(--primary-glow);
+        }
+
+        textarea.form-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .comment-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .comment-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px 20px;
+        }
+
+        .comment-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 0.82rem;
+        }
+
+        .comment-author {
+            font-weight: 700;
+            color: var(--accent-cyan);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .comment-date {
+            color: var(--text-muted);
+        }
+
+        .comment-text {
+            font-size: 0.92rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        footer {
+            background: #080B10;
+            border-top: 1px solid var(--border-color);
+            padding: 40px 24px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo.jpg" alt="Logo PT VOLUME">
+                <div class="logo-text">
+                    <span class="brand">PT<span>VOLUME</span></span>
+                </div>
+            </a>
+            
+            <div class="nav-right">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" onclick="setLanguage('vi')" id="btn-lang-vi" title="Tiếng Việt">VI</button>
+                    <button class="lang-btn" onclick="setLanguage('en')" id="btn-lang-en" title="English">EN</button>
+                </div>
+                <a href="../index.html" class="btn">
+                    <i class="fa-solid fa-arrow-left"></i> Về Trang Chủ
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="article-container">
+        <div class="breadcrumb">
+            <a href="../index.html">Trang Chủ</a>
+            <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+            <a href="../index.html#hoc-tap">Giáo Trình Học Tập</a>
+            <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+            <span>Bài 1: Tổng Quan Về Hàng Hóa Phái Sinh</span>
+        </div>
+
+        <span class="article-badge"><i class="fa-solid fa-graduation-cap"></i> Giáo Trình Nhập Môn Hàng Hóa • Bài 1</span>
+        
+        <h1 class="article-title">Bài 1: Tổng Quan Về Thị Trường Giao Dịch Hàng Hóa Phái Sinh</h1>
+
+        <div class="article-meta">
+            <span><i class="fa-regular fa-user"></i> Ban Học Thuật <strong>PTvolume Academy</strong></span>
+            <span>•</span>
+            <span><i class="fa-solid fa-wheat-awn"></i> Chuyên mục: <strong>Hàng Hóa Phái Sinh (Commodity Futures)</strong></span>
+            <span>•</span>
+            <span><i class="fa-regular fa-calendar-check"></i> Biên soạn: 2026</span>
+            <span>•</span>
+            <span><i class="fa-regular fa-clock"></i> 10 phút đọc & thực hành</span>
+        </div>
+
+        <div class="article-body">
+            <blockquote>
+                "Thị trường hàng hóa phái sinh không phải là một trò chơi may rủi, mà là cái nôi hình thành nên nền kinh tế thương mại hiện đại. Tại đây, giá cả được quyết định bởi quy luật Cung - Cầu thực tế, hỗ trợ người nông dân định trước giá bán và cung cấp công cụ phòng vệ rủi ro vững chắc cho doanh nghiệp toàn cầu."<br>
+                — <strong>PTvolume Educational Desk</strong>
+            </blockquote>
+
+            <!-- PHẦN TÓM TẮT CỐT LÕI -->
+            <div class="highlight-box">
+                <h3><i class="fa-solid fa-lightbulb"></i> Mục Tiêu Cốt Lõi Của Bài Học</h3>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> <strong>Bản chất thực sự:</strong> Hiểu rõ Hàng hóa phái sinh là gì và cơ chế hình thành hợp đồng tương lai (Futures Contract).</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>4 Nhóm sản phẩm:</strong> Phân loại Nông sản, Năng lượng, Kim loại và Nguyên liệu công nghiệp.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Cơ chế bảo hiểm giá (Hedging):</strong> Thấu hiểu bài toán thực tế giúp người nông dân và doanh nghiệp không bị ép giá và chủ động lợi nhuận.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>So sánh ưu thế vượt trội:</strong> Phân tích sự khác biệt giữa Hàng hóa phái sinh với Chứng khoán cơ sở, Forex và Vàng vật chất.</li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Khung pháp lý minh bạch:</strong> Cơ chế hoạt động của Sở Giao dịch Hàng hóa Việt Nam (MXV) dưới sự cấp phép và quản lý của Bộ Công Thương.</li>
+                </ul>
+            </div>
+
+            <!-- WATERMARK IMAGE -->
+            <div class="watermark-box">
+                <img src="../assets/images/gold_commodities_analysis.jpg" alt="Tổng quan thị trường giao dịch hàng hóa phái sinh toàn cầu" style="max-height: 460px;">
+                <div class="watermark-caption">Cơ cấu liên thông giữa Sở Giao dịch Hàng hóa Việt Nam (MXV) và các Sở giao dịch hàng đầu thế giới (CME, CBOT, NYMEX, ICE)</div>
+                <div class="watermark-stamp">
+                    <i class="fa-solid fa-shield-halved"></i> PTvolume.com
+                </div>
+            </div>
+
+            <!-- PHẦN 1: KHÁI NIỆM -->
+            <h2><i class="fa-solid fa-cubes"></i> I. HÀNG HÓA & GIAO DỊCH HÀNG HÓA PHÁI SINH LÀ GÌ?</h2>
+            
+            <h3>1. Hàng hóa (Commodity) là gì?</h3>
+            <p>
+                Trong kinh tế học và tài chính, một <strong>Hàng hóa cơ sở (Commodity)</strong> là loại tài sản thực tế thỏa mãn 3 điều kiện nền tảng:
+            </p>
+            <ul>
+                <li><strong>Có giá trị sử dụng:</strong> Phục vụ trực tiếp cho nhu cầu sinh hoạt của con người hoặc làm nguyên liệu đầu vào cho quá trình sản xuất công nghiệp.</li>
+                <li><strong>Có giá trị kinh tế:</strong> Được kết tinh từ chi phí lao động, khai thác, gieo trồng và chế biến.</li>
+                <li><strong>Tính đồng nhất và có thể thay thế (Fungibility):</strong> Các sản phẩm cùng loại có tiêu chuẩn chất lượng đồng nhất trên toàn cầu (ví dụ: 1 giạ Ngô hay 1 bao Cà phê đạt chuẩn giao dịch thì chất lượng ở Mỹ, Brazil hay Việt Nam đều được chuẩn hóa như nhau).</li>
+            </ul>
+
+            <h3>2. Phái sinh hàng hóa (Commodity Derivatives) là gì?</h3>
+            <p>
+                <strong>Phái sinh hàng hóa</strong> là hình thức giao dịch tài chính mà trong đó các bên thỏa thuận <em>mua hoặc bán một khối lượng hàng hóa xác định</em>, với một <em>mức giá được ấn định trước tại thời điểm hiện tại</em>, và việc thanh toán hay giao nhận hàng hóa sẽ được <em>thực hiện vào một thời điểm xác định trong tương lai</em>.
+            </p>
+            <p>
+                Phái sinh hàng hóa được chuẩn hóa dưới dạng các <strong>Hợp đồng Tương lai (Futures Contract)</strong>, niêm yết công khai trên các Sở giao dịch tập trung nhằm loại bỏ rủi ro quỵt nợ và đảm bảo thanh khoản tức thì.
+            </p>
+
+            <!-- VÍ DỤ MINH HỌA -->
+            <div class="step-card">
+                <h4><i class="fa-solid fa-chalkboard-user" style="color:var(--accent-gold);"></i> Ví dụ thực tế về hợp đồng tương lai:</h4>
+                <p style="margin-bottom:8px;">
+                    <strong>Ngày 01/11:</strong> Ông An (Người mua) thỏa thuận với Ông Ba (Người trồng cà phê) rằng vào ngày 30/11 sẽ mua 100 kg Cà phê với mức giá cố định là <strong>200.000 đ/kg</strong>.
+                </p>
+                <p style="margin-bottom:0;">
+                    <strong>Ngày 30/11:</strong> Cho dù lúc này giá cà phê ngoài chợ có biến động tăng vọt lên <strong>220.000 đ/kg</strong> hay giảm xuống <strong>180.000 đ/kg</strong>, hai bên vẫn thực hiện giao dịch đúng mức giá đã thỏa thuận ban đầu là <strong>200.000 đ/kg</strong>. Cả hai bên đều loại trừ được hoàn toàn rủi ro biến động giá không mong muốn.
+                </p>
+            </div>
+
+            <!-- PHẦN 2: 4 NHÓM HÀNG HÓA -->
+            <h2><i class="fa-solid fa-layer-group"></i> II. 4 NHÓM HÀNG HÓA GIAO DỊCH CHÍNH TRÊN THẾ GIỚI</h2>
+            <div class="data-table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Nhóm Hàng Hóa</th>
+                            <th>Mặt Hàng Tiêu Biểu</th>
+                            <th>Sở Giao Dịch Quốc Tế</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>🌽 Nông Sản (Agriculture)</strong></td>
+                            <td>Ngô (Corn), Đậu tương (Soybeans), Dầu đậu tương, Khô đậu tương, Lúa mì (Wheat)</td>
+                            <td>CBOT (Chicago Board of Trade - Mỹ)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>🛢️ Năng Lượng (Energy)</strong></td>
+                            <td>Dầu thô WTI (Crude Oil), Dầu Brent, Khí tự nhiên (Natural Gas), Xăng pha chế RBOB</td>
+                            <td>NYMEX, ICE EU</td>
+                        </tr>
+                        <tr>
+                            <td><strong>🥇 Kim Loại (Metals)</strong></td>
+                            <td>Bạch kim (Platinum), Bạc (Silver), Đồng (Copper), Quặng sắt, Nhôm, Kẽm, Chì</td>
+                            <td>COMEX (Mỹ), LME (London)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>☕ Nguyên Liệu Công Nghiệp</strong></td>
+                            <td>Cà phê Arabica, Cà phê Robusta, Đường #11, Bông sợi (Cotton), Cao su, Ca cao</td>
+                            <td>ICE US, ICE EU, TOCOM (Nhật Bản)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- PHẦN 3: BÀI TOÁN BẢO HIỂM GIÁ -->
+            <h2><i class="fa-solid fa-shield-halved"></i> III. BÀI TOÁN BẢO HIỂM GIÁ (HEDGING) CHO NÔNG DÂN & DOANH NGHIỆP</h2>
+            
+            <h3>1. Đối với Người Nông Dân — Xóa bỏ nỗi lo "Được mùa mất giá"</h3>
+            <p>
+                Khi bắt đầu gieo trồng (ví dụ: ngô đang có giá 15.000 đ/kg), người nông dân có thể bán trước hợp đồng tương lai kỳ hạn 6 tháng với mức giá 15.000 đ/kg. Đến mùa thu hoạch sau 6 tháng, dù thị trường có rớt giá thảm hại xuống 5.000 đ/kg do dư thừa nguồn cung, người nông dân vẫn thu về đủ 15.000 đ/kg theo hợp đồng. Nhờ đó, người nông dân **hoàn toàn an tâm sản xuất mà không bị thương lái ép giá**.
+            </p>
+
+            <h3>2. Đối với Doanh Nghiệp Xuất Nhập Khẩu — Tối ưu chi phí & Giải phóng dòng vốn</h3>
+            <p>
+                Hãy xem xét một bài toán thực tế của doanh nghiệp thu mua cà phê:
+            </p>
+            <div class="step-card">
+                <h4><i class="fa-solid fa-building-columns" style="color:var(--cyan);"></i> Case Study: Quản trị 1.000 tấn Cà phê gửi kho</h4>
+                <p>
+                    <strong>Bối cảnh:</strong> Doanh nghiệp nhận ký gửi 1.000 tấn Cà phê của nông dân (giá thị trường là 34.000 đ/kg, tương đương trị giá 34 tỷ đồng) và cam kết hoàn trả sau 3 tháng.
+                </p>
+                <p>
+                    <strong>Giải pháp truyền thống:</strong> Doanh nghiệp phải giữ cà phê trong kho, chịu chi phí thuê kho bãi, nhân công bảo quản, hao hụt chất lượng và rủi ro giá cà phê giảm.
+                </p>
+                <p>
+                    <strong>Giải pháp qua Hàng Hóa Phái Sinh:</strong>
+                </p>
+                <ol style="margin-bottom:0;">
+                    <li>Doanh nghiệp bán ngay 1.000 tấn cà phê thực tế ra thị trường để thu về <strong>34 tỷ đồng tiền mặt</strong>.</li>
+                    <li>Sử dụng đòn bẩy tài chính trên Sở MXV, doanh nghiệp chỉ cần trích <strong>10 tỷ đồng ký quỹ</strong> để mua lại hợp đồng tương lai 1.000 tấn cà phê kỳ hạn 3 tháng.</li>
+                    <li><strong>Lợi ích vượt trội:</strong> Doanh nghiệp dư ra <strong>24 tỷ đồng tiền mặt</strong> để gửi tiết kiệm hoặc quay vòng vốn kinh doanh. Sau 3 tháng, dù giá cà phê tăng lên 40.000 đ/kg hay giảm về 30.000 đ/kg, vị thế phái sinh đều bù trừ chính xác phần chênh lệch giá, trong khi doanh nghiệp thu trọn khoản lãi từ 24 tỷ tiền nhàn rỗi!</li>
+                </ol>
+            </div>
+
+            <!-- PHẦN 4: BẢNG SO SÁNH CÁC KÊNH ĐẦU TƯ -->
+            <h2><i class="fa-solid fa-scale-balanced"></i> IV. SO SÁNH HÀNG HÓA PHÁI SINH VỚI CÁC KÊNH ĐẦU TƯ KHÁC</h2>
+            <div class="data-table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Tiêu Chí So Sánh</th>
+                            <th>Chứng Khoán Cơ Sở</th>
+                            <th>Forex / Crypto Không Phép</th>
+                            <th>Hàng Hóa Phái Sinh (MXV)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Pháp Lý & Bảo Hộ</strong></td>
+                            <td>Ủy ban Chứng khoán Nhà nước</td>
+                            <td><span style="color:#F23645; font-weight:700;">Không có pháp lý tại VN (Rủi ro sàn sập)</span></td>
+                            <td><span style="color:#089981; font-weight:700;">Bộ Công Thương cấp phép & quản lý</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cơ Chế Giao Dịch</strong></td>
+                            <td>Chủ yếu 1 chiều (Mua chờ tăng)</td>
+                            <td>2 chiều (Long / Short)</td>
+                            <td><span style="color:#089981; font-weight:700;">2 chiều (Kiếm lợi nhuận cả khi giá tăng lẫn giảm)</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Thời Gian Khớp Lệnh</strong></td>
+                            <td>T+2 hoặc T+2.5 mới được bán</td>
+                            <td>T+0 (khớp lệnh tức thì)</td>
+                            <td><span style="color:#089981; font-weight:700;">T+0 (Mua bán chốt lời/cắt lỗ ngay trong tích tắc)</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Đòn Bẩy & Lãi Vay</strong></td>
+                            <td>Tỷ lệ 1:1 đến 1:2 (Có lãi vay Margin cao)</td>
+                            <td>1:100 đến 1:1000 (Rất dễ cháy tài khoản)</td>
+                            <td><span style="color:#089981; font-weight:700;">Tỷ lệ chuẩn 1:10 – 1:20 (KHÔNG chịu lãi suất vay qua đêm)</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tính Minh Bạch</strong></td>
+                            <td>Dễ bị đội lái thao túng cổ phiếu nhỏ</td>
+                            <td>Sàn nội bộ tự can thiệp giá (ôm lệnh)</td>
+                            <td><span style="color:#089981; font-weight:700;">Quy mô toàn cầu hàng nghìn tỷ USD, không thể thao túng</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- PHẦN 5: CƠ SỞ PHÁP LÝ & CƠ CHẾ VẬN HÀNH -->
+            <h2><i class="fa-solid fa-gavel"></i> V. CƠ SỞ PHÁP LÝ & HỆ THỐNG LIÊN THÔNG QUỐC TẾ TẠI VIỆT NAM</h2>
+            <p>
+                Tại Việt Nam, thị trường giao dịch hàng hóa phái sinh được xây dựng trên hành lang pháp lý vững chắc:
+            </p>
+            <ul>
+                <li><strong>Luật Thương Mại 2005 (Số 36/2005/QH11):</strong> Đặt nền móng pháp lý cho hoạt động mua bán hàng hóa qua Sở giao dịch hàng hóa.</li>
+                <li><strong>Nghị định 51/2018/NĐ-CP (Sửa đổi Nghị định 158/2006/NĐ-CP):</strong> Bước ngoặt lịch sử cho phép Sở Giao dịch Hàng hóa Việt Nam (MXV) <strong>chính thức kết nối liên thông trực tiếp với các Sở giao dịch hàng hóa trên toàn thế giới</strong> kể từ ngày 17/08/2018.</li>
+                <li><strong>Giấy phép Bộ Công Thương (Số 486/GP-BCT & 362/GP-BCT):</strong> Cấp phép thành lập và quy định chức năng vận hành của Sở Giao dịch Hàng hóa Việt Nam (Mercantile Exchange of Vietnam - MXV).</li>
+                <li><strong>Ngân hàng thanh toán bù trừ trung tâm:</strong> Ngân hàng TMCP Đầu tư và Phát triển Việt Nam (<strong>BIDV</strong>) đảm nhiệm vai trò phong tỏa, thanh toán và chuyển tiền ký quỹ an toàn tuyệt đối cho nhà đầu tư.</li>
+            </ul>
+
+            <!-- PHẦN 6: KẾT LUẬN & BÀI HỌC TIẾP THEO -->
+            <div class="highlight-box">
+                <h3><i class="fa-solid fa-flag-checkered"></i> Tổng Kết Bài Học & Lời Khuyên Cho Trader Mới</h3>
+                <p style="margin-bottom:12px;">
+                    Hàng hóa phái sinh là kênh đầu tư hợp pháp, minh bạch, có tính thanh khoản cao nhất hiện nay và vận hành hoàn toàn theo quy luật Cung - Cầu khách quan. Để thành công trên thị trường này, nhà giao dịch không nên dựa vào cảm tính mà cần trang bị hệ thống phân tích chuẩn mực dựa trên <strong>Hành động giá (Price Action)</strong>, <strong>Khối lượng (VSA)</strong> và <strong>Quản trị rủi ro kỷ luật</strong>.
+                </p>
+                <div style="margin-top:16px;">
+                    <a href="../index.html#bieu-do-live" class="btn" style="background:var(--accent-cyan); color:#000; font-weight:700;">
+                        <i class="fa-solid fa-chart-candlestick"></i> Thực Hành Xem Biểu Đồ Hàng Hóa Live
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMMENT SECTION -->
+        <section class="comment-section">
+            <h3 class="comment-header">
+                <i class="fa-regular fa-comments" style="color: #00E5FF;"></i> Thảo Luận Bài Học Nhập Môn (<span id="commentCount">2</span>)
+            </h3>
+
+            <form class="comment-form" id="commentForm" onsubmit="addComment(event)">
+                <div class="form-group">
+                    <label class="form-label">Tên Học Viên / Nickname:</label>
+                    <input type="text" id="commentName" class="form-control" placeholder="VD: Quốc Huy (Trader Mới)" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Câu hỏi hoặc Cảm nhận của bạn về bài học:</label>
+                    <textarea id="commentContent" class="form-control" placeholder="Bạn có thắc mắc gì về cơ chế T+0, đòn bẩy hay bài toán Hedging không? Hãy để lại bình luận để được giải đáp..." required></textarea>
+                </div>
+                <button type="submit" class="btn">
+                    <i class="fa-regular fa-paper-plane"></i> Gửi Thảo Luận
+                </button>
+            </form>
+
+            <div class="comment-list" id="commentList">
+                <div class="comment-item">
+                    <div class="comment-top">
+                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Minh Tuấn (Hà Nội)</span>
+                        <span class="comment-date">24 Tháng 8, 2026</span>
+                    </div>
+                    <div class="comment-text">
+                        Bài giảng giải thích ví dụ 1.000 tấn cà phê cực kỳ trực quan và dễ hiểu! Giờ mình mới hiểu rõ tại sao các doanh nghiệp xuất nhập khẩu bắt buộc phải dùng hàng hóa phái sinh để bảo hiểm giá.
+                    </div>
+                </div>
+
+                <div class="comment-item">
+                    <div class="comment-top">
+                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Thanh Hằng (Trader)</span>
+                        <span class="comment-date">24 Tháng 8, 2026</span>
+                    </div>
+                    <div class="comment-text">
+                        Thích nhất là giao dịch T+0 mua bán được ngay và không bị phí qua đêm như bên sàn Forex. Rất mong chờ các bài học tiếp theo về phân tích nến và Volume VSA!
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="../pages/about.html">Về PTvolume</a>
+            <a href="../pages/contact.html">Liên Hệ</a>
+            <a href="../pages/terms.html">Điều Khoản</a>
+            <a href="../pages/privacy.html">Bảo Mật</a>
+            <a href="../pages/disclaimer.html">Cảnh Báo Rủi Ro</a>
+        </div>
+        <p>© 2026 PTvolume.com. Toàn bộ bản quyền được bảo lưu. Naked Chart • VSA • Phương Pháp Wyckoff.</p>
+    </footer>
+
+    <!-- Hidden Google Translate Element -->
+    <div id="google_translate_element" style="display:none;"></div>
+
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'vi',
+                includedLanguages: 'en,vi',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function setLanguage(lang) {
+            if (lang === 'vi') {
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + location.hostname;
+                document.cookie = "googtrans=/vi/vi; path=/;";
+                document.cookie = "googtrans=/vi/vi; path=/; domain=" + location.hostname;
+                localStorage.setItem('ptvolume_lang', 'vi');
+                location.reload();
+            } else if (lang === 'en') {
+                document.cookie = "googtrans=/vi/en; path=/;";
+                document.cookie = "googtrans=/vi/en; path=/; domain=" + location.hostname;
+                localStorage.setItem('ptvolume_lang', 'en');
+                location.reload();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentLang = localStorage.getItem('ptvolume_lang') || 'vi';
+            const btnVi = document.getElementById('btn-lang-vi');
+            const btnEn = document.getElementById('btn-lang-en');
+            if (btnVi && btnEn) {
+                if (currentLang === 'en') {
+                    btnEn.classList.add('active');
+                    btnVi.classList.remove('active');
+                } else {
+                    btnVi.classList.add('active');
+                    btnEn.classList.remove('active');
+                }
+            }
+            loadSavedComments();
+        });
+
+        const POST_SLUG = "bai-1-tong-quan-ve-thi-truong-giao-dich-hang-hoa";
+
+        function loadSavedComments() {
+            const saved = JSON.parse(localStorage.getItem('ptvolume_comments_' + POST_SLUG) || '[]');
+            const commentList = document.getElementById("commentList");
+            if (commentList && saved.length > 0) {
+                saved.forEach(item => {
+                    const newComment = document.createElement("div");
+                    newComment.className = "comment-item";
+                    newComment.innerHTML = `
+                        <div class="comment-top">
+                            <span class="comment-author"><i class="fa-solid fa-circle-user"></i> ${escapeHtml(item.name)}</span>
+                            <span class="comment-date">${escapeHtml(item.date)}</span>
+                        </div>
+                        <div class="comment-text">${escapeHtml(item.content)}</div>
+                    `;
+                    commentList.prepend(newComment);
+                });
+                const countElem = document.getElementById("commentCount");
+                if (countElem) {
+                    countElem.innerText = parseInt(countElem.innerText || 0) + saved.length;
+                }
+            }
+        }
+
+        function addComment(e) {
+            e.preventDefault();
+            const nameInput = document.getElementById("commentName");
+            const contentInput = document.getElementById("commentContent");
+            if (!nameInput || !contentInput) return;
+            const name = nameInput.value.trim();
+            const content = contentInput.value.trim();
+            if (!name || !content) return;
+
+            const now = new Date();
+            const timeString = now.toLocaleDateString('vi-VN') + ' ' + now.toLocaleTimeString('vi-VN');
+
+            const commentList = document.getElementById("commentList");
+            const newComment = document.createElement("div");
+            newComment.className = "comment-item";
+            newComment.innerHTML = `
+                <div class="comment-top">
+                    <span class="comment-author"><i class="fa-solid fa-circle-user"></i> ${escapeHtml(name)}</span>
+                    <span class="comment-date">${timeString}</span>
+                </div>
+                <div class="comment-text">${escapeHtml(content)}</div>
+            `;
+            commentList.prepend(newComment);
+
+            const countElem = document.getElementById("commentCount");
+            if (countElem) countElem.innerText = parseInt(countElem.innerText || 0) + 1;
+
+            // Save to localStorage
+            const saved = JSON.parse(localStorage.getItem('ptvolume_comments_' + POST_SLUG) || '[]');
+            saved.push({ name, content, date: timeString });
+            localStorage.setItem('ptvolume_comments_' + POST_SLUG, JSON.stringify(saved));
+
+            nameInput.value = "";
+            contentInput.value = "";
+            alert("Bình luận của bạn đã được đăng thành công!");
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
