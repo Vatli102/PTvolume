@@ -501,6 +501,91 @@
         .callout-success .callout-title { color: #26A69A; }
         .callout-info .callout-title { color: var(--accent-cyan); }
 
+        /* 4 PILLARS INTERACTIVE GRID */
+        .pillars-summary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 25px 0 45px;
+        }
+
+        .pillar-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            position: relative;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .pillar-card.p-blue { border-top: 4px solid #2962FF; }
+        .pillar-card.p-green { border-top: 4px solid #089981; }
+        .pillar-card.p-gold { border-top: 4px solid #F0B90B; }
+        .pillar-card.p-red { border-top: 4px solid #FF5252; }
+
+        .pillar-badge {
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .p-blue .pillar-badge { color: #00E5FF; }
+        .p-green .pillar-badge { color: #26A69A; }
+        .p-gold .pillar-badge { color: #F0B90B; }
+        .p-red .pillar-badge { color: #FF5252; }
+
+        .pillar-card h4 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--text-heading);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .p-blue h4 i { color: #00E5FF; }
+        .p-green h4 i { color: #26A69A; }
+        .p-gold h4 i { color: #F0B90B; }
+        .p-red h4 i { color: #FF5252; }
+
+        .pillar-card ul {
+            margin: 0 0 16px 20px;
+            font-size: 0.95rem;
+            line-height: 1.65;
+            color: #CAD4E0;
+        }
+
+        .pillar-card li {
+            margin-bottom: 8px;
+        }
+
+        .pillar-quote {
+            background: #0B0E14;
+            border-left: 3px solid;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            font-style: italic;
+            color: #E2E8F0;
+        }
+
+        .p-blue .pillar-quote { border-color: #00E5FF; }
+        .p-green .pillar-quote { border-color: #26A69A; }
+        .p-gold .pillar-quote { border-color: #F0B90B; }
+        .p-red .pillar-quote { border-color: #FF5252; }
+
         /* TABLE */
         .table-wrapper {
             overflow-x: auto;
@@ -823,6 +908,61 @@
                 <div class="watermark-box"><i class="fa-solid fa-chart-line"></i> PTvolume.com</div>
             </div>
             <div class="image-caption">Hình: Khung cấu trúc 4 trụ cột Tâm lý học hiệu suất đỉnh cao đúc kết từ cuộc phỏng vấn Mark Minervini &amp; Jairek Robbins.</div>
+
+            <!-- Interactive 4-Pillar Grid for Quick Reading & High Legibility -->
+            <div class="pillars-summary-grid">
+                <div class="pillar-card p-blue">
+                    <div>
+                        <div class="pillar-badge">Trụ Cột 1</div>
+                        <h4><i class="fa-solid fa-user-shield"></i> Tách Biệt Cái Tôi Khỏi P&amp;L</h4>
+                        <ul>
+                            <li><strong>Không gắn giá trị bản thân</strong> vào kết quả của từng lệnh giao dịch.</li>
+                            <li>Coi cắt lỗ là <strong>"Chi phí kinh doanh bắt buộc"</strong> (Cost of Doing Business).</li>
+                            <li>Triệt tiêu hoàn toàn tâm lý cay cú, gỡ gạc và trả thù thị trường.</li>
+                        </ul>
+                    </div>
+                    <div class="pillar-quote">"Thua lỗ là bình thường; Giữ khoản lỗ nhỏ mới là Vô Địch!"</div>
+                </div>
+
+                <div class="pillar-card p-green">
+                    <div>
+                        <div class="pillar-badge">Trụ Cột 2</div>
+                        <h4><i class="fa-solid fa-brain"></i> Diễn Tập Tâm Trí Trước Giờ G</h4>
+                        <ul>
+                            <li>Mường tượng kịch bản <strong>cắt lỗ 100 lần</strong> trong tâm trí trước khi mở phiên.</li>
+                            <li>Lập trình phản xạ tự nhiên: <em>Nếu giá chạm Stop Loss &rarr; Lập tức bán dứt khoát</em>.</li>
+                            <li>Triệt tiêu phản xạ sinh học hoảng loạn (Amygdala Fight-or-Flight).</li>
+                        </ul>
+                    </div>
+                    <div class="pillar-quote">"Diễn tập tâm trí loại bỏ 100% sự sợ hãi và bàng hoàng!"</div>
+                </div>
+
+                <div class="pillar-card p-gold">
+                    <div>
+                        <div class="pillar-badge">Trụ Cột 3</div>
+                        <h4><i class="fa-solid fa-water"></i> Trạng Thái Dòng Chảy (Flow State)</h4>
+                        <ul>
+                            <li><strong>Ẩn số tiền P&amp;L nhảy múa</strong> trong phiên &rarr; Chỉ nhìn Nến và Khối lượng.</li>
+                            <li>Tập trung 100% vào Quy trình thực thi kỷ luật, không dán mắt vào Tiền.</li>
+                            <li>Tắt toàn bộ mạng xã hội, tin tức giật gân và room phím hàng gây nhiễu.</li>
+                        </ul>
+                    </div>
+                    <div class="pillar-quote">"Tập trung vào quy trình đúng, tiền sẽ tự tìm đến bạn!"</div>
+                </div>
+
+                <div class="pillar-card p-red">
+                    <div>
+                        <div class="pillar-badge">Trụ Cột 4</div>
+                        <h4><i class="fa-solid fa-arrow-trend-up"></i> Vượt Ngưỡng Bùng Nổ Tiềm Năng</h4>
+                        <ul>
+                            <li>Thành công trading là <strong>hàm số mũ (Exponential)</strong>, không phải đường thẳng.</li>
+                            <li>Mark Minervini mất 6-7 năm đầu thua lỗ trước khi bước vào siêu chu kỳ vô địch.</li>
+                            <li>Hậu kiểm nhật ký giao dịch (Post-Analysis) để mài giũa hệ thống mỗi ngày.</li>
+                        </ul>
+                    </div>
+                    <div class="pillar-quote">"Kiên định tích lũy tiềm năng &rarr; Đột phá lợi nhuận 3 chữ số!"</div>
+                </div>
+            </div>
 
             <!-- Phần 1 -->
             <h2><i class="fa-solid fa-shield-heart"></i> Phần 1: Tách Biệt Cái Tôi Khỏi Kết Quả Giao Dịch (Detaching Self-Worth from P&amp;L)</h2>
