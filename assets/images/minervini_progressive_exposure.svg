@@ -1,17 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 500" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 510" width="100%" height="100%">
   <defs>
     <linearGradient id="bg-pe" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0B0E14" />
       <stop offset="50%" stop-color="#141822" />
       <stop offset="100%" stop-color="#0F131D" />
-    </linearGradient>
-    <linearGradient id="grad-green" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#089981" />
-      <stop offset="100%" stop-color="#00E5FF" />
-    </linearGradient>
-    <linearGradient id="grad-red" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#F23645" />
-      <stop offset="100%" stop-color="#FF5252" />
     </linearGradient>
     <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="110%">
       <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.5"/>
@@ -19,14 +11,14 @@
   </defs>
 
   <!-- Background -->
-  <rect width="920" height="500" fill="url(#bg-pe)" rx="14"/>
-  <rect width="916" height="496" x="2" y="2" fill="none" stroke="#222938" stroke-width="1.5" rx="12"/>
+  <rect width="980" height="510" fill="url(#bg-pe)" rx="14"/>
+  <rect width="976" height="506" x="2" y="2" fill="none" stroke="#222938" stroke-width="1.5" rx="12"/>
 
   <!-- Title -->
-  <g transform="translate(460, 40)" text-anchor="middle">
-    <rect x="-360" y="-20" width="720" height="40" rx="20" fill="#1A2130" stroke="rgba(8, 153, 129, 0.4)" stroke-width="1.2"/>
+  <g transform="translate(490, 40)" text-anchor="middle">
+    <rect x="-370" y="-20" width="740" height="40" rx="20" fill="#1A2130" stroke="rgba(8, 153, 129, 0.4)" stroke-width="1.2"/>
     <text y="5" font-family="'Inter', sans-serif" font-size="15" font-weight="800" fill="#26A69A" letter-spacing="1">
-      HỆ THỐNG GIA TĂNG QUY MÔ LŨY TIẾN (PROGRESSIVE EXPOSURE ENGINE)
+      HỆ THỐNG ĐI VỐN LŨY TIẾN (PROGRESSIVE EXPOSURE ENGINE)
     </text>
     <text y="32" font-family="'Inter', sans-serif" font-size="12" fill="#8E9BAE">
       Quy tắc kiếm tiền triệu USD: "Chỉ tăng quy mô khi thị trường tài trợ cho rủi ro của bạn"
@@ -35,113 +27,110 @@
 
   <!-- Flowchart Steps -->
   <!-- Step 1: Cash / Pilot Buys -->
-  <g transform="translate(50, 100)" filter="url(#card-shadow)">
-    <rect width="180" height="250" rx="10" fill="#141822" stroke="#2962FF" stroke-width="1.5"/>
-    <rect width="180" height="40" rx="10" fill="#182236"/>
-    <path d="M 0 30 L 0 40 L 180 40 L 180 30 Z" fill="#182236"/>
-    <text x="90" y="25" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#00E5FF" text-anchor="middle">CẤP 1: THĂM DÒ (25%)</text>
+  <g transform="translate(30, 95)" filter="url(#card-shadow)">
+    <rect width="210" height="250" rx="10" fill="#141822" stroke="#2962FF" stroke-width="1.5"/>
+    <rect width="210" height="40" rx="10" fill="#182236"/>
+    <path d="M 0 30 L 0 40 L 210 40 L 210 30 Z" fill="#182236"/>
+    <text x="105" y="25" font-family="'Inter', sans-serif" font-size="12.5" font-weight="800" fill="#00E5FF" text-anchor="middle">CẤP 1: THĂM DÒ (25%)</text>
     
-    <text x="15" y="70" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0">• Vị thế: 1 - 2 mã cổ phiếu</text>
-    <text x="15" y="95" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0">• Tỷ trọng: 25% danh mục</text>
-    <text x="15" y="120" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0">• 75% còn lại giữ TIỀN MẶT</text>
-    <text x="15" y="145" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0">• Stop Loss: -4% đến -6%</text>
+    <text x="14" y="68" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0">• Vị thế: 1 - 2 mã cổ phiếu</text>
+    <text x="14" y="93" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0">• Tỷ trọng: 25% danh mục</text>
+    <text x="14" y="118" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0">• 75% còn lại giữ TIỀN MẶT</text>
+    <text x="14" y="143" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0">• Stop Loss: -4% đến -6%</text>
     
-    <rect x="12" y="175" width="156" height="60" rx="6" fill="#0F141F" stroke="#222D42" stroke-width="1"/>
-    <text x="90" y="195" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#F0B90B" text-anchor="middle">ĐIỀU KIỆN TIẾN LÊN:</text>
-    <text x="90" y="215" font-family="'Inter', sans-serif" font-size="9.5" fill="#CAD4E0" text-anchor="middle">Cả 2 lệnh thăm dò đều có lãi</text>
-    <text x="90" y="228" font-family="'Inter', sans-serif" font-size="9.5" fill="#CAD4E0" text-anchor="middle">và hoạt động ổn định.</text>
+    <rect x="10" y="172" width="190" height="65" rx="6" fill="#0F141F" stroke="#222D42" stroke-width="1"/>
+    <text x="105" y="192" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#F0B90B" text-anchor="middle">ĐIỀU KIỆN TIẾN LÊN:</text>
+    <text x="105" y="210" font-family="'Inter', sans-serif" font-size="9.5" fill="#CAD4E0" text-anchor="middle">Các lệnh thăm dò có lãi</text>
+    <text x="105" y="225" font-family="'Inter', sans-serif" font-size="9.5" fill="#CAD4E0" text-anchor="middle">và hoạt động ổn định.</text>
   </g>
 
   <!-- Green Forward Arrow 1 -> 2 -->
-  <path d="M 235 200 L 265 200" stroke="#089981" stroke-width="3" stroke-linecap="round"/>
-  <polygon points="265,195 275,200 265,205" fill="#089981"/>
-  <text x="255" y="190" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#089981" text-anchor="middle">Lãi</text>
+  <path d="M 246 200 L 268 200" stroke="#089981" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="268,195 274,200 268,205" fill="#089981"/>
+  <text x="257" y="188" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#089981" text-anchor="middle">Lãi</text>
 
   <!-- Step 2: Medium Exposure -->
-  <g transform="translate(280, 100)" filter="url(#card-shadow)">
-    <rect width="180" height="250" rx="10" fill="#141822" stroke="#089981" stroke-width="1.5"/>
-    <rect width="180" height="40" rx="10" fill="#122B24"/>
-    <path d="M 0 30 L 0 40 L 180 40 L 180 30 Z" fill="#122B24"/>
-    <text x="90" y="25" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#26A69A" text-anchor="middle">CẤP 2: MỞ RỘNG (50%)</text>
+  <g transform="translate(275, 95)" filter="url(#card-shadow)">
+    <rect width="210" height="250" rx="10" fill="#141822" stroke="#089981" stroke-width="1.5"/>
+    <rect width="210" height="40" rx="10" fill="#122B24"/>
+    <path d="M 0 30 L 0 40 L 210 40 L 210 30 Z" fill="#122B24"/>
+    <text x="105" y="25" font-family="'Inter', sans-serif" font-size="12.5" font-weight="800" fill="#26A69A" text-anchor="middle">CẤP 2: MỞ RỘNG (50%)</text>
     
-    <text x="15" y="70" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0">• Vị thế: 3 - 4 mã cổ phiếu</text>
-    <text x="15" y="95" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0">• Dời SL lệnh cũ về Hòa vốn</text>
-    <text x="15" y="120" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0">• Dùng đệm lãi tài trợ rủi ro</text>
-    <text x="15" y="145" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0">• Mua thêm điểm Pivot mới</text>
+    <text x="14" y="68" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0">• Vị thế: 3 - 4 mã cổ phiếu</text>
+    <text x="14" y="93" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0">• Dời SL lệnh cũ về Hòa vốn</text>
+    <text x="14" y="118" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0">• Dùng đệm lãi nuôi rủi ro</text>
+    <text x="14" y="143" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0">• Mua thêm điểm Pivot mới</text>
     
-    <rect x="12" y="175" width="156" height="60" rx="6" fill="#0F141F" stroke="#222D42" stroke-width="1"/>
-    <text x="90" y="195" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#F0B90B" text-anchor="middle">ĐIỀU KIỆN TIẾN LÊN:</text>
-    <text x="90" y="215" font-family="'Inter', sans-serif" font-size="9.5" fill="#CAD4E0" text-anchor="middle">Các lệnh tiếp tục bứt phá</text>
-    <text x="90" y="228" font-family="'Inter', sans-serif" font-size="9.5" fill="#CAD4E0" text-anchor="middle">và thị trường cực mạnh.</text>
+    <rect x="10" y="172" width="190" height="65" rx="6" fill="#0F141F" stroke="#222D42" stroke-width="1"/>
+    <text x="105" y="192" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#F0B90B" text-anchor="middle">ĐIỀU KIỆN TIẾN LÊN:</text>
+    <text x="105" y="210" font-family="'Inter', sans-serif" font-size="9.5" fill="#CAD4E0" text-anchor="middle">Các lệnh tiếp tục bứt phá</text>
+    <text x="105" y="225" font-family="'Inter', sans-serif" font-size="9.5" fill="#CAD4E0" text-anchor="middle">và thị trường cực mạnh.</text>
   </g>
 
   <!-- Green Forward Arrow 2 -> 3 -->
-  <path d="M 465 200 L 495 200" stroke="#089981" stroke-width="3" stroke-linecap="round"/>
-  <polygon points="495,195 505,200 495,205" fill="#089981"/>
-  <text x="485" y="190" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#089981" text-anchor="middle">Lãi</text>
+  <path d="M 491 200 L 513 200" stroke="#089981" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="513,195 519,200 513,205" fill="#089981"/>
+  <text x="502" y="188" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#089981" text-anchor="middle">Lãi</text>
 
   <!-- Step 3: Full Exposure -->
-  <g transform="translate(510, 100)" filter="url(#card-shadow)">
-    <rect width="180" height="250" rx="10" fill="#141822" stroke="#F0B90B" stroke-width="1.5"/>
-    <rect width="180" height="40" rx="10" fill="#292312"/>
-    <path d="M 0 30 L 0 40 L 180 40 L 180 30 Z" fill="#292312"/>
-    <text x="90" y="25" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#F0B90B" text-anchor="middle">CẤP 3: TOÀN LỰC (100%)</text>
+  <g transform="translate(520, 95)" filter="url(#card-shadow)">
+    <rect width="210" height="250" rx="10" fill="#141822" stroke="#F0B90B" stroke-width="1.5"/>
+    <rect width="210" height="40" rx="10" fill="#292312"/>
+    <path d="M 0 30 L 0 40 L 210 40 L 210 30 Z" fill="#292312"/>
+    <text x="105" y="25" font-family="'Inter', sans-serif" font-size="12.5" font-weight="800" fill="#F0B90B" text-anchor="middle">CẤP 3: TOÀN LỰC (100%)</text>
     
-    <text x="15" y="70" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0">• Vị thế: 4 - 6 mã mạnh nhất</text>
-    <text x="15" y="95" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0">• Đã có đệm lãi 10 - 20%</text>
-    <text x="15" y="120" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0">• Rủi ro vốn gốc = 0%</text>
-    <text x="15" y="145" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0">• Để lợi nhuận tự chạy lãi</text>
+    <text x="14" y="68" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0">• Vị thế: 4 - 6 mã mạnh nhất</text>
+    <text x="14" y="93" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0">• Đã có đệm lãi 10 - 20%</text>
+    <text x="14" y="118" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0">• Rủi ro vốn gốc = 0%</text>
+    <text x="14" y="143" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0">• Để lợi nhuận tự chạy lãi</text>
     
-    <rect x="12" y="175" width="156" height="60" rx="6" fill="#0F141F" stroke="#222D42" stroke-width="1"/>
-    <text x="90" y="195" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#F0B90B" text-anchor="middle">ĐIỀU KIỆN TIẾN LÊN:</text>
-    <text x="90" y="215" font-family="'Inter', sans-serif" font-size="9.5" fill="#CAD4E0" text-anchor="middle">Sóng siêu chu kỳ tăng trưởng</text>
-    <text x="90" y="228" font-family="'Inter', sans-serif" font-size="9.5" fill="#CAD4E0" text-anchor="middle">và lợi nhuận bùng nổ.</text>
+    <rect x="10" y="172" width="190" height="65" rx="6" fill="#0F141F" stroke="#222D42" stroke-width="1"/>
+    <text x="105" y="192" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#F0B90B" text-anchor="middle">ĐIỀU KIỆN TIẾN LÊN:</text>
+    <text x="105" y="210" font-family="'Inter', sans-serif" font-size="9.5" fill="#CAD4E0" text-anchor="middle">Sóng siêu chu kỳ bùng nổ</text>
+    <text x="105" y="225" font-family="'Inter', sans-serif" font-size="9.5" fill="#CAD4E0" text-anchor="middle">và cổ phiếu leader vượt đỉnh.</text>
   </g>
 
   <!-- Green Forward Arrow 3 -> 4 -->
-  <path d="M 695 200 L 725 200" stroke="#089981" stroke-width="3" stroke-linecap="round"/>
-  <polygon points="725,195 735,200 725,205" fill="#089981"/>
-  <text x="715" y="190" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#089981" text-anchor="middle">Lãi</text>
+  <path d="M 736 200 L 758 200" stroke="#089981" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="758,195 764,200 758,205" fill="#089981"/>
+  <text x="747" y="188" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#089981" text-anchor="middle">Lãi</text>
 
   <!-- Step 4: Overdrive Margin -->
-  <g transform="translate(740, 100)" filter="url(#card-shadow)">
-    <rect width="140" height="250" rx="10" fill="#141822" stroke="#FF5252" stroke-width="1.5"/>
-    <rect width="140" height="40" rx="10" fill="#2E181D"/>
-    <path d="M 0 30 L 0 40 L 140 40 L 140 30 Z" fill="#2E181D"/>
-    <text x="70" y="25" font-family="'Inter', sans-serif" font-size="12.5" font-weight="800" fill="#FF5252" text-anchor="middle">CẤP 4: MARGIN</text>
+  <g transform="translate(765, 95)" filter="url(#card-shadow)">
+    <rect width="185" height="250" rx="10" fill="#141822" stroke="#FF5252" stroke-width="1.5"/>
+    <rect width="185" height="40" rx="10" fill="#2E181D"/>
+    <path d="M 0 30 L 0 40 L 185 40 L 185 30 Z" fill="#2E181D"/>
+    <text x="92" y="25" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#FF5252" text-anchor="middle">CẤP 4: MARGIN (125-150%)</text>
     
-    <text x="10" y="70" font-family="'Inter', sans-serif" font-size="10.5" fill="#CAD4E0">• 125% - 150% Vốn</text>
-    <text x="10" y="95" font-family="'Inter', sans-serif" font-size="10.5" fill="#CAD4E0">• Siêu hiệu suất</text>
-    <text x="10" y="120" font-family="'Inter', sans-serif" font-size="10.5" fill="#CAD4E0">• Chốt lời từng phần</text>
-    <text x="10" y="145" font-family="'Inter', sans-serif" font-size="10.5" fill="#CAD4E0">• Sẵn sàng rút nhanh</text>
+    <text x="12" y="68" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0">• Vị thế: Đòn bẩy tối đa</text>
+    <text x="12" y="93" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0">• Siêu hiệu suất ba chữ số</text>
+    <text x="12" y="118" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0">• Chốt lời từng phần 1/3</text>
+    <text x="12" y="143" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0">• Sẵn sàng rút nhanh</text>
     
-    <rect x="8" y="175" width="124" height="60" rx="6" fill="#0F141F" stroke="#222D42" stroke-width="1"/>
-    <text x="70" y="195" font-family="'Inter', sans-serif" font-size="9.5" font-weight="700" fill="#FF5252" text-anchor="middle">ĐỈNH HIỆU SUẤT</text>
-    <text x="70" y="215" font-family="'Inter', sans-serif" font-size="9" fill="#CAD4E0" text-anchor="middle">Khóa lợi nhuận</text>
-    <text x="70" y="228" font-family="'Inter', sans-serif" font-size="9" fill="#CAD4E0" text-anchor="middle">khi có Climax Run.</text>
+    <rect x="8" y="172" width="169" height="65" rx="6" fill="#0F141F" stroke="#222D42" stroke-width="1"/>
+    <text x="92" y="192" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#FF5252" text-anchor="middle">ĐỈNH HIỆU SUẤT:</text>
+    <text x="92" y="210" font-family="'Inter', sans-serif" font-size="9.5" fill="#CAD4E0" text-anchor="middle">Khóa lợi nhuận</text>
+    <text x="92" y="225" font-family="'Inter', sans-serif" font-size="9.5" fill="#CAD4E0" text-anchor="middle">khi có Climax Run.</text>
   </g>
 
   <!-- Red Collapse Arrows (Downward Ratchet to Cash) -->
-  <g transform="translate(0, 360)">
-    <path d="M 810 5 L 810 35 L 140 35 L 140 5" fill="none" stroke="#F23645" stroke-width="2.5" stroke-dasharray="6,4"/>
-    <polygon points="135,10 140,0 145,10" fill="#F23645"/>
-    <rect x="260" y="22" width="400" height="26" rx="13" fill="#2E181D" stroke="#F23645" stroke-width="1"/>
-    <text x="460" y="39" font-family="'Inter', sans-serif" font-size="11" font-weight="800" fill="#FF5252" text-anchor="middle">
+  <g transform="translate(0, 355)">
+    <path d="M 855 5 L 855 32 L 135 32 L 135 5" fill="none" stroke="#F23645" stroke-width="2.5" stroke-dasharray="6,4"/>
+    <polygon points="131,10 135,0 139,10" fill="#F23645"/>
+    <rect x="290" y="20" width="400" height="25" rx="12" fill="#2E181D" stroke="#F23645" stroke-width="1"/>
+    <text x="490" y="36" font-family="'Inter', sans-serif" font-size="10.5" font-weight="800" fill="#FF5252" text-anchor="middle">
       GẶP THUA LỖ / TÍN HIỆU XẤU: LẬP TỨC RÚT QUY MÔ VỀ TIỀN MẶT
     </text>
   </g>
 
-  <!-- Bottom Golden Rule -->
-  <g transform="translate(50, 425)">
-    <rect width="830" height="50" rx="8" fill="#101520" stroke="rgba(240, 185, 11, 0.4)" stroke-width="1"/>
-    <text x="415" y="22" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#F0B90B" text-anchor="middle">
+  <!-- Bottom Golden Rule (Right corner is kept free from text!) -->
+  <g transform="translate(30, 420)">
+    <rect width="780" height="48" rx="8" fill="#101520" stroke="rgba(240, 185, 11, 0.4)" stroke-width="1"/>
+    <text x="390" y="21" font-family="'Inter', sans-serif" font-size="11.5" font-weight="800" fill="#F0B90B" text-anchor="middle">
       NGUYÊN TẮC BẤT DI BẤT DỊCH CỦA MARK MINERVINI:
     </text>
-    <text x="415" y="40" font-family="'Inter', sans-serif" font-size="11" fill="#CAD4E0" text-anchor="middle">
-      "Đừng bao giờ tăng quy mô vị thế khi bạn đang thua lỗ. Hãy giao dịch lớn nhất khi bạn đang hoạt động ở phong độ cao nhất!"
+    <text x="390" y="38" font-family="'Inter', sans-serif" font-size="10.5" fill="#CAD4E0" text-anchor="middle">
+      "Đừng bao giờ tăng cược khi đang thua. Hãy giao dịch lớn nhất khi bạn có phong độ cao nhất!"
     </text>
   </g>
-
-  <!-- Watermark -->
-  <text x="880" y="488" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.25)" text-anchor="end">PTvolume.com</text>
 </svg>
