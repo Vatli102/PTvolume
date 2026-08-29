@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 720" width="100%" height="100%">
   <defs>
     <linearGradient id="bg-iv" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0B0E14" />
@@ -11,16 +11,16 @@
   </defs>
 
   <!-- Background -->
-  <rect width="1000" height="680" fill="url(#bg-iv)" rx="14"/>
-  <rect width="996" height="676" x="2" y="2" fill="none" stroke="#222938" stroke-width="1.5" rx="12"/>
+  <rect width="1000" height="720" fill="url(#bg-iv)" rx="14"/>
+  <rect width="996" height="716" x="2" y="2" fill="none" stroke="#222938" stroke-width="1.5" rx="12"/>
 
-  <!-- Main Header -->
-  <g transform="translate(500, 42)" text-anchor="middle">
-    <rect x="-410" y="-24" width="820" height="48" rx="24" fill="#1A2130" stroke="rgba(0, 229, 255, 0.45)" stroke-width="1.5"/>
-    <text y="7" font-family="'Inter', sans-serif" font-size="17" font-weight="900" fill="#00E5FF" letter-spacing="1.2">
+  <!-- Main Header (Centered, leaves top-right clear for watermark) -->
+  <g transform="translate(480, 44)" text-anchor="middle">
+    <rect x="-350" y="-24" width="700" height="48" rx="24" fill="#1A2130" stroke="rgba(0, 229, 255, 0.45)" stroke-width="1.5"/>
+    <text y="7" font-family="'Inter', sans-serif" font-size="16.5" font-weight="900" fill="#00E5FF" letter-spacing="1">
       TÂM LÝ HỌC HIỆU SUẤT ĐỈNH CAO: MARK MINERVINI × JAIREK ROBBINS
     </text>
-    <text y="38" font-family="'Inter', sans-serif" font-size="13" font-weight="500" fill="#8E9BAE">
+    <text y="38" font-family="'Inter', sans-serif" font-size="12.5" font-weight="500" fill="#8E9BAE">
       4 Trụ Cột Tâm Lý Học &amp; Kiểm Soát Cái Tôi Của Nhà Vô Địch Đầu Tư
     </text>
   </g>
@@ -28,149 +28,149 @@
   <!-- 2x2 GRID OF 4 MAJOR PILLARS -->
 
   <!-- CARD 1: Top-Left (Detaching Ego) -->
-  <g transform="translate(35, 105)" filter="url(#box-shadow)">
-    <rect width="450" height="240" rx="10" fill="#141822" stroke="#2962FF" stroke-width="1.8"/>
+  <g transform="translate(35, 110)" filter="url(#box-shadow)">
+    <rect width="450" height="255" rx="10" fill="#141822" stroke="#2962FF" stroke-width="1.8"/>
     <!-- Card Header Bar -->
-    <rect width="450" height="44" rx="10" fill="#182236"/>
-    <path d="M 0 34 L 0 44 L 450 44 L 450 34 Z" fill="#182236"/>
-    <circle cx="28" cy="22" r="14" fill="#2962FF"/>
-    <text x="28" y="27" font-family="'Inter', sans-serif" font-size="14" font-weight="900" fill="#fff" text-anchor="middle">1</text>
-    <text x="52" y="28" font-family="'Inter', sans-serif" font-size="15.5" font-weight="800" fill="#00E5FF">TÁCH BIỆT CÁI TÔI KHỎI KẾT QUẢ</text>
-    <text x="355" y="27" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#8E9BAE">Detaching Ego</text>
+    <rect width="450" height="42" rx="10" fill="#182236"/>
+    <path d="M 0 32 L 0 42 L 450 42 L 450 32 Z" fill="#182236"/>
+    <circle cx="26" cy="21" r="13" fill="#2962FF"/>
+    <text x="26" y="26" font-family="'Inter', sans-serif" font-size="13" font-weight="900" fill="#fff" text-anchor="middle">1</text>
+    <text x="48" y="26" font-family="'Inter', sans-serif" font-size="14" font-weight="800" fill="#00E5FF">TÁCH BIỆT CÁI TÔI KHỎI P&amp;L</text>
+    <text x="360" y="26" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#8E9BAE">Detaching Ego</text>
 
     <!-- Card Content Lines -->
-    <text x="20" y="76" font-family="'Inter', sans-serif" font-size="13.5" fill="#CAD4E0" font-weight="600">
-      • <tspan fill="#fff" font-weight="700">Không gắn giá trị bản thân</tspan> vào kết quả của từng lệnh P&amp;L.
+    <text x="20" y="72" font-family="'Inter', sans-serif" font-size="13" fill="#CAD4E0" font-weight="600">
+      • <tspan fill="#fff" font-weight="700">Không gắn giá trị bản thân</tspan> vào kết quả của từng lệnh.
     </text>
-    <text x="20" y="104" font-family="'Inter', sans-serif" font-size="13.5" fill="#CAD4E0" font-weight="600">
-      • Cắt lỗ là <tspan fill="#F0B90B" font-weight="700">"Chi phí kinh doanh bắt buộc"</tspan> (Cost of Doing Business).
+    <text x="20" y="98" font-family="'Inter', sans-serif" font-size="13" fill="#CAD4E0" font-weight="600">
+      • Cắt lỗ là <tspan fill="#F0B90B" font-weight="700">"Chi phí kinh doanh bắt buộc"</tspan> (Cost of Business).
     </text>
-    <text x="20" y="132" font-family="'Inter', sans-serif" font-size="13.5" fill="#CAD4E0" font-weight="600">
-      • Triệt tiêu hoàn toàn tâm lý <tspan fill="#FF5252" font-weight="700">cay cú, gỡ gạc &amp; trả thù thị trường</tspan>.
+    <text x="20" y="124" font-family="'Inter', sans-serif" font-size="13" fill="#CAD4E0" font-weight="600">
+      • Triệt tiêu hoàn toàn tâm lý <tspan fill="#FF5252" font-weight="700">cay cú, gỡ gạc &amp; trả thù</tspan>.
     </text>
-    <text x="20" y="160" font-family="'Inter', sans-serif" font-size="13.5" fill="#CAD4E0" font-weight="600">
-      • Thị trường không biết bạn là ai và không có nghĩa vụ làm bạn giàu.
+    <text x="20" y="150" font-family="'Inter', sans-serif" font-size="13" fill="#CAD4E0" font-weight="600">
+      • Thị trường không có nghĩa vụ phải làm bạn giàu.
     </text>
 
     <!-- Bottom Highlight Quote Box -->
-    <rect x="14" y="180" width="422" height="46" rx="6" fill="#0F1420" stroke="#1D2638" stroke-width="1"/>
-    <text x="225" y="200" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#00E5FF" text-anchor="middle">
-      ★ ĐÚC KẾT: Thua lỗ là bình thường; Giữ khoản lỗ nhỏ mới là Vô Địch!
+    <rect x="14" y="175" width="422" height="66" rx="6" fill="#0F1420" stroke="#1D2638" stroke-width="1"/>
+    <text x="225" y="198" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#00E5FF" text-anchor="middle">
+      ★ ĐÚC KẾT: Thua lỗ là bình thường; Giữ lỗ nhỏ mới là Vô Địch!
     </text>
-    <text x="225" y="216" font-family="'Inter', sans-serif" font-size="11" fill="#8E9BAE" text-anchor="middle">
+    <text x="225" y="218" font-family="'Inter', sans-serif" font-size="11" fill="#8E9BAE" text-anchor="middle">
       Gỡ bỏ cái tôi giúp việc bấm nút Cắt Lỗ nhẹ nhàng như hít thở.
     </text>
   </g>
 
   <!-- CARD 2: Top-Right (Mental Rehearsal) -->
-  <g transform="translate(515, 105)" filter="url(#box-shadow)">
-    <rect width="450" height="240" rx="10" fill="#141822" stroke="#089981" stroke-width="1.8"/>
+  <g transform="translate(515, 110)" filter="url(#box-shadow)">
+    <rect width="450" height="255" rx="10" fill="#141822" stroke="#089981" stroke-width="1.8"/>
     <!-- Card Header Bar -->
-    <rect width="450" height="44" rx="10" fill="#122B24"/>
-    <path d="M 0 34 L 0 44 L 450 44 L 450 34 Z" fill="#122B24"/>
-    <circle cx="28" cy="22" r="14" fill="#089981"/>
-    <text x="28" y="27" font-family="'Inter', sans-serif" font-size="14" font-weight="900" fill="#fff" text-anchor="middle">2</text>
-    <text x="52" y="28" font-family="'Inter', sans-serif" font-size="15.5" font-weight="800" fill="#26A69A">DIỄN TẬP TÂM TRÍ TRƯỚC GIỜ G</text>
-    <text x="330" y="27" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#8E9BAE">Mental Rehearsal</text>
+    <rect width="450" height="42" rx="10" fill="#122B24"/>
+    <path d="M 0 32 L 0 42 L 450 42 L 450 32 Z" fill="#122B24"/>
+    <circle cx="26" cy="21" r="13" fill="#089981"/>
+    <text x="26" y="26" font-family="'Inter', sans-serif" font-size="13" font-weight="900" fill="#fff" text-anchor="middle">2</text>
+    <text x="48" y="26" font-family="'Inter', sans-serif" font-size="14" font-weight="800" fill="#26A69A">DIỄN TẬP TÂM TRÍ TRƯỚC GIỜ G</text>
+    <text x="340" y="26" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#8E9BAE">Rehearsal</text>
 
     <!-- Card Content Lines -->
-    <text x="20" y="76" font-family="'Inter', sans-serif" font-size="13.5" fill="#CAD4E0" font-weight="600">
-      • Mường tượng kịch bản <tspan fill="#fff" font-weight="700">cắt lỗ 100 lần</tspan> trong tâm trí trước khi mở phiên.
+    <text x="20" y="72" font-family="'Inter', sans-serif" font-size="13" fill="#CAD4E0" font-weight="600">
+      • Mường tượng kịch bản <tspan fill="#fff" font-weight="700">cắt lỗ 100 lần</tspan> trước khi mở phiên.
     </text>
-    <text x="20" y="104" font-family="'Inter', sans-serif" font-size="13.5" fill="#CAD4E0" font-weight="600">
-      • Xây dựng kịch bản <tspan fill="#26A69A" font-weight="700">"Nếu - Thì" (If-Then)</tspan> để hành động tự động.
+    <text x="20" y="98" font-family="'Inter', sans-serif" font-size="13" fill="#CAD4E0" font-weight="600">
+      • Lập trình phản xạ tự động: <tspan fill="#26A69A" font-weight="700">"Chạm SL -&gt; Bán dứt khoát"</tspan>.
     </text>
-    <text x="20" y="132" font-family="'Inter', sans-serif" font-size="13.5" fill="#CAD4E0" font-weight="600">
-      • Triệt tiêu phản xạ sinh học <tspan fill="#FF5252" font-weight="700">tê liệt Amygdala</tspan> (Fight-or-Flight).
+    <text x="20" y="124" font-family="'Inter', sans-serif" font-size="13" fill="#CAD4E0" font-weight="600">
+      • Triệt tiêu phản xạ sinh học <tspan fill="#FF5252" font-weight="700">tê liệt Amygdala</tspan> hoảng loạn.
     </text>
-    <text x="20" y="160" font-family="'Inter', sans-serif" font-size="13.5" fill="#CAD4E0" font-weight="600">
-      • Không bao giờ bị bàng hoàng, sợ hãi khi thị trường mở Gap giảm.
+    <text x="20" y="150" font-family="'Inter', sans-serif" font-size="13" fill="#CAD4E0" font-weight="600">
+      • Không bao giờ bị bàng hoàng khi thị trường mở Gap giảm.
     </text>
 
     <!-- Bottom Highlight Quote Box -->
-    <rect x="14" y="180" width="422" height="46" rx="6" fill="#0C1B17" stroke="#16362E" stroke-width="1"/>
-    <text x="225" y="200" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#26A69A" text-anchor="middle">
+    <rect x="14" y="175" width="422" height="66" rx="6" fill="#0C1B17" stroke="#16362E" stroke-width="1"/>
+    <text x="225" y="198" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#26A69A" text-anchor="middle">
       ★ ĐÚC KẾT: Diễn tập tâm trí loại bỏ 100% sự sợ hãi và bất ngờ!
     </text>
-    <text x="225" y="216" font-family="'Inter', sans-serif" font-size="11" fill="#8E9BAE" text-anchor="middle">
-      Kỹ thuật bí mật của các VĐV Olympic &amp; Đặc nhiệm Navy SEALs.
+    <text x="225" y="218" font-family="'Inter', sans-serif" font-size="11" fill="#8E9BAE" text-anchor="middle">
+      Vũ khí bí mật của các VĐV Olympic &amp; Đặc nhiệm Navy SEALs.
     </text>
   </g>
 
   <!-- CARD 3: Bottom-Left (Flow State) -->
-  <g transform="translate(35, 365)" filter="url(#box-shadow)">
-    <rect width="450" height="240" rx="10" fill="#141822" stroke="#F0B90B" stroke-width="1.8"/>
+  <g transform="translate(35, 385)" filter="url(#box-shadow)">
+    <rect width="450" height="255" rx="10" fill="#141822" stroke="#F0B90B" stroke-width="1.8"/>
     <!-- Card Header Bar -->
-    <rect width="450" height="44" rx="10" fill="#292312"/>
-    <path d="M 0 34 L 0 44 L 450 44 L 450 34 Z" fill="#292312"/>
-    <circle cx="28" cy="22" r="14" fill="#F0B90B"/>
-    <text x="28" y="27" font-family="'Inter', sans-serif" font-size="14" font-weight="900" fill="#000" text-anchor="middle">3</text>
-    <text x="52" y="28" font-family="'Inter', sans-serif" font-size="15.5" font-weight="800" fill="#F0B90B">TRẠNG THÁI DÒNG CHẢY (FLOW STATE)</text>
-    <text x="360" y="27" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#8E9BAE">In The Zone</text>
+    <rect width="450" height="42" rx="10" fill="#292312"/>
+    <path d="M 0 32 L 0 42 L 450 42 L 450 32 Z" fill="#292312"/>
+    <circle cx="26" cy="21" r="13" fill="#F0B90B"/>
+    <text x="26" y="26" font-family="'Inter', sans-serif" font-size="13" font-weight="900" fill="#000" text-anchor="middle">3</text>
+    <text x="48" y="26" font-family="'Inter', sans-serif" font-size="14" font-weight="800" fill="#F0B90B">TRẠNG THÁI DÒNG CHẢY (FLOW)</text>
+    <text x="365" y="26" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#8E9BAE">Flow State</text>
 
     <!-- Card Content Lines -->
-    <text x="20" y="76" font-family="'Inter', sans-serif" font-size="13.5" fill="#CAD4E0" font-weight="600">
-      • <tspan fill="#F0B90B" font-weight="700">Ẩn số tiền P&amp;L nhảy múa</tspan> trong phiên -> Chỉ tập trung Nến &amp; Volume.
+    <text x="20" y="72" font-family="'Inter', sans-serif" font-size="13" fill="#CAD4E0" font-weight="600">
+      • <tspan fill="#F0B90B" font-weight="700">Ẩn số tiền P&amp;L nhảy múa</tspan> -&gt; Chỉ tập trung Nến &amp; Volume.
     </text>
-    <text x="20" y="104" font-family="'Inter', sans-serif" font-size="13.5" fill="#CAD4E0" font-weight="600">
-      • Tập trung 100% vào <tspan fill="#fff" font-weight="700">Quy trình thực thi</tspan>, không dán mắt vào Tiền.
+    <text x="20" y="98" font-family="'Inter', sans-serif" font-size="13" fill="#CAD4E0" font-weight="600">
+      • Tập trung 100% vào <tspan fill="#fff" font-weight="700">Quy trình thực thi</tspan>, không nhìn Tiền.
     </text>
-    <text x="20" y="132" font-family="'Inter', sans-serif" font-size="13.5" fill="#CAD4E0" font-weight="600">
-      • Loại bỏ <tspan fill="#FF5252" font-weight="700">tiếng ồn mạng xã hội, tin tức giật gân</tspan> &amp; room phím hàng.
+    <text x="20" y="124" font-family="'Inter', sans-serif" font-size="13" fill="#CAD4E0" font-weight="600">
+      • Loại bỏ <tspan fill="#FF5252" font-weight="700">tiếng ồn mạng xã hội</tspan> &amp; room phím hàng gây nhiễu.
     </text>
-    <text x="20" y="160" font-family="'Inter', sans-serif" font-size="13.5" fill="#CAD4E0" font-weight="600">
-      • Giao dịch trong sự tĩnh lặng tuyệt đối và phản xạ kỷ luật sắt đá.
+    <text x="20" y="150" font-family="'Inter', sans-serif" font-size="13" fill="#CAD4E0" font-weight="600">
+      • Giao dịch trong sự tĩnh lặng và phản xạ kỷ luật sắt đá.
     </text>
 
     <!-- Bottom Highlight Quote Box -->
-    <rect x="14" y="180" width="422" height="46" rx="6" fill="#1C180E" stroke="#362C15" stroke-width="1"/>
-    <text x="225" y="200" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#F0B90B" text-anchor="middle">
+    <rect x="14" y="175" width="422" height="66" rx="6" fill="#1C180E" stroke="#362C15" stroke-width="1"/>
+    <text x="225" y="198" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#F0B90B" text-anchor="middle">
       ★ ĐÚC KẾT: Tập trung vào quy trình đúng, tiền sẽ tự tìm đến bạn!
     </text>
-    <text x="225" y="216" font-family="'Inter', sans-serif" font-size="11" fill="#8E9BAE" text-anchor="middle">
-      P&amp;L Dollar Watching là kẻ thù số 1 gây hoảng loạn tâm lý.
+    <text x="225" y="218" font-family="'Inter', sans-serif" font-size="11" fill="#8E9BAE" text-anchor="middle">
+      P&amp;L Watching là kẻ thù số 1 gây bấn loạn tâm lý giao dịch.
     </text>
   </g>
 
   <!-- CARD 4: Bottom-Right (Exponential Growth) -->
-  <g transform="translate(515, 365)" filter="url(#box-shadow)">
-    <rect width="450" height="240" rx="10" fill="#141822" stroke="#FF5252" stroke-width="1.8"/>
+  <g transform="translate(515, 385)" filter="url(#box-shadow)">
+    <rect width="450" height="255" rx="10" fill="#141822" stroke="#FF5252" stroke-width="1.8"/>
     <!-- Card Header Bar -->
-    <rect width="450" height="44" rx="10" fill="#2E181D"/>
-    <path d="M 0 34 L 0 44 L 450 44 L 450 34 Z" fill="#2E181D"/>
-    <circle cx="28" cy="22" r="14" fill="#FF5252"/>
-    <text x="28" y="27" font-family="'Inter', sans-serif" font-size="14" font-weight="900" fill="#fff" text-anchor="middle">4</text>
-    <text x="52" y="28" font-family="'Inter', sans-serif" font-size="15.5" font-weight="800" fill="#FF5252">VƯỢT NGƯỠNG BÙNG NỔ TIỀM NĂNG</text>
-    <text x="315" y="27" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#8E9BAE">Exponential Growth</text>
+    <rect width="450" height="42" rx="10" fill="#2E181D"/>
+    <path d="M 0 32 L 0 42 L 450 42 L 450 32 Z" fill="#2E181D"/>
+    <circle cx="26" cy="21" r="13" fill="#FF5252"/>
+    <text x="26" y="26" font-family="'Inter', sans-serif" font-size="13" font-weight="900" fill="#fff" text-anchor="middle">4</text>
+    <text x="48" y="26" font-family="'Inter', sans-serif" font-size="14" font-weight="800" fill="#FF5252">VƯỢT NGƯỠNG BÙNG NỔ TIỀM NĂNG</text>
+    <text x="350" y="26" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#8E9BAE">Exponential</text>
 
     <!-- Card Content Lines -->
-    <text x="20" y="76" font-family="'Inter', sans-serif" font-size="13.5" fill="#CAD4E0" font-weight="600">
-      • Thành công trong trading là <tspan fill="#FF5252" font-weight="700">hàm số mũ (Exponential)</tspan>, không tuyến tính.
+    <text x="20" y="72" font-family="'Inter', sans-serif" font-size="13" fill="#CAD4E0" font-weight="600">
+      • Thành công trading là <tspan fill="#FF5252" font-weight="700">hàm số mũ (Exponential)</tspan>, không thẳng hàng.
     </text>
-    <text x="20" y="104" font-family="'Inter', sans-serif" font-size="13.5" fill="#CAD4E0" font-weight="600">
-      • Mark Minervini mất <tspan fill="#fff" font-weight="700">6 - 7 năm đầu thua lỗ</tspan> trước khi chạm đỉnh cao.
+    <text x="20" y="98" font-family="'Inter', sans-serif" font-size="13" fill="#CAD4E0" font-weight="600">
+      • Mark Minervini mất <tspan fill="#fff" font-weight="700">6 - 7 năm đầu thua lỗ</tspan> trước khi vô địch.
     </text>
-    <text x="20" y="132" font-family="'Inter', sans-serif" font-size="13.5" fill="#CAD4E0" font-weight="600">
-      • Kiên trì mài giũa hệ thống qua <tspan fill="#00E5FF" font-weight="700">Hậu kiểm nhật ký</tspan> (Post-Analysis).
+    <text x="20" y="124" font-family="'Inter', sans-serif" font-size="13" fill="#CAD4E0" font-weight="600">
+      • Mài giũa hệ thống qua <tspan fill="#00E5FF" font-weight="700">Hậu kiểm nhật ký</tspan> (Post-Analysis).
     </text>
-    <text x="20" y="160" font-family="'Inter', sans-serif" font-size="13.5" fill="#CAD4E0" font-weight="600">
-      • Như cây tre Mosho tích tụ 5 năm dưới đất để vươn cao 30m trong 6 tuần.
+    <text x="20" y="150" font-family="'Inter', sans-serif" font-size="13" fill="#CAD4E0" font-weight="600">
+      • Như tre Mosho tích tụ 5 năm để vươn cao 30m trong 6 tuần.
     </text>
 
     <!-- Bottom Highlight Quote Box -->
-    <rect x="14" y="180" width="422" height="46" rx="6" fill="#1C1014" stroke="#38181E" stroke-width="1"/>
-    <text x="225" y="200" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#FF5252" text-anchor="middle">
+    <rect x="14" y="175" width="422" height="66" rx="6" fill="#1C1014" stroke="#38181E" stroke-width="1"/>
+    <text x="225" y="198" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#FF5252" text-anchor="middle">
       ★ ĐÚC KẾT: Không bao giờ bỏ cuộc khi đang ở giai đoạn tích lũy!
     </text>
-    <text x="225" y="216" font-family="'Inter', sans-serif" font-size="11" fill="#8E9BAE" text-anchor="middle">
+    <text x="225" y="218" font-family="'Inter', sans-serif" font-size="11" fill="#8E9BAE" text-anchor="middle">
       Sau giai đoạn tích lũy âm thầm là chu kỳ siêu hiệu suất ba chữ số.
     </text>
   </g>
 
   <!-- Bottom Core Summary Banner -->
-  <g transform="translate(35, 620)">
+  <g transform="translate(35, 655)">
     <rect width="930" height="46" rx="8" fill="#101520" stroke="rgba(240, 185, 11, 0.45)" stroke-width="1.2"/>
-    <text x="465" y="28" font-family="'Inter', sans-serif" font-size="13.5" font-weight="800" fill="#F0B90B" text-anchor="middle">
+    <text x="465" y="28" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#F0B90B" text-anchor="middle">
       "Kỷ luật không phải là sự trừng phạt. Kỷ luật là cây cầu duy nhất nối liền Ước Mơ và Thành Quả Thực Tế!"
     </text>
   </g>
