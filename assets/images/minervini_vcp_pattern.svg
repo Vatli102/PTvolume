@@ -1,16 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 530" width="100%" height="100%">
     <defs>
         <linearGradient id="bg-vcp" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stop-color="#0B0E14" />
             <stop offset="100%" stop-color="#141822" />
-        </linearGradient>
-        <linearGradient id="bull-glow" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#089981" stop-opacity="0.3" />
-            <stop offset="100%" stop-color="#089981" stop-opacity="0.0" />
-        </linearGradient>
-        <linearGradient id="pivot-glow" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#00E5FF" />
-            <stop offset="100%" stop-color="#2962FF" />
         </linearGradient>
         <filter id="shadow-vcp">
             <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.5"/>
@@ -18,72 +10,72 @@
     </defs>
 
     <!-- Background -->
-    <rect width="920" height="540" fill="url(#bg-vcp)" rx="12"/>
-    <rect x="1" y="1" width="918" height="538" fill="none" stroke="#222938" stroke-width="1.5" rx="12"/>
+    <rect width="960" height="530" fill="url(#bg-vcp)" rx="12"/>
+    <rect x="1" y="1" width="958" height="528" fill="none" stroke="#222938" stroke-width="1.5" rx="12"/>
 
     <!-- Header -->
-    <text x="460" y="38" font-family="'Inter', sans-serif" font-size="19" font-weight="800" fill="#00E5FF" text-anchor="middle">MẪU HÌNH THU HẸP ĐỘ BIẾN ĐỘNG (VCP - VOLATILITY CONTRACTION PATTERN)</text>
-    <text x="460" y="60" font-family="'Inter', sans-serif" font-size="12" font-weight="500" fill="#8E9BAE" text-anchor="middle">Cơ chế Hấp thụ Cung trôi nổi (Supply Absorption) &amp; Điểm Pivot Bùng Nổ Khối Lượng</text>
+    <text x="480" y="38" font-family="'Inter', sans-serif" font-size="18.5" font-weight="800" fill="#00E5FF" text-anchor="middle">MẪU HÌNH THU HẸP ĐỘ BIẾN ĐỘNG (VCP - VOLATILITY CONTRACTION PATTERN)</text>
+    <text x="480" y="60" font-family="'Inter', sans-serif" font-size="12" font-weight="500" fill="#8E9BAE" text-anchor="middle">Cơ chế Hấp thụ Cung trôi nổi (Supply Absorption) &amp; Điểm Pivot Bùng Nổ Khối Lượng</text>
 
     <!-- Chart Grid Lines -->
-    <line x1="60" y1="120" x2="860" y2="120" stroke="#1F2839" stroke-width="1" stroke-dasharray="3 3"/>
-    <line x1="60" y1="200" x2="860" y2="200" stroke="#1F2839" stroke-width="1" stroke-dasharray="3 3"/>
-    <line x1="60" y1="280" x2="860" y2="280" stroke="#1F2839" stroke-width="1" stroke-dasharray="3 3"/>
-    <line x1="60" y1="360" x2="860" y2="360" stroke="#2A354A" stroke-width="1.5"/>
+    <line x1="60" y1="120" x2="900" y2="120" stroke="#1F2839" stroke-width="1" stroke-dasharray="3 3"/>
+    <line x1="60" y1="200" x2="900" y2="200" stroke="#1F2839" stroke-width="1" stroke-dasharray="3 3"/>
+    <line x1="60" y1="280" x2="900" y2="280" stroke="#1F2839" stroke-width="1" stroke-dasharray="3 3"/>
+    <line x1="60" y1="360" x2="900" y2="360" stroke="#2A354A" stroke-width="1.5"/>
 
     <!-- Left Prior Uptrend -->
-    <path d="M 70 320 Q 90 280, 110 240 T 150 120" fill="none" stroke="#089981" stroke-width="3.5" stroke-linecap="round"/>
-    <text x="100" y="340" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#089981" text-anchor="middle">Xu Hướng Tăng Trước Đó</text>
-    <text x="100" y="355" font-family="'Inter', sans-serif" font-size="10" font-weight="500" fill="#8E9BAE" text-anchor="middle">(Stage 2 Uptrend +30% đến +100%)</text>
+    <path d="M 70 320 Q 95 270, 120 230 T 160 120" fill="none" stroke="#089981" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="110" y="335" font-family="'Inter', sans-serif" font-size="10.5" font-weight="700" fill="#089981" text-anchor="middle">Xu Hướng Tăng Trước Đó</text>
+    <text x="110" y="350" font-family="'Inter', sans-serif" font-size="9.5" font-weight="500" fill="#8E9BAE" text-anchor="middle">(Stage 2 Uptrend +30% đến +100%)</text>
 
     <!-- Resistance Line (Điểm Kháng Cự / Baseline) -->
-    <line x1="140" y1="120" x2="710" y2="120" stroke="#F0B90B" stroke-width="2" stroke-dasharray="6 4"/>
-    <rect x="360" y="98" width="170" height="20" rx="4" fill="#1F2432" stroke="#F0B90B" stroke-width="1"/>
-    <text x="445" y="112" font-family="'Inter', sans-serif" font-size="10.5" font-weight="700" fill="#F0B90B" text-anchor="middle">ĐƯỜNG KHÁNG CỰ / ĐỈNH NỀN</text>
+    <line x1="150" y1="120" x2="740" y2="120" stroke="#F0B90B" stroke-width="2" stroke-dasharray="6 4"/>
+    <rect x="380" y="98" width="180" height="20" rx="4" fill="#1F2432" stroke="#F0B90B" stroke-width="1"/>
+    <text x="470" y="112" font-family="'Inter', sans-serif" font-size="10.5" font-weight="700" fill="#F0B90B" text-anchor="middle">ĐƯỜNG KHÁNG CỰ / ĐỈNH NỀN</text>
 
     <!-- Contraction 1 (T1: -25%) -->
-    <path d="M 150 120 C 180 300, 240 300, 270 120" fill="none" stroke="#2962FF" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 160 120 C 195 300, 255 300, 290 120" fill="none" stroke="#2962FF" stroke-width="3" stroke-linecap="round"/>
     <!-- Contraction 2 (T2: -14%) -->
-    <path d="M 270 120 C 310 230, 370 230, 410 120" fill="none" stroke="#2962FF" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 290 120 C 330 230, 390 230, 430 120" fill="none" stroke="#2962FF" stroke-width="3" stroke-linecap="round"/>
     <!-- Contraction 3 (T3: -7%) -->
-    <path d="M 410 120 C 440 180, 490 180, 520 120" fill="none" stroke="#2962FF" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 430 120 C 460 180, 510 180, 540 120" fill="none" stroke="#2962FF" stroke-width="3" stroke-linecap="round"/>
     <!-- Contraction 4 (T4: -3%) -->
-    <path d="M 520 120 C 540 150, 570 150, 590 120" fill="none" stroke="#2962FF" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 540 120 C 560 150, 590 150, 610 120" fill="none" stroke="#2962FF" stroke-width="3" stroke-linecap="round"/>
 
     <!-- Breakout Path -->
-    <path d="M 590 120 Q 640 115, 680 70 T 780 40" fill="none" stroke="#00E5FF" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 610 120 Q 660 115, 700 70 T 800 40" fill="none" stroke="#00E5FF" stroke-width="4" stroke-linecap="round"/>
 
     <!-- Contraction Brackets / Percentage Labels -->
     <!-- T1 Label -->
-    <line x1="210" y1="125" x2="210" y2="285" stroke="#F23645" stroke-width="1.5" stroke-dasharray="2 2"/>
-    <rect x="180" y="200" width="60" height="22" rx="4" fill="#1F2839" stroke="#F23645" stroke-width="1"/>
-    <text x="210" y="215" font-family="'Inter', sans-serif" font-size="11" font-weight="800" fill="#F23645" text-anchor="middle">-25% (1T)</text>
+    <line x1="225" y1="125" x2="225" y2="285" stroke="#F23645" stroke-width="1.5" stroke-dasharray="2 2"/>
+    <rect x="195" y="200" width="60" height="22" rx="4" fill="#1F2839" stroke="#F23645" stroke-width="1"/>
+    <text x="225" y="215" font-family="'Inter', sans-serif" font-size="11" font-weight="800" fill="#F23645" text-anchor="middle">-25% (1T)</text>
 
     <!-- T2 Label -->
-    <line x1="340" y1="125" x2="340" y2="220" stroke="#F23645" stroke-width="1.5" stroke-dasharray="2 2"/>
-    <rect x="310" y="165" width="60" height="22" rx="4" fill="#1F2839" stroke="#F23645" stroke-width="1"/>
-    <text x="340" y="180" font-family="'Inter', sans-serif" font-size="11" font-weight="800" fill="#F23645" text-anchor="middle">-14% (2T)</text>
+    <line x1="360" y1="125" x2="360" y2="220" stroke="#F23645" stroke-width="1.5" stroke-dasharray="2 2"/>
+    <rect x="330" y="165" width="60" height="22" rx="4" fill="#1F2839" stroke="#F23645" stroke-width="1"/>
+    <text x="360" y="180" font-family="'Inter', sans-serif" font-size="11" font-weight="800" fill="#F23645" text-anchor="middle">-14% (2T)</text>
 
     <!-- T3 Label -->
-    <line x1="465" y1="125" x2="465" y2="175" stroke="#F23645" stroke-width="1.5" stroke-dasharray="2 2"/>
-    <rect x="440" y="145" width="50" height="20" rx="4" fill="#1F2839" stroke="#F23645" stroke-width="1"/>
-    <text x="465" y="159" font-family="'Inter', sans-serif" font-size="10.5" font-weight="800" fill="#F23645" text-anchor="middle">-7% (3T)</text>
+    <line x1="485" y1="125" x2="485" y2="175" stroke="#F23645" stroke-width="1.5" stroke-dasharray="2 2"/>
+    <rect x="460" y="145" width="50" height="20" rx="4" fill="#1F2839" stroke="#F23645" stroke-width="1"/>
+    <text x="485" y="159" font-family="'Inter', sans-serif" font-size="10.5" font-weight="800" fill="#F23645" text-anchor="middle">-7% (3T)</text>
 
     <!-- T4 Label -->
-    <rect x="545" y="130" width="50" height="20" rx="4" fill="#1F2839" stroke="#089981" stroke-width="1"/>
-    <text x="570" y="144" font-family="'Inter', sans-serif" font-size="10" font-weight="800" fill="#089981" text-anchor="middle">-3% (4T)</text>
+    <rect x="565" y="130" width="50" height="20" rx="4" fill="#1F2839" stroke="#089981" stroke-width="1"/>
+    <text x="590" y="144" font-family="'Inter', sans-serif" font-size="10" font-weight="800" fill="#089981" text-anchor="middle">-3% (4T)</text>
 
     <!-- PIVOT POINT MARKER -->
-    <circle cx="590" cy="120" r="8" fill="#00E5FF" stroke="#FFFFFF" stroke-width="2.5" filter="url(#shadow-vcp)"/>
+    <circle cx="610" cy="120" r="8" fill="#00E5FF" stroke="#FFFFFF" stroke-width="2.5" filter="url(#shadow-vcp)"/>
     
     <!-- Pivot Arrow & Callout Box -->
-    <g transform="translate(620, 110)" filter="url(#shadow-vcp)">
+    <g transform="translate(640, 105)" filter="url(#shadow-vcp)">
         <polygon points="0,15 20,5 20,25" fill="#00E5FF" />
-        <rect x="15" y="-30" width="225" height="75" rx="8" fill="#101828" stroke="#00E5FF" stroke-width="1.5"/>
-        <text x="28" y="-10" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#00E5FF">🎯 ĐIỂM MUA PIVOT CHUẨN</text>
+        <rect x="15" y="-30" width="220" height="74" rx="8" fill="#101828" stroke="#00E5FF" stroke-width="1.5"/>
+        <text x="28" y="-10" font-family="'Inter', sans-serif" font-size="11.5" font-weight="800" fill="#00E5FF">🎯 ĐIỂM MUA PIVOT CHUẨN</text>
         <text x="28" y="10" font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" fill="#FFFFFF">Bứt phá nền giá (Breakout)</text>
-        <text x="28" y="28" font-family="'Inter', sans-serif" font-size="10" font-weight="500" fill="#089981">Khối lượng nổ +50% đến +200%</text>
-        <text x="28" y="42" font-family="'Inter', sans-serif" font-size="9.5" font-weight="500" fill="#CAD4E0">Stoploss đặt chặt: -2% đến -5%</text>
+        <text x="28" y="27" font-family="'Inter', sans-serif" font-size="10" font-weight="500" fill="#089981">Khối lượng nổ +50% đến +200%</text>
+        <text x="28" y="40" font-family="'Inter', sans-serif" font-size="9.5" font-weight="500" fill="#CAD4E0">Stop Loss chặt: -2% đến -5%</text>
     </g>
 
     <!-- LOWER SECTION: VOLUME ANALYSIS -->
@@ -91,48 +83,48 @@
 
     <!-- Volume Bars -->
     <!-- Prior Run Vol -->
-    <rect x="75" y="430" width="10" height="70" fill="#089981" rx="2"/>
-    <rect x="90" y="415" width="10" height="85" fill="#089981" rx="2"/>
-    <rect x="105" y="400" width="10" height="100" fill="#089981" rx="2"/>
-    <rect x="120" y="420" width="10" height="80" fill="#089981" rx="2"/>
-    <rect x="135" y="395" width="10" height="105" fill="#089981" rx="2"/>
+    <rect x="80" y="430" width="10" height="70" fill="#089981" rx="2"/>
+    <rect x="95" y="415" width="10" height="85" fill="#089981" rx="2"/>
+    <rect x="110" y="400" width="10" height="100" fill="#089981" rx="2"/>
+    <rect x="125" y="420" width="10" height="80" fill="#089981" rx="2"/>
+    <rect x="140" y="395" width="10" height="105" fill="#089981" rx="2"/>
 
     <!-- T1 Vol (High then diminishing) -->
-    <rect x="170" y="410" width="9" height="90" fill="#F23645" opacity="0.8" rx="2"/>
-    <rect x="185" y="430" width="9" height="70" fill="#F23645" opacity="0.7" rx="2"/>
-    <rect x="200" y="445" width="9" height="55" fill="#F23645" opacity="0.6" rx="2"/>
-    <rect x="235" y="460" width="9" height="40" fill="#089981" opacity="0.7" rx="2"/>
-    <rect x="250" y="440" width="9" height="60" fill="#089981" opacity="0.7" rx="2"/>
+    <rect x="180" y="410" width="9" height="90" fill="#F23645" opacity="0.8" rx="2"/>
+    <rect x="195" y="430" width="9" height="70" fill="#F23645" opacity="0.7" rx="2"/>
+    <rect x="210" y="445" width="9" height="55" fill="#F23645" opacity="0.6" rx="2"/>
+    <rect x="250" y="460" width="9" height="40" fill="#089981" opacity="0.7" rx="2"/>
+    <rect x="265" y="440" width="9" height="60" fill="#089981" opacity="0.7" rx="2"/>
 
     <!-- T2 Vol (Smaller) -->
-    <rect x="300" y="450" width="9" height="50" fill="#F23645" opacity="0.7" rx="2"/>
-    <rect x="330" y="465" width="9" height="35" fill="#F23645" opacity="0.6" rx="2"/>
-    <rect x="375" y="455" width="9" height="45" fill="#089981" opacity="0.7" rx="2"/>
+    <rect x="315" y="450" width="9" height="50" fill="#F23645" opacity="0.7" rx="2"/>
+    <rect x="345" y="465" width="9" height="35" fill="#F23645" opacity="0.6" rx="2"/>
+    <rect x="390" y="455" width="9" height="45" fill="#089981" opacity="0.7" rx="2"/>
 
     <!-- T3 & T4 Vol (Dry Up to extreme low) -->
-    <rect x="430" y="475" width="9" height="25" fill="#8E9BAE" opacity="0.5" rx="2"/>
-    <rect x="460" y="482" width="9" height="18" fill="#8E9BAE" opacity="0.4" rx="2"/>
-    <rect x="500" y="480" width="9" height="20" fill="#8E9BAE" opacity="0.4" rx="2"/>
-    <rect x="540" y="486" width="9" height="14" fill="#00E5FF" opacity="0.4" rx="2"/>
-    <rect x="565" y="488" width="9" height="12" fill="#00E5FF" opacity="0.5" rx="2"/>
+    <rect x="450" y="475" width="9" height="25" fill="#8E9BAE" opacity="0.5" rx="2"/>
+    <rect x="480" y="482" width="9" height="18" fill="#8E9BAE" opacity="0.4" rx="2"/>
+    <rect x="520" y="480" width="9" height="20" fill="#8E9BAE" opacity="0.4" rx="2"/>
+    <rect x="555" y="486" width="9" height="14" fill="#00E5FF" opacity="0.4" rx="2"/>
+    <rect x="580" y="488" width="9" height="12" fill="#00E5FF" opacity="0.5" rx="2"/>
 
     <!-- Breakout Vol Spike -->
-    <rect x="590" y="390" width="14" height="110" fill="#00E5FF" rx="3"/>
-    <rect x="610" y="380" width="14" height="120" fill="#00E5FF" rx="3"/>
-    <rect x="630" y="405" width="14" height="95" fill="#089981" rx="3"/>
+    <rect x="610" y="390" width="14" height="110" fill="#00E5FF" rx="3"/>
+    <rect x="630" y="380" width="14" height="120" fill="#00E5FF" rx="3"/>
+    <rect x="650" y="405" width="14" height="95" fill="#089981" rx="3"/>
 
     <!-- Volume Dry-up Callout -->
-    <path d="M 430 455 Q 500 440, 560 455" fill="none" stroke="#F0B90B" stroke-width="2" stroke-dasharray="3 3"/>
-    <text x="495" y="435" font-family="'Inter', sans-serif" font-size="11" font-weight="800" fill="#F0B90B" text-anchor="middle">⚡ VOLUME CẠN KIỆT (DRY-UP)</text>
-    <text x="495" y="450" font-family="'Inter', sans-serif" font-size="9.5" font-weight="500" fill="#CAD4E0" text-anchor="middle">Phe bán kiệt sức hoàn toàn trước điểm nổ</text>
+    <path d="M 450 455 Q 515 440, 580 455" fill="none" stroke="#F0B90B" stroke-width="2" stroke-dasharray="3 3"/>
+    <text x="515" y="435" font-family="'Inter', sans-serif" font-size="10.5" font-weight="800" fill="#F0B90B" text-anchor="middle">⚡ VOLUME CẠN KIỆT (DRY-UP)</text>
+    <text x="515" y="449" font-family="'Inter', sans-serif" font-size="9.5" font-weight="500" fill="#CAD4E0" text-anchor="middle">Phe bán kiệt sức trước điểm nổ</text>
 
-    <!-- Volume Spike Callout -->
-    <text x="660" y="480" font-family="'Inter', sans-serif" font-size="10.5" font-weight="800" fill="#00E5FF">▲ Volume Đột Biến</text>
-    <text x="660" y="495" font-family="'Inter', sans-serif" font-size="9.5" font-weight="500" fill="#CAD4E0">Dòng tiền Cá Mập gom hàng</text>
+    <!-- Volume Spike Callout (shifted safely to left of right margin) -->
+    <text x="680" y="440" font-family="'Inter', sans-serif" font-size="10.5" font-weight="800" fill="#00E5FF">▲ Volume Đột Biến</text>
+    <text x="680" y="455" font-family="'Inter', sans-serif" font-size="9.5" font-weight="500" fill="#CAD4E0">Smart Money gom hàng</text>
 
-    <!-- Bottom rule bar -->
-    <rect x="60" y="508" width="800" height="22" rx="4" fill="#0A0E17"/>
-    <text x="460" y="523" font-family="'Inter', sans-serif" font-size="10" font-weight="600" fill="#8E9BAE" text-anchor="middle">
-        Quy luật VCP: "Biến động giá thu hẹp dần từ trái sang phải đi kèm khối lượng co cụm lại, mở ra điểm mua có độ rủi ro thấp nhất."
+    <!-- Bottom rule bar (Centered, spacious) -->
+    <rect x="60" y="485" width="840" height="34" rx="4" fill="#0A0E17"/>
+    <text x="480" y="506" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#CAD4E0" text-anchor="middle">
+      Quy luật VCP: "Biến động giá thu hẹp dần từ trái sang phải đi kèm Volume cạn kiệt, mở ra điểm mua rủi ro thấp nhất."
     </text>
 </svg>
