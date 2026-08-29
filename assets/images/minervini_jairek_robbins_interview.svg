@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 540" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-interview" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0E14" />
+      <stop offset="50%" stop-color="#141822" />
+      <stop offset="100%" stop-color="#0F131D" />
+    </linearGradient>
+    <linearGradient id="glow-gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F0B90B" />
+      <stop offset="100%" stop-color="#FFA000" />
+    </linearGradient>
+    <linearGradient id="glow-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00E5FF" />
+      <stop offset="100%" stop-color="#2962FF" />
+    </linearGradient>
+    <filter id="shadow-card" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="980" height="540" fill="url(#bg-interview)" rx="14"/>
+  <rect width="976" height="536" x="2" y="2" fill="none" stroke="#222938" stroke-width="1.5" rx="12"/>
+
+  <!-- Title Section -->
+  <g transform="translate(490, 42)" text-anchor="middle">
+    <rect x="-380" y="-22" width="760" height="44" rx="22" fill="#1A2130" stroke="rgba(0, 229, 255, 0.4)" stroke-width="1.2"/>
+    <text y="6" font-family="'Inter', sans-serif" font-size="15" font-weight="800" fill="#00E5FF" letter-spacing="1">
+      TÂM LÝ HỌC HIỆU SUẤT ĐỈNH CAO: MARK MINERVINI × JAIREK ROBBINS
+    </text>
+    <text y="36" font-family="'Inter', sans-serif" font-size="12" fill="#8E9BAE">
+      Đúc kết từ cuộc phỏng vấn đặc biệt trong "Think &amp; Trade Like a Champion"
+    </text>
+  </g>
+
+  <!-- Left Speaker Card: Mark Minervini -->
+  <g transform="translate(30, 95)" filter="url(#shadow-card)">
+    <rect width="210" height="110" rx="10" fill="#121824" stroke="#2962FF" stroke-width="1.5"/>
+    <circle cx="35" cy="35" r="18" fill="rgba(41, 98, 255, 0.2)"/>
+    <text x="35" y="41" font-family="'Inter', sans-serif" font-size="16" font-weight="900" fill="#00E5FF" text-anchor="middle">M</text>
+    <text x="65" y="32" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#FFFFFF">MARK MINERVINI</text>
+    <text x="65" y="48" font-family="'Inter', sans-serif" font-size="10" font-weight="600" fill="#00E5FF">Quán Quân Đầu Tư Mỹ</text>
+    <line x1="15" y1="65" x2="195" y2="65" stroke="#1F2A3E"/>
+    <text x="105" y="85" font-family="'Inter', sans-serif" font-size="10" fill="#CAD4E0" text-anchor="middle">"Kỷ luật cắt lỗ &amp; Thực thi quy trình</text>
+    <text x="105" y="100" font-family="'Inter', sans-serif" font-size="10" fill="#CAD4E0" text-anchor="middle">quan trọng hơn việc cố đoán đúng."</text>
+  </g>
+
+  <!-- Center Core Dialogue Badge -->
+  <g transform="translate(490, 150)" text-anchor="middle">
+    <circle cx="0" cy="0" r="38" fill="#182234" stroke="#F0B90B" stroke-width="2" filter="url(#shadow-card)"/>
+    <text y="-5" font-family="'Inter', sans-serif" font-size="11" font-weight="900" fill="#F0B90B">PEAK</text>
+    <text y="10" font-family="'Inter', sans-serif" font-size="10" font-weight="800" fill="#FFFFFF">STATE</text>
+    <text y="24" font-family="'Inter', sans-serif" font-size="8" font-weight="700" fill="#00E5FF">TÂM TRÍ</text>
+  </g>
+
+  <!-- Right Speaker Card: Jairek Robbins -->
+  <g transform="translate(740, 95)" filter="url(#shadow-card)">
+    <rect width="210" height="110" rx="10" fill="#121824" stroke="#F0B90B" stroke-width="1.5"/>
+    <circle cx="35" cy="35" r="18" fill="rgba(240, 185, 11, 0.2)"/>
+    <text x="35" y="41" font-family="'Inter', sans-serif" font-size="16" font-weight="900" fill="#F0B90B" text-anchor="middle">J</text>
+    <text x="65" y="32" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#FFFFFF">JAIREK ROBBINS</text>
+    <text x="65" y="48" font-family="'Inter', sans-serif" font-size="10" font-weight="600" fill="#F0B90B">HLV Hiệu Suất Đỉnh Cao</text>
+    <line x1="15" y1="65" x2="195" y2="65" stroke="#2B2414"/>
+    <text x="105" y="85" font-family="'Inter', sans-serif" font-size="10" fill="#CAD4E0" text-anchor="middle">"Diễn tập tâm trí loại bỏ nỗi sợ;</text>
+    <text x="105" y="100" font-family="'Inter', sans-serif" font-size="10" fill="#CAD4E0" text-anchor="middle">Tách biệt cái tôi khỏi kết quả lệnh."</text>
+  </g>
+
+  <!-- Connectors -->
+  <path d="M 240 150 L 452 150" stroke="#00E5FF" stroke-width="2" stroke-dasharray="4 3"/>
+  <path d="M 528 150 L 740 150" stroke="#F0B90B" stroke-width="2" stroke-dasharray="4 3"/>
+
+  <!-- 4 Pillars of Peak Psychology -->
+  <!-- Pillar 1 -->
+  <g transform="translate(30, 225)" filter="url(#shadow-card)">
+    <rect width="210" height="210" rx="8" fill="#141822" stroke="#2962FF" stroke-width="1.2"/>
+    <rect width="210" height="34" rx="8" fill="#172236"/>
+    <path d="M 0 24 L 0 34 L 210 34 L 210 24 Z" fill="#172236"/>
+    <text x="15" y="22" font-family="'Inter', sans-serif" font-size="11.5" font-weight="800" fill="#00E5FF">1. TÁCH BIỆT CÁI TÔI</text>
+    
+    <text x="14" y="58" font-family="'Inter', sans-serif" font-size="10.8" fill="#CAD4E0" font-weight="600">• Không gắn giá trị bản</text>
+    <text x="24" y="73" font-family="'Inter', sans-serif" font-size="10.8" fill="#CAD4E0" font-weight="600">thân vào 1 lệnh P&amp;L.</text>
+    <text x="14" y="98" font-family="'Inter', sans-serif" font-size="10.8" fill="#CAD4E0" font-weight="600">• Lỗ là chi phí kinh doanh</text>
+    <text x="24" y="113" font-family="'Inter', sans-serif" font-size="10.8" fill="#CAD4E0" font-weight="600">(Cost of Doing Business).</text>
+    <text x="14" y="138" font-family="'Inter', sans-serif" font-size="10.8" fill="#CAD4E0" font-weight="600">• Triệt tiêu tâm lý cay cú</text>
+    <text x="24" y="153" font-family="'Inter', sans-serif" font-size="10.8" fill="#CAD4E0" font-weight="600">và trả thù thị trường.</text>
+    
+    <rect x="10" y="168" width="190" height="32" rx="4" fill="#0E1420"/>
+    <text x="105" y="188" font-family="'Inter', sans-serif" font-size="9.5" font-weight="700" fill="#00E5FF" text-anchor="middle">Xóa bỏ áp lực tâm lý</text>
+  </g>
+
+  <!-- Pillar 2 -->
+  <g transform="translate(275, 225)" filter="url(#shadow-card)">
+    <rect width="210" height="210" rx="8" fill="#141822" stroke="#089981" stroke-width="1.2"/>
+    <rect width="210" height="34" rx="8" fill="#122822"/>
+    <path d="M 0 24 L 0 34 L 210 34 L 210 24 Z" fill="#122822"/>
+    <text x="15" y="22" font-family="'Inter', sans-serif" font-size="11.5" font-weight="800" fill="#26A69A">2. DIỄN TẬP TÂM TRÍ</text>
+    
+    <text x="14" y="58" font-family="'Inter', sans-serif" font-size="10.8" fill="#CAD4E0" font-weight="600">• Chuẩn bị kịch bản "Nếu-Thì"</text>
+    <text x="24" y="73" font-family="'Inter', sans-serif" font-size="10.8" fill="#CAD4E0" font-weight="600">trước giờ mở cửa.</text>
+    <text x="14" y="98" font-family="'Inter', sans-serif" font-size="10.8" fill="#CAD4E0" font-weight="600">• Trải nghiệm cảm giác cắt lỗ</text>
+    <text x="24" y="113" font-family="'Inter', sans-serif" font-size="10.8" fill="#CAD4E0" font-weight="600">trong tâm trí từ trước.</text>
+    <text x="14" y="138" font-family="'Inter', sans-serif" font-size="10.8" fill="#CAD4E0" font-weight="600">• Không bị tê liệt sinh học</text>
+    <text x="24" y="153" font-family="'Inter', sans-serif" font-size="10.8" fill="#CAD4E0" font-weight="600">(Fight-or-Flight) khi sập.</text>
+    
+    <rect x="10" y="168" width="190" height="32" rx="4" fill="#0D1A16"/>
+    <text x="105" y="188" font-family="'Inter', sans-serif" font-size="9.5" font-weight="700" fill="#26A69A" text-anchor="middle">Bấm lệnh dứt khoát</text>
+  </g>
+
+  <!-- Pillar 3 -->
+  <g transform="translate(520, 225)" filter="url(#shadow-card)">
+    <rect width="210" height="210" rx="8" fill="#141822" stroke="#F0B90B" stroke-width="1.2"/>
+    <rect width="210" height="34" rx="8" fill="#282212"/>
+    <path d="M 0 24 L 0 34 L 210 34 L 210 24 Z" fill="#282212"/>
+    <text x="15" y="22" font-family="'Inter', sans-serif" font-size="11.5" font-weight="800" fill="#F0B90B">3. TRẠNG THÁI FLOW</text>
+    
+    <text x="14" y="58" font-family="'Inter', sans-serif" font-size="10.8" fill="#CAD4E0" font-weight="600">• Tập trung 100% vào Nến,</text>
+    <text x="24" y="73" font-family="'Inter', sans-serif" font-size="10.8" fill="#CAD4E0" font-weight="600">Volume và Quy trình.</text>
+    <text x="14" y="98" font-family="'Inter', sans-serif" font-size="10.8" fill="#CAD4E0" font-weight="600">• Không dán mắt vào P&amp;L</text>
+    <text x="24" y="113" font-family="'Inter', sans-serif" font-size="10.8" fill="#CAD4E0" font-weight="600">từng giây gây hoảng loạn.</text>
+    <text x="14" y="138" font-family="'Inter', sans-serif" font-size="10.8" fill="#CAD4E0" font-weight="600">• Loại bỏ tin tức, mạng XH</text>
+    <text x="24" y="153" font-family="'Inter', sans-serif" font-size="10.8" fill="#CAD4E0" font-weight="600">và tiếng ồn đám đông.</text>
+    
+    <rect x="10" y="168" width="190" height="32" rx="4" fill="#1C180E"/>
+    <text x="105" y="188" font-family="'Inter', sans-serif" font-size="9.5" font-weight="700" fill="#F0B90B" text-anchor="middle">Sự tĩnh lặng tuyệt đối</text>
+  </g>
+
+  <!-- Pillar 4 -->
+  <g transform="translate(765, 225)" filter="url(#shadow-card)">
+    <rect width="185" height="210" rx="8" fill="#141822" stroke="#FF5252" stroke-width="1.2"/>
+    <rect width="185" height="34" rx="8" fill="#281518"/>
+    <path d="M 0 24 L 0 34 L 185 34 L 185 24 Z" fill="#281518"/>
+    <text x="12" y="22" font-family="'Inter', sans-serif" font-size="11.5" font-weight="800" fill="#FF5252">4. VƯỢT NGƯỠNG BÙNG NỔ</text>
+    
+    <text x="12" y="58" font-family="'Inter', sans-serif" font-size="10.8" fill="#CAD4E0" font-weight="600">• Thành công là phi tuyến</text>
+    <text x="20" y="73" font-family="'Inter', sans-serif" font-size="10.8" fill="#CAD4E0" font-weight="600">tính (Exponential).</text>
+    <text x="12" y="98" font-family="'Inter', sans-serif" font-size="10.8" fill="#CAD4E0" font-weight="600">• Mark mất 6-7 năm đầu</text>
+    <text x="20" y="113" font-family="'Inter', sans-serif" font-size="10.8" fill="#CAD4E0" font-weight="600">thua lỗ trước khi bùng nổ.</text>
+    <text x="12" y="138" font-family="'Inter', sans-serif" font-size="10.8" fill="#CAD4E0" font-weight="600">• Hậu kiểm (Post-Analysis)</text>
+    <text x="20" y="153" font-family="'Inter', sans-serif" font-size="10.8" fill="#CAD4E0" font-weight="600">mài giũa hệ thống mỗi ngày.</text>
+    
+    <rect x="8" y="168" width="169" height="32" rx="4" fill="#1C1013"/>
+    <text x="92" y="188" font-family="'Inter', sans-serif" font-size="9.5" font-weight="700" fill="#FF5252" text-anchor="middle">Kiên định vượt ngưỡng</text>
+  </g>
+
+  <!-- Bottom Core Takeaway Banner -->
+  <g transform="translate(30, 455)">
+    <rect width="780" height="48" rx="8" fill="#101520" stroke="rgba(240, 185, 11, 0.4)" stroke-width="1"/>
+    <text x="390" y="21" font-family="'Inter', sans-serif" font-size="11.5" font-weight="800" fill="#F0B90B" text-anchor="middle">
+      ĐÚC KẾT CỦA JAIREK ROBBINS &amp; MARK MINERVINI:
+    </text>
+    <text x="390" y="38" font-family="'Inter', sans-serif" font-size="10.5" fill="#CAD4E0" text-anchor="middle">
+      "Nhà Vô Địch không sinh ra từ chiến thắng. Họ được tôi luyện từ cách quản lý cái tôi và kỷ luật sắt đá mỗi ngày!"
+    </text>
+  </g>
+</svg>
