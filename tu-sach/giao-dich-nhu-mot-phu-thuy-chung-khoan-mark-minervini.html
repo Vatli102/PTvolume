@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T0JM1RNTZ9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-T0JM1RNTZ9');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tóm Tắt Sách: Giao Dịch Như Một Phù Thủy Chứng Khoán (Trade Like a Stock Market Wizard) - Mark Minervini | PTvolume</title>
+    <meta name="description" content="Đúc kết toàn diện kiệt tác Trade Like a Stock Market Wizard của Quán quân Đầu tư Hoa Kỳ Mark Minervini: Hệ thống SEPA®, Bộ tiêu chí Xu hướng Trend Template, Mẫu hình Thu hẹp Biến động VCP, Chu kỳ 4 Giai đoạn và Toán học Quản trị Rủi ro đỉnh cao.">
+    <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-main: #0B0E14;
+            --bg-card: #141822;
+            --bg-card-hover: #1A2130;
+            --border-color: #222938;
+            --primary: #2962FF;
+            --primary-glow: rgba(41, 98, 255, 0.25);
+            --bullish: #089981;
+            --bearish: #F23645;
+            --text-main: #F0F3FA;
+            --text-muted: #8E9BAE;
+            --text-light: #CAD4E0;
+            --accent-gold: #F0B90B;
+            --font-editorial: 'Merriweather', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-sans);
+        }
+
+        input, textarea {
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            user-select: text !important;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.85;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 14, 20, 0.95);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 24px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 1.35rem;
+            color: #fff;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 1px solid rgba(41, 98, 255, 0.4);
+        }
+
+        .logo-text .brand {
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .logo-text .brand span {
+            color: #00E5FF;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lang-switcher {
+            display: inline-flex;
+            align-items: center;
+            background: #080B10;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2px;
+            gap: 2px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 16px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active, .lang-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn:hover {
+            background: #1e4bd8;
+            transform: translateY(-1px);
+        }
+
+        main {
+            max-width: 960px;
+            margin: 40px auto;
+            padding: 0 24px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .breadcrumb a:hover {
+            color: #00E5FF;
+        }
+
+        .post-header {
+            margin-bottom: 35px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 25px;
+        }
+
+        .badge-category {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(0, 229, 255, 0.12);
+            color: #00E5FF;
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h1.post-title {
+            font-size: 2.35rem;
+            line-height: 1.35;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .post-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 18px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .post-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .post-content {
+            font-size: 1.06rem;
+            color: var(--text-light);
+        }
+
+        .post-content p {
+            margin-bottom: 22px;
+            text-align: justify;
+        }
+
+        .post-content h2 {
+            font-size: 1.65rem;
+            color: #fff;
+            margin: 45px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .post-content h2 i {
+            color: #00E5FF;
+            font-size: 1.35rem;
+        }
+
+        .post-content h3 {
+            font-size: 1.3rem;
+            color: #fff;
+            margin: 30px 0 15px 0;
+        }
+
+        .post-content ul, .post-content ol {
+            margin-bottom: 22px;
+            padding-left: 24px;
+        }
+
+        .post-content li {
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background: var(--bg-card);
+            border-left: 4px solid var(--primary);
+            border-radius: 0 8px 8px 0;
+            padding: 20px 24px;
+            margin: 28px 0;
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .highlight-box.warning {
+            border-left-color: var(--bearish);
+            background: rgba(242, 54, 69, 0.05);
+        }
+
+        .highlight-box.gold {
+            border-left-color: var(--accent-gold);
+            background: rgba(240, 185, 11, 0.05);
+        }
+
+        .highlight-box.success {
+            border-left-color: var(--bullish);
+            background: rgba(8, 153, 129, 0.05);
+        }
+
+        .highlight-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .highlight-box.gold .highlight-title { color: var(--accent-gold); }
+        .highlight-box.warning .highlight-title { color: var(--bearish); }
+        .highlight-box.success .highlight-title { color: var(--bullish); }
+        .highlight-box .highlight-title { color: #00E5FF; }
+
+        .watermark-box {
+            position: relative;
+            background: #080B10;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 35px 0;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+        }
+
+        .watermark-box img, .watermark-box svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .watermark-caption {
+            padding: 12px 18px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+            font-style: italic;
+        }
+
+        .watermark-stamp {
+            position: absolute;
+            bottom: 45px;
+            right: 18px;
+            background: rgba(11, 14, 20, 0.85);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(0, 229, 255, 0.35);
+            color: #00E5FF;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 4px;
+            pointer-events: none;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        table.custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 28px 0;
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            font-size: 0.95rem;
+        }
+
+        table.custom-table th, table.custom-table td {
+            padding: 14px 18px;
+            border-bottom: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        table.custom-table th {
+            background: #181E2B;
+            color: #00E5FF;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        table.custom-table tr:hover {
+            background: var(--bg-card-hover);
+        }
+
+        .quote-card {
+            background: linear-gradient(135deg, rgba(0, 229, 255, 0.08), rgba(20, 24, 34, 0.95));
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            border-radius: 12px;
+            padding: 24px 30px;
+            margin: 35px 0;
+            position: relative;
+        }
+
+        .quote-card::before {
+            content: "“";
+            font-size: 4.5rem;
+            color: rgba(0, 229, 255, 0.2);
+            position: absolute;
+            top: 5px;
+            left: 15px;
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .quote-card p {
+            font-family: var(--font-editorial);
+            font-style: italic;
+            color: #FFF;
+            font-size: 1.15rem;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+            text-align: left;
+        }
+
+        .quote-author {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            text-align: right;
+        }
+
+        .rule-badge {
+            display: inline-block;
+            background: #1A2234;
+            color: #00E5FF;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            margin-right: 6px;
+        }
+
+        /* Comment Section */
+        .comment-section {
+            margin-top: 55px;
+            padding-top: 35px;
+            border-top: 2px solid var(--border-color);
+        }
+
+        .comment-header {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .comment-form {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 24px;
+            margin-bottom: 35px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 6px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 14px;
+            background: #080B10;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: #fff;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+        }
+
+        textarea.form-control {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .comment-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .comment-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 18px 20px;
+        }
+
+        .comment-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .comment-author {
+            font-weight: 700;
+            color: #00E5FF;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .comment-date {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .comment-text {
+            color: var(--text-light);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: #07090E;
+            border-top: 1px solid var(--border-color);
+            padding: 40px 24px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            margin-top: 60px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #00E5FF;
+        }
+
+        @media (max-width: 768px) {
+            h1.post-title { font-size: 1.8rem; }
+            .post-content h2 { font-size: 1.35rem; }
+            .nav-container { padding: 10px 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo.jpg" alt="PTvolume.com Market Analysis Logo">
+                <div class="logo-text">
+                    <span class="brand">PT<span>VOLUME</span></span>
+                </div>
+            </a>
+            <div class="nav-right">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" id="btn-lang-vi" onclick="setLanguage('vi')">🇻🇳 VI</button>
+                    <button class="lang-btn" id="btn-lang-en" onclick="setLanguage('en')">🇬🇧 EN</button>
+                </div>
+                <a href="../index.html" class="btn"><i class="fa-solid fa-house"></i> Trang Chủ</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="../index.html">Trang Chủ</a>
+            <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+            <a href="../index.html#tu-sach">Tủ Sách Tài Chính</a>
+            <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+            <span>Tóm Tắt Sách Mark Minervini</span>
+        </nav>
+
+        <!-- Post Header -->
+        <header class="post-header">
+            <div class="badge-category"><i class="fa-solid fa-bolt"></i> Siêu Hiệu Suất &amp; Động Lượng Cổ Phiếu</div>
+            <h1 class="post-title">Tóm Tắt Sách: Giao Dịch Như Một Phù Thủy Chứng Khoán (Trade Like A Stock Market Wizard) - Mark Minervini</h1>
+            <div class="post-meta">
+                <span><i class="fa-regular fa-user"></i> Tác giả: <strong>Mark Minervini (Biên tập: PTvolume)</strong></span>
+                <span><i class="fa-regular fa-calendar"></i> 26 Tháng 8, 2026</span>
+                <span><i class="fa-regular fa-clock"></i> 20 phút đọc</span>
+                <span><i class="fa-solid fa-chart-line"></i> SEPA® • VCP Pattern • Trend Template</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="post-content">
+
+            <div class="quote-card">
+                <p>Hầu hết các nhà giao dịch thất bại không phải vì họ thiếu kiến thức kỹ thuật, mà vì họ từ chối cắt bỏ những khoản lỗ nhỏ. Thua lỗ nhỏ là chi phí kinh doanh bắt buộc. Nhưng để một khoản lỗ nhỏ biến thành một thảm họa tài chính chính là hành vi tự hủy hoại bản thân. Bạn không thể kiểm soát những gì thị trường sẽ làm, nhưng bạn hoàn toàn kiểm soát được số tiền bạn chấp nhận mạo hiểm cho mỗi lệnh giao dịch.</p>
+                <div class="quote-author">— Mark Minervini, Quán quân Đầu tư Hoa Kỳ (US Investing Champion)</div>
+            </div>
+
+            <h2><i class="fa-solid fa-trophy"></i> 1. Huyền Thoại Mark Minervini &amp; Bí Quyết Đạt Siêu Hiệu Suất (Superperformance)</h2>
+            <p>
+                <strong>Mark Minervini</strong> là một trong những phù thủy thị trường chứng khoán đương đại thành công nhất nước Mỹ. Khởi đầu từ một thanh niên bỏ học cấp ba chơi guitar trong ban nhạc rock, với số vốn khởi nghiệp ít ỏi vài nghìn USD, Mark đã tự mày mò nghiên cứu thị trường trong suốt hơn 30 năm để xây dựng nên một gia sản hàng chục triệu đô la.
+            </p>
+            <p>
+                Kỷ lục phi thường của Mark Minervini đã được kiểm chứng độc lập:
+            </p>
+            <ul>
+                <li><strong>Quán quân Giải Vô địch Đầu tư Hoa Kỳ năm 1997:</strong> Đạt tỷ suất sinh lời <strong>+155%</strong> chỉ trong một năm, cao gấp đôi người về nhì.</li>
+                <li><strong>Giai đoạn 5 năm hoàng kim (1994 - 1999):</strong> Đạt tỷ suất sinh lời bình quân hàng năm lên tới <strong>220%/năm</strong> (tương đương tổng mức sinh lời gộp <strong>33,500%</strong>). Trong suốt 5 năm đó, ông chỉ có đúng 1 quý bị lỗ nhẹ.</li>
+                <li><strong>Tái xuất ấn tượng năm 2021:</strong> Trở lại giải đấu US Investing Championship ở hạng mục tài khoản lớn triệu đô và một lần nữa giành <strong>Ngôi Vô Địch với mức lãi kỷ lục +334.8%</strong>.</li>
+            </ul>
+            <p>
+                Cuốn sách <strong>"Trade Like a Stock Market Wizard" (Giao dịch như một phù thủy chứng khoán)</strong> được xuất bản lần đầu năm 2013 và nhanh chóng trở thành cuốn giáo khoa bất hủ cho bất kỳ nhà đầu tư nào theo đuổi trường phái <em>Tăng Trưởng (Growth)</em> và <em>Động Lượng (Momentum Trading)</em>.
+            </p>
+
+            <div class="highlight-box gold">
+                <div class="highlight-title"><i class="fa-solid fa-crown"></i> Định Nghĩa Cổ Phiếu Siêu Hạng (Superperformance Stock)</div>
+                <p style="margin-bottom: 0;">
+                    Một cổ phiếu siêu hạng không phải là một mã tăng tà tà 10-15% mỗi năm. Đó là những cổ phiếu có khả năng <strong>tăng từ 100%, 300% đến 1000%+ chỉ trong vòng 12 đến 36 tháng</strong>. Mục tiêu của phương pháp Minervini không phải là "mua và ôm thụ động" (Buy and Hold), mà là <strong>tối ưu hóa vận tốc của dòng tiền</strong>: Mua đúng thời điểm cổ phiếu chuẩn bị bứt phá mạnh nhất và thoát ra ngay khi đà tăng kết thúc để luân chuyển vốn sang cơ hội kế tiếp.
+                </p>
+            </div>
+
+            <h2><i class="fa-solid fa-diagram-project"></i> 2. Hệ Thống SEPA® (Specific Entry Point Analysis) - 5 Trụ Cột Tinh Hoa</h2>
+            <p>
+                Toàn bộ triết lý và hệ thống giao dịch của Mark Minervini được tích hợp trong công nghệ phân tích mang tên <strong>SEPA® (Phân Tích Điểm Vào Lệnh Chuẩn Xác)</strong>. SEPA là sự giao thoa hoàn hảo giữa <em>Phân tích Cơ bản chuyên sâu</em> và <em>Hành vi Giá &amp; Khối lượng (Price &amp; Volume Action)</em>.
+            </p>
+
+            <div class="watermark-box">
+                <img src="../assets/images/minervini_sepa_framework.svg" alt="Sơ đồ 5 Trụ Cột Hệ Thống SEPA của Mark Minervini">
+                <div class="watermark-caption">Sơ đồ Hệ thống SEPA® — 5 Trụ cột cốt lõi tạo nên siêu hiệu suất của Mark Minervini</div>
+                <div class="watermark-stamp">
+                    <i class="fa-solid fa-shield-halved"></i> PTvolume.com
+                </div>
+            </div>
+
+            <p>SEPA được xây dựng trên 5 trụ cột bắt buộc phải đồng pha:</p>
+            <ol>
+                <li>
+                    <strong>1. Xu hướng (Trend):</strong> Một cổ phiếu muốn trở thành siêu cổ phiếu bắt buộc phải đang nằm trong <strong>Giai đoạn 2 Tăng giá (Stage 2 Uptrend)</strong>. Tuyệt đối không bao giờ mua cổ phiếu đang trong xu hướng giảm (Downtrend) dù định giá có vẻ "rẻ" đến mức nào.
+                </li>
+                <li>
+                    <strong>2. Yếu tố Cơ bản (Fundamentals):</strong> Hầu hết các đợt tăng giá siêu hạng đều được thúc đẩy bởi sự tăng trưởng vượt bậc về <em>Doanh thu, Lợi nhuận trên mỗi cổ phần (EPS)</em> và <em>Biên lợi nhuận gộp</em>. Mark đặc biệt chú trọng nguyên tắc "Code 33" — tăng trưởng EPS và doanh thu trên 30-40% liên tiếp ít nhất 3 quý.
+                </li>
+                <li>
+                    <strong>3. Chất xúc tác (Catalyst):</strong> Mỗi siêu cổ phiếu đều có một câu chuyện động lực lớn kích thích trí tưởng tượng của Phố Wall: Một dòng sản phẩm đột phá (như iPhone của Apple, chip GPU của Nvidia), bằng sáng chế FDA mới, ban lãnh đạo kiệt xuất mới, hoặc một sự thay đổi luật lệ ngành mở ra thị trường nghìn tỷ.
+                </li>
+                <li>
+                    <strong>4. Điểm mua Tối ưu (Entry Point / Pivot Point):</strong> Ngay cả khi bạn tìm thấy một doanh nghiệp tuyệt vời, nếu mua sai thời điểm bạn vẫn sẽ bị dính các đợt rũ bỏ (Shakeout) đau đớn. Điểm mua tối ưu phải xuất phát từ các <em>Nền giá kiến tạo (Constructive Bases)</em> có rủi ro thấp nhất và xác suất bùng nổ cao nhất, tiêu biểu là mẫu hình <strong>VCP (Volatility Contraction Pattern)</strong>.
+                </li>
+                <li>
+                    <strong>5. Điểm thoát lệnh &amp; Quản trị Rủi ro (Exit Points):</strong> Định nghĩa trước mức rủi ro tối đa (Cắt lỗ cứng 7-8%), luôn duy trì tỷ lệ Lợi nhuận/Rủi ro (R:R) tối thiểu 2:1 hoặc 3:1, và thiết lập các quy tắc nâng chặn lỗ (Trailing Stop) để khóa chặt lợi nhuận lớn khi cổ phiếu chạy nước rút (Climax Run).
+                </li>
+            </ol>
+
+            <h2><i class="fa-solid fa-layer-group"></i> 3. Chu Kỳ 4 Giai Đoạn Của Cổ Phiếu (The 4 Stages)</h2>
+            <p>
+                Kế thừa và phát triển từ lý thuyết của Stan Weinstein, Mark Minervini chỉ ra rằng mọi cổ phiếu trên thị trường tài chính đều trải qua <strong>4 Giai đoạn Vòng Đời</strong> nối tiếp nhau:
+            </p>
+
+            <div class="watermark-box">
+                <img src="../assets/images/minervini_4_stages.svg" alt="Mô hình Chu kỳ 4 Giai đoạn của Cổ phiếu - Stan Weinstein & Mark Minervini">
+                <div class="watermark-caption">Chu kỳ 4 Giai đoạn của Cổ phiếu — Bí quyết sống còn: "Chỉ tập trung 100% nguồn lực vào Giai đoạn 2 Tăng tốc"</div>
+                <div class="watermark-stamp">
+                    <i class="fa-solid fa-shield-halved"></i> PTvolume.com
+                </div>
+            </div>
+
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">Giai Đoạn</th>
+                        <th style="width: 30%;">Đặc Điểm Kỹ Thuật</th>
+                        <th style="width: 25%;">Hành Vi Dòng Tiền</th>
+                        <th style="width: 25%;">Hành Động Của Trader</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Giai Đoạn 1: Tích Lũy (Neglect Phase)</strong></td>
+                        <td>Giá dao động đi ngang trong biên độ hẹp quanh đường MA200 phẳng lì. Biên độ biến động thấp.</td>
+                        <td>Các tổ chức lớn bắt đầu gom hàng âm thầm nhưng chưa vội đẩy giá. Thị trường thờ ơ, thanh khoản thấp.</td>
+                        <td><span style="color: var(--text-muted);"><i class="fa-solid fa-eye"></i> Đưa vào danh sách theo dõi, tuyệt đối không mua chôn vốn.</span></td>
+                    </tr>
+                    <tr style="background: rgba(8, 153, 129, 0.1);">
+                        <td><strong style="color: #00E5FF;">Giai Đoạn 2: Tăng Tốc (Advancing / Markup)</strong></td>
+                        <td>Đỉnh sau cao hơn đỉnh trước, đáy sau cao hơn đáy trước. Giá nằm trên MA50 &gt; MA150 &gt; MA200 đang dốc đứng lên.</td>
+                        <td>Dòng tiền tổ chức (Smart Money) mua quyết liệt. Khối lượng tăng vọt ở các phiên tăng và cạn kiệt ở các phiên điều chỉnh.</td>
+                        <td><strong style="color: #089981;"><i class="fa-solid fa-cart-shopping"></i> VÙNG MUA SIÊU LỢI NHUẬN. Tìm kiếm điểm Pivot để giải ngân.</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Giai Đoạn 3: Phân Phối (Topping Phase)</strong></td>
+                        <td>Biến động giá trở nên lỏng lẻo, hoang dã. Đường MA200 bắt đầu mất đà dốc và đi ngang. Giá xuyên thủng MA50.</td>
+                        <td>Tổ chức phân phối âm thầm cho đám đông nhỏ lẻ đang hưng phấn tột độ vì tin tức tốt tràn ngập mặt báo.</td>
+                        <td><strong style="color: var(--accent-gold);"><i class="fa-solid fa-hand-holding-dollar"></i> Chốt lời từng phần, nâng trailing stop, dừng mở vị thế mới.</strong></td>
+                    </tr>
+                    <tr style="background: rgba(242, 54, 69, 0.08);">
+                        <td><strong style="color: var(--bearish);">Giai Đoạn 4: Suy Thoái (Declining / Markdown)</strong></td>
+                        <td>Giá tạo các đáy sâu mới dưới đường MA200 đang dốc xuống. Các đợt hồi phục đều là bẫy tăng giá (Bull Trap).</td>
+                        <td>Phe bán hoàn toàn áp đảo. Cắt lỗ hàng loạt kích hoạt chuỗi bán tháo hoảng loạn.</td>
+                        <td><strong style="color: var(--bearish);"><i class="fa-solid fa-ban"></i> TUYỆT ĐỐI TRÁNH XA. Không bao giờ được phép bắt đáy cổ phiếu Giai đoạn 4.</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2><i class="fa-solid fa-filter"></i> 4. Bộ Tiêu Chí Xu Hướng (Trend Template - 8 Tiêu Chuẩn Bắt Buộc)</h2>
+            <p>
+                Để đảm bảo bạn <em>chỉ giao dịch với những cổ phiếu đang ở Giai đoạn 2 Tăng tốc</em>, Mark Minervini đã lượng hóa quy trình sàng lọc bằng <strong>Bộ Tiêu Chí Xu Hướng (Trend Template)</strong> gồm 8 điều kiện kỹ thuật bất di bất dịch:
+            </p>
+
+            <div class="highlight-box">
+                <div class="highlight-title"><i class="fa-solid fa-list-check"></i> 8 Tiêu Chí Lọc Cổ Phiếu Đạt Chuẩn Trend Template:</div>
+                <ol style="margin-bottom: 0;">
+                    <li><span class="rule-badge">Tiêu chí 1</span> <strong>Giá cổ phiếu hiện tại</strong> phải nằm trên cả 3 đường trung bình động: <em>MA50 ngày, MA150 ngày và MA200 ngày</em>.</li>
+                    <li><span class="rule-badge">Tiêu chí 2</span> Đường trung bình động <strong>MA150 ngày phải nằm trên MA200 ngày</strong>.</li>
+                    <li><span class="rule-badge">Tiêu chí 3</span> Đường <strong>MA200 ngày phải đang trong xu hướng tăng dốc lên</strong> tối thiểu 1 tháng (lý tưởng nhất là dốc lên liên tục từ 4 đến 5 tháng trở lên).</li>
+                    <li><span class="rule-badge">Tiêu chí 4</span> Đường <strong>MA50 ngày phải nằm trên cả MA150 ngày và MA200 ngày</strong> (xác nhận đà tăng ngắn và trung hạn vượt trội dài hạn).</li>
+                    <li><span class="rule-badge">Tiêu chí 5</span> <strong>Giá cổ phiếu hiện tại phải cao hơn đáy 52 tuần ít nhất 25-30%</strong> (phần lớn siêu cổ phiếu thực sự thường cao hơn đáy 52 tuần từ 100% đến 300%+ trước khi bứt phá).</li>
+                    <li><span class="rule-badge">Tiêu chí 6</span> <strong>Giá cổ phiếu hiện tại phải nằm trong phạm vi 25% tính từ đỉnh cao nhất 52 tuần</strong> (càng gần mức đỉnh lịch sử mới càng tốt).</li>
+                    <li><span class="rule-badge">Tiêu chí 7</span> <strong>Chỉ số Sức mạnh giá tương đối (RS - Relative Strength Rating)</strong> của tờ Investor's Business Daily (IBD) phải đạt <strong>tối thiểu từ 70 trở lên</strong>, lý tưởng nhất là từ 80 đến 95+ (nằm trong top 5-10% cổ phiếu mạnh nhất toàn thị trường).</li>
+                    <li><span class="rule-badge">Tiêu chí 8</span> Khi cổ phiếu hình thành mẫu hình củng cố trước khi bứt phá, <strong>giá phải nằm trên đường MA50 ngày</strong>.</li>
+                </ol>
+            </div>
+
+            <h2><i class="fa-solid fa-compress"></i> 5. Mẫu Hình Thu Hẹp Độ Biến Động (VCP - Volatility Contraction Pattern)</h2>
+            <p>
+                Sau khi lọc được danh sách cổ phiếu đạt chuẩn Trend Template và có nền tảng cơ bản đột biến, công cụ định thời điểm mua (Market Timing) uy lực nhất của Mark Minervini chính là <strong>Mẫu hình VCP (Volatility Contraction Pattern)</strong>.
+            </p>
+
+            <div class="watermark-box">
+                <img src="../assets/images/minervini_vcp_pattern.svg" alt="Mẫu hình Thu hẹp Biến động VCP của Mark Minervini">
+                <div class="watermark-caption">Mẫu hình VCP (Volatility Contraction Pattern) — Sự thu hẹp độ biến động kết hợp Cạn kiệt Khối lượng (Dry-up) tại Điểm Pivot</div>
+                <div class="watermark-stamp">
+                    <i class="fa-solid fa-shield-halved"></i> PTvolume.com
+                </div>
+            </div>
+
+            <h3>A. Bản chất Tâm lý &amp; Cung Cầu Đằng Sau VCP</h3>
+            <p>
+                Tại sao mẫu hình VCP lại hiệu quả đến vậy? Đó là vì VCP mô tả quá trình <strong>chuyển giao cổ phiếu từ những "tay chơi yếu bóng vía" (Weak Hands) sang "dòng tiền tổ chức thông minh" (Smart Money)</strong>:
+            </p>
+            <ul>
+                <li><strong>Đợt điều chỉnh thứ nhất (1T):</strong> Giá giảm mạnh khoảng 20-30% từ đỉnh cục bộ. Nhiều nhà đầu tư thiếu kiên nhẫn hoảng sợ bán tháo.</li>
+                <li><strong>Đợt điều chỉnh thứ hai (2T):</strong> Giá hồi phục lên gần đỉnh cũ nhưng gặp áp lực bán hòa vốn. Lần này, biên độ giảm thu hẹp lại chỉ còn khoảng 10-15%.</li>
+                <li><strong>Đợt điều chỉnh thứ ba &amp; thứ tư (3T - 4T):</strong> Áp lực bán giảm dần vì lượng cung trôi nổi đã bị tổ chức hấp thụ gần hết. Độ biến động co hẹp chỉ còn 3-5% hoặc 1-2%.</li>
+                <li><strong>Dấu hiệu Khối lượng Cạn Kiệt (Volume Dry-up):</strong> Ở những phiên cuối cùng trước điểm nổ, khối lượng giao dịch rơi xuống mức thấp kỷ lục (thường giảm 50-80% so với mức trung bình 50 ngày). Điều này chứng minh rằng: <em>Phe bán đã hoàn toàn kiệt sức!</em></li>
+            </ul>
+
+            <h3>B. Điểm Mua Bản Lề (Pivot Point) &amp; Volume Breakout</h3>
+            <p>
+                Khi nguồn cung cạn kiệt hoàn toàn, chỉ cần một lực cầu nhỏ từ các tổ chức lớn cũng đủ đẩy giá bứt phá qua <strong>Đường Kháng Cự (Điểm Pivot)</strong>.
+            </p>
+            <div class="highlight-box success">
+                <div class="highlight-title"><i class="fa-solid fa-crosshairs"></i> Quy Tắc Vào Lệnh Tại Điểm Mua Pivot Chuẩn:</div>
+                <p>
+                    • <strong>Thời điểm mua:</strong> Mua ngay khi giá vượt qua mức cao nhất của đợt thu hẹp cuối cùng (Điểm Pivot).<br>
+                    • <strong>Xác nhận Khối lượng:</strong> Khối lượng vào ngày bứt phá phải tăng <strong>ít nhất +50% đến +200%+</strong> so với khối lượng trung bình 50 phiên.<br>
+                    • <strong>Đặt Dừng Lỗ Cực Chặt:</strong> Điểm dừng lỗ chỉ cần đặt ngay dưới đáy của đợt co hẹp cuối cùng (thường chỉ từ -2% đến tối đa -5%). Nếu giá quay đầu giảm thủng điểm pivot với khối lượng lớn, hãy cắt lỗ ngay lập tức mà không cần do dự.
+                </p>
+            </div>
+
+            <h2><i class="fa-solid fa-chart-pie"></i> 6. Yếu Tố Cơ Bản Của Cổ Phiếu Siêu Hạng: Quy Tắc "Code 33" &amp; Bất Ngờ Thu Nhập</h2>
+            <p>
+                Mark Minervini không thuần túy là một Chart Reader (người đọc biểu đồ). Ông kết hợp chặt chẽ các chỉ số tài chính cơ bản để tìm ra động cơ phản lực thúc đẩy cổ phiếu:
+            </p>
+
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Chỉ Số Cơ Bản</th>
+                        <th style="width: 40%;">Tiêu Chuẩn Siêu Hạng</th>
+                        <th style="width: 35%;">Ý Nghĩa Đằng Sau</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Tăng Trưởng EPS Hàng Quý</strong></td>
+                        <td>Tăng tối thiểu <strong>+30% đến +40%+</strong> so với cùng kỳ năm trước. Tốt nhất là tăng tốc qua từng quý (ví dụ: Q1 +25%, Q2 +45%, Q3 +80%).</td>
+                        <td>Minh chứng doanh nghiệp đang bước vào chu kỳ kinh doanh hoàng kim nhất lịch sử.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tăng Trưởng Doanh Thu</strong></td>
+                        <td>Tăng trưởng doanh số từ <strong>+25% đến +50%+</strong> liên tục.</td>
+                        <td>Đảm bảo lợi nhuận tăng trưởng bền vững đến từ việc mở rộng thị phần thực tế, không phải xào nấu sổ sách kế toán.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Biên Lợi Nhuận Gộp (Gross Margin)</strong></td>
+                        <td>Biên lợi nhuận gộp liên tục mở rộng qua các quý.</td>
+                        <td>Chứng tỏ doanh nghiệp có <em>Lợi thế cạnh tranh độc quyền (Economic Moat)</em> và quyền định giá sản phẩm mạnh mẽ.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bất Ngờ Thu Nhập (Earnings Surprise)</strong></td>
+                        <td>Lợi nhuận thực tế vượt dự báo của các nhà phân tích Phố Wall tối thiểu 5-15%+.</td>
+                        <td>Hiệu ứng <em>"Con gián dưới bồn rửa chén" (Cockroach Effect)</em>: Khi một công ty tạo ra bất ngờ tích cực, khả năng cao sẽ còn nhiều bất ngờ lớn nữa ở các quý kế tiếp.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2><i class="fa-solid fa-shield-halved"></i> 7. Toán Học Quản Trị Rủi Ro &amp; Công Thức Lợi Thế Kỳ Vọng (Expectancy)</h2>
+            <p>
+                Đây là phần quan trọng nhất làm nên sự khác biệt giữa một kẻ cờ bạc may rủi và một Nhà vô địch đầu tư chuyên nghiệp. Mark Minervini khẳng định:
+            </p>
+
+            <div class="quote-card">
+                <p>Một chiến lược giao dịch xuất sắc không phải là một hệ thống đúng 90% thời gian. Ngay cả khi bạn chỉ đúng 40% đến 50% số lệnh, bạn vẫn có thể trở thành triệu phú nếu quản trị rủi ro đúng đắn: Luôn giữ các khoản lỗ ở mức tí hon (3-6%) và để cho các lệnh thắng chạy lớn (15-30%+).</p>
+                <div class="quote-author">— Mark Minervini</div>
+            </div>
+
+            <h3>A. Bảng Toán Học Thảm Họa Của Việc Gồng Lỗ</h3>
+            <p>
+                Toán học của thị trường tài chính là bất đối xứng. Khi bạn để lỗ càng sâu, công sức và tỷ suất sinh lời cần thiết để hòa vốn sẽ tăng lên theo cấp số nhân:
+            </p>
+
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>Khoản Lỗ Thực Tế</th>
+                        <th>Mức Sinh Lời Cần Thiết Để Hòa Vốn</th>
+                        <th>Đánh Giá Mức Độ Nguy Hiểm</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>- 5%</strong></td><td>+ 5.26%</td><td><span style="color: #089981;">Rất Dễ Khắc Phục (1 lệnh bình thường)</span></td></tr>
+                    <tr><td><strong>- 10%</strong></td><td>+ 11.11%</td><td><span style="color: #00E5FF;">Trong Tầm Kiểm Soát</span></td></tr>
+                    <tr><td><strong>- 20%</strong></td><td>+ 25.00%</td><td><span style="color: var(--accent-gold);">Bắt Đầu Khó Khăn</span></td></tr>
+                    <tr><td><strong>- 30%</strong></td><td>+ 42.86%</td><td><span style="color: #F97316;">Nguy Hiểm Cho Tài Khoản</span></td></tr>
+                    <tr><td><strong>- 50%</strong></td><td>+ 100.00% (Phải Nhân Đôi Tài Khoản!)</td><td><span style="color: var(--bearish);">Thảm Họa Tài Chính</span></td></tr>
+                    <tr><td><strong>- 75%</strong></td><td>+ 300.00%</td><td><span style="color: var(--bearish);">Gần Như Không Thể Phục Hồi</span></td></tr>
+                    <tr><td><strong>- 90%</strong></td><td>+ 900.00% (Phải Nhân 10 Lần!)</td><td><span style="color: var(--bearish);">Cháy Tài Khoản / Phá Sản Hoàn Toàn</span></td></tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box warning">
+                <div class="highlight-title"><i class="fa-solid fa-triangle-exclamation"></i> Quy Tắc Vàng: Cắt Lỗ Cứng Không Thương Lượng</div>
+                <p style="margin-bottom: 0;">
+                    • Mức cắt lỗ tối đa cho một vị thế là <strong>7% đến 8%</strong> (không bao giờ được để vượt quá 10% trong bất kỳ hoàn cảnh nào).<br>
+                    • Nếu mức lãi trung bình của bạn chỉ là 10%, thì mức lỗ trung bình của bạn bắt buộc phải bị khống chế dưới 5% để duy trì tỷ lệ R:R = 2:1.<br>
+                    • <em>"Bị sai trên thị trường không phải là điều đáng xấu hổ. Nhưng ngoan cố ôm một vị thế thua lỗ để nó nuốt chửng tài khoản của bạn mới là một tội ác đối với chính tương lai tài chính của bạn."</em>
+                </p>
+            </div>
+
+            <h2><i class="fa-solid fa-stairs"></i> 8. Chiến Lược Giải Ngân Tiến Công (Progressive Exposure)</h2>
+            <p>
+                Làm thế nào để Mark Minervini có thể giao dịch đòn bẩy lớn an toàn mà không bao giờ bị cháy tài khoản? Bí mật nằm ở chiến lược <strong>Giải Ngân Tiến Công (Progressive Exposure)</strong>:
+            </p>
+            <ul>
+                <li><strong>Bước 1 - Thăm dò (Toe in the water):</strong> Khi thị trường mới phát tín hiệu tăng giá, chỉ mở các vị thế nhỏ mang tính thăm dò (ví dụ: 25% quy mô vị thế chuẩn).</li>
+                <li><strong>Bước 2 - Gia tăng vị thế (Financing the Risk):</strong> Chỉ khi các vị thế thăm dò ban đầu có lãi và thị trường tiếp tục tạo ra nhiều điểm mua thành công, mới bắt đầu gia tăng quy mô giao dịch lên 50%, 75% và 100%.</li>
+                <li><strong>Bước 3 - Rút lui phòng thủ:</strong> Ngay khi xuất hiện 2 hoặc 3 lệnh cắt lỗ liên tiếp (tín hiệu hệ thống giao dịch bắt đầu lệch pha với thị trường), lập tức giảm quy mô giải ngân xuống một nửa hoặc đứng ngoài thị trường chuyển sang 100% tiền mặt.</li>
+            </ul>
+
+            <h2><i class="fa-solid fa-clipboard-check"></i> 9. Checklist 10 Bước Kiểm Tra Của Mark Minervini Trước Khi Xuống Tiền</h2>
+            <p>Trước khi bấm nút Mua bất kỳ mã cổ phiếu nào, hãy tự chấm điểm theo danh sách 10 câu hỏi kiểm tra sau:</p>
+
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th style="width: 10%;">STT</th>
+                        <th style="width: 45%;">Hạng Mục Kiểm Tra</th>
+                        <th style="width: 25%;">Tiêu Chuẩn Đạt Chuẩn</th>
+                        <th style="width: 20%;">Trạng Thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Xu hướng tổng quan thị trường (Market Trend)</td><td>Thị trường đang ở Uptrend rõ ràng</td><td><span style="color: #089981;">✔ Bắt buộc</span></td></tr>
+                    <tr><td>2</td><td>Tiêu chí Xu hướng (Trend Template)</td><td>Đạt đủ 8/8 tiêu chí Trend Template</td><td><span style="color: #089981;">✔ Bắt buộc</span></td></tr>
+                    <tr><td>3</td><td>Xếp hạng Sức mạnh giá (RS Rating)</td><td>RS &gt; 70 (tốt nhất là RS 85-95+)</td><td><span style="color: #089981;">✔ Bắt buộc</span></td></tr>
+                    <tr><td>4</td><td>Mẫu hình Nền giá Kiến tạo (VCP / Cup-Handle)</td><td>Thu hẹp biên độ biến động rõ ràng</td><td><span style="color: #089981;">✔ Bắt buộc</span></td></tr>
+                    <tr><td>5</td><td>Khối lượng giao dịch trước Breakout</td><td>Volume cạn kiệt (Dry-up) tại đáy nền</td><td><span style="color: #089981;">✔ Bắt buộc</span></td></tr>
+                    <tr><td>6</td><td>Khối lượng giao dịch tại Điểm Pivot</td><td>Bùng nổ vượt +50% so với MA50 ngày</td><td><span style="color: #089981;">✔ Bắt buộc</span></td></tr>
+                    <tr><td>7</td><td>Tăng trưởng EPS &amp; Doanh số</td><td>EPS tăng &gt;30-40% trong các quý gần nhất</td><td><span style="color: #00E5FF;">★ Điểm cộng lớn</span></td></tr>
+                    <tr><td>8</td><td>Chất xúc tác doanh nghiệp (Catalyst)</td><td>Có sản phẩm mới, thị trường mới, FDA</td><td><span style="color: #00E5FF;">★ Điểm cộng lớn</span></td></tr>
+                    <tr><td>9</td><td>Tỷ lệ Rủi ro / Lợi nhuận tính toán (R:R)</td><td>Kỳ vọng lợi nhuận tối thiểu gấp 2-3 lần rủi ro</td><td><span style="color: #089981;">✔ Bắt buộc</span></td></tr>
+                    <tr><td>10</td><td>Mức dừng lỗ tối đa được xác định sẵn</td><td>Đặt Stoploss không vượt quá 5-8%</td><td><span style="color: #089981;">✔ Bắt buộc</span></td></tr>
+                </tbody>
+            </table>
+
+            <h2><i class="fa-solid fa-flag-checkered"></i> 10. Lời Kết: Hành Trình Trở Thành Phù Thủy Giao Dịch</h2>
+            <p>
+                Sự khác biệt duy nhất giữa một người bình thường và một Phù thủy chứng khoán không nằm ở việc ai dự đoán tương lai giỏi hơn, mà nằm ở <strong>tính kỷ luật sắt đá và sự tôn trọng tuyệt đối đối với quy tắc quản trị rủi ro</strong>.
+            </p>
+            <p>
+                Như Mark Minervini đã đúc kết trong cuốn sách: <em>"Bạn không cần phải là một thiên tài toán học để làm giàu từ thị trường chứng khoán. Bạn chỉ cần nắm vững phương pháp SEPA, kiên nhẫn chờ đợi các mẫu hình VCP hoàn hảo, chỉ mua ở Giai đoạn 2, và không bao giờ cho phép bất kỳ khoản lỗ nào hủy hoại sự nghiệp giao dịch của mình."</em>
+            </p>
+
+        </div>
+
+        <!-- Comments Section -->
+        <section class="comment-section">
+            <div class="comment-header">
+                <i class="fa-regular fa-comments"></i> Thảo Luận &amp; Góc Nhìn Độc Giả (<span id="commentCount">2</span>)
+            </div>
+
+            <form class="comment-form" id="commentForm" onsubmit="addComment(event)">
+                <div class="form-group">
+                    <label class="form-label" for="commentName">Họ tên / Nickname Trader:</label>
+                    <input type="text" id="commentName" class="form-control" placeholder="Nhập tên của bạn (VD: Minh Tuấn - VCP Trader)..." required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="commentContent">Ý kiến / Thắc mắc về Phương pháp Mark Minervini:</label>
+                    <textarea id="commentContent" class="form-control" placeholder="Chia sẻ kinh nghiệm áp dụng mẫu hình VCP, Trend Template hoặc quản trị rủi ro của bạn..." required></textarea>
+                </div>
+                <button type="submit" class="btn">
+                    <i class="fa-regular fa-paper-plane"></i> Gửi Bình Luận
+                </button>
+            </form>
+
+            <div class="comment-list" id="commentList">
+                <div class="comment-item">
+                    <div class="comment-top">
+                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Quốc Bảo (Growth Stock Trader)</span>
+                        <span class="comment-date">26 Tháng 8, 2026 15:20 UTC</span>
+                    </div>
+                    <div class="comment-text">
+                        Mẫu hình VCP kết hợp tín hiệu Volume Dry-up thực sự là một vũ khí săn siêu cổ phiếu tối thượng! Trước đây tôi hay mua bắt đáy ở Giai đoạn 4 và bị dính Bull Trap chôn vốn triền miên. Sau khi đọc và áp dụng bộ tiêu chí Trend Template của Mark Minervini, hiệu suất tài khoản đã đảo chiều tăng trưởng ngoạn mục. Bài tóm tắt của PTvolume rất súc tích và trực quan!
+                    </div>
+                </div>
+
+                <div class="comment-item">
+                    <div class="comment-top">
+                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Thanh Hằng (VSA &amp; Momentum)</span>
+                        <span class="comment-date">26 Tháng 8, 2026 15:45 UTC</span>
+                    </div>
+                    <div class="comment-text">
+                        Bảng toán học phục hồi vốn và chiến lược Progressive Exposure là hai bài học đắt giá nhất mà mọi trader cần khắc cốt ghi tâm. Đồ họa SVG giải thích VCP và 4 Giai đoạn cổ phiếu trên web cực kỳ rõ nét và chuyên nghiệp. Cảm ơn đội ngũ PTvolume rất nhiều!
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="../pages/about.html">Về PTvolume</a>
+            <a href="../pages/contact.html">Liên Hệ</a>
+            <a href="../pages/terms.html">Điều Khoản</a>
+            <a href="../pages/privacy.html">Bảo Mật</a>
+            <a href="../pages/disclaimer.html">Cảnh Báo Rủi Ro</a>
+        </div>
+        <p>© 2026 PTvolume.com. Toàn bộ bản quyền được bảo lưu. Naked Chart • VSA • Phương Pháp Wyckoff.</p>
+    </footer>
+
+    <!-- Hidden Google Translate Element -->
+    <div id="google_translate_element" style="display:none;"></div>
+
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'vi',
+                includedLanguages: 'en,vi',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function setLanguage(lang) {
+            localStorage.setItem('ptvolume_lang', lang);
+            updateLangButtons(lang);
+
+            document.cookie = "googtrans=/vi/" + lang + "; path=/;";
+            if (window.location.hostname && window.location.hostname !== '') {
+                document.cookie = "googtrans=/vi/" + lang + "; path=/; domain=" + window.location.hostname;
+            }
+
+            const select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = lang;
+                select.dispatchEvent(new Event('change'));
+            } else {
+                window.location.reload();
+            }
+        }
+
+        function updateLangButtons(lang) {
+            const btnVi = document.getElementById('btn-lang-vi');
+            const btnEn = document.getElementById('btn-lang-en');
+            if (btnVi && btnEn) {
+                if (lang === 'en') {
+                    btnEn.classList.add('active');
+                    btnVi.classList.remove('active');
+                } else {
+                    btnVi.classList.add('active');
+                    btnEn.classList.remove('active');
+                }
+            }
+        }
+
+        function applyStoredLanguage() {
+            const currentLang = localStorage.getItem('ptvolume_lang') || 'vi';
+            updateLangButtons(currentLang);
+            if (currentLang === 'en') {
+                let attempts = 0;
+                const checkCombo = setInterval(() => {
+                    const select = document.querySelector('.goog-te-combo');
+                    if (select) {
+                        select.value = 'en';
+                        select.dispatchEvent(new Event('change'));
+                        clearInterval(checkCombo);
+                    }
+                    attempts++;
+                    if (attempts > 30) clearInterval(checkCombo);
+                }, 200);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            applyStoredLanguage();
+            loadSavedComments();
+        });
+
+        const POST_SLUG = "giao-dich-nhu-mot-phu-thuy-chung-khoan-mark-minervini";
+
+        function loadSavedComments() {
+            const saved = JSON.parse(localStorage.getItem('ptvolume_comments_' + POST_SLUG) || '[]');
+            const commentList = document.getElementById("commentList");
+            if (commentList && saved.length > 0) {
+                saved.forEach(item => {
+                    const newComment = document.createElement("div");
+                    newComment.className = "comment-item";
+                    newComment.innerHTML = `
+                        <div class="comment-top">
+                            <span class="comment-author"><i class="fa-solid fa-circle-user"></i> ${escapeHtml(item.name)}</span>
+                            <span class="comment-date">${escapeHtml(item.date)}</span>
+                        </div>
+                        <div class="comment-text">${escapeHtml(item.content)}</div>
+                    `;
+                    commentList.prepend(newComment);
+                });
+                const countElem = document.getElementById("commentCount");
+                if (countElem) {
+                    countElem.innerText = parseInt(countElem.innerText || 0) + saved.length;
+                }
+            }
+        }
+
+        function addComment(e) {
+            e.preventDefault();
+            const nameInput = document.getElementById("commentName");
+            const contentInput = document.getElementById("commentContent");
+            if (!nameInput || !contentInput) return;
+            const name = nameInput.value.trim();
+            const content = contentInput.value.trim();
+            if (!name || !content) return;
+
+            const now = new Date();
+            const timeString = now.toLocaleDateString('vi-VN') + ' ' + now.toLocaleTimeString('vi-VN');
+
+            const commentList = document.getElementById("commentList");
+            const newComment = document.createElement("div");
+            newComment.className = "comment-item";
+            newComment.innerHTML = `
+                <div class="comment-top">
+                    <span class="comment-author"><i class="fa-solid fa-circle-user"></i> ${escapeHtml(name)}</span>
+                    <span class="comment-date">${timeString}</span>
+                </div>
+                <div class="comment-text">${escapeHtml(content)}</div>
+            `;
+            commentList.prepend(newComment);
+
+            const countElem = document.getElementById("commentCount");
+            if (countElem) countElem.innerText = parseInt(countElem.innerText || 0) + 1;
+
+            const saved = JSON.parse(localStorage.getItem('ptvolume_comments_' + POST_SLUG) || '[]');
+            saved.push({ name, content, date: timeString });
+            localStorage.setItem('ptvolume_comments_' + POST_SLUG, JSON.stringify(saved));
+
+            nameInput.value = "";
+            contentInput.value = "";
+            alert("Bình luận của bạn đã được đăng thành công!");
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
