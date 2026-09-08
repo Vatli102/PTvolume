@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 720" width="100%" height="100%" style="background:#0B0E14; font-family: 'Inter', system-ui, -apple-system, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 740" width="100%" height="100%" style="background:#0B0E14; font-family: 'Inter', system-ui, -apple-system, sans-serif;">
   <defs>
     <linearGradient id="bg-canvas" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0B0E14" />
@@ -6,12 +6,12 @@
       <stop offset="100%" stop-color="#0E121B" />
     </linearGradient>
     <linearGradient id="euphoria-card" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#241116" />
-      <stop offset="100%" stop-color="#14090C" />
+      <stop offset="0%" stop-color="#261218" />
+      <stop offset="100%" stop-color="#14090D" />
     </linearGradient>
     <linearGradient id="despair-card" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#0C1D18" />
-      <stop offset="100%" stop-color="#07120F" />
+      <stop offset="0%" stop-color="#0E211B" />
+      <stop offset="100%" stop-color="#071410" />
     </linearGradient>
     <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
       <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#000" flood-opacity="0.65"/>
@@ -19,109 +19,108 @@
   </defs>
 
   <!-- Background -->
-  <rect width="1160" height="720" fill="url(#bg-canvas)" rx="16"/>
-  <rect width="1152" height="712" x="4" y="4" fill="none" stroke="#222938" stroke-width="2" rx="14"/>
+  <rect width="920" height="740" fill="url(#bg-canvas)" rx="16"/>
+  <rect width="912" height="732" x="4" y="4" fill="none" stroke="#222938" stroke-width="2" rx="14"/>
 
   <!-- Header -->
-  <g transform="translate(580, 44)" text-anchor="middle">
-    <rect x="-460" y="-25" width="920" height="50" rx="25" fill="#141926" stroke="rgba(240, 185, 11, 0.5)" stroke-width="1.8"/>
+  <g transform="translate(460, 42)" text-anchor="middle">
+    <rect x="-420" y="-24" width="840" height="48" rx="24" fill="#141926" stroke="rgba(240, 185, 11, 0.5)" stroke-width="1.6"/>
     <text y="7" font-size="18" font-weight="800" fill="#F0B90B" letter-spacing="0.6">
-      CHU KỲ TÂM LÝ "NGÀI THỊ TRƯỜNG" (MR. MARKET) &amp; NGHỆ THUẬT ĐỐI KHÁNG
+      CHU KỲ TÂM LÝ "NGÀI THỊ TRƯỜNG" (MR. MARKET)
     </text>
-    <text y="42" font-size="13" fill="#8E9BAE">
-      Khai thác điểm yếu cảm xúc của đám đông để mua rẻ khi hoảng loạn và chốt lời khi hưng phấn
+    <text y="40" font-size="13.5" fill="#8E9BAE">
+      Khai thác sự điên rồ của đám đông để mua rẻ khi hoảng loạn &amp; chốt lời khi hưng phấn
     </text>
   </g>
 
-  <!-- Intrinsic Value baseline (Center line) -->
-  <line x1="60" y1="360" x2="1100" y2="360" stroke="#8E9BAE" stroke-width="1.6" stroke-dasharray="6 4"/>
-  <rect x="70" y="346" width="180" height="26" rx="5" fill="#151A26" stroke="#8E9BAE" stroke-width="1"/>
-  <text x="160" y="363" font-size="11" font-weight="700" fill="#00E5FF" text-anchor="middle">GIÁ TRỊ THỰC (FAIR VALUE)</text>
+  <!-- Intrinsic Value baseline (Center line y=370) -->
+  <line x1="40" y1="370" x2="880" y2="370" stroke="#8E9BAE" stroke-width="1.8" stroke-dasharray="6 4"/>
+  <rect x="50" y="354" width="200" height="30" rx="6" fill="#151A26" stroke="#8E9BAE" stroke-width="1.2"/>
+  <text x="150" y="374" font-size="12.5" font-weight="800" fill="#00E5FF" text-anchor="middle">GIÁ TRỊ THỰC (FAIR VALUE)</text>
 
   <!-- Central Emotional Curve -->
-  <!-- Starts near fair value, dips slightly, rallies up into Euphoria Peak, crashes into Despair Trough, then recovers -->
-  <path d="M 70 380 
-           C 160 380, 230 330, 310 240 
-           C 370 170, 440 105, 520 105 
-           C 600 105, 660 170, 720 280 
-           C 780 390, 830 550, 910 550 
-           C 980 550, 1030 460, 1090 390" 
+  <path d="M 50 390 
+           C 130 390, 190 330, 260 230 
+           C 310 160, 360 95, 430 95 
+           C 490 95, 540 160, 600 280 
+           C 660 400, 710 570, 780 570 
+           C 830 570, 860 490, 880 410" 
         fill="none" stroke="#2962FF" stroke-width="4.5" stroke-linecap="round"/>
 
-  <!-- PEAK ANNOTATION: EUPHORIA / GREED (Placed nicely in top-right clear space) -->
-  <g transform="translate(560, 90)" filter="url(#shadow)">
-    <!-- Connection pointer to curve peak -->
-    <line x1="-35" y1="20" x2="0" y2="20" stroke="#F23645" stroke-width="2" stroke-dasharray="3 2"/>
-    <circle cx="-35" cy="20" r="7" fill="#F23645"/>
+  <!-- PEAK ANNOTATION: EUPHORIA / GREED (Top Right: x=460, y=85) -->
+  <g transform="translate(460, 85)" filter="url(#shadow)">
+    <!-- Connection pointer to curve peak at x=430, y=95 -->
+    <line x1="-28" y1="10" x2="0" y2="10" stroke="#F23645" stroke-width="2" stroke-dasharray="3 2"/>
+    <circle cx="-28" cy="10" r="7" fill="#F23645"/>
 
-    <rect x="0" y="0" width="410" height="185" rx="10" fill="url(#euphoria-card)" stroke="#F23645" stroke-width="1.8"/>
+    <rect x="0" y="0" width="415" height="195" rx="12" fill="url(#euphoria-card)" stroke="#F23645" stroke-width="1.8"/>
     
     <!-- Badge -->
-    <rect x="14" y="14" width="220" height="26" rx="5" fill="#F23645"/>
-    <text x="124" y="31" font-size="11.5" font-weight="800" fill="#FFF" text-anchor="middle">▲ ĐỈNH HƯNG PHẤN (EUPHORIA)</text>
+    <rect x="14" y="14" width="245" height="28" rx="6" fill="#F23645"/>
+    <text x="136" y="33" font-size="13.5" font-weight="800" fill="#FFF" text-anchor="middle">▲ ĐỈNH HƯNG PHẤN (EUPHORIA)</text>
 
-    <!-- Text items with comfortable line wrapping -->
-    <text x="16" y="64" font-size="11.8" fill="#CAD4E0">• <tspan fill="#F0B90B" font-weight="700">Mr. Market gào thét:</tspan> "Cơ hội trăm năm! Siêu cổ phiếu!"</text>
-    <text x="28" y="84" font-size="11.5" fill="#8E9BAE">Đám đông tranh nhau vay margin, mua bất chấp giá đắt.</text>
+    <!-- Text items -->
+    <text x="16" y="68" font-size="13.5" fill="#CAD4E0">• <tspan fill="#F0B90B" font-weight="700">Mr. Market gào thét:</tspan> "Cơ hội x10 tài sản!"</text>
+    <text x="28" y="90" font-size="13" fill="#8E9BAE">Đám đông vay margin kịch khung, mua bất chấp.</text>
     
-    <text x="16" y="110" font-size="11.8" fill="#CAD4E0">• <tspan fill="#FF5252" font-weight="700">Tâm lý bầy đàn:</tspan> Ai cũng tự nhận là chuyên gia tài chính.</text>
-    <text x="28" y="130" font-size="11.5" fill="#8E9BAE">Truyền thông liên tục đưa tin kỷ lục, FOMO cực độ.</text>
+    <text x="16" y="118" font-size="13.5" fill="#CAD4E0">• <tspan fill="#FF5252" font-weight="700">Tâm lý bầy đàn:</tspan> Ai cũng tự nhận là chuyên gia.</text>
+    <text x="28" y="140" font-size="13" fill="#8E9BAE">Báo đài rầm rộ đưa tin kỷ lục, FOMO cực độ.</text>
     
-    <rect x="12" y="145" width="386" height="28" rx="6" fill="#2E1217" stroke="#F23645" stroke-width="1"/>
-    <text x="205" y="163" font-size="11.2" font-weight="800" fill="#FF5252" text-anchor="middle">
-      ➔ NHÀ ĐẦU TƯ THÔNG MINH: CHỐT LỜI, GIỮ TIỀN MẶT!
+    <rect x="12" y="154" width="391" height="30" rx="6" fill="#2E1217" stroke="#F23645" stroke-width="1"/>
+    <text x="207" y="174" font-size="12.5" font-weight="800" fill="#FF5252" text-anchor="middle">
+      ➔ NHÀ ĐẦU TƯ THÔNG MINH: CHỐT LỜI, GIỮ TIỀN!
     </text>
   </g>
 
-  <!-- TROUGH ANNOTATION: PANIC / DESPAIR (Placed nicely in lower-left clear space) -->
-  <g transform="translate(390, 435)" filter="url(#shadow)">
-    <!-- Connection pointer to curve trough -->
-    <line x1="420" y1="115" x2="515" y2="115" stroke="#089981" stroke-width="2" stroke-dasharray="3 2"/>
-    <circle cx="515" cy="115" r="7" fill="#089981"/>
+  <!-- TROUGH ANNOTATION: PANIC / DESPAIR (Bottom Left: x=250, y=440) -->
+  <g transform="translate(260, 440)" filter="url(#shadow)">
+    <!-- Connection pointer to curve trough at x=780, y=570 -->
+    <line x1="425" y1="125" x2="520" y2="125" stroke="#089981" stroke-width="2" stroke-dasharray="3 2"/>
+    <circle cx="520" cy="125" r="7" fill="#089981"/>
 
-    <rect x="0" y="0" width="420" height="195" rx="10" fill="url(#despair-card)" stroke="#089981" stroke-width="1.8"/>
+    <rect x="0" y="0" width="425" height="205" rx="12" fill="url(#despair-card)" stroke="#089981" stroke-width="1.8"/>
     
     <!-- Badge -->
-    <rect x="14" y="14" width="240" height="26" rx="5" fill="#089981"/>
-    <text x="134" y="31" font-size="11.5" font-weight="800" fill="#FFF" text-anchor="middle">▼ ĐÁY HOẢNG LOẠN (DESPAIR)</text>
+    <rect x="14" y="14" width="255" height="28" rx="6" fill="#089981"/>
+    <text x="141" y="33" font-size="13.5" font-weight="800" fill="#FFF" text-anchor="middle">▼ ĐÁY HOẢNG LOẠN (DESPAIR)</text>
 
-    <!-- Text items with comfortable line wrapping -->
-    <text x="16" y="64" font-size="11.8" fill="#CAD4E0">• <tspan fill="#F0B90B" font-weight="700">Mr. Market khóc than:</tspan> "Thị trường sụp đổ rồi, hãy cắt lỗ!"</text>
-    <text x="28" y="84" font-size="11.5" fill="#8E9BAE">Đám đông bán tháo trong tuyệt vọng, cổ phiếu tốt bị rẻ mạt.</text>
+    <!-- Text items -->
+    <text x="16" y="68" font-size="13.5" fill="#CAD4E0">• <tspan fill="#F0B90B" font-weight="700">Mr. Market khóc than:</tspan> "Sập rồi, cắt lỗ ngay!"</text>
+    <text x="28" y="90" font-size="13" fill="#8E9BAE">Đám đông bán tháo trong hoảng loạn, cổ phiếu rẻ mạt.</text>
     
-    <text x="16" y="110" font-size="11.8" fill="#CAD4E0">• <tspan fill="#00E5FF" font-weight="700">Tín hiệu VSA:</tspan> Bán tháo Selling Climax hoàn tất;</text>
-    <text x="28" y="130" font-size="11.5" fill="#8E9BAE">Xuất hiện điểm Spring cạn kiệt Volume kiểm định cung.</text>
+    <text x="16" y="118" font-size="13.5" fill="#CAD4E0">• <tspan fill="#00E5FF" font-weight="700">Tín hiệu VSA:</tspan> Bán tháo Selling Climax cạn cung;</text>
+    <text x="28" y="140" font-size="13" fill="#8E9BAE">Xuất hiện điểm Spring kiểm định Volume cực nhỏ.</text>
     
-    <rect x="12" y="152" width="396" height="30" rx="6" fill="#0B261F" stroke="#089981" stroke-width="1"/>
-    <text x="210" y="171" font-size="11.2" font-weight="800" fill="#26E7A6" text-anchor="middle">
-      ➔ NHÀ ĐẦU TƯ THÔNG MINH: MUA GOM TÀI SẢN GIÁ HỜI!
+    <rect x="12" y="162" width="401" height="32" rx="6" fill="#0B261F" stroke="#089981" stroke-width="1"/>
+    <text x="212" y="183" font-size="12.5" font-weight="800" fill="#26E7A6" text-anchor="middle">
+      ➔ NHÀ ĐẦU TƯ THÔNG MINH: MUA TÀI SẢN GIÁ HỜI!
     </text>
   </g>
 
-  <!-- STAGE 1: ACCUMULATION (Bottom-Left) -->
-  <g transform="translate(60, 200)">
-    <rect width="190" height="70" rx="8" fill="#121824" stroke="#2962FF" stroke-width="1.2"/>
-    <text x="14" y="24" font-size="12" font-weight="700" fill="#00E5FF">1. Giai Đoạn Tích Lũy</text>
-    <text x="14" y="44" font-size="11" fill="#8E9BAE">• Định giá dưới giá trị</text>
-    <text x="14" y="60" font-size="11" fill="#8E9BAE">• Smart Money gom hàng kín</text>
+  <!-- STAGE 1: ACCUMULATION (Left: x=40, y=210) -->
+  <g transform="translate(40, 210)">
+    <rect width="180" height="74" rx="8" fill="#121824" stroke="#2962FF" stroke-width="1.2"/>
+    <text x="14" y="24" font-size="13.5" font-weight="700" fill="#00E5FF">1. Tích Lũy Kín</text>
+    <text x="14" y="46" font-size="12.5" fill="#8E9BAE">• Định giá chiết khấu</text>
+    <text x="14" y="64" font-size="12.5" fill="#8E9BAE">• Smart Money gom hàng</text>
   </g>
 
-  <!-- STAGE 2: DISTRIBUTION (Right top) -->
-  <g transform="translate(940, 200)">
-    <rect width="170" height="70" rx="8" fill="#1B1318" stroke="#F23645" stroke-width="1.2"/>
-    <text x="14" y="24" font-size="12" font-weight="700" fill="#F23645">2. Giai Đoạn Phân Phối</text>
-    <text x="14" y="44" font-size="11" fill="#8E9BAE">• Tay to trao tay nhỏ lẻ</text>
-    <text x="14" y="60" font-size="11" fill="#8E9BAE">• Dao động giá rất lỏng lẻo</text>
+  <!-- STAGE 2: DISTRIBUTION (Right: x=710, y=290) -->
+  <g transform="translate(710, 290)">
+    <rect width="170" height="74" rx="8" fill="#1B1318" stroke="#F23645" stroke-width="1.2"/>
+    <text x="14" y="24" font-size="13.5" font-weight="700" fill="#F23645">2. Phân Phối Đỉnh</text>
+    <text x="14" y="46" font-size="12.5" fill="#8E9BAE">• Tay to bán cho nhỏ lẻ</text>
+    <text x="14" y="64" font-size="12.5" fill="#8E9BAE">• Biến động giá lỏng lẻo</text>
   </g>
 
   <!-- Bottom Principle Banner -->
-  <g transform="translate(60, 650)">
-    <rect width="1040" height="46" rx="8" fill="#141926" stroke="rgba(240, 185, 11, 0.4)" stroke-width="1.4"/>
-    <text x="520" y="22" font-size="12" fill="#CAD4E0" text-anchor="middle">
-      <tspan fill="#F0B90B" font-weight="800">Châm ngôn kinh điển của Benjamin Graham:</tspan> "Trong ngắn hạn, thị trường là một cỗ máy bỏ phiếu bằng cảm xúc (Voting Machine);"
+  <g transform="translate(30, 665)">
+    <rect width="860" height="52" rx="8" fill="#141926" stroke="rgba(240, 185, 11, 0.45)" stroke-width="1.4"/>
+    <text x="430" y="22" font-size="13" fill="#CAD4E0" text-anchor="middle">
+      <tspan fill="#F0B90B" font-weight="800">Châm ngôn Benjamin Graham:</tspan> "Trong ngắn hạn, thị trường là cỗ máy bỏ phiếu bằng cảm xúc;"
     </text>
-    <text x="520" y="38" font-size="11.5" fill="#CAD4E0" text-anchor="middle">
-      "nhưng trong dài hạn, thị trường luôn là một chiếc bàn cân chính xác đo lường giá trị thực (Weighing Machine)."
+    <text x="430" y="40" font-size="13" fill="#CAD4E0" text-anchor="middle">
+      "nhưng trong dài hạn, thị trường luôn là chiếc bàn cân chính xác đo lường giá trị thực."
     </text>
   </g>
 </svg>
