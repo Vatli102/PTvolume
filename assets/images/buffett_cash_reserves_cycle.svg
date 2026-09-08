@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 550" width="100%" height="100%" style="background:#0B0E14; font-family: 'Inter', system-ui, -apple-system, sans-serif;">
+  <defs>
+    <linearGradient id="bg-cash" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0E14" />
+      <stop offset="50%" stop-color="#141822" />
+      <stop offset="100%" stop-color="#0E121B" />
+    </linearGradient>
+    <linearGradient id="cash-bar-grad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#2962FF" />
+      <stop offset="100%" stop-color="#00E5FF" />
+    </linearGradient>
+    <filter id="shadow-box" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="550" fill="url(#bg-cash)" rx="14"/>
+  <rect width="994" height="544" x="3" y="3" fill="none" stroke="#222938" stroke-width="1.8" rx="12"/>
+
+  <!-- Header -->
+  <g transform="translate(500, 38)" text-anchor="middle">
+    <rect x="-410" y="-22" width="820" height="44" rx="22" fill="#141926" stroke="rgba(206, 147, 216, 0.4)" stroke-width="1.5"/>
+    <text y="6" font-size="16" font-weight="800" fill="#CE93D8" letter-spacing="0.6">
+      QUẢN TRỊ TIỀN MẶT KỶ LỤC CỦA BERKSHIRE HATHAWAY VÀ CƠ HỘI SĂN MỒI KHỦNG HOẢNG
+    </text>
+    <text y="36" font-size="12" fill="#8E9BAE">
+      «Tiền mặt là Oxy — Bình thường ít ai để ý, nhưng khi ngạt thở thì đó là thứ duy nhất có ý nghĩa» — Warren Buffett
+    </text>
+  </g>
+
+  <!-- Chart Grid -->
+  <line x1="80" y1="120" x2="920" y2="120" stroke="#1F2636" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="80" y1="200" x2="920" y2="200" stroke="#1F2636" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="80" y1="280" x2="920" y2="280" stroke="#1F2636" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="80" y1="360" x2="920" y2="360" stroke="#1F2636" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="80" y1="440" x2="920" y2="440" stroke="#2A354A" stroke-width="1.5"/>
+
+  <!-- Y Axis Labels -->
+  <text x="65" y="125" font-size="11" fill="#8E9BAE" text-anchor="end">$300B</text>
+  <text x="65" y="205" font-size="11" fill="#8E9BAE" text-anchor="end">$200B</text>
+  <text x="65" y="285" font-size="11" fill="#8E9BAE" text-anchor="end">$100B</text>
+  <text x="65" y="365" font-size="11" fill="#8E9BAE" text-anchor="end">$50B</text>
+  <text x="65" y="445" font-size="11" fill="#8E9BAE" text-anchor="end">$0</text>
+
+  <!-- BAR 1: 1999 - Dotcom Bubble ($35B) -->
+  <rect x="120" y="380" width="75" height="60" rx="4" fill="#2962FF"/>
+  <text x="157" y="370" font-size="11" font-weight="700" fill="#00E5FF" text-anchor="middle">$35B</text>
+  <text x="157" y="460" font-size="11.5" font-weight="700" fill="#CAD4E0" text-anchor="middle">Năm 1999</text>
+  <text x="157" y="476" font-size="10" fill="#8E9BAE" text-anchor="middle">Bong bóng Dot-com</text>
+
+  <!-- Event 1 Callout -->
+  <g transform="translate(100, 270)">
+    <rect width="120" height="70" rx="6" fill="#141B2D" stroke="#2962FF" stroke-width="1"/>
+    <text x="10" y="20" font-size="10.5" font-weight="700" fill="#F0B90B">HÀNH ĐỘNG:</text>
+    <text x="10" y="38" font-size="9.8" fill="#CAD4E0">Không mua Dot-com.</text>
+    <text x="10" y="54" font-size="9.8" fill="#CAD4E0">Đám đông chê già.</text>
+  </g>
+
+  <!-- BAR 2: 2007 - Pre-GFC ($44B) -->
+  <rect x="310" y="365" width="75" height="75" rx="4" fill="#2962FF"/>
+  <text x="347" y="355" font-size="11" font-weight="700" fill="#00E5FF" text-anchor="middle">$44B</text>
+  <text x="347" y="460" font-size="11.5" font-weight="700" fill="#CAD4E0" text-anchor="middle">Năm 2007</text>
+  <text x="347" y="476" font-size="10" fill="#8E9BAE" text-anchor="middle">Khủng hoảng 2008</text>
+
+  <!-- Event 2 Callout -->
+  <g transform="translate(290, 240)">
+    <rect width="135" height="85" rx="6" fill="#141B2D" stroke="#089981" stroke-width="1"/>
+    <text x="10" y="20" font-size="10.5" font-weight="700" fill="#26E7A6">HÀNH ĐỘNG:</text>
+    <text x="10" y="38" font-size="9.8" fill="#CAD4E0">Tung tiền giải cứu</text>
+    <text x="10" y="54" font-size="9.8" fill="#CAD4E0">Goldman Sachs, GE</text>
+    <text x="10" y="70" font-size="9.8" fill="#00E5FF" font-weight="700">Lãi hàng tỷ USD!</text>
+  </g>
+
+  <!-- BAR 3: 2019 - Pre-Covid ($128B) -->
+  <rect x="520" y="270" width="75" height="170" rx="4" fill="#2962FF"/>
+  <text x="557" y="260" font-size="11" font-weight="700" fill="#00E5FF" text-anchor="middle">$128B</text>
+  <text x="557" y="460" font-size="11.5" font-weight="700" fill="#CAD4E0" text-anchor="middle">Năm 2019</text>
+  <text x="557" y="476" font-size="10" fill="#8E9BAE" text-anchor="middle">Trước dịch Covid</text>
+
+  <!-- Event 3 Callout -->
+  <g transform="translate(500, 160)">
+    <rect width="130" height="75" rx="6" fill="#141B2D" stroke="#F0B90B" stroke-width="1"/>
+    <text x="10" y="20" font-size="10.5" font-weight="700" fill="#F0B90B">HÀNH ĐỘNG:</text>
+    <text x="10" y="38" font-size="9.8" fill="#CAD4E0">Giữ tiền kiên định,</text>
+    <text x="10" y="54" font-size="9.8" fill="#CAD4E0">mua cổ phiếu dầu khí</text>
+    <text x="10" y="68" font-size="9.8" fill="#CAD4E0">và năng lượng đáy.</text>
+  </g>
+
+  <!-- BAR 4: HIỆN NAY (2024-2026) - KỶ LỤC > $300B -->
+  <rect x="730" y="115" width="85" height="325" rx="4" fill="url(#cash-bar-grad)"/>
+  <text x="772" y="105" font-size="13" font-weight="900" fill="#F0B90B" text-anchor="middle">&gt; $325 TỶ USD!</text>
+  <text x="772" y="460" font-size="11.5" font-weight="800" fill="#00E5FF" text-anchor="middle">HIỆN NAY (2024-2026)</text>
+  <text x="772" y="476" font-size="10" font-weight="700" fill="#F0B90B" text-anchor="middle">MỨC KỶ LỤC LỊCH SỬ</text>
+
+  <!-- Event 4 Callout -->
+  <g transform="translate(710, 145)" filter="url(#shadow-box)">
+    <rect width="180" height="110" rx="8" fill="#160E1D" stroke="#9C27B0" stroke-width="1.5"/>
+    <text x="12" y="22" font-size="11" font-weight="800" fill="#CE93D8">TÍN HIỆU VĨ MÔ QUAN TRỌNG:</text>
+    <text x="12" y="42" font-size="10" fill="#CAD4E0">• Bán bớt Apple &amp; Bank of America</text>
+    <text x="12" y="58" font-size="10" fill="#CAD4E0">• Đưa lượng tiền mặt lên kỷ lục</text>
+    <text x="12" y="76" font-size="10.5" fill="#26E7A6" font-weight="700">➔ Chuẩn bị săn mồi cho</text>
+    <text x="12" y="94" font-size="10.5" fill="#26E7A6" font-weight="700">   chu kỳ điều chỉnh lớn kế tiếp!</text>
+  </g>
+
+  <!-- Footer -->
+  <g transform="translate(50, 515)">
+    <text x="450" y="16" font-size="11.5" fill="#CAD4E0" text-anchor="middle">
+      <tspan fill="#F0B90B" font-weight="700">Đúc kết thực chiến:</tspan> Khi định giá thị trường quá cao, cầm tiền mặt không phải là lãng phí, mà là chuẩn bị cho cú vung gậy hoàn hảo.
+    </text>
+  </g>
+</svg>

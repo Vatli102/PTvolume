@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="100%" height="100%" style="background:#0B0E14; font-family: 'Inter', system-ui, -apple-system, sans-serif;">
+  <defs>
+    <linearGradient id="bg-moat" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0E14" />
+      <stop offset="50%" stop-color="#131722" />
+      <stop offset="100%" stop-color="#0E121C" />
+    </linearGradient>
+    <linearGradient id="center-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#282010" />
+      <stop offset="100%" stop-color="#141108" />
+    </linearGradient>
+    <filter id="shadow-box" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="560" fill="url(#bg-moat)" rx="14"/>
+  <rect width="994" height="554" x="3" y="3" fill="none" stroke="#222938" stroke-width="1.8" rx="12"/>
+
+  <!-- Header -->
+  <g transform="translate(500, 42)" text-anchor="middle">
+    <rect x="-380" y="-22" width="760" height="44" rx="22" fill="#141926" stroke="rgba(240, 185, 11, 0.4)" stroke-width="1.5"/>
+    <text y="6" font-size="16.5" font-weight="800" fill="#F0B90B" letter-spacing="0.8">
+      KIẾN TRÚC 4 CON HÀO KINH TẾ BỀN VỮNG (THE ECONOMIC MOAT MATRIX)
+    </text>
+    <text y="36" font-size="12" fill="#8E9BAE">
+      Bộ lọc lựa chọn cổ phiếu siêu hạng của Warren Buffett • Nền tảng phân tích PTvolume.com
+    </text>
+  </g>
+
+  <!-- CENTER CASTLE: FREE CASH FLOW & VALUE -->
+  <g transform="translate(500, 275)" text-anchor="middle" filter="url(#shadow-box)">
+    <circle r="105" fill="url(#center-grad)" stroke="#F0B90B" stroke-width="2.5"/>
+    <circle r="92" fill="none" stroke="rgba(240, 185, 11, 0.3)" stroke-width="1" stroke-dasharray="4 4"/>
+    <text y="-40" font-size="24">🏰</text>
+    <text y="-14" font-size="13" font-weight="800" fill="#F0B90B">TÒA THÀNH LỢI NHUẬN</text>
+    <text y="6" font-size="11" font-weight="700" fill="#FFFFFF">&amp; DÒNG TIỀN TỰ DO (FCF)</text>
+    <text y="28" font-size="10.5" fill="#CAD4E0">• ROE &gt; 15% bền bỉ</text>
+    <text y="46" font-size="10.5" fill="#CAD4E0">• Biên gộp (Gross Margin) &gt; 40%</text>
+    <text y="64" font-size="10.5" fill="#00E5FF" font-weight="600">• Tái đầu tư sinh lãi kép</text>
+  </g>
+
+  <!-- 4 MOAT CARDS SURROUNDING -->
+  <!-- Top-Left: Brand & Monopoly -->
+  <g transform="translate(35, 105)" filter="url(#shadow-box)">
+    <rect width="285" height="185" rx="10" fill="#141824" stroke="#2962FF" stroke-width="1.5"/>
+    <rect width="285" height="34" rx="10" fill="#1E2B4A"/>
+    <path d="M 0 24 L 0 34 L 285 34 L 285 24 Z" fill="#1E2B4A"/>
+    <text x="14" y="22" font-size="12.5" font-weight="800" fill="#00E5FF">1. THƯƠNG HIỆU ĐỘC QUYỀN</text>
+    <text x="210" y="22" font-size="10" fill="#CAD4E0">Brand Power</text>
+
+    <text x="14" y="58" font-size="11.5" fill="#CAD4E0">• Quyền định giá (Pricing Power): Tăng giá</text>
+    <text x="22" y="75" font-size="11.5" fill="#CAD4E0">bán mà khách hàng không bỏ đi.</text>
+    <text x="14" y="96" font-size="11.5" fill="#CAD4E0">• Khách hàng trung thành vô điều kiện.</text>
+    <text x="14" y="117" font-size="11.5" fill="#CAD4E0">• Bảo vệ doanh thu trước lạm phát cao.</text>
+    
+    <rect x="12" y="132" width="261" height="42" rx="6" fill="#0A0E18" stroke="#1F2E4D"/>
+    <text x="20" y="150" font-size="11" font-weight="700" fill="#F0B90B">Ví dụ điển hình của Buffett:</text>
+    <text x="20" y="165" font-size="10.5" fill="#00E5FF" font-weight="600">Apple (iPhone), Coca-Cola, See's Candies</text>
+  </g>
+
+  <!-- Top-Right: High Switching Costs -->
+  <g transform="translate(680, 105)" filter="url(#shadow-box)">
+    <rect width="285" height="185" rx="10" fill="#141824" stroke="#089981" stroke-width="1.5"/>
+    <rect width="285" height="34" rx="10" fill="#132B25"/>
+    <path d="M 0 24 L 0 34 L 285 34 L 285 24 Z" fill="#132B25"/>
+    <text x="14" y="22" font-size="12.5" font-weight="800" fill="#26E7A6">2. CHI PHÍ CHUYỂN ĐỔI CAO</text>
+    <text x="200" y="22" font-size="10" fill="#CAD4E0">Switching Cost</text>
+
+    <text x="14" y="58" font-size="11.5" fill="#CAD4E0">• Khách hàng đổi nhà cung cấp sẽ tốn chi</text>
+    <text x="22" y="75" font-size="11.5" fill="#CAD4E0">phí cực lớn, thời gian và rủi ro vận hành.</text>
+    <text x="14" y="96" font-size="11.5" fill="#CAD4E0">• Tỷ lệ khách hàng rời bỏ (Churn) cực thấp.</text>
+    <text x="14" y="117" font-size="11.5" fill="#CAD4E0">• Doanh thu định kỳ (Recurring) ổn định.</text>
+    
+    <rect x="12" y="132" width="261" height="42" rx="6" fill="#081411" stroke="#173D33"/>
+    <text x="20" y="150" font-size="11" font-weight="700" fill="#F0B90B">Ví dụ điển hình:</text>
+    <text x="20" y="165" font-size="10.5" fill="#26E7A6" font-weight="600">Hệ sinh thái Microsoft, Cloud &amp; Dữ liệu Ngân hàng</text>
+  </g>
+
+  <!-- Bottom-Left: Network Effects -->
+  <g transform="translate(35, 320)" filter="url(#shadow-box)">
+    <rect width="285" height="185" rx="10" fill="#141824" stroke="#F0B90B" stroke-width="1.5"/>
+    <rect width="285" height="34" rx="10" fill="#2A2210"/>
+    <path d="M 0 24 L 0 34 L 285 34 L 285 24 Z" fill="#2A2210"/>
+    <text x="14" y="22" font-size="12.5" font-weight="800" fill="#F0B90B">3. HIỆU ỨNG MẠNG LƯỚI</text>
+    <text x="195" y="22" font-size="10" fill="#CAD4E0">Network Effect</text>
+
+    <text x="14" y="58" font-size="11.5" fill="#CAD4E0">• Càng nhiều người dùng tham gia, giá trị</text>
+    <text x="22" y="75" font-size="11.5" fill="#CAD4E0">của nền tảng càng tăng theo cấp số nhân.</text>
+    <text x="14" y="96" font-size="11.5" fill="#CAD4E0">• Tạo rào cản độc quyền tự nhiên đối thủ.</text>
+    <text x="14" y="117" font-size="11.5" fill="#CAD4E0">• Chi phí thu hút khách hàng giảm dần.</text>
+    
+    <rect x="12" y="132" width="261" height="42" rx="6" fill="#131006" stroke="#3A2F11"/>
+    <text x="20" y="150" font-size="11" font-weight="700" fill="#F0B90B">Ví dụ điển hình của Buffett:</text>
+    <text x="20" y="165" font-size="10.5" fill="#F0B90B" font-weight="600">American Express, Visa, Mastercard, Moody's</text>
+  </g>
+
+  <!-- Bottom-Right: Low Cost Advantage -->
+  <g transform="translate(680, 320)" filter="url(#shadow-box)">
+    <rect width="285" height="185" rx="10" fill="#141824" stroke="#9C27B0" stroke-width="1.5"/>
+    <rect width="285" height="34" rx="10" fill="#281730"/>
+    <path d="M 0 24 L 0 34 L 285 34 L 285 24 Z" fill="#281730"/>
+    <text x="14" y="22" font-size="12.5" font-weight="800" fill="#CE93D8">4. LỢI THẾ CHI PHÍ THẤP</text>
+    <text x="205" y="22" font-size="10" fill="#CAD4E0">Cost Advantage</text>
+
+    <text x="14" y="58" font-size="11.5" fill="#CAD4E0">• Quy mô vận hành siêu lớn đè bẹp giá vốn.</text>
+    <text x="14" y="77" font-size="11.5" fill="#CAD4E0">• Bán rẻ hơn đối thủ mà vẫn lãi đậm.</text>
+    <text x="14" y="96" font-size="11.5" fill="#CAD4E0">• Chuỗi cung ứng độc quyền và tối ưu.</text>
+    <text x="14" y="117" font-size="11.5" fill="#CAD4E0">• Triệt tiêu hoàn toàn đối thủ mới gia nhập.</text>
+    
+    <rect x="12" y="132" width="261" height="42" rx="6" fill="#140A18" stroke="#371842"/>
+    <text x="20" y="150" font-size="11" font-weight="700" fill="#F0B90B">Ví dụ điển hình của Buffett:</text>
+    <text x="20" y="165" font-size="10.5" fill="#CE93D8" font-weight="600">Bảo hiểm GEICO, Costco Wholesale, BNSF Railway</text>
+  </g>
+
+  <!-- Connecting Lines from 4 Cards to Castle -->
+  <line x1="320" y1="200" x2="410" y2="245" stroke="#2962FF" stroke-width="1.8" stroke-dasharray="4 3"/>
+  <line x1="680" y1="200" x2="590" y2="245" stroke="#089981" stroke-width="1.8" stroke-dasharray="4 3"/>
+  <line x1="320" y1="410" x2="410" y2="305" stroke="#F0B90B" stroke-width="1.8" stroke-dasharray="4 3"/>
+  <line x1="680" y1="410" x2="590" y2="305" stroke="#9C27B0" stroke-width="1.8" stroke-dasharray="4 3"/>
+
+  <!-- Footer Banner -->
+  <g transform="translate(50, 518)">
+    <text x="450" y="16" font-size="11" fill="#8E9BAE" text-anchor="middle">
+      «Một doanh nghiệp tuyệt vời giống như một lâu đài kiên cố được bao quanh bởi một con hào sâu và rộng.» — <tspan fill="#F0B90B" font-weight="700">Warren Buffett</tspan>
+    </text>
+  </g>
+</svg>

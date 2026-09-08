@@ -4122,13 +4122,21 @@ Theo thống kê thực chiến của anh em, phương pháp nào hạn chế t�
         }
 
         function copyThreadShareLink() {
-            const url = window.location.origin + window.location.pathname + '#dien-dan';
+            let baseUrl = 'https://ptvolume.com';
+            let path = '/index.html';
+            if (window.location.protocol.startsWith('http') && !window.location.hostname.includes('localhost') && !window.location.hostname.includes('127.0.0.1')) {
+                baseUrl = window.location.origin;
+                path = window.location.pathname;
+            }
+            const url = baseUrl + (path.endsWith('/') ? path.slice(0, -1) : path) + '#dien-dan';
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(url).then(() => {
-                    alert('Đã sao chép liên kết bài thảo luận: ' + url);
+                    alert('Đã sao chép liên kết chuẩn web: ' + url);
+                }).catch(() => {
+                    prompt('Sao chép liên kết:', url);
                 });
             } else {
-                alert('Liên kết thảo luận: ' + url);
+                prompt('Sao chép liên kết:', url);
             }
         }
 
