@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1020" width="100%" height="100%" style="background:#0B0E14; font-family: 'Inter', system-ui, -apple-system, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 1100" width="100%" height="100%" style="background:#0B0E14; font-family: 'Inter', system-ui, -apple-system, sans-serif;">
   <defs>
     <linearGradient id="bg-canvas" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0B0E14" />
@@ -6,37 +6,37 @@
       <stop offset="100%" stop-color="#0E121B" />
     </linearGradient>
     <linearGradient id="card-grad-blue" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#182032" />
-      <stop offset="100%" stop-color="#101522" />
-    </linearGradient>
-    <linearGradient id="card-grad-cyan" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#0F2428" />
-      <stop offset="100%" stop-color="#0A181B" />
+      <stop offset="0%" stop-color="#162035" />
+      <stop offset="100%" stop-color="#0E1424" />
     </linearGradient>
     <linearGradient id="card-grad-gold" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#241E12" />
-      <stop offset="100%" stop-color="#16130B" />
+      <stop offset="0%" stop-color="#241D12" />
+      <stop offset="100%" stop-color="#141009" />
+    </linearGradient>
+    <linearGradient id="card-grad-cyan" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0E2328" />
+      <stop offset="100%" stop-color="#091619" />
     </linearGradient>
     <linearGradient id="card-grad-green" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#122421" />
-      <stop offset="100%" stop-color="#0E1A17" />
+      <stop offset="0%" stop-color="#11241F" />
+      <stop offset="100%" stop-color="#0A1613" />
     </linearGradient>
     <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
-      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#000" flood-opacity="0.6"/>
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.65"/>
     </filter>
   </defs>
 
   <!-- Outer Canvas Border -->
-  <rect width="1100" height="1020" fill="url(#bg-canvas)" rx="16"/>
-  <rect width="1094" height="1014" x="3" y="3" fill="none" stroke="#222938" stroke-width="2" rx="14"/>
+  <rect width="1180" height="1100" fill="url(#bg-canvas)" rx="16"/>
+  <rect width="1172" height="1092" x="4" y="4" fill="none" stroke="#222938" stroke-width="2" rx="14"/>
 
   <!-- ==================== HEADER ==================== -->
-  <g transform="translate(550, 48)" text-anchor="middle">
-    <rect x="-470" y="-26" width="940" height="52" rx="26" fill="#141926" stroke="rgba(0, 229, 255, 0.5)" stroke-width="1.8"/>
-    <text y="7" font-size="20" font-weight="800" fill="#00E5FF" letter-spacing="0.8">
+  <g transform="translate(590, 52)" text-anchor="middle">
+    <rect x="-480" y="-28" width="960" height="56" rx="28" fill="#141926" stroke="rgba(0, 229, 255, 0.5)" stroke-width="1.8"/>
+    <text y="8" font-size="21" font-weight="800" fill="#00E5FF" letter-spacing="0.8">
       4 TRỤ CỘT "NHÀ ĐẦU TƯ THÔNG MINH" — BENJAMIN GRAHAM
     </text>
-    <text y="44" font-size="13.5" fill="#8E9BAE">
+    <text y="48" font-size="13.5" fill="#8E9BAE">
       Đúc kết từ kiệt tác "The Intelligent Investor" • Khung tư duy trường tồn cho chứng khoán, crypto &amp; vĩ mô
     </text>
   </g>
@@ -44,122 +44,148 @@
   <!-- ==================== ROW 1: 2 CARDS ==================== -->
 
   <!-- CARD 1: ĐẦU TƯ VS ĐẦU CƠ -->
-  <g transform="translate(45, 115)" filter="url(#shadow)">
-    <rect width="485" height="395" rx="12" fill="url(#card-grad-blue)" stroke="#2962FF" stroke-width="2"/>
-    <rect width="485" height="46" rx="12" fill="#2962FF"/>
-    <path d="M 0 34 L 0 46 L 485 46 L 485 34 Z" fill="#2962FF"/>
-    <circle cx="28" cy="23" r="14" fill="#0B0E14"/>
-    <text x="28" y="29" font-size="14" font-weight="900" fill="#00E5FF" text-anchor="middle">1</text>
-    <text x="52" y="29" font-size="15" font-weight="800" fill="#FFFFFF">ĐẦU TƯ VS. ĐẦU CƠ (INVESTMENT VS SPECULATION)</text>
+  <g transform="translate(40, 125)" filter="url(#shadow)">
+    <rect width="530" height="430" rx="14" fill="url(#card-grad-blue)" stroke="#2962FF" stroke-width="2"/>
+    <rect width="530" height="48" rx="14" fill="#2962FF"/>
+    <path d="M 0 34 L 0 48 L 530 48 L 530 34 Z" fill="#2962FF"/>
+    <circle cx="28" cy="24" r="14" fill="#0B0E14"/>
+    <text x="28" y="30" font-size="14" font-weight="900" fill="#00E5FF" text-anchor="middle">1</text>
+    <text x="52" y="30" font-size="14.5" font-weight="800" fill="#FFFFFF">ĐẦU TƯ VS. ĐẦU CƠ (INVESTMENT VS SPECULATION)</text>
 
     <!-- Content -->
-    <text x="20" y="76" font-size="13.5" font-weight="700" fill="#00E5FF">Khái niệm định nghĩa của Graham:</text>
-    <text x="20" y="100" font-size="12.5" fill="#CAD4E0">• <tspan fill="#FFF" font-weight="700">Đầu tư:</tspan> Dựa trên phân tích kỹ lưỡng các yếu tố nền tảng,</text>
-    <text x="32" y="120" font-size="12.5" fill="#CAD4E0">đảm bảo an toàn vốn gốc và sinh lời thỏa đáng.</text>
-    <text x="20" y="145" font-size="12.5" fill="#CAD4E0">• <tspan fill="#F23645" font-weight="700">Đầu cơ:</tspan> Bỏ qua định giá, cược vào dao động giá ngắn hạn</text>
-    <text x="32" y="165" font-size="12.5" fill="#CAD4E0">với hy vọng có người mua lại giá đắt hơn (Greater Fool).</text>
+    <text x="22" y="80" font-size="13.5" font-weight="700" fill="#00E5FF">Khái niệm định nghĩa của Graham:</text>
+    
+    <text x="22" y="106" font-size="12" fill="#CAD4E0">• <tspan fill="#FFF" font-weight="700">Đầu tư:</tspan> Phân tích kỹ lưỡng các yếu tố cơ bản,</text>
+    <text x="34" y="126" font-size="12" fill="#CAD4E0">bảo toàn vốn gốc và thu về tỷ suất sinh lời thỏa đáng.</text>
+    
+    <text x="22" y="152" font-size="12" fill="#CAD4E0">• <tspan fill="#F23645" font-weight="700">Đầu cơ:</tspan> Bỏ qua định giá, đặt cược biến động ngắn hạn</text>
+    <text x="34" y="172" font-size="12" fill="#CAD4E0">với hy vọng có người mua lại giá cao hơn (Greater Fool).</text>
 
     <!-- Inner Highlight Box -->
-    <rect x="18" y="185" width="449" height="190" rx="8" fill="#0A0E18" stroke="#1F2E4D" stroke-width="1.2"/>
-    <rect x="18" y="185" width="449" height="28" rx="8" fill="#131C30"/>
-    <path d="M 18 205 L 18 213 L 467 213 L 467 205 Z" fill="#131C30"/>
-    <text x="28" y="204" font-size="12" font-weight="800" fill="#F0B90B">⚡ BÀI HỌC THỰC CHIẾN PTVOLUME:</text>
-    <text x="28" y="234" font-size="12" fill="#CAD4E0">• Mua cổ phiếu hay coin chỉ vì "nghe phím kèo" là đầu cơ mù quáng.</text>
-    <text x="28" y="258" font-size="12" fill="#CAD4E0">• Trader theo Price Action / VSA vẫn phải tư duy như một nhà đầu tư:</text>
-    <text x="38" y="278" font-size="12" fill="#26E7A6" font-weight="600">→ Phải hiểu bản chất dòng tiền Smart Money và kiểm soát rủi ro.</text>
-    <text x="28" y="306" font-size="12" fill="#CAD4E0">• Nếu bạn đầu cơ, hãy trích một khoản vốn nhỏ riêng biệt, KHÔNG BAO GIỜ</text>
-    <text x="38" y="326" font-size="12" fill="#FF5252" font-weight="600">lẫn lộn tài khoản đầu tư phòng thủ với tài khoản đầu cơ lướt sóng!</text>
-    <text x="242" y="360" font-size="12" fill="#8E9BAE" font-style="italic" text-anchor="middle">«Bảo toàn vốn gốc là điều kiện tiên quyết để tồn tại»</text>
+    <rect x="20" y="195" width="490" height="210" rx="10" fill="#0A0E18" stroke="#1F2E4D" stroke-width="1.4"/>
+    <rect x="20" y="195" width="490" height="32" rx="10" fill="#131C30"/>
+    <path d="M 20 217 L 20 227 L 510 227 L 510 217 Z" fill="#131C30"/>
+    <text x="32" y="216" font-size="12" font-weight="800" fill="#F0B90B">⚡ BÀI HỌC THỰC CHIẾN PTVOLUME:</text>
+
+    <text x="32" y="248" font-size="11.8" fill="#CAD4E0">• Mua tài sản chỉ vì nghe phím kèo là đánh bạc đầu cơ.</text>
+    
+    <text x="32" y="272" font-size="11.8" fill="#CAD4E0">• Trader Naked Chart / VSA vẫn phải tư duy như nhà đầu tư:</text>
+    <text x="44" y="292" font-size="11.8" fill="#26E7A6" font-weight="600">→ Hiểu dấu chân Smart Money và kiểm soát rủi ro tuyệt đối.</text>
+    
+    <text x="32" y="318" font-size="11.8" fill="#CAD4E0">• Nếu muốn đầu cơ lướt sóng, hãy dùng quỹ vốn nhỏ riêng biệt;</text>
+    <text x="44" y="338" font-size="11.8" fill="#FF5252" font-weight="600">tuyệt đối không nhập nhèm với danh mục tích sản dài hạn!</text>
+
+    <text x="265" y="380" font-size="11.5" fill="#8E9BAE" font-style="italic" text-anchor="middle">«Bảo toàn vốn gốc là điều kiện tiên quyết để tồn tại bền vững»</text>
   </g>
 
   <!-- CARD 2: NGÀI THỊ TRƯỜNG -->
-  <g transform="translate(570, 115)" filter="url(#shadow)">
-    <rect width="485" height="395" rx="12" fill="url(#card-grad-gold)" stroke="#F0B90B" stroke-width="2"/>
-    <rect width="485" height="46" rx="12" fill="#F0B90B"/>
-    <path d="M 0 34 L 0 46 L 485 46 L 485 34 Z" fill="#F0B90B"/>
-    <circle cx="28" cy="23" r="14" fill="#0B0E14"/>
-    <text x="28" y="29" font-size="14" font-weight="900" fill="#F0B90B" text-anchor="middle">2</text>
-    <text x="52" y="29" font-size="15" font-weight="800" fill="#0B0E14">NGÀI THỊ TRƯỜNG (MR. MARKET)</text>
+  <g transform="translate(610, 125)" filter="url(#shadow)">
+    <rect width="530" height="430" rx="14" fill="url(#card-grad-gold)" stroke="#F0B90B" stroke-width="2"/>
+    <rect width="530" height="48" rx="14" fill="#F0B90B"/>
+    <path d="M 0 34 L 0 48 L 530 48 L 530 34 Z" fill="#F0B90B"/>
+    <circle cx="28" cy="24" r="14" fill="#0B0E14"/>
+    <text x="28" y="30" font-size="14" font-weight="900" fill="#F0B90B" text-anchor="middle">2</text>
+    <text x="52" y="30" font-size="14.5" font-weight="800" fill="#0B0E14">NGÀI THỊ TRƯỜNG (MR. MARKET)</text>
 
     <!-- Content -->
-    <text x="20" y="76" font-size="13.5" font-weight="700" fill="#F0B90B">Bản chất của Ngài Thị Trường:</text>
-    <text x="20" y="100" font-size="12.5" fill="#CAD4E0">• Là một đối tác làm ăn bị chứng rối loạn cảm xúc trầm trọng:</text>
-    <text x="32" y="120" font-size="12.5" fill="#CAD4E0">Hôm nay hưng phấn đòi giá trên trời; ngày mai hoảng loạn bán đổ bán tháo.</text>
-    <text x="20" y="145" font-size="12.5" fill="#CAD4E0">• <tspan fill="#FFF" font-weight="700">Quy tắc vàng:</tspan> Mr. Market là <tspan fill="#00E5FF" font-weight="700">người phục vụ</tspan>, tuyệt đối KHÔNG phải</text>
-    <text x="32" y="165" font-size="12.5" fill="#CAD4E0">người dẫn dắt hay người thầy chỉ bảo của bạn!</text>
+    <text x="22" y="80" font-size="13.5" font-weight="700" fill="#F0B90B">Bản chất của Ngài Thị Trường:</text>
+    
+    <text x="22" y="106" font-size="12" fill="#CAD4E0">• Là đối tác kinh doanh thất thường, cảm xúc cực đoan:</text>
+    <text x="34" y="126" font-size="12" fill="#CAD4E0">Hôm nay hưng phấn đòi giá trên trời; mai hoảng sợ bán đổ bán tháo.</text>
+    
+    <text x="22" y="152" font-size="12" fill="#CAD4E0">• <tspan fill="#FFF" font-weight="700">Quy tắc vàng:</tspan> Mr. Market là <tspan fill="#00E5FF" font-weight="700">người phục vụ</tspan>, tuyệt đối KHÔNG phải</text>
+    <text x="34" y="172" font-size="12" fill="#CAD4E0">người dẫn dắt hay người thầy chỉ đạo quyết định của bạn!</text>
 
     <!-- Inner Highlight Box -->
-    <rect x="18" y="185" width="449" height="190" rx="8" fill="#141108" stroke="#3A2D10" stroke-width="1.2"/>
-    <rect x="18" y="185" width="449" height="28" rx="8" fill="#241C0A"/>
-    <path d="M 18 205 L 18 213 L 467 213 L 467 205 Z" fill="#241C0A"/>
-    <text x="28" y="204" font-size="12" font-weight="800" fill="#F0B90B">⚡ ỨNG DỤNG THỊ TRƯỜNG HIỆN ĐẠI:</text>
-    <text x="28" y="234" font-size="12" fill="#CAD4E0">• Bảng điện tử nhảy nhót mỗi ngày không phản ánh giá trị doanh nghiệp.</text>
-    <text x="28" y="258" font-size="12" fill="#CAD4E0">• Đừng để cảm xúc dao động của đám đông làm bạn mất bình tĩnh.</text>
-    <text x="28" y="280" font-size="12" fill="#26E7A6" font-weight="600">• Mua vào khi Mr. Market trầm cảm, bán tháo tài sản tốt với giá bèo bọt.</text>
-    <text x="28" y="304" font-size="12" fill="#FF5252" font-weight="600">• Chốt lời hoặc đứng ngoài khi Mr. Market hưng phấn tạo sóng FOMO.</text>
-    <text x="242" y="360" font-size="12" fill="#F0B90B" font-style="italic" text-anchor="middle">«Giá cả là thứ bạn trả, Giá trị là thứ bạn nhận được»</text>
+    <rect x="20" y="195" width="490" height="210" rx="10" fill="#141108" stroke="#3A2D10" stroke-width="1.4"/>
+    <rect x="20" y="195" width="490" height="32" rx="10" fill="#241C0A"/>
+    <path d="M 20 217 L 20 227 L 510 227 L 510 217 Z" fill="#241C0A"/>
+    <text x="32" y="216" font-size="12" font-weight="800" fill="#F0B90B">⚡ ỨNG DỤNG THỊ TRƯỜNG HIỆN ĐẠI:</text>
+
+    <text x="32" y="248" font-size="11.8" fill="#CAD4E0">• Biến động giá xanh đỏ mỗi ngày không thay đổi giá trị tài sản.</text>
+    
+    <text x="32" y="272" font-size="11.8" fill="#CAD4E0">• Không để tâm lý đám đông trên mạng xã hội chi phối bạn.</text>
+    
+    <text x="32" y="296" font-size="11.8" fill="#26E7A6" font-weight="600">• Mua vào khi Mr. Market trầm cảm, bán tháo tài sản tốt giá rẻ.</text>
+    
+    <text x="32" y="320" font-size="11.8" fill="#FF5252" font-weight="600">• Chốt lời hoặc kiên nhẫn khi Mr. Market hưng phấn tạo sóng FOMO.</text>
+
+    <text x="265" y="380" font-size="11.5" fill="#F0B90B" font-style="italic" text-anchor="middle">«Giá cả là thứ bạn trả, Giá trị là thứ bạn nhận được»</text>
   </g>
 
   <!-- ==================== ROW 2: 2 CARDS ==================== -->
 
   <!-- CARD 3: BIÊN AN TOÀN -->
-  <g transform="translate(45, 540)" filter="url(#shadow)">
-    <rect width="485" height="395" rx="12" fill="url(#card-grad-cyan)" stroke="#00E5FF" stroke-width="2"/>
-    <rect width="485" height="46" rx="12" fill="#00E5FF"/>
-    <path d="M 0 34 L 0 46 L 485 46 L 485 34 Z" fill="#00E5FF"/>
-    <circle cx="28" cy="23" r="14" fill="#0B0E14"/>
-    <text x="28" y="29" font-size="14" font-weight="900" fill="#00E5FF" text-anchor="middle">3</text>
-    <text x="52" y="29" font-size="15" font-weight="800" fill="#0B0E14">BIÊN AN TOÀN (MARGIN OF SAFETY)</text>
+  <g transform="translate(40, 595)" filter="url(#shadow)">
+    <rect width="530" height="430" rx="14" fill="url(#card-grad-cyan)" stroke="#00E5FF" stroke-width="2"/>
+    <rect width="530" height="48" rx="14" fill="#00E5FF"/>
+    <path d="M 0 34 L 0 48 L 530 48 L 530 34 Z" fill="#00E5FF"/>
+    <circle cx="28" cy="24" r="14" fill="#0B0E14"/>
+    <text x="28" y="30" font-size="14" font-weight="900" fill="#00E5FF" text-anchor="middle">3</text>
+    <text x="52" y="30" font-size="14.5" font-weight="800" fill="#0B0E14">BIÊN AN TOÀN (MARGIN OF SAFETY)</text>
 
     <!-- Content -->
-    <text x="20" y="76" font-size="13.5" font-weight="700" fill="#00E5FF">Trụ cột linh hồn của Đầu Tư Giá Trị:</text>
-    <text x="20" y="100" font-size="12.5" fill="#CAD4E0">• Là khoảng cách chiết khấu sâu giữa <tspan fill="#FFF" font-weight="700">Giá trị thực (Intrinsic Value)</tspan></text>
-    <text x="32" y="120" font-size="12.5" fill="#CAD4E0">và <tspan fill="#00E5FF" font-weight="700">Thị giá (Market Price)</tspan> đang giao dịch.</text>
-    <text x="20" y="145" font-size="12.5" fill="#CAD4E0">• Mục đích: Hấp thụ các sai số dự báo, biến cố thiên nga đen</text>
-    <text x="32" y="165" font-size="12.5" fill="#CAD4E0">hoặc sự sụt giảm bất ngờ của nền kinh tế chung.</text>
+    <text x="22" y="80" font-size="13.5" font-weight="700" fill="#00E5FF">Trụ cột linh hồn của Đầu Tư Giá Trị:</text>
+    
+    <text x="22" y="106" font-size="12" fill="#CAD4E0">• Là khoảng chênh lệch chiết khấu sâu giữa</text>
+    <text x="34" y="126" font-size="12" fill="#CAD4E0"><tspan fill="#FFF" font-weight="700">Giá trị thực (Intrinsic Value)</tspan> và <tspan fill="#00E5FF" font-weight="700">Thị giá (Market Price)</tspan>.</text>
+    
+    <text x="22" y="152" font-size="12" fill="#CAD4E0">• Mục đích: Hấp thụ sai số định giá, biến cố thiên nga đen</text>
+    <text x="34" y="172" font-size="12" fill="#CAD4E0">hoặc sự suy thoái chu kỳ của toàn bộ nền kinh tế.</text>
 
     <!-- Inner Highlight Box -->
-    <rect x="18" y="185" width="449" height="190" rx="8" fill="#081517" stroke="#10363B" stroke-width="1.2"/>
-    <rect x="18" y="185" width="449" height="28" rx="8" fill="#0E2327"/>
-    <path d="M 18 205 L 18 213 L 467 213 L 467 205 Z" fill="#0E2327"/>
-    <text x="28" y="204" font-size="12" font-weight="800" fill="#00E5FF">⚡ KẾT NỐI VSA &amp; PRICE ACTION PTVOLUME:</text>
-    <text x="28" y="234" font-size="12" fill="#CAD4E0">• Biên an toàn không chỉ có trên báo cáo tài chính (P/E &lt; 15, P/B &lt; 1.5).</text>
-    <text x="28" y="258" font-size="12" fill="#CAD4E0">• Trên biểu đồ nến, Biên an toàn chính là <tspan fill="#26E7A6" font-weight="700">Vùng Chiết Khấu Sâu (Discount)</tspan>:</text>
-    <text x="38" y="280" font-size="12" fill="#26E7A6">• Nơi xuất hiện điểm Spring cạn Volume theo phương pháp Wyckoff.</text>
-    <text x="38" y="302" font-size="12" fill="#00E5FF">• Tỷ lệ Lợi nhuận / Rủi ro (R:R) luôn đạt tối thiểu 1:3 hoặc 1:4.</text>
-    <text x="242" y="360" font-size="12" fill="#CAD4E0" font-style="italic" text-anchor="middle">«Biên an toàn biến thời gian trở thành đồng minh vĩ đại của bạn»</text>
+    <rect x="20" y="195" width="490" height="210" rx="10" fill="#081517" stroke="#10363B" stroke-width="1.4"/>
+    <rect x="20" y="195" width="490" height="32" rx="10" fill="#0E2327"/>
+    <path d="M 20 217 L 20 227 L 510 227 L 510 217 Z" fill="#0E2327"/>
+    <text x="32" y="216" font-size="12" font-weight="800" fill="#00E5FF">⚡ KẾT NỐI VSA &amp; PRICE ACTION PTVOLUME:</text>
+
+    <text x="32" y="248" font-size="11.8" fill="#CAD4E0">• Biên an toàn trên biểu đồ chính là <tspan fill="#26E7A6" font-weight="700">Vùng Chiết Khấu Sâu (Discount)</tspan>.</text>
+    
+    <text x="32" y="272" font-size="11.8" fill="#CAD4E0">• Xuất hiện cú rũ bỏ <tspan fill="#00E5FF" font-weight="600">Spring Wyckoff</tspan> kèm thanh nến cạn kiệt Volume.</text>
+    
+    <text x="32" y="296" font-size="11.8" fill="#CAD4E0">• Cho phép đặt dừng lỗ cực ngắn, đạt tỷ lệ <tspan fill="#26E7A6" font-weight="700">R:R ≥ 1:4</tspan>.</text>
+    
+    <text x="32" y="320" font-size="11.8" fill="#CAD4E0">• Giảm thiểu tổn thất tối đa khi thị trường phát sinh rủi ro bất ngờ.</text>
+
+    <text x="265" y="380" font-size="11.5" fill="#CAD4E0" font-style="italic" text-anchor="middle">«Biên an toàn biến thời gian trở thành đồng minh vĩ đại của bạn»</text>
   </g>
 
   <!-- CARD 4: ĐỊNH VỊ NHÀ ĐẦU TƯ -->
-  <g transform="translate(570, 540)" filter="url(#shadow)">
-    <rect width="485" height="395" rx="12" fill="url(#card-grad-green)" stroke="#089981" stroke-width="2"/>
-    <rect width="485" height="46" rx="12" fill="#089981"/>
-    <path d="M 0 34 L 0 46 L 485 46 L 485 34 Z" fill="#089981"/>
-    <circle cx="28" cy="23" r="14" fill="#0B0E14"/>
-    <text x="28" y="29" font-size="14" font-weight="900" fill="#26E7A6" text-anchor="middle">4</text>
-    <text x="52" y="29" font-size="15" font-weight="800" fill="#FFFFFF">ĐỊNH VỊ NHÀ ĐẦU TƯ: PHÒNG THỦ VS. CHỦ ĐỘNG</text>
+  <g transform="translate(610, 595)" filter="url(#shadow)">
+    <rect width="530" height="430" rx="14" fill="url(#card-grad-green)" stroke="#089981" stroke-width="2"/>
+    <rect width="530" height="48" rx="14" fill="#089981"/>
+    <path d="M 0 34 L 0 48 L 530 48 L 530 34 Z" fill="#089981"/>
+    <circle cx="28" cy="24" r="14" fill="#0B0E14"/>
+    <text x="28" y="30" font-size="14" font-weight="900" fill="#26E7A6" text-anchor="middle">4</text>
+    <text x="52" y="30" font-size="14.5" font-weight="800" fill="#FFFFFF">PHÂN LOẠI: PHÒNG THỦ VS. CHỦ ĐỘNG</text>
 
     <!-- Content -->
-    <text x="20" y="76" font-size="13.5" font-weight="700" fill="#26E7A6">Tự lượng sức mình — Chìa khóa thành công:</text>
-    <text x="20" y="100" font-size="12.5" fill="#CAD4E0">• <tspan fill="#FFF" font-weight="700">Nhà đầu tư phòng thủ (Defensive):</tspan> Ưu tiên an toàn tuyệt đối,</text>
-    <text x="32" y="120" font-size="12.5" fill="#CAD4E0">phân bổ cân bằng 50% Trái phiếu / 50% Cổ phiếu lớn, mua quỹ ETF định kỳ.</text>
-    <text x="20" y="145" font-size="12.5" fill="#CAD4E0">• <tspan fill="#26E7A6" font-weight="700">Nhà đầu tư chủ động (Enterprising):</tspan> Dành toàn thời gian đọc BCTC,</text>
-    <text x="32" y="165" font-size="12.5" fill="#CAD4E0">săn tìm cổ phiếu Net-Net dưới giá trị tài sản lưu động ròng.</text>
+    <text x="22" y="80" font-size="13.5" font-weight="700" fill="#26E7A6">Tự lượng sức mình — Chìa khóa thành công:</text>
+    
+    <text x="22" y="106" font-size="12" fill="#CAD4E0">• <tspan fill="#FFF" font-weight="700">Phòng thủ (Defensive):</tspan> Ưu tiên an toàn tuyệt đối,</text>
+    <text x="34" y="126" font-size="12" fill="#CAD4E0">chia đều 50% Trái phiếu / 50% Cổ phiếu lớn, mua quỹ ETF định kỳ.</text>
+    
+    <text x="22" y="152" font-size="12" fill="#CAD4E0">• <tspan fill="#26E7A6" font-weight="700">Chủ động (Enterprising):</tspan> Toàn tâm nghiên cứu BCTC,</text>
+    <text x="34" y="172" font-size="12" fill="#CAD4E0">săn tìm cổ phiếu Net-Net dưới giá trị tài sản lưu động ròng.</text>
 
     <!-- Inner Highlight Box -->
-    <rect x="18" y="185" width="449" height="190" rx="8" fill="#091714" stroke="#173B32" stroke-width="1.2"/>
-    <rect x="18" y="185" width="449" height="28" rx="8" fill="#0F2822"/>
-    <path d="M 18 205 L 18 213 L 467 213 L 467 205 Z" fill="#0F2822"/>
-    <text x="28" y="204" font-size="12" font-weight="800" fill="#26E7A6">⚡ NGUY HIỂM CHẾT NGƯỜI CỦA SỰ "NỬA VỜI":</text>
-    <text x="28" y="234" font-size="12" fill="#CAD4E0">• Thảm họa lớn nhất xảy ra khi một người không có thời gian nghiên cứu</text>
-    <text x="38" y="254" font-size="12" fill="#FF5252" font-weight="600">lại ảo tưởng mình là Nhà đầu tư chủ động để lướt sóng T+.</text>
-    <text x="28" y="280" font-size="12" fill="#CAD4E0">• Nếu bạn là người bận rộn: Hãy là một Nhà đầu tư phòng thủ xuất sắc.</text>
-    <text x="28" y="304" font-size="12" fill="#26E7A6" font-weight="600">• Lợi nhuận của bạn tỷ lệ thuận với công sức thông minh, không phải độ liều lĩnh!</text>
-    <text x="242" y="360" font-size="12" fill="#CAD4E0" font-style="italic" text-anchor="middle">«Biết rõ mình là ai quan trọng hơn biết thị trường đi về đâu»</text>
+    <rect x="20" y="195" width="490" height="210" rx="10" fill="#091714" stroke="#173B32" stroke-width="1.4"/>
+    <rect x="20" y="195" width="490" height="32" rx="10" fill="#0F2822"/>
+    <path d="M 20 217 L 20 227 L 510 227 L 510 217 Z" fill="#0F2822"/>
+    <text x="32" y="216" font-size="12" font-weight="800" fill="#26E7A6">⚡ CẢNH BÁO NGUY CƠ "NỬA VỜI":</text>
+
+    <text x="32" y="248" font-size="11.8" fill="#CAD4E0">• Thảm họa xảy ra khi người bận rộn nhưng lại ảo tưởng</text>
+    <text x="44" y="268" font-size="11.8" fill="#FF5252" font-weight="600">mình là nhà đầu tư chủ động để lướt sóng T+ hàng ngày.</text>
+    
+    <text x="32" y="294" font-size="11.8" fill="#CAD4E0">• Nếu bạn không có thời gian: Hãy là nhà đầu tư phòng thủ kỷ luật.</text>
+    
+    <text x="32" y="318" font-size="11.8" fill="#26E7A6" font-weight="600">• Lợi nhuận tỷ lệ thuận với công sức thông minh, không phải độ liều!</text>
+
+    <text x="265" y="380" font-size="11.5" fill="#CAD4E0" font-style="italic" text-anchor="middle">«Biết rõ mình là ai quan trọng hơn cố dự báo thị trường đi về đâu»</text>
   </g>
 
   <!-- ==================== FOOTER WATERMARK ==================== -->
-  <g transform="translate(550, 985)" text-anchor="middle">
+  <g transform="translate(590, 1060)" text-anchor="middle">
     <text font-size="13" fill="#8E9BAE">
       Đóng dấu bản quyền: <tspan fill="#00E5FF" font-weight="700">PTvolume.com</tspan> • Phân Tích Kỹ Thuật • Naked Chart • VSA • Phương Pháp Wyckoff
     </text>
