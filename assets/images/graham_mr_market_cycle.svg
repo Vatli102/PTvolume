@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="100%" height="100%" style="background:#0B0E14; font-family: 'Inter', system-ui, -apple-system, sans-serif;">
+  <defs>
+    <linearGradient id="bg-canvas" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0E14" />
+      <stop offset="50%" stop-color="#141824" />
+      <stop offset="100%" stop-color="#0E121B" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="620" fill="url(#bg-canvas)" rx="14"/>
+  <rect width="994" height="614" x="3" y="3" fill="none" stroke="#222938" stroke-width="1.8" rx="12"/>
+
+  <!-- Header -->
+  <g transform="translate(500, 40)" text-anchor="middle">
+    <rect x="-420" y="-24" width="840" height="46" rx="23" fill="#141926" stroke="rgba(240, 185, 11, 0.5)" stroke-width="1.6"/>
+    <text y="6" font-size="16.5" font-weight="800" fill="#F0B90B" letter-spacing="0.6">
+      CHU KỲ TÂM LÝ "NGÀI THỊ TRƯỜNG" (MR. MARKET) &amp; NGHỆ THUẬT ĐỐI KHÁNG
+    </text>
+    <text y="38" font-size="12.5" fill="#8E9BAE">
+      Cách Nhà Đầu Tư Thông Minh khai thác điểm yếu tâm lý của đám đông để thu gom tài sản giá hời
+    </text>
+  </g>
+
+  <!-- Central Emotional Curve -->
+  <!-- Upper peak: Euphoria, Lower trough: Despair / Panic -->
+  <path d="M 80 340 
+           C 150 330, 220 280, 290 200 
+           C 350 130, 420 80, 500 80 
+           C 580 80, 640 140, 700 240 
+           C 760 340, 810 490, 880 490 
+           C 930 490, 960 410, 970 370" 
+        fill="none" stroke="#2962FF" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Intrinsic Value baseline -->
+  <line x1="60" y1="300" x2="960" y2="300" stroke="#8E9BAE" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <rect x="70" y="286" width="165" height="22" rx="4" fill="#151A26" stroke="#8E9BAE" stroke-width="0.8"/>
+  <text x="152" y="301" font-size="10" font-weight="700" fill="#CAD4E0" text-anchor="middle">GIÁ TRỊ THỰC (FAIR VALUE)</text>
+
+  <!-- PEAK ANNOTATION: EUPHORIA / GREED -->
+  <g transform="translate(340, 60)" filter="url(#shadow)">
+    <circle cx="160" cy="20" r="14" fill="#F23645"/>
+    <text x="160" y="26" font-size="14" font-weight="900" fill="#FFF" text-anchor="middle">▲</text>
+    
+    <rect x="-10" y="45" width="340" height="135" rx="8" fill="#1A0D10" stroke="#F23645" stroke-width="1.5"/>
+    <text x="10" y="68" font-size="12.5" font-weight="800" fill="#FF5252">GIAI ĐOẠN HƯNG PHẤN TỘT ĐỘ (EUPHORIA)</text>
+    <text x="10" y="90" font-size="11" fill="#CAD4E0">• <tspan fill="#F0B90B">Mr. Market gào thét:</tspan> "Cơ hội trăm năm! Siêu cổ phiếu x10!"</text>
+    <text x="10" y="110" font-size="11" fill="#CAD4E0">• Đám đông: Vay mượn margin kịch khung, mua bất chấp P/E.</text>
+    <text x="10" y="130" font-size="11" fill="#CAD4E0">• Báo đài, mạng xã hội: Ai cũng tự nhận là chuyên gia.</text>
+    <text x="10" y="152" font-size="11.5" font-weight="800" fill="#FF5252">➔ NHÀ ĐẦU TƯ THÔNG MINH: CHỐT LỜI, GIỮ TIỀN MẶT!</text>
+  </g>
+
+  <!-- TROUGH ANNOTATION: PANIC / DESPAIR -->
+  <g transform="translate(620, 420)" filter="url(#shadow)">
+    <circle cx="260" cy="70" r="14" fill="#089981"/>
+    <text x="260" y="76" font-size="14" font-weight="900" fill="#FFF" text-anchor="middle">▼</text>
+    
+    <rect x="0" y="-120" width="345" height="145" rx="8" fill="#091714" stroke="#089981" stroke-width="1.8"/>
+    <text x="14" y="-98" font-size="12.5" font-weight="800" fill="#26E7A6">GIAI ĐOẠN HOẢNG LOẠN &amp; TUYỆT VỌNG (DESPAIR)</text>
+    <text x="14" y="-76" font-size="11" fill="#CAD4E0">• <tspan fill="#F0B90B">Mr. Market than khóc:</tspan> "Thị trường sụp đổ rồi, hãy cắt lỗ ngay!"</text>
+    <text x="14" y="-56" font-size="11" fill="#CAD4E0">• Đám đông: Hoảng loạn tháo chạy, bán sạch cổ phiếu tốt giá bèo.</text>
+    <text x="14" y="-36" font-size="11" fill="#CAD4E0">• VSA: Xuất hiện Selling Climax và Spring cạn kiệt nguồn cung.</text>
+    <text x="14" y="-14" font-size="11.5" font-weight="800" fill="#00E5FF">➔ NHÀ ĐẦU TƯ THÔNG MINH: MUA GOM TÀI SẢN GIÁ HỜI!</text>
+  </g>
+
+  <!-- LEFT STAGE: OPTIMISM & RALLY -->
+  <g transform="translate(50, 180)">
+    <rect width="180" height="65" rx="6" fill="#141C2B" stroke="#2962FF" stroke-width="1"/>
+    <text x="12" y="24" font-size="11.5" font-weight="700" fill="#00E5FF">Giai Đoạn Phục Hồi</text>
+    <text x="12" y="44" font-size="10.5" fill="#8E9BAE">• Định giá hợp lý</text>
+    <text x="12" y="58" font-size="10.5" fill="#8E9BAE">• Dòng tiền tổ chức tích lũy</text>
+  </g>
+
+  <!-- RIGHT STAGE: CRASH & DENIAL -->
+  <g transform="translate(740, 200)">
+    <rect width="180" height="65" rx="6" fill="#1E1418" stroke="#F23645" stroke-width="1"/>
+    <text x="12" y="24" font-size="11.5" font-weight="700" fill="#F23645">Giai Đoạn Trầm Cảm</text>
+    <text x="12" y="44" font-size="10.5" fill="#8E9BAE">• Bắt đáy hụt, kẹt hàng</text>
+    <text x="12" y="58" font-size="10.5" fill="#8E9BAE">• Margin call diện rộng</text>
+  </g>
+
+  <!-- Bottom Principle Banner -->
+  <g transform="translate(60, 560)">
+    <rect width="880" height="42" rx="8" fill="#141926" stroke="rgba(240, 185, 11, 0.4)" stroke-width="1.2"/>
+    <text x="440" y="26" font-size="12" fill="#CAD4E0" text-anchor="middle">
+      <tspan fill="#F0B90B" font-weight="800">Châm ngôn kinh điển:</tspan> "Thị trường giống như một cỗ máy bỏ phiếu trong ngắn hạn (Vote Counting), nhưng là một chiếc bàn cân trong dài hạn (Weighing Machine)."
+    </text>
+  </g>
+</svg>

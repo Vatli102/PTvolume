@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="100%" height="100%" style="background:#0B0E14; font-family: 'Inter', system-ui, -apple-system, sans-serif;">
+  <defs>
+    <linearGradient id="bg-canvas" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0E14" />
+      <stop offset="50%" stop-color="#141824" />
+      <stop offset="100%" stop-color="#0E121B" />
+    </linearGradient>
+    <linearGradient id="defensive-card" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#152136" />
+      <stop offset="100%" stop-color="#0F1726" />
+    </linearGradient>
+    <linearGradient id="enterprising-card" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#182A24" />
+      <stop offset="100%" stop-color="#101D19" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="620" fill="url(#bg-canvas)" rx="14"/>
+  <rect width="994" height="614" x="3" y="3" fill="none" stroke="#222938" stroke-width="1.8" rx="12"/>
+
+  <!-- Header -->
+  <g transform="translate(500, 38)" text-anchor="middle">
+    <rect x="-440" y="-22" width="880" height="44" rx="22" fill="#141926" stroke="rgba(0, 229, 255, 0.4)" stroke-width="1.5"/>
+    <text y="6" font-size="16" font-weight="800" fill="#00E5FF" letter-spacing="0.6">
+      SO SÁNH CHIẾN LƯỢC: NHÀ ĐẦU TƯ PHÒNG THỦ VS. NHÀ ĐẦU TƯ CHỦ ĐỘNG
+    </text>
+    <text y="36" font-size="12" fill="#8E9BAE">
+      Bộ tiêu chuẩn lọc cổ phiếu và phân bổ danh mục theo trường phái Benjamin Graham
+    </text>
+  </g>
+
+  <!-- COLUMN 1: DEFENSIVE INVESTOR -->
+  <g transform="translate(45, 95)" filter="url(#shadow)">
+    <rect width="435" height="465" rx="10" fill="url(#defensive-card)" stroke="#2962FF" stroke-width="2"/>
+    <rect width="435" height="44" rx="10" fill="#2962FF"/>
+    <path d="M 0 34 L 0 44 L 435 44 L 435 34 Z" fill="#2962FF"/>
+    <text x="217" y="28" font-size="14.5" font-weight="800" fill="#FFFFFF" text-anchor="middle">
+      🛡️ NHÀ ĐẦU TƯ PHÒNG THỦ (DEFENSIVE)
+    </text>
+
+    <!-- Subtitle -->
+    <text x="20" y="70" font-size="12" fill="#8E9BAE">Mục tiêu: Bảo toàn vốn, tối thiểu hóa thời gian và nỗ lực.</text>
+
+    <!-- Criteria List -->
+    <g transform="translate(20, 90)">
+      <!-- Item 1 -->
+      <rect x="0" y="0" width="395" height="55" rx="6" fill="#0D131F" stroke="#1D2A44"/>
+      <text x="12" y="22" font-size="12" font-weight="700" fill="#00E5FF">1. Quy mô công ty &amp; Vị thế dẫn đầu</text>
+      <text x="12" y="42" font-size="11" fill="#CAD4E0">Thuộc Top đầu ngành, vốn hóa lớn, lịch sử hoạt động lâu năm.</text>
+
+      <!-- Item 2 -->
+      <rect x="0" y="65" width="395" height="55" rx="6" fill="#0D131F" stroke="#1D2A44"/>
+      <text x="12" y="22" font-size="12" font-weight="700" fill="#00E5FF">2. Tình hình tài chính vững mạnh</text>
+      <text x="12" y="42" font-size="11" fill="#CAD4E0">Tài sản ngắn hạn / Nợ ngắn hạn &gt; 2.0 (Current Ratio ≥ 2.0).</text>
+
+      <!-- Item 3 -->
+      <rect x="0" y="130" width="395" height="55" rx="6" fill="#0D131F" stroke="#1D2A44"/>
+      <text x="12" y="22" font-size="12" font-weight="700" fill="#00E5FF">3. Lịch sử trả cổ tức không gián đoạn</text>
+      <text x="12" y="42" font-size="11" fill="#CAD4E0">Chi trả cổ tức đều đặn liên tục ít nhất 20 năm gần nhất.</text>
+
+      <!-- Item 4 -->
+      <rect x="0" y="195" width="395" height="55" rx="6" fill="#0D131F" stroke="#1D2A44"/>
+      <text x="12" y="22" font-size="12" font-weight="700" fill="#00E5FF">4. Tăng trưởng lợi nhuận EPS ổn định</text>
+      <text x="12" y="42" font-size="11" fill="#CAD4E0">EPS tăng trưởng dương ít nhất 10 năm, không có năm nào bị lỗ.</text>
+
+      <!-- Item 5: Graham Number -->
+      <rect x="0" y="260" width="395" height="60" rx="6" fill="#0D131F" stroke="#2962FF"/>
+      <text x="12" y="22" font-size="12" font-weight="800" fill="#F0B90B">5. Định giá rẻ: Chỉ số Graham ≤ 22.5</text>
+      <text x="12" y="42" font-size="11" fill="#CAD4E0">P/E ≤ 15 VÀ P/B ≤ 1.5 (Tích số P/E × P/B ≤ 22.5).</text>
+
+      <!-- Allocation summary -->
+      <g transform="translate(0, 332)">
+        <text x="0" y="16" font-size="11.5" font-weight="700" fill="#26E7A6">Phân bổ danh mục khuyến nghị:</text>
+        <text x="0" y="32" font-size="11" fill="#CAD4E0">50% Trái phiếu / Tiết kiệm + 50% Cổ phiếu lớn (hoặc ETF chỉ số).</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- COLUMN 2: ENTERPRISING INVESTOR -->
+  <g transform="translate(520, 95)" filter="url(#shadow)">
+    <rect width="435" height="465" rx="10" fill="url(#enterprising-card)" stroke="#089981" stroke-width="2"/>
+    <rect width="435" height="44" rx="10" fill="#089981"/>
+    <path d="M 0 34 L 0 44 L 435 44 L 435 34 Z" fill="#089981"/>
+    <text x="217" y="28" font-size="14.5" font-weight="800" fill="#FFFFFF" text-anchor="middle">
+      ⚡ NHÀ ĐẦU TƯ CHỦ ĐỘNG (ENTERPRISING)
+    </text>
+
+    <!-- Subtitle -->
+    <text x="20" y="70" font-size="12" fill="#8E9BAE">Mục tiêu: Đạt tỷ suất lợi nhuận vượt trội thông qua đào sâu nghiên cứu.</text>
+
+    <!-- Criteria List -->
+    <g transform="translate(20, 90)">
+      <!-- Item 1 -->
+      <rect x="0" y="0" width="395" height="55" rx="6" fill="#0A1612" stroke="#16372E"/>
+      <text x="12" y="22" font-size="12" font-weight="700" fill="#26E7A6">1. Chiến lược Net-Net (Net Current Assets)</text>
+      <text x="12" y="42" font-size="11" fill="#CAD4E0">Mua công ty có Thị giá &lt; 2/3 Giá trị tài sản lưu động ròng.</text>
+
+      <!-- Item 2 -->
+      <rect x="0" y="65" width="395" height="55" rx="6" fill="#0A1612" stroke="#16372E"/>
+      <text x="12" y="22" font-size="12" font-weight="700" fill="#26E7A6">2. Tình huống đặc biệt (Special Situations)</text>
+      <text x="12" y="42" font-size="11" fill="#CAD4E0">Tận dụng thương vụ thâu tóm, sáp nhập, tái cơ cấu nợ hoặc spin-off.</text>
+
+      <!-- Item 3 -->
+      <rect x="0" y="130" width="395" height="55" rx="6" fill="#0A1612" stroke="#16372E"/>
+      <text x="12" y="22" font-size="12" font-weight="700" fill="#26E7A6">3. Mua doanh nghiệp bị ruồng bỏ tạm thời</text>
+      <text x="12" y="42" font-size="11" fill="#CAD4E0">Doanh nghiệp tốt gặp sự cố ngắn hạn khiến giá sụp đổ quá đà.</text>
+
+      <!-- Item 4 -->
+      <rect x="0" y="195" width="395" height="55" rx="6" fill="#0A1612" stroke="#16372E"/>
+      <text x="12" y="22" font-size="12" font-weight="700" fill="#26E7A6">4. Kết hợp phân tích kỹ thuật dòng tiền</text>
+      <text x="12" y="42" font-size="11" fill="#CAD4E0">Tìm kiếm điểm Spring Wyckoff hoặc nến No Supply Test xác nhận.</text>
+
+      <!-- Item 5: Risk discipline -->
+      <rect x="0" y="260" width="395" height="60" rx="6" fill="#0A1612" stroke="#089981"/>
+      <text x="12" y="22" font-size="12" font-weight="800" fill="#00E5FF">5. Kỷ luật đa dạng hóa &amp; Thoát vị thế</text>
+      <text x="12" y="42" font-size="11" fill="#CAD4E0">Nắm giữ danh mục 10-30 cổ phiếu; chốt lời khi thị giá đạt giá trị thực.</text>
+
+      <!-- Time commitment -->
+      <g transform="translate(0, 332)">
+        <text x="0" y="16" font-size="11.5" font-weight="700" fill="#F0B90B">Yêu cầu năng lực bắt buộc:</text>
+        <text x="0" y="32" font-size="11" fill="#CAD4E0">Dành tối thiểu 15-25 giờ/tuần đọc BCTC, báo cáo phân tích và theo dõi vĩ mô.</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Bottom Footer Bar -->
+  <g transform="translate(50, 575)">
+    <rect width="900" height="34" rx="6" fill="#121622" stroke="#1F2636"/>
+    <text x="450" y="22" font-size="11.5" fill="#CAD4E0" text-anchor="middle">
+      <tspan fill="#F0B90B" font-weight="700">Lời khuyên của Graham:</tspan> Hãy thành thật với bản thân. Làm một nhà đầu tư phòng thủ bình thản luôn mang lại kết quả cao hơn một nhà đầu tư chủ động nghiệp dư.
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 580" width="100%" height="100%" style="background:#0B0E14; font-family: 'Inter', system-ui, -apple-system, sans-serif;">
+  <defs>
+    <linearGradient id="bg-canvas" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0E14" />
+      <stop offset="50%" stop-color="#141824" />
+      <stop offset="100%" stop-color="#0E121B" />
+    </linearGradient>
+    <linearGradient id="safe-zone" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(8, 153, 129, 0.25)" />
+      <stop offset="100%" stop-color="rgba(8, 153, 129, 0.03)" />
+    </linearGradient>
+    <linearGradient id="danger-zone" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(242, 54, 69, 0.25)" />
+      <stop offset="100%" stop-color="rgba(242, 54, 69, 0.03)" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="580" fill="url(#bg-canvas)" rx="14"/>
+  <rect width="994" height="574" x="3" y="3" fill="none" stroke="#222938" stroke-width="1.8" rx="12"/>
+
+  <!-- Header -->
+  <g transform="translate(500, 38)" text-anchor="middle">
+    <rect x="-440" y="-22" width="880" height="44" rx="22" fill="#141926" stroke="rgba(0, 229, 255, 0.4)" stroke-width="1.5"/>
+    <text y="6" font-size="16" font-weight="800" fill="#00E5FF" letter-spacing="0.6">
+      MÔ HÌNH BIÊN AN TOÀN (MARGIN OF SAFETY) &amp; ĐIỂM GIẢI NGÂN DÒNG TIỀN LỚN
+    </text>
+    <text y="36" font-size="12" fill="#8E9BAE">
+      Khoảng cách chiết khấu bảo vệ vốn trước thiên nga đen • Kết hợp định giá cơ bản với Volume &amp; Price Action
+    </text>
+  </g>
+
+  <!-- Horizontal Grid Lines -->
+  <line x1="70" y1="120" x2="930" y2="120" stroke="#1F2636" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="70" y1="200" x2="930" y2="200" stroke="#1F2636" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="70" y1="280" x2="930" y2="280" stroke="#1F2636" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="70" y1="360" x2="930" y2="360" stroke="#1F2636" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="70" y1="440" x2="930" y2="440" stroke="#253046" stroke-width="1.5"/>
+
+  <!-- ZONE SHADING -->
+  <!-- Overvalued Danger Zone -->
+  <rect x="70" y="100" width="860" height="120" fill="url(#danger-zone)"/>
+  <!-- Undervalued Margin of Safety Zone -->
+  <rect x="70" y="240" width="860" height="140" fill="url(#safe-zone)"/>
+
+  <!-- INTRINSIC VALUE LINE (Dotted Cyan Golden Line) -->
+  <line x1="70" y1="240" x2="930" y2="210" stroke="#F0B90B" stroke-width="3" stroke-dasharray="8 5"/>
+  <rect x="80" y="215" width="225" height="24" rx="4" fill="#201A0D" stroke="#F0B90B" stroke-width="1.2"/>
+  <text x="192" y="231" font-size="11" font-weight="800" fill="#F0B90B" text-anchor="middle">ĐƯỜNG GIÁ TRỊ THỰC (INTRINSIC VALUE)</text>
+
+  <!-- MARKET PRICE FLUCTUATION LINE (White/Green/Red wavy path) -->
+  <!-- Wave: Start undervalued -> rallies into bubble -> crashes below intrinsic value -> consolidates -->
+  <path d="M 80 320 
+           C 140 340, 180 270, 240 230 
+           C 300 190, 340 140, 420 115 
+           C 480 95, 520 130, 560 210 
+           C 600 290, 640 375, 710 375 
+           C 760 375, 800 300, 850 250 
+           C 880 220, 910 180, 930 160" 
+        fill="none" stroke="#E2E8F0" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- MARGIN OF SAFETY BRACKET / ARROW at Deep Value -->
+  <line x1="710" y1="223" x2="710" y2="375" stroke="#00E5FF" stroke-width="3"/>
+  <circle cx="710" cy="223" r="4" fill="#00E5FF"/>
+  <circle cx="710" cy="375" r="4" fill="#00E5FF"/>
+
+  <!-- CALLOUT 1: MARGIN OF SAFETY CUSHION -->
+  <g transform="translate(560, 390)" filter="url(#shadow)">
+    <rect width="360" height="125" rx="8" fill="#0A1815" stroke="#089981" stroke-width="1.8"/>
+    <circle cx="22" cy="24" r="10" fill="#089981"/>
+    <text x="22" y="28" font-size="11" font-weight="900" fill="#FFF" text-anchor="middle">✓</text>
+    <text x="40" y="28" font-size="13" font-weight="800" fill="#26E7A6">VÙNG BIÊN AN TOÀN CAO (DISCOUNT ZONE)</text>
+    <text x="16" y="52" font-size="11.5" fill="#CAD4E0">• Thị giá chiết khấu <tspan fill="#F0B90B" font-weight="700">30% - 50%</tspan> so với giá trị thực.</text>
+    <text x="16" y="72" font-size="11.5" fill="#CAD4E0">• <tspan fill="#00E5FF" font-weight="700">Tín hiệu VSA:</tspan> Selling Climax hoàn tất, Volume cạn kiệt.</text>
+    <text x="16" y="92" font-size="11.5" fill="#CAD4E0">• Tỷ lệ Lợi nhuận / Rủi ro: <tspan fill="#26E7A6" font-weight="800">R:R ≥ 1:4</tspan> (Cắt lỗ cực nhỏ).</text>
+    <text x="16" y="112" font-size="11" font-weight="700" fill="#089981">➔ HÀNH ĐỘNG: GIẢI NGÂN MUA GOM TÍCH SẢN TỪNG PHẦN</text>
+  </g>
+
+  <!-- CALLOUT 2: OVERVALUED BUBBLE -->
+  <g transform="translate(320, 75)" filter="url(#shadow)">
+    <rect width="300" height="95" rx="8" fill="#1A0D10" stroke="#F23645" stroke-width="1.6"/>
+    <text x="16" y="24" font-size="12" font-weight="800" fill="#FF5252">❌ BONG BÓNG ĐỊNH GIÁ (PREMIUM BUBBLE)</text>
+    <text x="16" y="46" font-size="11" fill="#CAD4E0">• Thị giá vượt xa giá trị thực (P/E &gt; 35 - 50+)</text>
+    <text x="16" y="66" font-size="11" fill="#CAD4E0">• Đám đông hưng phấn FOMO, thanh khoản bùng nổ</text>
+    <text x="16" y="86" font-size="11" font-weight="700" fill="#FF5252">➔ BIÊN AN TOÀN = ÂM (Rủi ro đu đỉnh nặng nề)</text>
+  </g>
+
+  <!-- Connective arrow from Callout 2 to Bubble Top -->
+  <line x1="420" y1="115" x2="420" y2="75" stroke="#F23645" stroke-width="2" stroke-dasharray="3 3"/>
+
+  <!-- Bottom Annotation Bar -->
+  <g transform="translate(70, 528)">
+    <rect width="860" height="36" rx="6" fill="#101522" stroke="#1F283C"/>
+    <text x="430" y="23" font-size="11.8" fill="#CAD4E0" text-anchor="middle">
+      <tspan fill="#00E5FF" font-weight="700">Nguyên lý Benjamin Graham:</tspan> "Biên an toàn không bảo đảm bạn sẽ kiếm được lợi nhuận ngay lập tức, nhưng nó bảo đảm bạn <tspan fill="#F0B90B" font-weight="700">không bao giờ bị xóa sổ</tspan> khỏi thị trường."
+    </text>
+  </g>
+</svg>
