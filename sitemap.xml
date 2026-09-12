@@ -7,21 +7,15 @@
     <!-- Trang chu PTvolume.com -->
     <url>
         <loc>https://ptvolume.com/</loc>
-        <lastmod>2026-08-24</lastmod>
+        <lastmod>2026-09-12</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
     <!-- Bai viet theo Chuyen muc Menu -->
     <url>
-        <loc>https://ptvolume.com/tu-sach/nha-dau-tu-thong-minh-benjamin-graham.html</loc>
-        <lastmod>2026-09-08</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.98</priority>
-    </url>
-    <url>
-        <loc>https://ptvolume.com/tu-sach/dao-cua-warren-buffett-triet-ly-va-ung-dung-thuc-chien.html</loc>
-        <lastmod>2026-09-08</lastmod>
+        <loc>https://ptvolume.com/tu-sach/phuong-phap-moi-de-giao-dich-kiem-song-alexander-elder.html</loc>
+        <lastmod>2026-08-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.95</priority>
     </url>
@@ -32,20 +26,8 @@
         <priority>0.95</priority>
     </url>
     <url>
-        <loc>https://ptvolume.com/tu-sach/cach-tu-duy-va-giao-dich-nhu-mot-nha-vo-dich-mark-minervini.html</loc>
-        <lastmod>2026-08-29</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.95</priority>
-    </url>
-    <url>
-        <loc>https://ptvolume.com/tu-sach/giao-dich-nhu-mot-phu-thuy-chung-khoan-mark-minervini.html</loc>
-        <lastmod>2026-08-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.95</priority>
-    </url>
-    <url>
-        <loc>https://ptvolume.com/tu-sach/phuong-phap-moi-de-giao-dich-kiem-song-alexander-elder.html</loc>
-        <lastmod>2026-08-24</lastmod>
+        <loc>https://ptvolume.com/tu-sach/nha-dau-tu-thong-minh-benjamin-graham.html</loc>
+        <lastmod>2026-09-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.95</priority>
     </url>
@@ -56,8 +38,32 @@
         <priority>0.95</priority>
     </url>
     <url>
+        <loc>https://ptvolume.com/tu-sach/giao-dich-nhu-mot-phu-thuy-chung-khoan-mark-minervini.html</loc>
+        <lastmod>2026-08-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+    </url>
+    <url>
+        <loc>https://ptvolume.com/tu-sach/dao-cua-warren-buffett-triet-ly-va-ung-dung-thuc-chien.html</loc>
+        <lastmod>2026-09-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+    </url>
+    <url>
+        <loc>https://ptvolume.com/tu-sach/cach-tu-duy-va-giao-dich-nhu-mot-nha-vo-dich-mark-minervini.html</loc>
+        <lastmod>2026-08-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+    </url>
+    <url>
         <loc>https://ptvolume.com/phan-tich/2026-08-24-ban-tin-vi-mo-va-hang-hoa-nong-san-tuan.html</loc>
         <lastmod>2026-08-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://ptvolume.com/hoc-tap/khoa-hoc-vsa-wyckoff-bai-1-bieu-do-tran-the-naked-chart.html</loc>
+        <lastmod>2026-09-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -69,7 +75,7 @@
     </url>
     <url>
         <loc>https://ptvolume.com/hoc-tap/doc-bieu-do-bai-2-nen-nhat-va-cac-loai-nen-quan-trong.html</loc>
-        <lastmod>2026-08-24</lastmod>
+        <lastmod>2026-09-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>

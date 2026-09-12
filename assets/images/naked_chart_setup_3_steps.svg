@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="100%" height="100%" style="background:#0B0E14; font-family: 'Inter', system-ui, -apple-system, sans-serif;">
+  <defs>
+    <linearGradient id="bg-canvas-3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0E14" />
+      <stop offset="50%" stop-color="#141822" />
+      <stop offset="100%" stop-color="#0E121B" />
+    </linearGradient>
+    <filter id="shadow-3" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bg-canvas-3)" rx="16"/>
+  <rect width="1274" height="714" x="3" y="3" fill="none" stroke="#222938" stroke-width="2" rx="14"/>
+
+  <!-- Tiêu đề -->
+  <g transform="translate(640, 45)" text-anchor="middle">
+    <rect x="-480" y="-25" width="960" height="50" rx="25" fill="#141926" stroke="rgba(240, 185, 11, 0.4)" stroke-width="1.8"/>
+    <text y="7" font-size="19" font-weight="800" fill="#F0B90B" letter-spacing="0.5">
+      3 BƯỚC THIẾT LẬP BIỂU ĐỒ TRẦN CHUẨN MỰC CHO NGƯỜI MỚI (TRADINGVIEW)
+    </text>
+  </g>
+
+  <!-- 3 Cột Bước 1, Bước 2, Bước 3 -->
+  <!-- Bước 1 -->
+  <g transform="translate(50, 95)" filter="url(#shadow-3)">
+    <rect width="370" height="555" rx="14" fill="#18131B" stroke="#F23645" stroke-width="1.8"/>
+    <rect width="370" height="52" rx="14" fill="#F23645" fill-opacity="0.25"/>
+    <path d="M 0 36 L 0 52 L 370 52 L 370 36 Z" fill="#F23645" fill-opacity="0.25"/>
+    <circle cx="28" cy="26" r="14" fill="#F23645"/>
+    <text x="28" y="31" font-size="15" font-weight="900" fill="#FFFFFF" text-anchor="middle">1</text>
+    <text x="52" y="32" font-size="16" font-weight="800" fill="#FF707E">BƯỚC 1: XÓA HẾT CHỈ BÁO</text>
+
+    <!-- Minh họa icon thùng rác & chỉ báo gạch chéo -->
+    <g transform="translate(20, 75)">
+      <rect width="330" height="150" rx="8" fill="#080B10" stroke="#38181F"/>
+      
+      <circle cx="165" cy="65" r="40" fill="rgba(242,54,69,0.15)" stroke="#F23645" stroke-width="2"/>
+      <path d="M 148 55 L 182 75 M 182 55 L 148 75" stroke="#F23645" stroke-width="4" stroke-linecap="round"/>
+
+      <text x="165" y="130" font-size="12" fill="#FF8A95" font-weight="700" text-anchor="middle">Xóa sạch: RSI, MACD, BB, MA, Ichimoku...</text>
+    </g>
+
+    <g transform="translate(20, 245)">
+      <text x="0" y="20" font-size="14.5" font-weight="800" fill="#FFFFFF">• Thao tác thực hiện:</text>
+      <text x="0" y="45" font-size="13.5" fill="#CAD4E0">Chuột phải vào đồ thị $ightarrow$ chọn</text>
+      <text x="0" y="68" font-size="13.5" fill="#F0B90B" font-weight="700">"Remove all indicators" (Xóa toàn bộ).</text>
+
+      <text x="0" y="110" font-size="14.5" font-weight="800" fill="#FFFFFF">• Mục tiêu cốt lõi:</text>
+      <text x="0" y="135" font-size="13.5" fill="#CAD4E0">Giải phóng 100% không gian màn hình,</text>
+      <text x="0" y="158" font-size="13.5" fill="#CAD4E0">trả lại sự tập trung cao nhất vào giá.</text>
+
+      <rect y="195" width="330" height="85" rx="6" fill="#201014" stroke="#481820"/>
+      <text x="12" y="222" font-size="13" font-weight="700" fill="#FF8A95">Lời khuyên tâm lý:</text>
+      <text x="12" y="244" font-size="12.5" fill="#CAD4E0">Đừng sợ cảm giác trống trải; đó là</text>
+      <text x="12" y="264" font-size="12.5" fill="#CAD4E0">bước đầu tiên để mắt nhìn thấy giá thật!</text>
+    </g>
+  </g>
+
+  <!-- Bước 2 -->
+  <g transform="translate(455, 95)" filter="url(#shadow-3)">
+    <rect width="370" height="555" rx="14" fill="#0F1824" stroke="#00E5FF" stroke-width="1.8"/>
+    <rect width="370" height="52" rx="14" fill="#00E5FF" fill-opacity="0.2"/>
+    <path d="M 0 36 L 0 52 L 370 52 L 370 36 Z" fill="#00E5FF" fill-opacity="0.2"/>
+    <circle cx="28" cy="26" r="14" fill="#00E5FF"/>
+    <text x="28" y="31" font-size="15" font-weight="900" fill="#0B0E14" text-anchor="middle">2</text>
+    <text x="52" y="32" font-size="16" font-weight="800" fill="#00E5FF">BƯỚC 2: CÀI ĐẶT NỀN TỐI</text>
+
+    <!-- Minh họa Dark Theme Palette -->
+    <g transform="translate(20, 75)">
+      <rect width="330" height="150" rx="8" fill="#080B10" stroke="#163040"/>
+      
+      <!-- Palette circles -->
+      <rect x="25" y="35" width="80" height="50" rx="6" fill="#0B0E14" stroke="#00E5FF" stroke-width="1.5"/>
+      <text x="65" y="65" font-size="11" fill="#00E5FF" font-weight="700" text-anchor="middle">#0B0E14</text>
+
+      <rect x="125" y="35" width="80" height="50" rx="6" fill="#141822" stroke="#2962FF" stroke-width="1.5"/>
+      <text x="165" y="65" font-size="11" fill="#6095FF" font-weight="700" text-anchor="middle">#141822</text>
+
+      <rect x="225" y="35" width="80" height="50" rx="6" fill="#089981"/>
+      <text x="265" y="65" font-size="11" fill="#FFFFFF" font-weight="700" text-anchor="middle">Nến Xanh</text>
+
+      <text x="165" y="125" font-size="12" fill="#00E5FF" font-weight="700" text-anchor="middle">Tương phản cao &amp; Giảm mỏi mắt</text>
+    </g>
+
+    <g transform="translate(20, 245)">
+      <text x="0" y="20" font-size="14.5" font-weight="800" fill="#FFFFFF">• Màu nền khuyến nghị:</text>
+      <text x="0" y="45" font-size="13.5" fill="#CAD4E0">Sử dụng tone Dark Theme chuẩn mực</text>
+      <text x="0" y="68" font-size="13.5" fill="#00E5FF" font-weight="700">Mã màu: #0B0E14 hoặc #141822.</text>
+
+      <text x="0" y="110" font-size="14.5" font-weight="800" fill="#FFFFFF">• Lợi ích sinh học:</text>
+      <text x="0" y="135" font-size="13.5" fill="#CAD4E0">Giảm điều tiết mắt khi theo dõi biểu đồ,</text>
+      <text x="0" y="158" font-size="13.5" fill="#CAD4E0">nhìn rõ râu nến và độ co giãn thân nến.</text>
+
+      <rect y="195" width="330" height="85" rx="6" fill="#0E1E2C" stroke="#1C3850"/>
+      <text x="12" y="222" font-size="13" font-weight="700" fill="#00E5FF">Cài đặt nến:</text>
+      <text x="12" y="244" font-size="12.5" fill="#CAD4E0">Nến tăng: Xanh (#089981)</text>
+      <text x="12" y="264" font-size="12.5" fill="#CAD4E0">Nến giảm: Đỏ (#F23645) chuẩn quốc tế.</text>
+    </g>
+  </g>
+
+  <!-- Bước 3 -->
+  <g transform="translate(860, 95)" filter="url(#shadow-3)">
+    <rect width="370" height="555" rx="14" fill="#1C180E" stroke="#F0B90B" stroke-width="1.8"/>
+    <rect width="370" height="52" rx="14" fill="#F0B90B" fill-opacity="0.25"/>
+    <path d="M 0 36 L 0 52 L 370 52 L 370 36 Z" fill="#F0B90B" fill-opacity="0.25"/>
+    <circle cx="28" cy="26" r="14" fill="#F0B90B"/>
+    <text x="28" y="31" font-size="15" font-weight="900" fill="#0B0E14" text-anchor="middle">3</text>
+    <text x="52" y="32" font-size="16" font-weight="800" fill="#F0B90B">BƯỚC 3: CỐ ĐỊNH VOLUME</text>
+
+    <!-- Minh họa Cột Volume ở 1/5 đáy -->
+    <g transform="translate(20, 75)">
+      <rect width="330" height="150" rx="8" fill="#080B10" stroke="#3E3416"/>
+      
+      <!-- Mini Chart -->
+      <line x1="20" y1="95" x2="310" y2="95" stroke="#222938" stroke-width="1.5"/>
+      <text x="30" y="85" font-size="11" fill="#8E9BAE">Vùng Giá Nến (Chiếm 80% trên)</text>
+
+      <!-- Mini Volume bars -->
+      <rect x="50" y="105" width="10" height="35" fill="#089981"/>
+      <rect x="90" y="115" width="10" height="25" fill="#089981"/>
+      <rect x="130" y="100" width="10" height="40" fill="#F0B90B"/>
+      <rect x="170" y="120" width="10" height="20" fill="#F23645"/>
+      <rect x="210" y="110" width="10" height="30" fill="#F23645"/>
+      <rect x="250" y="102" width="10" height="38" fill="#089981"/>
+
+      <text x="165" y="138" font-size="11" fill="#F0B90B" font-weight="800" text-anchor="middle">Khối Lượng VSA ở 1/5 đáy</text>
+    </g>
+
+    <g transform="translate(20, 245)">
+      <text x="0" y="20" font-size="14.5" font-weight="800" fill="#FFFFFF">• Thao tác cài đặt:</text>
+      <text x="0" y="45" font-size="13.5" fill="#CAD4E0">Vào Indicators $ightarrow$ tìm gõ</text>
+      <text x="0" y="68" font-size="13.5" fill="#F0B90B" font-weight="700">"Volume" (Khối lượng khớp lệnh thuần).</text>
+
+      <text x="0" y="110" font-size="14.5" font-weight="800" fill="#FFFFFF">• Vị trí chuẩn:</text>
+      <text x="0" y="135" font-size="13.5" fill="#CAD4E0">Thu nhỏ chiều cao cột Volume, chỉ chiếm</text>
+      <text x="0" y="158" font-size="13.5" fill="#CAD4E0">khoảng 15% - 20% cạnh dưới màn hình.</text>
+
+      <rect y="195" width="330" height="85" rx="6" fill="#241E10" stroke="#504218"/>
+      <text x="12" y="222" font-size="13" font-weight="700" fill="#F0B90B">Nguyên lý cốt tử:</text>
+      <text x="12" y="244" font-size="12.5" fill="#CAD4E0">Khối lượng là số liệu thực của sàn,</text>
+      <text x="12" y="264" font-size="12.5" fill="#CAD4E0">không phải công thức toán học trễ!</text>
+    </g>
+  </g>
+
+  <!-- Watermark -->
+  <g transform="translate(640, 690)" text-anchor="middle">
+    <text font-size="13" fill="#CAD4E0" font-weight="600">
+      Đóng dấu bản quyền: <tspan fill="#00E5FF" font-weight="800">PTvolume.com</tspan> • Chuyên Trang Naked Chart &amp; VSA Wyckoff
+    </text>
+  </g>
+</svg>

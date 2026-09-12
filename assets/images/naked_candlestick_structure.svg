@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="100%" height="100%" style="background:#0B0E14; font-family: 'Inter', system-ui, -apple-system, sans-serif;">
+  <defs>
+    <linearGradient id="bg-canvas-4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0E14" />
+      <stop offset="50%" stop-color="#141822" />
+      <stop offset="100%" stop-color="#0E121B" />
+    </linearGradient>
+    <filter id="shadow-4" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bg-canvas-4)" rx="16"/>
+  <rect width="1274" height="714" x="3" y="3" fill="none" stroke="#222938" stroke-width="2" rx="14"/>
+
+  <!-- Tiêu đề -->
+  <g transform="translate(640, 45)" text-anchor="middle">
+    <rect x="-480" y="-25" width="960" height="50" rx="25" fill="#141926" stroke="rgba(41, 98, 255, 0.4)" stroke-width="1.8"/>
+    <text y="7" font-size="19" font-weight="800" fill="#6095FF" letter-spacing="0.5">
+      BÓC TÁCH 3 BỘ PHẬN CỐT LÕI CỦA NẾN TRẦN: ĐỌC VỊ HÀNH ĐỘNG GIÁ
+    </text>
+  </g>
+
+  <!-- Cột Trái: Hình vẽ cây nến to rõ ràng -->
+  <g transform="translate(50, 95)" filter="url(#shadow-4)">
+    <rect width="530" height="555" rx="14" fill="#0E1624" stroke="#2962FF" stroke-width="1.8"/>
+    <rect width="530" height="48" rx="14" fill="#2962FF" fill-opacity="0.25"/>
+    <path d="M 0 34 L 0 48 L 530 48 L 530 34 Z" fill="#2962FF" fill-opacity="0.25"/>
+    <circle cx="28" cy="24" r="12" fill="#2962FF"/>
+    <text x="28" y="28" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="middle">A</text>
+    <text x="50" y="29" font-size="15.5" font-weight="800" fill="#75A5FF">MÔ HÌNH NẾN NHẬT &amp; CÁC MỐC GIÁ QUAN TRỌNG</text>
+
+    <!-- Cây Nến Trực Quan -->
+    <g transform="translate(55, 75)">
+      <!-- Râu trên -->
+      <line x1="90" y1="15" x2="90" y2="80" stroke="#CAD4E0" stroke-width="4"/>
+      <circle cx="90" cy="15" r="4" fill="#F0B90B"/>
+      <text x="105" y="18" font-size="13" fill="#F0B90B" font-weight="700">Giá Cao Nhất (High)</text>
+
+      <!-- Thân nến -->
+      <rect x="66" y="80" width="48" height="150" fill="#089981" rx="3" stroke="#26E7A6" stroke-width="2"/>
+
+      <!-- Mức đóng cửa -->
+      <line x1="60" y1="80" x2="160" y2="80" stroke="#00E5FF" stroke-width="3" stroke-dasharray="4,4"/>
+      <circle cx="160" cy="80" r="5" fill="#00E5FF"/>
+      <text x="175" y="84" font-size="14" fill="#00E5FF" font-weight="800">GIÁ ĐÓNG CỬA (CLOSE)</text>
+      <text x="175" y="104" font-size="12" fill="#CAD4E0">Phán quyết chung cuộc của phiên</text>
+
+      <!-- Mức mở cửa -->
+      <line x1="60" y1="230" x2="160" y2="230" stroke="#8E9BAE" stroke-width="2" stroke-dasharray="4,4"/>
+      <text x="175" y="234" font-size="13" fill="#8E9BAE" font-weight="700">Giá Mở Cửa (Open)</text>
+
+      <!-- Râu dưới -->
+      <line x1="90" y1="230" x2="90" y2="310" stroke="#CAD4E0" stroke-width="4"/>
+      <circle cx="90" cy="310" r="4" fill="#F0B90B"/>
+      <text x="105" y="314" font-size="13" fill="#F0B90B" font-weight="700">Giá Thấp Nhất (Low)</text>
+
+      <!-- Thân nến thước đo -->
+      <path d="M 45 80 L 25 80 L 25 230 L 45 230" fill="none" stroke="#26E7A6" stroke-width="2"/>
+      <text x="15" y="150" font-size="14" font-weight="900" fill="#26E7A6" text-anchor="end">THÂN NẾN</text>
+      <text x="15" y="170" font-size="12" fill="#CAD4E0" text-anchor="end">(SPREAD)</text>
+    </g>
+
+    <!-- Lưu ý chân nến -->
+    <rect x="25" y="465" width="480" height="65" rx="8" fill="#141E30" stroke="#223652"/>
+    <text x="40" y="493" font-size="13.5" font-weight="700" fill="#00E5FF">Quy tắc vàng của Pro Trader:</text>
+    <text x="40" y="515" font-size="13" fill="#CAD4E0">Màu nến chỉ là hình thức, vị trí đóng cửa và râu nến mới là bản chất!</text>
+  </g>
+
+  <!-- Cột Phải: Ý Nghĩa Thực Chiến Của 3 Bộ Phận -->
+  <g transform="translate(610, 95)" filter="url(#shadow-4)">
+    <rect width="620" height="555" rx="14" fill="#101824" stroke="#00E5FF" stroke-width="1.8"/>
+    <rect width="620" height="48" rx="14" fill="#00E5FF" fill-opacity="0.2"/>
+    <path d="M 0 34 L 0 48 L 620 48 L 620 34 Z" fill="#00E5FF" fill-opacity="0.2"/>
+    <circle cx="28" cy="24" r="12" fill="#089981"/>
+    <text x="28" y="28" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="middle">B</text>
+    <text x="50" y="29" font-size="15.5" font-weight="800" fill="#00E5FF">Ý NGHĨA CHIẾN LƯỢC CỦA 3 THÀNH PHẦN</text>
+
+    <!-- Bộ phận 1: Thân nến -->
+    <g transform="translate(25, 68)">
+      <rect width="570" height="135" rx="8" fill="#141E2C" stroke="#20344C"/>
+      <circle cx="20" cy="24" r="7" fill="#26E7A6"/>
+      <text x="36" y="28" font-size="15" font-weight="800" fill="#26E7A6">1. THÂN NẾN (SPREAD): THƯỚC ĐO Ý CHÍ KIỂM SOÁT</text>
+      <text x="36" y="55" font-size="13.5" fill="#CAD4E0">• Thân nến dài dứt khoát: Một phe áp đảo hoàn toàn đối phương.</text>
+      <text x="36" y="78" font-size="13.5" fill="#CAD4E0">• Thân nến ngắn cũn: Hai bên đang giằng co, lưỡng lự hoặc chững lại.</text>
+      <text x="36" y="105" font-size="13" fill="#00E5FF" font-weight="700">→ Giúp bạn xác định bên nào đang nắm quyền kiểm soát thị trường.</text>
+    </g>
+
+    <!-- Bộ phận 2: Râu nến -->
+    <g transform="translate(25, 218)">
+      <rect width="570" height="145" rx="8" fill="#141E2C" stroke="#20344C"/>
+      <circle cx="20" cy="24" r="7" fill="#F0B90B"/>
+      <text x="36" y="28" font-size="15" font-weight="800" fill="#F0B90B">2. RÂU NẾN (WICKS): VẾT TÍCH CỦA SỰ TỪ CHỐI GIÁ</text>
+      <text x="36" y="55" font-size="13.5" fill="#CAD4E0">• Râu trên dài: Phe Bán chặn đứng lực tăng và đập giá rơi xuống.</text>
+      <text x="36" y="78" font-size="13.5" fill="#CAD4E0">• Râu dưới dài: Phe Mua nhảy vào bắt đáy, hấp thụ toàn bộ lực bán.</text>
+      <text x="36" y="105" font-size="13.5" fill="#FF707E">• Cảnh báo bẫy: Thường là cú quét lệnh dừng lỗ (Stop Hunt) của cá mập.</text>
+    </g>
+
+    <!-- Bộ phận 3: Giá đóng cửa -->
+    <g transform="translate(25, 378)">
+      <rect width="570" height="145" rx="8" fill="#141E2C" stroke="#20344C"/>
+      <circle cx="20" cy="24" r="7" fill="#00E5FF"/>
+      <text x="36" y="28" font-size="15" font-weight="800" fill="#00E5FF">3. GIÁ ĐÓNG CỬA (CLOSE): PHÁN QUYẾT CHUNG CUỘC</text>
+      <text x="36" y="55" font-size="13.5" fill="#CAD4E0">• Đóng cửa sát đỉnh: Phe Mua thắng tuyệt đối, đà tăng sẽ tiếp diễn.</text>
+      <text x="36" y="78" font-size="13.5" fill="#CAD4E0">• Đóng cửa sát đáy: Phe Bán làm chủ cuộc chơi, đà giảm tiếp tục.</text>
+      <text x="36" y="105" font-size="13.5" fill="#26E7A6" font-weight="700">→ Phán quyết xem phe nào thực sự chiến thắng khi hết phiên.</text>
+    </g>
+  </g>
+
+  <!-- Watermark -->
+  <g transform="translate(640, 690)" text-anchor="middle">
+    <text font-size="13" fill="#CAD4E0" font-weight="600">
+      Đóng dấu bản quyền: <tspan fill="#00E5FF" font-weight="800">PTvolume.com</tspan> • Chuyên Trang Naked Chart &amp; VSA Wyckoff
+    </text>
+  </g>
+</svg>

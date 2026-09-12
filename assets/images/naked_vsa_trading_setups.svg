@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 680" width="100%" height="100%" style="background:#0B0E14; font-family: 'Inter', system-ui, -apple-system, sans-serif;">
+  <defs>
+    <linearGradient id="bg-setups" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0E14" />
+      <stop offset="50%" stop-color="#141822" />
+      <stop offset="100%" stop-color="#0E121B" />
+    </linearGradient>
+    <filter id="shadow-setups" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect width="1100" height="680" fill="url(#bg-setups)" rx="16"/>
+  <rect width="1094" height="674" x="3" y="3" fill="none" stroke="#222938" stroke-width="2" rx="14"/>
+
+  <!-- HEADER -->
+  <g transform="translate(550, 48)" text-anchor="middle">
+    <rect x="-460" y="-26" width="920" height="52" rx="26" fill="#141926" stroke="rgba(0, 229, 255, 0.4)" stroke-width="1.8"/>
+    <text y="7" font-size="19" font-weight="800" fill="#00E5FF" letter-spacing="0.8">
+      BỘ 3 SETUP BẮN TỈA ĐIỂM VÀO LỆNH NAKED CHART &amp; VSA THỰC CHIẾN
+    </text>
+    <text y="42" font-size="13" fill="#8E9BAE">
+      Tối Ưu Điểm Vào Lệnh (Sniper Entry) • Tỷ Lệ Risk:Reward Tối Thiểu 1:3 • PTvolume.com
+    </text>
+  </g>
+
+  <!-- 3 CARDS -->
+  <!-- SETUP 1 -->
+  <g transform="translate(45, 115)" filter="url(#shadow-setups)">
+    <rect width="315" height="490" rx="12" fill="#101826" stroke="#00E5FF" stroke-width="1.5"/>
+    <rect width="315" height="46" rx="12" fill="#00E5FF" fill-opacity="0.15"/>
+    <text x="157" y="29" font-size="13.5" font-weight="800" fill="#00E5FF" text-anchor="middle">SETUP 1: REVERSAL AT ZONE</text>
+    
+    <!-- Content -->
+    <g transform="translate(18, 65)">
+      <rect width="279" height="120" rx="6" fill="#080B10" stroke="#1D2A3E"/>
+      <line x1="20" y1="40" x2="260" y2="40" stroke="#F23645" stroke-dasharray="2,2"/>
+      <text x="25" y="32" font-size="9" fill="#FF707E" font-weight="700">VÙNG CUNG (SUPPLY ZONE)</text>
+      <!-- Pin Bar Rejection -->
+      <line x1="140" y1="18" x2="140" y2="85" stroke="#CAD4E0" stroke-width="2"/>
+      <rect x="133" y="55" width="14" height="16" fill="#F23645"/>
+      <circle cx="140" cy="18" r="3" fill="#00E5FF"/>
+      <!-- Volume spike -->
+      <rect x="134" y="96" width="12" height="18" fill="#F0B90B"/>
+      <text x="157" y="108" font-size="8.5" fill="#F0B90B" font-weight="700">VSA Spike</text>
+
+      <text x="0" y="145" font-size="12" font-weight="700" fill="#CAD4E0">• Cơ sở kích hoạt:</text>
+      <text x="0" y="165" font-size="11" fill="#8E9BAE">Giá chạm Key Zone tạo Pin Bar từ chối giá quyết liệt (Kangaroo Tail).</text>
+
+      <text x="0" y="200" font-size="12" font-weight="700" fill="#CAD4E0">• Xác nhận Khối lượng:</text>
+      <text x="0" y="220" font-size="11" fill="#8E9BAE">Volume cây nến từ chối cao đột biến (Stopping Volume hoặc Anomaly).</text>
+
+      <text x="0" y="255" font-size="12" font-weight="700" fill="#CAD4E0">• Điểm vào lệnh (Entry):</text>
+      <text x="0" y="275" font-size="11" fill="#00E5FF">Sell Stop dưới đáy nến Pin Bar hoặc Sell Limit 50% râu nến.</text>
+
+      <text x="0" y="310" font-size="12" font-weight="700" fill="#CAD4E0">• Stop Loss &amp; Target:</text>
+      <text x="0" y="330" font-size="11" fill="#FF707E">SL: Cách đỉnh râu nến 2-3 pips.</text>
+      <text x="0" y="348" font-size="11" fill="#26E7A6">TP: Vùng cầu đối diện (R:R min 1:3).</text>
+    </g>
+  </g>
+
+  <!-- SETUP 2 -->
+  <g transform="translate(390, 115)" filter="url(#shadow-setups)">
+    <rect width="315" height="490" rx="12" fill="#101826" stroke="#26E7A6" stroke-width="1.5"/>
+    <rect width="315" height="46" rx="12" fill="#26E7A6" fill-opacity="0.15"/>
+    <text x="157" y="29" font-size="13.5" font-weight="800" fill="#26E7A6" text-anchor="middle">SETUP 2: TREND CONTINUATION</text>
+
+    <!-- Content -->
+    <g transform="translate(18, 65)">
+      <rect width="279" height="120" rx="6" fill="#080B10" stroke="#1D2A3E"/>
+      <line x1="20" y1="75" x2="260" y2="75" stroke="#26E7A6" stroke-dasharray="2,2"/>
+      <text x="25" y="68" font-size="9" fill="#26E7A6" font-weight="700">FLIP ZONE (HỖ TRỢ MỚI)</text>
+      <!-- Pullback & No Supply Bar -->
+      <line x1="140" y1="50" x2="140" y2="88" stroke="#CAD4E0" stroke-width="1.5"/>
+      <rect x="134" y="60" width="12" height="12" fill="#089981"/>
+      <!-- Dry volume -->
+      <rect x="135" y="105" width="10" height="9" fill="#8E9BAE" opacity="0.6"/>
+      <text x="155" y="112" font-size="8.5" fill="#8E9BAE">No Supply</text>
+
+      <text x="0" y="145" font-size="12" font-weight="700" fill="#CAD4E0">• Cơ sở kích hoạt:</text>
+      <text x="0" y="165" font-size="11" fill="#8E9BAE">Thị trường có xu hướng mạnh (Uptrend), giá Pullback kiểm định lại Flip Zone.</text>
+
+      <text x="0" y="200" font-size="12" font-weight="700" fill="#CAD4E0">• Xác nhận Khối lượng:</text>
+      <text x="0" y="220" font-size="11" fill="#8E9BAE">Xuất hiện nến No Supply Bar: Thân nến nhỏ, Volume cạn kiệt đáy.</text>
+
+      <text x="0" y="255" font-size="12" font-weight="700" fill="#CAD4E0">• Điểm vào lệnh (Entry):</text>
+      <text x="0" y="275" font-size="11" fill="#26E7A6">Buy Stop phía trên đỉnh của thanh nến No Supply xác nhận.</text>
+
+      <text x="0" y="310" font-size="12" font-weight="700" fill="#CAD4E0">• Stop Loss &amp; Target:</text>
+      <text x="0" y="330" font-size="11" fill="#FF707E">SL: Dưới Flip Zone và râu nến.</text>
+      <text x="0" y="348" font-size="11" fill="#26E7A6">TP: Đỉnh cũ tiếp theo (R:R 1:3 - 1:4).</text>
+    </g>
+  </g>
+
+  <!-- SETUP 3 -->
+  <g transform="translate(735, 115)" filter="url(#shadow-setups)">
+    <rect width="315" height="490" rx="12" fill="#101826" stroke="#F0B90B" stroke-width="1.5"/>
+    <rect width="315" height="46" rx="12" fill="#F0B90B" fill-opacity="0.15"/>
+    <text x="157" y="29" font-size="13.5" font-weight="800" fill="#F0B90B" text-anchor="middle">SETUP 3: BUILD-UP BREAKOUT</text>
+
+    <!-- Content -->
+    <g transform="translate(18, 65)">
+      <rect width="279" height="120" rx="6" fill="#080B10" stroke="#1D2A3E"/>
+      <line x1="20" y1="40" x2="260" y2="40" stroke="#F0B90B" stroke-width="1.5"/>
+      <text x="25" y="32" font-size="9" fill="#F0B90B" font-weight="700">NGƯỠNG CẢN BỊ ÉP (SQUEEZE)</text>
+      <!-- Tight candles pressing against level -->
+      <rect x="80" y="44" width="8" height="18" fill="#CAD4E0"/>
+      <rect x="96" y="42" width="8" height="16" fill="#CAD4E0"/>
+      <rect x="112" y="41" width="8" height="15" fill="#CAD4E0"/>
+      <!-- Big breakout bar -->
+      <rect x="135" y="25" width="16" height="45" fill="#089981"/>
+      <circle cx="143" cy="22" r="3" fill="#00E5FF"/>
+
+      <text x="0" y="145" font-size="12" font-weight="700" fill="#CAD4E0">• Cơ sở kích hoạt:</text>
+      <text x="0" y="165" font-size="11" fill="#8E9BAE">Giá không bị đẩy lùi mà nén sát cản tạo các nến thân nhỏ dần (Build-up).</text>
+
+      <text x="0" y="200" font-size="12" font-weight="700" fill="#CAD4E0">• Xác nhận Khối lượng:</text>
+      <text x="0" y="220" font-size="11" fill="#8E9BAE">Volume thu hẹp trong vùng nén rồi nổ tung khi bứt phá (Expansion).</text>
+
+      <text x="0" y="255" font-size="12" font-weight="700" fill="#CAD4E0">• Điểm vào lệnh (Entry):</text>
+      <text x="0" y="275" font-size="11" fill="#F0B90B">Buy Stop trên đỉnh vùng nén ngay trước khi nến bứt phá đóng cửa.</text>
+
+      <text x="0" y="310" font-size="12" font-weight="700" fill="#CAD4E0">• Stop Loss &amp; Target:</text>
+      <text x="0" y="330" font-size="11" fill="#FF707E">SL: Ngay dưới đáy vùng nén (Rất chặt!).</text>
+      <text x="0" y="348" font-size="11" fill="#26E7A6">TP: Sóng tăng tốc mở rộng (R:R 1:4+).</text>
+    </g>
+  </g>
+
+  <!-- FOOTER WATERMARK -->
+  <g transform="translate(550, 645)" text-anchor="middle">
+    <text font-size="12.5" fill="#CAD4E0" font-weight="600">
+      Đóng dấu bản quyền: <tspan fill="#00E5FF" font-weight="800">PTvolume.com</tspan> • Chuyên Trang Naked Chart, VSA &amp; Phương Pháp Wyckoff
+    </text>
+  </g>
+</svg>

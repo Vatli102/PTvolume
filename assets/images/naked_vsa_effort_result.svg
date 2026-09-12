@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="100%" height="100%" style="background:#0B0E14; font-family: 'Inter', system-ui, -apple-system, sans-serif;">
+  <defs>
+    <linearGradient id="bg-canvas-5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0E14" />
+      <stop offset="50%" stop-color="#141822" />
+      <stop offset="100%" stop-color="#0E121B" />
+    </linearGradient>
+    <filter id="shadow-5" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bg-canvas-5)" rx="16"/>
+  <rect width="1274" height="714" x="3" y="3" fill="none" stroke="#222938" stroke-width="2" rx="14"/>
+
+  <!-- Tiêu đề -->
+  <g transform="translate(640, 45)" text-anchor="middle">
+    <rect x="-480" y="-25" width="960" height="50" rx="25" fill="#141926" stroke="rgba(240, 185, 11, 0.4)" stroke-width="1.8"/>
+    <text y="7" font-size="19" font-weight="800" fill="#F0B90B" letter-spacing="0.5">
+      SỰ KẾT HỢP HOÀN HẢO: NẾN TRẦN &amp; KHỐI LƯỢNG VSA (NỖ LỰC vs KẾT QUẢ)
+    </text>
+  </g>
+
+  <!-- 3 Hộp Kịch Bản Nằm Ngang Rộng Rãi -->
+  <!-- Kịch bản 1 -->
+  <g transform="translate(50, 95)" filter="url(#shadow-5)">
+    <rect width="1180" height="165" rx="12" fill="#0E1A17" stroke="#089981" stroke-width="1.8"/>
+    <g transform="translate(30, 20)">
+      <!-- Mini Candle & Volume -->
+      <line x1="25" y1="10" x2="25" y2="75" stroke="#089981" stroke-width="2.5"/>
+      <rect x="15" y="18" width="20" height="48" fill="#089981" rx="1.5"/>
+      <rect x="17" y="85" width="16" height="32" fill="#089981"/>
+      <text x="25" y="128" font-size="10" fill="#089981" font-weight="800" text-anchor="middle">VOL LỚN</text>
+
+      <!-- Nội dung -->
+      <text x="65" y="24" font-size="16" font-weight="800" fill="#26E7A6">1. ĐỒNG THUẬN HOÀN HẢO: NỖ LỰC LỚN = KẾT QUẢ LỚN</text>
+      <text x="65" y="52" font-size="14" fill="#CAD4E0">• Dấu hiệu: Thân nến dài dứt khoát đi kèm Cột khối lượng tăng vọt cao vượt trội.</text>
+      <text x="65" y="78" font-size="14" fill="#CAD4E0">• Bản chất: Dòng tiền cá mập giải ngân thực chất để đẩy xu hướng đi xa. Cung - Cầu đồng lòng.</text>
+      <text x="65" y="104" font-size="14" fill="#00E5FF" font-weight="700">→ Hành động: Tự tin giữ lệnh, đi thuận theo xu hướng (Trend Following).</text>
+    </g>
+  </g>
+
+  <!-- Kịch bản 2 -->
+  <g transform="translate(50, 280)" filter="url(#shadow-5)">
+    <rect width="1180" height="175" rx="12" fill="#221216" stroke="#F23645" stroke-width="1.8"/>
+    <g transform="translate(30, 20)">
+      <!-- Mini Candle & Volume -->
+      <line x1="25" y1="8" x2="25" y2="75" stroke="#CAD4E0" stroke-width="2.5"/>
+      <rect x="15" y="32" width="20" height="18" fill="#F23645" rx="1.5"/>
+      <rect x="17" y="85" width="16" height="38" fill="#F0B90B"/>
+      <text x="25" y="132" font-size="10" fill="#F0B90B" font-weight="800" text-anchor="middle">VOL KHỦNG</text>
+
+      <!-- Nội dung -->
+      <text x="65" y="24" font-size="16" font-weight="800" fill="#FF707E">2. BẤT THƯỜNG CỰC ĐỘ: NỖ LỰC CỰC LỚN NHƯNG KẾT QUẢ NHỎ</text>
+      <text x="65" y="52" font-size="14" fill="#CAD4E0">• Dấu hiệu: Nến thân rất bé (hoặc râu nến dài ngoằng) nhưng Cột khối lượng to đột biến.</text>
+      <text x="65" y="78" font-size="14" fill="#CAD4E0">• Bản chất: Lực cản đối ứng ngầm khổng lồ đang âm thầm hấp thụ hết lực đẩy (Xả hàng hoặc Hứng hàng).</text>
+      <text x="65" y="104" font-size="14" fill="#F0B90B" font-weight="700">→ Cảnh báo: Dấu hiệu đảo chiều hoặc bẫy giá nguy hiểm. Tuyệt đối KHÔNG mua đuổi!</text>
+    </g>
+  </g>
+
+  <!-- Kịch bản 3 -->
+  <g transform="translate(50, 475)" filter="url(#shadow-5)">
+    <rect width="1180" height="165" rx="12" fill="#121824" stroke="#00E5FF" stroke-width="1.8"/>
+    <g transform="translate(30, 20)">
+      <!-- Mini Candle & Volume -->
+      <line x1="25" y1="10" x2="25" y2="75" stroke="#CAD4E0" stroke-width="2.5"/>
+      <rect x="15" y="22" width="20" height="38" fill="#089981" opacity="0.65" rx="1.5"/>
+      <rect x="17" y="100" width="16" height="15" fill="#8E9BAE" opacity="0.5"/>
+      <text x="25" y="128" font-size="10" fill="#8E9BAE" font-weight="800" text-anchor="middle">VOL TÈO</text>
+
+      <!-- Nội dung -->
+      <text x="65" y="24" font-size="16" font-weight="800" fill="#00E5FF">3. THIẾU HỤT NỖ LỰC: GIÁ TĂNG RƯỚN NHƯNG KHỐI LƯỢNG TỤT DỐC</text>
+      <text x="65" y="52" font-size="14" fill="#CAD4E0">• Dấu hiệu: Giá vẫn cố rướn lên cao nhưng Cột khối lượng teo tóp và cạn kiệt dần.</text>
+      <text x="65" y="78" font-size="14" fill="#CAD4E0">• Bản chất: Cá mập đứng ngoài cuộc; chỉ có vài nhà đầu tư nhỏ lẻ mua đuổi trong nghi ngờ.</text>
+      <text x="65" y="104" font-size="14" fill="#FF707E" font-weight="700">→ Cấm kỵ: Tuyệt đối không FOMO! Cú tăng giá không có tiền thật bảo chứng này sẽ dễ sập.</text>
+    </g>
+  </g>
+
+  <!-- Watermark -->
+  <g transform="translate(640, 690)" text-anchor="middle">
+    <text font-size="13" fill="#CAD4E0" font-weight="600">
+      Đóng dấu bản quyền: <tspan fill="#00E5FF" font-weight="800">PTvolume.com</tspan> • Chuyên Trang Naked Chart &amp; VSA Wyckoff
+    </text>
+  </g>
+</svg>
