@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0E14" /><stop offset="100%" stop-color="#141822" />
+    </linearGradient>
+    <linearGradient id="card3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A202C" /><stop offset="100%" stop-color="#10141D" />
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg3)" />
+  <rect x="80" y="35" width="240" height="28" rx="14" fill="rgba(240, 185, 11, 0.12)" stroke="rgba(240, 185, 11, 0.35)" />
+  <text x="200" y="54" fill="#F0B90B" font-family="'Inter', sans-serif" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1.2">PHƯƠNG PHÁP WYCKOFF • BÀI 3</text>
+  <text x="80" y="95" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="24" font-weight="800">Cơ Chế Action &ndash; Test &amp; Độ Biến Động Chặt Chẽ vs Lỏng Lẻo</text>
+  <text x="80" y="120" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="14">Nhận diện điểm cạn kiệt thanh khoản trước cú bùng nổ và cách đo lường sức khỏe nền giá</text>
+
+  <!-- Left: Action - Test Mechanics -->
+  <g transform="translate(80, 150)">
+    <rect width="530" height="490" rx="12" fill="url(#card3)" stroke="rgba(0, 229, 255, 0.3)" stroke-width="1.5" />
+    <rect width="530" height="50" rx="12" fill="rgba(0, 229, 255, 0.08)" />
+    <text x="24" y="32" fill="#00E5FF" font-family="'Inter', sans-serif" font-size="16" font-weight="700">1. Cơ Chế Action &ndash; Test (Hành Động &amp; Thử Nghiệm)</text>
+    
+    <g transform="translate(24, 75)">
+      <rect width="482" height="110" rx="8" fill="#141822" stroke="#222938" />
+      <text x="18" y="28" fill="#26E7A6" font-family="'Inter', sans-serif" font-size="14.5" font-weight="700">Hành Động Ban Đầu (Action):</text>
+      <text x="18" y="54" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="13.5">• Là cú đẩy giá bứt phá (Breakout) hoặc cú rũ bỏ (Spring/Shakeout).</text>
+      <text x="18" y="78" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="13.5">• Thể hiện ý chí tấn công mạnh mẽ đầu tiên của Smart Money.</text>
+      <text x="18" y="100" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="12.5">• Khối lượng thường tăng vọt ở phiên Action.</text>
+    </g>
+
+    <g transform="translate(24, 205)">
+      <rect width="482" height="130" rx="8" fill="#141822" stroke="#222938" />
+      <text x="18" y="28" fill="#F0B90B" font-family="'Inter', sans-serif" font-size="14.5" font-weight="700">Phiên Thử Nghiệm (Test) &ndash; Điểm Vào Lệnh Vàng:</text>
+      <text x="18" y="54" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="13.5">• Cá mập cho giá quay lại kiểm tra xem còn người muốn bán/mua không.</text>
+      <text x="18" y="78" fill="#26E7A6" font-family="'Inter', sans-serif" font-size="13.5" font-weight="600">• Test Thành Công: Thân nến co hẹp lại, Volume cạn kiệt rõ rệt.</text>
+      <text x="18" y="102" fill="#FF707E" font-family="'Inter', sans-serif" font-size="13.5">• Test Thất Bại: Giá quay đầu xuyên thủng hỗ trợ với Volume lớn.</text>
+      <text x="18" y="122" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="12.5">• Luôn mua tại phiên Test thành công để có Stop Loss ngắn nhất!</text>
+    </g>
+
+    <g transform="translate(24, 355)">
+      <rect width="482" height="110" rx="8" fill="rgba(0, 229, 255, 0.05)" stroke="rgba(0, 229, 255, 0.25)" />
+      <text x="18" y="28" fill="#00E5FF" font-family="'Inter', sans-serif" font-size="13.5" font-weight="700">🎯 Quy Tắc Cốt Lõi Của Wyckoff:</text>
+      <text x="18" y="55" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">"Không có một đợt tăng giá lành mạnh nào bắt đầu mà không có</text>
+      <text x="18" y="77" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">một hoặc nhiều phiên Test kiểm định lại nguồn cung trước đó."</text>
+    </g>
+  </g>
+
+  <!-- Right: Tight vs Loose Volatility -->
+  <g transform="translate(670, 150)">
+    <rect width="530" height="490" rx="12" fill="url(#card3)" stroke="rgba(240, 185, 11, 0.3)" stroke-width="1.5" />
+    <rect width="530" height="50" rx="12" fill="rgba(240, 185, 11, 0.08)" />
+    <text x="24" y="32" fill="#F0B90B" font-family="'Inter', sans-serif" font-size="16" font-weight="700">2. Độ Biến Động Chặt Chẽ (Tight) vs Lỏng Lẻo (Loose)</text>
+
+    <g transform="translate(24, 75)">
+      <rect width="482" height="150" rx="8" fill="#141822" stroke="rgba(38, 231, 166, 0.35)" />
+      <text x="18" y="28" fill="#26E7A6" font-family="'Inter', sans-serif" font-size="14.5" font-weight="700">✔ Biến Động Chặt Chẽ (Tight Action) &ndash; Tích Lũy An Toàn:</text>
+      <text x="18" y="55" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13.5">• Thân nến nhỏ, biên độ dao động trong ngày co thắt dần (VCP).</text>
+      <text x="18" y="80" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13.5">• Khối lượng giao dịch suy kiệt dần ở đáy nền giá.</text>
+      <text x="18" y="105" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13.5">• Chứng minh nguồn cung đã bị cá mập khóa chặt trong két sắt.</text>
+      <text x="18" y="130" fill="#26E7A6" font-family="'Inter', sans-serif" font-size="13" font-weight="600">$ightarrow$ Đây là nền tảng vững chắc cho một siêu sóng bứt phá!</text>
+    </g>
+
+    <g transform="translate(24, 245)">
+      <rect width="482" height="150" rx="8" fill="#141822" stroke="rgba(255, 112, 126, 0.35)" />
+      <text x="18" y="28" fill="#FF707E" font-family="'Inter', sans-serif" font-size="14.5" font-weight="700">❌ Biến Động Lỏng Lẻo (Loose Action) &ndash; Rủi Ro Phân Phối:</text>
+      <text x="18" y="55" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13.5">• Giá nhảy múa hoang dã: Hôm nay tăng trần, ngày mai giảm sàn.</text>
+      <text x="18" y="80" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13.5">• Khối lượng hỗn loạn, các cột Volume to bất thường không đều.</text>
+      <text x="18" y="105" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13.5">• Tâm lý đám đông đang bị kéo đẩy dữ dội, không có bàn tay kiểm soát.</text>
+      <text x="18" y="130" fill="#FF707E" font-family="'Inter', sans-serif" font-size="13" font-weight="600">$ightarrow$ Cực kỳ rủi ro! Tuyệt đối không mở vị thế tại các nền giá lỏng lẻo.</text>
+    </g>
+
+    <g transform="translate(24, 415)">
+      <rect width="482" height="50" rx="6" fill="#141822" stroke="#222938" />
+      <text x="18" y="32" fill="#F0B90B" font-family="'Inter', sans-serif" font-size="13" font-weight="600">💡 Châm ngôn: "Chặt chẽ sinh ra lợi nhuận &ndash; Lỏng lẻo sinh ra thua lỗ."</text>
+    </g>
+  </g>
+
+  <!-- Watermark -->
+  <g transform="translate(1080, 675)">
+    <rect width="125" height="26" rx="6" fill="rgba(11, 14, 20, 0.85)" stroke="rgba(255, 255, 255, 0.15)" />
+    <text x="62" y="17" fill="#00E5FF" font-family="'Inter', sans-serif" font-size="11" font-weight="800" text-anchor="middle" letter-spacing="0.8">PTvolume.com</text>
+  </g>
+</svg>

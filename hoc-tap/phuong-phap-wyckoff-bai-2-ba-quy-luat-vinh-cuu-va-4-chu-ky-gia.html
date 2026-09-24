@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T0JM1RNTZ9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-T0JM1RNTZ9');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2: Ba Quy Luật Vĩnh Cửu Của Wyckoff & 4 Chu Kỳ Vận Động Thị Trường | PTvolume</title>
+    <meta name="description" content="Khám phá 3 quy luật vĩnh cửu của Richard Wyckoff: Cung - Cầu, Nguyên nhân - Kết quả, Nỗ lực - Kết quả cùng 4 giai đoạn chu kỳ vận động thị trường tài chính.">
+    <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-main: #0B0E14;
+            --bg-card: #141822;
+            --bg-card-hover: #1A2130;
+            --border-color: #222938;
+            --primary: #2962FF;
+            --primary-glow: rgba(41, 98, 255, 0.25);
+            --bullish: #089981;
+            --bearish: #F23645;
+            --text-main: #F0F3FA;
+            --text-muted: #8E9BAE;
+            --text-light: #CAD4E0;
+            --accent-gold: #F0B90B;
+            --accent-cyan: #00E5FF;
+            --font-editorial: 'Merriweather', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-sans);
+        }
+
+        *, body, p, div, span, h1, h2, h3, h4, h5, h6, table, td, th {
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            user-select: text !important;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.85;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 14, 20, 0.95);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 24px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 1.35rem;
+            color: #fff;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 1px solid rgba(41, 98, 255, 0.4);
+        }
+
+        .logo-text .brand {
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .logo-text .brand span {
+            color: var(--accent-cyan);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lang-switcher {
+            display: inline-flex;
+            align-items: center;
+            background: #080B10;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2px;
+            gap: 2px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 16px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active, .lang-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border-color);
+            background: transparent;
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: #fff;
+            background: rgba(41, 98, 255, 0.1);
+        }
+
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px 80px 24px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .article-header {
+            margin-bottom: 36px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 28px;
+        }
+
+        .series-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(41, 98, 255, 0.15);
+            color: var(--accent-cyan);
+            border: 1px solid rgba(41, 98, 255, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .article-title {
+            font-family: var(--font-sans);
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.35;
+            color: #FFFFFF;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .article-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+        }
+
+        .article-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .article-content {
+            font-size: 1.08rem;
+            color: var(--text-light);
+            line-height: 1.9;
+        }
+
+        .article-content p {
+            margin-bottom: 22px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-content h2 {
+            font-size: 1.55rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin: 44px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .article-content h2 i {
+            color: var(--accent-cyan);
+            font-size: 1.3rem;
+        }
+
+        .article-content h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin: 30px 0 14px 0;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 0 0 24px 28px;
+        }
+
+        .article-content li {
+            margin-bottom: 10px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-content strong {
+            color: #FFFFFF;
+            font-weight: 700;
+        }
+
+        /* WATERMARK WRAPPER */
+        .watermark-box {
+            position: relative;
+            margin: 36px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #080B10;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+        }
+
+        .watermark-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .watermark-stamp {
+            position: absolute;
+            bottom: 12px;
+            right: 14px;
+            background: rgba(11, 14, 20, 0.75);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.75);
+            letter-spacing: 0.8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .watermark-caption {
+            padding: 10px 16px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background: #10141E;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            font-style: italic;
+        }
+
+        /* CALLOUT BOXES */
+        .callout {
+            background: var(--bg-card);
+            border-left: 4px solid var(--primary);
+            padding: 20px 24px;
+            border-radius: 0 8px 8px 0;
+            margin: 28px 0;
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .callout-title {
+            font-weight: 800;
+            color: var(--accent-cyan);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.05rem;
+        }
+
+        .callout-warning {
+            border-left-color: var(--bearish);
+            background: rgba(242, 54, 69, 0.06);
+        }
+
+        .callout-warning .callout-title {
+            color: #FF6B78;
+        }
+
+        .callout-success {
+            border-left-color: var(--bullish);
+            background: rgba(8, 153, 129, 0.06);
+        }
+
+        .callout-success .callout-title {
+            color: #26E7A6;
+        }
+
+        .callout-gold {
+            border-left-color: var(--accent-gold);
+            background: rgba(240, 185, 11, 0.06);
+        }
+
+        .callout-gold .callout-title {
+            color: var(--accent-gold);
+        }
+
+        /* TABLES */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 28px 0;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background: #182030;
+            color: var(--accent-cyan);
+            padding: 14px 18px;
+            font-weight: 700;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        td {
+            padding: 12px 18px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-light);
+            background: var(--bg-card);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: var(--bg-card-hover);
+        }
+
+        /* CHECKLIST BOX */
+        .checklist-card {
+            background: #111622;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+
+        .checklist-card h4 {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 0.96rem;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .checklist-item i {
+            color: var(--bullish);
+            margin-top: 5px;
+            font-size: 1rem;
+        }
+
+        /* TAKEAWAY BOX */
+        .takeaway-card {
+            background: linear-gradient(135deg, rgba(41, 98, 255, 0.1), rgba(0, 229, 255, 0.05));
+            border: 1px solid rgba(41, 98, 255, 0.35);
+            border-radius: 12px;
+            padding: 28px;
+            margin: 40px 0;
+        }
+
+        .takeaway-card h3 {
+            margin-top: 0;
+            color: #FFFFFF;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* QUOTE */
+        blockquote {
+            border-left: 4px solid var(--accent-gold);
+            padding: 18px 24px;
+            margin: 32px 0;
+            background: #141A26;
+            border-radius: 0 8px 8px 0;
+            font-family: var(--font-editorial);
+            font-style: italic;
+            color: #FFFFFF;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        /* NAV LESSON GRID */
+        .nav-lesson-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 48px 0;
+        }
+
+        @media (max-width: 640px) {
+            .nav-lesson-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .nav-lesson-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .nav-lesson-card:hover {
+            border-color: var(--primary);
+            background: var(--bg-card-hover);
+            transform: translateY(-2px);
+        }
+
+        /* COMMENTS SECTION */
+        .comments-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid var(--border-color);
+        }
+
+        .comments-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+
+        .comments-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .comment-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.88rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-light);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            background: #080B10;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: #FFFFFF;
+            font-size: 0.95rem;
+            transition: border-color 0.2s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .comment-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .comment-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 18px 20px;
+        }
+
+        .comment-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .comment-author {
+            font-weight: 700;
+            color: var(--accent-cyan);
+            font-size: 0.92rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .comment-date {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .comment-text {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid var(--border-color);
+            background: #080B10;
+            padding: 40px 24px;
+            text-align: center;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-cyan);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo.jpg" alt="PTvolume Logo">
+                <div class="logo-text">
+                    <div class="brand">PT<span>volume</span></div>
+                </div>
+            </a>
+            <div class="nav-right">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" id="btn-lang-vi" onclick="setLanguage('vi')">VI</button>
+                    <button class="lang-btn" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+                </div>
+                <a href="../index.html#hoc-tap" class="btn btn-outline">
+                    <i class="fa-solid fa-graduation-cap"></i> Khóa Học
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN ARTICLE -->
+    <main class="article-container">
+        <!-- BREADCRUMB -->
+        <nav class="breadcrumb">
+            <a href="../index.html"><i class="fa-solid fa-house"></i> Trang chủ</a>
+            <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+            <a href="../index.html#hoc-tap">Học tập</a>
+            <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+            <span>Phương pháp Wyckoff</span>
+            <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+            <span style="color: var(--accent-cyan);">Bài 2</span>
+        </nav>
+
+        <article>
+            <div class="article-header">
+                <div class="series-badge">
+                    <i class="fa-solid fa-book-bookmark"></i> Giáo Trình Wyckoff Chuyên Sâu &bull; Bài 2/10
+                </div>
+                <h1 class="article-title">Bài 2: Ba Quy Luật Vĩnh Cửu Của Wyckoff & 4 Chu Kỳ Vận Động Thị Trường</h1>
+                <p class="article-subtitle">Giáo trình Phương pháp Wyckoff Bài 2 (Theo tài liệu Hoàng Gia Vị): Bóc tách Quy luật Cung Cầu, Nguyên nhân - Kết quả, Nỗ lực - Kết quả và cơ chế vận hành 4 chu kỳ kinh điển.</p>
+                <div class="article-meta">
+                    <span><i class="fa-solid fa-user-shield"></i> Ban Biên Tập Kỹ Thuật PTvolume</span>
+                    <span><i class="fa-solid fa-calendar-check"></i> Cập nhật: 12/09/2026</span>
+                    <span><i class="fa-solid fa-clock"></i> 20-25 phút đọc chuyên sâu</span>
+                    <span><i class="fa-solid fa-file-pdf"></i> Theo tài liệu Hoàng Gia Vị</span>
+                </div>
+            </div>
+
+            <!-- CONTENT BODY -->
+            <div class="article-content">
+
+                <p>
+                    Trong toàn bộ di sản đồ sộ của Richard D. Wyckoff, <strong>Ba Quy Luật Vĩnh Cửu</strong> được coi là nền tảng nguyên lý chi phối 100% mọi biến động tài chính trên toàn cầu &ndash; từ cổ phiếu, trái phiếu, hàng hóa phái sinh cho đến tiền mã hóa. Mọi thanh nến, mọi mô hình giá hay chỉ báo kỹ thuật nếu không dựa trên sự vận hành của 3 quy luật này đều chỉ là những phán đoán may rủi bề nổi.
+                </p>
+
+                <h2><i class="fa-solid fa-scale-balanced"></i> 1. Quy Luật Thứ Nhất: Cung Và Cầu (Supply And Demand)</h2>
+                <p>
+                    Quy luật đầu tiên và cốt lõi nhất xác định phương hướng dịch chuyển của giá:
+                </p>
+                <ul>
+                    <li><strong>Cầu lớn hơn Cung (Demand &gt; Supply):</strong> Khi lượng người muốn mua nhiều hơn số lượng người sẵn sàng bán ở mức giá hiện tại, người mua buộc phải trả giá cao hơn để khớp lệnh. Giá sẽ tăng (Uptrend).</li>
+                    <li><strong>Cung lớn hơn Cầu (Supply &gt; Demand):</strong> Khi lượng hàng bán ra áp đảo hoàn toàn sức mua của thị trường, người bán phải hạ giá xuống để tìm người mua. Giá sẽ giảm (Downtrend).</li>
+                    <li><strong>Cung cân bằng Cầu (Supply &asymp; Demand):</strong> Khi hai bên giằng co và hấp thụ lẫn nhau mà không bên nào chiếm ưu thế vượt trội, thị trường rơi vào trạng thái đi ngang không rõ xu hướng (Trading Range / Sideway).</li>
+                </ul>
+
+                <div class="callout callout-gold">
+                    <div class="callout-title"><i class="fa-solid fa-lightbulb"></i> Bài học thực chiến của Wyckoff</div>
+                    <p style="margin-bottom:0;">
+                        Trader không phân tích biểu đồ để tìm xem giá "rẻ" hay "đắt", mà phân tích để tìm xem <strong>ai đang kiểm soát cán cân cung cầu</strong>. Nếu bạn nhận thấy phe mua đang kiểm soát và nguồn cung trôi nổi ngoài thị trường đã bị Smart Money gom sạch, giá chắc chắn sẽ bùng nổ theo con đường có ít lực cản nhất (Path of Least Resistance).
+                    </p>
+                </div>
+
+                <h2><i class="fa-solid fa-hourglass-half"></i> 2. Quy Luật Thứ Hai: Nguyên Nhân Và Kết Quả (Cause And Effect)</h2>
+                <p>
+                    Quy luật này phát biểu rằng: <em>Để có một Kết quả (đợt tăng giá hay giảm giá lớn), trước tiên phải có một Nguyên nhân tương xứng được xây dựng từ trước</em>. Trên thị trường tài chính, Nguyên nhân được đo bằng <strong>thời gian và khối lượng tích lũy hoặc phân phối</strong> bên trong vùng giá đi ngang (Trading Range). Kết quả chính là <strong>khoảng cách mà giá dịch chuyển</strong> sau khi bứt phá khỏi vùng tích lũy/phân phối đó.
+                </p>
+                <ul>
+                    <li>Một vùng tích lũy kéo dài 6 tháng sẽ tạo ra một sóng tăng lớn hơn nhiều so với một vùng tích lũy chỉ vỏn vẹn 2 tuần.</li>
+                    <li>Richard Wyckoff sử dụng <strong>Biểu đồ Điểm &amp; Hình (Point &amp; Figure - P&amp;F Chart)</strong> để đếm số cột tích lũy theo chiều ngang, từ đó chiếu ra mục tiêu giá (Price Target) theo chiều dọc với độ chính xác kinh ngạc.</li>
+                    <li>Nếu bạn thấy một cổ phiếu chỉ tích lũy vài ba phiên nhưng bạn lại kỳ vọng nó nhân 3, nhân 5 tài khoản thì đó là ảo tưởng vi phạm nghiêm trọng quy luật Nguyên nhân &ndash; Kết quả.</li>
+                </ul>
+
+                <h2><i class="fa-solid fa-bolt"></i> 3. Quy Luật Thứ Ba: Nỗ Lực So Với Kết Quả (Effort vs. Result)</h2>
+                <p>
+                    Đây là quy luật vi mô tối quan trọng giúp khai sinh ra trường phái <strong>Volume Spread Analysis (VSA)</strong>:
+                </p>
+                <ul>
+                    <li><strong>Nỗ lực (Effort)</strong> được phản ánh qua <strong>Khối lượng giao dịch (Volume)</strong> &ndash; tức số lượng tiền và hợp đồng được tung vào cuộc chơi.</li>
+                    <li><strong>Kết quả (Result)</strong> được phản ánh qua <strong>Độ rộng thanh nến (Spread)</strong> &ndash; tức biên độ dịch chuyển của giá từ mức thấp nhất đến cao nhất và vị trí giá đóng cửa.</li>
+                </ul>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Trạng Thái</th>
+                                <th>Khối Lượng (Nỗ Lực)</th>
+                                <th>Biên Độ Nến (Kết Quả)</th>
+                                <th>Bản Chất Kỹ Thuật &amp; Hành Động Của Smart Money</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong style="color:var(--bullish);">Đồng Thuận Tăng (Harmony)</strong></td>
+                                <td>Volume Cao đột biến</td>
+                                <td>Nến thân dài tăng mạnh, đóng cửa cao nhất</td>
+                                <td>Nỗ lực đẩy giá bỏ ra rất lớn và kết quả đạt được tương xứng. Dòng tiền lớn mua quyết liệt, xu hướng tăng vững chắc.</td>
+                            </tr>
+                            <tr>
+                                <td><strong style="color:var(--bearish);">Phân Kỳ Đỉnh (Bất Thường)</strong></td>
+                                <td>Volume Khủng / Kỷ lục</td>
+                                <td>Nến thân ngắn, có râu trên dài hoặc đi ngang</td>
+                                <td>Bỏ ra nỗ lực đẩy giá cực đại nhưng giá không thể tăng được. Chứng tỏ có một lượng cung bán tháo khổng lồ từ Smart Money đang chặn bán phía trên!</td>
+                            </tr>
+                            <tr>
+                                <td><strong style="color:var(--bullish);">Hấp Thụ Đáy (Stopping Volume)</strong></td>
+                                <td>Volume Cực Đại</td>
+                                <td>Nến giảm nhưng rút chân, giá đóng cửa trên giữa</td>
+                                <td>Nỗ lực bán tháo hoảng loạn của nhỏ lẻ bị dòng tiền lớn nuốt trọn hoàn toàn. Dấu hiệu Smart Money bắt đầu gom hàng chặn đứng đà rơi.</td>
+                            </tr>
+                            <tr>
+                                <td><strong style="color:var(--accent-gold);">Cạn Cung / Cạn Cầu</strong></td>
+                                <td>Volume Rất Thấp (Teo tóp)</td>
+                                <td>Nến thân hẹp, giá biến động chậm</td>
+                                <td>Thị trường không còn lực cản. Nếu xuất hiện sau nhịp chỉnh trong Uptrend, đây là nến Test cạn cung (No Supply) báo hiệu giá sắp bứt phá.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2><i class="fa-solid fa-arrows-spin"></i> 4. Bốn Chu Kỳ Vận Động Vĩnh Hằng Của Thị Trường</h2>
+                <p>
+                    Thị trường tài chính không bao giờ di chuyển theo đường thẳng ngẫu nhiên mà luân chuyển nhịp nhàng qua 4 chu kỳ kinh điển lặp đi lặp lại suốt 100 năm qua:
+                </p>
+                <ol>
+                    <li><strong>Giai đoạn 1 - Tích Lũy (Accumulation):</strong> Diễn ra sau một chu kỳ giảm dài hạn. Smart Money âm thầm gom mua toàn bộ lượng cổ phiếu giá rẻ từ những nhà đầu tư chán nản, kiệt quệ và bán tháo. Giá dao động hẹp trong một biên độ chán ngắt.</li>
+                    <li><strong>Giai đoạn 2 - Tăng Giá (Markup / Uptrend):</strong> Khi nguồn cung trôi nổi trên thị trường đã được Smart Money gom gần hết vào kho, họ bắt đầu kích hoạt đẩy giá vượt qua kháng cự. Cổ phiếu bước vào xu hướng tăng mạnh mẽ với các đáy đỉnh nâng dần.</li>
+                    <li><strong>Giai đoạn 3 - Phân Phối (Distribution):</strong> Sau khi giá đã tăng bằng lần, Smart Money bắt đầu kích hoạt truyền thông tốt, tin tức lợi nhuận kỷ lục để kích thích lòng tham của đám đông nhỏ lẻ (Fomo). Họ âm thầm bán dần toàn bộ lượng hàng giá vốn thấp cho đám đông ở vùng giá cao chót vót.</li>
+                    <li><strong>Giai đoạn 4 - Giảm Giá (Markdown / Downtrend):</strong> Khi lượng hàng đã được sang tay hoàn tất, Smart Money rút củi đáy nồi. Thị trường mất lực đỡ dòng tiền lớn và rơi tự do trong sự tuyệt vọng của những người đu đỉnh.</li>
+                </ol>
+
+                <div class="checklist-card">
+                    <h4><i class="fa-solid fa-circle-check"></i> Bộ Nguyên Tắc Kiểm Tra 3 Quy Luật &amp; 4 Chu Kỳ</h4>
+                    <div class="checklist-item">
+                        <i class="fa-solid fa-check"></i>
+                        <div><strong>Luôn tự hỏi:</strong> Cổ phiếu đang nằm ở chu kỳ nào trong 4 chu kỳ? Tuyệt đối không bao giờ mua cổ phiếu đang nằm ở giai đoạn Markdown (Đè giá).</div>
+                    </div>
+                    <div class="checklist-item">
+                        <i class="fa-solid fa-check"></i>
+                        <div><strong>Đối chiếu Nỗ lực &amp; Kết quả:</strong> Thấy Volume đột biến mà giá không bứt phá được qua cản &rarr; Hãy thận trọng tột độ với bẫy phân phối âm thầm.</div>
+                    </div>
+                    <div class="checklist-item">
+                        <i class="fa-solid fa-check"></i>
+                        <div><strong>Kiên nhẫn với Nguyên nhân:</strong> Đừng vội vàng nhảy vào khi vùng nền tích lũy còn quá ngắn và chưa rũ bỏ cạn kiệt lượng cung lỏng lẻo.</div>
+                    </div>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3><i class="fa-solid fa-brain"></i> Đúc Kết Cốt Lõi Bài 2</h3>
+                    <p style="margin-bottom:0;">
+                        Ba quy luật của Richard Wyckoff không phải là lý thuyết trừu tượng mà là chiếc kính hiển vi xoi thấu hành vi thực tế của dòng tiền lớn trên từng thanh nến. Hãy rèn luyện thói quen luôn so sánh <strong>Khối lượng (Nỗ lực)</strong> với <strong>Biên độ nến (Kết quả)</strong> để không bao giờ bị đánh lừa bởi những cây nến tăng ảo giả tạo ở vùng đỉnh.
+                    </p>
+                </div>
+
+
+                <!-- ILLUSTRATIVE GRAPHIC -->
+                <div class="watermark-box">
+                    <img src="../assets/images/wyckoff_3_laws_effort_result.svg" alt="Ba Quy Luật Vĩnh Cửu Của Wyckoff & 4 Chu Kỳ Vận Động Thị Trường">
+                    <div class="watermark-stamp">
+                        <i class="fa-solid fa-chart-line"></i> PTvolume.com
+                    </div>
+                    <div class="watermark-caption">
+                        Hình 2.1: Sơ đồ 3 quy luật vĩnh cửu của Richard Wyckoff &amp; 4 Chu kỳ vận động thị trường.
+                    </div>
+                </div>
+
+                <!-- QUOTE BOX -->
+                <blockquote>
+                    "Thị trường chứng khoán không bao giờ biến động ngẫu nhiên. Nó là kết quả trực tiếp của các định luật vật lý tài chính: Cung - Cầu, Nguyên nhân - Kết quả, và mối tương quan giữa Nỗ lực và Thành quả."
+                    <br><strong style="color:var(--accent-gold); font-style:normal; margin-top:8px; display:inline-block;">&ndash; Richard D. Wyckoff</strong>
+                </blockquote>
+            </div>
+
+            <!-- NEXT / PREV LESSON NAVIGATION -->
+            <div class="nav-lesson-grid">
+                
+                <a href="phuong-phap-wyckoff-bai-1-triet-ly-smart-money-va-2-quy-tac.html" class="nav-lesson-card">
+                    <span style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase;"><i class="fa-solid fa-arrow-left"></i> Bài Trước</span>
+                    <strong style="font-size:0.95rem; color:var(--accent-cyan); margin-top:6px;">Bài 1: Triết Lý Smart Money &amp; 2 Quy Tắc Vàng</strong>
+                </a>
+        
+                
+                <a href="phuong-phap-wyckoff-bai-3-co-che-action-test-va-bien-dong-chat-long.html" class="nav-lesson-card" style="text-align:right;">
+                    <span style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase;">Bài Kế Tiếp <i class="fa-solid fa-arrow-right"></i></span>
+                    <strong style="font-size:0.95rem; color:var(--accent-gold); margin-top:6px;">Bài 3: Cơ Chế Action &ndash; Test &amp; Biến Động Chặt/Lỏng</strong>
+                </a>
+        
+            </div>
+
+            <!-- COMMENTS SECTION -->
+            <div class="comments-section">
+                <div class="comments-header">
+                    <div class="comments-title">
+                        <i class="fa-regular fa-comments" style="color:var(--accent-cyan);"></i> Thảo Luận Kỹ Thuật Cùng Cộng Đồng (<span id="commentCount">3</span>)
+                    </div>
+                </div>
+
+                <div class="comment-box">
+                    <form id="commentForm" onsubmit="addComment(event)">
+                        <div class="form-group">
+                            <label class="form-label" for="commentName"><i class="fa-solid fa-user"></i> Tên của bạn / Biệt danh Trader</label>
+                            <input type="text" id="commentName" class="form-control" placeholder="VD: Quốc Huy - Wyckoffian" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="commentContent"><i class="fa-solid fa-comment-dots"></i> Góc nhìn kỹ thuật hoặc câu hỏi thực chiến của bạn</label>
+                            <textarea id="commentContent" class="form-control" rows="3" placeholder="Chia sẻ kinh nghiệm quan sát hành vi giá hoặc đặt câu hỏi về bài học này..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="background:var(--accent-gold); color:#000; font-weight:700;">
+                            <i class="fa-solid fa-paper-plane"></i> Gửi Bình Luận Ngay
+                        </button>
+                    </form>
+                </div>
+
+                <div class="comment-list" id="commentList">
+
+                    <div class="comment-item">
+                        <div class="comment-top">
+                            <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Trần Đức Trọng (NĐT Phái Sinh)</span>
+                            <span class="comment-date">12/09/2026 15:40:12</span>
+                        </div>
+                        <div class="comment-text">Quy luật Nỗ lực vs Kết quả cực kỳ nhạy bén trong biểu đồ khung M15 và H1. Rất nhiều lần thấy nỗ lực volume gấp 3 trung bình nhưng cây nến thân ngắn cũn có râu trên, sau đó là giá rơi thẳng đứng. Đó chính là Smart Money xả hàng chặn đứng đà tăng.</div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="comment-top">
+                            <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Hoàng Nam (Trader Chuyên Nghiệp)</span>
+                            <span class="comment-date">12/09/2026 16:15:30</span>
+                        </div>
+                        <div class="comment-text">Đọc phần Nguyên nhân và Kết quả mới thấy sự nóng vội của đa số anh em F0. Nền tích lũy mới được 2 tuần mà cứ đòi x2, x3 tài khoản. Khi nguyên nhân chưa đủ lớn thì kết quả không thể nào kéo dài được.</div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="comment-top">
+                            <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Bảo Ngọc (Phân Tích Cổ Phiếu)</span>
+                            <span class="comment-date">12/09/2026 16:45:00</span>
+                        </div>
+                        <div class="comment-text">Bảng đối chiếu nỗ lực và kết quả rất chi tiết và trực quan. Mình đã in bảng này dán ngay trước bàn giao dịch để nhắc nhở bản thân không đu đỉnh khi thấy bất thường phân kỳ nỗ lực.</div>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-links">
+            <a href="../pages/about.html">Về PTvolume</a>
+            <a href="../pages/contact.html">Liên Hệ</a>
+            <a href="../pages/terms.html">Điều Khoản</a>
+            <a href="../pages/privacy.html">Bảo Mật</a>
+            <a href="../pages/disclaimer.html">Cảnh Báo Rủi Ro</a>
+        </div>
+        <p>© 2026 PTvolume.com. Toàn bộ bản quyền được bảo lưu. Naked Chart &bull; VSA &bull; Phương Pháp Wyckoff.</p>
+    </footer>
+
+    <!-- TRANSLATE & COMMENTS SCRIPT -->
+    <div id="google_translate_element" style="display:none;"></div>
+    <script>
+        const POST_SLUG = 'phuong-phap-wyckoff-bai-2-ba-quy-luat-vinh-cuu-va-4-chu-ky-gia';
+
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'vi',
+                includedLanguages: 'en,vi',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function setLanguage(lang) {
+            localStorage.setItem('ptvolume_lang', lang);
+            updateLangButtons(lang);
+            document.cookie = "googtrans=/vi/" + lang + "; path=/;";
+            if (window.location.hostname && window.location.hostname !== '') {
+                document.cookie = "googtrans=/vi/" + lang + "; path=/; domain=" + window.location.hostname;
+            }
+            const select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = lang;
+                select.dispatchEvent(new Event('change'));
+            } else {
+                window.location.reload();
+            }
+        }
+
+        function updateLangButtons(lang) {
+            const btnVi = document.getElementById('btn-lang-vi');
+            const btnEn = document.getElementById('btn-lang-en');
+            if (btnVi && btnEn) {
+                if (lang === 'en') {
+                    btnEn.classList.add('active');
+                    btnVi.classList.remove('active');
+                } else {
+                    btnVi.classList.add('active');
+                    btnEn.classList.remove('active');
+                }
+            }
+        }
+
+        function applyStoredLanguage() {
+            const currentLang = localStorage.getItem('ptvolume_lang') || 'vi';
+            updateLangButtons(currentLang);
+            if (currentLang !== 'vi') {
+                const checkCombo = setInterval(() => {
+                    const select = document.querySelector('.goog-te-combo');
+                    if (select) {
+                        select.value = currentLang;
+                        select.dispatchEvent(new Event('change'));
+                        clearInterval(checkCombo);
+                    }
+                }, 200);
+                setTimeout(() => clearInterval(checkCombo), 5000);
+            }
+        }
+
+        function loadSavedComments() {
+            const saved = JSON.parse(localStorage.getItem('ptvolume_comments_' + POST_SLUG) || '[]');
+            const commentList = document.getElementById("commentList");
+            const countElem = document.getElementById("commentCount");
+            if (countElem) {
+                countElem.innerText = 3 + saved.length;
+            }
+            saved.forEach(c => {
+                const item = document.createElement("div");
+                item.className = "comment-item";
+                item.innerHTML = `
+                    <div class="comment-top">
+                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> ${escapeHtml(c.name)}</span>
+                        <span class="comment-date">${c.date}</span>
+                    </div>
+                    <div class="comment-text">${escapeHtml(c.content)}</div>
+                `;
+                commentList.prepend(item);
+            });
+        }
+
+        function addComment(e) {
+            e.preventDefault();
+            const nameInput = document.getElementById("commentName");
+            const contentInput = document.getElementById("commentContent");
+            const name = nameInput.value.trim();
+            const content = contentInput.value.trim();
+            if (!name || !content) return;
+
+            const now = new Date();
+            const timeString = `${String(now.getDate()).padStart(2, '0')}/${String(now.getMonth() + 1).padStart(2, '0')}/${now.getFullYear()} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
+
+            const commentList = document.getElementById("commentList");
+            const newComment = document.createElement("div");
+            newComment.className = "comment-item";
+            newComment.innerHTML = `
+                <div class="comment-top">
+                    <span class="comment-author"><i class="fa-solid fa-circle-user"></i> ${escapeHtml(name)}</span>
+                    <span class="comment-date">${timeString}</span>
+                </div>
+                <div class="comment-text">${escapeHtml(content)}</div>
+            `;
+            commentList.prepend(newComment);
+
+            const countElem = document.getElementById("commentCount");
+            if (countElem) countElem.innerText = parseInt(countElem.innerText || 0) + 1;
+
+            const saved = JSON.parse(localStorage.getItem('ptvolume_comments_' + POST_SLUG) || '[]');
+            saved.push({ name, content, date: timeString });
+            localStorage.setItem('ptvolume_comments_' + POST_SLUG, JSON.stringify(saved));
+
+            nameInput.value = "";
+            contentInput.value = "";
+            alert("Bình luận của bạn đã được đăng thành công!");
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            applyStoredLanguage();
+            loadSavedComments();
+        });
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>

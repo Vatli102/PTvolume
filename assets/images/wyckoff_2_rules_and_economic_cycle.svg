@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0E14" />
+      <stop offset="100%" stop-color="#141822" />
+    </linearGradient>
+    <linearGradient id="cardGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A202C" />
+      <stop offset="100%" stop-color="#10141D" />
+    </linearGradient>
+    <filter id="shadow2" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity="0.6" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="720" fill="url(#bgGrad2)" />
+
+  <!-- Grid Lines -->
+  <g stroke="#1F2937" stroke-width="1" stroke-opacity="0.4">
+    <line x1="80" y1="120" x2="1200" y2="120" />
+    <line x1="80" y1="260" x2="1200" y2="260" />
+    <line x1="80" y1="400" x2="1200" y2="400" />
+    <line x1="80" y1="540" x2="1200" y2="540" />
+  </g>
+
+  <!-- Header -->
+  <rect x="80" y="35" width="230" height="28" rx="14" fill="rgba(240, 185, 11, 0.12)" stroke="rgba(240, 185, 11, 0.35)" />
+  <text x="195" y="54" fill="#F0B90B" font-family="'Inter', sans-serif" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1.2">HAI QUY TẮC TỐI CAO</text>
+  
+  <text x="80" y="95" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="24" font-weight="800">2 Quy Tắc Cốt Lõi &amp; Cơ Chế Chiết Khấu Chu Kỳ Kinh Tế</text>
+  <text x="80" y="120" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="14">Tại sao thị trường luôn đi trước tin tức vĩ mô 6 &ndash; 9 tháng và bí quyết so sánh bối cảnh</text>
+
+  <!-- Left Card: Rule 1 & Rule 2 -->
+  <g transform="translate(80, 145)" filter="url(#shadow2)">
+    <rect width="530" height="495" rx="12" fill="url(#cardGrad2)" stroke="rgba(0, 229, 255, 0.3)" stroke-width="1.5" />
+    <rect x="0" y="0" width="530" height="52" rx="12" fill="rgba(0, 229, 255, 0.08)" />
+    
+    <circle cx="35" cy="26" r="14" fill="rgba(0, 229, 255, 0.2)" />
+    <text x="35" y="31" fill="#00E5FF" font-family="'Inter', sans-serif" font-size="14" font-weight="800" text-anchor="middle">A</text>
+    <text x="60" y="32" fill="#00E5FF" font-family="'Inter', sans-serif" font-size="16" font-weight="700">Hai Quy Tắc Bất Biến Của Phương Pháp Wyckoff</text>
+
+    <!-- Rule 1 Box -->
+    <g transform="translate(24, 75)">
+      <rect width="482" height="175" rx="8" fill="#141822" stroke="rgba(0, 229, 255, 0.25)" />
+      <text x="18" y="28" fill="#00E5FF" font-family="'Inter', sans-serif" font-size="15" font-weight="700">Quy Tắc 1: Không Có Mẫu Hình Lặp Lại 100%</text>
+      <text x="18" y="55" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="13.5">• Thị trường là tổng hòa tâm lý của hàng triệu con người.</text>
+      <text x="18" y="78" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="13.5">• Bạn không thể tìm thấy hai mô hình giá giống hệt nhau từng milimet.</text>
+      <text x="18" y="104" fill="#F0B90B" font-family="'Inter', sans-serif" font-size="13.5" font-weight="600">Tuy nhiên: Các hành vi tương tự luôn tái diễn!</text>
+      <text x="18" y="128" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="13">Bởi vì bản chất lòng tham và nỗi sợ hãi của loài người qua hơn một thế kỷ</text>
+      <text x="18" y="148" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="13">vẫn hoàn toàn nguyên vẹn trên từng bước đi của giá.</text>
+    </g>
+
+    <!-- Rule 2 Box -->
+    <g transform="translate(24, 270)">
+      <rect width="482" height="195" rx="8" fill="#141822" stroke="rgba(240, 185, 11, 0.25)" />
+      <text x="18" y="28" fill="#F0B90B" font-family="'Inter', sans-serif" font-size="15" font-weight="700">Quy Tắc 2: Hành Vi Hiện Tại Phải So Với Quá Khứ</text>
+      <text x="18" y="55" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="13.5">• Một cây nến đơn lẻ hôm nay hoàn toàn không mang nhiều ý nghĩa.</text>
+      <text x="18" y="78" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="13.5">• Ý nghĩa của nó chỉ xuất hiện khi được đặt vào BỐI CẢNH:</text>
+      <text x="32" y="104" fill="#26E7A6" font-family="'Inter', sans-serif" font-size="13">+ So với cây nến hôm qua (Spread mở rộng hay thu hẹp?)</text>
+      <text x="32" y="126" fill="#26E7A6" font-family="'Inter', sans-serif" font-size="13">+ So với tuần trước (Khối lượng cao hơn hay thấp hơn?)</text>
+      <text x="32" y="148" fill="#26E7A6" font-family="'Inter', sans-serif" font-size="13">+ So với tháng trước (Đang nằm tại đỉnh cản hay đáy hỗ trợ?)</text>
+      <text x="18" y="174" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="13">Bối cảnh quyết định tất cả &ndash; Đừng bao giờ phán đoán tách rời!</text>
+    </g>
+  </g>
+
+  <!-- Right Card: Economic vs Stock Market Cycle -->
+  <g transform="translate(670, 145)" filter="url(#shadow2)">
+    <rect width="530" height="495" rx="12" fill="url(#cardGrad2)" stroke="rgba(38, 231, 166, 0.3)" stroke-width="1.5" />
+    <rect x="0" y="0" width="530" height="52" rx="12" fill="rgba(38, 231, 166, 0.08)" />
+    
+    <circle cx="35" cy="26" r="14" fill="rgba(38, 231, 166, 0.2)" />
+    <text x="35" y="31" fill="#26E7A6" font-family="'Inter', sans-serif" font-size="14" font-weight="800" text-anchor="middle">B</text>
+    <text x="60" y="32" fill="#26E7A6" font-family="'Inter', sans-serif" font-size="16" font-weight="700">Cơ Chế Chiết Khấu: Đi Trước Kinh Tế 6 &ndash; 9 Tháng</text>
+
+    <!-- Cycle Diagram Card -->
+    <g transform="translate(24, 75)">
+      <rect width="482" height="230" rx="8" fill="#141822" stroke="#222938" />
+      
+      <!-- Timeline items -->
+      <g transform="translate(18, 18)">
+        <circle cx="12" cy="12" r="10" fill="rgba(38, 231, 166, 0.2)" stroke="#26E7A6" />
+        <text x="12" y="16" fill="#26E7A6" font-size="11" font-weight="700" text-anchor="middle">1</text>
+        <text x="34" y="16" fill="#26E7A6" font-size="14" font-weight="700">Đáy Thị Trường (Tích Lũy Bắt Đầu)</text>
+        <text x="34" y="38" fill="#CBD5E1" font-size="13">Tin tức kinh tế đang tồi tệ nhất, bi quan bao trùm.</text>
+        <text x="34" y="58" fill="#94A3B8" font-size="12.5">Smart Money âm thầm gom hàng; chiết khấu sâu 50% không ai dám mua.</text>
+      </g>
+
+      <line x1="30" y1="85" x2="30" y2="105" stroke="#334155" stroke-width="2" stroke-dasharray="4" />
+
+      <g transform="translate(18, 115)">
+        <circle cx="12" cy="12" r="10" fill="rgba(0, 229, 255, 0.2)" stroke="#00E5FF" />
+        <text x="12" y="16" fill="#00E5FF" font-size="11" font-weight="700" text-anchor="middle">2</text>
+        <text x="34" y="16" fill="#00E5FF" font-size="14" font-weight="700">Thị Trường Tăng Vọt (6 &ndash; 9 Tháng Trước)</text>
+        <text x="34" y="38" fill="#CBD5E1" font-size="13">Giá cổ phiếu đã tăng hơn 50% &ndash; 100% từ đáy.</text>
+        <text x="34" y="58" fill="#94A3B8" font-size="12.5">Lúc này báo chí kinh tế mới bắt đầu đưa tin suy thoái chấm dứt!</text>
+      </g>
+    </g>
+
+    <!-- Key Takeaway Box -->
+    <g transform="translate(24, 325)">
+      <rect width="482" height="145" rx="8" fill="rgba(240, 185, 11, 0.06)" stroke="rgba(240, 185, 11, 0.3)" />
+      <text x="18" y="26" fill="#F0B90B" font-family="'Inter', sans-serif" font-size="14" font-weight="700">⚠️ Nghịch Lý Báo Cáo Tài Chính &amp; Tin Tức:</text>
+      <text x="18" y="50" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="13">• Nếu bạn chờ báo cáo tài chính đẹp mới mua: Giá thường đã ở đỉnh chu kỳ.</text>
+      <text x="18" y="74" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="13">• Đỉnh thị trường luôn được tạo ra trong sự hưng phấn và tin tức tuyệt vời.</text>
+      <text x="18" y="98" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="13">• Đáy thị trường luôn được tạo ra trong sự hoảng loạn và bi quan cùng cực.</text>
+      <text x="18" y="124" fill="#00E5FF" font-family="'Inter', sans-serif" font-size="13" font-weight="600">$ightarrow$ Đọc biểu đồ nến &amp; khối lượng giúp bạn đi trước tin tức truyền thông!</text>
+    </g>
+  </g>
+
+  <!-- Watermark PTvolume.com -->
+  <g transform="translate(1080, 675)">
+    <rect width="125" height="26" rx="6" fill="rgba(11, 14, 20, 0.85)" stroke="rgba(255, 255, 255, 0.15)" />
+    <text x="62" y="17" fill="#00E5FF" font-family="'Inter', sans-serif" font-size="11" font-weight="800" text-anchor="middle" letter-spacing="0.8">PTvolume.com</text>
+  </g>
+</svg>

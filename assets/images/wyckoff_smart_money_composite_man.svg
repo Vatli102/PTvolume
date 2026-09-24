@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0E14" />
+      <stop offset="100%" stop-color="#141822" />
+    </linearGradient>
+    <linearGradient id="cardGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A202C" />
+      <stop offset="100%" stop-color="#10141D" />
+    </linearGradient>
+    <linearGradient id="cyanGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00E5FF" />
+      <stop offset="100%" stop-color="#2962FF" />
+    </linearGradient>
+    <linearGradient id="goldGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F0B90B" />
+      <stop offset="100%" stop-color="#FF9100" />
+    </linearGradient>
+    <filter id="shadow1" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity="0.6" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="720" fill="url(#bgGrad1)" />
+  
+  <!-- Subtle Grid Lines -->
+  <g stroke="#1F2937" stroke-width="1" stroke-opacity="0.4">
+    <line x1="80" y1="120" x2="1200" y2="120" />
+    <line x1="80" y1="260" x2="1200" y2="260" />
+    <line x1="80" y1="400" x2="1200" y2="400" />
+    <line x1="80" y1="540" x2="1200" y2="540" />
+  </g>
+
+  <!-- Header Section -->
+  <rect x="80" y="35" width="220" height="28" rx="14" fill="rgba(0, 229, 255, 0.12)" stroke="rgba(0, 229, 255, 0.35)" />
+  <text x="190" y="54" fill="#00E5FF" font-family="'Inter', sans-serif" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1.2">TRIẾT LÝ RICHARD WYCKOFF</text>
+  
+  <text x="80" y="95" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="24" font-weight="800">Bản Chất "Composite Man" &amp; Vòng Lặp Dòng Tiền Lớn</text>
+  <text x="80" y="120" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="14">Cơ chế mua gom trong âm thầm, đẩy giá, phân phối đỉnh và bẫy tâm lý đám đông</text>
+
+  <!-- Left Card: Smart Money Behavior -->
+  <g transform="translate(80, 145)" filter="url(#shadow1)">
+    <rect width="530" height="495" rx="12" fill="url(#cardGrad1)" stroke="rgba(0, 229, 255, 0.3)" stroke-width="1.5" />
+    <rect x="0" y="0" width="530" height="52" rx="12" fill="rgba(0, 229, 255, 0.08)" />
+    
+    <!-- Title -->
+    <circle cx="35" cy="26" r="14" fill="rgba(0, 229, 255, 0.2)" />
+    <text x="35" y="31" fill="#00E5FF" font-family="'Inter', sans-serif" font-size="14" font-weight="800" text-anchor="middle">1</text>
+    <text x="60" y="32" fill="#00E5FF" font-family="'Inter', sans-serif" font-size="16" font-weight="700">Hành Vi Của Smart Money (Composite Man)</text>
+
+    <!-- Sub-step 1 -->
+    <g transform="translate(24, 75)">
+      <rect width="482" height="85" rx="8" fill="#141822" stroke="#222938" />
+      <text x="18" y="26" fill="#26E7A6" font-family="'Inter', sans-serif" font-size="15" font-weight="700">Pha Tích Lũy (Mua Gom Âm Thầm)</text>
+      <text x="18" y="48" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13.5">Mua từng phần ở vùng giá rẻ khi thị trường hoảng loạn.</text>
+      <text x="18" y="68" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="13">Không để giá tăng vọt để gom được khối lượng tối đa.</text>
+    </g>
+
+    <!-- Sub-step 2 -->
+    <g transform="translate(24, 175)">
+      <rect width="482" height="85" rx="8" fill="#141822" stroke="#222938" />
+      <text x="18" y="26" fill="#00E5FF" font-family="'Inter', sans-serif" font-size="15" font-weight="700">Pha Đẩy Giá (Markup / Uptrend)</text>
+      <text x="18" y="48" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13.5">Sau khi nguồn cung cạn kiệt, đẩy giá qua ngưỡng cản.</text>
+      <text x="18" y="68" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="13">Chỉ cần một lực cầu nhỏ cũng đủ làm giá tăng rất mạnh.</text>
+    </g>
+
+    <!-- Sub-step 3 -->
+    <g transform="translate(24, 275)">
+      <rect width="482" height="85" rx="8" fill="#141822" stroke="#222938" />
+      <text x="18" y="26" fill="#F0B90B" font-family="'Inter', sans-serif" font-size="15" font-weight="700">Pha Phân Phối (Xả Hàng Cho Đám Đông)</text>
+      <text x="18" y="48" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13.5">Tạo tin tức tốt ngập tràn để kích thích F0 hưng phấn.</text>
+      <text x="18" y="68" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="13">Bán ra số lượng lớn với giá cao nhất cho người đến sau.</text>
+    </g>
+
+    <!-- Sub-step 4 -->
+    <g transform="translate(24, 375)">
+      <rect width="482" height="85" rx="8" fill="#141822" stroke="#222938" />
+      <text x="18" y="26" fill="#FF707E" font-family="'Inter', sans-serif" font-size="15" font-weight="700">Pha Đè Giá (Markdown / Downtrend)</text>
+      <text x="18" y="48" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13.5">Rút hết lệnh đỡ mua, để giá rơi tự do trong hoảng loạn.</text>
+      <text x="18" y="68" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="13">Ép nhà đầu tư nhỏ lẻ cắt lỗ trước chu kỳ gom hàng mới.</text>
+    </g>
+  </g>
+
+  <!-- Right Card: Comparison & Strategy -->
+  <g transform="translate(670, 145)" filter="url(#shadow1)">
+    <rect width="530" height="495" rx="12" fill="url(#cardGrad1)" stroke="rgba(240, 185, 11, 0.3)" stroke-width="1.5" />
+    <rect x="0" y="0" width="530" height="52" rx="12" fill="rgba(240, 185, 11, 0.08)" />
+    
+    <!-- Title -->
+    <circle cx="35" cy="26" r="14" fill="rgba(240, 185, 11, 0.2)" />
+    <text x="35" y="31" fill="#F0B90B" font-family="'Inter', sans-serif" font-size="14" font-weight="800" text-anchor="middle">2</text>
+    <text x="60" y="32" fill="#F0B90B" font-family="'Inter', sans-serif" font-size="16" font-weight="700">Đám Đông Nhỏ Lẻ vs Nhà Giao Dịch Wyckoff</text>
+
+    <!-- Content 1: Retail Trap -->
+    <g transform="translate(24, 75)">
+      <rect width="482" height="115" rx="8" fill="#141822" stroke="rgba(255, 112, 126, 0.3)" />
+      <text x="18" y="26" fill="#FF707E" font-family="'Inter', sans-serif" font-size="14.5" font-weight="700">❌ Sai Lầm Thường Gặp Của Đám Đông (F0):</text>
+      <text x="18" y="52" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13.5">• Mua đuổi khi giá đã tăng trần và tin tức tốt tràn ngập báo chí.</text>
+      <text x="18" y="76" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13.5">• Sợ hãi bán tháo đúng đáy khi thị trường hoảng loạn cực độ.</text>
+      <text x="18" y="100" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13.5">• Tin vào báo cáo tài chính trễ và các tin đồn phím lệnh ngoài chợ.</text>
+    </g>
+
+    <!-- Content 2: Wyckoff Way -->
+    <g transform="translate(24, 210)">
+      <rect width="482" height="135" rx="8" fill="#141822" stroke="rgba(38, 231, 166, 0.3)" />
+      <text x="18" y="26" fill="#26E7A6" font-family="'Inter', sans-serif" font-size="14.5" font-weight="700">✔ Nguyên Tắc Của Trader Theo Phương Pháp Wyckoff:</text>
+      <text x="18" y="52" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13.5">• Không cố đoán đáy, kiên nhẫn chờ dấu vết gom hàng của cá mập.</text>
+      <text x="18" y="76" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13.5">• Mua khi xuất hiện tín hiệu cạn cung (Spring hoặc LPS) tại hỗ trợ.</text>
+      <text x="18" y="100" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13.5">• Bán chốt lời khi thấy dấu hiệu phân phối âm thầm trên đỉnh.</text>
+      <text x="18" y="122" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13.5">• "Bơi cùng cá mập" &ndash; Giao dịch hài hòa tuyệt đối với Smart Money.</text>
+    </g>
+
+    <!-- Bottom Quote Box -->
+    <g transform="translate(24, 365)">
+      <rect width="482" height="95" rx="8" fill="rgba(0, 229, 255, 0.05)" stroke="rgba(0, 229, 255, 0.25)" />
+      <text x="18" y="28" fill="#00E5FF" font-family="'Inter', sans-serif" font-size="13.5" font-weight="700">💡 Lời Khuyên Vàng Của Richard Wyckoff:</text>
+      <text x="18" y="52" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="13" font-style="italic">"Hãy coi toàn bộ thị trường như được vận hành bởi một con người duy nhất.</text>
+      <text x="18" y="72" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="13" font-style="italic">Nhiệm vụ của bạn là giải mã động cơ của người đó và đi cùng một hướng!"</text>
+    </g>
+  </g>
+
+  <!-- Watermark PTvolume.com -->
+  <g transform="translate(1080, 675)">
+    <rect width="125" height="26" rx="6" fill="rgba(11, 14, 20, 0.85)" stroke="rgba(255, 255, 255, 0.15)" />
+    <text x="62" y="17" fill="#00E5FF" font-family="'Inter', sans-serif" font-size="11" font-weight="800" text-anchor="middle" letter-spacing="0.8">PTvolume.com</text>
+  </g>
+</svg>

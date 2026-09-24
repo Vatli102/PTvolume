@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T0JM1RNTZ9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-T0JM1RNTZ9');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 8: Bóc Tách 5 Pha Phân Phối Wyckoff & Cạm Bẫy Mua Đỉnh Upthrust / UTAD | PTvolume</title>
+    <meta name="description" content="Phân tích chuyên sâu 5 pha phân phối Wyckoff, nhận diện Buying Climax (BC), Upthrust After Distribution (UTAD), Last Point of Supply (LPSY) và các chiêu trò phân phối hàng của dòng tiền lớn.">
+    <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-main: #0B0E14;
+            --bg-card: #141822;
+            --bg-card-hover: #1A2130;
+            --border-color: #222938;
+            --primary: #2962FF;
+            --primary-glow: rgba(41, 98, 255, 0.25);
+            --bullish: #089981;
+            --bearish: #F23645;
+            --text-main: #F0F3FA;
+            --text-muted: #8E9BAE;
+            --text-light: #CAD4E0;
+            --accent-gold: #F0B90B;
+            --accent-cyan: #00E5FF;
+            --font-editorial: 'Merriweather', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-sans);
+        }
+
+        *, body, p, div, span, h1, h2, h3, h4, h5, h6, table, td, th {
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            user-select: text !important;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.85;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 14, 20, 0.95);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 24px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 1.35rem;
+            color: #fff;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 1px solid rgba(41, 98, 255, 0.4);
+        }
+
+        .logo-text .brand {
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .logo-text .brand span {
+            color: var(--accent-cyan);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lang-switcher {
+            display: inline-flex;
+            align-items: center;
+            background: #080B10;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2px;
+            gap: 2px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 16px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active, .lang-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border-color);
+            background: transparent;
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: #fff;
+            background: rgba(41, 98, 255, 0.1);
+        }
+
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px 80px 24px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .article-header {
+            margin-bottom: 36px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 28px;
+        }
+
+        .series-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(41, 98, 255, 0.15);
+            color: var(--accent-cyan);
+            border: 1px solid rgba(41, 98, 255, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .article-title {
+            font-family: var(--font-sans);
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.35;
+            color: #FFFFFF;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .article-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+        }
+
+        .article-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .article-content {
+            font-size: 1.08rem;
+            color: var(--text-light);
+            line-height: 1.9;
+        }
+
+        .article-content p {
+            margin-bottom: 22px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-content h2 {
+            font-size: 1.55rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin: 44px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .article-content h2 i {
+            color: var(--accent-cyan);
+            font-size: 1.3rem;
+        }
+
+        .article-content h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin: 30px 0 14px 0;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 0 0 24px 28px;
+        }
+
+        .article-content li {
+            margin-bottom: 10px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-content strong {
+            color: #FFFFFF;
+            font-weight: 700;
+        }
+
+        /* WATERMARK WRAPPER */
+        .watermark-box {
+            position: relative;
+            margin: 36px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #080B10;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+        }
+
+        .watermark-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .watermark-stamp {
+            position: absolute;
+            bottom: 12px;
+            right: 14px;
+            background: rgba(11, 14, 20, 0.75);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.75);
+            letter-spacing: 0.8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .watermark-caption {
+            padding: 10px 16px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background: #10141E;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            font-style: italic;
+        }
+
+        /* CALLOUT BOXES */
+        .callout {
+            background: var(--bg-card);
+            border-left: 4px solid var(--primary);
+            padding: 20px 24px;
+            border-radius: 0 8px 8px 0;
+            margin: 28px 0;
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .callout-title {
+            font-weight: 800;
+            color: var(--accent-cyan);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.05rem;
+        }
+
+        .callout-warning {
+            border-left-color: var(--bearish);
+            background: rgba(242, 54, 69, 0.06);
+        }
+
+        .callout-warning .callout-title {
+            color: #FF6B78;
+        }
+
+        .callout-success {
+            border-left-color: var(--bullish);
+            background: rgba(8, 153, 129, 0.06);
+        }
+
+        .callout-success .callout-title {
+            color: #26E7A6;
+        }
+
+        .callout-gold {
+            border-left-color: var(--accent-gold);
+            background: rgba(240, 185, 11, 0.06);
+        }
+
+        .callout-gold .callout-title {
+            color: var(--accent-gold);
+        }
+
+        /* TABLES */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 28px 0;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background: #182030;
+            color: var(--accent-cyan);
+            padding: 14px 18px;
+            font-weight: 700;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        td {
+            padding: 12px 18px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-light);
+            background: var(--bg-card);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: var(--bg-card-hover);
+        }
+
+        /* CHECKLIST BOX */
+        .checklist-card {
+            background: #111622;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+
+        .checklist-card h4 {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 0.96rem;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .checklist-item i {
+            color: var(--bullish);
+            margin-top: 5px;
+            font-size: 1rem;
+        }
+
+        /* TAKEAWAY BOX */
+        .takeaway-card {
+            background: linear-gradient(135deg, rgba(41, 98, 255, 0.1), rgba(0, 229, 255, 0.05));
+            border: 1px solid rgba(41, 98, 255, 0.35);
+            border-radius: 12px;
+            padding: 28px;
+            margin: 40px 0;
+        }
+
+        .takeaway-card h3 {
+            margin-top: 0;
+            color: #FFFFFF;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* QUOTE */
+        blockquote {
+            border-left: 4px solid var(--accent-gold);
+            padding: 18px 24px;
+            margin: 32px 0;
+            background: #141A26;
+            border-radius: 0 8px 8px 0;
+            font-family: var(--font-editorial);
+            font-style: italic;
+            color: #FFFFFF;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        /* NAV LESSON GRID */
+        .nav-lesson-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 48px 0;
+        }
+
+        @media (max-width: 640px) {
+            .nav-lesson-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .nav-lesson-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .nav-lesson-card:hover {
+            border-color: var(--primary);
+            background: var(--bg-card-hover);
+            transform: translateY(-2px);
+        }
+
+        /* COMMENTS SECTION */
+        .comments-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid var(--border-color);
+        }
+
+        .comments-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+
+        .comments-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .comment-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.88rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-light);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            background: #080B10;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: #FFFFFF;
+            font-size: 0.95rem;
+            transition: border-color 0.2s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .comment-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .comment-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 18px 20px;
+        }
+
+        .comment-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .comment-author {
+            font-weight: 700;
+            color: var(--accent-cyan);
+            font-size: 0.92rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .comment-date {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .comment-text {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid var(--border-color);
+            background: #080B10;
+            padding: 40px 24px;
+            text-align: center;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-cyan);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo.jpg" alt="PTvolume Logo">
+                <div class="logo-text">
+                    <div class="brand">PT<span>volume</span></div>
+                </div>
+            </a>
+            <div class="nav-right">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" id="btn-lang-vi" onclick="setLanguage('vi')">VI</button>
+                    <button class="lang-btn" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+                </div>
+                <a href="../index.html#hoc-tap" class="btn btn-outline">
+                    <i class="fa-solid fa-graduation-cap"></i> Khóa Học
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN ARTICLE -->
+    <main class="article-container">
+        <!-- BREADCRUMB -->
+        <nav class="breadcrumb">
+            <a href="../index.html"><i class="fa-solid fa-house"></i> Trang chủ</a>
+            <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+            <a href="../index.html#hoc-tap">Học tập</a>
+            <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+            <span>Phương pháp Wyckoff</span>
+            <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+            <span style="color: var(--accent-cyan);">Bài 8</span>
+        </nav>
+
+        <article>
+            <div class="article-header">
+                <div class="series-badge">
+                    <i class="fa-solid fa-book-bookmark"></i> Giáo Trình Wyckoff Chuyên Sâu &bull; Bài 8/10
+                </div>
+                <h1 class="article-title">Bài 8: Bóc Tách 5 Pha Phân Phối Wyckoff & Cạm Bẫy Mua Đỉnh Upthrust / UTAD</h1>
+                <p class="article-subtitle">Giáo trình Phương pháp Wyckoff Bài 8 (Theo tài liệu Hoàng Gia Vị): Bóc trần vở kịch phân phối của Smart Money, 5 pha phân phối (Phase A - E) và cạm bẫy mua đỉnh UTAD tàn khốc.</p>
+                <div class="article-meta">
+                    <span><i class="fa-solid fa-user-shield"></i> Ban Biên Tập Kỹ Thuật PTvolume</span>
+                    <span><i class="fa-solid fa-calendar-check"></i> Cập nhật: 12/09/2026</span>
+                    <span><i class="fa-solid fa-clock"></i> 20-25 phút đọc chuyên sâu</span>
+                    <span><i class="fa-solid fa-file-pdf"></i> Theo tài liệu Hoàng Gia Vị</span>
+                </div>
+            </div>
+
+            <!-- CONTENT BODY -->
+            <div class="article-content">
+
+                <p>
+                    Nếu như Tích lũy là nơi Smart Money âm thầm gom góp tài sản trong bóng tối thì <strong>Giai đoạn Phân phối (Distribution)</strong> lại là một "vở kịch hào nhoáng" dưới ánh đèn sân khấu. Trong cuốn sách của mình, Hoàng Gia Vị cảnh báo: <em>Ở vùng đỉnh, tin tức luôn luôn tốt nhất, các công ty chứng khoán liên tục nâng định giá và đám đông nhà đầu tư cá nhân say men chiến thắng nhất. Đó cũng chính là lúc chiếc bẫy chuột khổng lồ sập xuống!</em>
+                </p>
+
+                <h2><i class="fa-solid fa-masks-theater"></i> 1. Tâm Lý Đám Đông &amp; Bản Chất Của Vùng Phân Phối</h2>
+                <p>
+                    Để bán được hàng chục triệu, thậm chí hàng trăm triệu cổ phiếu giá vốn thấp mà không làm giá bị sập đột ngột, Smart Money phải kích thích lòng tham cực độ của đám đông. Họ cần một <strong>thanh khoản dồi dào từ người mua nhỏ lẻ (Fomo)</strong> để làm đối ứng hấp thụ lượng hàng bán ra của họ.
+                </p>
+                <ul>
+                    <li>Khi báo chí rầm rộ đưa tin doanh nghiệp lãi kỷ lục nghìn tỷ, đó không phải là lúc để mua &ndash; đó là lúc Smart Money mượn tin tốt để phân phối hàng!</li>
+                    <li>Vùng phân phối thường kéo dài từ vài tuần đến vài tháng, tạo cho nhỏ lẻ cảm giác thị trường "chỉnh là để lên tiếp" nhằm ru ngủ sự cảnh giác.</li>
+                </ul>
+
+                <h2><i class="fa-solid fa-timeline"></i> 2. Bóc Tách 5 Pha Phân Phối Wyckoff Chuẩn Mực</h2>
+
+                <h3>Pha A (Phase A): Chặn Đứng Đà Tăng Nóng</h3>
+                <ul>
+                    <li><strong>PSY (Preliminary Supply - Lực cung sơ bộ):</strong> Lần đầu tiên sau một sóng tăng dài xuất hiện áp lực bán tháo lớn của dòng tiền thông minh. Nến giảm mạnh nhưng sau đó giá vẫn tiếp tục rướn lên.</li>
+                    <li><strong>BC (Buying Climax - Cao trào mua đỉnh điểm):</strong> Đám đông nhỏ lẻ tranh nhau đua lệnh giá trần. Nến tăng spread rất dài, <strong>khối lượng bùng nổ kỷ lục</strong>. Smart Money đứng trên cao xả một lượng hàng khổng lồ vào tay người mua hưng phấn.</li>
+                    <li><strong>AR (Automatic Reaction - Nhịp giảm tự động):</strong> Lực cầu giá cao cạn kiệt, giá rơi tự do và thiết lập biên dưới hỗ trợ của Trading Range (TR).</li>
+                    <li><strong>ST (Secondary Test - Kiểm định thứ cấp đỉnh):</strong> Giá quay trở lại kiểm tra đỉnh BC. Tại đây, nến thường xuất hiện râu trên dài, volume thấp (thiếu cầu) hoặc volume to nhưng nến không tăng được (cung chặn bán).</li>
+                </ul>
+
+                <h3>Pha B (Phase B): Xây Dựng Nguyên Nhân Giảm Giá (Building The Cause)</h3>
+                <p>
+                    Smart Money thực hiện phân phối phần lớn lượng hàng còn lại:
+                </p>
+                <ul>
+                    <li>Biên độ dao động trong Pha B cực kỳ <strong>lỏng lẻo và thất thường</strong>: Giá giật lên giật xuống liên tục, nến dài ngắn hỗn loạn.</li>
+                    <li>Xuất hiện các thanh nến <strong>Upthrust (UT)</strong> &ndash; giá giả vờ vượt đỉnh tạm thời để hút dòng tiền đu bám rồi ngay sau đó quay đầu giảm sốc.</li>
+                </ul>
+
+                <h3>Pha C (Phase C): Cú Lừa Thế Kỷ UTAD (Upthrust After Distribution)</h3>
+                <div class="callout callout-warning">
+                    <div class="callout-title"><i class="fa-solid fa-radiation"></i> Cạm Bẫy Chết Người Của Cú UTAD (Pha C)</div>
+                    <p style="margin-bottom:0;">
+                        UTAD là vũ khí hủy diệt tàn khốc nhất của Smart Money! Giá được kéo vượt đỉnh cũ của Trading Range một cách rực rỡ, phá vỡ mọi đường kháng cự khiến các trader theo trường phái "Breakout đỉnh thời đại" nhảy vào mua bất chấp. Nhưng ngay phiên hôm sau hoặc chỉ vài phiên sau, giá <strong>quay xe rơi thẳng đứng chui ngược lại vào TR</strong>. Toàn bộ người mua đu đỉnh bị nhốt chặt và trở thành thanh khoản trả nợ cho dòng tiền lớn!
+                    </p>
+                </div>
+
+                <h3>Pha D (Phase D): Dấu Hiệu Suy Yếu Trầm Trọng (SOW)</h3>
+                <ul>
+                    <li><strong>SOW (Sign of Weakness - Dấu hiệu suy yếu):</strong> Những thanh nến đỏ thân dài đâm thủng trục giữa của TR và xuyên thủng biên hỗ trợ dưới với volume lớn.</li>
+                    <li><strong>LPSY (Last Point of Supply - Điểm kháng cự cuối cùng):</strong> Các nhịp hồi phục ngoi lên yếu ớt với biên độ nến hẹp và volume cạn kiệt. Đây là cơ hội cuối cùng để nhà đầu tư cắt lỗ bảo toàn vốn.</li>
+                </ul>
+
+                <h3>Pha E (Phase E): Rơi Tự Do Vào Chu Kỳ Downtrend (Markdown)</h3>
+                <p>
+                    Cổ phiếu chính thức rơi khỏi Trading Range. Smart Money đã chốt lời 100% tài sản, thị trường hoàn toàn mất lực đỡ và rơi tự do trong sự hoảng loạn tột cùng.
+                </p>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tiêu Chí So Sánh</th>
+                                <th>Pha Tích Lũy (Accumulation)</th>
+                                <th>Pha Phân Phối (Distribution)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Bối Cảnh Tin Tức</strong></td>
+                                <td>Tin xấu tràn ngập, bi quan, chán nản cùng cực.</td>
+                                <td>Tin tốt dồn dập, định giá màu hồng, hưng phấn tột độ.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Bẫy Giá Pha C</strong></td>
+                                <td><strong>Spring</strong>: Đạp thủng hỗ trợ rũ bỏ nhỏ lẻ để tăng.</td>
+                                <td><strong>UTAD</strong>: Kéo vượt đỉnh dụ nhỏ lẻ Fomo để xả hàng sập.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cấu Trúc Nến Pha D</strong></td>
+                                <td><strong>LPS</strong>: Đáy sau cao hơn đáy trước (Nâng đáy).</td>
+                                <td><strong>LPSY</strong>: Đỉnh sau thấp hơn đỉnh trước (Hạ đỉnh).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hành Động Của Bạn</strong></td>
+                                <td>Rình mua tại Spring &amp; Bứt lạch JAC.</td>
+                                <td>Thoát toàn bộ hàng tại UTAD &amp; LPSY; Tuyệt đối không mua!</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3><i class="fa-solid fa-skull"></i> Đúc Kết Cốt Lõi Bài 8</h3>
+                    <p style="margin-bottom:0;">
+                        Nhận biết được phân phối là kỹ năng bảo vệ sinh mạng tài chính của bạn. Đừng bao giờ say men chiến thắng ở những cây nến trần vượt đỉnh khi bối cảnh nến đã lỏng lẻo và khối lượng phân kỳ. Nhớ rằng: <strong>Ở vùng đỉnh, tin tức luôn tốt nhất và nụ cười luôn rạng rỡ nhất trước khi thảm họa xảy ra</strong>.
+                    </p>
+                </div>
+
+
+                <!-- ILLUSTRATIVE GRAPHIC -->
+                <div class="watermark-box">
+                    <img src="../assets/images/wyckoff_distribution_phases_utad.svg" alt="Bóc Tách 5 Pha Phân Phối Wyckoff & Cạm Bẫy Mua Đỉnh Upthrust / UTAD">
+                    <div class="watermark-stamp">
+                        <i class="fa-solid fa-chart-line"></i> PTvolume.com
+                    </div>
+                    <div class="watermark-caption">
+                        Hình 8.1: Sơ đồ 5 Pha Phân Phối và Cạm Bẫy Mua Đỉnh UTAD theo Richard Wyckoff.
+                    </div>
+                </div>
+
+                <!-- QUOTE BOX -->
+                <blockquote>
+                    "Ở vùng đỉnh, tin tức luôn luôn màu hồng nhất và các chuyên gia luôn luôn lạc quan nhất. Đó là lúc Smart Money hào phóng trao lại toàn bộ cổ phiếu vào tay đám đông nhỏ lẻ say men chiến thắng."
+                    <br><strong style="color:var(--accent-gold); font-style:normal; margin-top:8px; display:inline-block;">&ndash; Richard D. Wyckoff</strong>
+                </blockquote>
+            </div>
+
+            <!-- NEXT / PREV LESSON NAVIGATION -->
+            <div class="nav-lesson-grid">
+                
+                <a href="phuong-phap-wyckoff-bai-7-giai-doan-uptrend-trendline-va-tai-tich-luy.html" class="nav-lesson-card">
+                    <span style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase;"><i class="fa-solid fa-arrow-left"></i> Bài Trước</span>
+                    <strong style="font-size:0.95rem; color:var(--accent-cyan); margin-top:6px;">Bài 7: Giai Đoạn Uptrend, Trendline &amp; Tái Tích Lũy</strong>
+                </a>
+        
+                
+                <a href="phuong-phap-wyckoff-bai-9-khai-niem-pha-bang-ice-va-tai-phan-phoi-downtrend.html" class="nav-lesson-card" style="text-align:right;">
+                    <span style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase;">Bài Kế Tiếp <i class="fa-solid fa-arrow-right"></i></span>
+                    <strong style="font-size:0.95rem; color:var(--accent-gold); margin-top:6px;">Bài 9: Khái Niệm Phá Băng ICE &amp; Tái Phân Phối</strong>
+                </a>
+        
+            </div>
+
+            <!-- COMMENTS SECTION -->
+            <div class="comments-section">
+                <div class="comments-header">
+                    <div class="comments-title">
+                        <i class="fa-regular fa-comments" style="color:var(--accent-cyan);"></i> Thảo Luận Kỹ Thuật Cùng Cộng Đồng (<span id="commentCount">3</span>)
+                    </div>
+                </div>
+
+                <div class="comment-box">
+                    <form id="commentForm" onsubmit="addComment(event)">
+                        <div class="form-group">
+                            <label class="form-label" for="commentName"><i class="fa-solid fa-user"></i> Tên của bạn / Biệt danh Trader</label>
+                            <input type="text" id="commentName" class="form-control" placeholder="VD: Quốc Huy - Wyckoffian" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="commentContent"><i class="fa-solid fa-comment-dots"></i> Góc nhìn kỹ thuật hoặc câu hỏi thực chiến của bạn</label>
+                            <textarea id="commentContent" class="form-control" rows="3" placeholder="Chia sẻ kinh nghiệm quan sát hành vi giá hoặc đặt câu hỏi về bài học này..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="background:var(--accent-gold); color:#000; font-weight:700;">
+                            <i class="fa-solid fa-paper-plane"></i> Gửi Bình Luận Ngay
+                        </button>
+                    </form>
+                </div>
+
+                <div class="comment-list" id="commentList">
+
+                    <div class="comment-item">
+                        <div class="comment-top">
+                            <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Trịnh Quốc Tuấn (Trader 8 năm kinh nghiệm)</span>
+                            <span class="comment-date">12/09/2026 23:25:40</span>
+                        </div>
+                        <div class="comment-text">Cú UTAD năm nào cũng lặp lại và năm nào cũng giết chết hàng vạn nhà đầu tư cá nhân. Bài viết so sánh trực diện Spring vs UTAD rất hay: một đằng là bẫy bán hoảng loạn để gom, một đằng là bẫy mua hưng phấn để xả.</div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="comment-top">
+                            <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Phan Bích Hợp (NĐT Chứng Khoán)</span>
+                            <span class="comment-date">12/09/2026 23:50:15</span>
+                        </div>
+                        <div class="comment-text">Đọc phần Pha A Buying Climax mà thấm thía! Đúng đợt đu đỉnh mình cũng toàn mua vào những phiên nổ volume kỷ lục kèm tin tức lãi to của doanh nghiệp. Giờ nhìn biểu đồ hiểu bản chất dòng tiền rồi không bao giờ mắc lại nữa.</div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="comment-top">
+                            <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Lương Gia Huy (Kỹ Sư Dữ Liệu Tài Chính)</span>
+                            <span class="comment-date">13/09/2026 00:15:00</span>
+                        </div>
+                        <div class="comment-text">Sơ đồ minh họa 5 pha phân phối rất sắc nét và chuẩn mực. Cảm ơn ban biên tập đã cung cấp tài liệu tự học chất lượng cao như thế này.</div>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-links">
+            <a href="../pages/about.html">Về PTvolume</a>
+            <a href="../pages/contact.html">Liên Hệ</a>
+            <a href="../pages/terms.html">Điều Khoản</a>
+            <a href="../pages/privacy.html">Bảo Mật</a>
+            <a href="../pages/disclaimer.html">Cảnh Báo Rủi Ro</a>
+        </div>
+        <p>© 2026 PTvolume.com. Toàn bộ bản quyền được bảo lưu. Naked Chart &bull; VSA &bull; Phương Pháp Wyckoff.</p>
+    </footer>
+
+    <!-- TRANSLATE & COMMENTS SCRIPT -->
+    <div id="google_translate_element" style="display:none;"></div>
+    <script>
+        const POST_SLUG = 'phuong-phap-wyckoff-bai-8-boc-tach-5-pha-phan-phoi-va-bay-mua-dinh-utad';
+
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'vi',
+                includedLanguages: 'en,vi',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function setLanguage(lang) {
+            localStorage.setItem('ptvolume_lang', lang);
+            updateLangButtons(lang);
+            document.cookie = "googtrans=/vi/" + lang + "; path=/;";
+            if (window.location.hostname && window.location.hostname !== '') {
+                document.cookie = "googtrans=/vi/" + lang + "; path=/; domain=" + window.location.hostname;
+            }
+            const select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = lang;
+                select.dispatchEvent(new Event('change'));
+            } else {
+                window.location.reload();
+            }
+        }
+
+        function updateLangButtons(lang) {
+            const btnVi = document.getElementById('btn-lang-vi');
+            const btnEn = document.getElementById('btn-lang-en');
+            if (btnVi && btnEn) {
+                if (lang === 'en') {
+                    btnEn.classList.add('active');
+                    btnVi.classList.remove('active');
+                } else {
+                    btnVi.classList.add('active');
+                    btnEn.classList.remove('active');
+                }
+            }
+        }
+
+        function applyStoredLanguage() {
+            const currentLang = localStorage.getItem('ptvolume_lang') || 'vi';
+            updateLangButtons(currentLang);
+            if (currentLang !== 'vi') {
+                const checkCombo = setInterval(() => {
+                    const select = document.querySelector('.goog-te-combo');
+                    if (select) {
+                        select.value = currentLang;
+                        select.dispatchEvent(new Event('change'));
+                        clearInterval(checkCombo);
+                    }
+                }, 200);
+                setTimeout(() => clearInterval(checkCombo), 5000);
+            }
+        }
+
+        function loadSavedComments() {
+            const saved = JSON.parse(localStorage.getItem('ptvolume_comments_' + POST_SLUG) || '[]');
+            const commentList = document.getElementById("commentList");
+            const countElem = document.getElementById("commentCount");
+            if (countElem) {
+                countElem.innerText = 3 + saved.length;
+            }
+            saved.forEach(c => {
+                const item = document.createElement("div");
+                item.className = "comment-item";
+                item.innerHTML = `
+                    <div class="comment-top">
+                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> ${escapeHtml(c.name)}</span>
+                        <span class="comment-date">${c.date}</span>
+                    </div>
+                    <div class="comment-text">${escapeHtml(c.content)}</div>
+                `;
+                commentList.prepend(item);
+            });
+        }
+
+        function addComment(e) {
+            e.preventDefault();
+            const nameInput = document.getElementById("commentName");
+            const contentInput = document.getElementById("commentContent");
+            const name = nameInput.value.trim();
+            const content = contentInput.value.trim();
+            if (!name || !content) return;
+
+            const now = new Date();
+            const timeString = `${String(now.getDate()).padStart(2, '0')}/${String(now.getMonth() + 1).padStart(2, '0')}/${now.getFullYear()} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
+
+            const commentList = document.getElementById("commentList");
+            const newComment = document.createElement("div");
+            newComment.className = "comment-item";
+            newComment.innerHTML = `
+                <div class="comment-top">
+                    <span class="comment-author"><i class="fa-solid fa-circle-user"></i> ${escapeHtml(name)}</span>
+                    <span class="comment-date">${timeString}</span>
+                </div>
+                <div class="comment-text">${escapeHtml(content)}</div>
+            `;
+            commentList.prepend(newComment);
+
+            const countElem = document.getElementById("commentCount");
+            if (countElem) countElem.innerText = parseInt(countElem.innerText || 0) + 1;
+
+            const saved = JSON.parse(localStorage.getItem('ptvolume_comments_' + POST_SLUG) || '[]');
+            saved.push({ name, content, date: timeString });
+            localStorage.setItem('ptvolume_comments_' + POST_SLUG, JSON.stringify(saved));
+
+            nameInput.value = "";
+            contentInput.value = "";
+            alert("Bình luận của bạn đã được đăng thành công!");
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            applyStoredLanguage();
+            loadSavedComments();
+        });
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>

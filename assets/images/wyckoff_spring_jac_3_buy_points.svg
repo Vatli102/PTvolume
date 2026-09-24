@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0E14" /><stop offset="100%" stop-color="#141822" />
+    </linearGradient>
+    <linearGradient id="card6" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A202C" /><stop offset="100%" stop-color="#10141D" />
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg6)" />
+  <rect x="80" y="35" width="240" height="28" rx="14" fill="rgba(0, 229, 255, 0.12)" stroke="rgba(0, 229, 255, 0.35)" />
+  <text x="200" y="54" fill="#00E5FF" font-family="'Inter', sans-serif" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1.2">PHƯƠNG PHÁP WYCKOFF • BÀI 6</text>
+  <text x="80" y="95" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="24" font-weight="800">Cú Rũ Bỏ Spring, Cú Nhảy Qua Lạch (JAC) &amp; 3 Điểm Mua Vàng</text>
+  <text x="80" y="120" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="14">Bản đồ chi tiết Phase C &amp; D trong vùng tích lũy và cách bắt trọn chân sóng thần Uptrend</text>
+
+  <!-- Left: 3 Types of Spring -->
+  <g transform="translate(80, 150)">
+    <rect width="530" height="490" rx="12" fill="url(#card6)" stroke="rgba(0, 229, 255, 0.3)" stroke-width="1.5" />
+    <rect width="530" height="50" rx="12" fill="rgba(0, 229, 255, 0.08)" />
+    <text x="24" y="32" fill="#00E5FF" font-family="'Inter', sans-serif" font-size="16" font-weight="700">1. Phân Biệt 3 Dạng Cú Rũ Bỏ Spring (Pha C)</text>
+
+    <g transform="translate(24, 70)">
+      <rect width="482" height="90" rx="8" fill="#141822" stroke="rgba(255, 112, 126, 0.3)" />
+      <text x="18" y="26" fill="#FF707E" font-family="'Inter', sans-serif" font-size="14" font-weight="700">Spring #1 (Rũ Bỏ Lực Bán Lớn - Shakeout):</text>
+      <text x="18" y="50" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">• Xuyên thủng hỗ trợ rất sâu với Volume to khổng lồ.</text>
+      <text x="18" y="72" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="12.5">• Cần một thời gian dài test lại nhiều lần trước khi tăng được.</text>
+    </g>
+
+    <g transform="translate(24, 175)">
+      <rect width="482" height="100" rx="8" fill="#141822" stroke="rgba(240, 185, 11, 0.35)" />
+      <text x="18" y="26" fill="#F0B90B" font-family="'Inter', sans-serif" font-size="14" font-weight="700">Spring #2 (Rũ Bỏ Vừa Phải - Setup Kinh Điển):</text>
+      <text x="18" y="50" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">• Giá xuyên nhẹ qua hỗ trợ với Volume trung bình, sau đó rút chân đóng nến bên trong.</text>
+      <text x="18" y="74" fill="#26E7A6" font-family="'Inter', sans-serif" font-size="13" font-weight="600">• MUA TẠI PHIÊN TEST sau Spring #2 khi nến test có Volume cạn kiệt!</text>
+    </g>
+
+    <g transform="translate(24, 290)">
+      <rect width="482" height="90" rx="8" fill="#141822" stroke="rgba(38, 231, 166, 0.35)" />
+      <text x="18" y="26" fill="#26E7A6" font-family="'Inter', sans-serif" font-size="14" font-weight="700">Spring #3 (Rũ Bỏ Cạn Kiệt Nguồn Cung):</text>
+      <text x="18" y="50" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">• Giá chỉ vừa chớm chạm mép dưới hoặc nhô nhẹ rồi bật tăng ngay lập tức.</text>
+      <text x="18" y="72" fill="#26E7A6" font-family="'Inter', sans-serif" font-size="12.5">• Volume siêu thấp chứng tỏ phe bán đã hoàn toàn biến mất!</text>
+    </g>
+
+    <g transform="translate(24, 395)">
+      <rect width="482" height="70" rx="8" fill="rgba(0, 229, 255, 0.05)" stroke="rgba(0, 229, 255, 0.25)" />
+      <text x="18" y="28" fill="#00E5FF" font-family="'Inter', sans-serif" font-size="13" font-weight="700">Khái Niệm Cú Nhảy Qua Lạch (JAC &ndash; Jump Across the Creek):</text>
+      <text x="18" y="52" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="12.5">Cú bứt phá dũng mãnh vượt qua con lạch kháng cự để bước sang Pha D.</text>
+    </g>
+  </g>
+
+  <!-- Right: 3 Golden Buy Points -->
+  <g transform="translate(670, 150)">
+    <rect width="530" height="490" rx="12" fill="url(#card6)" stroke="rgba(38, 231, 166, 0.3)" stroke-width="1.5" />
+    <rect width="530" height="50" rx="12" fill="rgba(38, 231, 166, 0.08)" />
+    <text x="24" y="32" fill="#26E7A6" font-family="'Inter', sans-serif" font-size="16" font-weight="700">2. Ba Điểm Mua Vàng Của Phương Pháp Wyckoff</text>
+
+    <!-- Buy 1 -->
+    <g transform="translate(24, 70)">
+      <rect width="482" height="110" rx="8" fill="#141822" stroke="#222938" />
+      <text x="18" y="26" fill="#00E5FF" font-family="'Inter', sans-serif" font-size="14.5" font-weight="700">⭐ Điểm Mua 1: Tại Phiên Test Của Spring #2 / Spring #3</text>
+      <text x="18" y="50" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">• Vị trí: Đáy Pha C, ngay khi xác nhận cạn kiệt nguồn cung.</text>
+      <text x="18" y="74" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">• Ưu điểm: Giá vốn rẻ nhất chu kỳ, tỷ lệ Risk:Reward cực cao (&gt; 1:5).</text>
+      <text x="18" y="96" fill="#FF707E" font-family="'Inter', sans-serif" font-size="12.5">• Cắt lỗ: Đặt cách đáy Spring 1-2 bước giá.</text>
+    </g>
+
+    <!-- Buy 2 -->
+    <g transform="translate(24, 195)">
+      <rect width="482" height="110" rx="8" fill="#141822" stroke="#222938" />
+      <text x="18" y="26" fill="#F0B90B" font-family="'Inter', sans-serif" font-size="14.5" font-weight="700">⭐⭐ Điểm Mua 2: Tại Điểm Hỗ Trợ Cuối Cùng (LPS &ndash; Pha D)</text>
+      <text x="18" y="50" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">• Vị trí: Nhịp điều chỉnh nhẹ với Volume thấp sau thanh nến SOS đầu tiên.</text>
+      <text x="18" y="74" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">• Ưu điểm: Đã có xác nhận phe Mua chiếm quyền kiểm soát thế trận.</text>
+      <text x="18" y="96" fill="#FF707E" font-family="'Inter', sans-serif" font-size="12.5">• Cắt lỗ: Ngay dưới đáy của nhịp LPS vừa tạo lập.</text>
+    </g>
+
+    <!-- Buy 3 -->
+    <g transform="translate(24, 320)">
+      <rect width="482" height="110" rx="8" fill="#141822" stroke="#222938" />
+      <text x="18" y="26" fill="#26E7A6" font-family="'Inter', sans-serif" font-size="14.5" font-weight="700">⭐⭐⭐ Điểm Mua 3: Tại Nhịp Hồi Test Vượt Cản (BUEC / JAC)</text>
+      <text x="18" y="50" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">• Vị trí: Giá bứt phá khỏi TR rồi quay lại test mép trên của dòng lạch.</text>
+      <text x="18" y="74" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">• Ưu điểm: Độ an toàn cao nhất, chính thức bước vào Pha E tăng tốc.</text>
+      <text x="18" y="96" fill="#FF707E" font-family="'Inter', sans-serif" font-size="12.5">• Cắt lỗ: Phía dưới đường kháng cự cũ (nay đã chuyển thành hỗ trợ).</text>
+    </g>
+
+    <g transform="translate(24, 442)">
+      <rect width="482" height="30" rx="4" fill="#10141D" />
+      <text x="18" y="20" fill="#26E7A6" font-family="'Inter', sans-serif" font-size="12" font-weight="600">✔ Kết hợp 3 điểm mua này giúp bạn xây dựng vị thế vững chắc không thể bị lung lay!</text>
+    </g>
+  </g>
+
+  <!-- Watermark -->
+  <g transform="translate(1080, 675)">
+    <rect width="125" height="26" rx="6" fill="rgba(11, 14, 20, 0.85)" stroke="rgba(255, 255, 255, 0.15)" />
+    <text x="62" y="17" fill="#00E5FF" font-family="'Inter', sans-serif" font-size="11" font-weight="800" text-anchor="middle" letter-spacing="0.8">PTvolume.com</text>
+  </g>
+</svg>

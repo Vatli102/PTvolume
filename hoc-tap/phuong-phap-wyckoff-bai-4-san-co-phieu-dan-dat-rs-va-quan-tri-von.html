@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T0JM1RNTZ9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-T0JM1RNTZ9');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4: Săn Cổ Phiếu Dẫn Dắt Bằng Sức Mạnh Tương Đối RS & Chiến Lược Đi Vốn Kim Tự Tháp | PTvolume</title>
+    <meta name="description" content="Hướng dẫn nhận diện siêu cổ phiếu dẫn dắt bằng sức mạnh tương đối RS, phương pháp sàng lọc Leader - Laggard và công thức đi vốn Kim Tự Tháp bảo toàn lợi nhuận tối đa.">
+    <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-main: #0B0E14;
+            --bg-card: #141822;
+            --bg-card-hover: #1A2130;
+            --border-color: #222938;
+            --primary: #2962FF;
+            --primary-glow: rgba(41, 98, 255, 0.25);
+            --bullish: #089981;
+            --bearish: #F23645;
+            --text-main: #F0F3FA;
+            --text-muted: #8E9BAE;
+            --text-light: #CAD4E0;
+            --accent-gold: #F0B90B;
+            --accent-cyan: #00E5FF;
+            --font-editorial: 'Merriweather', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-sans);
+        }
+
+        *, body, p, div, span, h1, h2, h3, h4, h5, h6, table, td, th {
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            user-select: text !important;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.85;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 14, 20, 0.95);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 24px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 1.35rem;
+            color: #fff;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 1px solid rgba(41, 98, 255, 0.4);
+        }
+
+        .logo-text .brand {
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .logo-text .brand span {
+            color: var(--accent-cyan);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lang-switcher {
+            display: inline-flex;
+            align-items: center;
+            background: #080B10;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2px;
+            gap: 2px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 16px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active, .lang-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border-color);
+            background: transparent;
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: #fff;
+            background: rgba(41, 98, 255, 0.1);
+        }
+
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px 80px 24px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .article-header {
+            margin-bottom: 36px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 28px;
+        }
+
+        .series-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(41, 98, 255, 0.15);
+            color: var(--accent-cyan);
+            border: 1px solid rgba(41, 98, 255, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .article-title {
+            font-family: var(--font-sans);
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.35;
+            color: #FFFFFF;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .article-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+        }
+
+        .article-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .article-content {
+            font-size: 1.08rem;
+            color: var(--text-light);
+            line-height: 1.9;
+        }
+
+        .article-content p {
+            margin-bottom: 22px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-content h2 {
+            font-size: 1.55rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin: 44px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .article-content h2 i {
+            color: var(--accent-cyan);
+            font-size: 1.3rem;
+        }
+
+        .article-content h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin: 30px 0 14px 0;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 0 0 24px 28px;
+        }
+
+        .article-content li {
+            margin-bottom: 10px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-content strong {
+            color: #FFFFFF;
+            font-weight: 700;
+        }
+
+        /* WATERMARK WRAPPER */
+        .watermark-box {
+            position: relative;
+            margin: 36px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #080B10;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+        }
+
+        .watermark-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .watermark-stamp {
+            position: absolute;
+            bottom: 12px;
+            right: 14px;
+            background: rgba(11, 14, 20, 0.75);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.75);
+            letter-spacing: 0.8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .watermark-caption {
+            padding: 10px 16px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background: #10141E;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            font-style: italic;
+        }
+
+        /* CALLOUT BOXES */
+        .callout {
+            background: var(--bg-card);
+            border-left: 4px solid var(--primary);
+            padding: 20px 24px;
+            border-radius: 0 8px 8px 0;
+            margin: 28px 0;
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .callout-title {
+            font-weight: 800;
+            color: var(--accent-cyan);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.05rem;
+        }
+
+        .callout-warning {
+            border-left-color: var(--bearish);
+            background: rgba(242, 54, 69, 0.06);
+        }
+
+        .callout-warning .callout-title {
+            color: #FF6B78;
+        }
+
+        .callout-success {
+            border-left-color: var(--bullish);
+            background: rgba(8, 153, 129, 0.06);
+        }
+
+        .callout-success .callout-title {
+            color: #26E7A6;
+        }
+
+        .callout-gold {
+            border-left-color: var(--accent-gold);
+            background: rgba(240, 185, 11, 0.06);
+        }
+
+        .callout-gold .callout-title {
+            color: var(--accent-gold);
+        }
+
+        /* TABLES */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 28px 0;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background: #182030;
+            color: var(--accent-cyan);
+            padding: 14px 18px;
+            font-weight: 700;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        td {
+            padding: 12px 18px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-light);
+            background: var(--bg-card);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: var(--bg-card-hover);
+        }
+
+        /* CHECKLIST BOX */
+        .checklist-card {
+            background: #111622;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+
+        .checklist-card h4 {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 0.96rem;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .checklist-item i {
+            color: var(--bullish);
+            margin-top: 5px;
+            font-size: 1rem;
+        }
+
+        /* TAKEAWAY BOX */
+        .takeaway-card {
+            background: linear-gradient(135deg, rgba(41, 98, 255, 0.1), rgba(0, 229, 255, 0.05));
+            border: 1px solid rgba(41, 98, 255, 0.35);
+            border-radius: 12px;
+            padding: 28px;
+            margin: 40px 0;
+        }
+
+        .takeaway-card h3 {
+            margin-top: 0;
+            color: #FFFFFF;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* QUOTE */
+        blockquote {
+            border-left: 4px solid var(--accent-gold);
+            padding: 18px 24px;
+            margin: 32px 0;
+            background: #141A26;
+            border-radius: 0 8px 8px 0;
+            font-family: var(--font-editorial);
+            font-style: italic;
+            color: #FFFFFF;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        /* NAV LESSON GRID */
+        .nav-lesson-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 48px 0;
+        }
+
+        @media (max-width: 640px) {
+            .nav-lesson-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .nav-lesson-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .nav-lesson-card:hover {
+            border-color: var(--primary);
+            background: var(--bg-card-hover);
+            transform: translateY(-2px);
+        }
+
+        /* COMMENTS SECTION */
+        .comments-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid var(--border-color);
+        }
+
+        .comments-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+
+        .comments-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .comment-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.88rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-light);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            background: #080B10;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: #FFFFFF;
+            font-size: 0.95rem;
+            transition: border-color 0.2s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .comment-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .comment-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 18px 20px;
+        }
+
+        .comment-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .comment-author {
+            font-weight: 700;
+            color: var(--accent-cyan);
+            font-size: 0.92rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .comment-date {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .comment-text {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid var(--border-color);
+            background: #080B10;
+            padding: 40px 24px;
+            text-align: center;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-cyan);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo.jpg" alt="PTvolume Logo">
+                <div class="logo-text">
+                    <div class="brand">PT<span>volume</span></div>
+                </div>
+            </a>
+            <div class="nav-right">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" id="btn-lang-vi" onclick="setLanguage('vi')">VI</button>
+                    <button class="lang-btn" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+                </div>
+                <a href="../index.html#hoc-tap" class="btn btn-outline">
+                    <i class="fa-solid fa-graduation-cap"></i> Khóa Học
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN ARTICLE -->
+    <main class="article-container">
+        <!-- BREADCRUMB -->
+        <nav class="breadcrumb">
+            <a href="../index.html"><i class="fa-solid fa-house"></i> Trang chủ</a>
+            <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+            <a href="../index.html#hoc-tap">Học tập</a>
+            <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+            <span>Phương pháp Wyckoff</span>
+            <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+            <span style="color: var(--accent-cyan);">Bài 4</span>
+        </nav>
+
+        <article>
+            <div class="article-header">
+                <div class="series-badge">
+                    <i class="fa-solid fa-book-bookmark"></i> Giáo Trình Wyckoff Chuyên Sâu &bull; Bài 4/10
+                </div>
+                <h1 class="article-title">Bài 4: Săn Cổ Phiếu Dẫn Dắt Bằng Sức Mạnh Tương Đối RS & Chiến Lược Đi Vốn Kim Tự Tháp</h1>
+                <p class="article-subtitle">Giáo trình Phương pháp Wyckoff Bài 4 (Theo tài liệu Hoàng Gia Vị): Bí quyết tìm kiếm Market Leaders qua chỉ số RS so với Index và quy tắc đi vốn kim tự tháp thuận xu hướng.</p>
+                <div class="article-meta">
+                    <span><i class="fa-solid fa-user-shield"></i> Ban Biên Tập Kỹ Thuật PTvolume</span>
+                    <span><i class="fa-solid fa-calendar-check"></i> Cập nhật: 12/09/2026</span>
+                    <span><i class="fa-solid fa-clock"></i> 20-25 phút đọc chuyên sâu</span>
+                    <span><i class="fa-solid fa-file-pdf"></i> Theo tài liệu Hoàng Gia Vị</span>
+                </div>
+            </div>
+
+            <!-- CONTENT BODY -->
+            <div class="article-content">
+
+                <p>
+                    Một trong những phần giá trị thực chiến nhất trong cuốn sách của Hoàng Gia Vị chính là kỹ thuật <strong>Lựa chọn cổ phiếu dẫn dắt (Market Leaders)</strong> thông qua công cụ Sức Mạnh Tương Đối RS (Relative Strength) kết hợp cùng <strong>Chiến lược đi vốn Kim Tự Tháp thuận xu hướng</strong>. Đây chính là vũ khí bí mật giúp các huyền thoại như Jesse Livermore hay Nicolas Darvas gặt hái siêu lợi nhuận trong mọi con sóng thần.
+                </p>
+
+                <h2><i class="fa-solid fa-crosshairs"></i> 1. Khái Niệm Sức Mạnh Tương Đối RS (Relative Strength)</h2>
+                <p>
+                    Lưu ý đặc biệt: <em>Sức mạnh tương đối RS ở đây không phải là chỉ báo dao động RSI (Relative Strength Index) từ 0 đến 100 thường thấy</em>, mà là sự <strong>so sánh trực tiếp hành vi giá của một cổ phiếu cụ thể với biểu đồ chỉ số chung của thị trường (Index / VN-Index)</strong> trong cùng một khoảng thời gian.
+                </p>
+                <ul>
+                    <li><strong>Cổ phiếu Mạnh hơn thị trường (Outperformer / Leader):</strong>
+                        <ul>
+                            <li>Khi Index sập mạnh tạo đáy mới thấp hơn (Lower Low), cổ phiếu này từ chối giảm giá, giữ vững vùng hỗ trợ và tạo đáy sau cao hơn (Higher Low).</li>
+                            <li>Khi Index chỉ mới chững đà rơi và đi ngang tạo đáy, cổ phiếu này đã bứt phá vượt đỉnh cũ (Breakout).</li>
+                            <li>Đây chính là dấu hiệu không thể chối cãi của việc <strong>Smart Money đang âm thầm đỡ giá và gom quyết liệt</strong>. Khi Index chỉ cần hồi phục nhẹ, những cổ phiếu này sẽ hóa thân thành "ngựa chiến" tăng phi mã đầu tiên.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Cổ phiếu Yếu hơn thị trường (Laggard):</strong>
+                        <ul>
+                            <li>Khi Index tăng 20%, cổ phiếu chỉ nhích được 2-3%.</li>
+                            <li>Khi Index chỉ vừa chỉnh nhẹ 1-2 phiên, cổ phiếu đã lăn ra giảm sàn và phá thủng luôn đáy cũ nhiều tháng.</li>
+                            <li>Cổ phiếu yếu là cổ phiếu bị dòng tiền lớn bỏ rơi hoặc đang bị xả hàng ngầm. <em>Tuyệt đối không bao giờ mua những cổ phiếu này vì lý do "nó chưa tăng nên còn rẻ"!</em></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h2><i class="fa-solid fa-layer-group"></i> 2. Ma Trận Phân Loại Cổ Phiếu Dẫn Dắt &ndash; Theo Sau &ndash; Đội Sổ</h2>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nhóm Cổ Phiếu</th>
+                                <th>Hành Vi So Với Thị Trường Chung (Index)</th>
+                                <th>Hành Động Của Nhà Giao Dịch Chuyên Nghiệp</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong style="color:var(--bullish);">Nhóm 1: Dẫn Dắt (Leader)</strong></td>
+                                <td>Tạo đáy trước Index, vượt đỉnh trước Index, giữ nền chặt chẽ khi Index điều chỉnh.</td>
+                                <td><strong>Dồn 60% &ndash; 70% tổng vốn</strong> vào nhóm này ngay khi Index phát tín hiệu tạo đáy xong.</td>
+                            </tr>
+                            <tr>
+                                <td><strong style="color:var(--accent-gold);">Nhóm 2: Theo Sau (Follower)</strong></td>
+                                <td>Biến động nhịp nhàng đồng pha 100% với Index. Index tăng thì tăng, Index chỉnh thì chỉnh.</td>
+                                <td>Giải ngân tỷ trọng vừa phải khi nhóm Leader đã chạy quá xa điểm mua an toàn.</td>
+                            </tr>
+                            <tr>
+                                <td><strong style="color:var(--bearish);">Nhóm 3: Đội Sổ (Laggard)</strong></td>
+                                <td>Phá đáy trước Index, hồi phục yếu ớt, thanh khoản lẹt đẹt.</td>
+                                <td><strong style="color:var(--bearish);">Cắt bỏ ngay lập tức</strong> nếu lỡ cầm. Tuyệt đối không trung bình giá xuống.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2><i class="fa-solid fa-shapes"></i> 3. Chiến Lược Đi Vốn Kim Tự Tháp (Scale-In Pyramid)</h2>
+                <p>
+                    Hầu hết nhà đầu tư thua lỗ nặng nề không phải vì phân tích sai, mà vì <strong>cách đi vốn sai lầm</strong>: Mua thăm dò ít ở đáy nhưng lại dồn tất tay, vay full margin ở tít trên đỉnh (Kim tự tháp ngược). Wyckoff chỉ dạy phương pháp đi vốn chuẩn mực:
+                </p>
+                <ol>
+                    <li><strong>Vị thế 1 &ndash; Vị thế Thăm dò (30% Vốn):</strong> Giải ngân khi cổ phiếu xuất hiện tín hiệu kiểm tra cung thành công (Test sau Spring hoặc đáy Phase C) với volume thấp. Điểm Stop Loss đặt chặt chẽ ngay dưới chân nến Test.</li>
+                    <li><strong>Vị thế 2 &ndash; Vị thế Gia tăng Xác nhận (40% Vốn):</strong> Chỉ giải ngân khi vị thế 1 ĐÃ CÓ LÃI và giá bùng nổ vượt qua ngưỡng kháng cự trên của Trading Range với thanh nến SOS spread rộng, volume lớn (JAC). Dời Stop Loss của vị thế 1 lên điểm hòa vốn.</li>
+                    <li><strong>Vị thế 3 &ndash; Vị thế Hoàn tất (30% Vốn còn lại):</strong> Giải ngân nốt phần vốn khi giá có nhịp kiểm định lại đỉnh cũ (Back-up to Creek / LPS) với khối lượng cạn kiệt và tiếp tục bật tăng.</li>
+                </ol>
+
+                <div class="callout callout-warning">
+                    <div class="callout-title"><i class="fa-solid fa-triangle-exclamation"></i> Hai Điều Răn Tối Thượng Về Quản Trị Vốn</div>
+                    <ul style="margin: 8px 0 0 20px;">
+                        <li><strong>Không bao giờ trung bình giá xuống (Never Average Down):</strong> Khi bạn mua mà giá giảm vi phạm ngưỡng cắt lỗ (từ 5% đến 7%), điều đó chứng minh phán đoán của bạn đã sai. Hãy cắt lỗ dứt khoát, không được bơm thêm tiền cứu vãn một khoản lỗ!</li>
+                        <li><strong>Chỉ gia tăng quy mô khi vị thế trước đang sinh lời:</strong> Quy mô tài khoản chỉ được phép phình to khi thị trường đang xác nhận bạn đúng.</li>
+                    </ul>
+                </div>
+
+                <div class="checklist-card">
+                    <h4><i class="fa-solid fa-shield-halved"></i> Quy Trình Quản Trị Rủi Ro Chuẩn Wyckoff</h4>
+                    <div class="checklist-item">
+                        <i class="fa-solid fa-check"></i>
+                        <div>Rủi ro tối đa cho mỗi thương vụ (Risk per Trade) không bao giờ được vượt quá <strong>1% đến 2% tổng tài sản</strong> ròng.</div>
+                    </div>
+                    <div class="checklist-item">
+                        <i class="fa-solid fa-check"></i>
+                        <div>Tỷ lệ Lợi nhuận / Rủi ro (R:R) tối thiểu phải đạt <strong>2.5 : 1 hoặc 3 : 1</strong> mới chấp nhận mở vị thế giải ngân.</div>
+                    </div>
+                    <div class="checklist-item">
+                        <i class="fa-solid fa-check"></i>
+                        <div>Luôn xác định điểm cắt lỗ kỹ thuật (Structural Stop Loss) trước khi nhấn nút Enter đặt lệnh mua.</div>
+                    </div>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3><i class="fa-solid fa-trophy"></i> Đúc Kết Cốt Lõi Bài 4</h3>
+                    <p style="margin-bottom:0;">
+                        Chọn đúng cổ phiếu dẫn dắt bằng công cụ Relative Strength giúp bạn có được tốc độ sinh lời vượt trội. Nhưng chính <strong>nghệ thuật đi vốn Kim Tự Tháp</strong> mới là chiếc áo giáp giữ cho tài khoản của bạn trường tồn và biến những con sóng thành gia sản khổng lồ.
+                    </p>
+                </div>
+
+
+                <!-- ILLUSTRATIVE GRAPHIC -->
+                <div class="watermark-box">
+                    <img src="../assets/images/wyckoff_rs_relative_strength_leader.svg" alt="Săn Cổ Phiếu Dẫn Dắt Bằng Sức Mạnh Tương Đối RS & Chiến Lược Đi Vốn Kim Tự Tháp">
+                    <div class="watermark-stamp">
+                        <i class="fa-solid fa-chart-line"></i> PTvolume.com
+                    </div>
+                    <div class="watermark-caption">
+                        Hình 4.1: Nhận diện Cổ phiếu Dẫn Dắt bằng Sức Mạnh Tương Đối RS và Mô hình Đi Vốn Kim Tự Tháp 30% - 40% - 30%.
+                    </div>
+                </div>
+
+                <!-- QUOTE BOX -->
+                <blockquote>
+                    "Hãy đặt toàn bộ nguồn lực vào những con ngựa chiến chạy nhanh nhất trên đường đua. Những kẻ yếu đuối lẹt đẹt sẽ chỉ làm tiêu hao sinh lực và bào mòn vốn liếng quý giá của bạn."
+                    <br><strong style="color:var(--accent-gold); font-style:normal; margin-top:8px; display:inline-block;">&ndash; Jesse Livermore</strong>
+                </blockquote>
+            </div>
+
+            <!-- NEXT / PREV LESSON NAVIGATION -->
+            <div class="nav-lesson-grid">
+                
+                <a href="phuong-phap-wyckoff-bai-3-co-che-action-test-va-bien-dong-chat-long.html" class="nav-lesson-card">
+                    <span style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase;"><i class="fa-solid fa-arrow-left"></i> Bài Trước</span>
+                    <strong style="font-size:0.95rem; color:var(--accent-cyan); margin-top:6px;">Bài 3: Cơ Chế Action &ndash; Test &amp; Biến Động Chặt/Lỏng</strong>
+                </a>
+        
+                
+                <a href="phuong-phap-wyckoff-bai-5-boc-tach-5-pha-tich-luy-ps-sc-ar-st.html" class="nav-lesson-card" style="text-align:right;">
+                    <span style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase;">Bài Kế Tiếp <i class="fa-solid fa-arrow-right"></i></span>
+                    <strong style="font-size:0.95rem; color:var(--accent-gold); margin-top:6px;">Bài 5: Bóc Tách 5 Pha Tích Lũy (Phase A &ndash; E)</strong>
+                </a>
+        
+            </div>
+
+            <!-- COMMENTS SECTION -->
+            <div class="comments-section">
+                <div class="comments-header">
+                    <div class="comments-title">
+                        <i class="fa-regular fa-comments" style="color:var(--accent-cyan);"></i> Thảo Luận Kỹ Thuật Cùng Cộng Đồng (<span id="commentCount">3</span>)
+                    </div>
+                </div>
+
+                <div class="comment-box">
+                    <form id="commentForm" onsubmit="addComment(event)">
+                        <div class="form-group">
+                            <label class="form-label" for="commentName"><i class="fa-solid fa-user"></i> Tên của bạn / Biệt danh Trader</label>
+                            <input type="text" id="commentName" class="form-control" placeholder="VD: Quốc Huy - Wyckoffian" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="commentContent"><i class="fa-solid fa-comment-dots"></i> Góc nhìn kỹ thuật hoặc câu hỏi thực chiến của bạn</label>
+                            <textarea id="commentContent" class="form-control" rows="3" placeholder="Chia sẻ kinh nghiệm quan sát hành vi giá hoặc đặt câu hỏi về bài học này..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="background:var(--accent-gold); color:#000; font-weight:700;">
+                            <i class="fa-solid fa-paper-plane"></i> Gửi Bình Luận Ngay
+                        </button>
+                    </form>
+                </div>
+
+                <div class="comment-list" id="commentList">
+
+                    <div class="comment-item">
+                        <div class="comment-top">
+                            <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Lê Hoàng Phúc (Full-time Trader)</span>
+                            <span class="comment-date">12/09/2026 18:30:22</span>
+                        </div>
+                        <div class="comment-text">Chiến lược RS so sánh với VN-Index đúng là bảo bối. Đầu năm vừa rồi thị trường giảm 40 điểm nhưng có mấy mã ngành chứng khoán và công nghệ chỉ đi ngang giữ nguyên hỗ trợ. Sau đó Index chỉ cần hồi một nhịp là bọn nó phi nước đại 50-70%.</div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="comment-top">
+                            <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Nguyễn Trọng Tấn (NĐT Cá Nhân)</span>
+                            <span class="comment-date">12/09/2026 19:00:15</span>
+                        </div>
+                        <div class="comment-text">Trước đây mình toàn mắc bệnh mua bình quân giá xuống, càng lỗ càng gồng để rồi cháy tài khoản. Bài học đi vốn kim tự tháp: chỉ mua thêm khi vị thế trước ĐANG CÓ LÃI đã cứu rỗi tư duy giao dịch của mình.</div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="comment-top">
+                            <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Thái Hà (Học Viên VSA)</span>
+                            <span class="comment-date">12/09/2026 19:25:40</span>
+                        </div>
+                        <div class="comment-text">Sơ đồ minh họa phân bổ 30% - 40% - 30% cực kỳ mạch lạc và dễ áp dụng vào thực tế. Rất mong chờ bài phân tích 5 pha tích lũy tiếp theo của ban biên tập!</div>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-links">
+            <a href="../pages/about.html">Về PTvolume</a>
+            <a href="../pages/contact.html">Liên Hệ</a>
+            <a href="../pages/terms.html">Điều Khoản</a>
+            <a href="../pages/privacy.html">Bảo Mật</a>
+            <a href="../pages/disclaimer.html">Cảnh Báo Rủi Ro</a>
+        </div>
+        <p>© 2026 PTvolume.com. Toàn bộ bản quyền được bảo lưu. Naked Chart &bull; VSA &bull; Phương Pháp Wyckoff.</p>
+    </footer>
+
+    <!-- TRANSLATE & COMMENTS SCRIPT -->
+    <div id="google_translate_element" style="display:none;"></div>
+    <script>
+        const POST_SLUG = 'phuong-phap-wyckoff-bai-4-san-co-phieu-dan-dat-rs-va-quan-tri-von';
+
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'vi',
+                includedLanguages: 'en,vi',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function setLanguage(lang) {
+            localStorage.setItem('ptvolume_lang', lang);
+            updateLangButtons(lang);
+            document.cookie = "googtrans=/vi/" + lang + "; path=/;";
+            if (window.location.hostname && window.location.hostname !== '') {
+                document.cookie = "googtrans=/vi/" + lang + "; path=/; domain=" + window.location.hostname;
+            }
+            const select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = lang;
+                select.dispatchEvent(new Event('change'));
+            } else {
+                window.location.reload();
+            }
+        }
+
+        function updateLangButtons(lang) {
+            const btnVi = document.getElementById('btn-lang-vi');
+            const btnEn = document.getElementById('btn-lang-en');
+            if (btnVi && btnEn) {
+                if (lang === 'en') {
+                    btnEn.classList.add('active');
+                    btnVi.classList.remove('active');
+                } else {
+                    btnVi.classList.add('active');
+                    btnEn.classList.remove('active');
+                }
+            }
+        }
+
+        function applyStoredLanguage() {
+            const currentLang = localStorage.getItem('ptvolume_lang') || 'vi';
+            updateLangButtons(currentLang);
+            if (currentLang !== 'vi') {
+                const checkCombo = setInterval(() => {
+                    const select = document.querySelector('.goog-te-combo');
+                    if (select) {
+                        select.value = currentLang;
+                        select.dispatchEvent(new Event('change'));
+                        clearInterval(checkCombo);
+                    }
+                }, 200);
+                setTimeout(() => clearInterval(checkCombo), 5000);
+            }
+        }
+
+        function loadSavedComments() {
+            const saved = JSON.parse(localStorage.getItem('ptvolume_comments_' + POST_SLUG) || '[]');
+            const commentList = document.getElementById("commentList");
+            const countElem = document.getElementById("commentCount");
+            if (countElem) {
+                countElem.innerText = 3 + saved.length;
+            }
+            saved.forEach(c => {
+                const item = document.createElement("div");
+                item.className = "comment-item";
+                item.innerHTML = `
+                    <div class="comment-top">
+                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> ${escapeHtml(c.name)}</span>
+                        <span class="comment-date">${c.date}</span>
+                    </div>
+                    <div class="comment-text">${escapeHtml(c.content)}</div>
+                `;
+                commentList.prepend(item);
+            });
+        }
+
+        function addComment(e) {
+            e.preventDefault();
+            const nameInput = document.getElementById("commentName");
+            const contentInput = document.getElementById("commentContent");
+            const name = nameInput.value.trim();
+            const content = contentInput.value.trim();
+            if (!name || !content) return;
+
+            const now = new Date();
+            const timeString = `${String(now.getDate()).padStart(2, '0')}/${String(now.getMonth() + 1).padStart(2, '0')}/${now.getFullYear()} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
+
+            const commentList = document.getElementById("commentList");
+            const newComment = document.createElement("div");
+            newComment.className = "comment-item";
+            newComment.innerHTML = `
+                <div class="comment-top">
+                    <span class="comment-author"><i class="fa-solid fa-circle-user"></i> ${escapeHtml(name)}</span>
+                    <span class="comment-date">${timeString}</span>
+                </div>
+                <div class="comment-text">${escapeHtml(content)}</div>
+            `;
+            commentList.prepend(newComment);
+
+            const countElem = document.getElementById("commentCount");
+            if (countElem) countElem.innerText = parseInt(countElem.innerText || 0) + 1;
+
+            const saved = JSON.parse(localStorage.getItem('ptvolume_comments_' + POST_SLUG) || '[]');
+            saved.push({ name, content, date: timeString });
+            localStorage.setItem('ptvolume_comments_' + POST_SLUG, JSON.stringify(saved));
+
+            nameInput.value = "";
+            contentInput.value = "";
+            alert("Bình luận của bạn đã được đăng thành công!");
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            applyStoredLanguage();
+            loadSavedComments();
+        });
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>

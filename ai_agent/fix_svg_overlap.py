@@ -1,4 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="100%" height="100%" style="background:#0D111A; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;">
+# -*- coding: utf-8 -*-
+"""
+Khắc phục triệt để lỗi chữ đè hình và hình đè chữ:
+- Nến và Cột Volume đứng độc lập, sạch sẽ 100%.
+- Không có bất kỳ chữ nào ghi đè vào thân nến hoặc cột Volume.
+- Mọi nhãn chú thích được tách sang bên cạnh với đường dóng rõ ràng.
+- Hộp thoại callout nằm ở vùng trống phía trên hoặc dưới, không che mất nến.
+"""
+import os
+
+SVG_DIR = r"d:\PHAN DUA CẤM XÓA\AI_Agent_Trading\assets\images"
+
+# ==============================================================================
+# 1. naked_chart_indicator_trap.svg (Hình 1.1)
+# ==============================================================================
+svg_trap_fixed = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="100%" height="100%" style="background:#0D111A; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;">
   <defs>
     <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="5" result="blur"/>
@@ -164,4 +179,147 @@
   <text x="600" y="650" font-size="14" font-weight="800" fill="#657795" text-anchor="middle">
     PTvolume.com • Naked Price Action
   </text>
-</svg>
+</svg>"""
+
+with open(os.path.join(SVG_DIR, "naked_chart_indicator_trap.svg"), "w", encoding="utf-8") as f:
+    f.write(svg_trap_fixed)
+print("Saved FIXED naked_chart_indicator_trap.svg")
+
+
+# ==============================================================================
+# 2. naked_vsa_effort_result.svg (Hình 1.5 - KHÔNG CÓ CHỮ ĐÈ TRONG NẾN & VOLUME)
+# ==============================================================================
+svg_vsa_fixed = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="100%" height="100%" style="background:#0D111A; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;">
+  <defs>
+    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-red" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="drop-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="680" fill="#0D111A" rx="16"/>
+  <rect width="1192" height="672" x="4" y="4" fill="none" stroke="#1E2638" stroke-width="2" rx="14"/>
+
+  <!-- TIÊU ĐỀ CHÍNH -->
+  <text x="600" y="52" font-size="23" font-weight="900" fill="#FFFFFF" text-anchor="middle">
+    QUY LUẬT NỖ LỰC &amp; KẾT QUẢ: <tspan fill="#00E5FF">NẾN (KẾT QUẢ)</tspan> vs <tspan fill="#F0B90B">VOLUME (NỖ LỰC)</tspan>
+  </text>
+
+  <!-- ==================== CỘT 1: ĐỒNG THUẬN ==================== -->
+  <g transform="translate(45, 80)" filter="url(#drop-shadow)">
+    <rect width="350" height="540" rx="14" fill="#131824" stroke="#089981" stroke-width="2"/>
+    <rect x="0" y="0" width="350" height="50" rx="14 14 0 0" fill="#09281E"/>
+    <text x="175" y="32" font-size="16" font-weight="900" fill="#26E7A6" text-anchor="middle">1. ĐỒNG THUẬN (BÌNH THƯỜNG)</text>
+
+    <!-- KHU VỰC NẾN: NẾN ĐỨNG ĐỘC LẬP -->
+    <g transform="translate(0, 65)">
+      <!-- Nhãn ở trên -->
+      <text x="175" y="20" font-size="14" font-weight="800" fill="#26E7A6" text-anchor="middle">KẾT QUẢ: THÂN NẾN DÀI</text>
+
+      <!-- Cây nến xanh dài sạch sẽ -->
+      <line x1="175" y1="35" x2="175" y2="195" stroke="#00E5FF" stroke-width="4"/>
+      <rect x="145" y="45" width="60" height="135" rx="4" fill="#089981" stroke="#26E7A6" stroke-width="2" filter="url(#glow-cyan)"/>
+    </g>
+
+    <!-- Đường phân cách -->
+    <line x1="25" y1="285" x2="325" y2="285" stroke="#223048" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+    <!-- KHU VỰC VOLUME: VOLUME ĐỨNG ĐỘC LẬP -->
+    <g transform="translate(0, 300)">
+      <!-- Nhãn ở trên volume -->
+      <text x="175" y="15" font-size="14" font-weight="800" fill="#00E5FF" text-anchor="middle">NỖ LỰC: CỘT VOLUME CAO VỌT</text>
+
+      <!-- Cột Volume xanh cyan sạch sẽ -->
+      <rect x="145" y="30" width="60" height="110" rx="4" fill="#00E5FF" filter="url(#glow-cyan)"/>
+    </g>
+
+    <!-- Khung hành động chân thẻ -->
+    <rect x="20" y="465" width="310" height="55" rx="8" fill="#0A2D22" stroke="#26E7A6" stroke-width="1.5"/>
+    <text x="175" y="492" font-size="15" font-weight="900" fill="#26E7A6" text-anchor="middle">✓ TỰ TIN GIỮ LỆNH</text>
+    <text x="175" y="510" font-size="13" font-weight="700" fill="#CAD4E0" text-anchor="middle">Xu hướng tăng rất bền vững</text>
+  </g>
+
+  <!-- ==================== CỘT 2: BẤT THƯỜNG / HẤP THỤ ==================== -->
+  <g transform="translate(425, 80)" filter="url(#drop-shadow)">
+    <rect width="350" height="540" rx="14" fill="#131824" stroke="#F23645" stroke-width="2"/>
+    <rect x="0" y="0" width="350" height="50" rx="14 14 0 0" fill="#280A10"/>
+    <text x="175" y="32" font-size="16" font-weight="900" fill="#FF707E" text-anchor="middle">2. BẤT THƯỜNG (HẤP THỤ)</text>
+
+    <!-- KHU VỰC NẾN: NẾN ĐỨNG ĐỘC LẬP -->
+    <g transform="translate(0, 65)">
+      <!-- Nhãn ở trên -->
+      <text x="175" y="20" font-size="14" font-weight="800" fill="#FF707E" text-anchor="middle">KẾT QUẢ: THÂN NẾN BÉ TÍ</text>
+
+      <!-- Cây nến ngắn râu dài sạch sẽ -->
+      <line x1="175" y1="35" x2="175" y2="195" stroke="#FF5252" stroke-width="4"/>
+      <rect x="145" y="105" width="60" height="30" rx="3" fill="#F23645" stroke="#FF8A95" stroke-width="2" filter="url(#glow-red)"/>
+    </g>
+
+    <!-- Đường phân cách -->
+    <line x1="25" y1="285" x2="325" y2="285" stroke="#223048" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+    <!-- KHU VỰC VOLUME: VOLUME ĐỨNG ĐỘC LẬP -->
+    <g transform="translate(0, 300)">
+      <!-- Nhãn ở trên volume -->
+      <text x="175" y="15" font-size="14" font-weight="800" fill="#FF5252" text-anchor="middle">NỖ LỰC: CỘT VOLUME CỰC ĐẠI</text>
+
+      <!-- Cột Volume đỏ khổng lồ sạch sẽ -->
+      <rect x="145" y="25" width="60" height="115" rx="4" fill="#F23645" filter="url(#glow-red)"/>
+    </g>
+
+    <!-- Khung hành động chân thẻ -->
+    <rect x="20" y="465" width="310" height="55" rx="8" fill="#2E0A12" stroke="#FF5252" stroke-width="1.5"/>
+    <text x="175" y="492" font-size="15" font-weight="900" fill="#FF707E" text-anchor="middle">⚠️ CẢNH BÁO ĐẢO CHIỀU!</text>
+    <text x="175" y="510" font-size="13" font-weight="700" fill="#FFA4AC" text-anchor="middle">Có lực cản xả hàng khổng lồ</text>
+  </g>
+
+  <!-- ==================== CỘT 3: THIẾU HỤT NỖ LỰC ==================== -->
+  <g transform="translate(805, 80)" filter="url(#drop-shadow)">
+    <rect width="350" height="540" rx="14" fill="#131824" stroke="#F0B90B" stroke-width="2"/>
+    <rect x="0" y="0" width="350" height="50" rx="14 14 0 0" fill="#251C08"/>
+    <text x="175" y="32" font-size="16" font-weight="900" fill="#F0B90B" text-anchor="middle">3. THIẾU HỤT NỖ LỰC</text>
+
+    <!-- KHU VỰC NẾN: NẾN ĐỨNG ĐỘC LẬP -->
+    <g transform="translate(0, 65)">
+      <!-- Nhãn ở trên -->
+      <text x="175" y="20" font-size="14" font-weight="800" fill="#F0B90B" text-anchor="middle">KẾT QUẢ: GIÁ TĂNG RƯỚN</text>
+
+      <!-- Cây nến tăng rướn sạch sẽ -->
+      <line x1="175" y1="35" x2="175" y2="195" stroke="#CAD4E0" stroke-width="3"/>
+      <rect x="145" y="55" width="60" height="110" rx="4" fill="#089981" stroke="#26E7A6" stroke-width="1.5"/>
+    </g>
+
+    <!-- Đường phân cách -->
+    <line x1="25" y1="285" x2="325" y2="285" stroke="#223048" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+    <!-- KHU VỰC VOLUME: VOLUME ĐỨNG ĐỘC LẬP -->
+    <g transform="translate(0, 300)">
+      <!-- Nhãn ở trên volume -->
+      <text x="175" y="15" font-size="14" font-weight="800" fill="#8E9BAE" text-anchor="middle">NỖ LỰC: CỘT VOLUME TEO TÓP</text>
+
+      <!-- Cột Volume thấp lè tè sạch sẽ -->
+      <rect x="155" y="100" width="40" height="40" rx="3" fill="#687C94"/>
+    </g>
+
+    <!-- Khung hành động chân thẻ -->
+    <rect x="20" y="465" width="310" height="55" rx="8" fill="#281F0A" stroke="#F0B90B" stroke-width="1.5"/>
+    <text x="175" y="492" font-size="15" font-weight="900" fill="#F0B90B" text-anchor="middle">❌ KHÔNG FOMO MUA ĐUỔI</text>
+    <text x="175" y="510" font-size="13" font-weight="700" fill="#CAD4E0" text-anchor="middle">Tăng ảo, cá mập không vào tiền</text>
+  </g>
+
+  <!-- LOGO WATERMARK -->
+  <text x="600" y="650" font-size="14" font-weight="800" fill="#657795" text-anchor="middle">
+    PTvolume.com • Wyckoff Effort vs Result
+  </text>
+</svg>"""
+
+with open(os.path.join(SVG_DIR, "naked_vsa_effort_result.svg"), "w", encoding="utf-8") as f:
+    f.write(svg_vsa_fixed)
+print("Saved FIXED naked_vsa_effort_result.svg")

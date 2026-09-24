@@ -1,4 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 820" width="100%" height="100%" style="background:#07090E; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;">
+# -*- coding: utf-8 -*-
+import os
+
+SVG_DIR = r"d:\PHAN DUA CẤM XÓA\AI_Agent_Trading\assets\images"
+
+svg_ms = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 820" width="100%" height="100%" style="background:#07090E; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;">
   <defs>
     <linearGradient id="bg-ms-canvas" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#05070C"/>
@@ -163,4 +168,8 @@
       Bản quyền đồ họa: <tspan fill="#F0B90B" font-weight="900">PT</tspan><tspan fill="#00E5FF" font-weight="900">VOLUME.COM</tspan> • Market Structure Mastery
     </text>
   </g>
-</svg>
+</svg>"""
+
+with open(os.path.join(SVG_DIR, "market_structure_bos_choch.svg"), "w", encoding="utf-8") as f:
+    f.write(svg_ms)
+print("Upgraded market_structure_bos_choch.svg with large fonts!")

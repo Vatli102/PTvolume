@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="1000" height="620" style="background:#0B0E14;">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E1420"/>
+      <stop offset="100%" stop-color="#080B10"/>
+    </linearGradient>
+    <linearGradient id="upGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#089981" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#2962FF" stop-opacity="0.25"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="620" fill="url(#bgGrad)"/>
+  <rect x="25" y="25" width="950" height="570" rx="16" fill="#141822" stroke="#222938" stroke-width="1.5"/>
+
+  <!-- Title Header -->
+  <text x="50" y="65" fill="#F0B90B" font-family="Inter, sans-serif" font-size="20" font-weight="800" letter-spacing="1">GIAI ĐOẠN UPTREND &amp; KỸ THUẬT KẺ KÊNH GIÁ THEO WYCKOFF</text>
+  <text x="50" y="90" fill="#8E9BAE" font-family="Inter, sans-serif" font-size="13">Quy tắc kẻ Demand Line (Đường Cầu), Overbought Line (Đường Quá Mua) &amp; Nhận diện Tái Tích Lũy</text>
+
+  <!-- Grid lines -->
+  <line x1="60" y1="130" x2="940" y2="130" stroke="#1C2333" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="60" y1="230" x2="940" y2="230" stroke="#1C2333" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="60" y1="330" x2="940" y2="330" stroke="#1C2333" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="60" y1="430" x2="940" y2="430" stroke="#1C2333" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- Trend Channel Shading -->
+  <polygon points="100,450 400,270 880,110 880,240 500,400 100,530" fill="url(#upGrad)"/>
+
+  <!-- Demand Line (Support trendline) -->
+  <line x1="80" y1="540" x2="920" y2="200" stroke="#089981" stroke-width="3" stroke-linecap="round" filter="url(#glow)"/>
+  <text x="700" y="295" fill="#089981" font-family="Inter, sans-serif" font-size="13" font-weight="700">ĐƯỜNG CẦU (DEMAND LINE) - Nối các Đáy</text>
+
+  <!-- Overbought Line (Parallel trendline) -->
+  <line x1="80" y1="460" x2="920" y2="120" stroke="#2962FF" stroke-width="2.5" stroke-dasharray="8,5" stroke-linecap="round"/>
+  <text x="620" y="110" fill="#00E5FF" font-family="Inter, sans-serif" font-size="13" font-weight="700">ĐƯỜNG QUÁ MUA (OVERBOUGHT LINE)</text>
+
+  <!-- Price Wave Curve -->
+  <path d="M 90,530 Q 150,510 200,430 T 260,370 Q 300,380 340,435 T 390,425 Q 450,330 520,270 T 570,280 Q 600,290 640,285 T 700,270 Q 750,230 820,160 T 870,135" fill="none" stroke="#F0F3FA" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Anchor Points & Labels -->
+  <!-- Point 1: Đáy 1 -->
+  <circle cx="110" cy="528" r="7" fill="#089981" stroke="#FFF" stroke-width="2"/>
+  <text x="100" y="555" fill="#089981" font-family="Inter, sans-serif" font-size="12" font-weight="800">Đáy 1</text>
+
+  <!-- Peak 1 -->
+  <circle cx="260" cy="370" r="6" fill="#2962FF" stroke="#FFF" stroke-width="2"/>
+  <text x="245" y="350" fill="#CAD4E0" font-family="Inter, sans-serif" font-size="12" font-weight="700">Đỉnh 1</text>
+
+  <!-- Point 2: Đáy 2 -->
+  <circle cx="385" cy="427" r="7" fill="#089981" stroke="#FFF" stroke-width="2"/>
+  <text x="375" y="455" fill="#089981" font-family="Inter, sans-serif" font-size="12" font-weight="800">Đáy 2</text>
+  <rect x="310" y="468" width="160" height="32" rx="6" fill="#1A2234" stroke="#089981" stroke-width="1"/>
+  <text x="320" y="488" fill="#089981" font-family="Inter, sans-serif" font-size="11" font-weight="700">Kẻ đường qua Đáy 1 &amp; 2</text>
+
+  <!-- Overbought Touch -->
+  <circle cx="870" cy="135" r="7" fill="#F23645" stroke="#FFF" stroke-width="2"/>
+  <rect x="770" y="60" width="180" height="36" rx="6" fill="#2A1418" stroke="#F23645" stroke-width="1.5"/>
+  <text x="780" y="82" fill="#F23645" font-family="Inter, sans-serif" font-size="11" font-weight="800">QUÁ MUA (OVERBOUGHT)</text>
+
+  <!-- Re-accumulation Box -->
+  <rect x="560" y="250" width="160" height="75" rx="8" fill="#1A2130" stroke="#F0B90B" stroke-width="2" stroke-dasharray="5,3" opacity="0.9"/>
+  <text x="575" y="275" fill="#F0B90B" font-family="Inter, sans-serif" font-size="12" font-weight="800">VÙNG TÁI TÍCH LŨY</text>
+  <text x="575" y="295" fill="#CAD4E0" font-family="Inter, sans-serif" font-size="11">Vol cạn kiệt (Absorb)</text>
+  <text x="575" y="312" fill="#00E5FF" font-family="Inter, sans-serif" font-size="11">Điểm mua gia tăng LPS</text>
+
+  <!-- Key Rule Cards Bottom -->
+  <g transform="translate(50, 515)">
+    <rect width="280" height="65" rx="8" fill="#182030" stroke="#2962FF" stroke-width="1"/>
+    <text x="15" y="24" fill="#00E5FF" font-family="Inter, sans-serif" font-size="12" font-weight="800">1. KỸ THUẬT KẺ TRENDLINE</text>
+    <text x="15" y="45" fill="#8E9BAE" font-family="Inter, sans-serif" font-size="11">Kẻ Demand Line qua 2 đáy. Kéo song song</text>
+    <text x="15" y="58" fill="#8E9BAE" font-family="Inter, sans-serif" font-size="11">qua đỉnh xen giữa tạo Kênh Uptrend chuẩn.</text>
+  </g>
+
+  <g transform="translate(355, 515)">
+    <rect width="280" height="65" rx="8" fill="#182030" stroke="#F0B90B" stroke-width="1"/>
+    <text x="15" y="24" fill="#F0B90B" font-family="Inter, sans-serif" font-size="12" font-weight="800">2. BẢN CHẤT TÁI TÍCH LŨY</text>
+    <text x="15" y="45" fill="#8E9BAE" font-family="Inter, sans-serif" font-size="11">Smart Money hấp thụ nguồn cung chốt lời</text>
+    <text x="15" y="58" fill="#8E9BAE" font-family="Inter, sans-serif" font-size="11">ngắn hạn, chuẩn bị đẩy sóng tiếp theo.</text>
+  </g>
+
+  <g transform="translate(660, 515)">
+    <rect width="280" height="65" rx="8" fill="#182030" stroke="#089981" stroke-width="1"/>
+    <text x="15" y="24" fill="#089981" font-family="Inter, sans-serif" font-size="12" font-weight="800">3. CHIẾN LƯỢC MUA GIA TĂNG</text>
+    <text x="15" y="45" fill="#8E9BAE" font-family="Inter, sans-serif" font-size="11">Chỉ mua thêm tại cạnh dưới (Demand Line)</text>
+    <text x="15" y="58" fill="#8E9BAE" font-family="Inter, sans-serif" font-size="11">hoặc tại điểm bứt phá LPS có Vol cạn.</text>
+  </g>
+
+  <!-- Watermark -->
+  <g transform="translate(830, 575)" opacity="0.55">
+    <text x="0" y="0" fill="#8E9BAE" font-family="Inter, sans-serif" font-size="12" font-weight="800" letter-spacing="1">PTvolume.com</text>
+  </g>
+</svg>

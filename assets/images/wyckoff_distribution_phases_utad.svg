@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg8" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0E14" /><stop offset="100%" stop-color="#141822" />
+    </linearGradient>
+    <linearGradient id="card8" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A202C" /><stop offset="100%" stop-color="#10141D" />
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg8)" />
+  <rect x="80" y="35" width="240" height="28" rx="14" fill="rgba(242, 54, 69, 0.12)" stroke="rgba(242, 54, 69, 0.35)" />
+  <text x="200" y="54" fill="#F23645" font-family="'Inter', sans-serif" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1.2">PHƯƠNG PHÁP WYCKOFF • BÀI 8</text>
+  <text x="80" y="95" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="24" font-weight="800">Bóc Tách 5 Pha Phân Phối Đỉnh &amp; Bẫy Mua Đỉnh UTAD (Pha C)</text>
+  <text x="80" y="120" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="14">Giải mã cách Smart Money dụ dỗ đám đông mua đỉnh trước khi đạp giá sụp đổ</text>
+
+  <!-- Left: 5 Distribution Phases -->
+  <g transform="translate(80, 150)">
+    <rect width="530" height="490" rx="12" fill="url(#card8)" stroke="rgba(242, 54, 69, 0.3)" stroke-width="1.5" />
+    <rect width="530" height="50" rx="12" fill="rgba(242, 54, 69, 0.08)" />
+    <text x="24" y="32" fill="#F23645" font-family="'Inter', sans-serif" font-size="16" font-weight="700">1. Tiến Trình 5 Pha Phân Phối (Phase A &ndash; E)</text>
+
+    <g transform="translate(24, 65)">
+      <rect width="482" height="70" rx="8" fill="#141822" stroke="#222938" />
+      <text x="18" y="24" fill="#F0B90B" font-family="'Inter', sans-serif" font-size="13.5" font-weight="700">Pha A &ndash; Chặn Đứng Xu Hướng Tăng:</text>
+      <text x="18" y="46" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="12.5">Xuất hiện PSY, quá mua cực đại BC (Buying Climax) và cú rơi tự động AR.</text>
+    </g>
+
+    <g transform="translate(24, 145)">
+      <rect width="482" height="70" rx="8" fill="#141822" stroke="#222938" />
+      <text x="18" y="24" fill="#F0B90B" font-family="'Inter', sans-serif" font-size="13.5" font-weight="700">Pha B &ndash; Xây Dựng Nguyên Nhân Phân Phối:</text>
+      <text x="18" y="46" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="12.5">Smart Money âm thầm xả hàng sang tay nhỏ lẻ hưng phấn; biên độ lỏng lẻo.</text>
+    </g>
+
+    <g transform="translate(24, 225)">
+      <rect width="482" height="70" rx="8" fill="#141822" stroke="rgba(242, 54, 69, 0.35)" />
+      <text x="18" y="24" fill="#FF707E" font-family="'Inter', sans-serif" font-size="13.5" font-weight="700">Pha C &ndash; Bẫy Mua Đỉnh Upthrust (UT / UTAD):</text>
+      <text x="18" y="46" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="12.5">Cú nhử vượt đỉnh giả để kích hoạt FOMO mua đuổi trước khi rơi ngược.</text>
+    </g>
+
+    <g transform="translate(24, 305)">
+      <rect width="482" height="70" rx="8" fill="#141822" stroke="#222938" />
+      <text x="18" y="24" fill="#FF707E" font-family="'Inter', sans-serif" font-size="13.5" font-weight="700">Pha D &ndash; Nguồn Cung Áp Đảo Hoàn Toàn:</text>
+      <text x="18" y="46" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="12.5">Xuất hiện các thanh nến suy yếu SOW và các điểm kháng cự cuối cùng LPSY.</text>
+    </g>
+
+    <g transform="translate(24, 385)">
+      <rect width="482" height="70" rx="8" fill="#141822" stroke="#222938" />
+      <text x="18" y="24" fill="#FF707E" font-family="'Inter', sans-serif" font-size="13.5" font-weight="700">Pha E &ndash; Rơi Qua Băng &amp; Downtrend:</text>
+      <text x="18" y="46" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="12.5">Giá xuyên thủng đường băng hỗ trợ (ICE), đà giảm lao dốc không phanh.</text>
+    </g>
+  </g>
+
+  <!-- Right: UTAD Anatomy -->
+  <g transform="translate(670, 150)">
+    <rect width="530" height="490" rx="12" fill="url(#card8)" stroke="rgba(240, 185, 11, 0.3)" stroke-width="1.5" />
+    <rect width="530" height="50" rx="12" fill="rgba(240, 185, 11, 0.08)" />
+    <text x="24" y="32" fill="#F0B90B" font-family="'Inter', sans-serif" font-size="16" font-weight="700">2. Giải Phẫu Cú Lừa UTAD (Upthrust After Distribution)</text>
+
+    <g transform="translate(24, 75)">
+      <rect width="482" height="120" rx="8" fill="#141822" stroke="#222938" />
+      <text x="18" y="26" fill="#FF707E" font-family="'Inter', sans-serif" font-size="14" font-weight="700">Bẫy Thanh Khoản Hoàn Hảo Của Cá Mập:</text>
+      <text x="18" y="50" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">• Giá vọt qua đỉnh cũ để quét sạch toàn bộ lệnh Stop Loss của phe Bán.</text>
+      <text x="18" y="74" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">• Kích thích hàng triệu lệnh Buy đuổi theo của nhóm Breakout Trader.</text>
+      <text x="18" y="98" fill="#FF707E" font-family="'Inter', sans-serif" font-size="12.5">• Toàn bộ thanh khoản dồi dào đó trở thành nơi xả hàng cuối cùng của Smart Money!</text>
+    </g>
+
+    <g transform="translate(24, 215)">
+      <rect width="482" height="130" rx="8" fill="#141822" stroke="#222938" />
+      <text x="18" y="26" fill="#00E5FF" font-family="'Inter', sans-serif" font-size="14" font-weight="700">Cách Nhận Biết Phiên UTAD Thật Sự:</text>
+      <text x="18" y="50" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">• Nến có râu trên dài ngoằng, giá đóng cửa tụt lùi về nửa dưới thanh nến.</text>
+      <text x="18" y="74" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">• Volume cực cao nhưng giá không giữ được đà tăng sang phiên sau.</text>
+      <text x="18" y="98" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">• Ngay sau đó là một thanh nến đỏ thân dài dội thẳng vào trong vùng TR.</text>
+      <text x="18" y="118" fill="#26E7A6" font-family="'Inter', sans-serif" font-size="12.5">• Cơ hội bán khống tuyệt vời hoặc lập tức thoát hết danh mục mua!</text>
+    </g>
+
+    <g transform="translate(24, 365)">
+      <rect width="482" height="95" rx="8" fill="rgba(242, 54, 69, 0.06)" stroke="rgba(242, 54, 69, 0.3)" />
+      <text x="18" y="28" fill="#FF707E" font-family="'Inter', sans-serif" font-size="13.5" font-weight="700">⚠️ Lời Nhắc Sinh Tử:</text>
+      <text x="18" y="52" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="13">"Đừng bao giờ trung bình giá xuống khi thị trường đang rơi qua đường băng</text>
+      <text x="18" y="74" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="13">ICE. Cắt lỗ nhanh gọn là đức tính số 1 bảo vệ bạn sống sót dài lâu!"</text>
+    </g>
+  </g>
+
+  <!-- Watermark -->
+  <g transform="translate(1080, 675)">
+    <rect width="125" height="26" rx="6" fill="rgba(11, 14, 20, 0.85)" stroke="rgba(255, 255, 255, 0.15)" />
+    <text x="62" y="17" fill="#00E5FF" font-family="'Inter', sans-serif" font-size="11" font-weight="800" text-anchor="middle" letter-spacing="0.8">PTvolume.com</text>
+  </g>
+</svg>

@@ -1,4 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="100%" height="100%" style="background:#0D111A; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;">
+# -*- coding: utf-8 -*-
+"""
+Sửa lỗi râu nến ở Hình 1.4:
+- Vẽ râu nến trên và dưới của cả 2 cây nến (Nến Xanh và Nến Đỏ) cực kỳ đậm nét (stroke-width: 6px).
+- Nến Đỏ có Râu Trên dài đỏ rực (#FF5252) và Râu Dưới đỏ rõ ràng, có điểm High và Low to tròn.
+- Mọi nhãn chú thích đều dóng ra ngoài, không đè lên nến.
+"""
+import os
+
+SVG_DIR = r"d:\PHAN DUA CẤM XÓA\AI_Agent_Trading\assets\images"
+
+svg_candle_fixed = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="100%" height="100%" style="background:#0D111A; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;">
   <defs>
     <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="5" result="blur"/>
@@ -120,4 +131,8 @@
   <text x="600" y="650" font-size="14" font-weight="800" fill="#657795" text-anchor="middle">
     PTvolume.com • Naked Price Action
   </text>
-</svg>
+</svg>"""
+
+with open(os.path.join(SVG_DIR, "naked_candlestick_structure.svg"), "w", encoding="utf-8") as f:
+    f.write(svg_candle_fixed)
+print("Saved FIXED naked_candlestick_structure.svg with clear red wicks!")

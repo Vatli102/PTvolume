@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 680" width="100%" height="100%" style="background:#0B0E14; font-family: 'Inter', system-ui, -apple-system, sans-serif;">
+  <defs>
+    <linearGradient id="bg-dist" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0E14" />
+      <stop offset="50%" stop-color="#141822" />
+      <stop offset="100%" stop-color="#0E121B" />
+    </linearGradient>
+    <filter id="shadow-dist" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect width="1100" height="680" fill="url(#bg-dist)" rx="16"/>
+  <rect width="1094" height="674" x="3" y="3" fill="none" stroke="#222938" stroke-width="2" rx="14"/>
+
+  <!-- HEADER -->
+  <g transform="translate(550, 48)" text-anchor="middle">
+    <rect x="-460" y="-26" width="920" height="52" rx="26" fill="#141926" stroke="rgba(242, 54, 69, 0.4)" stroke-width="1.8"/>
+    <text y="7" font-size="19" font-weight="800" fill="#FF707E" letter-spacing="0.8">
+      SƠ ĐỒ 5 PHA PHÂN PHỐI WYCKOFF CHUẨN (DISTRIBUTION SCHEMATIC &amp; UTAD)
+    </text>
+    <text y="42" font-size="13" fill="#8E9BAE">
+      Phương Pháp Richard Wyckoff &amp; Bẫy Phân Phối Đỉnh • PTvolume.com
+    </text>
+  </g>
+
+  <!-- DIAGRAM CANVAS -->
+  <g transform="translate(50, 115)" filter="url(#shadow-dist)">
+    <rect width="1000" height="490" rx="14" fill="#0E141D" stroke="#222938" stroke-width="1.5"/>
+
+    <!-- Phase Delimiters -->
+    <line x1="240" y1="20" x2="240" y2="470" stroke="#222938" stroke-width="1.5" stroke-dasharray="4,4"/>
+    <line x1="490" y1="20" x2="490" y2="470" stroke="#222938" stroke-width="1.5" stroke-dasharray="4,4"/>
+    <line x1="680" y1="20" x2="680" y2="470" stroke="#222938" stroke-width="1.5" stroke-dasharray="4,4"/>
+    <line x1="840" y1="20" x2="840" y2="470" stroke="#222938" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+    <!-- Phase Labels -->
+    <text x="140" y="45" font-size="13" font-weight="800" fill="#FF707E" text-anchor="middle">PHA A: DỪNG TĂNG GIÁ</text>
+    <text x="365" y="45" font-size="13" font-weight="800" fill="#F0B90B" text-anchor="middle">PHA B: PHÂN PHỐI ÂM THẦM</text>
+    <text x="585" y="45" font-size="13" font-weight="800" fill="#FF5252" text-anchor="middle">PHA C: BẪY GIÁ UTAD</text>
+    <text x="760" y="45" font-size="13" font-weight="800" fill="#F23645" text-anchor="middle">PHA D: XÁC NHẬN YẾU (SOW)</text>
+    <text x="920" y="45" font-size="13" font-weight="800" fill="#D32F2F" text-anchor="middle">PHA E: LAO DỐC</text>
+
+    <!-- TR BOUNDARIES -->
+    <!-- Resistance Line -->
+    <line x1="50" y1="180" x2="950" y2="180" stroke="#F23645" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <text x="60" y="170" font-size="11" font-weight="700" fill="#FF707E">NGƯỠNG KHÁNG CỰ (RESISTANCE)</text>
+
+    <!-- Support Line -->
+    <line x1="50" y1="310" x2="950" y2="310" stroke="#089981" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <text x="60" y="328" font-size="11" font-weight="700" fill="#26E7A6">NGƯỠNG HỖ TRỢ (ICE / SUPPORT)</text>
+
+    <!-- Price Wave Path (Distribution) -->
+    <path d="M 40 400 L 100 240 L 130 270 L 170 170 L 215 305 L 255 185 L 310 290 L 370 190 L 440 295 L 490 200 L 530 240 L 580 110 L 630 250 L 680 190 L 740 330 L 790 260 L 860 380 L 960 450" fill="none" stroke="#CAD4E0" stroke-width="3.5"/>
+
+    <!-- Key Event Labels -->
+    <!-- PSY -->
+    <circle cx="100" cy="240" r="5" fill="#F0B90B"/>
+    <text x="85" y="230" font-size="11" font-weight="700" fill="#F0B90B">PSY</text>
+
+    <!-- BC (Buying Climax) -->
+    <circle cx="170" cy="170" r="7" fill="#00E5FF"/>
+    <text x="170" y="152" font-size="12" font-weight="800" fill="#00E5FF" text-anchor="middle">BC (Cao trào mua)</text>
+
+    <!-- AR (Automatic Reaction) -->
+    <circle cx="215" cy="305" r="6" fill="#F23645"/>
+    <text x="215" y="328" font-size="11" font-weight="800" fill="#FF707E" text-anchor="middle">AR (Giảm tự động)</text>
+
+    <!-- UT (Upthrust) -->
+    <circle cx="255" cy="185" r="6" fill="#F0B90B"/>
+    <text x="255" y="165" font-size="11" font-weight="700" fill="#F0B90B" text-anchor="middle">UT</text>
+
+    <!-- UTAD (PHASE C) - HIGHLIGHTED -->
+    <circle cx="580" cy="110" r="9" fill="#F23645" stroke="#FFFFFF" stroke-width="2"/>
+    <rect x="500" y="65" width="160" height="26" rx="4" fill="#2B1015" stroke="#F23645"/>
+    <text x="580" y="83" font-size="12" font-weight="900" fill="#FF707E" text-anchor="middle">★ UTAD (BẪY MUA ĐỈNH)</text>
+
+    <!-- Test of UTAD -->
+    <circle cx="680" cy="190" r="6" fill="#FF9800"/>
+    <text x="680" y="172" font-size="11" font-weight="800" fill="#FF9800" text-anchor="middle">Test of UTAD</text>
+
+    <!-- SOW (Sign of Weakness) -->
+    <circle cx="740" cy="330" r="7" fill="#F23645"/>
+    <text x="740" y="355" font-size="12" font-weight="800" fill="#FF707E" text-anchor="middle">SOW (Gãy Hỗ Trợ)</text>
+
+    <!-- LPSY (Last Point of Supply) -->
+    <circle cx="790" cy="260" r="8" fill="#F23645" stroke="#FFFFFF" stroke-width="1.5"/>
+    <text x="790" y="245" font-size="11.5" font-weight="800" fill="#FF707E" text-anchor="middle">LPSY (Điểm Bán Tháo)</text>
+
+    <!-- Markdown Phase E -->
+    <text x="890" y="420" font-size="12.5" font-weight="900" fill="#F23645">MARKDOWN &gt;&gt;</text>
+  </g>
+
+  <!-- FOOTER WATERMARK -->
+  <g transform="translate(550, 645)" text-anchor="middle">
+    <text font-size="12.5" fill="#CAD4E0" font-weight="600">
+      Đóng dấu bản quyền: <tspan fill="#00E5FF" font-weight="800">PTvolume.com</tspan> • Chuyên Trang Naked Chart, VSA &amp; Phương Pháp Wyckoff
+    </text>
+  </g>
+</svg>

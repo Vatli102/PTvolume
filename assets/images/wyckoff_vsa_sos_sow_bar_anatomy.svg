@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg10" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0E14" /><stop offset="100%" stop-color="#141822" />
+    </linearGradient>
+    <linearGradient id="card10" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A202C" /><stop offset="100%" stop-color="#10141D" />
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg10)" />
+  <rect x="80" y="35" width="240" height="28" rx="14" fill="rgba(0, 229, 255, 0.12)" stroke="rgba(0, 229, 255, 0.35)" />
+  <text x="200" y="54" fill="#00E5FF" font-family="'Inter', sans-serif" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1.2">PHƯƠNG PHÁP WYCKOFF • BÀI 10</text>
+  <text x="80" y="95" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="24" font-weight="800">Bộ Thanh Nến VSA Xác Nhận Sức Mạnh (SOS) &amp; Suy Yếu (SOW)</text>
+  <text x="80" y="120" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="14">Cẩm nang đối chiếu trực quan từng thanh Bar kinh điển trong phân tích Volume Spread Analysis</text>
+
+  <!-- Left: SOS Bars -->
+  <g transform="translate(80, 150)">
+    <rect width="530" height="490" rx="12" fill="url(#card10)" stroke="rgba(38, 231, 166, 0.3)" stroke-width="1.5" />
+    <rect width="530" height="50" rx="12" fill="rgba(38, 231, 166, 0.08)" />
+    <text x="24" y="32" fill="#26E7A6" font-family="'Inter', sans-serif" font-size="16" font-weight="700">1. Nhóm Thanh Nến Xác Nhận Sức Mạnh (SOS)</text>
+
+    <!-- Bar 1 -->
+    <g transform="translate(24, 70)">
+      <rect width="482" height="90" rx="8" fill="#141822" stroke="#222938" />
+      <text x="18" y="24" fill="#26E7A6" font-family="'Inter', sans-serif" font-size="14" font-weight="700">No Supply Bar (Cạn Kiệt Nguồn Cung):</text>
+      <text x="18" y="48" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">• Nến giảm thân hẹp (Narrow Spread), đóng cửa ở giữa hoặc nửa trên.</text>
+      <text x="18" y="70" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">• Volume thấp hơn 2 nến trước $ightarrow$ Không còn ai muốn bán ra nữa!</text>
+    </g>
+
+    <!-- Bar 2 -->
+    <g transform="translate(24, 175)">
+      <rect width="482" height="90" rx="8" fill="#141822" stroke="#222938" />
+      <text x="18" y="24" fill="#00E5FF" font-family="'Inter', sans-serif" font-size="14" font-weight="700">Stopping Volume (Khối Lượng Dừng Xu Hướng):</text>
+      <text x="18" y="48" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">• Nến râu dưới dài tại đáy với Volume cực đại (Ultra-High Volume).</text>
+      <text x="18" y="70" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">• Cá mập kê lệnh mua giới hạn khổng lồ để hứng trọn toàn bộ đà rơi.</text>
+    </g>
+
+    <!-- Bar 3 -->
+    <g transform="translate(24, 280)">
+      <rect width="482" height="90" rx="8" fill="#141822" stroke="#222938" />
+      <text x="18" y="24" fill="#F0B90B" font-family="'Inter', sans-serif" font-size="14" font-weight="700">Absorption Bar (Nến Hấp Thụ Vượt Cản):</text>
+      <text x="18" y="48" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">• Nến tăng thân dài tiếp cận sát ngưỡng cản với Volume cao.</text>
+      <text x="18" y="70" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">• Smart Money chấp nhận chi tiền gom lại toàn bộ hàng chốt lời của nhỏ lẻ.</text>
+    </g>
+
+    <!-- Bar 4 -->
+    <g transform="translate(24, 385)">
+      <rect width="482" height="85" rx="8" fill="#141822" stroke="#222938" />
+      <text x="18" y="24" fill="#26E7A6" font-family="'Inter', sans-serif" font-size="14" font-weight="700">Test of Spring (Kiểm Tra Sau Cú Rũ Bỏ):</text>
+      <text x="18" y="48" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">• Nến nhỏ retest lại vùng giá thấp nhất của Spring với Volume rất bé.</text>
+      <text x="18" y="70" fill="#26E7A6" font-family="'Inter', sans-serif" font-size="12.5" font-weight="600">$ightarrow$ Kích hoạt điểm mua tối ưu nhất với winrate trên 80%!</text>
+    </g>
+  </g>
+
+  <!-- Right: SOW Bars -->
+  <g transform="translate(670, 150)">
+    <rect width="530" height="490" rx="12" fill="url(#card10)" stroke="rgba(242, 54, 69, 0.3)" stroke-width="1.5" />
+    <rect width="530" height="50" rx="12" fill="rgba(242, 54, 69, 0.08)" />
+    <text x="24" y="32" fill="#F23645" font-family="'Inter', sans-serif" font-size="16" font-weight="700">2. Nhóm Thanh Nến Xác Nhận Suy Yếu (SOW)</text>
+
+    <!-- Bar 1 -->
+    <g transform="translate(24, 70)">
+      <rect width="482" height="90" rx="8" fill="#141822" stroke="#222938" />
+      <text x="18" y="24" fill="#FF707E" font-family="'Inter', sans-serif" font-size="14" font-weight="700">No Demand Bar (Cạn Kiệt Lực Cầu):</text>
+      <text x="18" y="48" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">• Nến tăng thân hẹp, đóng cửa ở nửa dưới với Volume thấp hơn 2 nến trước.</text>
+      <text x="18" y="70" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">• Báo hiệu không còn ai chịu chi tiền mua ở vùng giá cao này nữa.</text>
+    </g>
+
+    <!-- Bar 2 -->
+    <g transform="translate(24, 175)">
+      <rect width="482" height="90" rx="8" fill="#141822" stroke="#222938" />
+      <text x="18" y="24" fill="#FF707E" font-family="'Inter', sans-serif" font-size="14" font-weight="700">Upthrust Bar (Cú Đâm Thử Cầu Bị Từ Chối):</text>
+      <text x="18" y="48" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">• Râu trên dài vượt đỉnh rồi bị dội ngược, đóng nến sát đáy với Volume cao.</text>
+      <text x="18" y="70" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">• Cung lớn ồ ạt xả hàng dập tắt hoàn toàn nỗ lực mua của đám đông.</text>
+    </g>
+
+    <!-- Bar 3 -->
+    <g transform="translate(24, 280)">
+      <rect width="482" height="90" rx="8" fill="#141822" stroke="#222938" />
+      <text x="18" y="24" fill="#FF707E" font-family="'Inter', sans-serif" font-size="14" font-weight="700">Buying Climax (Quá Mua Cực Đại):</text>
+      <text x="18" y="48" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">• Nến tăng dài vọt lên kèm Volume khổng lồ sau một xu hướng tăng dài.</text>
+      <text x="18" y="70" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">• Đám đông hưng phấn tột đỉnh là lúc cá mập hoàn tất phân phối lượng lớn.</text>
+    </g>
+
+    <!-- Bar 4 -->
+    <g transform="translate(24, 385)">
+      <rect width="482" height="85" rx="8" fill="#141822" stroke="#222938" />
+      <text x="18" y="24" fill="#FF707E" font-family="'Inter', sans-serif" font-size="14" font-weight="700">Churning Bar (Khuấy Đảo Thanh Khoản Không Kết Quả):</text>
+      <text x="18" y="48" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="13">• Nỗ lực Volume siêu cao nhưng thân nến dậm chân tại chỗ.</text>
+      <text x="18" y="70" fill="#FF707E" font-family="'Inter', sans-serif" font-size="12.5" font-weight="600">$ightarrow$ Dấu hiệu húc tường bê tông, thị trường chuẩn bị quay đầu rơi mạnh!</text>
+    </g>
+  </g>
+
+  <!-- Watermark -->
+  <g transform="translate(1080, 675)">
+    <rect width="125" height="26" rx="6" fill="rgba(11, 14, 20, 0.85)" stroke="rgba(255, 255, 255, 0.15)" />
+    <text x="62" y="17" fill="#00E5FF" font-family="'Inter', sans-serif" font-size="11" font-weight="800" text-anchor="middle" letter-spacing="0.8">PTvolume.com</text>
+  </g>
+</svg>

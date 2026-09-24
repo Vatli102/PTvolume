@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T0JM1RNTZ9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-T0JM1RNTZ9');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 10: Bộ Thanh Nến VSA Thực Chiến Xác Nhận Dấu Hiệu Sức Mạnh (SOS) & Suy Yếu (SOW) | PTvolume</title>
+    <meta name="description" content="Tổng hợp bộ thanh nến VSA thực chiến theo phương pháp Wyckoff: Stopping Volume, No Supply, Shakeout, Absorption, Buying Climax, Upthrust, No Demand cùng quy trình 5 bước ra quyết định giao dịch hoàn hảo.">
+    <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-main: #0B0E14;
+            --bg-card: #141822;
+            --bg-card-hover: #1A2130;
+            --border-color: #222938;
+            --primary: #2962FF;
+            --primary-glow: rgba(41, 98, 255, 0.25);
+            --bullish: #089981;
+            --bearish: #F23645;
+            --text-main: #F0F3FA;
+            --text-muted: #8E9BAE;
+            --text-light: #CAD4E0;
+            --accent-gold: #F0B90B;
+            --accent-cyan: #00E5FF;
+            --font-editorial: 'Merriweather', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-sans);
+        }
+
+        *, body, p, div, span, h1, h2, h3, h4, h5, h6, table, td, th {
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            user-select: text !important;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.85;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 14, 20, 0.95);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 24px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 1.35rem;
+            color: #fff;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 1px solid rgba(41, 98, 255, 0.4);
+        }
+
+        .logo-text .brand {
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .logo-text .brand span {
+            color: var(--accent-cyan);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lang-switcher {
+            display: inline-flex;
+            align-items: center;
+            background: #080B10;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2px;
+            gap: 2px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 16px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active, .lang-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border-color);
+            background: transparent;
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: #fff;
+            background: rgba(41, 98, 255, 0.1);
+        }
+
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px 80px 24px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .article-header {
+            margin-bottom: 36px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 28px;
+        }
+
+        .series-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(41, 98, 255, 0.15);
+            color: var(--accent-cyan);
+            border: 1px solid rgba(41, 98, 255, 0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .article-title {
+            font-family: var(--font-sans);
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.35;
+            color: #FFFFFF;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .article-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+        }
+
+        .article-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .article-content {
+            font-size: 1.08rem;
+            color: var(--text-light);
+            line-height: 1.9;
+        }
+
+        .article-content p {
+            margin-bottom: 22px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-content h2 {
+            font-size: 1.55rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin: 44px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .article-content h2 i {
+            color: var(--accent-cyan);
+            font-size: 1.3rem;
+        }
+
+        .article-content h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin: 30px 0 14px 0;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 0 0 24px 28px;
+        }
+
+        .article-content li {
+            margin-bottom: 10px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .article-content strong {
+            color: #FFFFFF;
+            font-weight: 700;
+        }
+
+        /* WATERMARK WRAPPER */
+        .watermark-box {
+            position: relative;
+            margin: 36px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #080B10;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+        }
+
+        .watermark-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .watermark-stamp {
+            position: absolute;
+            bottom: 12px;
+            right: 14px;
+            background: rgba(11, 14, 20, 0.75);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.75);
+            letter-spacing: 0.8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .watermark-caption {
+            padding: 10px 16px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background: #10141E;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            font-style: italic;
+        }
+
+        /* CALLOUT BOXES */
+        .callout {
+            background: var(--bg-card);
+            border-left: 4px solid var(--primary);
+            padding: 20px 24px;
+            border-radius: 0 8px 8px 0;
+            margin: 28px 0;
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .callout-title {
+            font-weight: 800;
+            color: var(--accent-cyan);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.05rem;
+        }
+
+        .callout-warning {
+            border-left-color: var(--bearish);
+            background: rgba(242, 54, 69, 0.06);
+        }
+
+        .callout-warning .callout-title {
+            color: #FF6B78;
+        }
+
+        .callout-success {
+            border-left-color: var(--bullish);
+            background: rgba(8, 153, 129, 0.06);
+        }
+
+        .callout-success .callout-title {
+            color: #26E7A6;
+        }
+
+        .callout-gold {
+            border-left-color: var(--accent-gold);
+            background: rgba(240, 185, 11, 0.06);
+        }
+
+        .callout-gold .callout-title {
+            color: var(--accent-gold);
+        }
+
+        /* TABLES */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 28px 0;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background: #182030;
+            color: var(--accent-cyan);
+            padding: 14px 18px;
+            font-weight: 700;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        td {
+            padding: 12px 18px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-light);
+            background: var(--bg-card);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: var(--bg-card-hover);
+        }
+
+        /* CHECKLIST BOX */
+        .checklist-card {
+            background: #111622;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+
+        .checklist-card h4 {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 0.96rem;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .checklist-item i {
+            color: var(--bullish);
+            margin-top: 5px;
+            font-size: 1rem;
+        }
+
+        /* TAKEAWAY BOX */
+        .takeaway-card {
+            background: linear-gradient(135deg, rgba(41, 98, 255, 0.1), rgba(0, 229, 255, 0.05));
+            border: 1px solid rgba(41, 98, 255, 0.35);
+            border-radius: 12px;
+            padding: 28px;
+            margin: 40px 0;
+        }
+
+        .takeaway-card h3 {
+            margin-top: 0;
+            color: #FFFFFF;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* QUOTE */
+        blockquote {
+            border-left: 4px solid var(--accent-gold);
+            padding: 18px 24px;
+            margin: 32px 0;
+            background: #141A26;
+            border-radius: 0 8px 8px 0;
+            font-family: var(--font-editorial);
+            font-style: italic;
+            color: #FFFFFF;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        /* NAV LESSON GRID */
+        .nav-lesson-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 48px 0;
+        }
+
+        @media (max-width: 640px) {
+            .nav-lesson-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .nav-lesson-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .nav-lesson-card:hover {
+            border-color: var(--primary);
+            background: var(--bg-card-hover);
+            transform: translateY(-2px);
+        }
+
+        /* COMMENTS SECTION */
+        .comments-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid var(--border-color);
+        }
+
+        .comments-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+
+        .comments-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .comment-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.88rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-light);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            background: #080B10;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: #FFFFFF;
+            font-size: 0.95rem;
+            transition: border-color 0.2s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .comment-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .comment-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 18px 20px;
+        }
+
+        .comment-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .comment-author {
+            font-weight: 700;
+            color: var(--accent-cyan);
+            font-size: 0.92rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .comment-date {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .comment-text {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid var(--border-color);
+            background: #080B10;
+            padding: 40px 24px;
+            text-align: center;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-cyan);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo.jpg" alt="PTvolume Logo">
+                <div class="logo-text">
+                    <div class="brand">PT<span>volume</span></div>
+                </div>
+            </a>
+            <div class="nav-right">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" id="btn-lang-vi" onclick="setLanguage('vi')">VI</button>
+                    <button class="lang-btn" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+                </div>
+                <a href="../index.html#hoc-tap" class="btn btn-outline">
+                    <i class="fa-solid fa-graduation-cap"></i> Khóa Học
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN ARTICLE -->
+    <main class="article-container">
+        <!-- BREADCRUMB -->
+        <nav class="breadcrumb">
+            <a href="../index.html"><i class="fa-solid fa-house"></i> Trang chủ</a>
+            <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+            <a href="../index.html#hoc-tap">Học tập</a>
+            <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+            <span>Phương pháp Wyckoff</span>
+            <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+            <span style="color: var(--accent-cyan);">Bài 10</span>
+        </nav>
+
+        <article>
+            <div class="article-header">
+                <div class="series-badge">
+                    <i class="fa-solid fa-book-bookmark"></i> Giáo Trình Wyckoff Chuyên Sâu &bull; Bài 10/10
+                </div>
+                <h1 class="article-title">Bài 10: Bộ Thanh Nến VSA Thực Chiến Xác Nhận Dấu Hiệu Sức Mạnh (SOS) & Suy Yếu (SOW)</h1>
+                <p class="article-subtitle">Giáo trình Phương pháp Wyckoff Bài 10 (Theo tài liệu Hoàng Gia Vị): Tổng kết toàn thư VSA vi mô, bóc tách bộ 4 nến SOS (Stopping Volume, No Supply...) và 4 nến SOW (Buying Climax, Upthrust, No Demand...).</p>
+                <div class="article-meta">
+                    <span><i class="fa-solid fa-user-shield"></i> Ban Biên Tập Kỹ Thuật PTvolume</span>
+                    <span><i class="fa-solid fa-calendar-check"></i> Cập nhật: 12/09/2026</span>
+                    <span><i class="fa-solid fa-clock"></i> 20-25 phút đọc chuyên sâu</span>
+                    <span><i class="fa-solid fa-file-pdf"></i> Theo tài liệu Hoàng Gia Vị</span>
+                </div>
+            </div>
+
+            <!-- CONTENT BODY -->
+            <div class="article-content">
+
+                <p>
+                    Chào mừng bạn đến với <strong>Bài 10 &ndash; Trạm dừng chân đỉnh cao</strong> trong cuốn giáo trình Wyckoff toàn thư dịch từ tài liệu của Hoàng Gia Vị! Nếu như phương pháp Wyckoff cung cấp cho bạn tấm bản đồ vĩ mô (4 chu kỳ và các pha), thì <strong>Volume Spread Analysis (VSA)</strong> chính là chiếc kính hiển vi vi mô soi thấu giải phẫu của từng thanh nến. Nắm vững bộ nến SOS và SOW này, bạn sẽ đọc thị trường như đọc một cuốn sách mở!
+                </p>
+
+                <h2><i class="fa-solid fa-microscope"></i> 1. Nguyên Lý Ba Yếu Tố Cốt Tử Của VSA</h2>
+                <p>
+                    Trường phái VSA (Phân tích khối lượng và biên độ giá) được Tom Williams phát triển dựa trên nền tảng của Richard Wyckoff, tập trung giải mã 3 thông số duy nhất trên biểu đồ:
+                </p>
+                <ul>
+                    <li><strong>Biên độ giá (Spread):</strong> Khoảng cách từ giá cao nhất (High) đến thấp nhất (Low) của thanh nến.</li>
+                    <li><strong>Vị trí giá đóng cửa (Closing Price):</strong> Giá đóng cửa nằm ở đỉnh nến, giữa nến hay đáy nến.</li>
+                    <li><strong>Khối lượng giao dịch (Volume):</strong> Nỗ lực của dòng tiền đi kèm thanh nến đó (rất cao, trung bình, hay cạn kiệt).</li>
+                </ul>
+
+                <h2><i class="fa-solid fa-circle-arrow-up"></i> 2. Bộ 4 Thanh Nến Báo Hiệu Sức Mạnh (SOS &ndash; Sign Of Strength)</h2>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Thanh Nến VSA</th>
+                                <th>Đặc Điểm Hình Thái</th>
+                                <th>Khối Lượng Đi Kèm</th>
+                                <th>Ý Nghĩa Dòng Tiền &amp; Hành Động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong style="color:var(--bullish);">1. Stopping Volume (Khối Lượng Chặn)</strong></td>
+                                <td>Nến giảm thân dài nhưng giá đóng cửa rút chân lên trên mức giữa, có râu dưới dài.</td>
+                                <td><strong>Bùng nổ cực đại</strong> (Cao nhất trong nhiều tháng)</td>
+                                <td>Smart Money tung tiền lớn nuốt trọn lực bán tháo hoảng loạn của đám đông. Đà rơi bị chặn đứng!</td>
+                            </tr>
+                            <tr>
+                                <td><strong style="color:var(--bullish);">2. No Supply Bar (Nến Cạn Cung)</strong></td>
+                                <td>Nến giảm thân rất ngắn (Spread hẹp), giá đóng cửa ở mức giữa hoặc cao.</td>
+                                <td><strong>Cực kỳ thấp</strong> (Thấp hơn ít nhất 2 phiên trước)</td>
+                                <td>Nguồn cung bán ra đã hoàn toàn kiệt quệ. Thị trường không còn lực cản, giá sẵn sàng bật tăng.</td>
+                            </tr>
+                            <tr>
+                                <td><strong style="color:var(--bullish);">3. Shakeout / Spring Bar</strong></td>
+                                <td>Nến đâm thủng nền hỗ trợ trong phiên rồi rút chân đóng cửa cao nhất phiên.</td>
+                                <td>Thấp (Spring #3) hoặc Trung bình có Test</td>
+                                <td>Cú quét sạch lệnh Stop Loss của nhỏ lẻ. Dòng tiền lớn kiểm soát hoàn toàn cuộc chơi.</td>
+                            </tr>
+                            <tr>
+                                <td><strong style="color:var(--bullish);">4. Absorption Bar (Nến Hấp Thụ)</strong></td>
+                                <td>Nến tăng thân rất dài, đóng cửa cao nhất phiên tại ngay ngưỡng kháng cự đỉnh.</td>
+                                <td><strong>Cao vượt trội</strong></td>
+                                <td>Smart Money chấp nhận mua gom toàn bộ lượng hàng chốt lời ở giá cao để chuẩn bị vượt đỉnh.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2><i class="fa-solid fa-circle-arrow-down"></i> 3. Bộ 4 Thanh Nến Báo Hiệu Suy Yếu (SOW &ndash; Sign Of Weakness)</h2>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Thanh Nến VSA</th>
+                                <th>Đặc Điểm Hình Thái</th>
+                                <th>Khối Lượng Đi Kèm</th>
+                                <th>Ý Nghĩa Dòng Tiền &amp; Hành Động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong style="color:var(--bearish);">1. Buying Climax (Cao Trào Mua)</strong></td>
+                                <td>Nến tăng spread rất dài, tăng trần hưng phấn ở cuối một chu kỳ tăng giá mạnh.</td>
+                                <td><strong>Khổng lồ / Kỷ lục</strong></td>
+                                <td>Nhỏ lẻ Fomo đỉnh điểm, Smart Money sang tay một lượng hàng giá vốn thấp khổng lồ. Chuẩn bị tạo đỉnh!</td>
+                            </tr>
+                            <tr>
+                                <td><strong style="color:var(--bearish);">2. Upthrust Bar (Đảo Chiều Thất Bại)</strong></td>
+                                <td>Nến tăng vượt đỉnh trong phiên nhưng cuối phiên bị bán dội ngược đóng cửa sát đáy nến, râu trên dài.</td>
+                                <td><strong>Rất cao</strong></td>
+                                <td>Bẫy mua đỉnh kinh điển! Smart Money kích cầu giả tạo để xả hàng dứt khoát.</td>
+                            </tr>
+                            <tr>
+                                <td><strong style="color:var(--bearish);">3. No Demand Bar (Nến Cạn Cầu)</strong></td>
+                                <td>Nến tăng thân rất ngắn, xuất hiện tại vùng kháng cự hoặc trong nhịp hồi kỹ thuật.</td>
+                                <td><strong>Cực kỳ thấp</strong> (Thấp hơn 2 phiên trước)</td>
+                                <td>Smart Money từ chối mua đẩy giá lên cao. Cầu đã cạn, giá chuẩn bị rơi cắm đầu.</td>
+                            </tr>
+                            <tr>
+                                <td><strong style="color:var(--bearish);">4. End of a Rising Market</strong></td>
+                                <td>Nến tăng nhưng thân nến ngắn cũn, giá đóng cửa lưng chừng sau chu kỳ tăng nóng.</td>
+                                <td><strong>Cực đại bất thường</strong></td>
+                                <td>Phân kỳ nỗ lực/kết quả nghiêm trọng: Bỏ ra lượng tiền khổng lồ nhưng giá không nhích nổi do bị xả hàng chặn trên.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2><i class="fa-solid fa-compass"></i> 4. Quy Trình 5 Bước Ra Quyết Định Giao Dịch Thực Chiến</h2>
+                <div class="checklist-card">
+                    <h4><i class="fa-solid fa-list-check"></i> Ma Trận Thực Chiến 5 Bước Wyckoff &ndash; VSA</h4>
+                    <div class="checklist-item">
+                        <i class="fa-solid fa-check"></i>
+                        <div><strong>Bước 1 &ndash; Bối Cảnh Thị Trường:</strong> Xác định chỉ số Index đang nằm ở pha nào trong 4 chu kỳ. Chỉ mua khi Index đang Tích lũy hoặc Uptrend.</div>
+                    </div>
+                    <div class="checklist-item">
+                        <i class="fa-solid fa-check"></i>
+                        <div><strong>Bước 2 &ndash; Lựa Chọn Cổ Phiếu Dẫn Dắt:</strong> Dùng Sức mạnh tương đối RS để lọc ra nhóm cổ phiếu khỏe hơn Index (tạo đáy trước, giữ nền tốt).</div>
+                    </div>
+                    <div class="checklist-item">
+                        <i class="fa-solid fa-check"></i>
+                        <div><strong>Bước 3 &ndash; Xác Định Pha &amp; Cấu Trúc TR:</strong> Đảm bảo cổ phiếu đã hoàn thành Pha A, Pha B và đang ở cuối Pha C (xuất hiện Spring / Shakeout).</div>
+                    </div>
+                    <div class="checklist-item">
+                        <i class="fa-solid fa-check"></i>
+                        <div><strong>Bước 4 &ndash; Bắt Điểm Vào Bằng Nến VSA:</strong> Chờ đợi sự xuất hiện của thanh nến <strong>No Supply</strong> hoặc nhịp Test cạn vol để mở lệnh mua thăm dò.</div>
+                    </div>
+                    <div class="checklist-item">
+                        <i class="fa-solid fa-check"></i>
+                        <div><strong>Bước 5 &ndash; Đi Vốn Kim Tự Tháp &amp; Quản Trị Rủi Ro:</strong> Phân bổ 30% &ndash; 40% &ndash; 30%, tuyệt đối không bình quân giá xuống và luôn tuân thủ Stop Loss kỷ luật.</div>
+                    </div>
+                </div>
+
+                <div class="takeaway-card">
+                    <h3><i class="fa-solid fa-flag-checkered"></i> Lời Kết Khóa Học: Bản Lĩnh Nhà Giao Dịch Đọc Dòng Tiền</h3>
+                    <p style="margin-bottom:0;">
+                        Bạn vừa hoàn thành trọn vẹn hành trình 10 bài học chuyên sâu của phương pháp Wyckoff và VSA theo tài liệu kinh điển của tác giả Hoàng Gia Vị. Thị trường tài chính muôn đời vẫn vậy &ndash; được vận hành bởi lòng tham và nỗi sợ hãi của con người dưới sự dẫn dắt của dòng tiền thông minh. Khi bạn đã nắm vững chiếc chìa khóa vạn năng này, bạn không còn là một con bạc dò dẫm trong đêm tối, mà đã trở thành một người đồng hành sáng suốt bơi theo dòng nước lớn của Smart Money!
+                    </p>
+                </div>
+
+
+                <!-- ILLUSTRATIVE GRAPHIC -->
+                <div class="watermark-box">
+                    <img src="../assets/images/wyckoff_vsa_sos_sow_bar_anatomy.svg" alt="Bộ Thanh Nến VSA Thực Chiến Xác Nhận Dấu Hiệu Sức Mạnh (SOS) & Suy Yếu (SOW)">
+                    <div class="watermark-stamp">
+                        <i class="fa-solid fa-chart-line"></i> PTvolume.com
+                    </div>
+                    <div class="watermark-caption">
+                        Hình 10.1: Bộ thanh nến VSA vi mô xác nhận Dấu Hiệu Sức Mạnh (SOS) và Dấu Hiệu Suy Yếu (SOW).
+                    </div>
+                </div>
+
+                <!-- QUOTE BOX -->
+                <blockquote>
+                    "Biểu đồ giá và khối lượng chính là ngôn ngữ trực tiếp của thị trường. Người nào học được cách đọc hiểu thứ ngôn ngữ này sẽ không bao giờ còn bị đánh lừa bởi bất kỳ lời đồn đại hay tin tức giả mạo nào nữa."
+                    <br><strong style="color:var(--accent-gold); font-style:normal; margin-top:8px; display:inline-block;">&ndash; Richard D. Wyckoff</strong>
+                </blockquote>
+            </div>
+
+            <!-- NEXT / PREV LESSON NAVIGATION -->
+            <div class="nav-lesson-grid">
+                
+                <a href="phuong-phap-wyckoff-bai-9-khai-niem-pha-bang-ice-va-tai-phan-phoi-downtrend.html" class="nav-lesson-card">
+                    <span style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase;"><i class="fa-solid fa-arrow-left"></i> Bài Trước</span>
+                    <strong style="font-size:0.95rem; color:var(--accent-cyan); margin-top:6px;">Bài 9: Khái Niệm Phá Băng ICE &amp; Tái Phân Phối</strong>
+                </a>
+        
+                
+                <a href="khoa-hoc-vsa-bai-1-bieu-do-tran-the-naked-chart.html" class="nav-lesson-card" style="text-align:right;">
+                    <span style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase;">Chuyên Đề Nâng Cao <i class="fa-solid fa-graduation-cap"></i></span>
+                    <strong style="font-size:0.95rem; color:var(--accent-gold); margin-top:6px;">Phương Pháp VSA Thực Chiến 21 Bài &rarr;</strong>
+                </a>
+        
+            </div>
+
+            <!-- COMMENTS SECTION -->
+            <div class="comments-section">
+                <div class="comments-header">
+                    <div class="comments-title">
+                        <i class="fa-regular fa-comments" style="color:var(--accent-cyan);"></i> Thảo Luận Kỹ Thuật Cùng Cộng Đồng (<span id="commentCount">3</span>)
+                    </div>
+                </div>
+
+                <div class="comment-box">
+                    <form id="commentForm" onsubmit="addComment(event)">
+                        <div class="form-group">
+                            <label class="form-label" for="commentName"><i class="fa-solid fa-user"></i> Tên của bạn / Biệt danh Trader</label>
+                            <input type="text" id="commentName" class="form-control" placeholder="VD: Quốc Huy - Wyckoffian" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="commentContent"><i class="fa-solid fa-comment-dots"></i> Góc nhìn kỹ thuật hoặc câu hỏi thực chiến của bạn</label>
+                            <textarea id="commentContent" class="form-control" rows="3" placeholder="Chia sẻ kinh nghiệm quan sát hành vi giá hoặc đặt câu hỏi về bài học này..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="background:var(--accent-gold); color:#000; font-weight:700;">
+                            <i class="fa-solid fa-paper-plane"></i> Gửi Bình Luận Ngay
+                        </button>
+                    </form>
+                </div>
+
+                <div class="comment-list" id="commentList">
+
+                    <div class="comment-item">
+                        <div class="comment-top">
+                            <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Nguyễn Hải Đăng (Quản Lý Quỹ Đầu Tư)</span>
+                            <span class="comment-date">13/09/2026 01:45:10</span>
+                        </div>
+                        <div class="comment-text">Khóa học 10 bài này thực sự là một kiệt tác giáo trình Wyckoff tiếng Việt! Cực kỳ chi tiết, mạch lạc, bám sát từng trang sách của anh Hoàng Gia Vị nhưng hành văn rất mượt mà và thực chiến. Cảm ơn đội ngũ biên tập rất nhiều!</div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="comment-top">
+                            <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Võ Minh Trí (Trader Fulltime)</span>
+                            <span class="comment-date">13/09/2026 02:10:35</span>
+                        </div>
+                        <div class="comment-text">Bộ nến VSA ở bài 10 đã xâu chuỗi toàn bộ các khái niệm ở 9 bài trước lại thành một khối thống nhất. Giờ nhìn nến Stopping Volume và No Supply là tự tin lên kế hoạch giải ngân ngay, không còn bị tâm lý chi phối.</div>
+                    </div>
+                    <div class="comment-item">
+                        <div class="comment-top">
+                            <span class="comment-author"><i class="fa-solid fa-circle-user"></i> Phạm Lan Phương (Nhà Đầu Tư Cá Nhân)</span>
+                            <span class="comment-date">13/09/2026 02:40:00</span>
+                        </div>
+                        <div class="comment-text">Một series bài viết quá tâm huyết và giá trị! Mình đã đọc liền một mạch từ Bài 1 đến Bài 10. Chắc chắn sẽ tiếp tục theo dõi các chuyên đề Naked Chart và VSA nâng cao tiếp theo.</div>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-links">
+            <a href="../pages/about.html">Về PTvolume</a>
+            <a href="../pages/contact.html">Liên Hệ</a>
+            <a href="../pages/terms.html">Điều Khoản</a>
+            <a href="../pages/privacy.html">Bảo Mật</a>
+            <a href="../pages/disclaimer.html">Cảnh Báo Rủi Ro</a>
+        </div>
+        <p>© 2026 PTvolume.com. Toàn bộ bản quyền được bảo lưu. Naked Chart &bull; VSA &bull; Phương Pháp Wyckoff.</p>
+    </footer>
+
+    <!-- TRANSLATE & COMMENTS SCRIPT -->
+    <div id="google_translate_element" style="display:none;"></div>
+    <script>
+        const POST_SLUG = 'phuong-phap-wyckoff-bai-10-bo-thanh-nen-vsa-xac-nhan-sos-va-sow';
+
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'vi',
+                includedLanguages: 'en,vi',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function setLanguage(lang) {
+            localStorage.setItem('ptvolume_lang', lang);
+            updateLangButtons(lang);
+            document.cookie = "googtrans=/vi/" + lang + "; path=/;";
+            if (window.location.hostname && window.location.hostname !== '') {
+                document.cookie = "googtrans=/vi/" + lang + "; path=/; domain=" + window.location.hostname;
+            }
+            const select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = lang;
+                select.dispatchEvent(new Event('change'));
+            } else {
+                window.location.reload();
+            }
+        }
+
+        function updateLangButtons(lang) {
+            const btnVi = document.getElementById('btn-lang-vi');
+            const btnEn = document.getElementById('btn-lang-en');
+            if (btnVi && btnEn) {
+                if (lang === 'en') {
+                    btnEn.classList.add('active');
+                    btnVi.classList.remove('active');
+                } else {
+                    btnVi.classList.add('active');
+                    btnEn.classList.remove('active');
+                }
+            }
+        }
+
+        function applyStoredLanguage() {
+            const currentLang = localStorage.getItem('ptvolume_lang') || 'vi';
+            updateLangButtons(currentLang);
+            if (currentLang !== 'vi') {
+                const checkCombo = setInterval(() => {
+                    const select = document.querySelector('.goog-te-combo');
+                    if (select) {
+                        select.value = currentLang;
+                        select.dispatchEvent(new Event('change'));
+                        clearInterval(checkCombo);
+                    }
+                }, 200);
+                setTimeout(() => clearInterval(checkCombo), 5000);
+            }
+        }
+
+        function loadSavedComments() {
+            const saved = JSON.parse(localStorage.getItem('ptvolume_comments_' + POST_SLUG) || '[]');
+            const commentList = document.getElementById("commentList");
+            const countElem = document.getElementById("commentCount");
+            if (countElem) {
+                countElem.innerText = 3 + saved.length;
+            }
+            saved.forEach(c => {
+                const item = document.createElement("div");
+                item.className = "comment-item";
+                item.innerHTML = `
+                    <div class="comment-top">
+                        <span class="comment-author"><i class="fa-solid fa-circle-user"></i> ${escapeHtml(c.name)}</span>
+                        <span class="comment-date">${c.date}</span>
+                    </div>
+                    <div class="comment-text">${escapeHtml(c.content)}</div>
+                `;
+                commentList.prepend(item);
+            });
+        }
+
+        function addComment(e) {
+            e.preventDefault();
+            const nameInput = document.getElementById("commentName");
+            const contentInput = document.getElementById("commentContent");
+            const name = nameInput.value.trim();
+            const content = contentInput.value.trim();
+            if (!name || !content) return;
+
+            const now = new Date();
+            const timeString = `${String(now.getDate()).padStart(2, '0')}/${String(now.getMonth() + 1).padStart(2, '0')}/${now.getFullYear()} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
+
+            const commentList = document.getElementById("commentList");
+            const newComment = document.createElement("div");
+            newComment.className = "comment-item";
+            newComment.innerHTML = `
+                <div class="comment-top">
+                    <span class="comment-author"><i class="fa-solid fa-circle-user"></i> ${escapeHtml(name)}</span>
+                    <span class="comment-date">${timeString}</span>
+                </div>
+                <div class="comment-text">${escapeHtml(content)}</div>
+            `;
+            commentList.prepend(newComment);
+
+            const countElem = document.getElementById("commentCount");
+            if (countElem) countElem.innerText = parseInt(countElem.innerText || 0) + 1;
+
+            const saved = JSON.parse(localStorage.getItem('ptvolume_comments_' + POST_SLUG) || '[]');
+            saved.push({ name, content, date: timeString });
+            localStorage.setItem('ptvolume_comments_' + POST_SLUG, JSON.stringify(saved));
+
+            nameInput.value = "";
+            contentInput.value = "";
+            alert("Bình luận của bạn đã được đăng thành công!");
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            applyStoredLanguage();
+            loadSavedComments();
+        });
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
